@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML 기초</title>
+    
+    <link href="https://webfontworld.github.io/gmarket/GmarketSans.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'GmarketSans';
+        }
+        #header {
+            padding: 2vw;
+            border-bottom: 1px dashed #dedede;
+        }
+        #header h1 {
+            font-size: 4vw;
+            padding-bottom: 2vw;
+        }
+
+        #header nav ul li {
+            list-style: none;
+            display: inline;
+        }
+        #header nav ul li a {
+            text-decoration: none;
+            color: #000;
+            border: 1px solid #000;
+            padding: 0.7vw 1vw 0.7vw 1vw;
+            display: inline-block;
+        }
+        #header nav ul li a:hover {
+            background-color: #000;
+            color: #fff;
+        }
+
+        /* 컨텐츠 */
+        #contents {
+            padding: 2vw;
+        }
+        #contents .menu {
+            border-bottom: 1px dashed #dedede;
+            padding-bottom: 2vw;
+        }
+        #contents .menu ul li {
+            list-style: none;
+            display: inline;
+        }
+        #contents .menu ul li a {
+            text-decoration: none;
+            color: #000;
+            border: 1px solid #000;
+            background-color: #000;
+            color:#fff;
+            padding: 0.7vw 1vw 0.7vw 1vw;
+            word-break: keep-all;
+            margin-top: 0.7vw;
+            margin-bottom: 0.7vw;
+            display: inline-block;
+        }
+        .article {
+            padding: 2vw 0;
+            line-height: 1.6;
+        }
+        .article h2 {
+            font-weight: normal;
+            margin-bottom: 10px;
+        }
+        .article h3 {
+            font-weight: normal;
+            margin-bottom: 10px;
+        }
+        .article p {
+            margin-bottom: 10px;
+        }
+        .article .table {
+            width: 100%;
+            border-spacing: 0;
+            border-collapse: collapse;
+            margin-bottom: 10px;
+        }
+        .article .table tr th {
+            border: 1px solid #dedede;
+            padding: 10px;
+            font-weight: normal;
+            background-color: #f5f5f5;
+        }
+        .article .table tr td {
+            border: 1px solid #dedede;
+            padding: 10px;
+        }
+        .article .table .center {
+            text-align: center;
+        }
+        .article .box {
+            background-color: #f5f5f5;
+            padding: 15px;
+        }
+
+        /* 미디어 쿼리 */
+        @media (max-width: 800px){
+            #header {
+                padding: 16px;
+            }
+            #header h1 {
+                font-size: 40px;
+            }
+            #header nav ul li a {
+                padding: 5px 10px;
+                font-size: 18px;
+            }
+            #contents {
+                padding: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header id="header">
+        <h1>HTML</h1>
+        <nav>
+            <ul>
+                <li><a href="#">기초</a></li>
+                <li><a href="#">주제</a></li>
+                <li><a href="#">알파벳</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section id="contents">
+        <nav class="menu">
+            <ul>
+                <li><a href="basic.html">기본 문서</a></li>
+                <li><a href="markup.html">기본 규칙</a></li>
+                <li><a href="#">W3C validator</a></li>
+                <li><a href="#">시멘틱 마크업</a></li>
+                <li><a href="#">블록/인라인 요소</a></li>
+            </ul>
+        </nav>
+        <article class="article">
+            <h2>마크업 기본 문법 규칙</h2>
+            <p>마크업을 할 때 기본적으로 알고 있어야 하는 문법들</p>
+
+            <h3>1. 요소는 시작 태그와 종료 태그가 있어야 합니다.</h3>
+            <p class="box">
+                &lt;p&gt; 요소는 시작 태그와 종료 태그가 있어야 한다. &lt;/p&gt; (O)<br>
+                &lt;p&gt; 요소는 시작 태그와 종료 태그가 있어야 한다. (X)
+            </p>
+            <p>
+                태그 중에는 종료 태그가 없는 요소들도 있습니다. 이런 요소를 빈 요소(empty element)
+                라고 하는데, 자주 사용되는 빈 요소에는 &lt;br&gt;, &lt;hr&gt;, &lt;img&gt;, 
+                &lt;input&gt;, &lt;meta&gt;, &lt;link&gt; 등이 있습니다.
+            </p>
+            <h3>2. 요소는 제대로 중첩되어야 합니다.</h3>
+            <p class="box">
+                &lt;p&gt; 중첩된 요소가 있을 때는 &lt;strong&gt; 바르게 &lt;/strong&gt; 표현해야 한다.
+                &lt;/p&gt; (O) <br>
+                &lt;p&gt; 중첩된 요소가 있을 때는 &lt;strong&gt; 바르게 &lt;/p&gt; 표현해야 한다.
+                &lt;/strong&gt; (X)
+                <p>
+                    중첩 관계를 부모와 자식 관계 라고 합니다. 여기에는 &lt;p&gt;태그가 부모 요소가 되고,
+                    &lt;storng&gt;태그가 자식 요소가 됩니다.
+                </p>
+                <h3>3. img 태그에는 alt 속성이 있어야 합니다.</h3>
+                <p class="box">
+                    &lt;img scr="imaes/today.gif" alt="오늘"&gt; (O) <br>
+                    &lt;img scr="imaes/today.gif"&gt; (X)
+                </p>
+                <p>
+                    &lt;img&gt; 태그에 alt 속성을 지정해야 하는 이유는 문법적으로도 필요하지만, 이미지를 볼 수 
+                    없는 환경에서도 그 이미지에 대한 정보를 충분히 제공해 주어야 하기 때문입니다.
+                </p>
+            </p>
+            <h3>4. 권장하는 사항도 있습니다.</h3>
+            <p class="box">
+                &lt;p&gt;태그나 속성은 소문자로 마크업 하는 것을 권장한다.&lt;/p&gt; (권장) <br>
+                &lt;P&gt;태그나 속성은 소문자로 마크업 하는 것을 권장한다.&lt;/P&gt; <br>
+                &lt;p title="속성 값"&gt;속성의 값에는 따옴표 처리를 권장한다.&lt;/p&gt; (권장) <br>
+                &lt;p title=속성 값&gt;속성의 값에는 따옴표 처리를 권장한다.&lt;/p&gt;
+            </p>
+            <p>
+                HTML5는 대소문자를 구분하지는 않지만 가급적 소문자로 통일해서 마크업하는 것과, 속성에
+                대한 값에 따옴표 처리를 하는 것을 권장합니다.
+            </p>
+            <h3>5. 주석처리 방법</h3>
+            <p>
+                주석은 일반적으로 협업(공동작업)시 다음 작업자가 현재 작업한 내용을 쉽게 알아볼
+                수 있도록 도와주는 설명문 입니다. 주석 내용은 브라우저 화면에 출력되지 않습니다.
+            </p>
+            <p class="box">
+                &lt;!-- header --&gt; <br>
+                &lt;!-- 여기서부터 공지 사항입니다. --&gt;
+            </p>
+        </article>
+    </section>
+</body>
+</html>

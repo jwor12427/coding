@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS</title>
+
+    <link href="https://webfontworld.github.io/utoBalsamtint/UtoBalsamTint.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'UtoBalsamTint';
+        }
+        #main {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            height: 100vh;
+            border: 8px solid #507b4d;
+            box-sizing: border-box;
+        }
+        #main h1 {
+            font-size: 11vw;
+            text-align: center;
+            line-height: 1.1;
+            color: #507b4d;
+            margin-bottom: 3vw;
+        }
+        #main h1 em {
+            display: block;
+            font-style: normal;
+        }
+        #main nav {}
+        #main nav ul {}
+        #main nav ul li {
+            list-style: none;
+            display: inline;
+        }
+        #main nav ul li a {
+            text-decoration: none;
+            color: #507b4d;
+            border: 1px solid #507b4d;
+            font-size: 18px;
+            padding: 1vw;
+        }
+        #main nav ul li a:hover {
+            background-color: #507b4d;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <main id="main">
+        <h1>CSS <em>레퍼런스 북</em></h1>
+        <nav>
+            <ul>
+                <li><a href="#">기초</a></li>
+                <li><a href="#">주제</a></li>
+                <li><a href="#">알파벳</a></li>
+            </ul>
+        </nav>
+    </main>
+</body>
+</html>
