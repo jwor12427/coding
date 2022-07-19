@@ -6,46 +6,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>자바스크립트 기본 규칙</title>
 
-    <link href="https://webfontworld.github.io/gmarket/GmarketSans.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
     
     <style>
-        /* 리셋 */
-        * {
-            margin: 0;
-            padding: 0;
-            font-family: 'GmarketSans';
-        }
-        a {
-            text-decoration: none;
-            color: #000;
-        }
-        li {
-            list-style: none;
-        }
-        /* 헤더 영역 */
-        #header {
+                #contents {
             padding: 2vw;
             border-bottom: 1px dashed #cdcdcd;
         }
-        #header h1 {
-            font-size: 4vw;
-            margin-bottom: 2vw;
+        #contents h2 {
+            margin-bottom: 10px;
         }
-        #header nav ul li {
-            display: inline-block;
+        #contents .numList {}
+        #contents .numList {
+            margin-left: 30px;
         }
-        #header nav ul li a {
-            border:  1px solid #000;
-            padding: 0.7vw 1vw 0.3vw 1vw;
-            transition: all 0.3s;
-            margin-bottom: 0.7vw;
-            display: inline-block;
+        #contents .numList li {
+            line-height: 1.6;
+            list-style: decimal-leading-zero;
+        } 
+        #contents .numList .box {
+            background-color: #f5f5f5;
+            padding: 15px;
         }
-        #header nav ul li a:hover {
-            background-color: #000;
-            color: #fff;
+        .article {
+            padding: 2vw 0;
+            line-height: 1.6;
         }
-
+        .article .table {
+            width: 100%;
+            border-spacing: 0;
+            border-collapse: collapse;
+            margin-bottom: 10px;
+        }
+        .article .table tr th {
+            border: 1px solid #dedede;
+            padding: 10px;
+            font-weight: normal;
+            background-color: #f5f5f5;
+        }
+        .article .table tr td {
+            border: 1px solid #dedede;
+            padding: 10px;
+        }
+        .article .table .center {
+            text-align: center;
+        }
         /* 컨텐츠 영역 */
         #contents {
             padding: 2vw;
@@ -89,6 +94,7 @@
         .article .table .center {
             text-align: center;
         }
+        
         /* 모바일용 미디어쿼리 */
         @media (max-width: 800px){
             #header h1 {
@@ -104,12 +110,26 @@
 <body>
     <header id="header">
         <h1>Javascript</h1>
-        <nav>
+        <nav class="header_nav">
             <ul>
-                <li><a href="javascrpit01.html">데이터 저장하기</a></li>
-                <li><a href="javascrpit02.html">데이터 출력하기</a></li>
+                <li><a href="javascript01.html">데이터 저장하기</a></li>
+                <li><a href="javascrpit02.html">데이터 불러오기</a></li>
                 <li><a href="javascrpit03.html">데이터 실행하기</a></li>
                 <li><a href="javascrpit04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="#">문자열 객체</a></li>
+                <li><a href="#">배열 객체</a></li>
+                <li><a href="#">수학 객체</a></li>
+                <li><a href="#">숫자 객체</a></li>
+                <li><a href="#">브라우저 객체</a></li>
+                <li><a href="#">요소 객체</a></li>
+                <li><a href="#">이벤트 객체</a></li>
+            </ul>
+            <ul class="study">
+                <li><a href="basic.html">기본 규칙</a></li>
+                <li><a href="#">기본 명령어</a></li>
+                <li><a href="operator.html">연산자</a></li>
             </ul>
         </nav>
     </header>

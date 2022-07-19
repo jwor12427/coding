@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 기초</title>
+    
+    <link href="https://webfontworld.github.io/gmarket/GmarketSans.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'GmarketSans';
+        }
+        #header {
+            padding: 2vw;
+            border-bottom: 1px dashed #dedede;
+        }
+        #header h1 {
+            font-size: 4vw;
+            padding-bottom: 2vw;
+        }
+
+        #header nav ul li {
+            list-style: none;
+            display: inline;
+        }
+        #header nav ul li a {
+            text-decoration: none;
+            color: #000;
+            border: 1px solid #000;
+            padding: 0.7vw 1vw 0.7vw 1vw;
+            display: inline-block;
+        }
+        #header nav ul li a:hover {
+            background-color: #000;
+            color: #fff;
+        }
+
+        /* 컨텐츠 */
+        #contents {
+            padding: 2vw;
+        }
+        #contents .menu {
+            border-bottom: 1px dashed #dedede;
+            padding-bottom: 2vw;
+        }
+        #contents .menu ul li {
+            list-style: none;
+            display: inline;
+        }
+        #contents .menu ul li a {
+            text-decoration: none;
+            color: #000;
+            border: 1px solid #000;
+            background-color: #000;
+            color:#fff;
+            padding: 0.7vw 1vw 0.7vw 1vw;
+            word-break: keep-all;
+            margin-top: 0.7vw;
+            margin-bottom: 0.7vw;
+            display: inline-block;
+        }
+        .article {
+            padding: 2vw 0;
+            line-height: 1.6;
+        }
+        .article h2 {
+            font-weight: normal;
+            margin-bottom: 10px;
+        }
+        .article p {
+            margin-bottom: 10px;
+        }
+        .article .table {
+            width: 100%;
+            border-spacing: 0;
+            border-collapse: collapse;
+            margin-bottom: 10px;
+        }
+        .article .table tr th {
+            border: 1px solid #dedede;
+            padding: 10px;
+            font-weight: normal;
+            background-color: #f5f5f5;
+        }
+        .article .table tr td {
+            border: 1px solid #dedede;
+            padding: 10px;
+            text-align: center;
+        }
+        .article .table .center {
+            text-align: center;
+        }
+        .article .box {
+            background-color: #f5f5f5;
+            padding: 15px;
+        }
+
+        /* 미디어 쿼리 */
+        @media (max-width: 800px){
+            #header {
+                padding: 16px;
+            }
+            #header h1 {
+                font-size: 40px;
+            }
+            #header nav ul li a {
+                padding: 5px 10px;
+                font-size: 18px;
+            }
+            #contents {
+                padding: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header id="header">
+        <h1>CSS</h1>
+        <nav>
+            <ul>
+                <li><a href="#">기초</a></li>
+                <li><a href="#">주제</a></li>
+                <li><a href="#">알파벳</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section id="contents">
+        <nav class="menu">
+            <ul>
+                <li><a href="unit.html">단위</a></li>
+            </ul>
+        </nav>
+        <article class="article">
+            <h2>font-size</h2>
+            <p>
+                문자의 글자 크기를 지정하는 속성입니다. 글자 크기는 명시하지 않을 경우 16px이 기본값입니다.
+            </p>
+            <h3>px</h3>
+            <p class="box">
+                font-size: 12px;
+            </p>
+            <p>해상도에 따라 상대적으로 달라지는 기본 단위 입니다.</p>
+            <h3>%</h3>
+            <p class="box">
+                font-size: 150%;
+            </p>
+            <p>부모 요소의 글자 크기를 100% 기준으로 계산한 % 단위 입니다. 특별한 설정이 없다면 16px가
+                100%입니다.
+            </p>
+            <h3>em</h3>
+            <p class="box">
+                font-size: 1.5em;
+            </p>
+            <p>부모 요소의 글자 크기를 100% 기준으로 계산한 100 분의1 단위 입니다. 특별한 설정이
+                없다면 16px이 1em 입니다.
+            </p>
+            <h3>단위 환산</h3>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th class="center">px</th>
+                        <th class="center">%</th>
+                        <th class="center">em</th>
+                        <th class="center">pt</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>6 px</td>
+                        <td>37.50%</td>
+                        <td>0.375 em</td>
+                        <td>5pt</td>
+                    </tr>
+                    <tr>
+                        <td>7 px</td>
+                        <td>43.80%</td>
+                        <td>0.438 em</td>
+                        <td>5 pt</td>
+                    </tr>
+                    <tr>
+                        <td>8 px</td>
+                        <td>50%</td>
+                        <td>0.500 em</td>
+                        <td>6 pt</td>
+                    </tr>
+                    <tr>
+                        <td>9 px</td>
+                        <td>56.30%</td>
+                        <td>0.563 em</td>
+                        <td>7 pt</td>
+                    </tr>
+                    <tr>
+                        <td>10 px</td>
+                        <td>62.50%</td>
+                        <td>0.625 em</td>
+                        <td>8 pt</td>
+                    </tr>
+                    <tr>
+                        <td>11 px</td>
+                        <td>68.80%</td>
+                        <td>0.688 em</td>
+                        <td>8 pt</td>
+                    </tr>
+                    <tr>
+                        <td>12 px</td>
+                        <td>75.00%</td>
+                        <td>0.750 em</td>
+                        <td>9 pt</td>
+                    </tr>
+                    <tr>
+                        <td>13 px</td>
+                        <td>81.30%</td>
+                        <td>0.813 em</td>
+                        <td>10 pt</td>
+                    </tr>
+                    <tr>
+                        <td>14 px</td>
+                        <td>87.50%</td>
+                        <td>0.875 em</td>
+                        <td>11 pt</td>
+                    </tr>
+                    <tr>
+                        <td>15 px</td>
+                        <td>93.80%</td>
+                        <td>0.938 em</td>
+                        <td>11 pt</td>
+                    </tr>
+                    <tr>
+                        <th>16 px</th>
+                        <th>100%</th>
+                        <th>1.000 em</th>
+                        <th>12 pt</th>
+                    </tr>
+                    <tr>
+                        <td>17 px</td>
+                        <td>106.30%</td>
+                        <td>10.063 em</td>
+                        <td>13 pt</td>
+                    </tr>
+                    <tr>
+                        <td>18 px</td>
+                        <td>112.50%</td>
+                        <td>1.125 em</td>
+                        <td>14 pt</td>
+                    </tr>
+                    <tr>
+                        <td>19 px</td>
+                        <td>118.80%</td>
+                        <td>1.188 em</td>
+                        <td>14 pt</td>
+                    </tr>
+                    <tr>
+                        <td>20 px</td>
+                        <td>125.00%</td>
+                        <td>1.250 em</td>
+                        <td>15 pt</td>
+                    </tr>
+                    <tr>
+                        <td>21 px</td>
+                        <td>131.30%</td>
+                        <td>1.313 em</td>
+                        <td>16 pt</td>
+                    </tr>
+                    <tr>
+                        <td>22 px</td>
+                        <td>137.50%</td>
+                        <td>1.375 em</td>
+                        <td>17 pt</td>
+                    </tr>
+                    <tr>
+                        <td>23 px</td>
+                        <td>143.80%</td>
+                        <td>1.438 em</td>
+                        <td>17 pt</td>
+                        <tr>
+                            <td>24 px</td>
+                            <td>150.00%</td>
+                            <td>1.500 em</td>
+                            <td>18 pt</td>
+                        </tr>
+                    </tr>
+                </tbody>
+            </table>
+            <h3>rem</h3>
+            <p class="box">
+                font-size: 1.5rem;
+            </p>
+            <p>rem은 em과 비슷하지만 부모 요소가 아닌 "최상위 요소"의 크기를 100% 기준으로 계산합니다.
+            </p>
+            <h3>vw, vh</h3>
+            <p class="box">
+                font-size: 10vw;
+            </p>vw는 뷰포트 너비값의 100분의 1단위, vh는 뷰포트 높이값의 100분의 1 단위 입니다.
+            <p>
+            </p>
+            
+        </article>
+    </section>
+</body>
+</html>
