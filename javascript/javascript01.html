@@ -65,9 +65,9 @@
                     이 저장소에는 숫자, 문자, 함수, 객체 등을 저장할 수 있습니다.
                 </p>
                 <div class="script">
-<pre><code class="language-js">var x = 100;
-var y = 200;
-var z = "javascript";
+<pre><code class="language-js">var x = 100;                //변수 x에 숫자 100을 저장함
+var y = 200;                //변수 y에 숫자 200을 저장함
+var z = "javascript";       //변수 z에 문자열 "javascipt"를 저장함
 
 document.wtite(x);
 document.wtite(y);
@@ -77,12 +77,41 @@ document.wtite(z);
                 <div class="result">
                     <details>
                         <summary>결과보기</summary>
-                        <div class="sasmple01_result">
-
+                        <div class="sample01_result">
                         </div>
                     </details>
                 </div>
             </div>
+            <!-- //sample01 -->
+
+            <div id="sample02" class="sample">
+                <h3>02. 변수 : 데이터 저장 + 데이터 변경</h3>
+                <p>
+                    변수는 데이터 저장뿐만이 아니라 데이터 변경도 할 수 있습니다.
+                </p>
+                <div class="script">
+<pre><code class="language-js">let x = 100;
+let y = 200;
+let z = "javascript";
+
+x = 300;        //변수 x의 값이 100에서 300으로 변경됨
+y = 400;        //변수 y의 값이 200에서 400으로 변경됨
+z = "jquery";   //변수 z의 값이 "javascript"에서 "jquery"로 변경됨
+
+document.write(x);
+document.write(y);
+document.write(z);
+</code></pre>
+                </div>
+                <div class="result">
+                    <details>
+                        <summary>결과보기</summary>
+                        <div class="sample02_result">
+                        </div>
+                    </details>
+                </div>
+            </div>
+            <!-- //sample02 -->
         </div>
     </main>
     <!-- //main -->
@@ -97,16 +126,34 @@ document.wtite(z);
        hljs.highlightAll(); 
     </script>
     <script>
+        // 01
         {
             var x = 100;
             var y = 200;
             var z = "javascript";
 
-            document.write(x)
-            document.write(y)
-            document.write(z)
+            // document.write(x)
+            // document.write(y)
+            // document.write(z)
 
-            document.querySelector(".sasmple01_result").innerHTML = x + "<br>" + y  + "<br>" + z;
+            document.querySelector(".sample01_result").innerHTML = x + "<br>" + y  + "<br>" + z;
+        }
+
+        //02
+        {
+            let x = 100;
+            let y = 200;
+            let z = "javascript";
+
+            x = 300;        //변수 x의 값이 100에서 300으로 변경됨
+            y = 400;        //변수 y의 값이 200에서 400으로 변경됨
+            z = "jquery";   //변수 z의 값이 "javascript"에서 "jquery"로 변경됨
+
+            // document.write(x);
+            // document.write(y);
+            // document.write(z);
+
+            document.querySelector(".sample02_result").innerHTML = x + "<br>" + y + "<br>" + z
         }
     </script>
 </body>
