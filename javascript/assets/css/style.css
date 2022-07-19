@@ -1,0 +1,74 @@
+/* 웹폰트 */
+@import url('https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css');
+
+/* 여백 초기화 */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'NexonLv1Gothic';
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* 링크 초기화 */
+a {
+    text-decoration: none;
+    color: #222;
+}
+
+/* 목록 초기화 */
+body {
+    padding: 40px;
+}
+li {
+    list-style: none;
+}
+
+/* 모든 페이지 레이아웃 */
+#header {
+    border-bottom: 1px dashed #dcdcdc;
+    padding-bottom: 40px;
+}
+#main {
+    border-bottom: 1px dashed #dcdcdc;
+}
+#footer {
+    padding: 40px 0;
+    text-align: center;
+}
+#footer a:hover {
+    text-decoration: underline;
+}
+
+/* 헤더 영역 */
+#header h1 {
+    font-size: 60px;
+}
+.header_nav ul li {
+    display: inline;
+}
+.header_nav ul li a {
+    border: 1px solid #222;
+    padding: 8px 25px;
+    display: inline-block;
+    margin-bottom: 7px;
+}
+.header_nav ul li a:hover {
+    background-color: #000;
+    color: #fff;
+}
+.header_nav .study {
+    margin-top: 10px;
+}
+.header_nav .study li a {
+    border-radius: 50px;
+    padding: 6px 30px;
+    background-color: #000;
+    color: #fff;
+}
+
+@media (max-width: 800px) {
+    body {
+        padding: 20px;
+    }
+}
