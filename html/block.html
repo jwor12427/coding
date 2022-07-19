@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML 기초</title>
+    
+    <link href="https://webfontworld.github.io/gmarket/GmarketSans.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'GmarketSans';
+        }
+        #header {
+            padding: 2vw;
+            border-bottom: 1px dashed #dedede;
+        }
+        #header h1 {
+            font-size: 4vw;
+            padding-bottom: 2vw;
+        }
+
+        #header nav ul li {
+            list-style: none;
+            display: inline;
+        }
+        #header nav ul li a {
+            text-decoration: none;
+            color: #000;
+            border: 1px solid #000;
+            padding: 0.7vw 1vw 0.7vw 1vw;
+            display: inline-block;
+        }
+        #header nav ul li a:hover {
+            background-color: #000;
+            color: #fff;
+        }
+
+        /* 컨텐츠 */
+        #contents {
+            padding: 2vw;
+        }
+        #contents .menu {
+            border-bottom: 1px dashed #dedede;
+            padding-bottom: 2vw;
+        }
+        #contents .menu ul li {
+            list-style: none;
+            display: inline;
+        }
+        #contents .menu ul li a {
+            text-decoration: none;
+            color: #000;
+            border: 1px solid #000;
+            background-color: #000;
+            color:#fff;
+            padding: 0.7vw 1vw 0.7vw 1vw;
+            word-break: keep-all;
+            margin-top: 0.7vw;
+            margin-bottom: 0.7vw;
+            display: inline-block;
+        }
+        .article {
+            padding: 2vw 0;
+            line-height: 1.6;
+        }
+        .article h2 {
+            font-weight: normal;
+            margin-bottom: 10px;
+        }
+        .article p {
+            margin-bottom: 10px;
+        }
+        .article .table {
+            width: 100%;
+            border-spacing: 0;
+            border-collapse: collapse;
+            margin-bottom: 10px;
+        }
+        .article .table tr th {
+            border: 1px solid #dedede;
+            padding: 10px;
+            font-weight: normal;
+            background-color: #f5f5f5;
+        }
+        .article .table tr td {
+            border: 1px solid #dedede;
+            padding: 10px;
+        }
+        .article .table .center {
+            text-align: center;
+        }
+        .article .box {
+            background-color: #f5f5f5;
+            padding: 15px;
+        }
+
+        /* 미디어 쿼리 */
+        @media (max-width: 800px){
+            #header {
+                padding: 16px;
+            }
+            #header h1 {
+                font-size: 40px;
+            }
+            #header nav ul li a {
+                padding: 5px 10px;
+                font-size: 18px;
+            }
+            #contents {
+                padding: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header id="header">
+        <h1>HTML</h1>
+        <nav>
+            <ul>
+                <li><a href="#">기초</a></li>
+                <li><a href="#">주제</a></li>
+                <li><a href="#">알파벳</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section id="contents">
+        <nav class="menu">
+            <ul>
+                <li><a href="basic.html">기본 문서</a></li>
+                <li><a href="markup.html">기본 규칙</a></li>
+                <li><a href="#">W3C validator</a></li>
+                <li><a href="semantic.html">시멘틱 마크업</a></li>
+                <li><a href="block.html">블록/인라인 요소</a></li>
+            </ul>
+        </nav>
+        <article class="article">
+            <h2>블록 레벨 요소와 인라인 요소</h2>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th class="center">요소 유형</th>
+                        <th class="center">특징</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td rowspan="3" class="center">블록 레벨 요소</td>
+                        <td>1. 블록 레벨 요소는 줄 바꿈이 일어납니다.</td>
+                    </tr>
+                    <tr>
+                        <td>2. 블록 레벨 요소는 텍스트(문자)와 인라인 요소를 자식 요소로 포함할 수 있습니다.</td>
+                    </tr>
+                    <tr>
+                        <td>3. 블록 레벨 요소 중에는 블록 레벨 요소를 자식 요소로 포함 할 수 있는 요소와
+                            포함할 수 없는 요소가 있습니다.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td rowspan="3" class="center">인라인 요소</td>
+                        <td>1. 인라인 요소는 줄 바꿈이 일어나지 않습니다.</td>
+                    </tr>
+                    <tr>
+                        <td>2.인라인 요소는 텍스트(문자)와 인라인 요소를 자식 요소로 포함할 수 있습니다.</td>
+                    </tr>
+                    <tr>
+                        <td>3. 인라인 요소는 블록 레벨 요소를 자식 요소로 포함할 수 없습니다.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th class="center">콘텐츠 종류</th>
+                        <th class="center">내용</th>
+                        <th class="center">해당 요소</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="center">메타데이터 콘텐츠<br> Metadata Content</td>
+                        <td>&lt;head&gt; 태그 안에 포함되는 요소들로 콘텐츠의 표현, 동작 설정, 문서간
+                            관계를 설정, 정보전달을 포함하는 요소를 의미합니다.
+                        </td>
+                        <td>&lt;base&gt;, &lt;link&gt;, &lt;meta&gt;, &lt;noscript&gt;, &lt;script&gt;, 
+                            &lt;style&gt;, &lt;title&gt;, ...
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="center">플로우 콘텐츠<br> Flow Content</td>
+                        <td>&lt;body&gt; 태그 안에 포함되는 대부분의 요소들로 내용 흐름에 관한 요소를 의미합니다.</td>
+                        <td>&lt;h1&gt;, &lt;h2&gt; &lt;h3&gt; &lt;h4&gt;, &lt;h5&gt;, &lt;h6&gt;, &lt;address&gt;, 
+                            &lt;p&gt;, &lt;a&gt;, &lt;img&gt;, &lt;ul&gt;, &lt;ol&gt;, &lt;dl&gt;, &lt;table&gt;, 
+                            &lt;form&gt;, ...
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="center">섹션 콘텐츠<br> Sectioning Content</td>
+                        <td>heading과 footer의 범위를 정의하는 요소를 의미합니다.</td>
+                        <td>&lt;drticle&gt;, &lt;aside&gt;, &lt;nav&gt;, &lt;section&gt;</td>
+                    </tr>
+                    <tr>
+                        <td class="center">헤딩 콘텐츠<br> Heading Content</td>
+                        <td>섹션의 헤더를 정의하는 요소를 의미합니다.</td>
+                        <td>&lt;h1&gt;, &lt;h2&gt;, &lt;h3&gt;, &lt;h4&gt;, &lt;h5&gt;, &lt;h6&gt;
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="center">프레이징 콘텐츠<br> Phrasing Content</td>
+                        <td>텍스트를 마크업하는 요소를 의미합니다.</td>
+                        <td>&lt;a&gt;, &lt;em&gt;, &lt;strong&gt;, &lt;sub&gt;, &lt;sup&gt;, 
+                            &lt;label&gt;, ...
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="center">임베디드 콘텐츠<br> Embedded Content</td>
+                        <td>HTML 문서에 다른 리소스를 삽입하는 요소를 의미합니다.</td>
+                        <td>&lt;img&gt;, &lt;audio&gt;, &lt;video&gt;, &lt;iframe&gt;, ...</td>
+                    </tr>
+                    <tr>
+                        <td class="center">인터랙티브 콘텐츠<br> Interactive Content</td>
+                        <td>사용자의 상호작용 위한 요소를 의미합니다.</td>
+                        <td>&lt;a&gt;, &lt;button&gt;, &lt;audio&gt;, &lt;video&gt;, &lt;select&gt;, ...</td>
+                    </tr>
+                </tbody>
+            </table>
+        </article>
+    </section>
+</body>
+</html>

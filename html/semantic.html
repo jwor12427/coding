@@ -141,58 +141,42 @@
             </ul>
         </nav>
         <article class="article">
-            <h2>마크업 기본 문법 규칙</h2>
-            <p>마크업을 할 때 기본적으로 알고 있어야 하는 문법들</p>
-
-            <h3>1. 요소는 시작 태그와 종료 태그가 있어야 합니다.</h3>
+            <h2>시멘틱 마크업</h2>
+            <p>시멘틱(semantic)의 사전적 뜻은 '의미론적인' 정도로 해석할 수 있는데, 이것은
+                마크업을 할 때 의미에 부합하는 태그를 사용하라는 뜻입니다.
+            </p>
+            <p>&lt;예시-1&gt;</p>
             <p class="box">
-                &lt;p&gt; 요소는 시작 태그와 종료 태그가 있어야 한다. &lt;/p&gt; (O)<br>
-                &lt;p&gt; 요소는 시작 태그와 종료 태그가 있어야 한다. (X)
+                &lt;!DOCTYPE html&gt;<br>
+                &lt;html lang="ko"&gt;<br>
+                &lt;head&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;mtea charset="UFT-8&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt;시멘틱 마크업&lt;/title&gt;<br>
+                &lt;/head&gt;<br>
+                &lt;body&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;반응형웹<br>
+                &lt;/body&gt;<br>
+                &lt;/html&gt;
             </p>
-            <p>
-                태그 중에는 종료 태그가 없는 요소들도 있습니다. 이런 요소를 빈 요소(empty element)
-                라고 하는데, 자주 사용되는 빈 요소에는 &lt;br&gt;, &lt;hr&gt;, &lt;img&gt;, 
-                &lt;input&gt;, &lt;meta&gt;, &lt;link&gt; 등이 있습니다.
+            <p>만약'반응형웹'이 HTML 문서에서 제목으로 사용된다고 가정할 경우 마크업을 하면,
+                스크린 리더(음성낭독프로그램)에서는 그저 '반응형웹'이라고만 읽어주기 때문에 제목인지
+                를 알 수가 없습니다.
             </p>
-            <h3>2. 요소는 제대로 중첩되어야 합니다.</h3>
+            <p>&lt;예시-2&gt;</p>
             <p class="box">
-                &lt;p&gt; 중첩된 요소가 있을 때는 &lt;strong&gt; 바르게 &lt;/strong&gt; 표현해야 한다.
-                &lt;/p&gt; (O) <br>
-                &lt;p&gt; 중첩된 요소가 있을 때는 &lt;strong&gt; 바르게 &lt;/p&gt; 표현해야 한다.
-                &lt;/strong&gt; (X)
-                <p>
-                    중첩 관계를 부모와 자식 관계 라고 합니다. 여기에는 &lt;p&gt;태그가 부모 요소가 되고,
-                    &lt;storng&gt;태그가 자식 요소가 됩니다.
-                </p>
-                <h3>3. img 태그에는 alt 속성이 있어야 합니다.</h3>
-                <p class="box">
-                    &lt;img scr="imaes/today.gif" alt="오늘"&gt; (O) <br>
-                    &lt;img scr="imaes/today.gif"&gt; (X)
-                </p>
-                <p>
-                    &lt;img&gt; 태그에 alt 속성을 지정해야 하는 이유는 문법적으로도 필요하지만, 이미지를 볼 수 
-                    없는 환경에서도 그 이미지에 대한 정보를 충분히 제공해 주어야 하기 때문입니다.
-                </p>
+                &lt;!DOCTYPE html&gt;<br>
+                &lt;html lang="ko"&gt;<br>
+                &lt;head&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;mtea charset="UFT-8&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt;시멘틱 마크업&lt;/title&gt;<br>
+                &lt;/head&gt;<br>
+                &lt;body&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;h1&gt;반응형웹&lt;/h1&gt;<br>
+                &lt;/body&gt;<br>
+                &lt;/html&gt;
             </p>
-            <h3>4. 권장하는 사항도 있습니다.</h3>
-            <p class="box">
-                &lt;p&gt;태그나 속성은 소문자로 마크업 하는 것을 권장한다.&lt;/p&gt; (권장) <br>
-                &lt;P&gt;태그나 속성은 소문자로 마크업 하는 것을 권장한다.&lt;/P&gt; <br>
-                &lt;p title="속성 값"&gt;속성의 값에는 따옴표 처리를 권장한다.&lt;/p&gt; (권장) <br>
-                &lt;p title=속성 값&gt;속성의 값에는 따옴표 처리를 권장한다.&lt;/p&gt;
-            </p>
-            <p>
-                HTML5는 대소문자를 구분하지는 않지만 가급적 소문자로 통일해서 마크업하는 것과, 속성에
-                대한 값에 따옴표 처리를 하는 것을 권장합니다.
-            </p>
-            <h3>5. 주석처리 방법</h3>
-            <p>
-                주석은 일반적으로 협업(공동작업)시 다음 작업자가 현재 작업한 내용을 쉽게 알아볼
-                수 있도록 도와주는 설명문 입니다. 주석 내용은 브라우저 화면에 출력되지 않습니다.
-            </p>
-            <p class="box">
-                &lt;!-- header --&gt; <br>
-                &lt;!-- 여기서부터 공지 사항입니다. --&gt;
+            <p>&lt;h1&gt;은 문서의 첫 제목을 의미하는 태그입니다. 이부분을 '반응형웹'헤딩 일 이라고
+                읽어준다면 이부분이 제목인것을 알 수 있습니다.
             </p>
         </article>
     </section>
