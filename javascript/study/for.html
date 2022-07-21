@@ -38,10 +38,93 @@
     <!-- //header -->
     <main id="main">
         <div class="document">
-            <h2 class="t_tit">기본 규칙</h2>
-            <p class="t_desc"></p>
+            <h2 class="t_tit">for 문</h2>
+            <p class="t_desc">
+                for문은 특정 구문을 여러번 반복하고 싶을 때 사용합니다.
+            </p>
+            <p class="t_box">
+                for (초기값; 조건식; 증감값){<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;실행문;<br>
+                }
+            </p>
 
             <hr>
+
+            <h3 class="t_tit2">0부터 99까지 출력하기</h3>
+            <div class="t_code">
+<pre><code>//0부터 99까지 출력하기
+    for( let i = 0; i &lt; 100; i++){
+        document.write(i);
+    }
+</code></pre>
+            </div>
+            <!-- // -->
+            <h3 class="t_tit2">1부터 100까지 출력하기</h3>
+            <div class="t_code">
+<pre><code>//0부터 99까지 출력하기
+for(let i=1; i&lt;=100; i++){
+    document.write(i);
+}
+</code></pre>
+            </div>
+            <!-- // -->
+            <h3 class="t_tit2">1부터 100까지 출력하기(짝수)</h3>
+            <div class="t_code">
+<pre><code>//1부터 100까지 출력하기(짝수)
+for(let i=2; i&lt;=100; i+=2){   // i += 2 --> i = i + 2
+    document.write(i);
+}
+</code></pre>
+            </div>
+            <!-- // -->
+            <h3 class="t_tit2">for문을 이용해서 테이블 출력하기</h3>
+            <p class="t_desc">
+                중첩 for문을 이용해서 테이블을 만들 수 있습니다.
+            </p>
+            <div class="t_code">
+<pre><code class="language-js">//for문을 이용해서 테이블을 출력하기(100칸)
+let table = "&lt;table&gt;";
+
+    for(let i=0; i&lt;10; i++){
+        table += "&lt;tr&gt;";
+        for(let j=0; j&lt;10; j++){       
+            table += "&lt;td&gt;👻&lt;/td&gt;";
+
+        }
+    table += "&lt;/tr&gt;";
+    }
+
+    table += "&lt;/table&gt;";
+
+document.write(table);
+</pre></code>
+            </div>
+            <div>
+                <details>
+                    <summary>결과 확인하기</summary>
+                    <div class="result01"></div>
+                </details>
+                <style>
+                    .testTable tr td {
+                        border: 1px solid #000;
+                    }
+                </style>
+                <script>
+                    let table = "<table class='testTable'>";
+                
+                        for(let i=0; i<10; i++){
+                            table += "<tr>";
+                            for(let j=0; j<10; j++){       
+                                table += "<td>👻</td>";
+                
+                            }
+                            table += "</tr>";
+                        }
+                
+                        table += "</table>";
+                    document.querySelector(".result01").innerHTML = table;
+                </script>
+            </div>
         </div>
     </main>
     <!-- //main -->
@@ -53,6 +136,5 @@
     <script>
         hljs.highlightAll();
     </script>
-   
 </body>
 </html>

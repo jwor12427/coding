@@ -1,0 +1,186 @@
+/* 웹폰트 */
+@import url('https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css');
+@import url('https://webfontworld.github.io/tmon/Tmon.css');
+/* 여백 초기화 */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'NexonLv1Gothic';
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* 링크 초기화 */
+a {
+    text-decoration: none;
+    color: #222;
+}
+
+/* 목록 초기화 */
+
+li {
+    list-style: none;
+}
+
+/* 제목 초기화 */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+}
+/* 기울기 초기화 */
+em, 
+i {
+    font-style: normal;
+}
+/* 테이블 초기화 */
+table {
+    width: 100%;
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+/* 레이아웃 */
+body {
+    background-color: #f5f5f5;
+}
+
+#header {
+    border-bottom: 1px solid #000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#main {
+    padding: 20px;
+    max-width: 1300px;
+    margin: 0 auto;      /* 가운데 정렬 */
+}
+#footer {
+    padding: 40px 0;
+    text-align: center;
+}
+
+
+/* 헤더 영역 */
+#header {
+    padding:  14px 20px 5px 20px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    position: fixed;
+    z-index: 10000;
+    backdrop-filter: blur(100px);
+    box-sizing: border-box;
+}
+#header h1 a {
+    font-size: 36px;
+    font-weight: 500;
+}
+#header span {
+    color: #666;
+    padding-top: 20px;
+}
+/* 메인 영역 */
+.main_header {}
+.main_header h2 {
+    font-size: 80px;
+    text-align: center;
+    padding: 10% 10% 5% 10%;
+    font-family: 'Tmon';
+}
+.main_header h2 em {
+    font-size: 80px;
+    color: #00DB72;
+    font-family: 'Tmon';
+}
+.main_menu {
+    margin-bottom: 20px;
+}
+
+.main_menu li {
+    display: inline;
+}
+.main_menu li a {
+    background-color: #00DB72;
+    padding: 5px 15px;
+    display: inline-block;
+    color: #fff;
+    margin-bottom: 5px;
+}
+.main_menu li.active a {
+    background-color: #000;
+    color: #fff;
+}
+.main_refer {
+    border: 1px solid #000;
+    padding: 30px;
+    background-color: #fff;
+}
+.main_refer .table {
+    text-align: center;
+}
+.main_refer .table table {
+    width: 100%;
+    border: 1px solid #cdcdcd;
+}
+.main_refer .table table tr th {
+    background-color: #f5f5f5;
+    font-weight: normal;
+}
+.main_refer .table table tr th,
+.main_refer .table table tr td {
+    border: 1px solid #cdcdcd;
+    padding: 10px;
+}
+.main_refer .table table tr td:nth-child(3){
+    text-align: left;
+}
+.main_refer .table table tr:hover {
+    background-color: #00db7131;
+}
+.main_refer .table table tr a:hover {
+    text-decoration: underline;
+}
+.main_refer .table table tr td span {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* 미디어쿼리 */
+@media (max-width: 900px){
+    #header {
+        display: none;
+    }
+    .main_header h2 {
+        font-size: 40px;
+        padding-top: 40px;
+    }
+    .main_header h2 em {
+        font-size: 40px;
+    }
+    .main_refer {
+        border: 0;
+        padding: 0;
+    }
+    .main_refer .table {
+        overflow-x: auto;
+    }
+    .main_refer .table table {
+        min-width: 900px;
+    }
+    .main_refer .table table tr th,
+    .main_refer .table table tr td {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 460px){
+    #header {
+        display: none;
+    }
+    .main_header h2 {
+        font-size: 30px;
+        padding-top: 20px;
+    }
+    .main_header h2 em {
+        font-size: 30px;
+    }
+}
