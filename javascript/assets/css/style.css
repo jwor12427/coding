@@ -155,7 +155,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 .document .t_box {
     padding: 20px !important;
-    border-color: #f9f9f9;
+    background-color: #dcdcdc;
     margin-bottom: 10px;
     color: #666;
     border-radius: 5px;
