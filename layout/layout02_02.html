@@ -4,47 +4,64 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>레이아웃 유형01</title>
-    <!-- layout01_01 : float 방식 레이아웃 -->
+    <title>레이아웃</title>
     <style>
         * {
             margin: 0;
-            padding: 0;
         }
         body {
-            background-color: #FFF3E0;
+            background-color: #E8F5E9;
         }
         #wrap {
             width: 1200px;
             margin: 0 auto;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+
         }
         #header {
             width: 1200px;
             height: 100px;
-            background-color: #FFE0B2;
+            background-color: #C8E6C9;
         }
         #nav {
             width: 1200px;
             height: 100px;
-            background-color: #FFCC80;
+            background-color: #A5D6A7;
         }
         #aside {
-            width: 400px;
+            width: 300px;
             height: 780px;
-            background-color: #FFB74D;
-            float: left;            /* 정렬 기능 */
+            background-color: #81C784;
+        }
+        #article {
+            width: 600px;
+            height: 780px;
+            background-color: #66BB6A;
         }
         #section {
-            width: 800px;
+            width: 300px;
             height: 780px;
-            background-color: #FFA726;
-            float: left;
+            background-color: #4CAF50;
         }
         #footer {
             width: 1200px;
             height: 100px;
-            background-color: #FF9800;
-            clear: both;        /* float에 버그가 생겨서 사용 */
+            background-color: #43A047;
+        }
+        @media (max-width:1220px) {
+            #wrap {
+                width: 96%;
+            }
+        }
+        @media (max-width:768px) {
+            #wrap {
+                width: 100%;
+            }
+            #aside {
+                
+            }
         }
     </style>
 </head>
@@ -53,6 +70,7 @@
         <div id="header"></div>
         <div id="nav"></div>
         <div id="aside"></div>
+        <div id="article"></div>
         <div id="section"></div>
         <div id="footer"></div>
     </div>
