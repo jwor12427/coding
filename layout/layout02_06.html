@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>레이아웃 유형02</title>
-    <!-- layout02 : grid 방식 레이아웃 -->
+    <!-- layout02 : grid 방식 레이아웃(반응형) -->
     <style>
         * {
             margin: 0;
@@ -30,9 +30,9 @@
         }
         #main {
             width: 100%; 
-            display: grid;      /* flex와 마찬가지로 main에 선언 */
-            grid-template-columns: 30% 40% 30%;    /* 영역 설정, main에 묶어서 따로 영역 지정x */
-            grid-template-rows: 780px;      /* grid는 부모가 다 처리 해주기 때문에 자식에게 영역설정x */
+            display: grid;      
+            grid-template-columns: 30% 40% 30%;    
+            grid-template-rows: 780px;      
         }
         #aside {
             background-color: #81C784;
@@ -47,6 +47,45 @@
             width: 100%;
             height: 100px;
             background-color: #43A047;
+        }
+
+        /* 미디어 쿼리 */
+        @media(max-width:1300px) {
+            #wrap {
+                width: 96%;
+            }
+        }
+        @media(max-width:768px) {
+            #wrap {
+                width: 100%;
+            }
+            #main {    
+                grid-template-areas:    /* grid영역 설정을 해줌, 위치가 바뀌므로 */
+                "aside section"
+                "article article";
+                grid-template-columns: 30% 70%;    
+                grid-template-rows: 680px 150px;      
+            }
+            #aside {                    /* grid-area 각각 선포 해줌 */
+                grid-area: aside;
+            }
+            #section {
+                grid-area: section;
+            }
+            #article {
+                grid-area: article;
+            }
+
+        }
+        @media(max-width:480px) {
+            #main {    
+                grid-template-areas:    
+                "aside"
+                "section"
+                "article";
+                grid-template-columns: 100%;    
+                grid-template-rows: 200px 430px 150px;      
+            }
         }
     </style>
 </head>
