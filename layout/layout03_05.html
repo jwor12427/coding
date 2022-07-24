@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>레이아웃 유형03</title>
+    <!-- layout03_05 : grid 방식 레이아웃 -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            background-color: #E1F5FE;
+        }
+        #wrap {
+            width: 1200px;
+            margin: 0 auto;
+        }
+        #header {
+            height: 100px;
+            background-color: #B3E5FC;
+        }
+        #nav {
+            height: 100px;
+            background-color: #81D4FA;
+        }
+        #main {
+            display: grid;
+            grid-template-areas: 
+            "aside article1 article1"
+            "aside article2 article2"
+            "aside article3 article3"
+            ;
+            grid-template-columns: 300px 900px;
+            grid-template-rows: 260px 260px 260px;
+        }
+        #aside {
+            grid-area: aside;
+            background-color: #4FC3F7;
+        }
+        #article1 {
+            grid-area: article1;
+            background-color: #29B6F6;
+        }
+        #article2 {
+            grid-area: article2;
+            background-color: #03A9F4;
+        }
+        #article3 {
+            grid-area: article3;
+            background-color: #039BE5;
+        }
+        #footer {
+            height: 100px;
+            background-color: #0288D1;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div id="header"></div>
+        <div id="nav"></div>
+        <div id="main">    
+            <div id="aside"></div>
+            <div id="article1"></div>
+            <div id="article2"></div>
+            <div id="article3"></div>
+        </div>
+        <div id="footer"></div>
+    </div>
+</body>
+</html>
