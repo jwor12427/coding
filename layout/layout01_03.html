@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>레이아웃 유형01</title>
-    <!-- layout01_03 : flex 방식 레이아웃(반응형) -->
+    <!-- layout01_02 : flex 방식 레이아웃 -->
     <style>
         * {
             margin: 0;
@@ -21,52 +21,35 @@
             flex-wrap: wrap;
         }
         #header {
-            width: 100%;            /* width 값 퍼센트로 바꾸기 */
+            width: 1200px;
             height: 100px;
             background-color: #FFE0B2;
         }
         #nav {
-            width: 100%;
+            width: 1200px;
             height: 100px;
             background-color: #FFCC80;
         }
         #aside {
-            width: 30%;
+            width: 400px;
             height: 780px;
             background-color: #FFB74D;
         }
         #section {
-            width: 70%;
+            width: 800px;
             height: 780px;
             background-color: #FFA726;
         }
         #footer {
-            width: 100%;
+            width: 1200px;
             height: 100px;
             background-color: #FF9800;
         }
 
         /* 미디어 쿼리 */
-        @media(max-width:1300px) {
-            #wrap {
-                width: 96%;
-            }
-        }
-        @media(max-width:780px) {
-            #wrap {
-                width: 100%;
-            }
-        }
-        @media(max-width:480px) {
-            #aside {
-                width: 100%;
-                height: 300px;
-            }
-            #section {
-                width: 100%;
-                height: 480px;
-            }
-        }
+        @media(max-width:1300px) {}
+        @media(max-width:780px) {}
+        @media(max-width:480px) {}
     </style>
 </head>
 <body>

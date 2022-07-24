@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>레이아웃</title>
-    <!-- layout01_01 : float 방식 레이아웃(반응형) -->
+    <title>레이아웃 유형01</title>
+    <!-- layout01 : float 방식 레이아웃 -->
     <style>
-                * {
+        * {
             margin: 0;
             padding: 0;
         }
@@ -15,58 +15,36 @@
             background-color: #FFF3E0;
         }
         #wrap {
-            width: 1200px;      /* 부모 속성은 100%는 할 수 없음 */
+            width: 1200px;
             margin: 0 auto;
         }
         #header {
-            width: 100%;        /* 1200px과 동일 */
+            width: 1200px;
             height: 100px;
             background-color: #FFE0B2;
         }
         #nav {
-            width: 100%;
+            width: 1200px;
             height: 100px;
             background-color: #FFCC80;
         }
         #aside {
-            width: 30%;
+            width: 400px;
             height: 780px;
             background-color: #FFB74D;
             float: left;            /* 정렬 기능 */
         }
         #section {
-            width: 70%;
+            width: 800px;
             height: 780px;
             background-color: #FFA726;
             float: left;
         }
         #footer {
-            width: 100%;
+            width: 1200px;
             height: 100px;
             background-color: #FF9800;
             clear: both;        /* float에 버그가 생겨서 사용 */
-        }
-
-        /* 미디어 쿼리 */
-        @media(max-width:1300px) {
-            #wrap {
-                width: 96%;        /* 화면크기를 1200px으로 바꿈, 여백을 위해 100% x */
-            }
-        }
-        @media(max-width:768px) {
-            #wrap {
-                width: 100%;
-            }
-        }
-        @media(max-width:480px) {
-            #aside {
-                width: 100%;
-                height: 300px;
-            }
-            #section {
-                width: 100%;
-                height: 480px;
-            }
         }
     </style>
 </head>

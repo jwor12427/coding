@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>레이아웃 유형01</title>
-    <!-- layout01_03 : flex 방식 레이아웃(반응형) -->
+    <!-- layout01_05 : grid 방식 레이아웃(반응형) -->
     <style>
         * {
             margin: 0;
@@ -17,33 +17,35 @@
         #wrap {
             width: 1200px;
             margin: 0 auto;
-            display: flex;      /* 부모한테 설정 해주는 것 */
-            flex-wrap: wrap;
+            display: grid;          /* 부모에게 설정 */
+            grid-template-areas: 
+                "header header"
+                "nav nav"
+                "aside section"
+                "footer footer";
+            grid-template-columns: 30% 70%;     /* %로 설정하기 */
+            grid-template-rows: 100px 100px 780px 100px;
+            /* grid는 부모가 설정할 수 있음 (복잡한 레이아웃 편하게 할 수 있음) */
         }
         #header {
-            width: 100%;            /* width 값 퍼센트로 바꾸기 */
-            height: 100px;
             background-color: #FFE0B2;
+            grid-area: header;
         }
         #nav {
-            width: 100%;
-            height: 100px;
             background-color: #FFCC80;
+            grid-area: nav;
         }
         #aside {
-            width: 30%;
-            height: 780px;
             background-color: #FFB74D;
+            grid-area: aside;
         }
         #section {
-            width: 70%;
-            height: 780px;
             background-color: #FFA726;
+            grid-area: section;
         }
         #footer {
-            width: 100%;
-            height: 100px;
             background-color: #FF9800;
+            grid-area: footer;
         }
 
         /* 미디어 쿼리 */
@@ -52,19 +54,21 @@
                 width: 96%;
             }
         }
-        @media(max-width:780px) {
+        @media(max-width:768px) {
             #wrap {
                 width: 100%;
             }
         }
         @media(max-width:480px) {
-            #aside {
-                width: 100%;
-                height: 300px;
-            }
-            #section {
-                width: 100%;
-                height: 480px;
+            #wrap {
+                grid-template-areas:        /* grid영역만 다시 설정 하면 됌 */
+                "header"
+                "nav"
+                "aside"
+                "section"
+                "footer";       /* 1단 구조로 변경 */
+                grid-template-columns: 100%;     
+                grid-template-rows: 100px 100px 300px 480px 100px;
             }
         }
     </style>

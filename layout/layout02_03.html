@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>레이아웃 유형02</title>
-    <!-- layout02 : float 방식 레이아웃 -->
+    <!-- layout02 : flex 방식 레이아웃 -->
     <style>
         * {
             margin: 0;
@@ -19,56 +19,49 @@
             margin: 0 auto;
         }
         #header {
-            width: 1200px;
             height: 100px;
             background-color: #C8E6C9;
         }
         #nav {
-            width: 1200px;
             height: 100px;
             background-color: #A5D6A7;
         }
         #main {
-            width: 1200px;      /* 자식이 height값이 있어서 부모는 필요 없음 */
-            overflow: hidden;       /* clear : both; 와 비슷한 기능 */
+            display: flex;      /* main에다가 flex넣어주면 끝! */
         }
         #aside {
-            width: 300px;
+            width: 30%;
             height: 780px;
             background-color: #81C784;
-            float: left;
         }
         #section {
-            width: 600px;
+            width: 40%;
             height: 780px;
             background-color: #66BB6A;
-            float: left;
         }
         #article {
-            width: 300px;
+            width: 30%;
             height: 780px;
             background-color: #4CAF50;
-            float: left;
         }
         #footer {
-            width: 1200px;
             height: 100px;
             background-color: #43A047;
-            /* clear: both;            버그가 생기기 때문에 */
         }
     </style>
 </head>
 <body>
-    <div id="wrap">
-        <div id="header"></div>
-        <div id="nav"></div>
-        <div id="main">                 
+    <!-- 시멘틱 태그로 바꿔줌 -->
+    <div id="wrap">         
+        <header id="header"></header>
+        <nav id="nav"></nav>
+        <main id="main">                 
             <!-- 구조가 한눈에 알아 볼 수 있게 묶어줌 -->
-            <div id="aside"></div>
-            <div id="section"></div>
-            <div id="article"></div>
-        </div>
-        <div id="footer"></div>
+            <aside id="aside"></aside>
+            <section id="section"></section>
+            <article id="article"></article>
+        </main>
+        <footer id="footer"></footer>
     </div>
 </body>
 </html>

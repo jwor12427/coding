@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>레이아웃 유형02</title>
-    <!-- layout02 : float 방식 레이아웃 -->
+    <!-- layout02 : grid 방식 레이아웃 -->
     <style>
         * {
             margin: 0;
@@ -19,42 +19,40 @@
             margin: 0 auto;
         }
         #header {
-            width: 1200px;
+            width: 100%;
             height: 100px;
             background-color: #C8E6C9;
         }
         #nav {
-            width: 1200px;
+            width: 100%;
             height: 100px;
             background-color: #A5D6A7;
         }
         #main {
-            width: 1200px;      /* 자식이 height값이 있어서 부모는 필요 없음 */
-            overflow: hidden;       /* clear : both; 와 비슷한 기능 */
+            width: 100%;     
         }
         #aside {
-            width: 300px;
+            width: 30%;
             height: 780px;
             background-color: #81C784;
             float: left;
         }
         #section {
-            width: 600px;
+            width: 40%;
             height: 780px;
             background-color: #66BB6A;
             float: left;
         }
         #article {
-            width: 300px;
+            width: 30%;
             height: 780px;
             background-color: #4CAF50;
             float: left;
         }
         #footer {
-            width: 1200px;
+            width: 30%;
             height: 100px;
             background-color: #43A047;
-            /* clear: both;            버그가 생기기 때문에 */
         }
     </style>
 </head>
