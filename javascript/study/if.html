@@ -91,25 +91,7 @@
     document.write(adissionFee);
 }
 </code></pre>
-                    <div class="result">
-                        <details>
-                            <summary>결과보기</summary>
-                            <div class="sample01_result">
-                            </div>
-                            <script>
-                                // var age = prompt('나이입력',''); //''는 작은 따옴표 두개 입니다.
-                                var adissionFee = '';
-                                if (age < 13 || age >= 65) {
-                                    adissionFee = '2000원';
-                                } else if (age >= 13 && age < 20) {
-                                    adissionFee = '4000원';
-                                } else {
-                                    adissionFee = '6000원';
-                                }
-                                document.write(adissionFee);
-                            </script>
-                        </details>
-                    </div>
+
                 </div>
                 <!-- // -->
                 <h3 class="t_tit2">중첩 if문</h3>
@@ -117,7 +99,7 @@
                     if문은 if문안에 또 다른 if문을 중첩하여 사용할 수 있습니다.
                 </p>
             <div class="t_code">
-<pre><code>{
+<pre><code >{
 var html = Number(prompt('html 점수입력', ''));
 var css = Number(prompt('css 점수입력', ''));
 var javascript = Number(prompt('javascript 점수입력', ''));
@@ -139,37 +121,49 @@ if (avg &gt;= 60) {
 document.write(comment);
 }
 </code></pre>
-                <div class="result">
-                    <details>
-                        <summary>결과보기</summary>
-                        <div class="sample01_result">
-                        </div>
-                        <script>
-                        {
-                            // var html = Number(prompt('html 점수입력', ''));
-                            // var css = Number(prompt('css 점수입력', ''));
-                            // var javascript = Number(prompt('javascript 점수입력', ''));
-                            var avg = (html + css + javascript) / 3;
-                            var comment;
-                            if (avg >= 60) {
-                                if (html < 40) {
-                                    comment = 'HTML' + '40점 미만 불합격';
-                                } else if (css < 40) {
-                                    comment = 'CSS' + '40점 미만 불합격';
-                                } else if (javascript < 40) {
-                                    comment = 'JAVASCRIPT' + '40점 미만 불합격';
-                                } else {
-                                    comment = '평균' + avg + '점 합격';
-                                }
-                            } else {
-                                comment = '평균' + avg + '점 불합격';
-                            }
-                            document.write(comment)
-                        }
-                        </script>
-                    </details>
-                </div>
+
             </div>
+            <!-- // -->
+            <h3 class="t_tit2">switch문</h3>
+            <p class="t_desc">
+                switch의 값과 case의 값들을 하나씩 비교하여 일치하는 case를 실행해 줍니다. 
+                if문과 다르게 특정조건에 만족 했을 때 {}(중괄호)를 스스로 빠져나가지 못합니다. 따라서 <i>break명령어</i>를 주어 
+                switch case 문의 {}(중괄호)를 빠져 나가도록 합니다. 
+                default는 switch의 값과 일치하는 값이 없을 때 실행합니다.
+            </p>
+            <p class="t_box">
+                switch (값) { <br>
+                    &nbsp;&nbsp;case 값1 : <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;실행문; <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;break; <br>
+                    &nbsp;&nbsp;case 값2 : <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;실행문; <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;break; <br>
+                    &nbsp;&nbsp;default : <br>
+                    &nbsp;&nbsp;실행문; <br>
+            </p>
+            <div class="t_code">
+<pre><code class="language-js">{
+var classification = prompt('아동, 청소년, 성인 중 선택 입력', '');
+switch (classification) {
+    case '아동':
+        classification += ': 입장료 무료';
+        break;
+    case '청소년':
+        classification += ': 입장료 2,000원'
+        break;
+    case '성인':
+        classification += ': 입장료 5,000원'
+        break;
+    default:
+        classification = '입력 값을 다시 확인하세요';
+}
+document.write(classification);
+}
+</code></pre>
+            </div>
+
+
             <!-- // -->
         </div>
     </main>

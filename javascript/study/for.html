@@ -127,55 +127,7 @@ for(let i=2; i&lt;=100; i+=2){   // i += 2 --> i = i + 2
                 </div>
             </div>
             <!-- // -->
-            <h3 class="t_tit2">for문을 이용해서 테이블 출력하기</h3>
-            <p class="t_desc">
-                중첩 for문을 이용해서 테이블을 만들 수 있습니다.
-            </p>
-            <div class="t_code">
-<pre><code class="language-js">//for문을 이용해서 테이블을 출력하기(100칸)
-let table = "&lt;table&gt;";
-
-    for(let i=0; i&lt;10; i++){
-        table += "&lt;tr&gt;";
-        for(let j=0; j&lt;10; j++){       
-            table += "&lt;td&gt;👻&lt;/td&gt;";
-
-        }
-    table += "&lt;/tr&gt;";
-    }
-
-    table += "&lt;/table&gt;";
-
-document.write(table);
-</pre></code>
-            </div>
-            <div>
-                <details>
-                    <summary>결과 확인하기</summary>
-                    <div class="result01"></div>
-                </details>
-                <style>
-                    .testTable tr td {
-                        border: 1px solid #000;
-                    }
-                </style>
-                <script>
-                    let table = "<table class='testTable'>";
-                
-                        for(let i=0; i<10; i++){
-                            table += "<tr>";
-                            for(let j=0; j<10; j++){       
-                                table += "<td>👻</td>";
-                
-                            }
-                            table += "</tr>";
-                        }
-                
-                        table += "</table>";
-                    document.querySelector(".result01").innerHTML = table;
-                </script>
-            </div>
-            <!-- // -->
+           
             <h3 class="t_tit2">for문을 이용해서 1~100까지 출력(5의배수, 7의배수)</h3>
             <p class="t_desc">
                 for문을 이용해서 5의배수와 7의배수를 출력 할 수 있습니다.
@@ -350,6 +302,55 @@ for(let i = 6; i&lt;=6; i++) {
                         }
                     </script>
                 </details>
+            </div>
+            <!-- // -->
+            <h3 class="t_tit2">for문을 이용해서 테이블 출력하기</h3>
+            <p class="t_desc">
+                중첩 for문을 이용해서 테이블을 만들 수 있습니다.
+            </p>
+            <div class="t_code">
+<pre><code class="language-js">//for문을 이용해서 테이블을 출력하기(100칸)
+let table = "&lt;table&gt;";
+
+    for(let i=0; i&lt;10; i++){
+        table += "&lt;tr&gt;";
+        for(let j=0; j&lt;10; j++){       
+            table += "&lt;td&gt;👻&lt;/td&gt;";
+
+        }
+    table += "&lt;/tr&gt;";
+    }
+
+    table += "&lt;/table&gt;";
+
+document.write(table);
+</pre></code>
+            </div>
+            <div>
+                <details>
+                    <summary>결과 확인하기</summary>
+                    <div class="result01"></div>
+                </details>
+                <style>
+                    .testTable tr td {
+                        border: 1px solid #000;
+                    }
+                </style>
+                <script>
+                    let table = "<table class='testTable'>";
+                
+                        for(let i=0; i<10; i++){
+                            table += "<tr>";
+                            for(let j=0; j<10; j++){       
+                                table += "<td>👻</td>";
+                
+                            }
+                            table += "</tr>";
+                        }
+                
+                        table += "</table>";
+                    document.querySelector(".result01").innerHTML = table;
+                </script>
             </div>
             <!-- // -->
         </div>
