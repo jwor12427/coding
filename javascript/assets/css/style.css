@@ -179,7 +179,9 @@ h1, h2, h3, h4, h5, h6 {
 .document .t_table .ce {
     text-align: center;
 }
-
+#codepen {
+    margin-bottom: 50px;
+}
 
 /* 미디어쿼리 */
 @media (max-width: 800px) {
