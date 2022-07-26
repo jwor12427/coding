@@ -7,6 +7,7 @@
     <title>자바스크립트 : 데이터 실행하기</title>
  
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/dracula.css">
 </head>
 <body>
     <header id="header">
@@ -33,6 +34,7 @@
                 <li><a href="study/for.html">반복문</a></li>
                 <li><a href="study/if.html">조건문</a></li>
                 <li><a href="study/type.html">데이터 타입</a></li>
+                <li><a href="study/function.html">함수</a></li>
             </ul>
         </nav>
     </header>
@@ -72,8 +74,253 @@
                 <li><a href="#sample29">29. 클래스 상속</a></li>
             </ul>
         </div>
-        <div class="main_script"></div>
-        <div class="main_desc"></div>
+        <div class="main_sample">
+            <div id="sample01" class="sample">
+                <h3>01. 선언적 함수</h3>
+                <p></p>
+                <div class="script">
+<pre><code class="language-js">function func() {
+    document.write("함수가 실행되었습니다.1");
+}
+func();         //실행문이 필요함
+</code></pre>
+                </div>
+                <div class="result">
+                    <details>
+                        <summary>결과보기</summary>
+                        <div class="sample01_result">
+                            <script>
+                                {
+                                    function func() {
+                                        document.write("함수가 실행되었습니다.1<br>");
+                                    }
+                                    func();         //실행문이 필요함
+                                }
+                            </script>
+                        </div>
+                    </details>
+                </div>
+            </div>
+            <!-- //sample01 -->
+            <div id="sample02" class="sample">
+                <h3>02. 익명 함수</h3>
+                <p></p>
+                <div class="script">
+<pre><code class="language-js">//데이터 타입(자료형) --> 타입스크립트
+// const x = 100
+// const x1 = "100"
+// const x2 = []
+// const x3 = {}
+// const x4 = null, undefiend
+// const x5 = function(){}
+// const x6 = true, false
+
+const func = function(){       //함수 이름이 없고 변수만 있어서 익명함수
+    document.write("함수가 실행되었습니다.2");               
+} 
+func();     
+</code></pre>
+                </div>
+                <div class="result">
+                    <details>
+                        <summary>결과보기</summary>
+                        <div class="sample02_result">
+                            <script>
+                                {
+                                    const func = function(){       
+                                        document.write("함수가 실행되었습니다.2<br>");
+                                    }
+                                    func();
+                                }  
+                            </script>
+                        </div>
+                    </details>
+                </div>
+            </div>
+            <!-- //sample02 -->
+            <div id="sample03" class="sample">
+                <h3>03. 매개변수 함수</h3>
+                <p></p>
+                <div class="script">
+<pre><code class="language-js">function func(str){         //func(인자 = 매개변수)를 넣어줘서 출력
+    document.write(str);
+}
+func("함수가 실행되었습니다.3");
+</code></pre>
+                </div>
+                <div class="result">
+                    <details>
+                        <summary>결과보기</summary>
+                        <div class="sample03_result">
+                            <script>
+                                {
+                                    function func(str){         
+                                        document.write(str);
+                                    }
+                                    func("함수가 실행되었습니다.3");
+                                }
+                            </script>
+                        </div>
+                    </details>
+                </div>
+            </div>
+            <!-- //sample03 -->
+            <div id="sample04" class="sample">
+                <h3>04. 리턴값 함수</h3>
+                <p></p>
+                <div class="script">
+<pre><code class="language-js">function func(){
+    const str = "함수가 실행되었습니다.4";
+    return str;         //실행문은 아니지만 결과값을 저장
+}
+document.write(func());     //return이 있으므로 실행
+</code></pre>
+                </div>
+                <div class="result">
+                    <details>
+                        <summary>결과보기</summary>
+                        <div class="sample04_result">
+                            <script>
+                                {
+                                    function func(){
+                                        const str = "함수가 실행되었습니다.4";
+                                        return str;         
+                                    }
+                                    document.write(func()); 
+                                }
+                            </script>
+                        </div>
+                    </details>
+                </div>
+            </div>
+            <!-- //sample04 -->
+            <div id="sample05" class="sample">
+                <h3>05. 화살표 함수 : 선언적 함수</h3>
+                <p></p>
+                <div class="script">
+<pre><code class="language-js">func = () => {          //function을 없애주고 사용
+    document.write("함수가 실행되었습니다.5");
+    }
+func();
+
+func = () => document.write("함수가 실행되었습니다.5");
+func();         //중괄호 생략 가능
+</code></pre>
+                </div>
+                <div class="result">
+                    <details>
+                        <summary>결과보기</summary>
+                        <div class="sample05_result">
+                            <script>
+                                {
+                                    func = () => {          
+                                        document.write("함수가 실행되었습니다.5<br>");
+                                    }
+                                    func();
+
+                                    func = () => document.write("함수가 실행되었습니다.5<br>");
+                                    func();         
+                                }
+                            </script>
+                        </div>
+                    </details>
+                </div>
+            </div>
+            <!-- //sample05 -->
+            <div id="sample06" class="sample">
+                <h3>05. 화살표 함수 : 선언적 함수</h3>
+                <p></p>
+                <div class="script">
+<pre><code class="language-js">const func = () => {
+    document.write("함수가 실행되었습니다.6");
+}
+func();
+</code></pre>
+                </div>
+                <div class="result">
+                    <details>
+                        <summary>결과보기</summary>
+                        <div class="sample06_result">
+                            <script>
+                                {
+                                    const func = () => document.write("함수가 실행되었습니다.6");
+                                    func();
+                                }
+                            </script>
+                        </div>
+                    </details>
+                </div>
+            </div>
+            <!-- //sample06 -->
+            <div id="sample07" class="sample">
+                <h3>07. 화살표 함수 : 매개변수</h3>
+                <p></p>
+                <div class="script">
+<pre><code class="language-js">func = (str) => {
+    document.write(str);
+}
+func("함수가 실행되었습니다.7");
+
+func = (str) => document.write(str);        //const가 앞에 있어도 상관없음
+func("함수가 실행되었습니다.7");
+
+func = str => document.write(str);      //변수가 하나일때 ()도 없앨 수 있음
+func("함수가 실행되었습니다.7");
+</code></pre>
+                </div>
+                <div class="result">
+                    <details>
+                        <summary>결과보기</summary>
+                        <div class="sample07_result">
+                            <script>
+                                {
+                                    func = (str) => {
+                                        document.write(str);
+                                    }
+                                    func("함수가 실행되었습니다.7<br>");
+
+                                    func = (str) => document.write(str);        
+                                    func("함수가 실행되었습니다.7<br>");
+
+                                    func = str => document.write(str);      
+                                    func("함수가 실행되었습니다.7<br>");
+                                }
+                            </script>
+                        </div>
+                    </details>
+                </div>
+            </div>
+            <!-- //sample07 -->
+            <div id="sample08" class="sample">
+                <h3>08. 화살표 함수 : 리턴값 함수</h3>
+                <p></p>
+                <div class="script">
+<pre><code class="language-js">func = () => {
+    const str = "함수가 실행되었습니다.8";
+    return str;
+}
+document.write(func());
+</code></pre>
+                </div>
+                <div class="result">
+                    <details>
+                        <summary>결과보기</summary>
+                        <div class="sample08_result">
+                            <script>
+                                {
+                                    func = () => {
+                                        const str = "함수가 실행되었습니다.8";
+                                        return str;
+                                    }
+                                    document.write(func());
+                                }
+                            </script>
+                        </div>
+                    </details>
+                </div>
+            </div>
+            <!-- //sample08 -->
+        </div>
     </main>
     <!-- //main -->
 
@@ -81,5 +328,119 @@
         <a href="mailto:jwor124@naver.com">jwor124@naver.com</a>
     </footer>
     <!-- //footer -->
+    <script src="assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+    <!-- script -->
+
+    <script>
+        //변수(데이터 저장), 배열(데이터 저장- 여러개), 
+        //객체(데이터 저장 - 키와 값) --> 함수(실행문)
+        //01. 선언적 함수
+        {
+            // function func() {
+            //     document.write("함수가 실행되었습니다.1<br>");
+            // }
+            // func();         //실행문이 필요함
+        }
+        //02. 익명 함수
+        {
+            //데이터 타입(자료형) --> 타입스크립트
+            // const x = 100
+            // const x1 = "100"
+            // const x2 = []
+            // const x3 = {}
+            // const x4 = null, undefiend
+            // const x5 = function(){}
+            // const x6 = true, false
+
+            // const func = function(){       //함수 이름이 없고 변수만 있어서 익명함수
+            //     document.write("함수가 실행되었습니다.2<br>");               
+            // } 
+            // func();     
+        }
+        //03. 매개변수 함수
+        // 변수 : 지역변수 + 전역변수 + 매개변수
+        {
+            // function func(str){         //func(인자 = 매개변수)를 넣어줘서 출력
+            //     document.write(str);
+            // }
+            // func("함수가 실행되었습니다.3<br>");
+        }
+        //04. 리턴값 함수
+        {
+            // function func(){
+            //     const str = "함수가 실행되었습니다.4<br>";
+            //     return str;         //실행문은 아니지만 결과값을 저장
+            // }
+            // document.write(func());     //return이 있으므로 실행
+        }   
+        //ECMAscript6(es6) -> 화살표 함수, let, const가 나왔음
+        //05.화살표 함수(선언적 함수)
+        {
+            // function func() {
+            //     document.write("함수가 실행되었습니다.5");
+            // }
+            // func(); 
+
+            // func = () => {          //function을 없애주고 사용
+            //     document.write("함수가 실행되었습니다.5<br>");
+            // }
+            // func();
+
+            // func = () => document.write("함수가 실행되었습니다.5<br>");
+            // func();         //중괄호 생략 가능
+        }
+        //06.화살표 함수(익명 함수)
+        {
+            // const func = function(){
+            //     document.write("함수가 실행되었습니다.6<br>");
+            // }
+            // func();
+
+            // const func = () => {
+            //     document.write("함수가 실행되었습니다.6<br>");
+            // }
+            // func();
+
+                // const func = () => document.write("함수가 실행되었습니다.6<br>");
+                // func();
+        }
+        //07.화살표 함수(매개변수 함수)
+        {
+            // let str; 생략가능
+            // function func (str) {
+            //     document.write(str);
+            // }
+            // func("함수가 실행되었습니다.7<br>");
+
+            // func = (str) => {
+            //     document.write(str);
+            // }
+            // func("함수가 실행되었습니다.7<br>");
+
+            // func = (str) => document.write(str);        //const가 앞에 있어도 상관없음
+            // func("함수가 실행되었습니다.7<br>");
+
+            // func = str => document.write(str);      //변수가 하나일때 ()도 없앨 수 있음
+            // func("함수가 실행되었습니다.7<br>");
+        }
+        //08.화살표 함수(리턴값 함수)
+        {
+            // function func(){
+            //     const str = "함수가 실행되었습니다.8<br>";
+            //     return str;
+            // }
+            // document.write(func());
+
+            // func = () => {
+            //     const str = "함수가 실행되었습니다.8<br>";
+            //     return str;
+            // }
+            // document.write(func());
+        }
+
+    </script>
 </body>
 </html>

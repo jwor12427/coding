@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML 레퍼런스 북</title>
+
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/dracula.css">
+
+    <!-- 구글 아이콘 -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+<body>
+    <header id="header">
+        <h1><a href="#">라인 중학교 1학년 코딩반</a></h1>
+        <span>이름 : 정은비</span>
+    </header>
+    <!-- //header -->
+
+    <main id="main">
+        <header class="main_header">
+            <h2>HTML <em>레퍼런스 북</em></h2>
+        </header>
+        <nav class="main_menu">
+            <ul>
+                <li><a href="alphabet.html">알파벳</a></li>
+                <li><a href="basic.html">기초 문법</a></li>
+                <li><a href="block.html">블록 구조/인라인 구조</a></li>
+                <li><a href="web.html">웹표준/웹접근성/웹호환성</a></li>
+                <li><a href="sementic.html">시멘틱 태그</a></li>
+                <li><a href="seo.html">검색엔진시스템(SEO)</a></li>
+            </ul>
+            <ul>
+                <li><a href="layout01.html">레이아웃01</a></li>
+                <li class="active"><a href="layout02.html">레이아웃02</a></li>
+                <li><a href="layout03.html">레이아웃03</a></li>
+                <li><a href="layout04.html">레이아웃04</a></li>
+                <li><a href="layout05.html">레이아웃05</a></li>
+            </ul>
+        </nav>
+        <div class="main_refer">
+            <div class="document">
+                <h2 class="t_tit">레이아웃02</h2>
+                <p class="t_desc">
+                    이번 레이아웃은 전체 영역이 들어간 구조입니다.
+                    실제 사이트에서 이런 구조를 많이 사용하며, 컨테이너를
+                    만들어서 가운데 영역을 설정합니다.
+                </p>
+                <div class="t_iframe">
+                    <iframe src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FOtbY5nSBxrTAsgJUOk5Nlc%2F%25EB%25A0%2588%25EC%259D%25B4%25EC%2595%2584%25EC%259B%2583%3Fnode-id%3D41%253A37" allowfullscreen></iframe>
+                </div>
+                <h3 class="t_tit2">float을 이용한 레이아웃</h3>
+                <p class="t_desc2">
+                    이번 레이아웃은 전체 영역이 들어간 구조입니다.
+                    실제 사이트에서 이런 구조를 많이 사용하며, 컨테이너를
+                    만들어서 가운데 영역을 설정합니다.
+                </p>
+                <div class="t_code">
+<pre><code class="language-css">* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-color: #E8F5E9;
+}
+#wrap {
+    width: 1200px;
+    margin: 0 auto;
+}
+#header {
+    width: 1200px;
+    height: 100px;
+    background-color: #C8E6C9;
+}
+#nav {
+    width: 1200px;
+    height: 100px;
+    background-color: #A5D6A7;
+}
+#main {
+    width: 1200px;      /* 자식이 height값이 있어서 부모는 필요 없음 */
+    overflow: hidden;       /* clear : both; 와 비슷한 기능 */
+}
+#aside {
+    width: 300px;
+    height: 780px;
+    background-color: #81C784;
+    float: left;
+}
+#section {
+    width: 600px;
+    height: 780px;
+    background-color: #66BB6A;
+    float: left;
+}
+#article {
+    width: 300px;
+    height: 780px;
+    background-color: #4CAF50;
+    float: left;
+}
+#footer {
+    width: 1200px;
+    height: 100px;
+    background-color: #43A047;
+    /* clear: both;            버그가 생기기 때문에 */
+}                   
+</code></pre>
+                </div>
+                <h4 class="t_tit3">결과</h4>
+                <div class="t_iframe">
+                    <iframe  scrolling="no" title="레이아웃2-float" src="https://codepen.io/jwor12427/embed/yLKomMM?default-tab=result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                        See the Pen <a href="https://codepen.io/jwor12427/pen/yLKomMM">
+                        레이아웃2-float</a> by jwor12427 (<a href="https://codepen.io/jwor12427">@jwor12427</a>)
+                        on <a href="https://codepen.io">CodePen</a>.
+                      </iframe>
+                </iframe>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- //main -->
+
+    <footer id="footer">
+        <a href="mailto:jwor124@naver.com">jwor124@naver.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+</body>
+</html>
