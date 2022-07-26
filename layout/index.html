@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout</title>
+
+    <link href="https://webfontworld.github.io/NanumBarunpen/NanumBarunpen.css" rel="stylesheet">
+
+    
+    <style>
+        /* 리셋 */
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'NanumBarunpen';
+        }
+        #main {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            height: 100vh;
+            border: 8px solid #575ab7;
+            box-sizing: border-box;
+        }
+        #main h1 {
+            font-size: 8vw;
+            text-align: center;
+            line-height: 1.4;
+            color: #575ab7;
+            margin-bottom: 4vw;
+        }
+        #main h1 em {
+            display: block;
+            font-style: normal;
+        }
+        #main nav {}
+        #main nav ul {}
+        #main nav ul li {
+            list-style: none;
+            display: inline;
+        }
+        #main nav ul li a {
+            text-decoration: none;
+            color: #575ab7;
+            border: 1px solid #575ab7;
+            font-size: 18px;
+            padding: 1vw;
+        }
+        #main nav ul li a:hover {
+            background-color: #575ab7;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <main id="main">
+        <h1>Layout</h1>
+        <nav>
+            <ul>
+                <li><a href="layout01_02.html">레이아웃 유형01</a></li>
+                <li><a href="layout02_02.html">레이아웃 유형02</a></li>
+                <li><a href="layout03_02.html"> 레이아웃 유형03</a></li>
+            </ul>
+        </nav>
+    </main>
+</body>
+</html>
