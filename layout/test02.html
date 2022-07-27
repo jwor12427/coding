@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+       #wrap {
+            width: 1200px;
+            margin: 0 auto;
+            font-size: 40px;
+       }
+       #header {
+            width: 1200px;
+            height: 100px;
+            background-color: #888;
+            overflow: hidden;
+       }
+       #header .logo {
+            width: 300px;
+            height: 100px;
+            background-color: #8E5555;
+            float: left;
+            line-height: 100px;
+            text-align: center;
+            color: #fff;
+       }
+       #header .meun {
+            width: 900px;
+            height: 100px;
+            background-color: #C87A7A;
+            float: left;
+            line-height: 100px;
+            text-align: center;
+            color: #fff;
+        }
+       #main {
+            width: 1200px;
+            height: 400px;
+            background-color: #777;
+            overflow: hidden;
+       }
+       #main .box1 {
+            width: 800px;
+            height: 400px;
+            background-color: #9E5151;
+            float: left;
+            line-height: 400px;
+            text-align: center;
+            color: #fff;
+       }
+       #main .box2 {
+            width: 400px;
+            height: 400px;
+            background-color: #952525;
+            float: left;
+            line-height: 400px;
+            text-align: center;
+            color: #fff;
+       }
+       #section {
+            width: 1200px;
+            height: 300px;
+            background-color: #666;
+            overflow: hidden;
+       }
+       #section .section1 {
+            width: 400px;
+            height: 300px;
+            background-color: #D03232;
+            float: left;
+            color: #fff;
+            line-height: 300px;
+            text-align: center;
+       }
+       #section .section2 {
+            width: 400px;
+            height: 300px;
+            background-color: #B54040;
+            float: left;
+            line-height: 300px;
+            text-align: center;
+       }
+       #section .section3 {
+            width: 400px;
+            height: 300px;
+            background-color: #6B1E1E;
+            float: left;
+            line-height: 300px;
+            text-align: center;
+       }
+       #footer {
+            width: 1200px;
+            height: 100px;
+            background-color: #555;
+            overflow: hidden;
+       }
+       #footer .footer1 {
+            width: 200px;
+            height: 100px;
+            background-color: #6b1e12;
+            float: left;
+            color: #fff;
+            text-align: center;
+            line-height: 100px;
+       }
+       #footer .footer2 {
+            width: 800px;
+            height: 100px;
+            background-color: #594141;
+            float: left;
+            color: #fff;
+            text-align: center;
+            line-height: 100px;
+       }
+       #footer .footer3 {
+            width: 200px;
+            height: 100px;
+            background-color: #4A2424;
+            float: left;
+            color: #fff;
+            text-align: center;
+            line-height: 100px;
+       }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div id="header">
+            <div class="logo">로고</div>
+            <div class="meun">
+                <script>
+                    {
+                        for( i = 1; i <= 13; i++) {
+                            document.write(i);
+                        }
+                    }
+                </script>
+            </div>
+        </div>
+        <div id="main">
+            <div class="box1">
+                <script>
+                    {
+                        for(i = 1; i<=9; i+=2) {
+                            document.write(i);
+                        }
+                    }
+                </script>
+            </div>
+            <div class="box2">광고</div>
+        </div>
+        <div id="section">
+            <div class="section1">공지사항</div>
+            <div class="section2">갤러리</div>
+            <div class="section3">팝업</div>
+        </div>
+        <div id="footer">
+            <div class="footer1">푸터</div>
+            <div class="footer2">COPYRIGHT</div>
+            <div class="footer3">SNS</div>
+        </div>
+    </div>
+</body>
+</html>

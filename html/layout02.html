@@ -174,7 +174,62 @@ body {
                 </div>
                 <!-- // -->
                 <h3 class="t_tit2">grid를 이용한 레이아웃</h3>
-                
+                <p class="t_desc2">
+                    flex와 마찬가지로 부모 속성에 display: grid를 설정 해 줍니다. 
+                    grid는 부모가 처리 받기 때문에 자식 속성에 따라 영역을 지정 해 주지 않아도 괜찮습니다.
+                </p>
+                <div class="t_code">
+<pre><code class="language-css">* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-color: #E8F5E9;
+}
+#wrap {
+    width: 1200px;
+    margin: 0 auto;
+}
+#header {
+    width: 100%;
+    height: 100px;
+    background-color: #C8E6C9;
+}
+#nav {
+    width: 100%;
+    height: 100px;
+    background-color: #A5D6A7;
+}
+#main {
+    width: 100%; 
+    display: grid;      /* flex와 마찬가지로 main에 선언 */
+    grid-template-columns: 30% 40% 30%;    /* 영역 설정, main에 묶어서 따로 영역 지정x */
+    grid-template-rows: 780px;      /* grid는 부모가 다 처리 해주기 때문에 자식에게 영역설정x */
+}
+#aside {
+    background-color: #81C784;
+}
+#section {
+    background-color: #66BB6A;
+}
+#article {
+    background-color: #4CAF50;
+}
+#footer {
+    width: 100%;
+    height: 100px;
+    background-color: #43A047;
+}                                                                   
+</code></pre>
+                </div>
+                <h4 class="t_tit3">결과</h4>
+                <div class="t_iframe">
+                    <iframe  scrolling="no" title="레이아웃2-grid" src="https://codepen.io/jwor12427/embed/ZExXezp?default-tab=result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                        See the Pen <a href="https://codepen.io/jwor12427/pen/ZExXezp">
+                        레이아웃2-grid</a> by jwor12427 (<a href="https://codepen.io/jwor12427">@jwor12427</a>)
+                        on <a href="https://codepen.io">CodePen</a>.
+                      </iframe>
+                </div>
             </div>
         </div>
     </main>

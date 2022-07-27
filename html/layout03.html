@@ -53,9 +53,11 @@
                 </div>
                 <h3 class="t_tit2">float을 이용한 레이아웃</h3>
                 <p class="t_desc2">
-                    이번 레이아웃은 전체 영역이 들어간 구조입니다.
-                    실제 사이트에서 이런 구조를 많이 사용하며, 컨테이너를
-                    만들어서 가운데 영역을 설정합니다.
+                   float 속성을 설정한 뒤  overflow: hidden; 를 설정하면 벗아나는 부분이 보이지 않는
+                   단점이 있으므로 부모 영역을 설정한 후, 그 곳에다가 'clearfix'를 설정해 줄 수 있습니다.
+                   before와 after를 설정 해준 뒤 content: ''; 설정으로 가상의 요소를 줍니다.
+                   display: block; 으로 블럭화를 시킨 후, line-height: 0;을 설정(공간을 차지하기 때문에 설정 해 줍니다.) 해줍니다.
+                   마지막으로 after의 부분에  clear: both;를 설정해주면 됩니다.
                 </p>
                 <div class="t_code">
 <pre><code class="language-css">
@@ -135,6 +137,7 @@ body {
                       </iframe>
                 </iframe>
                 </div>
+                <h3 class="t_tit2">flex을 이용한 레이아웃</h3>
             </div>
         </div>
     </main>
