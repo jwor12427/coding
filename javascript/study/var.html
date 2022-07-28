@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : 기본 규칙</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+
+</head>
+<body>
+    <header id="header">
+        <h1><a href="../index.html">Javascript</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="../javascript01.html">데이터 저장하기</a></li>
+                <li><a href="../javascript02.html">데이터 불러오기</a></li>
+                <li><a href="../javascript03.html">데이터 실행하기</a></li>
+                <li><a href="../javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="../javascript05.html">문자열 객체</a></li>
+                <li><a href="../javascript06.html">배열 객체</a></li>
+                <li><a href="../javascript07.html">수학 객체</a></li>
+                <li><a href="../javascript08.html">숫자 객체</a></li>
+                <li><a href="../javascript09.html">브라우저 객체</a></li>
+                <li><a href="../javascript10.html">요소 객체</a></li>
+                <li><a href="../javascript11.html">이벤트 객체</a></li>
+            </ul>
+            <ul class="study">
+                <li><a href="../study/basic.html">기본 규칙</a></li>
+                <li><a href="../study/operator.html">연산자</a></li>
+                <li><a href="../study/for.html">반복문</a></li>
+                <li><a href="../study/if.html">조건문</a></li>
+                <li><a href="../study/type.html">데이터 타입</a></li>
+                <li><a href="../study/var.html">지역변수/전역변수</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">지역변수/전역변수</h2>
+            <p class="t_desc2">
+                변수는 함수 블록{ }을 기준으로 변수의 선언 위치에 따라  <i>'전역변수'</i>와 <i>'지역 변수'</i>로
+                나누어집니다. <i>'전역 변수'</i>는  함수 블록{ } 밖이나 안에서 <i>자유롭게</i> 사용 가능하지만 
+                '지역 변수'는 <i>함수 블록{} 내에서만</i> 사용할 수 있습니다.
+            </p>   
+                <table class="t_table">
+                    <thead>
+                        <tr>
+                            <th>전역변수</th>
+                            <th>지역변수</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><i>var 변수;</i><br>
+                                funciton 함수() { <br>
+                                }
+                            </td>
+                            <td>funciton 함수() {<br>
+                                <i>var 변수;</i><br>
+                                }
+                            </td>
+                    </tbody>
+                </table>
+            <hr>
+             
+            <h4 class="t_tit2">예제1</h4>
+            <p class="t_desc">
+                함수 블록 { } 안에 있는 kor 변수는 전역변수 입니다.
+            </p>
+            <p class="t_box">
+                <i>var kor = 90;</i>   <br>
+                function getScore() {   <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<i>kor = 100;</i>  //전역변수  <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;console.log(kor);  //100     <br>
+                }   <br>    
+                getScore(); <br>
+                console.log(kor);   //100   <br>
+            </p>
+            <h4 class="t_tit2">예제2</h4>
+            <p class="t_desc">
+                함수 블록{ }안에 지역 변수는 반드시 <i>var로 선언</i>해 주어야 하며 함수의
+                지역 변수는 함수 블록{ } 밖에 서 사용 할 수 없습니다.
+            </p>
+            <p class="t_box">
+                <i>var kor = 90;</i> <br>
+                function getScore() { <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<i>var kor = 100;</i> //지역변수 <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;console.log(kor);   //100 <br>
+                } <br>
+                getScore(); <br>
+                console.log(kor);   //90 <br>
+            </p>
+
+            <hr>
+            <h4 class="t_tit2">함수 레벨 스코프와 블록 레벨 스코프</h4>
+            <p class="t_desc">
+                var는 함수 블록 { }에서만 지역 변수가 존재하며 블록{ }이나 제어문
+                블록{ }에서는 지역 변수가 존재하지 않습니다.
+            </p>
+            <h4 class="t_tit2">예제1</h4>
+            <p class="t_box">
+                <i>var num = 10;</i>   <br>
+                <i>{</i> <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<i>var num = 20;</i> //num은 전역 변수 입니다. <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;console.log(num); //20 <br>
+                <i>}</i> <br>
+                console.log(num); //20 <br>
+            </p>
+            <p class="t_box">
+                <i>let num = 10;</i>   <br>
+                <i>{</i> <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<i>let num = 20;</i>  //num은 지역 변수 입니다. <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;console.log(num);   //20 <br>
+                <i>}</i> <br>
+                console.log(num);   //10 <br>
+            </p>
+            <p class="t_box">
+                <i>const num = 10;</i> <br>
+                <i>{</i> <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<i>const num = 20;</i> //num은  지역변수 입니다. <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;console.log(num);   //20 <br>
+                <i>}</i> <br>
+                console.log(num);   //10 <br>
+            </p>
+            <h4 class="t_tit2">예제2</h4>
+            <p class="t_desc">
+                불록{ } 안에서 let과 const로 선언된 변수는 블록 { }의 지역변수로 인식합니다.
+            </p>
+            <p class="t_box">
+                var num = 10;   <br>
+                if (num === 10) <i>{</i> <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<i>var sum = 20;</i>   //전역 변수 <br>
+                <i>}</i> <br>
+                console.log(sum);   //20 <br>
+            </p>
+            <p class="t_box">
+                let num = 10;   <br>
+                if (num === 10) <i>{</i> <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<i>let sum = 20;</i>   //지역 변수 <br>
+                <i>}</i> <br>
+                console.log(sum);    <i>//에러</i><br>
+            </p>
+            <h4 class="t_tit2">예제3</h4>
+            <div class="t_code">
+<pre><code >&lt;!DOCTYPE html&gt;
+&lt;html lang="ko"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;변수의 범위&lt;/title&gt;
+    &lt;script&gt;
+        //함수의 전역변수
+        var sum1 = 10;
+        function add1() {
+            sum1 = 20;
+        }
+        add1();
+        console.log('전역' + sum1);
+        //함수의 지역변수
+        var sum2 = 30;
+        function add2() {
+            var sum2 = 40;
+            console.log('지역' + sum2);
+        }
+        add2();
+        console.log('전역' + sum2);
+        //블록의 지역변수
+        var num1 = 50;
+        if (num1 === 50 ) {
+            var num1 = 60;
+        }
+        console.log('전역' + num1);
+        var num2 = 70;
+        if (num2 === 70 ) {
+            let num2 = 80;
+            console.log('전역' + num2);
+        }
+        console.log('전역' + num2);
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+            </div>
+            <div class="result">
+                <details>
+                    <summary>결과보기</summary>
+                    <div class="sample01_result"></div>
+                    <div class="sample02_result"></div>
+                    <div class="sample03_result"></div>
+                    <div class="sample04_result"></div>
+                    <div class="sample05_result"></div>
+                    <div class="sample06_result"></div>
+                </details>
+            </div>
+            <!-- // -->
+
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:jwor124@naver.com">jwor124@naver.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+    <script>
+        //함수의 전역변수
+        {
+            var sum1 = 10;
+            function add1() {
+                sum1 = 20;
+            }
+            add1();
+            document.querySelector(".sample01_result").innerHTML = '전역' + sum1 +"<br>";
+        }
+        
+        //함수의 지역변수
+        var sum2 = 30;
+        function add2() {
+            var sum2 = 40;
+            document.querySelector(".sample02_result").innerHTML = '전역' + sum2 +"<br>"; 
+        }
+        add2();
+        document.querySelector(".sample03_result").innerHTML = '전역' + sum2 +"<br>"; 
+        //블록의 지역변수
+        var num1 = 50;
+        if (num1 === 50 ) {
+            var num1 = 60;
+        }
+        document.querySelector(".sample04_result").innerHTML = '전역' + num1 +"<br>"; 
+        
+        var num2 = 70;
+        if (num2 === 70 ) {
+            let num2 = 80;
+            document.querySelector(".sample05_result").innerHTML = '전역' + num2 +"<br>"; 
+
+        }
+        document.querySelector(".sample06_result").innerHTML = '전역' + num2 +"<br>"; 
+    </script>
+</body>
+</html>

@@ -1,0 +1,171 @@
+/* 여백 초기화 */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* 링크 초기화 */
+a {
+    text-decoration: none;
+    color: #222;
+}
+
+/* 목록 초기화 */
+
+li {
+    list-style: none;
+}
+
+/* 제목 초기화 */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+}
+/* 볼드체 초기화 */
+strong {
+    font-weight: normal;
+}
+/* 이탤릭체 초기화 */
+em, 
+i {
+    font-style: normal;
+}
+/* 테이블 초기화 */
+table {
+    width: 100%;
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+
+/* 기본 셋팅 */
+:root {
+    font-size: 22px;        /* 22px = 1rem */
+    --fontTitle: "OKDdung";
+    --fontSub: "UtoImageTree";
+    --fontDocs: "SCoreDream";
+    --white:#fff;               /* 변수 설정, 사이트 색 모두 다 바뀜 */
+    --black:#000;
+    --orange:#e5774f;
+    --orange2:#eb943a;
+    --red:#c54435;
+    --bgMain: #f4b861;      
+    --bgSub:#fef2e0;
+    --brown: #762917;
+}
+#footer {
+    padding: 40px 0;
+    text-align: center;
+}
+#footer a:hover {
+    text-decoration: underline;
+}
+
+/* 레이아웃 */
+body {
+    background-color: var(--bgMain);
+}
+#header {}
+#main {}
+#footer {}
+
+/* container */
+.container {                
+    max-width: 1400px;
+    width: 100%;            /* 반응형 */
+    margin: 0 auto;
+}
+
+/* main__title */
+.main__title {
+    margin: 200px 20px;
+    border: 4px solid var(--brown);
+    background-color: var(--bgSub);
+    padding: 80px;
+    text-align: center;
+}
+.main__title h1 {
+    font-family: var(--fontTitle);
+    font-size: 8vw;
+    color: var(--orange);
+    white-space: nowrap;
+}
+.main__title h1 strong {
+    color: var(--orange2);
+}
+.main__title em {
+    font-family: var(--fontSub);
+    font-size: 100px;
+    color: var(--brown);
+}
+.main__title p {
+    font-family: var(--fontSub);
+    font-size: 30px;
+    color: var(--brown);
+    margin-top: 50px;
+}
+/* main__desc */
+.main__desc {
+    margin: 200px 20px;
+    border: 4px solid var(--brown);
+    background-color: var(--bgSub);
+    padding: 80px;
+}
+.main__desc .title {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+}
+.main__desc .title h2 {
+    width: 35%;
+    border: 4px solid var(--brown);
+    font-size: 2rem;    /* 44px */
+    padding: 0.7rem 1rem 0.5rem 80px;
+    font-family: var(--fontDocs);
+    font-weight: 900;
+    color: var(--brown);
+    position: relative;
+    box-sizing: border-box;
+}
+.main__desc .title h2::before {
+    content: '';
+    width: 50px;
+    height: 100%;
+    background-color: var(--red);
+    position: absolute;
+    left: 0;
+    top: 0;
+    border-right: 4px solid var(--brown);
+}
+.main__desc .title p {
+    width: 60%;
+    font-family: var(--fontSub);
+    font-size: 1.3rem;
+    line-height: 1.3;
+    color: var(--brown);
+}
+.main__desc .table {
+    border: 3px solid var(--brown);
+    font-family: var(--fontDocs);
+    font-size: 0.7rem;
+}
+.main__desc .table tr th {
+    background-color: rgba(0,0,0,0.08);
+    font-weight: normal;
+}
+.main__desc .table tr th,
+.main__desc .table tr td {
+    border: 1px solid var(--brown);
+    padding: 10px;
+    text-align: center;
+}
+.main__desc .table tr td:nth-child(2) {
+    text-align: left;
+}
+.main__desc .table tr td:nth-child(3) {
+    text-align: left;
+}
+
+
+.main__desc .table tr td span {
+    font-size: 16px;
+    padding-top: 4px;
+}
