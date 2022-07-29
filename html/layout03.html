@@ -49,7 +49,7 @@
                     만들어서 가운데 영역을 설정합니다.
                 </p>
                 <div class="t_iframe">
-                    <iframe src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FOtbY5nSBxrTAsgJUOk5Nlc%2F%25EB%25A0%2588%25EC%259D%25B4%25EC%2595%2584%25EC%259B%2583%3Fnode-id%3D41%253A38" allowfullscreen></iframe>
+                    <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FcmQSG3Rcl1gEuTU7yZ3it2%2F%25EB%25A0%2588%25EC%259D%25B4%25EC%2595%2584%25EC%259B%2583%3Fnode-id%3D71%253A40" allowfullscreen></iframe>
                 </div>
                 <h3 class="t_tit2">float을 이용한 레이아웃</h3>
                 <p class="t_desc2">
@@ -134,10 +134,130 @@ body {
                         See the Pen <a href="https://codepen.io/jwor12427/pen/KKovOva">
                         레이아웃3-float</a> by jwor12427 (<a href="https://codepen.io/jwor12427">@jwor12427</a>)
                         on <a href="https://codepen.io">CodePen</a>.
-                      </iframe>
-                </iframe>
+                    </iframe>
                 </div>
                 <h3 class="t_tit2">flex을 이용한 레이아웃</h3>
+                <div class="t_code">
+<pre><code class="language-css">* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-color: #E1F5FE;
+}
+#wrap {
+    width: 1200px;
+    margin: 0 auto;
+}
+#header {
+    height: 100px;
+    background-color: #B3E5FC;
+}
+#nav {
+    height: 100px;
+    background-color: #81D4FA;
+}
+#main {
+    display: flex;
+    flex-wrap: wrap;            /* 크기를 맞춰주는 것 */
+    flex-direction: column;     /* flex 방향설정 */
+    height: 780px;              /* height 값 고정해주면 그 안에서 맞춤 */
+}
+#aside {
+    width: 30%;
+    height: 780px;
+    background-color: #4FC3F7;
+}
+#article1 {
+    width: 70%;
+    height: 260px;
+    background-color: #29B6F6;
+}
+#article2 {
+    width: 70%;
+    height: 260px;
+    background-color: #03A9F4;
+}
+#article3 {
+    width: 70%;
+    height: 260px;
+    background-color: #039BE5;
+}
+#footer {
+    height: 100px;
+    background-color: #0288D1;
+}                
+</code></pre>
+                </div>
+                <h4 class="t_tit3">결과</h4>
+                <div class="t_iframe">
+                    <iframe  scrolling="no" title="레이아웃3-flex" src="https://codepen.io/jwor12427/embed/dymZmdN?default-tab=result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                        See the Pen <a href="https://codepen.io/jwor12427/pen/dymZmdN">
+                        레이아웃3-flex</a> by jwor12427 (<a href="https://codepen.io/jwor12427">@jwor12427</a>)
+                        on <a href="https://codepen.io">CodePen</a>.
+                    </iframe>
+                </div>
+                <h3 class="t_tit2">grid룰 이용한 레이아웃</h3>
+                <div class="t_code">
+<pre><code class="language-css">* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-color: #E1F5FE;
+}
+#wrap {
+    width: 1200px;
+    margin: 0 auto;
+}
+#header {
+    height: 100px;
+    background-color: #B3E5FC;
+}
+#nav {
+    height: 100px;
+    background-color: #81D4FA;
+}
+#main {
+    display: grid;
+    grid-template-areas: 
+    "aside article1 article1"
+    "aside article2 article2"
+    "aside article3 article3"
+    ;
+    grid-template-columns: 300px 900px;
+    grid-template-rows: 260px 260px 260px;
+}
+#aside {
+    grid-area: aside;
+    background-color: #4FC3F7;
+}
+#article1 {
+    grid-area: article1;
+    background-color: #29B6F6;
+}
+#article2 {
+    grid-area: article2;
+    background-color: #03A9F4;
+}
+#article3 {
+    grid-area: article3;
+    background-color: #039BE5;
+}
+#footer {
+    height: 100px;
+    background-color: #0288D1;
+}      
+</code></pre>
+                </div>
+                <h4 class="t_tit3">결과</h4>
+                <div class="t_iframe">
+                    <iframe " scrolling="no" title="레이아웃3-grid" src="https://codepen.io/jwor12427/embed/gOeXezv?default-tab=result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                        See the Pen <a href="https://codepen.io/jwor12427/pen/gOeXezv">
+                        레이아웃3-grid</a> by jwor12427 (<a href="https://codepen.io/jwor12427">@jwor12427</a>)
+                        on <a href="https://codepen.io">CodePen</a>.
+                    </iframe>
+                </div>
             </div>
         </div>
     </main>

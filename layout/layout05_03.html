@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,39 +10,43 @@
             margin: 0;
             padding: 0;
         }
-        #wrap {}
+        #wrap {
+            width: 100%;
+        }
         #header {
+            width: 100%;
             height: 100px;
             background-color: #EEEBE9;
         }
         #nav {
+            width: 100%;
             height: 100px;
             background-color: #B9AAA5;
         }
         #main {
+            width: 100%;
             height: 780px;
             background-color: #886F65;
         }
         #footer {
+            width: 100%;
             height: 100px;
             background-color: #4E342E;
         }
         .container {
             width: 1200px;
             height: inherit;
-            background-color: rgba(0,0,0,0.3);
             margin: 0 auto;
-        }
-        .contents {}
-        .contents .left {}
-        .contents .left .cont1 {
-            width: 100%;
-            height: 100px;
-            background-color: #74574A;
+            background-color: rgba(0,0,0,0.3);
         }
         .contents .right {
             display: flex;
             flex-wrap: wrap;
+        }
+        .contents .left .cont1 {
+            width: 100%;
+            height: 100px;
+            background-color: #74574A;
         }
         .contents .right .cont2 {
             width: 100%;
@@ -59,26 +63,20 @@
             height: 480px;
             background-color: #4A352F;
         }
-        /* 미디어 쿼리 */
-        @media(max-width:1220px) {
+        @media (max-width: 1220px){
             .container {
                 width: 96%;
             }
-            .contents {
-                display: flex;
+            .contents .right {
+                width: 70%;
             }
             .contents .left {
                 width: 30%;
             }
             .contents .left .cont1 {
-                width: 100%;
                 height: 780px;
             }
-            .contents .right {
-                width: 70%;
-            }
             .contents .right .cont2 {
-                width: 100%;
                 height: 390px;
             }
             .contents .right .cont3 {
@@ -90,47 +88,9 @@
                 height: 390px;
             }
         }
-        @media(max-width:768px) {
-            .container {
-                width: 100%;
-            }
-            .contents .right .cont2 {
-                width: 100%;
-                height: 260px;
-            }
-            .contents .right .cont3 {
-                width: 100%;
-                height: 260px;
-            }
-            .contents .right .cont4 {
-                width: 100%;
-                height: 260px;
-            }
+        @media (max-width: 768px){
         }
-        @media(max-width:480px) {
-            .contents {
-                flex-wrap: wrap;
-            }
-            .contents .left {
-                width: 100%;
-                height: 150px;
-            }
-            .contents .right {
-                width: 100%;
-                height: 630px;
-            }
-            .contents .left .cont1 {
-                height: 150px;
-            }
-            .contents .right .cont2 {
-                height: 210px;
-            }
-            .contents .right .cont3 {
-                height: 210px;
-            }
-            .contents .right .cont4 {
-                height: 210px;
-            }
+        @media (max-width: 480px){
         }
     </style>
 </head>
@@ -143,16 +103,16 @@
             <div class="container"></div>
         </nav>
         <main id="main">
-            <div class="contents container">
-                <div class="left">
-                <div class="cont1"></div>
-                </div>
-                <div class="right">
-                <div class="cont2"></div>
-                <div class="cont3"></div>
-                <div class="cont4"></div>
-                </div>
-            </div>
+            <section class="contents container">
+                <article class="left">
+                    <article class="cont1"></article>
+                </article>
+                <article class="right">
+                    <article class="cont2"></article>
+                    <article class="cont3"></article>
+                    <article class="cont4"></article>
+                </article>
+            </section>
         </main>
         <footer id="footer">
             <div class="container"></div>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        #wrap {}
+        #header {
+            height: 100px;
+            background-color: #fff;
+        }
+        #nav {
+            height: 100px;
+            background-color: #B9AAA5;
+        }
+        #main {
+            height: 780px;
+            background-color: #886F65;
+        }
+        #footer {
+            height: 100px;
+            background-color: #4E342E;
+        }
+        .container {
+            width: 1200px;
+            height: inherit;
+            margin: 0 auto;
+            background-color: rgba(0,0,0,0.3);
+        }
+        .contents {
+            display: grid;
+            grid-template-areas:
+                "cont1 cont1"
+                "cont2 cont2"
+                "cont3 cont4"
+            ;
+            grid-template-columns: 50% 50%;
+            grid-template-rows: 100px 200px 480px;
+        }
+        .contents .cont1 {
+            background-color: #74574A;
+            grid-area: cont1;
+        }
+        .contents .cont2 {
+            background-color: #684D43;
+            grid-area: cont2;
+        }
+        .contents .cont3 {
+            background-color: #594139;
+            grid-area: cont3;
+        }
+        .contents .cont4 {
+            background-color: #4A352F;
+            grid-area: cont4;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <header id="header">
+            <div class="container"></div>
+        </header>
+        <nav id="nav">
+            <div class="container"></div>
+        </nav>
+        <main id="main">
+            <div class="contents container">
+                <article class="cont1"></article>
+                <article class="cont2"></article>
+                <article class="cont3"></article>
+                <article class="cont4"></article>
+            </div>
+        </main>
+        <footer id="footer">
+            <div class="container"></div>
+        </footer>
+    </div>
+</body>
+</html>
