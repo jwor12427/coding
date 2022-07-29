@@ -455,78 +455,78 @@ document.write(func("함수가 실행되었습니다.12"));
             // }
             // func("함수가 실행되었습니다.3<br>");
         }
-        //04. 리턴값 함수
-        {
-            // function func(){
-            //     const str = "함수가 실행되었습니다.4<br>";
-            //     return str;         //실행문은 아니지만 결과값을 저장
-            // }
-            // document.write(func());     //return이 있으므로 실행
-        }   
+        // //04. 리턴값 함수
+        // {
+        //     function func(){
+        //         const str = "함수가 실행되었습니다.4<br>";
+        //         return str;         //실행문은 아니지만 결과값을 저장
+        //     }
+        //     document.write(func());     //return이 있으므로 실행
+        // }   
         //ECMAscript6(es6) -> 화살표 함수, let, const가 나왔음
-        //05.화살표 함수(선언적 함수)
-        {
-            // function func() {
-            //     document.write("함수가 실행되었습니다.5");
-            // }
-            // func(); 
+        // //05.화살표 함수(선언적 함수)
+        // {
+        //     function func() {
+        //         document.write("함수가 실행되었습니다.5");
+        //     }
+        //     func(); 
 
-            // func = () => {          //function을 없애주고 사용
-            //     document.write("함수가 실행되었습니다.5<br>");
-            // }
-            // func();
+        //     func = () => {          //function을 없애주고 사용
+        //         document.write("함수가 실행되었습니다.5<br>");
+        //     }
+        //     func();
 
-            // func = () => document.write("함수가 실행되었습니다.5<br>");
-            // func();         //중괄호 생략 가능
-        }
-        //06.화살표 함수(익명 함수)
-        {
-            // const func = function(){
-            //     document.write("함수가 실행되었습니다.6<br>");
-            // }
-            // func();
+        //     func = () => document.write("함수가 실행되었습니다.5<br>");
+        //     func();         //중괄호 생략 가능
+        // }
+        // //06.화살표 함수(익명 함수)
+        // {
+        //     const func = function(){
+        //         document.write("함수가 실행되었습니다.6<br>");
+        //     }
+        //     func();
 
-            // const func = () => {
-            //     document.write("함수가 실행되었습니다.6<br>");
-            // }
-            // func();
+        //     const func = () => {
+        //         document.write("함수가 실행되었습니다.6<br>");
+        //     }
+        //     func();
 
-                // const func = () => document.write("함수가 실행되었습니다.6<br>");
-                // func();
-        }
-        //07.화살표 함수(매개변수 함수)
-        {
-            // let str; 생략가능
-            // function func (str) {
-            //     document.write(str);
-            // }
-            // func("함수가 실행되었습니다.7<br>");
+        //         const func = () => document.write("함수가 실행되었습니다.6<br>");
+        //         func();
+        // }
+        // //07.화살표 함수(매개변수 함수)
+        // {
+        //     let str; 생략가능
+        //     function func (str) {
+        //         document.write(str);
+        //     }
+        //     func("함수가 실행되었습니다.7<br>");
 
-            // func = (str) => {
-            //     document.write(str);                 //여러개 전달 시켜 줄 수 있음
-            // }
-            // func("함수가 실행되었습니다.7<br>");
+        //     func = (str) => {
+        //         document.write(str);                 //여러개 전달 시켜 줄 수 있음
+        //     }
+        //     func("함수가 실행되었습니다.7<br>");
 
-            // func = (str) => document.write(str);        //const가 앞에 있어도 상관없음
-            // func("함수가 실행되었습니다.7<br>");
+        //     func = (str) => document.write(str);        //const가 앞에 있어도 상관없음
+        //     func("함수가 실행되었습니다.7<br>");
 
-            // func = str => document.write(str);      //변수가 하나일때 ()도 없앨 수 있음
-            // func("함수가 실행되었습니다.7<br>");
-        }
-        //08.화살표 함수(리턴값 함수)
-        {
-            // function func(){
-            //     const str = "함수가 실행되었습니다.8<br>";
-            //     return str;
-            // }
-            // document.write(func());
+        //     func = str => document.write(str);      //변수가 하나일때 ()도 없앨 수 있음
+        //     func("함수가 실행되었습니다.7<br>");
+        // }
+        // //08.화살표 함수(리턴값 함수)
+        // {
+        //     function func(){
+        //         const str = "함수가 실행되었습니다.8<br>";
+        //         return str;
+        //     }
+        //     document.write(func());
 
-            // func = () => {
-            //     const str = "함수가 실행되었습니다.8<br>";
-            //     return str;
-            // }
-            // document.write(func());
-        }
+        //     func = () => {
+        //         const str = "함수가 실행되었습니다.8<br>";
+        //         return str;
+        //     }
+        //     document.write(func());
+        // }
         //09. 화살표 함수 : 익명함수 + 매개변수 + 리턴값
         {
             const func = (str) => {
