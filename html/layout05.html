@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML 레퍼런스 북</title>
+
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/dracula.css">
+
+
+    <!-- 구글 아이콘 -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+<body>
+    <header id="header">
+        <h1><a href="#">라인 중학교 1학년 코딩반</a></h1>
+        <span>이름 : 정은비</span>
+    </header>
+    <!-- //header -->
+
+    <main id="main">
+        <header class="main_header">
+            <h2>HTML <em>레퍼런스 북</em></h2>
+        </header>
+        <nav class="main_menu">
+            <ul>
+                <li><a href="alphabet.html">알파벳</a></li>
+                <li><a href="basic.html">기초 문법</a></li>
+                <li><a href="block.html">블록 구조/인라인 구조</a></li>
+                <li><a href="web.html">웹표준/웹접근성/웹호환성</a></li>
+                <li><a href="sementic.html">시멘틱 태그</a></li>
+                <li><a href="seo.html">검색엔진시스템(SEO)</a></li>
+            </ul>
+            <ul>
+                <li><a href="layout01.html">레이아웃01</a></li>
+                <li><a href="layout02.html">레이아웃02</a></li>
+                <li><a href="layout03.html">레이아웃03</a></li>
+                <li><a href="layout04.html">레이아웃04</a></li>
+                <li class="active"><a href="layout05.html">레이아웃05</a></li>
+            </ul>
+        </nav>
+        <div class="main_refer">
+            <div class="document">
+                <h2 class="t_tit">레이아웃05</h2>
+                <p class="t_desc">
+                    
+                </p>
+                <div class="t_iframe">
+                    <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FPgLR6AP4OJmyQa6gdW1vTG%2F%25EB%25A0%2588%25EC%259D%25B4%25EC%2595%2584%25EC%259B%25835%3Fnode-id%3D0%253A1" allowfullscreen></iframe>
+                </div>
+
+                <h3 class="t_tit2">float을 이용한 레이아웃</h3>
+                <p class="t_desc2">
+                    float을 사용한 후 영역이 깨지는 것을 방지하기 위해서는 세 가지의 방법이 있습니다.<br>
+                    첫번째는 깨지는 영역에 <i>clear:both</i>를 설정합니다. 하지만, 구조가 복잡해지면 쓰기 힘들어 지는 단점이 있습니다. <br>
+                    두번짼는 부모 박스 영역에 <i>overflow:hidden</i>을 설정합니다. 그러나, 이 경우에는 애니메이션 등이 보이지 않는 경우가 생기기도 합니다.<br>
+                    마지막 방법으로는 <i>clearfix</i>를 설정하는 것 입니다.
+                </p>
+                <p class="t_box">
+                    <i>/* clearfix */</i> <br>
+                    .clearfix::before,  <br>
+                    .clearfix::after {  <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;content: '';    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;display: block; <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;line-height: 0; <br>
+                    }   <br>
+                    .clearfix::after {  <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;clear: both;    <br>
+                    }   <br>
+                </p>
+                <div class="t_code">
+<pre><code class="language-css">* {
+    margin: 0;
+}
+#wrap {
+    width: 100%;
+}
+#header {
+    width: 100%;
+    height: 100px;
+    background-color: #EEEBE9;
+}
+#banner {
+    width: 100%;
+    height: 100px;
+    background-color: #B9AAA5;
+}
+#main {
+    width: 100%;
+    height: 780px;
+    background-color: #886F65;
+}
+#footer {
+    width: 100%;
+    height: 100px;
+    background-color: #4E342E;
+}
+.container {
+    width: 1200px;
+    height: inherit;
+    background-color: rgba(0,0,0,0.3);
+    margin: 0 auto;
+}
+#header .container {
+    height: 100px;
+    background-color: #D5CCC9;
+}
+#banner .container {
+    height: 100px;
+    background-color: #9D8980;
+}
+#main .main_box1 {
+    width: 100%;
+    height: 100px;
+    background-color: #74574A;
+}
+#main .main_box2 {
+    width: 100%;
+    height: 200px;
+    background-color: #684D43;
+}
+#main .main_box3 {
+    width: 50%;
+    height: 480px;
+    background-color: #594139;
+    float: left;
+}
+#main .main_box4 {
+    width: 50%;
+    height: 480px;
+    background-color: #4A352F;
+    float: left;           
+}
+#footer .footerbox {
+    width: 100%;
+    height: 100px;
+    background-color: #3E2723;
+}
+/* clearfix */
+.clearfix::before,
+.clearfix::after {
+    content: '';
+    display: block;
+    line-height: 0;
+}
+.clearfix::after {
+    clear: both;
+}
+</code></pre>
+                </div>
+
+                <h4 class="t_tit3">결과</h4>
+                <div class="t_iframe">
+                    <iframe height="350" style="width: 100%;" scrolling="no" title="레이아웃5-float" src="https://codepen.io/jwor12427/embed/rNdYrQa?default-tab=result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                        See the Pen <a href="https://codepen.io/jwor12427/pen/rNdYrQa">
+                        레이아웃5-float</a> by jwor12427 (<a href="https://codepen.io/jwor12427">@jwor12427</a>)
+                        on <a href="https://codepen.io">CodePen</a>.
+                      </iframe>
+                </div>
+                <h3 class="t_tit2">flex를 이용한 레이아웃</h3>
+            </div>
+            <!-- // code end -->
+        </div>
+    </main>
+    <!-- //main -->
+
+    <footer id="footer">
+        <a href="mailto:jwor124@naver.com">jwor124@naver.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+</body>
+</html>

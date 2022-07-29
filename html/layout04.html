@@ -50,14 +50,14 @@
                     만들어서 가운데 영역을 설정합니다.
                 </p>
                 <div class="t_iframe">
-                    <iframe src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FOtbY5nSBxrTAsgJUOk5Nlc%2F%25EB%25A0%2588%25EC%259D%25B4%25EC%2595%2584%25EC%259B%2583%3Fnode-id%3D41%253A39" allowfullscreen></iframe>
+                    <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FcmQSG3Rcl1gEuTU7yZ3it2%2F%25EB%25A0%2588%25EC%259D%25B4%25EC%2595%2584%25EC%259B%2583%3Fnode-id%3D71%253A41" allowfullscreen></iframe>
                 </div>
 
                 <h3 class="t_tit2">float을 이용한 레이아웃</h3>
                 <p class="t_desc2">
-                    이번 레이아웃은 전체 영역이 들어간 구조입니다.
-                    실제 사이트에서 이런 구조를 많이 사용하며, 컨테이너를
-                    만들어서 가운데 영역을 설정합니다.
+                    <i>container영역</i>을 만들어 레이아웃을 설정합니다. <i>id</i>는 하나의 이름만 사용가능하나
+                    <i>class</i>는 중복하여 사용이 가능합니다. 따라서 전체적인 틀은 id로 만들고, 세부적이거나
+                    반복적으로 나오는 영역에는 class를 지정 하도록 합니다.
                 </p>
                 <div class="t_code">
 <pre><code class="language-css">* {
@@ -88,9 +88,26 @@
 }
 </code></pre>
                 </div>
+                <p>태그 설정</p>
+            <p class="t_box">
+                &lt;div id="wrap"&gt; <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;div id="header"&gt;     <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="container"&gt;&lt;/div&gt;   <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;    <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;div id="nav"&gt;    <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="container"&gt;&lt;/div&gt;   <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;    <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;div id="section"&gt;    <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="container"&gt;&lt;/div&gt;   <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;    <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;div id="footer"&gt; <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="container"&gt;&lt;/div&gt;   <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;    <br>
+             &lt;/div&gt;   <br>
+            </p>
                 <h4 class="t_tit3">결과</h4>
                 <div class="t_iframe">
-                    <iframe scrolling="no" title="레이아웃4-float" src="https://codepen.io/jwor12427/embed/vYRJwmG?default-tab=result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                    <iframe height="350" style="width: 100%;" scrolling="no" title="레이아웃4-float" src="https://codepen.io/jwor12427/embed/vYRJwmG?default-tab=result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
                         See the Pen <a href="https://codepen.io/jwor12427/pen/vYRJwmG">
                         레이아웃4-float</a> by jwor12427 (<a href="https://codepen.io/jwor12427">@jwor12427</a>)
                         on <a href="https://codepen.io">CodePen</a>.
