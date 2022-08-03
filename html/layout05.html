@@ -160,6 +160,30 @@
                       </iframe>
                 </div>
                 <h3 class="t_tit2">flex를 이용한 레이아웃</h3>
+                <p class="t_desc2">
+                   레이아웃 유형 05번째에서 flex를 사용할 경우, 미디어 반응에서 flex가
+                   아래와 같이 반응하지 않는 현상이 발생 할 수 있습니다.
+                </p>
+                <p class="t_box">
+                    <img src="img/layout05-flex.png">
+                </p>
+                <p>
+                    이럴경우 main컨텐츠를 미디어 반응까지 고려하여 분활 시킵니다.
+                </p>
+                <p class="t_box">
+                    &lt;main id="main"&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;section class="contents container"&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;article class="left"&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;article class="cont1"&gt;&lt;/article&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/article&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;article class="right"&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;article class="cont2"&gt;&lt;/article&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;article class="cont3"&gt;&lt;/article&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;article class="cont4"&gt;&lt;/article&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/article&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;/section&gt;<br>
+                &lt;/main&gt;<br>
+                </p>
                 <div class="t_code">
 <pre><code class="language-css">* {
     margin: 0;
@@ -229,6 +253,11 @@
                   </iframe>
             </div>
             <h3 class="t_tit2">grid를 이용한 레이아웃</h3>
+            <p class="t_desc2">
+                grid의 경우 부모 컨텐츠에 설정을 해준 다음, 각각의 grid-area를 설정하면 간단하게
+                레이아웃을 구성할 수 있습니다.
+             </p>
+             <img src="img/layout05-grid.png">
             <div class="t_code">
 <pre><code class="language-css">* {
     margin: 0;
