@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>퀴즈 이펙트</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+
+</head>
+<body>
+    <header id="header">
+        <h1><a href="../index.html">퀴즈 이펙트</a></h1>
+        <nav class="header_nav">
+
+        </nav>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">스크립트를 이용한 퀴즈 만들기 01</h2>
+            <p class="t_desc2">
+                스크립트를 이용하여 쉽게 웹디자이너기능사 시험에 관한 퀴즈를 만들 수 있습니다.
+            </p>
+
+            <hr>
+
+            
+            <div class="t_iframe" style="min-height: 1000px; padding-top: 0;">
+                <iframe src="https://jwor12427.github.io/coding/javascript/effect/quizEffect01.html"></iframe>
+            </div>
+
+            <div class="t_link">
+                <a href="https://github.com/jwor12427/coding/blob/main/javascript/effect/quizEffect01.html" target="_blank">원본 소스 보기</a>
+            </div>
+
+            <h3 class="t_tit2">Script</h3>
+            <div class="t_code">
+<pre><code>//선택자
+const quizType =  document.querySelector(".quiz__type");                //퀴즈 종류
+const quizNumber = document.querySelector(".quiz__question .number");   //퀴즈 번호
+const quizAsk = document.querySelector(".quiz__question .ask");         //퀴즈 질문
+const quizConfirm = document.querySelector(".quiz__answer .confirm");   //정답 확인 버튼
+const quizResult = document.querySelector(".quiz__answer .result");     //정답 결과
+const quizDog = document.querySelector(".quiz__view .dog");             //강아지
+       
+//문제 정보
+const answerType = "웹디자인기능사";
+const answerNum = 1;
+const answerAsk = "인접하는 두 색의 경계 부분에 색상, 명도, 채도의 대비가 더욱 강하게 일어나는 현상을 무엇이라고 하는가?";
+const answerResult = "연변대비";
+
+//문제 출력
+quizType.innerText = answerType;
+quizNumber.innerText = answerNum + ". ";
+quizAsk.innerText = answerAsk;
+quizResult.innerText = answerResult;
+
+//정답 숨기기
+quizResult.style.display = "none";
+
+//정답 확인
+//정답 버튼을 클릭하면 확인버튼 안보이게 하기, 숨겨진 정답은 보이게 하기
+//정답을 확인하면 강아지가 웃고 있음 // class like를 추가함
+quizConfirm.addEventListener("click", function(){
+    quizConfirm.style.display = "none";         //css처럼 style을 넣어줄 수 있음
+    quizResult.style.display = "block";
+    quizDog.classList.add("like");
+});                                            //버튼을 클릭하면 실행! (함수로 실행)
+    </script>
+</code></pre>
+            </div>
+            <p class="t_desc">
+               
+            </p>
+            <p class="t_box">
+                .innerText( )
+            </p>
+            <p class="t_desc">
+               선택자를 만든 후, <i>innerText</i>를 이용하여 요소에 텍스트를 설정할 수 있으며,
+               <i>addEventListener("click")</i>은 클릭을 하였을 경우, 발생하는 이벤트 요소 입니다.
+            </p>
+
+
+            <p class="t_box">
+                quizConfirm.<i>style</i>.display = "none"; <br>
+                <i>classList.add</i>(" ");
+            </p>
+            <p class="t_desc">
+                스크립트를 통하여 style요소도 추가할 수 있으며, classList.add( )를 통해 클래스를 추가 할 수 있습니다.
+            </p>
+            <p class="t_box">
+                quizConfirm.addEventListener("click", <i>function()</i>{    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;quizConfirm.style.display = "none";             <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;quizResult.style.display = "block";             <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;quizDog.classList.add("like");                  <br>
+                });        
+            </p>
+            <p class="t_desc">
+                함수기능을 사용하여 버튼을 클릭 하였을 때 실행 할 수 있도록 합니다.
+            </p>
+
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:jwor124@naver.com">jwor124@naver.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+   
+</body>
+</html>

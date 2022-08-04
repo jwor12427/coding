@@ -19,13 +19,21 @@
     <!-- //header -->
     <main id="main">
         <div class="document">
-            <h2 class="t_tit">스크립트를 이용한 퀴즈 만들기</h2>
+            <h2 class="t_tit">스크립트를 이용한 퀴즈 만들기 02</h2>
             <p class="t_desc2">
                 스크립트를 이용하여 쉽게 웹디자이너기능사 시험에 관한 퀴즈를 만들 수 있습니다.
             </p>
 
             <hr>
 
+            
+            <div class="t_iframe" style="min-height: 1000px; padding-top: 0;">
+                <iframe src="https://jwor12427.github.io/coding/javascript/effect/quizEffect02.html"></iframe>
+            </div>
+
+            <div class="t_link">
+                <a href="https://github.com/jwor12427/coding/blob/main/javascript/effect/quizEffect01.html" target="_blank">원본 소스 보기</a>
+            </div>
 
             <h3 class="t_tit2">Script</h3>
             <div class="t_code">
@@ -78,10 +86,9 @@ quizConfirm.addEventListener("click", () => {
 });    //function생략하고 화살표 함수 가능, 정답 버튼을 클릭 했을 때
 </code></pre>
             </div>
-            <p class="t_desc">
-               
+            <p class="t_box">
+                textContent( )
             </p>
-            <h4 class="t_tit3"></h4>
             <p class="t_desc">
                선택자를 만든 후, <i>textContent</i>를 이용하여 요소에 텍스트를 설정할 수 있으며,
                <i>addEventListener("click")</i>은 클릭을 하였을 경우, 발생하는 이벤트 요소 입니다.
@@ -93,7 +100,6 @@ quizConfirm.addEventListener("click", () => {
             <p class="t_desc">
                 toLowerCase( )은 영문을 소문자로 변형시켜 주며, .trim( )는 여백을 없애주는 역할을 합니다.
             </p>
-            <h3 class="t_tit2"></h3>
 
             <p class="t_box">
                 quizConfirm.<i>style</i>.display = "none"; <br>
@@ -102,17 +108,7 @@ quizConfirm.addEventListener("click", () => {
             <p class="t_desc">
                 스크립트를 통하여 style요소도 추가할 수 있으며, classList.add( )를 통해 클래스를 추가 할 수 있습니다.
             </p>
-            <p class="t_box">
-                quizConfirm.addEventListener("click", <i>function()</i>{    <br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;quizConfirm.style.display = "none";             <br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;quizResult.style.display = "block";             <br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;quizDog.classList.add("like");                  <br>
-                });        
-            </p>
-            <p class="t_desc">
-                함수기능을 사용하여, 버튼을 클릭 하였을 때 실행 할 수 있도록 합니다. 이때 function은 생략 하여 <i>화살표 함수</i>로
-                바꿀 수 있습니다.
-            </p>
+
             <p class="t_box">
                 quizConfirm.addEventListener("click", () <i>=></i> {   <br>
                     &nbsp;&nbsp;&nbsp;&nbsp;quizInput.style.display = "none";       <br>
@@ -131,10 +127,11 @@ quizConfirm.addEventListener("click", () => {
                     }
                 });    
             </p>
-            <h4 class="t_tit3">결과</h4>
-            <div class="t_iframe">
+            <p class="t_desc">
+                함수기능을 사용하여 버튼을 클릭 하였을 때 실행 할 수 있도록 하며, 이때 function은 생략하고
+                <i>화살표 함수</i>로 변경이 가능 합니다.
+            </p>
 
-            </div>
         </div>
     </main>
     <!-- //main -->
