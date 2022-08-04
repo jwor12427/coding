@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>퀴즈 이펙트</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+
+</head>
+<body>
+    <header id="header">
+        <h1><a href="../index.html">퀴즈 이펙트</a></h1>
+        <nav class="header_nav">
+
+        </nav>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">스크립트를 이용한 퀴즈 만들기</h2>
+            <p class="t_desc2">
+                스크립트를 이용하여 쉽게 웹디자이너기능사 시험에 관한 퀴즈를 만들 수 있습니다.
+            </p>
+
+            <hr>
+
+
+            <h3 class="t_tit2">Script</h3>
+            <div class="t_code">
+<pre><code>//선택자
+const quizType =  document.querySelector(".quiz__type");                //퀴즈 종류
+const quizNumber = document.querySelector(".quiz__question .number");   //퀴즈 번호
+const quizAsk = document.querySelector(".quiz__question .ask");         //퀴즈 질문
+const quizConfirm = document.querySelector(".quiz__answer .confirm");   //정답 확인 버튼
+const quizResult = document.querySelector(".quiz__answer .result");     //정답 결과
+const quizInput = document.querySelector(".quiz__answer .input");      //사용자 정답
+const quizView = document.querySelector(".quiz__view");                //정답 알람
+    
+//문제 정보
+const answerType = "웹디자인기능사";
+const answerNum = "2";
+const answerAsk = "기업의 새로운 이념 구축에 필요한 이미지와 커뮤니케이션 시스템을 의도적, 계획적으로 만들어내는 기업이미지통합 전략은 무엇인가요?";
+let answerResult = "CIP";       //상수는 변경 불가능이라 let으로 바꿔줌
+
+//문제 출력
+quizType.textContent = answerType;
+quizNumber.textContent = answerNum + ". ";
+quizAsk.textContent = answerAsk;
+quizResult.textContent = "정답은 : " + answerResult + " 입니다.";
+
+//정답 숨기기
+quizResult.style.display = "none";
+
+//정답 확인
+quizConfirm.addEventListener("click", () => {
+    quizInput.style.display = "none";
+    quizResult.style.display = "block";         
+    quizConfirm.style.display = "none";
+
+    //사용자 정답
+    const userWord = quizInput.value.toLowerCase().trim();   //소문자로 바꿔 줌, 여백을 없애줌
+    answerResult = answerResult.toLowerCase().trim();        //대문자를 소문자로 바꿔주었음,소문자 넣어도 정답
+    // console.log(userWord)
+    // console.log(answerResult)
+
+    //사용자 정답 == 문제 정답
+    if(userWord == answerResult) {
+        //정답
+        //alert("정답입니다.")
+        quizView.classList.add("like");
+    } else {
+        //오답
+        //alert("오답입니다.")
+        quizView.classList.add("dislike");
+    }
+});    //function생략하고 화살표 함수 가능, 정답 버튼을 클릭 했을 때
+</code></pre>
+            </div>
+            <p class="t_desc">
+               
+            </p>
+            <h4 class="t_tit3"></h4>
+            <p class="t_desc">
+               선택자를 만든 후, <i>textContent</i>를 이용하여 요소에 텍스트를 설정할 수 있으며,
+               <i>addEventListener("click")</i>은 클릭을 하였을 경우, 발생하는 이벤트 요소 입니다.
+            </p>
+            <p class="t_box">
+                .toLowerCase( ) <br>
+                .trim( )
+            </p>
+            <p class="t_desc">
+                toLowerCase( )은 영문을 소문자로 변형시켜 주며, .trim( )는 여백을 없애주는 역할을 합니다.
+            </p>
+            <h3 class="t_tit2"></h3>
+
+            <p class="t_box">
+                quizConfirm.<i>style</i>.display = "none"; <br>
+                <i>classList.add</i>(" ");
+            </p>
+            <p class="t_desc">
+                스크립트를 통하여 style요소도 추가할 수 있으며, classList.add( )를 통해 클래스를 추가 할 수 있습니다.
+            </p>
+            <p class="t_box">
+                quizConfirm.addEventListener("click", <i>function()</i>{    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;quizConfirm.style.display = "none";             <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;quizResult.style.display = "block";             <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;quizDog.classList.add("like");                  <br>
+                });        
+            </p>
+            <p class="t_desc">
+                함수기능을 사용하여, 버튼을 클릭 하였을 때 실행 할 수 있도록 합니다. 이때 function은 생략 하여 <i>화살표 함수</i>로
+                바꿀 수 있습니다.
+            </p>
+            <p class="t_box">
+                quizConfirm.addEventListener("click", () <i>=></i> {   <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;quizInput.style.display = "none";       <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;quizResult.style.display = "block";      <br>  
+                    &nbsp;&nbsp;&nbsp;&nbsp;quizConfirm.style.display = "none";        <br>
+        
+                    &nbsp;&nbsp;&nbsp;&nbsp;//사용자 정답                               <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;const userWord = quizInput.value.toLowerCase().trim();      <br> 
+                    &nbsp;&nbsp;&nbsp;&nbsp;answerResult = answerResult.toLowerCase().trim();           <br>
+        
+                    &nbsp;&nbsp;&nbsp;&nbsp;//사용자 정답 == 문제 정답              <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;if(userWord == answerResult) {          <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;quizView.classList.add("like");     <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;} else {                                <br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;quizView.classList.add("dislike");  <br>
+                    }
+                });    
+            </p>
+            <h4 class="t_tit3">결과</h4>
+            <div class="t_iframe">
+
+            </div>
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:jwor124@naver.com">jwor124@naver.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+   
+</body>
+</html>

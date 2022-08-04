@@ -11,16 +11,15 @@
 
     <link href="https://webfontworld.github.io/DungGeunMo/DungGeunMo.css" rel="stylesheet">
     <link href="https://webfontworld.github.io/wando/WandoCleanSea.css" rel="stylesheet">
-
 </head>
 
 <body>
     <header id="header">
-        <h1><a href="../javascript01.html">Quiz</a><em>정답확인하기 유형</em></h1>
+        <h1><a href="../javascript01.html">Quiz</a> <em>주관식 유형</em></h1>
         <nav>
             <ul>
-                <li class="active"><a href="quizEffect01.html">1</a></li>
-                <li><a href="quizEffect02.html">2</a></li>
+                <li><a href="quizEffect01.html">1</a></li>
+                <li class="active"><a href="quizEffect02.html">2</a></li>
                 <li><a href="quizEffect03.html">3</a></li>
                 <li><a href="quizEffect04.html">4</a></li>
                 <li><a href="quizEffect05.html">5</a></li>
@@ -38,6 +37,8 @@
                     <div class="ask"></div>
                 </h2>
                 <div class="quiz__view">
+                    <div class="true">정답입니다!</div>
+                    <div class="false">틀렸습니다!</div>
                     <div class="dog">
                         <div class="head">
                             <div class="ears"></div>
@@ -58,6 +59,7 @@
                     </div>
                 </div>
                 <div class="quiz__answer">
+                    <input type="text" class="input" placeholder="정답을 적어주세요!">
                     <button class="confirm">정답 확인하기</button>
                     <div class="result"></div>
                 </div>
@@ -77,31 +79,47 @@
         const quizAsk = document.querySelector(".quiz__question .ask");         //퀴즈 질문
         const quizConfirm = document.querySelector(".quiz__answer .confirm");   //정답 확인 버튼
         const quizResult = document.querySelector(".quiz__answer .result");     //정답 결과
-        const quizDog = document.querySelector(".quiz__view .dog");             //강아지
-       
+        const quizInput = document.querySelector(".quiz__answer .input");      //사용자 정답
+        const quizView = document.querySelector(".quiz__view");                //정답 알람
+        
         //문제 정보
         const answerType = "웹디자인기능사";
-        const answerNum = 1;
-        const answerAsk = "인접하는 두 색의 경계 부분에 색상, 명도, 채도의 대비가 더욱 강하게 일어나는 현상을 무엇이라고 하는가?";
-        const answerResult = "연변대비";
+        const answerNum = "2";
+        const answerAsk = "기업의 새로운 이념 구축에 필요한 이미지와 커뮤니케이션 시스템을 의도적, 계획적으로 만들어내는 기업이미지통합 전략은 무엇인가요?";
+        let answerResult = "CIP";       //상수는 변경 불가능이라 let으로 바꿔줌
 
         //문제 출력
-        quizType.innerText = answerType;
-        quizNumber.innerText = answerNum + ". ";
-        quizAsk.innerText = answerAsk;
-        quizResult.innerText = answerResult;
+        quizType.textContent = answerType;
+        quizNumber.textContent = answerNum + ". ";
+        quizAsk.textContent = answerAsk;
+        quizResult.textContent = "정답은 : " + answerResult + " 입니다.";
 
         //정답 숨기기
         quizResult.style.display = "none";
 
         //정답 확인
-        //정답 버튼을 클릭하면 확인버튼 안보이게 하기, 숨겨진 정답은 보이게 하기
-        //정답을 확인하면 강아지가 웃고 있음 // class like를 추가함
-        quizConfirm.addEventListener("click", function(){
-            quizConfirm.style.display = "none";         //css처럼 style을 넣어줄 수 있음
-            quizResult.style.display = "block";
-            quizDog.classList.add("like");
-        });                                            //버튼을 클릭하면 실행! (함수로 실행)
+        quizConfirm.addEventListener("click", () => {
+            quizInput.style.display = "none";
+            quizResult.style.display = "block";         
+            quizConfirm.style.display = "none";
+
+            //사용자 정답
+            const userWord = quizInput.value.toLowerCase().trim();   //소문자로 바꿔 줌, 여백을 없애줌
+            answerResult = answerResult.toLowerCase().trim();        //대문자를 소문자로 바꿔주었음,소문자 넣어도 정답
+            // console.log(userWord)
+            // console.log(answerResult)
+
+            //사용자 정답 == 문제 정답
+            if(userWord == answerResult) {
+                //정답
+                //alert("정답입니다.")
+                quizView.classList.add("like");
+            } else {
+                //오답
+                //alert("오답입니다.")
+                quizView.classList.add("dislike");
+            }
+        });    //function생략하고 화살표 함수 가능, 정답 버튼을 클릭 했을 때
     </script>
 </body>
 

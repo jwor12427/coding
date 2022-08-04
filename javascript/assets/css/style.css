@@ -79,6 +79,12 @@ h1, h2, h3, h4, h5, h6 {
     background-color: #000;
     color: #fff;
 }
+.header_nav .effect {
+    margin-top: 10px;
+}
+.header_nav .effect li a {
+    border-radius: 40px;
+}
 
 /* 메인 샘플 */
 .main_sample {
