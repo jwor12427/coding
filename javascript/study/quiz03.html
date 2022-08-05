@@ -35,54 +35,112 @@
 
             <h3 class="t_tit2">Script</h3>
             <div class="t_code">
+<pre><code>//선택자, 다중선택이므로 querySelectorAll로 바꿔야 함!
+const quizType =  document.querySelectorAll(".quiz__type");                //퀴즈 종류 , 4개가 있으므로 All로 변경
+const quizNumber = document.querySelectorAll(".quiz__question .number");   //퀴즈 번호
+const quizAsk = document.querySelectorAll(".quiz__question .ask");         //퀴즈 질문
+const quizConfirm = document.querySelectorAll(".quiz__answer .confirm");   //정답 확인 버튼
+const quizResult = document.querySelectorAll(".quiz__answer .result");     //정답 결과
+const quizInput = document.querySelectorAll(".quiz__answer .input");      //사용자 정답
+const quizView = document.querySelectorAll(".quiz__view");                //정답 알람
+    
+//문제정보
+const quizInfo = [
+    {
+        answerType :  "웹디자인기능사 2016년 3회",
+        answerNum : "1",
+        answerAsk : "검은 종이 위에 노랑과 파랑을 나열하고 일정한 거리에서 보면 노랑이 파랑보다 더 가깝게 보인다. 이때의 노랑색을 무엇이라고 하나요?",
+        answerResult : "진출색"
+    },
+    {
+        answerType :  "웹디자인기능사 2016년 3회",
+        answerNum : "2",
+        answerAsk : "HTML 문서의 시작을 알려주는 태그는 무엇인가요?",
+        answerResult : "&lt;html&gt;"
+    },
+    {
+        answerType :  "웹디자인기능사 2016년 3회",
+        answerNum : "3",
+        answerAsk : "애니메이션 제작의 특수 효과 중 하나로 축소형으로 입체 모델을 만들고 여기에 다른 기법을 병합하여 장면을 만드는 것은 무엇인가요?",
+        answerResult : "미니어처 효과"
+    },
+    {
+        answerType :  "웹디자인기능사 2016년 3회",
+        answerNum : "4",
+        answerAsk : "웹사이트 제작 단계 중 사이트의 목적과 사용자 분석에 따라 사이트의 디자인 방향을 설정하는 단계는 무언인가요?",
+        answerResult : "콘셉트 도출"
+    }
+]
+
+    
+//문제 출력
+quizInfo.forEach((el, i) => {
+    quizType[i].textContent = quizInfo[i].answerType;
+    quizNumber[i].textContent = quizInfo[i].answerNum + ". ";
+    quizAsk[i].textContent = quizInfo[i].answerAsk;
+    quizResult[i].textContent = quizInfo[i].answerResult;
+})
+
+//정답 숨기기
+quizResult.forEach((el, i) => {
+    quizResult[i].style.display = "none";
+})
+
+//정답 확인      
+quizConfirm.forEach((btn, num) => {                         //몇번째 인덱스를 가져오는지, num으로 표현
+    btn.addEventListener("click", () => {                   //버튼이 4개가 있다!
+        //사용자 정답
+        const userWord = quizInput[num].value.toLowerCase().trim();
+
+        //사용자 정답 == 문제 정답
+        if(userWord == quizInfo[num].answerResult){
+            //정답
+            quizView[num].classList.add("like");
+            quizConfirm[num].style.display = "none";
+        } else {
+            //오답
+            quizView[num].classList.add("dislike");
+            quizConfirm[num].style.display = "none";
+            quizResult[num].style.display = "block";
+            quizInput[num].style.display = "none";
+        }
+    })
+}); 
+</code></pre>
+            </div>
+            <p class="t_box">
+                querySelectorAll
+            </p>
+            <h3 class="t_tit2">여러번 출력하기</h3>
+            <div class="t_code">
+<pre><code>//문제 출력
+quizType[0].textContent = quizInfo[0].answerType;
+quizType[1].textContent = quizInfo[1].answerType;
+quizType[2].textContent = quizInfo[2].answerType;
+quizType[3].textContent = quizInfo[3].answerType;
+</code></pre>
+            </div>
+            <p class="t_desc">
+                textContent를 이용하여 문제정보를 출력 할 수 있습니다.
+            </p>
+            <h3 class="t_tit2">여러번 출력하기 - for( )</h3>
+            <div class="t_code">
+<pre><code>for ( let i = 0; i &lt; quizInfo.length; i++ ) {
+    quizType[i].textContent = quizInfo[i].answerType;
+}
+</code></pre>
+            </div>
+            <p class="t_desc">
+                for문을 이용하여 스크립트를 출력 할 수 있습니다.
+            </p>
+            <h3 class="t_tit2">여러번 출력하기 - forEach( )</h3>
+            <div class="t_code">
 <pre><code>
 
 </code></pre>
             </div>
-            <p class="t_box">
-                textContent( )
-            </p>
             <p class="t_desc">
-               선택자를 만든 후, <i>textContent</i>를 이용하여 요소에 텍스트를 설정할 수 있으며,
-               <i>addEventListener("click")</i>은 클릭을 하였을 경우, 발생하는 이벤트 요소 입니다.
-            </p>
-            <p class="t_box">
-                .toLowerCase( ) <br>
-                .trim( )
-            </p>
-            <p class="t_desc">
-                toLowerCase( )은 영문을 소문자로 변형시켜 주며, .trim( )는 여백을 없애주는 역할을 합니다.
-            </p>
-
-            <p class="t_box">
-                quizConfirm.<i>style</i>.display = "none"; <br>
-                <i>classList.add</i>(" ");
-            </p>
-            <p class="t_desc">
-                스크립트를 통하여 style요소도 추가할 수 있으며, classList.add( )를 통해 클래스를 추가 할 수 있습니다.
-            </p>
-
-            <p class="t_box">
-                quizConfirm.addEventListener("click", () <i>=></i> {   <br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;quizInput.style.display = "none";       <br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;quizResult.style.display = "block";      <br>  
-                    &nbsp;&nbsp;&nbsp;&nbsp;quizConfirm.style.display = "none";        <br>
-        
-                    &nbsp;&nbsp;&nbsp;&nbsp;//사용자 정답                               <br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;const userWord = quizInput.value.toLowerCase().trim();      <br> 
-                    &nbsp;&nbsp;&nbsp;&nbsp;answerResult = answerResult.toLowerCase().trim();           <br>
-        
-                    &nbsp;&nbsp;&nbsp;&nbsp;//사용자 정답 == 문제 정답              <br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;if(userWord == answerResult) {          <br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;quizView.classList.add("like");     <br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;} else {                                <br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;quizView.classList.add("dislike");  <br>
-                    }
-                });    
-            </p>
-            <p class="t_desc">
-                함수기능을 사용하여 버튼을 클릭 하였을 때 실행 할 수 있도록 하며, 이때 function은 생략하고
-                <i>화살표 함수</i>로 변경이 가능 합니다.
+                forEach문으로 보다 쉽게 출력 할 수 있습니다.
             </p>
 
         </div>

@@ -211,83 +211,32 @@
                 answerResult : "콘셉트 도출"
             },
         ]
-
-        // //문제 출력
-        // quizType[0].textContent = quizInfo[0].answerType;
-        // quizType[1].textContent = quizInfo[1].answerType;
-        // quizType[2].textContent = quizInfo[2].answerType;
-        // quizType[3].textContent = quizInfo[3].answerType;
-        
-        // quizNumber[0].textContent = quizInfo[0].answerNum + ". ";
-        // quizNumber[1].textContent = quizInfo[1].answerNum + ". ";
-        // quizNumber[2].textContent = quizInfo[2].answerNum + ". ";
-        // quizNumber[3].textContent = quizInfo[3].answerNum + ". ";
-        
-        // quizAsk[0].textContent = quizInfo[0].answerAsk;
-        // quizAsk[1].textContent = quizInfo[1].answerAsk;
-        // quizAsk[2].textContent = quizInfo[2].answerAsk;
-        // quizAsk[3].textContent = quizInfo[3].answerAsk;
-
-        // quizResult[0].textContent = quizInfo[0].answerResult;
-        // quizResult[1].textContent = quizInfo[1].answerResult;
-        // quizResult[2].textContent = quizInfo[2].answerResult;
-        // quizResult[3].textContent = quizInfo[3].answerResult;
-
-        // for ( let i = 0; i < quizInfo.length; i++ ) {
-        //     quizType[i].textContent = quizInfo[i].answerType;
-        //     quizNumber[i].textContent = quizInfo[i].answerNum + ". ";
-        //     quizAsk[i].textContent = quizInfo[i].answerAsk;
-        //     quizResult[i].textContent = quizInfo[i].answerResult;
-        // }
-
-        quizInfo.forEach((el, i) => {
-            quizType[i].textContent = quizInfo[i].answerType;
-            quizNumber[i].textContent = quizInfo[i].answerNum + ". ";
-            quizAsk[i].textContent = quizInfo[i].answerAsk;
-            quizResult[i].textContent = quizInfo[i].answerResult;
-        })
-
-        // //정답 숨기기
-        // quizResult[0].style.display = "none";
-        // quizResult[1].style.display = "none";
-        // quizResult[2].style.display = "none";
-        // quizResult[3].style.display = "none";
-
-        // for(let i = 0; i < quizInfo.length; i++) {
-        //     quizResult[i].style.display = "none";
-        // }
-        
-        quizResult.forEach((el, i) => {
-            quizResult[i].style.display = "none";
-        })
-
-        //정답 확인
-        // quizConfirm.addEventListener("click", () => {           //함수가 정의 되지 않으면, 몇개가 있는지 알려 줘야함
-        //     alert("ddd")
-        // });      
-        quizConfirm.forEach((btn, num) => {                         //몇번째 인덱스를 가져오는지, num으로 표현
-            btn.addEventListener("click", () => {                   //버튼이 4개가 있다!
-                
-                //사용자 정답
-                const userWord = quizInput[num].value.toLowerCase().trim();
-
-
-                //사용자 정답 == 문제 정답
-                if(userWord == quizInfo[num].answerResult){
-                    //정답
-                    // alert("정답");
-                    quizView[num].classList.add("like");
-                    quizConfirm[num].style.display = "none";
-                } else {
-                    //오답
-                    // alert("오답");
-                    quizView[num].classList.add("dislike");
-                    quizConfirm[num].style.display = "none";
-                    quizResult[num].style.display = "block";
-                    quizInput[num].style.display = "none";
-                }
+            //문제 출력
+            quizInfo.forEach((e, i) => {
+                quizType[i].textContent = quizInfo[i].answerType;
+                quizNumber[i].textContent = quizInfo[i].answerNum + ". ";
+                quizAsk[i].textContent = quizInfo[i].answerAsk;
+                quizResult[i].textContent = quizInfo[i].answerResult;
             })
-        });                                                         //btn = quizConfirm을 의미하며 버튼을 말함
+
+            for(let i = 0; i < quizInfo.length; i++) {
+                quizResult[i].style.display = "none";
+            }
+
+            quizInfo.forEach((but, num) => {
+                quizConfirm[num].addEventListener("click", () => {
+                    userWord = quizInput[num].value;
+
+                    if(userWord == quizInfo[num].answerResult) {
+                        quizView[num].classList.add("like");
+                        quizConfirm[num].style.display = "none";
+                    } else {
+                        quizView[num].classList.add("dislike");
+                        quizConfirm[num].style.display = "none";
+                        quizResult[num].style.display = "block";
+                    }
+                })
+            })
     </script>
 </body>
 </html>
