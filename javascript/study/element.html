@@ -103,9 +103,50 @@
                     </tr>
                 </tbody>
             </table>
-            
-            
-           
+            <h3 class="t_tit2"></h3>
+
+            <div class="t_code">
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="ko"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;요소를 직접 선택하는 메서드&lt;/title&gt;
+    &lt;script&gt;
+        window.onload = function () {
+            var list1 = document.querySelector('#box1 &gt; ul &gt; li');
+            var list2 = document.querySelectorAll('#box2 &gt; ul &gt; li');
+            console.log(list1);
+            console.log(list2);
+            // list1.style.background = "#ff6600";
+            // list2[0].style.background = "#ccc";
+            // list2.item(1).style.background = "#ddd";
+        };
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div id="box1"&gt;
+        &lt;ul&gt;
+            &lt;li&gt;내용1&lt;/li&gt;      
+            &lt;li&gt;내용2&lt;/li&gt;
+            &lt;li&gt;내용3&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/div&gt;
+    &lt;div id="box2"&gt;
+        &lt;ul&gt;
+            &lt;li&gt;내용4&lt;/li&gt;
+            &lt;li&gt;내용5&lt;/li&gt;
+            &lt;li&gt;내용6&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+            </div>
+            <p class="t_desc">
+                이때, list1에서는 <i>querySelector</i>를 사용하였으므로 '내용1'만 선택되고,
+                list2는 <i>querySelectorAll</i>를 사용하였으므로 box2 안에 있는 모든 li가 선택된다.
+            </p>
+
         </div>
     </main>
     <!-- //main -->
