@@ -23,3 +23,6 @@ https://jwor12427.github.io/coding/html/alphabet.html
 
 ### CSS 메인 페이지
 https://jwor12427.github.io/coding/css/index.html
+
+### Site 페이지
+https://jwor12427.github.io/coding/site/cardType01.html
