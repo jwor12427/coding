@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>사이트 만들기</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+
+</head>
+<body>
+    <header id="header">
+        <h1><a href="../index.html">사이트 만들기</a></h1>
+        <nav class="header_nav">
+
+        </nav>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">사이트 만들기(카드 유형 - 01)</h2>
+            <p class="t_desc2">
+                카드 형식의 사이트를 제작 할 수 있습니다.
+            </p>
+
+            <div class="t_iframe" style="min-height: 1000px; padding-top: 0;">
+               <iframe src="https://jwor12427.github.io/coding/site/cardType/cardType01.html"></iframe>
+            </div>
+
+            <div class="t_link">
+                <a href="https://github.com/jwor12427/coding/blob/main/site/cardType/cardType01.html " target="_blank">원본 소스 보기</a>
+            </div>
+            <hr>
+
+            <h3 class="t_tit2">CSS</h3>
+            <div class="t_code">
+<pre><code>.nexon {
+    font-family: 'NexonLv1Gothic';
+    font-weight: 400;
+}
+
+/* reset */
+* {
+    margin: 0;
+    padding: 0;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+}
+a {
+    text-decoration: none;
+    color: #000;
+}
+img {
+    width: 100%;
+}
+
+/* common */
+.container {
+    width: 1160px;
+    padding: 0 20px;
+    margin: 0 auto;
+}
+.section {
+    padding: 120px 0;
+}
+.section > h2 {                 /* + 는 형제, > 는 자식 */
+    font-size: 50px;
+    line-height: 1;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.section > p {
+    font-size: 22px;
+    font-weight: 300;
+    color: #666;
+    text-align: center;
+    margin-bottom: 70px;
+}
+
+/* cardType */
+.card__inner {
+    display: flex;
+    ustify-content: space-around;
+}
+.card {
+    width: 32%;
+    background-color: #f5f5f5;
+}
+.card__body {
+    padding: 24px;
+    margin-bottom: 10px;
+}
+.card__body .tit {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+.card__body .desc {
+    font-size: 18px;
+    line-height: 1.4;
+    color: #666;
+    margin-bottom: 20px;
+    font-weight: 300;
+}
+</code></pre>
+            </div>
+            <p class="t_desc">
+            
+            </p>
+            <h3 class="t_tit2">HTML</h3>
+            <div class="t_code">
+<pre><code>&lt;section id="cardType" class="card__wrap nexon section"&gt;
+&lt;h2&gt;인상파 화가전 - 고흐&lt;/h2&gt;
+&lt;p&gt;인상파의 화가 고흐의 작품 관람전 입니다.&lt;/p&gt;
+&lt;div class="card__inner container"&gt;
+        &lt;article class="card"&gt;
+            &lt;figure class="card__header"&gt;
+                &lt;img src="img/card_bg01.jpg" alt="해바라기"&gt;
+            &lt;/figure&gt;
+            &lt;div class="card__body"&gt;
+                &lt;h3 class="tit"&gt;해바라기&lt;/h3&gt;
+                &lt;p class="desc"&gt;고흐의 해바라기는 세계에서 가장 사랑받는 작품 중 하나 입니다. 본 작품에는 강렬한 노란색과 인상파 특유의 질감이 돋보이는 작품....&lt;/p&gt;
+                &lt;a class="btn" href="/"&gt;더 자세히 보기&lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/article&gt;
+        &lt;article class="card"&gt;
+            &lt;figure class="card__header"&gt;
+                &lt;img src="img/card_bg02.jpg" alt="별이 빛나는 밤"&gt;
+            &lt;/figure&gt;
+            &lt;div class="card__body"&gt;
+                &lt;h3 class="tit"&gt;별이 빛나는 밤&lt;/h3&gt;
+                &lt;p class="desc"&gt;고흐의 별이 빛나는 밤은 고흐만의 도특한 기법이 돋보이는 작품 중 가장 대표적인 그림입니다. 밤 하늘의 별빛의 강렬한 표현은 보는 사람....&lt;/p&gt;
+                &lt;a class="btn" href="/"&gt;더 자세히 보기&lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/article&gt;
+        &lt;article class="card"&gt;
+            &lt;figure class="card__header"&gt;
+                &lt;img src="img/card_bg03.jpg" alt="자화상"&gt;
+            &lt;/figure&gt;
+            &lt;div class="card__body"&gt;
+                &lt;h3 class="tit"&gt;자화상&lt;/h3&gt;
+                &lt;p class="desc"&gt;고흐의 자화상은 고흐의 생전 모습을 그린 작품입니다. 자화상 속 고흐의 모습은 고갱과의 불화이후 자신의 귀를 자른것으로 유명합니....&lt;/p&gt;
+                &lt;a class="btn" href="/"&gt;더 자세히 보기&lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/article&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+</code></pre>
+            </div>
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:jwor124@naver.com">jwor124@naver.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+   
+</body>
+</html>
