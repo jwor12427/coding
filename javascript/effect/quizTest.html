@@ -212,20 +212,43 @@
             },
         ]
             //문제 출력
+            // quizType[0].textContent = quizInfo[0].answerType;
+            // quizType[1].textContent = quizInfo[1].answerType;
+            // quizType[2].textContent = quizInfo[2].answerType;
+            // quizType[3].textContent = quizInfo[3].answerType;
+
+            // for(let i = 0; i < quizInfo.length; i++) {
+            //     quizType[i].textContent = quizInfo[i].answerType;
+            //     quizNumber[i].textContent = quizInfo[i].answerNum + ". ";
+            //     quizAsk[i].textContent = quizInfo[i].answerAsk;
+            //     quizResult[i].textContent = quizInfo[i].answerResult;
+            // }
+
             quizInfo.forEach((e, i) => {
                 quizType[i].textContent = quizInfo[i].answerType;
                 quizNumber[i].textContent = quizInfo[i].answerNum + ". ";
                 quizAsk[i].textContent = quizInfo[i].answerAsk;
                 quizResult[i].textContent = quizInfo[i].answerResult;
+            });
+
+            //정답 숨기기
+            // quizResult[0].style.display = "none";
+            // quizResult[1].style.display = "none";
+            // quizResult[2].style.display = "none";
+            // quizResult[3].style.display = "none";
+
+            // for(let i = 0; i < quizInfo.length; i++ ) {
+            //     quizResult[i].style.display = "none";
+            // }
+            quizInfo.forEach((e, i) => {
+                quizResult[i].style.display = "none";
             })
 
-            for(let i = 0; i < quizInfo.length; i++) {
-                quizResult[i].style.display = "none";
-            }
-
-            quizInfo.forEach((but, num) => {
-                quizConfirm[num].addEventListener("click", () => {
-                    userWord = quizInput[num].value;
+            //정답 확인하기
+            quizConfirm.forEach((btn, num) => {
+                btn.addEventListener("click", () => {
+                    // alert("ddd");
+                    const userWord = quizInput[num].value;
 
                     if(userWord == quizInfo[num].answerResult) {
                         quizView[num].classList.add("like");
@@ -234,7 +257,7 @@
                         quizView[num].classList.add("dislike");
                         quizConfirm[num].style.display = "none";
                         quizResult[num].style.display = "block";
-                    }
+                    };
                 })
             })
     </script>

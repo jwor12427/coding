@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>퀴즈 이펙트</title>
+
+    <link rel="stylesheet" href="../assets/css/quiz.css">
+
+    <link href="https://webfontworld.github.io/DungGeunMo/DungGeunMo.css" rel="stylesheet">
+    <link href="https://webfontworld.github.io/wando/WandoCleanSea.css" rel="stylesheet">
+</head>
+
+<body>
+    <header id="header">
+        <h1><a href="../javascript01.html">Quiz</a> <em>객관식(한문제) 유형</em></h1>
+        <nav>
+            <ul>
+                <li><a href="quizEffect01.html">1</a></li>
+                <li><a href="quizEffect02.html">2</a></li>
+                <li><a href="quizEffect03.html">3</a></li>
+                <li class="active"><a href="quizEffect04.html">4</a></li>
+                <li><a href="quizEffect05.html">5</a></li>
+                <li><a href="quizEffect06.html">6</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <div class="quiz__wrap">
+            <div class="quiz">
+                <span class="quiz__type"></span>
+                <h2 class="quiz__question">
+                    <span class="number"></span>
+                    <div class="ask"></div>
+                </h2>
+                <div class="quiz__view">
+                    <div class="true">정답입니다!</div>
+                    <div class="false">틀렸습니다!</div>
+                    <div class="dog">
+                        <div class="head">
+                            <div class="ears"></div>
+                            <div class="face"></div>
+                            <div class="eyes">
+                                <div class="teardrop"></div>
+                            </div>
+                            <div class="nose"></div>
+                            <div class="mouth">
+                                <div class="tongue"></div>
+                            </div>
+                            <div class="chin"></div>
+                        </div>
+                        <div class="body">
+                            <div class="tail"></div>
+                            <div class="legs"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="quiz__answer">
+                    <div class="quiz__selects">
+                        <label for="select1">
+                            <input type="radio" id="select1" class="select" name="select" value="1">
+                            <span class="choice"></span>
+                        </label>
+                        <label for="select2">
+                            <input type="radio" id="select2" class="select" name="select" value="2">
+                            <span class="choice"></span>
+                        </label>
+                        <label for="select3">
+                            <input type="radio" id="select3" class="select" name="select" value="3">
+                            <span class="choice"></span>
+                        </label>
+                        <label for="select4">
+                            <input type="radio" id="select4" class="select" name="select" value="4">
+                            <span class="choice"></span>
+                        </label>
+                    </div>
+                    <button class="confirm">정답 확인하기</button>
+                    <div class="result"></div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:jwor124@naver.com">jwor124@naver.com</a>
+    </footer>
+    <!-- //footer -->
+
+    <script>
+        const quizType = document.querySelector(".quiz__type");                //퀴즈 종류 , 4개가 있으므로 All로 변경
+        const quizNumber = document.querySelector(".quiz__question .number");   //퀴즈 번호
+        const quizAsk = document.querySelector(".quiz__question .ask");         //퀴즈 질문
+        const quizConfirm = document.querySelector(".quiz__answer .confirm");   //정답 확인 버튼
+        const quizResult = document.querySelector(".quiz__answer .result");     //정답 결과
+        const quizInput = document.querySelector(".quiz__answer .input");      //사용자 정답
+        const quizView = document.querySelector(".quiz__view");                //정답 알람
+        const quizSelects = document.querySelector(".quiz__selects");          //객관식 보기
+        const quizChoice = quizSelects.querySelectorAll(".choice");             //정답
+        const quizSelect = quizSelects.querySelectorAll(".select");             //quizSelects 안에서 찾아라
+        //문제정보
+        const quizInfo = [
+            {
+                answerType: "웹디자인기능사 2022년 01회",
+                answerNum: "1",
+                answerAsk: "움직임이 없는 무생물적인 존재를 여러 번에 걸쳐 변형 시키고, 이를 연속 촬영 또는 기타 영상적 기법을 이용하여 마치 움직이는 것처럼 눈의 착각을 이르키도록 하는 기술은?",
+                answerChoice: ["렌더링", "모델링", "크로마키", "애니메이션"],
+                answerResult: "4",
+                answerEx: "움직임이 없는 무생물적인 존재를 변형, 연속 촬영과 영상적 기법으로 움직임을 주는 것을 애니메이션이라고 합니다."
+            }
+        ];
+
+        //문제 출력 함수 - 함수를 이용해서 문제를 출력 할 수 있다.
+        function updateQuiz() {
+            quizType.textContent = quizInfo[0].answerType;
+            quizNumber.textContent = quizInfo[0].answerNum + ". ";
+            quizAsk.textContent = quizInfo[0].answerAsk;
+            quizResult.textContent = quizInfo[0].answerEx;
+
+            //보기 출력
+            for (let i = 0; i < 4; i++) {
+                quizChoice[i].textContent = quizInfo[0].answerChoice[i];
+            };
+
+            //해설 숨기기
+            quizResult.style.display = "none";
+        }
+        updateQuiz();
+
+        //정답 확인
+        function answerQuiz() {
+            //사용자 선택한 == 문제 정답
+            //사용자가 클릭한 input를 가져와야 함 --> checked로 확인 가능!
+
+            for (let i = 0; i < quizSelect.length; i++) {
+                if (quizSelect[i].checked == true) {            //보기에 체크가 된 상태
+                    //체크된  번호 == 문제 번호
+                    if (quizSelect[i].value == quizInfo[0].answerResult) {
+                        // alert("정답")
+                        quizView.classList.add("like");
+                    } else {
+                        // alert("오답")
+                        quizView.classList.add("dislike");
+                        quizResult.style.display = "block";
+                        quizConfirm.style.display = "none";
+                    }
+                } 
+            }
+        }
+        //정답 클릭
+        quizConfirm.addEventListener("click", answerQuiz);      //함수를 밖에다가 쓰고, 사용할 수 있다.
+        //answerQuiz는 본래 cilck이랑 같이 들어가야 하지만, 밖으로 따로 사용 가능하다.
+
+
+    </script>
+</body>
+
+</html>

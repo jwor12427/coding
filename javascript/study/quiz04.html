@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>퀴즈 이펙트</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+
+</head>
+<body>
+    <header id="header">
+        <h1><a href="../index.html">퀴즈 이펙트</a></h1>
+        <nav class="header_nav">
+
+        </nav>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">스크립트를 이용한 퀴즈 만들기 04(객관식)</h2>
+            <p class="t_desc2">
+                스크립트를 이용하여 객관식 문제를 만들 수 있습니다.
+            </p>
+
+            <div class="t_iframe" style="min-height: 1000px; padding-top: 0;">
+               <iframe src="https://jwor12427.github.io/coding/javascript/effect/quizEffect03.html"></iframe>
+            </div>
+
+            <div class="t_link">
+                <a href="https://github.com/jwor12427/coding/blob/main/javascript/effect/quizEffect03.html" target="_blank">원본 소스 보기</a>
+            </div>
+            <hr>
+
+            <h3 class="t_tit2">Script</h3>
+            <div class="t_code">
+<pre><code>
+
+</code></pre>
+            </div>
+            <p class="t_box">
+                
+            </p>
+            <p class="t_desc">
+                모든 요소를 배열로 가져와야 하므로, querySelector보다는 querySelectorAll를 사용 합니다.
+            </p>
+            <h3 class="t_tit2">여러번 출력하기</h3>
+            <div class="t_code">
+<pre><code>
+
+</code></pre>
+            </div>
+            <p class="t_desc">
+                textContent를 이용하여 문제정보를 출력 할 수 있습니다.
+            </p>
+            <h3 class="t_tit2">여러번 출력하기 - for( )</h3>
+            <div class="t_code">
+<pre><code>for ( let i = 0; i &lt; quizInfo.length; i++ ) {
+    quizType[i].textContent = quizInfo[i].answerType;
+}
+</code></pre>
+            </div>
+            <p class="t_desc">
+                <i>for문</i>을 이용하여 스크립트를 출력 할 수 있습니다.
+            </p>
+            <h3 class="t_tit2">여러번 출력하기 - forEach( )</h3>
+            <div class="t_code">
+<pre><code>quizInfo.forEach((e, i) => {
+    quizType[i].textContent = quizInfo[i].answerType;
+})
+</code></pre>
+            </div>
+            <p class="t_desc">
+                <i>forEach문</i>으로 보다 쉽게 출력 할 수 있습니다. 이때, e는 element를 의미하며 줄여 사용할수 있습니다.
+                i역시 index를 의미하며 줄여서 사용할 수 있습니다.
+            </p>
+            <h3 class="t_tit2">정답 확인하기 - forEach( )</h3>
+            <div class="t_code">
+<pre><code>quizConfirm.forEach((btn, num) => {                         
+    btn.addEventListener("click", () => {                   
+            
+        //사용자 정답
+        const userWord = quizInput[num].value.toLowerCase().trim();
+
+
+        //사용자 정답 == 문제 정답
+        if(userWord == quizInfo[num].answerResult){
+            //정답
+            quizView[num].classList.add("like");
+        } else {
+            //오답
+            quizView[num].classList.add("dislike");
+            }
+        })
+    });                                       
+</code></pre>
+            </div>
+            <p class="t_desc">
+                forEach문을 이용하여 정답을 확인 할때는 함수를 정의해서 사용합니다. <i>num</i>을 이용하여
+                몇번째 인덱스를 가져오는지 표현해 줍니다.
+            </p>
+            <p class="t_box">
+                //출력되지 않는 경우    <br>
+                quizConfirm.addEventListener("click", () => { <br>           
+                    &nbsp;&nbsp;&nbsp;&nbsp;alert("ddd")    <br>
+                });  <br>
+            </p>
+            <p class="t_desc">
+                num을 정의 하지않고 사용할 경우 출력되지 않는 현상이 일어나므로 주의를 합니다.
+            </p>
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:jwor124@naver.com">jwor124@naver.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+   
+</body>
+</html>
