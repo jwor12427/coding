@@ -21,93 +21,136 @@
         <div class="document">
             <h2 class="t_tit">스크립트를 이용한 퀴즈 만들기 04(객관식)</h2>
             <p class="t_desc2">
-                스크립트를 이용하여 객관식 문제를 만들 수 있습니다.
+                스크립트를 이용하여 객관식에 관한 문제를 만들 수 있으며, 이때 label태그를 활용 합니다.
             </p>
 
             <div class="t_iframe" style="min-height: 1000px; padding-top: 0;">
-               <iframe src="https://jwor12427.github.io/coding/javascript/effect/quizEffect03.html"></iframe>
+               <iframe src="https://jwor12427.github.io/coding/javascript/effect/quizEffect04.html"></iframe>
             </div>
 
             <div class="t_link">
-                <a href="https://github.com/jwor12427/coding/blob/main/javascript/effect/quizEffect03.html" target="_blank">원본 소스 보기</a>
+                <a href="https://github.com/jwor12427/coding/blob/main/javascript/effect/quizEffect04.html" target="_blank">원본 소스 보기</a>
             </div>
             <hr>
 
             <h3 class="t_tit2">Script</h3>
             <div class="t_code">
-<pre><code>
+<pre><code>//선택자
+const quizType = document.querySelector(".quiz__type");                //퀴즈 종류 , 4개가 있으므로 All로 변경
+const quizNumber = document.querySelector(".quiz__question .number");   //퀴즈 번호
+const quizAsk = document.querySelector(".quiz__question .ask");         //퀴즈 질문
+const quizConfirm = document.querySelector(".quiz__answer .confirm");   //정답 확인 버튼
+const quizResult = document.querySelector(".quiz__answer .result");     //정답 결과
+const quizInput = document.querySelector(".quiz__answer .input");      //사용자 정답
+const quizView = document.querySelector(".quiz__view");                //정답 알람
+const quizSelects = document.querySelector(".quiz__selects");          //객관식 보기
+const quizChoice = quizSelects.querySelectorAll(".choice");             //정답
+const quizSelect = quizSelects.querySelectorAll(".select");             //quizSelects 안에서 찾기
 
-</code></pre>
-            </div>
-            <p class="t_box">
-                
-            </p>
-            <p class="t_desc">
-                모든 요소를 배열로 가져와야 하므로, querySelector보다는 querySelectorAll를 사용 합니다.
-            </p>
-            <h3 class="t_tit2">여러번 출력하기</h3>
-            <div class="t_code">
-<pre><code>
+//문제정보
+const quizInfo = [
+    {
+        answerType: "웹디자인기능사 2022년 01회",
+        answerNum: "1",
+        answerAsk: "움직임이 없는 무생물적인 존재를 여러 번에 걸쳐 변형 시키고, 이를 연속 촬영 또는 기타 영상적 기법을 이용하여 마치 움직이는 것처럼 눈의 착각을 이르키도록 하는 기술은?",
+        answerChoice: ["렌더링", "모델링", "크로마키", "애니메이션"],
+        answerResult: "4",
+        answerEx: "움직임이 없는 무생물적인 존재를 변형, 연속 촬영과 영상적 기법으로 움직임을 주는 것을 애니메이션이라고 합니다."
+    }
+];
 
-</code></pre>
-            </div>
-            <p class="t_desc">
-                textContent를 이용하여 문제정보를 출력 할 수 있습니다.
-            </p>
-            <h3 class="t_tit2">여러번 출력하기 - for( )</h3>
-            <div class="t_code">
-<pre><code>for ( let i = 0; i &lt; quizInfo.length; i++ ) {
-    quizType[i].textContent = quizInfo[i].answerType;
+//문제 출력 함수 - 함수를 이용해서 문제를 출력 할 수 있다.
+function updateQuiz() {
+    quizType.textContent = quizInfo[0].answerType;
+    quizNumber.textContent = quizInfo[0].answerNum + ". ";
+    quizAsk.textContent = quizInfo[0].answerAsk;
+    quizResult.textContent = quizInfo[0].answerEx;
+
+    //보기 출력
+    for (let i = 0; i &lt; 4; i++) {
+        quizChoice[i].textContent = quizInfo[0].answerChoice[i];
+    };
+
+    //해설 숨기기
+    quizResult.style.display = "none";
 }
-</code></pre>
-            </div>
-            <p class="t_desc">
-                <i>for문</i>을 이용하여 스크립트를 출력 할 수 있습니다.
-            </p>
-            <h3 class="t_tit2">여러번 출력하기 - forEach( )</h3>
-            <div class="t_code">
-<pre><code>quizInfo.forEach((e, i) => {
-    quizType[i].textContent = quizInfo[i].answerType;
-})
-</code></pre>
-            </div>
-            <p class="t_desc">
-                <i>forEach문</i>으로 보다 쉽게 출력 할 수 있습니다. 이때, e는 element를 의미하며 줄여 사용할수 있습니다.
-                i역시 index를 의미하며 줄여서 사용할 수 있습니다.
-            </p>
-            <h3 class="t_tit2">정답 확인하기 - forEach( )</h3>
-            <div class="t_code">
-<pre><code>quizConfirm.forEach((btn, num) => {                         
-    btn.addEventListener("click", () => {                   
-            
-        //사용자 정답
-        const userWord = quizInput[num].value.toLowerCase().trim();
+updateQuiz();
 
+//정답 확인
+function answerQuiz() {
+    //사용자 선택한 == 문제 정답
+    //사용자가 클릭한 input를 가져와야 함 --> checked로 확인 가능!
 
-        //사용자 정답 == 문제 정답
-        if(userWord == quizInfo[num].answerResult){
-            //정답
-            quizView[num].classList.add("like");
-        } else {
-            //오답
-            quizView[num].classList.add("dislike");
+    for (let i = 0; i &lt; quizSelect.length; i++) {
+        if (quizSelect[i].checked == true) {            //보기에 체크가 된 상태
+            //체크된  번호 == 문제 번호
+            if (quizSelect[i].value == quizInfo[0].answerResult) {
+                // alert("정답")
+                quizView.classList.add("like");
+            } else {
+                // alert("오답")
+                quizView.classList.add("dislike");
+                quizResult.style.display = "block";
+                quizConfirm.style.display = "none";
             }
-        })
-    });                                       
+        } 
+    }
+}
+//정답 클릭
+quizConfirm.addEventListener("click", answerQuiz);      //함수를 밖에다가 쓰고, 사용할 수 있다.
+//answerQuiz는 본래 cilck이랑 같이 들어가야 하지만, 밖으로 따로 사용 가능하다.
 </code></pre>
             </div>
             <p class="t_desc">
-                forEach문을 이용하여 정답을 확인 할때는 함수를 정의해서 사용합니다. <i>num</i>을 이용하여
-                몇번째 인덱스를 가져오는지 표현해 줍니다.
+            여기서 사용자가 클릭한 input를 가져와야 하는데 이것을 <i>checked</i>로 확인이 가능 가능합니다.
             </p>
-            <p class="t_box">
-                //출력되지 않는 경우    <br>
-                quizConfirm.addEventListener("click", () => { <br>           
-                    &nbsp;&nbsp;&nbsp;&nbsp;alert("ddd")    <br>
-                });  <br>
-            </p>
+            <h3 class="t_tit2">객관식 html</h3>
+            <div class="t_code">
+<pre><code>&lt;div class="quiz__selects"&gt;
+    &lt;label for="select1"&gt;
+        &lt;input type="radio" id="select1" class="select" name="select" value="1"&gt;
+        &lt;span class="choice"&gt;&lt;/span&gt;
+    &lt;/label&gt;
+    &lt;label for="select2"&gt;
+        &lt;input type="radio" id="select2" class="select" name="select" value="2"&gt;
+        &lt;span class="choice"&gt;&lt;/span&gt;
+    &lt;/label&gt;
+    &lt;label for="select3"&gt;
+        &lt;input type="radio" id="select3" class="select" name="select" value="3"&gt;
+        &lt;span class="choice"&gt;&lt;/span&gt;
+    &lt;/label&gt;
+    &lt;label for="select4"&gt;
+        &lt;input type="radio" id="select4" class="select" name="select" value="4"&gt;
+        &lt;span class="choice"&gt;&lt;/span&gt;
+    &lt;/label&gt;
+&lt;/div&gt;
+</code></pre>
+            </div>
             <p class="t_desc">
-                num을 정의 하지않고 사용할 경우 출력되지 않는 현상이 일어나므로 주의를 합니다.
+                label태그를 붙여 input과 대응되는 관계를 만듭니다.
+            </p>
+            <h3 class="t_tit2">출력 함수</h3>
+            <div class="t_code">
+<pre><code>//문제 출력 함수 - 함수를 이용해서 문제를 출력 할 수 있다.
+function updateQuiz() {
+    quizType.textContent = quizInfo[0].answerType;
+    quizNumber.textContent = quizInfo[0].answerNum + ". ";
+    quizAsk.textContent = quizInfo[0].answerAsk;
+    quizResult.textContent = quizInfo[0].answerEx;
+
+    //보기 출력
+    for (let i = 0; i &lt; 4; i++) {
+        quizChoice[i].textContent = quizInfo[0].answerChoice[i];
+    };
+
+    //해설 숨기기
+    quizResult.style.display = "none";
+}
+updateQuiz();
+</code></pre>
+            </div>
+            <p class="t_desc">
+                함수를 활용하여 문제 출력과 해설을 숨길 수 있습니다.
             </p>
         </div>
     </main>

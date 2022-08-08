@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : 연산자</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+
+</head>
+<body>
+    <header id="header">
+        <h1><a href="../index.html">Javascript</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="../javascript01.html">데이터 저장하기</a></li>
+                <li><a href="../javascript02.html">데이터 불러오기</a></li>
+                <li><a href="../javascript03.html">데이터 실행하기</a></li>
+                <li><a href="../javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="../javascript05.html">문자열 객체</a></li>
+                <li><a href="../javascript06.html">배열 객체</a></li>
+                <li><a href="../javascript07.html">수학 객체</a></li>
+                <li><a href="../javascript08.html">숫자 객체</a></li>
+                <li><a href="../javascript09.html">브라우저 객체</a></li>
+                <li><a href="../javascript10.html">요소 객체</a></li>
+                <li><a href="../javascript11.html">이벤트 객체</a></li>
+            </ul>
+            <ul class="study">
+                <li><a href="basic.html">기본 규칙</a></li>
+                <li><a href="operator.html">연산자</a></li>
+                <li><a href="../study/for.html">반복문</a></li>
+                <li><a href="../study/if.html">조건문</a></li>
+                <li><a href="../study/type.html">데이터 타입</a></li>
+                <li><a href="../study/function.html">함수</a></li>
+                <li><a href="../study/var.html">지역변수/전역변수</a></li>
+                <li><a href="../study/element.html">요소 선택</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">자바스크립트 요소 선택</h2>
+            <p class="t_desc2">
+                자바스크립트를 통하여 html의 특정 요소를 선택할 수 있습니다.
+            </p>
+
+            <hr>
+
+            <h3 class="t_tit2">요소 선택</h3>
+            <p class="t_desc">
+                요소를 직접 선택하는 메서드 입니다.
+            </p>
+            <table class="t_table">
+                <thead>
+                    <tr>
+                        <th>메서드</th>
+                        <th>설명</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="ce">getElementById( )</td>
+                        <td>document.getElementById('content')일 경우 HTML 요소 중 id
+                            속성이 'content'인 요소를 선택합니다.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="ce">getElementByClassName( )</td>
+                        <td>document.getElementByClassName('menu')일 경우 HTML 요소 중
+                            class명이 'menu'인 요소들을 선택합니다.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="ce">getElementByTagName( )</td>
+                        <td>document.getElementByTagName('ul')일 경우 HTML 요소 중
+                            태그명이 'ul'인 요소들을 선택합니다.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="ce">getElementByName( )</td>
+                        <td>doeument.getElementByName('txt')일 경우 HTML 요소 중
+                            name명이 'txt'인 요소들을 선택합니다.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="ce">querySelector( )</td>
+                        <td>요소의 선택 방법이 css 선택 방법과 같습니다. 선택된 요소 중 첫 번째
+                            요소만 선택합니다.<br>
+                            document.querySelector('.lnb') <br>
+                            document.querySelector(div) <br>
+                            document.querySelector('#gnb li')
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="ce">querySelectorAll( )</td>
+                        <td>querySelector( )는 선택된 요소 중 첫 번째 요소만 선택하는 반면
+                            querySelectorAll( )는 모든 요소를 선택합니다.
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <h3 class="t_tit2"></h3>
+
+            <div class="t_code">
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="ko"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;요소를 직접 선택하는 메서드&lt;/title&gt;
+    &lt;script&gt;
+        window.onload = function () {
+            var list1 = document.querySelector('#box1 &gt; ul &gt; li');
+            var list2 = document.querySelectorAll('#box2 &gt; ul &gt; li');
+            console.log(list1);
+            console.log(list2);
+            // list1.style.background = "#ff6600";
+            // list2[0].style.background = "#ccc";
+            // list2.item(1).style.background = "#ddd";
+        };
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div id="box1"&gt;
+        &lt;ul&gt;
+            &lt;li&gt;내용1&lt;/li&gt;      
+            &lt;li&gt;내용2&lt;/li&gt;
+            &lt;li&gt;내용3&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/div&gt;
+    &lt;div id="box2"&gt;
+        &lt;ul&gt;
+            &lt;li&gt;내용4&lt;/li&gt;
+            &lt;li&gt;내용5&lt;/li&gt;
+            &lt;li&gt;내용6&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+            </div>
+            <p class="t_desc">
+                이때, list1에서는 <i>querySelector</i>를 사용하였으므로 '내용1'만 선택되고,
+                list2는 <i>querySelectorAll</i>를 사용하였으므로 box2 안에 있는 모든 li가 선택된다.
+            </p>
+
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:jwor124@naver.com">jwor124@naver.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+   
+</body>
+</html>

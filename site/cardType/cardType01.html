@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>카드 유형01</title>
+    <style>
+        @import url('https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css');
+
+        .nexon {
+            font-family: 'NexonLv1Gothic';
+            font-weight: 400;
+        }
+
+        /* reset */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: normal;
+        }
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+        img {
+            width: 100%;
+        }
+
+        /* common */
+        .container {
+            width: 1160px;
+            padding: 0 20px;
+            margin: 0 auto;
+        }
+        .section {
+            padding: 120px 0;
+        }
+        .section > h2 {                 /* + 는 형제, > 는 자식 */
+            font-size: 50px;
+            line-height: 1;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .section > p {
+            font-size: 22px;
+            font-weight: 300;
+            color: #666;
+            text-align: center;
+            margin-bottom: 70px;
+        }
+
+        /* cardType */
+        .card__inner {
+            display: flex;
+            justify-content: space-around;
+        }
+        .card {
+            width: 32%;
+            background-color: #f5f5f5;
+        }
+        .card__body {
+            padding: 24px;
+            margin-bottom: 10px;
+        }
+        .card__body .tit {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .card__body .desc {
+            font-size: 18px;
+            line-height: 1.4;
+            color: #666;
+            margin-bottom: 20px;
+            font-weight: 300;
+
+        }
+    </style>
+</head>
+<body>
+    <section id="cardType" class="card__wrap nexon section">
+        <h2>인상파 화가전 - 고흐</h2>
+        <p>인상파의 화가 고흐의 작품 관람전 입니다.</p>
+        <div class="card__inner container">
+            <article class="card">
+                <figure class="card__header">
+                    <img src="img/card_bg01.jpg" alt="해바라기">
+                </figure>
+                <div class="card__body">
+                    <h3 class="tit">해바라기</h3>
+                    <p class="desc">고흐의 해바라기는 세계에서 가장 사랑받는 작품 중 하나 입니다. 본 작품에는 강렬한 노란색과 인상파 특유의 질감이 돋보이는  작품....</p>
+                    <a class="btn" href="/">더 자세히 보기</a>
+                </div>
+            </article>
+            <article class="card">
+                <figure class="card__header">
+                    <img src="img/card_bg02.jpg" alt="별이 빛나는 밤">
+                </figure>
+               <div class="card__body">
+                <h3 class="tit">별이 빛나는 밤</h3>
+                <p class="desc">고흐의 해바라기는 세계에서 가장 사랑받는 작품 중 하나 입니다. 본 작품에는 강렬한 노란색과 인상파 특유의 질감이 돋보이는  작품....</p>
+                <a class="btn" href="/">더 자세히 보기</a>
+               </div>
+            </article>
+            <article class="card">
+                <figure class="card__header">
+                    <img src="img/card_bg03.jpg" alt="자화상">
+                </figure>
+                <div class="card__body">
+                    <h3 class="tit">자화상</h3>
+                    <p class="desc">고흐의 해바라기는 세계에서 가장 사랑받는 작품 중 하나 입니다. 본 작품에는 강렬한 노란색과 인상파 특유의 질감이 돋보이는  작품....</p>
+                    <a class="btn" href="/">더 자세히 보기</a>
+                </div>
+            </article>
+        </div>
+    </section>
+</body>
+</html>
