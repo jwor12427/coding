@@ -51,106 +51,81 @@
             <hr>
 
 
-            <h3 class="t_tit2">비트맵 이란?</h3>
+            <h3 class="t_tit2">비트맵이란?</h3>
             
             <p class="t_desc2">
                 비트맵은 웹 상에서 가장 많이 접하는 이미지 포맷을 일컫는 말입니다. 비트맵은 디스플레이의 각 점들의
-                픽셀 형태로 나타낸 형태입니다.
+                픽셀 형태로 나타낸 형태입니다. <i>JPG, PNG, GIF</i>가 주된 비트맵 확장자 입니다.
             </p>   
             
             <p class="t_desc">
                 비트맵은 사각 픽셀들이 모여있는 형태이기 때문에, 확대시에는 '계단현상' 또는 '깨짐현상'이 발생하게 됩니다.
-                이러한 비트맵의 방식은 컴퓨터에게 부담을 덜 주는 구조를 갖고 있기 때문에, 웹에서의 이미지
+                이러한 비트맵의 방식은 컴퓨터에게 부담을 덜 주는 구조를 갖고 있기 때문에, 웹에서의 이미지 표시, 사실 표현,
+                특수효과, 합성, 보정 작업들에 주로 사용합니다.
             </p>
-            <h3 class="t_tit2">자바스크립트 기본 규칙</h3>
-            <h4 class="t_tit3">1. 세미콜론(;)</h4>
-            <p class="t_desc">
-                하나의 실행문이 끝나면 세리콜론(;)을 붙여 줍니다. 
-                세미콜론(;)을 붙여 주지 않아도 상관을 없습니다.
-            </p>
-            <div class="t_box">
-                var num = 5<i>;</i><br>
-                document.write(num);
-            </div>
 
-            <h4 class="t_tit3">2. 대소문자</h4>
-            <p class="t_desc">
-                자바스크립트 명령어는 대소문자를 구별합니다.
-                console와 Console은 각각 다른 문자열로 처리 됩니다.
+            <h3 class="t_tit2">벡터 란?</h3>
+            <p class="t_desc2">
+                벡터 방식은 비트맵과 상반되는 방식으로 이미지를 표현 합니다. 벡터 방식은
+                이미지를 수학적인 공식으로 표현하는 방법 입니다.<br> <i>AI, SVG</i> 등이 주된 벡터 확장자 입니다.
             </p>
-            <h4 class="t_tit3">3. 들여쓰기</h4>
+
             <p class="t_desc">
-                자바스크립트는 가독성을 위하여 <i>들여쓰기</i>를 사용합니다.
-            </p>
-            <h4 class="t_tit3">4. 주석</h4>
-            <p class="t_desc">
-                자바스크립트 주석은 일반적으로 특정 코드에 대한 설명을 입력하거나
-                특정한 부분의 코드가 실행되지 않도록 사용합니다.
-                주석 표시는 코드에 영향을 미치지 않습니다.
+                수학적인 연산으로 이루어진
+                표현방식이기 때문에 확대를 해도 이미지의 깨짐 현상이 발생하지 않고, 선명하고
+                뚜렷하게 보입니다. 하지만, 이러한 벡터 방식의 이미지 표현은 컴퓨터에 엄청난
+                부담이 가해지게 됩니다.
             </p>
 
             <hr>
 
-            <h3 class="t_tit2">출력하는 방법</h3>
-            <p>자바스크립트에서는 출력할 수 있는 방법이 여려가지가 있습니다. </p>
+            <h3 class="t_tit2">비트맵과 벡터 비교</h3>
             <table class="t_table">
                 <thead>
                     <tr>
-                        <th>분류</th>
-                        <th>매서드</th>
+                        <th></th>
+                        <th>비트맵</th>
+                        <th>벡터</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td class="ce">입력</td>
-                        <td>prompt()</td>
-                    </tr>
-                    <td rowspan="3" class="ce">출력</td>
-                    <td>document.write()</td>
-                    <tr>
-                        <td>alert()</td>
+                        <td class="ce">정의</td>
+                        <td>정사각형 픽셀이 합쳐져 만들어진 이미지</td>
+                        <td>점, 선, 면 등 수학적 연산으로 만들어진 이미지</td>
                     </tr>
                     <tr>
-                        <td>console.log()</td>
+                        <td class="ce">확대</td>
+                        <td>계단 현상(깨짐발생)</td>
+                        <td>뚜렷한 외곽(깨짐현상 없음)</td>
                     </tr>
                     <tr>
-                        <td class="ce">확인</td>
-                        <td>confirm()</td>
+                        <td class="ce">변화/회전</td>
+                        <td>이미지 품질 손상 발생</td>
+                        <td>이미지 변화 없음</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">특징</td>
+                        <td>사실적인 표현, 특수효과, 색감이 풍부함</td>
+                        <td>선명한 효과와 효과적인 응용작업, 대형 인쇄물 가능</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">단점</td>
+                        <td>이미지 축소, 확대시 이미지 품질 손상</td>
+                        <td>정교한 이미지 그래픽 작업 한계</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">확장자</td>
+                        <td>JPG, PNG, GIF 등</td>
+                        <td>AI, SVG, VML 등</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">프로그램</td>
+                        <td>포토샵, 페인터 등</td>
+                        <td>일러스트레이터, 코렐, 플래시</td>
                     </tr>
                 </tbody>
             </table>
-
-            <hr>
-
-            <h3 class="t_tit2">자바스크립트 사용 방법</h3>
-            <p class="t_desc">
-                자바스크립트의 사용방법은 
-                1. 외부파일에 연결하는 방법 
-                2. 스크립트 태그에 사용하는 방법 
-                3. 태그에 직접 기술하는 방법 등이 있습니다.
-            </p>
-            <div class="t_code">
-<pre><code>
-    &lt;!DOCTYPE html&gt;
-    &lt;html lang="ko"&gt;
-    &lt;head&gt;
-        &lt;meta charset="UTF-8"&gt;
-        &lt;title&gt;Javasript&lt;/title&gt;
-        &lt;!-- 1. 외부 파일로 로드하는 방법 --&gt;
-        &lt;script type="text/Javasript" src="js/script.js"&gt;&lt;/script&gt;
-        &lt;!-- 2. script 태그 사이에 기술하는 방법 --&gt;
-        &lt;script&gt;
-            document.write("Javasript");
-        &lt;/script&gt;
-    &lt;/head&gt;
-    &lt;body&gt;
-        &lt;!-- 3. 태그에 직접 기술하는 방법 --&gt;
-        &lt;a href="#" onclick="alert('Javasript')"&gt;&lt;/a&gt;
-    &lt;/body&gt;
-    &lt;/html&gt;
-</code></pre>
-            </div>
-
         </div>
     </main>
     <!-- //main -->
