@@ -203,6 +203,10 @@ h1, h2, h3, h4, h5, h6 {
     height: 100%;
    
 }
+.document .t_link {
+    display: flex;
+    flex-wrap: wrap;
+}
 .document .t_link a {
     display: block;
     width: 200px;
