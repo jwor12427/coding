@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : 기본 규칙</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+
+</head>
+<body>
+    <header id="header">
+        <h1><a href="../index.html">Javascript</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="../javascript01.html">데이터 저장하기</a></li>
+                <li><a href="../javascript02.html">데이터 불러오기</a></li>
+                <li><a href="../javascript03.html">데이터 실행하기</a></li>
+                <li><a href="../javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="../javascript05.html">문자열 객체</a></li>
+                <li><a href="../javascript06.html">배열 객체</a></li>
+                <li><a href="../javascript07.html">수학 객체</a></li>
+                <li><a href="../javascript08.html">숫자 객체</a></li>
+                <li><a href="../javascript09.html">브라우저 객체</a></li>
+                <li><a href="../javascript10.html">요소 객체</a></li>
+                <li><a href="../javascript11.html">이벤트 객체</a></li>
+            </ul>
+            <ul class="study">
+                <li><a href="../study/basic.html">기본 규칙</a></li>
+                <li><a href="../study/operator.html">연산자</a></li>
+                <li><a href="../study/for.html">반복문</a></li>
+                <li><a href="../study/if.html">조건문</a></li>
+                <li><a href="../study/type.html">데이터 타입</a></li>
+                <li><a href="../study/function.html">함수</a></li>
+                <li><a href="../study/var.html">지역변수/전역변수</a></li>
+                <li><a href="../study/element.html">요소 선택</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">비트맵과 벡터</h2>
+            <p class="t_desc">
+                
+            </p>
+
+            <hr>
+
+
+            <h3 class="t_tit2">비트맵 이란?</h3>
+            
+            <p class="t_desc2">
+                비트맵은 웹 상에서 가장 많이 접하는 이미지 포맷을 일컫는 말입니다. 비트맵은 디스플레이의 각 점들의
+                픽셀 형태로 나타낸 형태입니다.
+            </p>   
+            
+            <p class="t_desc">
+                비트맵은 사각 픽셀들이 모여있는 형태이기 때문에, 확대시에는 '계단현상' 또는 '깨짐현상'이 발생하게 됩니다.
+                이러한 비트맵의 방식은 컴퓨터에게 부담을 덜 주는 구조를 갖고 있기 때문에, 웹에서의 이미지
+            </p>
+            <h3 class="t_tit2">자바스크립트 기본 규칙</h3>
+            <h4 class="t_tit3">1. 세미콜론(;)</h4>
+            <p class="t_desc">
+                하나의 실행문이 끝나면 세리콜론(;)을 붙여 줍니다. 
+                세미콜론(;)을 붙여 주지 않아도 상관을 없습니다.
+            </p>
+            <div class="t_box">
+                var num = 5<i>;</i><br>
+                document.write(num);
+            </div>
+
+            <h4 class="t_tit3">2. 대소문자</h4>
+            <p class="t_desc">
+                자바스크립트 명령어는 대소문자를 구별합니다.
+                console와 Console은 각각 다른 문자열로 처리 됩니다.
+            </p>
+            <h4 class="t_tit3">3. 들여쓰기</h4>
+            <p class="t_desc">
+                자바스크립트는 가독성을 위하여 <i>들여쓰기</i>를 사용합니다.
+            </p>
+            <h4 class="t_tit3">4. 주석</h4>
+            <p class="t_desc">
+                자바스크립트 주석은 일반적으로 특정 코드에 대한 설명을 입력하거나
+                특정한 부분의 코드가 실행되지 않도록 사용합니다.
+                주석 표시는 코드에 영향을 미치지 않습니다.
+            </p>
+
+            <hr>
+
+            <h3 class="t_tit2">출력하는 방법</h3>
+            <p>자바스크립트에서는 출력할 수 있는 방법이 여려가지가 있습니다. </p>
+            <table class="t_table">
+                <thead>
+                    <tr>
+                        <th>분류</th>
+                        <th>매서드</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="ce">입력</td>
+                        <td>prompt()</td>
+                    </tr>
+                    <td rowspan="3" class="ce">출력</td>
+                    <td>document.write()</td>
+                    <tr>
+                        <td>alert()</td>
+                    </tr>
+                    <tr>
+                        <td>console.log()</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">확인</td>
+                        <td>confirm()</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <hr>
+
+            <h3 class="t_tit2">자바스크립트 사용 방법</h3>
+            <p class="t_desc">
+                자바스크립트의 사용방법은 
+                1. 외부파일에 연결하는 방법 
+                2. 스크립트 태그에 사용하는 방법 
+                3. 태그에 직접 기술하는 방법 등이 있습니다.
+            </p>
+            <div class="t_code">
+<pre><code>
+    &lt;!DOCTYPE html&gt;
+    &lt;html lang="ko"&gt;
+    &lt;head&gt;
+        &lt;meta charset="UTF-8"&gt;
+        &lt;title&gt;Javasript&lt;/title&gt;
+        &lt;!-- 1. 외부 파일로 로드하는 방법 --&gt;
+        &lt;script type="text/Javasript" src="js/script.js"&gt;&lt;/script&gt;
+        &lt;!-- 2. script 태그 사이에 기술하는 방법 --&gt;
+        &lt;script&gt;
+            document.write("Javasript");
+        &lt;/script&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;!-- 3. 태그에 직접 기술하는 방법 --&gt;
+        &lt;a href="#" onclick="alert('Javasript')"&gt;&lt;/a&gt;
+    &lt;/body&gt;
+    &lt;/html&gt;
+</code></pre>
+            </div>
+
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:jwor124@naver.com">jwor124@naver.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+   
+</body>
+</html>
