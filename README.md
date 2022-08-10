@@ -17,8 +17,7 @@ https://jwor12427.github.io/coding/javascript/effect/quizEffect03.html
 https://jwor12427.github.io/coding/javascript/effect/quizEffect04.html
 
 
-### HTML 메인 페이지
-https://jwor12427.github.io/coding/html/index.html   
+### HTML 메인 페이지  
 https://jwor12427.github.io/coding/html/alphabet.html
 
 ### CSS 메인 페이지
