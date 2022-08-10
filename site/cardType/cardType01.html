@@ -85,6 +85,9 @@
         .card__body .tit {
             font-size: 24px;
             margin-bottom: 10px;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
         }
 
         .card__body .desc {
@@ -93,23 +96,27 @@
             color: #666;
             margin-bottom: 20px;
             font-weight: 300;
-
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 4; 
+            -webkit-box-orient: vertical;
         }
     </style>
 </head>
 
 <body>
-    <section id="cardType" class="card__wrap nexon section">
+    <section id="cardType01" class="card__wrap nexon section">
         <h2>인상파 화가전 - 고흐</h2>
         <p>인상파의 화가 고흐의 작품 관람전 입니다.</p>
         <div class="card__inner container">
             <article class="card">
                 <figure class="card__header">
-                    <img src="img/card_bg01.jpg" alt="해바라기">
+                    <img src="img/card_bg01_01.jpg" alt="해바라기">
                 </figure>
                 <div class="card__body">
                     <h3 class="tit">해바라기</h3>
-                    <p class="desc">고흐의 해바라기는 세계에서 가장 사랑받는 작품 중 하나 입니다. 본 작품에는 강렬한 노란색과 인상파 특유의 질감이 돋보이는 작품....</p>
+                    <p class="desc">고흐의 해바라기는 세계에서 가장 사랑받는 작품 중 하나 입니다. 본 작품에는 강렬한 노란색과 인상파 특유의 질감이 돋보이는 작품 중 하나로 고흐특유의 기법이 돋보이는</p>
                     <a class="btn" href="/">
                         더 자세히 보기
                         <span aria-hidden="true">
@@ -125,11 +132,11 @@
             </article>
             <article class="card">
                 <figure class="card__header">
-                    <img src="img/card_bg02.jpg" alt="별이 빛나는 밤">
+                    <img src="img/card_bg01_02.jpg" alt="별이 빛나는 밤">
                 </figure>
                 <div class="card__body">
                     <h3 class="tit">별이 빛나는 밤</h3>
-                    <p class="desc">고흐의 별이 빛나는 밤은 고흐만의 도특한 기법이 돋보이는 작품 중 가장 대표적인 그림입니다. 밤 하늘의 별빛의 강렬한 표현은 보는 사람....</p>
+                    <p class="desc">고흐의 별이 빛나는 밤은 고흐만의 도특한 기법이 돋보이는 작품 중 가장 대표적인 그림입니다. 밤 하늘의 별빛의 강렬한 표현은 보는 사람을 하여금 강렬한 느낌을 받을 수 있게</p>
                     <a class="btn" href="/">
                         더 자세히 보기
                         <span aria-hidden="true">
@@ -145,11 +152,11 @@
             </article>
             <article class="card">
                 <figure class="card__header">
-                    <img src="img/card_bg03.jpg" alt="자화상">
+                    <img src="img/card_bg01_03.jpg" alt="자화상">
                 </figure>
                 <div class="card__body">
                     <h3 class="tit">자화상</h3>
-                    <p class="desc">고흐의 자화상은 고흐의 생전 모습을 그린 작품입니다. 자화상 속 고흐의 모습은 고갱과의 불화이후 자신의 귀를 자른것으로 유명합니....</p>
+                    <p class="desc">고흐의 자화상은 고흐의 생전 모습을 그린 작품입니다. 자화상 속 고흐의 모습은 고갱과의 불화이후 자신의 귀를 자른것으로 유명합니다. 자신의 자화상 속에도 인상파 특유의 </p>
                     <a class="btn" href="/">
                         더 자세히 보기
                         <span aria-hidden="true">

@@ -6461,9 +6461,9 @@
                                         <td></td>
                                     </tr>
                                     <tr>
-                                        <td class="left">그룹 선택자</td>
+                                        <td>그룹 선택자</td>
                                         <td class="left">h1, h2, h3, h4, h5, h6 {font-weight: normal;}</td>
-                                        <td>여러개의 태그를 선택하여 폰트 두께를 기본 값으로 설정합니다.</td>
+                                        <td class="left">여러개의 태그를 선택하여 폰트 두께를 기본 값으로 설정합니다.</td>
                                         <td>
                                             <span class="material-symbols-outlined">star</span>
                                             <span class="material-symbols-outlined">star</span>
@@ -6490,7 +6490,7 @@
                                         <td rowspan="4">계층 선택자</td>
                                         <td>하위 선택자</td>
                                         <td class="left">div p {color: #fff;}</td>
-                                        <td class="left"></td>
+                                        <td class="left">div내부에 있는 모든p태그의 글씨 색깔을 하얀색으로 변경합니다.</td>
                                         <td>
                                             <span class="material-symbols-outlined">star</span>
                                             <span class="material-symbols-outlined">star</span>
@@ -6503,7 +6503,7 @@
                                     <tr>
                                         <td>자식 선택자</td>
                                         <td class="left">div > p {color: #fff;}</td>
-                                        <td class="left"></td>
+                                        <td class="left">div내부 안에 있는 p태그의 글씨 색깔을 하얀색으로 변경합니다.</td>
                                         <td>
                                             <span class="material-symbols-outlined">star</span>
                                             <span class="material-symbols-outlined">star</span>
@@ -6516,7 +6516,7 @@
                                     <tr>
                                         <td>형제 선택자</td>
                                         <td class="left">div ~ p {color: #fff;}</td>
-                                        <td class="left"></td>
+                                        <td class="left">div와 같은 계층에 있는 p태그의 글씨 색깔을 하얀색으로 변경합니다.</td>
                                         <td>
                                             <span class="material-symbols-outlined">star</span>
                                             <span class="material-symbols-outlined">star</span>
@@ -6529,7 +6529,7 @@
                                     <tr>
                                         <td>인접 선택자</td>
                                         <td class="left">div + p {color: #fff;}</td>
-                                        <td class="left"></td>
+                                        <td class="left">div요소의 바로 다음에 나오는 p태그의 글씨 색깔을 하얀색으로 변경합니다.</td>
                                         <td>
                                             <span class="material-symbols-outlined">star</span>
                                             <span class="material-symbols-outlined">star</span>
@@ -6540,10 +6540,10 @@
                                         <td></td>
                                     </tr>
                                     <tr>
-                                        <td rowspan="7">속성 선택자</td>
-                                        <td>[name]</td>
-                                        <td class="left">a[href]</td>
-                                        <td class="left"></td>
+                                        <td rowspan="9">속성 선택자</td>
+                                        <td>[class]</td>
+                                        <td class="left">h1[class]</td>
+                                        <td class="left">class명을 가진 h1 요소를 선택합니다.</td>
                                         <td>
                                             <span class="material-symbols-outlined">star</span>
                                             <span class="material-symbols-outlined">star</span>
@@ -6554,9 +6554,9 @@
                                         <td></td>
                                     </tr>
                                     <tr>
-                                        <td>[name="value"]</td>
-                                        <td class="left">a[href="#web"]</td>
-                                        <td class="left"></td>
+                                        <td>[alt]</td>
+                                        <td class="left">img[alt]</td>
+                                        <td class="left">alt 속성을 가진 img요소를 선택합니다.</td>
                                         <td>
                                             <span class="material-symbols-outlined">star</span>
                                             <span class="material-symbols-outlined">star</span>
@@ -6567,9 +6567,9 @@
                                         <td></td>
                                     </tr>
                                     <tr>
-                                        <td></td>
-                                        <td class="left"></td>
-                                        <td class="left"></td>
+                                        <td>[class="abc"]</td>
+                                        <td class="left">p[class="abc"]</td>
+                                        <td class="left">class명이 유일하게 'abc'인 p요소를 선택합니다.</td>
                                         <td>
                                             <span class="material-symbols-outlined">star</span>
                                             <span class="material-symbols-outlined">star</span>
@@ -6580,9 +6580,9 @@
                                         <td></td>
                                     </tr>
                                     <tr>
-                                        <td></td>
-                                        <td class="left"></td>
-                                        <td class="left"></td>
+                                        <td>[class~="abc"]</td>
+                                        <td class="left">p[class~="abc"]</td>
+                                        <td class="left">class명이 유일하게 'abc'이거나 여러 개의 class명 중 하나가 'abc'인 p요소를 선택합니다.</td>
                                         <td>
                                             <span class="material-symbols-outlined">star</span>
                                             <span class="material-symbols-outlined">star</span>
@@ -6593,9 +6593,9 @@
                                         <td></td>
                                     </tr>
                                     <tr>
-                                        <td></td>
-                                        <td class="left"></td>
-                                        <td class="left"></td>
+                                        <td>[class|="abc"]</td>
+                                        <td class="left">p[class|="abc"]</td>
+                                        <td class="left">class명이 'abc'이거나 'abc~'로 시작하는 p요소를 선택합니다.</td>
                                         <td>
                                             <span class="material-symbols-outlined">star</span>
                                             <span class="material-symbols-outlined">star</span>
@@ -6606,9 +6606,9 @@
                                         <td></td>
                                     </tr>
                                     <tr>
-                                        <td></td>
-                                        <td class="left"></td>
-                                        <td class="left"></td>
+                                        <td>[class^="abc"]</td>
+                                        <td class="left">p[class^="abc"]</td>
+                                        <td class="left">class명이 철지 'abc'로 시작하는 p요소를 선택합니다.</td>
                                         <td>
                                             <span class="material-symbols-outlined">star</span>
                                             <span class="material-symbols-outlined">star</span>
@@ -6619,9 +6619,35 @@
                                         <td></td>
                                     </tr>
                                     <tr>
+                                        <td>[class$="abc"]</td>
+                                        <td class="left">p[class$="abc"]</td>
+                                        <td class="left">class명이 철자 'abc'로 끝나는 p요소를 선택합니다.</td>
+                                        <td>
+                                            <span class="material-symbols-outlined">star</span>
+                                            <span class="material-symbols-outlined">star</span>
+                                            <span class="material-symbols-outlined">star</span>
+                                            <span class="material-symbols-outlined">grade</span>
+                                            <span class="material-symbols-outlined">grade</span>
+                                        </td>
                                         <td></td>
-                                        <td class="left"></td>
-                                        <td class="left"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>[class*="abc"]</td>
+                                        <td class="left">p[class*="abc"]</td>
+                                        <td class="left">class명에 철자 'abc'가 포함되어 있는 p요소를 선택합니다.</td>
+                                        <td>
+                                            <span class="material-symbols-outlined">star</span>
+                                            <span class="material-symbols-outlined">star</span>
+                                            <span class="material-symbols-outlined">star</span>
+                                            <span class="material-symbols-outlined">grade</span>
+                                            <span class="material-symbols-outlined">grade</span>
+                                        </td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>[href^="mailto"]</td>
+                                        <td class="left">a[href^="mailto"]</td>
+                                        <td class="left">herf 속성값이 'mailto'로 시작하는 a요소를 선택합니다.</td>
                                         <td>
                                             <span class="material-symbols-outlined">star</span>
                                             <span class="material-symbols-outlined">star</span>
@@ -6633,9 +6659,9 @@
                                     </tr>
                                     <tr>
                                         <td rowspan="5">가상 요소</td>
-                                        <td>a:link</td>
-                                        <td class="left"></td>
-                                        <td class="left"></td>
+                                        <td>::first-line</td>
+                                        <td class="left">p::first-line {color: #fff;}</td>
+                                        <td class="left">p태그를 첫 번째 라인을 선택하여 글씨 색을 하얀색으로 변경합니다.</td>
                                         <td>
                                             <span class="material-symbols-outlined">star</span>
                                             <span class="material-symbols-outlined">star</span>
@@ -6646,9 +6672,9 @@
                                         <td></td>
                                     </tr>
                                     <tr>
-                                        <td></td>
-                                        <td class="left"></td>
-                                        <td class="left"></td>
+                                        <td>::first-letter</td>
+                                        <td class="left">p::first-letter {color: #fff;}</td>
+                                        <td class="left">p태그의 첫 번째 문자를 선택하여 글씨 색을 하얀색으로 변경합니다.</td>
                                         <td>
                                             <span class="material-symbols-outlined">star</span>
                                             <span class="material-symbols-outlined">star</span>
@@ -6659,9 +6685,9 @@
                                         <td></td>
                                     </tr>
                                     <tr>
-                                        <td></td>
-                                        <td class="left"></td>
-                                        <td class="left"></td>
+                                        <td>::before</td>
+                                        <td class="left">p::before {content: '시작'}</td>
+                                        <td class="left">p태그의 시작 지점에 가상 요소를 생성 및 선택하여 content '시작'를 추가합니다.</td>
                                         <td>
                                             <span class="material-symbols-outlined">star</span>
                                             <span class="material-symbols-outlined">star</span>
@@ -6672,9 +6698,9 @@
                                         <td></td>
                                     </tr>
                                     <tr>
-                                        <td></td>
-                                        <td class="left"></td>
-                                        <td class="left"></td>
+                                        <td>::after</td>
+                                        <td class="left">p::after {content: '끝'}</td>
+                                        <td class="left">p태그의 끝 지점에 가상 요소를 생성 및 선택하여 content'끝'를 추가합니다.</td>
                                         <td>
                                             <span class="material-symbols-outlined">star</span>
                                             <span class="material-symbols-outlined">star</span>
@@ -6685,9 +6711,9 @@
                                         <td></td>
                                     </tr>
                                     <tr>
-                                        <td></td>
-                                        <td class="left"></td>
-                                        <td class="left"></td>
+                                        <td>::selection</td>
+                                        <td class="left">p::selection {color: red}</td>
+                                        <td class="left">p태그 안에서 드레그 한 영역의 글씨 색깔을 빨간색으로 변경합니다.</td>
                                         <td>
                                             <span class="material-symbols-outlined">star</span>
                                             <span class="material-symbols-outlined">star</span>
@@ -6699,9 +6725,9 @@
                                     </tr>
                                     <tr>
                                         <td rowspan="13">가상 클래스</td>
-                                        <td></td>
-                                        <td class="left"></td>
-                                        <td class="left"></td>
+                                        <td>:first-child</td>
+                                        <td class="left">li:first-child {color: #fff;}</td>
+                                        <td class="left">li의 첫 번째 자식만 선택하여 글씨 색깔을 하얀색으로 변경합니다.</td>
                                         <td>
                                             <span class="material-symbols-outlined">star</span>
                                             <span class="material-symbols-outlined">star</span>
@@ -6712,9 +6738,9 @@
                                         <td></td>
                                     </tr>
                                     <tr>
-                                        <td></td>
-                                        <td class="left"></td>
-                                        <td class="left"></td>
+                                        <td>:last-child</td>
+                                        <td class="left">li:last-child {color: #fff;}</td>
+                                        <td class="left">li의 마지막 자식만 선택하여 글씨 색깔을 하얀색으로 변경합니다.</td>
                                         <td>
                                             <span class="material-symbols-outlined">star</span>
                                             <span class="material-symbols-outlined">star</span>
@@ -6725,9 +6751,34 @@
                                         <td></td>
                                     </tr>
                                     <tr>
+                                        <td>:first-of-type</td>
+                                        <td class="left">p:first-of-type {color: #fff;}</td>
+                                        <td class="left">p태그 중 첫번째 p만 선택하여 글씨 색깔을 하얀색으로 변경합니다.</td>
+                                        <td>
+                                            <span class="material-symbols-outlined">star</span>
+                                            <span class="material-symbols-outlined">star</span>
+                                            <span class="material-symbols-outlined">star</span>
+                                            <span class="material-symbols-outlined">grade</span>
+                                            <span class="material-symbols-outlined">grade</span>
+                                        </td>
                                         <td></td>
-                                        <td class="left"></td>
-                                        <td class="left"></td>
+                                    </tr>
+                                    <td>:last-of-type</td>
+                                    <td class="left">p:last-of-type {color: #fff;}</td>
+                                    <td class="left">p태그 중 마지막 p만 선택하여 글씨 색깔을 하얀색으로 변경합니다.</td>
+                                    <td>
+                                        <span class="material-symbols-outlined">star</span>
+                                        <span class="material-symbols-outlined">star</span>
+                                        <span class="material-symbols-outlined">star</span>
+                                        <span class="material-symbols-outlined">grade</span>
+                                        <span class="material-symbols-outlined">grade</span>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                    <tr>
+                                        <td>:nth-child()</td>
+                                        <td class="left">p:nth-child(2) {color: #fff;}</td>
+                                        <td class="left">p태그의 앞에서 두번째 자식만 선택하여 글씨 색깔을 하얀색을 변경합니다.</td>
                                         <td>
                                             <span class="material-symbols-outlined">star</span>
                                             <span class="material-symbols-outlined">star</span>
@@ -6738,9 +6789,9 @@
                                         <td></td>
                                     </tr>
                                     <tr>
-                                        <td></td>
-                                        <td class="left"></td>
-                                        <td class="left"></td>
+                                        <td>:nth-last-child()</td>
+                                        <td class="left">p:nth-last-child(2) {color: #fff;}</td>
+                                        <td class="left">p태그의 뒤에서 두번째 자식만 선택하여 글씨 색깔을 하얀색으로 변경합니다.</td>
                                         <td>
                                             <span class="material-symbols-outlined">star</span>
                                             <span class="material-symbols-outlined">star</span>
@@ -6751,9 +6802,9 @@
                                         <td></td>
                                     </tr>
                                     <tr>
-                                        <td></td>
-                                        <td class="left"></td>
-                                        <td class="left"></td>
+                                        <td>:nth-of-type()</td>
+                                        <td class="left">p:nth-of-type(3) {color: #fff;}</td>
+                                        <td class="left">p태그 중 앞에서 세번째 p만 선택하여 글씨 색깔을 하얀색으로 변경합니다.</td>
                                         <td>
                                             <span class="material-symbols-outlined">star</span>
                                             <span class="material-symbols-outlined">star</span>
@@ -6764,9 +6815,9 @@
                                         <td></td>
                                     </tr>
                                     <tr>
-                                        <td></td>
-                                        <td class="left"></td>
-                                        <td class="left"></td>
+                                        <td>:nth-last-of-type()</td>
+                                        <td class="left">p:nth-last-of-type(3) {color: #fff;}</td>
+                                        <td class="left">p태그 중 뒤에서 세번째 p만 선택하여 글씨 색깔을 하얀색으로 변경합니다.</td>
                                         <td>
                                             <span class="material-symbols-outlined">star</span>
                                             <span class="material-symbols-outlined">star</span>
@@ -6777,9 +6828,9 @@
                                         <td></td>
                                     </tr>
                                     <tr>
-                                        <td></td>
-                                        <td class="left"></td>
-                                        <td class="left"></td>
+                                        <td>:only-child</td>
+                                        <td class="left">p:only-child {color: #fff;}</td>
+                                        <td class="left">p태그가 유일한 자식이면 선택하여 글씨 색깔을 하얀색으로 변경합니다.</td>
                                         <td>
                                             <span class="material-symbols-outlined">star</span>
                                             <span class="material-symbols-outlined">star</span>
@@ -6790,9 +6841,9 @@
                                         <td></td>
                                     </tr>
                                     <tr>
-                                        <td></td>
-                                        <td class="left"></td>
-                                        <td class="left"></td>
+                                        <td>:only-of-type()</td>
+                                        <td class="left">p:only-of-type(3) {color: #fff;}</td>
+                                        <td class="left">p태그가 유일한 p태그면 선택하여 글씨 색깔을 하얀색으로 변경합니다.</td>
                                         <td>
                                             <span class="material-symbols-outlined">star</span>
                                             <span class="material-symbols-outlined">star</span>
@@ -6803,9 +6854,9 @@
                                         <td></td>
                                     </tr>
                                     <tr>
-                                        <td></td>
-                                        <td class="left"></td>
-                                        <td class="left"></td>
+                                        <td>:not()</td>
+                                        <td class="left">li:not(:nth-child(2)) {color: #fff;}</td>
+                                        <td class="left">li태그의 자식 중 앞에서 두번째 자식만 빼고 글씨 색깔을 하얀색으로 변경합니다.</td>
                                         <td>
                                             <span class="material-symbols-outlined">star</span>
                                             <span class="material-symbols-outlined">star</span>
@@ -6816,9 +6867,9 @@
                                         <td></td>
                                     </tr>
                                     <tr>
-                                        <td></td>
-                                        <td class="left"></td>
-                                        <td class="left"></td>
+                                        <td>:root</td>
+                                        <td class="left">:root {color: #fff;}</td>
+                                        <td class="left">문서상 최상위 요소(html)을 선택하여 글씨 색깔을 하얀색으로 변경합니다.</td>
                                         <td>
                                             <span class="material-symbols-outlined">star</span>
                                             <span class="material-symbols-outlined">star</span>
@@ -6829,9 +6880,9 @@
                                         <td></td>
                                     </tr>
                                     <tr>
-                                        <td></td>
-                                        <td class="left"></td>
-                                        <td class="left"></td>
+                                        <td>:empty</td>
+                                        <td class="left">:empty {color: #fff;}</td>
+                                        <td class="left">텍스트 및 공백을 포함하여 내용이 없는 태그를 선택하여 글씨 색깔을 하얀색으로 변경합니다.</td>
                                         <td>
                                             <span class="material-symbols-outlined">star</span>
                                             <span class="material-symbols-outlined">star</span>
@@ -6842,36 +6893,11 @@
                                         <td></td>
                                     </tr>
                                     <tr>
-                                        <td></td>
-                                        <td class="left"></td>
-                                        <td class="left"></td>
-                                        <td>
-                                            <span class="material-symbols-outlined">star</span>
-                                            <span class="material-symbols-outlined">star</span>
-                                            <span class="material-symbols-outlined">star</span>
-                                            <span class="material-symbols-outlined">grade</span>
-                                            <span class="material-symbols-outlined">grade</span>
-                                        </td>
-                                        <td></td>
-                                    </tr>
-                                    <tr>
-                                        <td></td>
-                                        <td class="left"></td>
-                                        <td class="left"></td>
-                                        <td>
-                                            <span class="material-symbols-outlined">star</span>
-                                            <span class="material-symbols-outlined">star</span>
-                                            <span class="material-symbols-outlined">star</span>
-                                            <span class="material-symbols-outlined">grade</span>
-                                            <span class="material-symbols-outlined">grade</span>
-                                        </td>
-                                        <td></td>
-                                    </tr>
                                     <tr>
                                         <td rowspan="4">링크 가상 선택자</td>
-                                        <td></td>
-                                        <td class="left"></td>
-                                        <td class="left"></td>
+                                        <td>:link</td>
+                                        <td class="left">a:link {color: #fff}</td>
+                                        <td class="left">방문하지 않은 링크를 선택하여 글씨 색깔을 하얀색으로 변경합니다.</td>
                                         <td>
                                             <span class="material-symbols-outlined">star</span>
                                             <span class="material-symbols-outlined">star</span>
@@ -6882,9 +6908,9 @@
                                         <td></td>
                                     </tr>
                                     <tr>
-                                        <td></td>
-                                        <td class="left"></td>
-                                        <td class="left"></td>
+                                        <td>:visited</td>
+                                        <td class="left">a:visited {color: #fff}</td>
+                                        <td class="left">방문했던 링크를 선택하여 글씨 색깔을 하얀색으로 변경합니다.</td>
                                         <td>
                                             <span class="material-symbols-outlined">star</span>
                                             <span class="material-symbols-outlined">star</span>
@@ -6895,9 +6921,9 @@
                                         <td></td>
                                     </tr>
                                     <tr>
-                                        <td></td>
-                                        <td class="left"></td>
-                                        <td class="left"></td>
+                                        <td>:hover</td>
+                                        <td class="left">a:hover {color: #fff}</td>
+                                        <td class="left">마우스를 a태그 위에 올린 상태 일때 글씨 색깔을 하얀색으로 변경합니다.</td>
                                         <td>
                                             <span class="material-symbols-outlined">star</span>
                                             <span class="material-symbols-outlined">star</span>
@@ -6908,9 +6934,9 @@
                                         <td></td>
                                     </tr>
                                     <tr>
-                                        <td></td>
-                                        <td class="left"></td>
-                                        <td class="left"></td>
+                                        <td>:active</td>
+                                        <td class="left">a:active {color: #fff}</td>
+                                        <td class="left">a태그를 마우스로 클릭한 상태 일때 글씨 색깔을 하얀색으로 변경합니다.</td>
                                         <td>
                                             <span class="material-symbols-outlined">star</span>
                                             <span class="material-symbols-outlined">star</span>
@@ -6922,9 +6948,9 @@
                                     </tr>
                                     <tr>
                                         <td rowspan="4">폼 선택자</td>
-                                        <td></td>
-                                        <td class="left"></td>
-                                        <td class="left"></td>
+                                        <td>:checked</td>
+                                        <td class="left">input:checked {color: #fff}</td>
+                                        <td class="left">input박스가 체크 되었을 때 글씨 색깔을 하얀색으로 변경합니다.</td>
                                         <td>
                                             <span class="material-symbols-outlined">star</span>
                                             <span class="material-symbols-outlined">star</span>
@@ -6935,9 +6961,9 @@
                                         <td></td>
                                     </tr>
                                     <tr>
-                                        <td></td>
-                                        <td class="left"></td>
-                                        <td class="left"></td>
+                                        <td>:focus</td>
+                                        <td class="left">input:focud {color: #fff}</td>
+                                        <td class="left">input박스에 초점(커서생성)이 맞춰졌을 때 글씨 색깔을 하얀색으로 변경합니다.</td>
                                         <td>
                                             <span class="material-symbols-outlined">star</span>
                                             <span class="material-symbols-outlined">star</span>
@@ -6948,9 +6974,9 @@
                                         <td></td>
                                     </tr>
                                     <tr>
-                                        <td></td>
-                                        <td class="left"></td>
-                                        <td class="left"></td>
+                                        <td>:enabled</td>
+                                        <td class="left">input:enabled {color: #fff}</td>
+                                        <td class="left">input박스가 사용 가능 할 때 글씨 색깔을 하얀색으로 변경합니다.</td>
                                         <td>
                                             <span class="material-symbols-outlined">star</span>
                                             <span class="material-symbols-outlined">star</span>
@@ -6961,9 +6987,9 @@
                                         <td></td>
                                     </tr>
                                     <tr>
-                                        <td></td>
-                                        <td class="left"></td>
-                                        <td class="left"></td>
+                                        <td>:disabled</td>
+                                        <td class="left">input:disabled {color: #fff}</td>
+                                        <td class="left">input박스가 사용 불가능 할 때 글씨 색깔을 하얀색으로 변경합니다.</td>
                                         <td>
                                             <span class="material-symbols-outlined">star</span>
                                             <span class="material-symbols-outlined">star</span>

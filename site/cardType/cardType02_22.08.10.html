@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>카드 유형02</title>
+    <style>
+        @import url('https://webfontworld.github.io/gmarket/GmarketSans.css');
+
+        .GmarketSans {
+            font-family: GmarketSans;
+            font-size: 400;
+        }
+        /* rest */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: normal;
+        }
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+        img {
+            width: 100%;
+        }
+        
+
+        /* common */
+        .container {
+            width: 1160px;
+            padding: 0 20px;
+            margin: 0 auto;
+        }
+        .section {
+            padding: 120px 0;
+            min-width: 1160px;
+        }
+        .section>h2 {
+            font-size: 50px;
+            line-height: 1;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .section>p {
+            font-size: 22px;
+            font-weight: 300;
+            color: #666;
+            text-align: center;
+            margin-bottom: 70px;
+            line-height: 30px;
+        }
+        /* card Type */
+        .card__inner {
+            display: flex;
+            justify-content: space-around;
+        }
+        .card {
+            width: 25%;
+            background-color: #f9f6f6;
+            margin-right: 20px;
+            margin-bottom: 50px;
+        }
+
+        .card__body .tit {
+            font-size: 28px;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            position: relative;
+        }
+        .card__body .desc {
+            font-size: 18px;
+            line-height: 1.4;
+            color: #666;
+            font-weight: 300;
+
+        }
+        .card__body .btn {
+            position: absolute;
+            right: 0;
+        }
+
+        
+           
+    </style>
+</head>
+<body>
+    <section id="cardType" class="card__wrap GmarketSans section">
+        <h2>고래에대해 알아보자</h2>
+        <p>
+            바다에 사는 다양한 고래들을 사진으로 보고 알아보는 시간을 가져 봅시다.<br>
+            고래들의 매력에 빠져보아요
+        </p>
+        <div class="card__inner container">
+            <article class="card">
+                <figure class="card__header">
+                    <img src="img/card_bg02_01.jpg" alt="혹등고래">
+                </figure>
+                <div class="card__body">
+                    <h3 class="tit">
+                        혹등고래
+                        <a class="btn" href="#">
+                            <span aria-hidden="true">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M0 5C0 2.23858 2.23858 0 5 0H19C21.7614 0 24 2.23858 24 5V19C24 21.7614 21.7614 24 19 24H5C2.23858 24 0 21.7614 0 19V5Z" fill="#FA6E6E"/>
+                                    <path d="M19.2071 13.2071C19.5976 12.8166 19.5976 12.1834 19.2071 11.7929L12.8431 5.42893C12.4526 5.03841 11.8195 5.03841 11.4289 5.42893C11.0384 5.81946 11.0384 6.45262 11.4289 6.84315L17.0858 12.5L11.4289 18.1569C11.0384 18.5474 11.0384 19.1805 11.4289 19.5711C11.8195 19.9616 12.4526 19.9616 12.8431 19.5711L19.2071 13.2071ZM6.5 13.5H18.5V11.5H6.5V13.5Z" fill="white"/>
+                                </svg>
+                            </span>
+                        </a>
+                    </h3>
+                    <p class="desc">혹등고래는 바다에서 볼 수 있는 고래 중 하나로 바다에 천사라고 불리우는 고래 입니다. 혹등고래는...</p>
+                </div>
+            </article>
+            <article class="card">
+                <figure class="card__header">
+                    <img src="img/card_bg02_02.jpg" alt="혹등고래">
+                </figure>
+                <div class="card__body">
+                    <h3 class="tit">
+                        혹등고래
+                        <a class="btn" href="#">
+                            <span aria-hidden="true">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M0 5C0 2.23858 2.23858 0 5 0H19C21.7614 0 24 2.23858 24 5V19C24 21.7614 21.7614 24 19 24H5C2.23858 24 0 21.7614 0 19V5Z" fill="#FA6E6E"/>
+                                    <path d="M19.2071 13.2071C19.5976 12.8166 19.5976 12.1834 19.2071 11.7929L12.8431 5.42893C12.4526 5.03841 11.8195 5.03841 11.4289 5.42893C11.0384 5.81946 11.0384 6.45262 11.4289 6.84315L17.0858 12.5L11.4289 18.1569C11.0384 18.5474 11.0384 19.1805 11.4289 19.5711C11.8195 19.9616 12.4526 19.9616 12.8431 19.5711L19.2071 13.2071ZM6.5 13.5H18.5V11.5H6.5V13.5Z" fill="white"/>
+                                </svg>
+                            </span>
+                        </a>
+                    </h3>
+                    <p class="desc">혹등고래는 바다에서 볼 수 있는 고래 중 하나로 바다에 천사라고 불리우는 고래 입니다. 혹등고래는...</p>
+                </div>
+            </article>
+            <article class="card">
+                <figure class="card__header">
+                    <img src="img/card_bg02_03.jpg" alt="혹등고래">
+                </figure>
+                <div class="card__body">
+                    <h3 class="tit">
+                        흰돌고래
+                        <a class="btn" href="#">
+                            <span aria-hidden="true">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M0 5C0 2.23858 2.23858 0 5 0H19C21.7614 0 24 2.23858 24 5V19C24 21.7614 21.7614 24 19 24H5C2.23858 24 0 21.7614 0 19V5Z" fill="#FA6E6E"/>
+                                    <path d="M19.2071 13.2071C19.5976 12.8166 19.5976 12.1834 19.2071 11.7929L12.8431 5.42893C12.4526 5.03841 11.8195 5.03841 11.4289 5.42893C11.0384 5.81946 11.0384 6.45262 11.4289 6.84315L17.0858 12.5L11.4289 18.1569C11.0384 18.5474 11.0384 19.1805 11.4289 19.5711C11.8195 19.9616 12.4526 19.9616 12.8431 19.5711L19.2071 13.2071ZM6.5 13.5H18.5V11.5H6.5V13.5Z" fill="white"/>
+                                </svg>
+                            </span>
+                        </a>
+                    </h3>
+                    <p class="desc">혹등고래는 바다에서 볼 수 있는 고래 중 하나로 바다에 천사라고 불리우는 고래 입니다. 혹등고래는...</p>
+                </div>
+            </article>
+            <article class="card">
+                <figure class="card__header">
+                    <img src="img/card_bg02_04.jpg" alt="혹등고래">
+                </figure>
+                <div class="card__body">
+                    <h3 class="tit">
+                        참고래
+                        <a class="btn" href="#">
+                            <span aria-hidden="true">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M0 5C0 2.23858 2.23858 0 5 0H19C21.7614 0 24 2.23858 24 5V19C24 21.7614 21.7614 24 19 24H5C2.23858 24 0 21.7614 0 19V5Z" fill="#FA6E6E"/>
+                                    <path d="M19.2071 13.2071C19.5976 12.8166 19.5976 12.1834 19.2071 11.7929L12.8431 5.42893C12.4526 5.03841 11.8195 5.03841 11.4289 5.42893C11.0384 5.81946 11.0384 6.45262 11.4289 6.84315L17.0858 12.5L11.4289 18.1569C11.0384 18.5474 11.0384 19.1805 11.4289 19.5711C11.8195 19.9616 12.4526 19.9616 12.8431 19.5711L19.2071 13.2071ZM6.5 13.5H18.5V11.5H6.5V13.5Z" fill="white"/>
+                                </svg>
+                            </span>
+                        </a>
+                    </h3>
+                    <p class="desc">혹등고래는 바다에서 볼 수 있는 고래 중 하나로 바다에 천사라고 불리우는 고래 입니다. 혹등고래는...</p>
+                </div>
+            </article>
+        </div>
+        <div class="card__inner container">
+            <article class="card">
+                <figure class="card__header">
+                    <img src="img/card_bg02_05.jpg" alt="혹등고래">
+                </figure>
+                <div class="card__body">
+                    <h3 class="tit">
+                        참고래
+                        <a class="btn" href="#">
+                            <span aria-hidden="true">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M0 5C0 2.23858 2.23858 0 5 0H19C21.7614 0 24 2.23858 24 5V19C24 21.7614 21.7614 24 19 24H5C2.23858 24 0 21.7614 0 19V5Z" fill="#FA6E6E"/>
+                                    <path d="M19.2071 13.2071C19.5976 12.8166 19.5976 12.1834 19.2071 11.7929L12.8431 5.42893C12.4526 5.03841 11.8195 5.03841 11.4289 5.42893C11.0384 5.81946 11.0384 6.45262 11.4289 6.84315L17.0858 12.5L11.4289 18.1569C11.0384 18.5474 11.0384 19.1805 11.4289 19.5711C11.8195 19.9616 12.4526 19.9616 12.8431 19.5711L19.2071 13.2071ZM6.5 13.5H18.5V11.5H6.5V13.5Z" fill="white"/>
+                                </svg>
+                            </span>
+                        </a>
+                    </h3>
+                    <p class="desc">혹등고래는 바다에서 볼 수 있는 고래 중 하나로 바다에 천사라고 불리우는 고래 입니다. 혹등고래는...</p>
+                </div>
+            </article>
+            <article class="card">
+                <figure class="card__header">
+                    <img src="img/card_bg02_06.jpg" alt="혹등고래">
+                </figure>
+                <div class="card__body">
+                    <h3 class="tit">
+                        돌고래
+                        <a class="btn" href="#">
+                            <span aria-hidden="true">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M0 5C0 2.23858 2.23858 0 5 0H19C21.7614 0 24 2.23858 24 5V19C24 21.7614 21.7614 24 19 24H5C2.23858 24 0 21.7614 0 19V5Z" fill="#FA6E6E"/>
+                                    <path d="M19.2071 13.2071C19.5976 12.8166 19.5976 12.1834 19.2071 11.7929L12.8431 5.42893C12.4526 5.03841 11.8195 5.03841 11.4289 5.42893C11.0384 5.81946 11.0384 6.45262 11.4289 6.84315L17.0858 12.5L11.4289 18.1569C11.0384 18.5474 11.0384 19.1805 11.4289 19.5711C11.8195 19.9616 12.4526 19.9616 12.8431 19.5711L19.2071 13.2071ZM6.5 13.5H18.5V11.5H6.5V13.5Z" fill="white"/>
+                                </svg>
+                            </span>
+                        </a>
+                    </h3>
+                    <p class="desc">혹등고래는 바다에서 볼 수 있는 고래 중 하나로 바다에 천사라고 불리우는 고래 입니다. 혹등고래는...</p>
+                </div>
+            </article>
+            <article class="card">
+                <figure class="card__header">
+                    <img src="img/card_bg02_07.jpg" alt="혹등고래">
+                </figure>
+                <div class="card__body">
+                    <h3 class="tit">
+                        범고래
+                        <a class="btn" href="#">
+                            <span aria-hidden="true">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M0 5C0 2.23858 2.23858 0 5 0H19C21.7614 0 24 2.23858 24 5V19C24 21.7614 21.7614 24 19 24H5C2.23858 24 0 21.7614 0 19V5Z" fill="#FA6E6E"/>
+                                    <path d="M19.2071 13.2071C19.5976 12.8166 19.5976 12.1834 19.2071 11.7929L12.8431 5.42893C12.4526 5.03841 11.8195 5.03841 11.4289 5.42893C11.0384 5.81946 11.0384 6.45262 11.4289 6.84315L17.0858 12.5L11.4289 18.1569C11.0384 18.5474 11.0384 19.1805 11.4289 19.5711C11.8195 19.9616 12.4526 19.9616 12.8431 19.5711L19.2071 13.2071ZM6.5 13.5H18.5V11.5H6.5V13.5Z" fill="white"/>
+                                </svg>
+                            </span>
+                        </a>
+                    </h3>
+                    <p class="desc">혹등고래는 바다에서 볼 수 있는 고래 중 하나로 바다에 천사라고 불리우는 고래 입니다. 혹등고래는...</p>
+                </div>
+            </article>
+            <article class="card">
+                <figure class="card__header">
+                    <img src="img/card_bg02_08.jpg" alt="혹등고래">
+                </figure>
+                <div class="card__body">
+                    <h3 class="tit">
+                        대왕고래
+                        <a class="btn" href="#">
+                            <span aria-hidden="true">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M0 5C0 2.23858 2.23858 0 5 0H19C21.7614 0 24 2.23858 24 5V19C24 21.7614 21.7614 24 19 24H5C2.23858 24 0 21.7614 0 19V5Z" fill="#FA6E6E"/>
+                                    <path d="M19.2071 13.2071C19.5976 12.8166 19.5976 12.1834 19.2071 11.7929L12.8431 5.42893C12.4526 5.03841 11.8195 5.03841 11.4289 5.42893C11.0384 5.81946 11.0384 6.45262 11.4289 6.84315L17.0858 12.5L11.4289 18.1569C11.0384 18.5474 11.0384 19.1805 11.4289 19.5711C11.8195 19.9616 12.4526 19.9616 12.8431 19.5711L19.2071 13.2071ZM6.5 13.5H18.5V11.5H6.5V13.5Z" fill="white"/>
+                                </svg>
+                            </span>
+                        </a>
+                    </h3>
+                    <p class="desc">혹등고래는 바다에서 볼 수 있는 고래 중 하나로 바다에 천사라고 불리우는 고래 입니다. 혹등고래는...</p>
+                </div>
+            </article>
+        </div>
+    </section>
+</body>
+</html>
