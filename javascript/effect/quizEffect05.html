@@ -15,7 +15,7 @@
 
 <body>
     <header id="header">
-        <h1><a href="../javascript01.html">Quiz</a> <em>객관식(여러문제) 유형</em></h1>
+        <h1><a href="../javascript01.html">Quiz</a> <em>객관식(한문제) 유형</em></h1>
         <nav>
             <ul>
                 <li><a href="quizEffect01.html">1</a></li>
@@ -30,57 +30,7 @@
     <!-- //header -->
     <main id="main">
         <div class="quiz__wrap">
-            <div class="quiz">
-                <span class="quiz__type"></span>
-                <h2 class="quiz__question">
-                    <span class="number"></span>
-                    <div class="ask"></div>
-                </h2>
-                <div class="quiz__view">
-                    <div class="true">정답입니다!</div>
-                    <div class="false">틀렸습니다!</div>
-                    <div class="dog">
-                        <div class="head">
-                            <div class="ears"></div>
-                            <div class="face"></div>
-                            <div class="eyes">
-                                <div class="teardrop"></div>
-                            </div>
-                            <div class="nose"></div>
-                            <div class="mouth">
-                                <div class="tongue"></div>
-                            </div>
-                            <div class="chin"></div>
-                        </div>
-                        <div class="body">
-                            <div class="tail"></div>
-                            <div class="legs"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="quiz__answer">
-                    <div class="quiz__selects">
-                        <label for="select1">
-                            <input type="radio" id="select1" class="select" name="select" value="1">
-                            <span class="choice"></span>
-                        </label>
-                        <label for="select2">
-                            <input type="radio" id="select2" class="select" name="select" value="2">
-                            <span class="choice"></span>
-                        </label>
-                        <label for="select3">
-                            <input type="radio" id="select3" class="select" name="select" value="3">
-                            <span class="choice"></span>
-                        </label>
-                        <label for="select4">
-                            <input type="radio" id="select4" class="select" name="select" value="4">
-                            <span class="choice"></span>
-                        </label>
-                    </div>
-                    <button class="confirm">정답 확인하기</button>
-                    <div class="result"></div>
-                </div>
-            </div>
+           
         </div>
     </main>
     <!-- //main -->
@@ -90,8 +40,172 @@
     <!-- //footer -->
 
     <script>
+        // const num = [100, 200, 300, 400, 500];
 
+        // num.forEach((el) => {
+        //     // console.log(num[el]);
+        //     document.querySelector(".quiz__wrap").textContent += el;    //변수에 데이터 추가 해줘야 함
+        // });
+
+        //문제 정보
+        const quizInfo = [
+            {
+                answerType: "웹디자인기능사 2010년 05회",
+                answerNum: "1",
+                answerAsk: "먼셀의 색상에서 이 표준 빨강이면 1R은?",
+                answerChoice: {
+                    1: "연지",
+                    2: "다홍",
+                    3: "주황",
+                    4: "보라",
+                },
+                answerResult: "1",
+                answerEx: "먼셀의 색상에 이 표준이 빨강이면 여기서 R은 빨강을 뜻하므로 1명도의 빨강인 연지가 답입니다."
+            },
+            {
+                answerType: "웹디자인기능사 2010년 05회",
+                answerNum: "2",
+                answerAsk: "빛의 파장에 따른 굴절 각도를 이용하여 프리즘에 의한 가시스펙트럼 색을 얻을 수 있었는데, 이것은 빛이 단색이 아니라 여러 가지 색의 혼합색이라는 것을 말한다고 정의한 사람은?",
+                answerChoice: {
+                    1: "헤리",
+                    2: "헬름홀츠",
+                    3: "돈서스",
+                    4: "뉴턴",
+                },
+                answerResult: "4",
+                answerEx: "프리즘을 이용해 빛을 스펙트럼으로 분리해서 최초로 발견한 사람은 뉴턴입니다. 가시광선은 눈에 보이는 영역을 의미하며 이것은 여러가지 혼합색으로 이루어져 있습니다."
+            },
+            {
+                answerType: "웹디자인기능사 2010년 05회",
+                answerNum: "3",
+                answerAsk: "가산 혼색에서 혼색의 결과로 옳은 것은?",
+                answerChoice: {
+                    1: " 파랑(BLUE) + 녹색(GREEN) = 마젠타(MAGENTA)",
+                    2: "파랑(BLUE) + 빨강(RED) = 시안(CYAN)",
+                    3: "녹색(GREEN) + 빨강(RED) = 노랑(YELLOW)",
+                    4: "파랑(BLUE) + 녹색(GREEN) = 검정(BLACK)",
+                },
+                answerResult: "3",
+                answerEx: "가산혼합은 다른 말로는 빛의 혼합이며, RGB를 뜻하기도 합니다. 녹색과 빨강을 혼합할 경우 노랑이 나오게 됩니다."
+            },
+            {
+                answerType: "웹디자인기능사 2010년 05회",
+                answerNum: "4",
+                answerAsk: "균형의 가장 정형적인 구성 형식이며 균형이 잘 잡힌 상태로 통일감을 얻기 쉬우나, 딱딱한 느낌을 주는 원리는?",
+                answerChoice: {
+                    1: "대칭",
+                    2: "비대칭",
+                    3: "비례",
+                    4: "변화",
+                },
+                answerResult: "1",
+                answerEx: "대칭은 균형적으로 닮음을 뜻하며 통일감을 얻기 쉬운반면 딱딱한 느낌을 동시에 주는 원리 입니다."
+            },
+            {
+                answerType: "웹디자인기능사 2010년 05회",
+                answerNum: "5",
+                answerAsk: "색을 보고 맛과 냄새 음과 촉감 등을 느낄 수 있어 톡 쏘는듯 한 냄새가 연상되는 색은?",
+                answerChoice: {
+                    1: "녹색",
+                    2: "자색",
+                    3: "오렌지색",
+                    4: "라일락색",
+                },
+                answerResult: "3",
+                answerEx: "톡쏘는 듯한 냄새를 연상하게 해주는 색은 오렌지색 입니다."
+            },
+            {
+                answerType: "웹디자인기능사 2010년 05회",
+                answerNum: "6",
+                answerAsk: "서로 반대되는 색상을 배색하였을 때 나타나는 느낌으로 옳은 것은?",
+                answerChoice: {
+                    1: "강한 느낌",
+                    2: "간결한 느낌",
+                    3: "정적인 느낌",
+                    4: "온화한 느낌"
+                },
+                answerResult: "1",
+                answerEx: "서로 반대되는 색상을 보색이라하며, 이 두색은 서로 반대되는 특징 때문에 같이 배색할 경우 강렬한 느낌을 주게 됩니다."
+            }
+        ];
+
+        //선택자
+        const quizwrap = document.querySelector(".quiz__wrap");
+
+        function updateQuiz(){
+            const exam = [];
+
+            quizInfo.forEach((question, number) => {
+                exam.push(`
+                    <div class="quiz">
+                        <span class="quiz__type">${question.answerType}</span>
+                        <h2 class="quiz__question">
+                            <span class="number">${question.answerNum}. </span>
+                            <div class="ask">${question.answerAsk}</div>
+                        </h2>
+                        <div class="quiz__view">
+                            <div class="true">정답입니다!</div>
+                            <div class="false">틀렸습니다!</div>
+                            <div class="dog">
+                                <div class="head">
+                                    <div class="ears"></div>
+                                    <div class="face"></div>
+                                    <div class="eyes">
+                                        <div class="teardrop"></div>
+                                    </div>
+                                    <div class="nose"></div>
+                                    <div class="mouth">
+                                        <div class="tongue"></div>
+                                    </div>
+                                    <div class="chin"></div>
+                                </div>
+                                <div class="body">
+                                    <div class="tail"></div>
+                                    <div class="legs"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="quiz__answer">
+                            <div class="quiz__selects">
+                                <label for="select1${number}">
+                                    <input type="radio" id="select1${number}" class="select" name="select${number}" value="1">
+                                    <span class="choice">${question.answerChoice[1]}</span>
+                                </label>
+                                <label for="select2${number}">
+                                    <input type="radio" id="select2${number}" class="select" name="select${number}" value="2">
+                                    <span class="choice">${question.answerChoice[2]}</span>
+                                </label>
+                                <label for="select3${number}">
+                                    <input type="radio" id="select3${number}" class="select" name="select${number}" value="3">
+                                    <span class="choice">${question.answerChoice[3]}</span>
+                                </label>
+                                <label for="select4${number}">
+                                    <input type="radio" id="select4${number}" class="select" name="select${number}" value="4">
+                                    <span class="choice">${question.answerChoice[4]}</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                `);
+            });
+
+            exam.push(`
+                <div class="quiz__confirm">
+                    <button class="check">정답 확인하기</button>
+                    <div class="ex"></div>    
+                </div>
+            `);
+            
+            quizwrap.innerHTML = exam.join('');
+        }
+        updateQuiz();       //먼저 생성된 다음에 답안 작업을 해야함
+
+        //정답 확인
+        function answerQuiz(){
+            const quizSelects = document.querySelectorAll(".quiz__selects");    //보기
+            const quizView = document.querySelectorAll(".quiz__view");          //강아지
+        }
+        answerQuiz();
     </script>
 </body>
-
 </html>

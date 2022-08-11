@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>카드 유형03</title>
+    <style>
+        /* fonts */
+        @import url('https://webfontworld.github.io/score/SCoreDream.css');
+
+
+        .score {
+            font-family: SCoreDream;
+            font-weight: 300;
+        }
+        /* reset */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: normal;
+        }
+
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        /* common */
+        .container {
+            width: 1160px;
+            padding: 0 20px;
+            margin: 0 auto;
+        }
+
+        .section {
+            padding: 120px 0;
+            min-width: 1160px;
+        }
+
+        .section > h2 {
+            /* + 는 형제, > 는 자식 */
+            font-size: 50px;
+            line-height: 1;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .section > p {
+            font-size: 22px;
+            font-weight: 300;
+            color: #666;
+            text-align: center;
+            margin-bottom: 70px;
+        }
+        /* blind : 접근성을 위해서 */
+        .blind {
+            width: 0;
+            height: 0;
+            line-height: 0;
+            overflow: hidden;
+            position: absolute;
+            text-indent: -9999px;
+        }
+
+        /* cardType03 */
+        body {
+            background-color: #2254c3;
+        }
+        .card__inner {
+            display: flex;
+        }
+        .card__inner .card {
+            padding: 26px;
+            width: 33.3333%;
+            height: 517px;
+            background-color: #fff;
+        }
+        .card__inner .card:nth-child(1){
+            border-right: 1px solid #eee;
+        }
+        .card__inner .card:nth-child(2){
+            border-right: 1px solid #eee;
+        }
+    </style>
+</head>
+<body>
+    <section id="cardType03" class="card__wrap score section">
+        <h2 class="blind">개에 대하여</h2>
+        <div class="card__inner container">
+            <article class="card"></article>
+            <article class="card"></article>
+            <article class="card"></article>
+        </div>
+    </section>
+</body>
+</html>
