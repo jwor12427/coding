@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>사이트 만들기03</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+
+</head>
+<body>
+    <header id="header">
+        <h1><a href="../index.html">사이트 만들기</a></h1>
+        <nav class="header_nav">
+
+        </nav>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">사이트 만들기(카드 유형 - 03)</h2>
+            <p class="t_desc2">
+                카드 형식의 사이트를 제작 할 수 있습니다.
+            </p>
+            <div class="t_iframe">
+                <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2F2dVMs09Xd6Iw5jh2gVK4y4%2F%25EC%2582%25AC%25EC%259D%25B4%25ED%258A%25B8-%25EB%25A7%258C%25EB%2593%25A4%25EA%25B8%25B0%3Fnode-id%3D35%253A321" allowfullscreen></iframe>
+            </div>
+            <hr>
+
+            <h3 class="t_tit2">CSS</h3>
+            <div class="t_code">
+<pre><code>/* fonts */
+.score {
+    font-family: SCoreDream;
+    font-weight: 500;
+}
+/* cardType03 */
+#cardType03 {
+    width: 100%;
+    height: 750px;
+    background-color: #2254c3;
+}
+.card__inner {
+    display: flex;
+    justify-content: center;
+}
+.card__inner .card {
+    width: 33%;
+    padding: 26px;
+    position: relative;
+}
+.card__inner .card img {
+    border-radius: 10px;
+    margin-bottom: 19px;
+    box-shadow: 4px 4px 5px 0 rgba(0, 0, 0, 0.05);
+}
+.card__inner .card .tit {
+    font-size: 20px;
+    margin-bottom: 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; 
+    -webkit-box-orient: vertical;
+}
+.card__inner .card .desc {
+    font-size: 16px;
+    font-weight: 300;
+    color: #666;
+    line-height: 1.4;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3; 
+    -webkit-box-orient: vertical;
+    margin-bottom: 30px;
+}
+.card__inner .card .info {
+    font-size: 16px;
+    line-height: 1.4;
+    letter-spacing: normal;
+    text-align: right;
+    margin-right: 50px;
+    margin-bottom: 30px;
+    color: #666;
+    font-weight: normal;
+}
+.card__inner .card .info .name {
+    color: #dd2a2a;
+}
+.card__inner .card .pro {
+    width: 37px;
+    height: 37px;
+    background-image: url(img/card_bg03_por01.svg);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
+    border-radius: 50px;
+    position: absolute;
+    right: 26px;
+    bottom: 35px;
+    
+}
+.card__inner .line {
+    width: 1px;
+    height: 517px;
+    background-color: #eee;
+}
+.card__inner .rect {
+    width: 100px;
+    height: 28px;
+    background-color: #FFD217;
+    border-radius: 50px;
+    position: absolute;
+    top: 36px;
+    right: 36px;
+    font-weight: normal;
+    font-size: 14px;
+    text-align: center;
+    color: #7b7b7b;
+    line-height: 28px;
+}
+</code></pre>
+            </div>
+            <p class="t_desc">
+            
+            </p>
+            <h3 class="t_tit2">HTML</h3>
+            <div class="t_code">
+<pre><code>&lt;section id="cardType03" class="card__wrap score section gray"&gt;
+    &lt;div class="card__inner container"&gt;
+        &lt;article class="card"&gt;
+            &lt;img src="img/card_bg03_01.jpg" alt="리트리버"&gt;
+            &lt;div class="rect"&gt;PUPPY&lt;/div&gt;
+            &lt;h3 class="tit"&gt;개는 인류가 최초로 가축으로 삼은 동물로 알려져 있으며, 역사적으로 개와 사람은 오랫동안&lt;/h3&gt;
+            &lt;p class="desc"&gt;개는 사냥, 목축, 운송, 경비와 같은 일에 사용되고 있으며, 현대에 이르면서 많은 사람들이 반려동물로 기르는 동물 중 하나 입니다. 강아지 짱 귀여워&lt;/p&gt;
+            &lt;div class="info"&gt;
+                &lt;div class="name"&gt;Dr. Liam&lt;/div&gt;
+                개와 사람의 관계
+            &lt;/div&gt;
+            &lt;div class="pro"&gt;&lt;/div&gt;
+        &lt;/article&gt;
+        &lt;div class="line"&gt;&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+</code></pre>
+            </div>
+            <h3 class="t_tit2">줄 효과</h3>
+            <p class="t_box">
+                overflow: hidden; <br>
+                text-overflow: ellipsis;<br>
+                display: -webkit-box;<br>
+                -webkit-line-clamp: 3; <br>
+                -webkit-box-orient: vertical;<br>
+            </p>
+            <hr>
+            <h3 class="t_tit2">결과</h3>
+
+            <div class="t_iframe" style="min-height: 1000px; padding-top: 0;">
+                <iframe src="https://jwor12427.github.io/coding/site/cardType/cardType03.html"></iframe>
+            </div>
+            <hr>
+            <div class="t_link">
+                <a href="https://github.com/jwor12427/coding/blob/main/site/cardType/cardType03.html" target="_blank">원본 소스 보기</a>
+                <a href="https://jwor12427.github.io/coding/site/cardType/cardType03.html" target="_blank">페이지 보기</a>
+            </div>
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:jwor124@naver.com">jwor124@naver.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+   
+</body>
+</html>

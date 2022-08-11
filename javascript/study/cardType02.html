@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>사이트 만들기</title>
+    <title>사이트 만들기02</title>
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="../assets/css/dracula.css">
 
@@ -23,7 +23,6 @@
             <p class="t_desc2">
                 카드 형식의 사이트를 제작 할 수 있습니다. 유형02 에서는 8개의 카드가 존재하는 사이트를 보여줍니다.
             </p>
-            <hr>
             <div class="t_iframe">
                 <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2F2dVMs09Xd6Iw5jh2gVK4y4%2F%25EC%2582%25AC%25EC%259D%25B4%25ED%258A%25B8-%25EB%25A7%258C%25EB%2593%25A4%25EA%25B8%25B0%3Fnode-id%3D28%253A2" allowfullscreen></iframe>
             </div>
@@ -31,78 +30,55 @@
 
             <h3 class="t_tit2">CSS</h3>
             <div class="t_code">
-<pre><code>.GmarketSans {
+<pre><code>.gmark {
     font-family: GmarketSans;
-    font-size: 400;
+    font-weight: 500;
 }
-/* rest */
-* {
-    margin: 0;
-    padding: 0;
-}
-h1, h2, h3, h4, h5, h6 {
-    font-weight: normal;
-}
-a {
-    text-decoration: none;
-    color: #000;
-}
-img {
-    width: 100%;
-}
-    
-
-/* common */
-.container {
-    width: 1160px;
-    padding: 0 20px;
-    margin: 0 auto;
-}
-.section {
-    padding: 120px 0;
-    min-width: 1160px;
-}
-.section>h2 {
-    font-size: 50px;
-    line-height: 1;
-    text-align: center;
-    margin-bottom: 20px;
-}
-.section>p {
-    font-size: 22px;
-    font-weight: 300;
-    color: #666;
-    text-align: center;
-    margin-bottom: 70px;
-    line-height: 30px;
-}
-/* card Type */
 .card__inner {
     display: flex;
-    justify-content: space-around;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
-.card {
-    width: 25%;
-    background-color: #f9f6f6;
-    margin-right: 20px;
-    margin-bottom: 50px;
-}
-
-.card__body .tit {
-    font-size: 28px;
-    margin-top: 20px;
-    margin-bottom: 10px;
+.card__inner .card {
+    width: 24%;
     position: relative;
 }
-.card__body .desc {
-    font-size: 18px;
-    line-height: 1.4;
-    color: #666;
-    font-weight: 300;
+.card__inner .card:nth-child(1) {
+    margin-bottom: 50px;
 }
-.card__body .btn {
+.card__inner .card img {
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+.card__inner .card .tit {
+    font-size: 28px;
+    margin-bottom: 10px;
+    /* 한줄 효과 */
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.card__inner .card .desc {
+    font-size: 18px;
+    font-weight: 300;
+    color: #666;
+    line-height: 1.4;
+    /* 세줄 효과 */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3; 
+    -webkit-box-orient: vertical;
+}
+.card__inner .more {
+    width: 24px;
+    height: 24px;
+    background-image: url(img/arrow.svg);
+    display: block;
     position: absolute;
     right: 0;
+    top: 280px;
+    border-radius: 5px;
 }
 </code></pre>
             </div>
@@ -119,28 +95,31 @@ img {
 &lt;/p&gt;
     &lt;div class="card__inner container"&gt;
         &lt;article class="card"&gt;
-            &lt;figure class="card__header"&gt;
-                &lt;img src="img/card_bg2_01.jpg" alt="혹등고래"&gt;
-            &lt;/figure&gt;
-            &lt;div class="card__body"&gt;
-                &lt;h3 class="tit"&gt;
-                    혹등고래
-                    &lt;a class="btn" href="#"&gt;
-                        &lt;span aria-hidden="true"&gt;
-                            &lt;svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"&gt;
-                                &lt;path d="M0 5C0 2.23858 2.23858 0 5 0H19C21.7614 0 24 2.23858 24 5V19C24 21.7614 21.7614 24 19 24H5C2.23858 24 0 21.7614 0 19V5Z" fill="#FA6E6E"/&gt;
-                                &lt;path d="M19.2071 13.2071C19.5976 12.8166 19.5976 12.1834 19.2071 11.7929L12.8431 5.42893C12.4526 5.03841 11.8195 5.03841 11.4289 5.42893C11.0384 5.81946 11.0384 6.45262 11.4289 6.84315L17.0858 12.5L11.4289 18.1569C11.0384 18.5474 11.0384 19.1805 11.4289 19.5711C11.8195 19.9616 12.4526 19.9616 12.8431 19.5711L19.2071 13.2071ZM6.5 13.5H18.5V11.5H6.5V13.5Z" fill="white"/&gt;
-                            &lt;/svg&gt;
-                        &lt;/span&gt;
-                    &lt;/a&gt;
-                &lt;/h3&gt;
-                &lt;p class="desc"&gt;혹등고래는 바다에서 볼 수 있는 고래 중 하나로 바다에 천사라고 불리우는 고래 입니다. 혹등고래는...&lt;/p&gt;
-            &lt;/div&gt;
+            &lt;img src="img/card_bg02_01.jpg" alt="혹등고래"&gt;
+            &lt;h3 class="tit"&gt;혹등고래&lt;/h3&gt;
+            &lt;p class="desc"&gt;혹등고래는 바다에서 볼 수 있는 고래 중 하나로 바다에 천사라고 불리우는 고래 입니다. 혹등고래는 바다에서 서식하는&lt;/p&gt;
+            &lt;a href="#" class="more"&gt;&lt;span class="ir"&gt;더보기&lt;/span&gt;&lt;/a&gt;
         &lt;/article&gt;
     &lt;/div&gt;
 &lt;/section&gt;
 </code></pre>
             </div>
+            <p class="t_desc">
+                이미지가 나오지 않을 시 다음과 같은 효과를 넣어 줄 수 있습니다.
+            </p>
+            <p class="t_box">
+                /* ir 효과(이미지 대체 효과 == alt) */ <br>
+                .ir { <br>
+                    display: block; <br>
+                    overflow: hidden; <br>
+                    font-size: 0; <br>
+                    line-height: 0; <br>
+                    text-indent: -9999px; <br>
+                }
+            </p>
+
+            <hr>
+
             <h3 class="t_tit2">결과</h3>
 
             <div class="t_iframe" style="min-height: 1000px; padding-top: 0;">
