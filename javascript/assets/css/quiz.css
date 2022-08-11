@@ -280,6 +280,25 @@ body {
 .quiz__selects label input:checked + span::before {
     box-shadow: inset 0px 0px 0px 10px rgb(114, 69, 151);
 }
+.quiz__confirm {
+    width: 100%;
+    text-align: center;
+}
+.quiz__confirm .check {
+    font-size: 22px;
+    line-height: 1.3;
+    padding: 13px 60px;
+    border: 6px ridge #cacaca;
+    box-sizing: border-box;
+    text-align: center;
+    font-family: "WandoCleanSea";
+    cursor: pointer;
+    margin: 40px 0;
+    transition: background 0.3s;
+}
+.quiz__confirm .check:hover {
+    background-color: rgba(138, 74, 198, 0.326);
+}
 
 @keyframes wobble {
     0% {
