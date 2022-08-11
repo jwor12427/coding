@@ -55,9 +55,56 @@
             <p class="t_box">
                 join(` `)
             </p>
+            
             <p class="t_desc">
                 join( )은 배열의 요소를 <i>문자열로 결합</i>하는데 사용됩니다.
             </p>
+            <div id="sample02" class="sample">
+                <div class="table">
+                    <table>
+                        <colgroup>
+                            <col style="width: 4%">
+                            <col style="width: 32%">
+                            <col style="width: 22%">
+                            <col style="width: 42%">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th>번호</th>
+                                <th>기본값</th>
+                                <th>메서드</th>
+                                <th>리턴값</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="sample02_N1"></td>
+                                <td class="sample02_Q1"></td>
+                                <td class="sample02_M1"></td>
+                                <td class="sample02_P1"></td>
+                            </tr>
+                            <tr>
+                                <td class="sample02_N2"></td>
+                                <td class="sample02_Q2"></td>
+                                <td class="sample02_M2"></td>
+                                <td class="sample02_P2"></td>
+                            </tr>
+                            <tr>
+                                <td class="sample02_N3"></td>
+                                <td class="sample02_Q3"></td>
+                                <td class="sample02_M3"></td>
+                                <td class="sample02_P3"></td>
+                            </tr>
+                            <tr>
+                                <td class="sample02_N4"></td>
+                                <td class="sample02_Q4"></td>
+                                <td class="sample02_M4"></td>
+                                <td class="sample02_P4"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
             <div class="t_code">
 <pre><code>//join()
 const arrNum = [100, 200, 300, 400, 500];
@@ -122,6 +169,45 @@ const arrPush2 = arrNum2.pop();
             <p class="t_desc">
                 <i>arrPush2</i>는 제거된 값인 500을 반환하고, <i>arrNum2</i>는 마지막 값이 제거된 배열을 출력합니다.
             </p>
+            <h3 class="t_tit2">push( ) / pop( )</h3>
+            <div id="sample02" class="sample">
+                <div class="table">
+                    <table>
+                        <colgroup>
+                            <col style="width: 5%">
+                            <col style="width: 32%">
+                            <col style="width: 13%">
+                            <col style="width: 13%">
+                            <col style="width: 37%">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th>번호</th>
+                                <th>기본값</th>
+                                <th>메서드</th>
+                                <th>리턴값</th>
+                                <th>결과값</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="sample03_N1"></td>
+                                <td class="sample03_Q1"></td>
+                                <td class="sample03_M1"></td>
+                                <td class="sample03_P1"></td>
+                                <td class="sample03_A1"></td>
+                            </tr>
+                            <tr>
+                                <td class="sample03_N2"></td>
+                                <td class="sample03_Q2"></td>
+                                <td class="sample03_M2"></td>
+                                <td class="sample03_P2"></td>
+                                <td class="sample03_A2"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
             <!-- // -->
         </div>
     </main>
@@ -160,6 +246,54 @@ const arrPush2 = arrNum2.pop();
 
             document.querySelector(".sample03_result").innerHTML += arrPush2 + "<br>";
             document.querySelector(".sample03_result").innerHTML += arrNum2;
+        }
+         //02
+         {
+            const arrNum = [100, 200, 300, 400, 500];
+            const text1 = arrNum.join("");
+            const text2 = arrNum.join(" ");
+            const text3 = arrNum.join("✨");
+            const text4 = arrNum.join("-");
+
+            document.querySelector(".sample02_N1").innerHTML = "1";
+            document.querySelector(".sample02_Q1").innerHTML = "[100, 200, 300, 400, 500]";
+            document.querySelector(".sample02_M1").innerHTML = "join('')";
+            document.querySelector(".sample02_P1").innerHTML = text1;
+
+            document.querySelector(".sample02_N2").innerHTML = "2";
+            document.querySelector(".sample02_Q2").innerHTML = "[100, 200, 300, 400, 500]";
+            document.querySelector(".sample02_M2").innerHTML = "join(' ')";
+            document.querySelector(".sample02_P2").innerHTML = text2;
+
+            document.querySelector(".sample02_N3").innerHTML = "3";
+            document.querySelector(".sample02_Q3").innerHTML = "[100, 200, 300, 400, 500]";
+            document.querySelector(".sample02_M3").innerHTML = "join('✨')";
+            document.querySelector(".sample02_P3").innerHTML = text3;
+
+            document.querySelector(".sample02_N4").innerHTML = "4";
+            document.querySelector(".sample02_Q4").innerHTML = "[100, 200, 300, 400, 500]";
+            document.querySelector(".sample02_M4").innerHTML = "join('-')";
+            document.querySelector(".sample02_P4").innerHTML = text4;
+        }
+        //03
+        {
+            const arrNum = [100, 200, 300, 400, 500];
+            const arrPush = arrNum.push(600);
+
+            document.querySelector(".sample03_N1").innerHTML = "1";
+            document.querySelector(".sample03_Q1").innerHTML = "[100, 200, 300, 400, 500]";
+            document.querySelector(".sample03_M1").innerHTML = "push(600)";
+            document.querySelector(".sample03_P1").innerHTML = arrPush;   //6
+            document.querySelector(".sample03_A1").innerHTML = arrNum;    //100,200,300,400,500,600
+
+            const arrNum2 = [100, 200, 300, 400, 500];
+            const arrPush2 = arrNum2.pop();
+
+            document.querySelector(".sample03_N2").innerHTML = "2";
+            document.querySelector(".sample03_Q2").innerHTML = "[100, 200, 300, 400, 500]";
+            document.querySelector(".sample03_M2").innerHTML = "pop()";
+            document.querySelector(".sample03_P2").innerHTML = arrPush2;   
+            document.querySelector(".sample03_A2").innerHTML = arrNum2;  
         }
     </script>
 </body>
