@@ -26,4 +26,5 @@ https://jwor12427.github.io/coding/css/index.html
 ### Site 페이지
 https://jwor12427.github.io/coding/site/cardType/cardType01.html   
 https://jwor12427.github.io/coding/site/cardType/cardType02.html   
-https://jwor12427.github.io/coding/site/cardType/cardType03.html
+https://jwor12427.github.io/coding/site/cardType/cardType03.html   
+https://jwor12427.github.io/coding/site/cardType/cardType03_22.08.11.html
