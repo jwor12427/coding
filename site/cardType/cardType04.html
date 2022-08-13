@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>카드 유형04</title>
+    <style>
+        /* fonts */
+        @import url('https://webfontworld.github.io/NanumSquare/NanumSquare.css');
+        @import url('https://webfontworld.github.io/sebang/SebangGothic.css');
+
+        .sebang {
+            font-family: SebangGothic;
+            font-weight: 400;
+        }
+        .square {
+            font-family: NanumSquare;
+            font-weight: 400;
+        }
+        /* reset */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: normal;
+        }
+
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+
+        img {
+            width: 100%;
+            vertical-align: top;
+        }
+
+        /* common */
+        .container {
+            width: 1160px;
+            padding: 0 20px;
+            margin: 0 auto;
+        }
+
+        .section {
+            padding: 120px 0;
+            min-width: 1160px;
+        }
+
+        .section > h2 {
+            /* + 는 형제, > 는 자식 */
+            font-size: 50px;
+            line-height: 1;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .section > h2.tit {
+            text-align: left;
+            width: 1160px;
+            padding: 0 20px;
+            margin: 0 auto;
+            text-align: left;
+            margin-bottom: 30px;
+            position: relative;
+        }
+        .section > h2.tit span {
+            background-color: #000;
+            color: #fff;
+            display: inline-block;
+            font-family: SebangGothic;
+            font-size: 12px;
+            padding: 5px 15px;
+        }
+        .section > h2.tit span::after {
+            content: '';
+        }
+        .section > p {
+            font-size: 22px;
+            font-weight: 300;
+            color: #666;
+            text-align: center;
+            margin-bottom: 70px;
+        }
+        /* blind : 접근성을 위해서 */
+        .blind {
+            position:absolute;
+            clip:rect(0 0 0 0);
+            width:1px;
+            height:1px;
+            margin:-1px;
+            overflow:hidden;
+        }
+        /* cardType04 */
+        .card__inner {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .card.first {
+            width: 100%;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+            justify-content: space-between;
+            margin-bottom: 30px;
+        }
+
+        .card.first .card__header {
+            width: 68%;
+        }
+        .card.first .card__contents {
+            width: 30%;
+        }
+        .card {
+            width: 24%;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        .card__header {
+            width: 29%;
+        }
+        .card__contents {
+            width: 68%;
+        }
+        .card.first .card__contents .sub {
+            font-size: 14px;
+            line-height: 1;
+            margin-bottom: 10px;
+            display: block;
+        }
+        .card.first .card__contents .title {
+            font-size: 36px;
+            line-height: 1.3;
+            word-break: keep-all;
+            margin-bottom: 50px;
+        }
+        .card.first .card__contents .desc {
+            font-size: 16px;
+            line-height: 1.5;
+            color: #666;
+        }
+        .card.first .card__contents .more {
+            display: none;
+        }
+        .card__contents .more span {
+            display: none;
+        }
+        .card__contents .sub {
+            font-family: SebangGothic;
+            font-size: 18px;
+            margin-bottom: 5px;
+            display: block;
+        }
+        .card__contents .desc {
+           font-size: 14px; 
+        }
+    </style>
+</head>
+<body>
+    <section id="cardType03" class="card__wrap section square">
+        <h2 class="tit"><span>My Friend</span></h2>
+        <div class="card__inner container">
+            <article class="card first">
+                <figure class="card__header">
+                    <img src="img/card_bg04_01_b.jpg" alt="friend">
+                </figure>
+                <div class="card__contents">
+                    <span class="sub">My Friend</span>
+                    <h3 class="title">나의 멋진 친구들을 소개 합니다</h3>
+                    <p class="desc">당신의 사랑스러운 친구에 대해서 소개 해 주세요. 많은 사람들과 공유해 다양한 소식과 이야기를 접할 수 있습니다. 당신의 친구의 사진을 올리고 당신의 이야기를 들려 주세요</p>
+                    <a class="more" href="/"><span>더보기</span></a>
+                </div>
+            </article>
+            <article class="card">
+                <figure class="card__header">
+                    <img src="img/card_bg04_02_s.jpg" alt="">
+                </figure>
+                <div class="card__contents">
+                    <span class="sub">My Friend</span>
+                    <p class="desc">나의 친구의 친구의 첫사진을 구경하고 가세요</p>
+                    <a class="more" href="/"><span>더보기</span></a>
+                </div>
+            </article>
+            <article class="card">
+                <figure class="card__header">
+                    <img src="img/card_bg04_03_s.jpg" alt="">
+                </figure>
+                <div class="card__contents">
+                    <span class="sub">My Friend</span>
+                    <p class="desc">나의 친구의 친구의 첫사진을 구경하고 가세요</p>
+                    <a class="more" href="/"><span>더보기</span></a>
+                </div>
+            </article>
+            <article class="card">
+                <figure class="card__header">
+                    <img src="img/card_bg04_04_s.jpg" alt="">
+                </figure>
+                <div class="card__contents">
+                    <span class="sub">My Friend</span>
+                    <p class="desc">나의 친구의 친구의 첫사진을 구경하고 가세요</p>
+                    <a class="more" href="/"><span>더보기</span></a>
+                </div>
+            </article>
+            <article class="card">
+                <figure class="card__header">
+                    <img src="img/card_bg04_05_s.jpg" alt="">
+                </figure>
+                <div class="card__contents">
+                    <span class="sub">My Friend</span>
+                    <p class="desc">나의 친구의 친구의 첫사진을 구경하고 가세요</p>
+                    <a class="more" href="/"><span>더보기</span></a>
+                </div>
+            </article>
+        </div>
+    </section>
+</body>
+</html>

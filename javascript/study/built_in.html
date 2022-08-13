@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : 내장 함수</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+
+</head>
+<body>
+    <header id="header">
+        <h1><a href="../index.html">Javascript</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="../javascript01.html">데이터 저장하기</a></li>
+                <li><a href="../javascript02.html">데이터 불러오기</a></li>
+                <li><a href="../javascript03.html">데이터 실행하기</a></li>
+                <li><a href="../javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="../javascript05.html">문자열 객체</a></li>
+                <li><a href="../javascript06.html">배열 객체</a></li>
+                <li><a href="../javascript07.html">수학 객체</a></li>
+                <li><a href="../javascript08.html">숫자 객체</a></li>
+                <li><a href="../javascript09.html">브라우저 객체</a></li>
+                <li><a href="../javascript10.html">요소 객체</a></li>
+                <li><a href="../javascript11.html">이벤트 객체</a></li>
+            </ul>
+            <ul class="study">
+                <li><a href="basic.html">기본 규칙</a></li>
+                <li><a href="operator.html">연산자</a></li>
+                <li><a href="../study/for.html">반복문</a></li>
+                <li><a href="../study/if.html">조건문</a></li>
+                <li><a href="../study/type.html">데이터 타입</a></li>
+                <li><a href="../study/function.html">함수</a></li>
+                <li><a href="../study/var.html">지역변수/전역변수</a></li>
+                <li><a href="../study/element.html">요소 선택</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">자바스크립트 내장 함수</h2>
+            <p class="t_desc2">
+                자바스크립트에 기본적으로 내장되어 있는 함수들을 말합니다.
+            </p>
+
+            <hr>
+
+            <h3 class="t_tit2">인코딩, 디코딩 함수</h3>
+            <p class="t_desc">
+                인코딩 함수를 이용하여 문자를 부호화시키고 부호화된 문자를 다시 디코딩 함수를 이용하여 원래 문자로 되돌릴 수 있습니다.
+            </p>
+            <table class="t_table">
+                <thead>
+                    <tr>
+                        <th>함수명</th>
+                        <th>설명</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="ce">encodeURIComponent()</td>
+                        <td>
+                            영문, 숫자와 ( ) - _ . ~ * ! ' 을 제외한 문자를 인코딩 합니다.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="ce">decodeURIComponent()</td>
+                        <td>
+                            encodeURIComponent( )의 디코딩 함수
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <br>
+            <div class="t_code">
+<pre><code>//encodeURIComponent()
+var arr1 = ";,/?:@+$";
+var arr2 = "-_.!*()";
+var arr3 = "ABC abc 111";
+
+//decodeURIComponent()
+var arr1 = ";,/?:@+$";
+var arr2 = "-_.!*()";
+var arr3 = "ABC abc 111";
+</code></pre>
+            </div>
+            <div class="result">
+                <details>
+                    <summary>결과보기</summary>
+                    <div class="sample01_result">
+                    </div>
+                </details>
+            </div>
+            <h3 class="t_tit2">숫자, 유/무한 값 판별 함수</h3>
+            <p class="t_desc">
+                isNaN()은 전달된 값이 숫자인지 아닌지를 판별하는 함수이며, isFinite()은 유한값인지 무한한
+                값인지를 판별하는 함수 입니다.
+            </p>
+            <table class="t_table">
+                <thead>
+                    <tr>
+                        <th>함수명</th>
+                        <th>설명</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="ce">isNan()</td>
+                        <td>
+                            숫자인지 아닌지를 판별하는 함수입니다. 숫자이면 false를 반환해 주고 숫자가 아니면 true를 반환해줍니다.<br>
+                            NaN은 Not a Number의 약자입니다.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="ce">isFinite()</td>
+                        <td>
+                            유한값인지 무한값인지 판별하는 함수입니다. 유한값이면 true를 반환하고, 무한값이면 false를 반환합니다.
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <br>
+            <div class="t_code">
+<pre><code>//isNaN()
+isNaN(NaN);
+isNaN("NaN");
+isNaN(true);
+isNaN(null);
+isNaN(55);
+
+//isFinite()
+isFinite(Infinity);
+isFinite(NaN);
+isFinite(1545678653);
+isFinite(0);
+</code></pre>
+            </div>
+            <div class="result">
+                <details>
+                    <summary>결과보기</summary>
+                    <div class="sample02_result">
+                    </div>
+                </details>
+            </div>
+            <h3 class="t_tit2">숫자, 문자 변환 함수</h3>
+            <p class="t_desc">
+                숫자로 변환해주거나, 문자로 바꾸어 주는 함수 입니다.
+            </p>
+            <table class="t_table">
+                <thead>
+                    <tr>
+                        <th>함수명</th>
+                        <th>설명</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="ce">Number()</td>
+                        <td>
+                            숫자로 변환해 주는 함수입니다.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="ce">parseInt()</td>
+                        <td>
+                            숫자와 문자가 포함되어 있을 경우 정수 부분만 숫자로 변환해 주는 함수입니다.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="ce">parseFloat()</td>
+                        <td>숫자와 문자가 포함되어 있을 경우 소수 부분까지 숫자로 변환해 주는 함수입니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">String()</td>
+                        <td>문자로 바꾸어 주는 함수입니다.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <br>
+            <div class="t_code">
+<pre><code>//Number()
+var num1 = "1";  
+var num2 = Number(num1);
+
+//parselnt()
+parseInt("5.02020");
+parseInt("5 문자");
+
+//parseFloat()
+parseFloat("5");
+parseFloat("5.20202");
+
+//String()
+var str1 = 2;
+var str2 = String(str1);
+</code></pre>
+            </div>
+            <div class="result">
+                <details>
+                    <summary>결과보기</summary>
+                    <div class="sample03_result">
+                    </div>
+                </details>
+            </div>
+            <h3 class="t_tit2">자바스크립트 코드 변경 함수</h3>
+            <p class="t_desc">
+                문자로 표현된 자바스크립트 코드를 실행 시켜주는 함수입니다.
+            </p>
+            <table class="t_table">
+                <thead>
+                    <tr>
+                        <th>함수명</th>
+                        <th>설명</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="ce">eval()</td>
+                        <td>
+                            문자를 자바스크립트 코드로 변경해 주는 함수입니다.
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <br>
+            <div class="t_code">
+<pre><code>//eval()
+var js = "3 + 2";
+eval(js);
+</code></pre>
+            </div>
+            <div class="result">
+                <details>
+                    <summary>결과보기</summary>
+                    <div class="sample04_result">
+                    </div>
+                </details>
+            </div>
+            <h3 class="t_tit2">예제</h3>
+            <div class="result">
+                <details>
+                    <summary>예제보기</summary>
+                    <div class="t_code">
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="ko"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;내장함수&lt;/title&gt;
+    &lt;script&gt;
+        //인코딩, 디코딩함수
+        var encodeStr = '자바스크립트';
+        console.log(encodeURIComponent(encodeStr));
+        var decodeStr = encodeURIComponent(encodeStr);
+        console.log(decodeURIComponent(decodeStr));
+        //숫자, 유한무한 값 판별 함수
+        var num1 = '숫자';
+        if (!isNaN(num1)) {
+            console.log('숫자');
+        } else {
+            console.log('숫자아님');
+        }
+        var num2 = 1 / 0;
+        if (isFinite(num2)) {
+            console.log('유한값');
+        } else {
+            console.log('무한값');
+        }
+        //숫자, 문자 변환 함수
+        var num3 = '10';
+        console.log(Number(num3));
+        var num4 = '100px';
+        console.log(parseInt(num4));
+        var num5 = '33.3%';
+        console.log(parseFloat(num5));
+        var num6 = 10;
+        console.log(typeof num6);
+        console.log(typeof String(num6));
+        //자바스크립트 코드 변경 함수
+        var str1 = 'var num7 = 10';
+        var str2 = 'var num8 = 20';
+        eval(str1);
+        eval(str2);
+        console.log(num7 + num8);
+        &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+                    </div>
+                    <div class="result">
+                        <details>
+                            <summary>결과</summary>
+                            %EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8<br>
+                            자바스크립트<br>
+                            숫자아님<br>
+                            무한값<br>
+                            10<br>
+                            100<br>
+                            33.3<br>
+                            number<br>
+                            string<br>
+                            30
+                        </details>
+                </details>
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:jwor124@naver.com">jwor124@naver.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+    <script>
+        {
+            //encodeURIComponent()
+            var arr1 = ";,/?:@+$";
+            var arr2 = "-_.!*()";
+            var arr3 = "ABC abc 111";
+
+            document.querySelector(".sample01_result").innerHTML += encodeURIComponent(arr1) + "<br>";
+            document.querySelector(".sample01_result").innerHTML += encodeURIComponent(arr2) + "<br>";
+            document.querySelector(".sample01_result").innerHTML += encodeURIComponent(arr3) + "<br>";
+        }
+        {
+            //decodeURIComponent()
+            var arr1 = ";,/?:@+$";
+            var arr2 = "-_.!*()";
+            var arr3 = "ABC abc 111";
+
+            document.querySelector(".sample01_result").innerHTML += decodeURIComponent(arr1) + "<br>";
+            document.querySelector(".sample01_result").innerHTML += decodeURIComponent(arr2) + "<br>";
+            document.querySelector(".sample01_result").innerHTML += decodeURIComponent(arr3);
+        }
+        {
+            //isNaN()
+            isNaN(NaN);
+            isNaN("NaN");
+            isNaN(true);
+            isNaN(null);
+            isNaN(55);
+
+            //isFinite()
+            isFinite(Infinity);
+            isFinite(NaN);
+            isFinite(1545678653);
+            isFinite(0);
+
+            document.querySelector(".sample02_result").innerHTML += isNaN(NaN) + "<br>";
+            document.querySelector(".sample02_result").innerHTML += isNaN("NaN") + "<br>";
+            document.querySelector(".sample02_result").innerHTML += isNaN(true) + "<br>";
+            document.querySelector(".sample02_result").innerHTML += isNaN(null) + "<br>";
+            document.querySelector(".sample02_result").innerHTML += isFinite(Infinity) + "<br>";
+            document.querySelector(".sample02_result").innerHTML += isFinite(NaN) + "<br>";
+            document.querySelector(".sample02_result").innerHTML += isFinite(1545678653) + "<br>";
+            document.querySelector(".sample02_result").innerHTML += isFinite(0) + "<br>";
+        }
+        {
+            //Number()
+            var num1 = "1";  
+            var num2 = Number(num1);
+
+            document.querySelector(".sample03_result").innerHTML += typeof num1 + "<br>";
+            document.querySelector(".sample03_result").innerHTML += typeof num2 + "<br>";
+
+            //parselnt()
+            parseInt("5.02020");
+            parseInt("5 문자");
+
+            document.querySelector(".sample03_result").innerHTML += parseInt("5.02020") + "<br>"; 
+            document.querySelector(".sample03_result").innerHTML += parseInt("5 문자") + "<br>";
+
+            //parseFloat()
+            parseFloat("5");
+            parseFloat("5.20202");
+
+            document.querySelector(".sample03_result").innerHTML += parseFloat("5") + "<br>"; 
+            document.querySelector(".sample03_result").innerHTML += parseFloat("5.20202") + "<br>"; 
+
+            //String()
+            var str1 = 2;
+            var str2 = String(str1);
+
+            document.querySelector(".sample03_result").innerHTML += typeof str1 + "<br>";
+            document.querySelector(".sample03_result").innerHTML += typeof str2 + "<br>";
+        }
+        {
+            //eval()
+            var js = "3 + 2";
+            eval(js);
+
+            document.querySelector(".sample04_result").innerHTML += eval(js);
+        }
+    </script>
+</body>
+</html>
