@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>퀴즈 이펙트</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+
+</head>
+<body>
+    <header id="header">
+        <h1><a href="../index.html">퀴즈 이펙트</a></h1>
+        <nav class="header_nav">
+
+        </nav>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">스크립트를 이용한 퀴즈 만들기 04(객관식 - 여러문제)</h2>
+            <p class="t_desc2">
+                스크립트를 이용하여 객관식에 관한 문제를 만들 수 있으며, 이때 label태그를 활용 합니다.
+            </p>
+
+            <div class="t_iframe" style="min-height: 1000px; padding-top: 0;">
+               <iframe src="https://jwor12427.github.io/coding/javascript/effect/quizEffect05.html"></iframe>
+            </div>
+
+            <div class="t_link">
+                <a href="https://github.com/jwor12427/coding/blob/main/javascript/effect/quizEffect05.html" target="_blank">원본 소스 보기</a>
+            </div>
+            <div class="t_link">
+                <a href="https://jwor12427.github.io/coding/javascript/effect/quizEffect05.html">사이트보기</a>
+            </div>
+            <hr>
+
+            <h3 class="t_tit2">Script</h3>
+            <div class="t_code">
+<pre><code>//문제정보
+const quizInfo = [
+    {
+        answerType: "웹디자인기능사 2010년 05회",
+        answerNum: "1",
+        answerAsk: "먼셀의 색상에서 이 표준 빨강이면 1R은?",
+        answerChoice: {
+            1: "연지",
+            2: "다홍",
+            3: "주황",
+            4: "보라",
+        },
+        answerResult: "1",
+        answerEx: "먼셀의 색상에 이 표준이 빨강이면 여기서 R은 빨강을 뜻하므로 1명도의 빨강인 연지가 답입니다."
+    },
+    {
+        answerType: "웹디자인기능사 2010년 05회",
+        answerNum: "2",
+        answerAsk: "빛의 파장에 따른 굴절 각도를 이용하여 프리즘에 의한 가시스펙트럼 색을 얻을 수 있었는데, 이것은 빛이 단색이 아니라 여러 가지 색의 혼합색이라는 것을 말한다고 정의한 사람은?",
+        answerChoice: {
+            1: "헤리",
+            2: "헬름홀츠",
+            3: "돈서스",
+            4: "뉴턴",
+        },
+        answerResult: "4",
+        answerEx: "프리즘을 이용해 빛을 스펙트럼으로 분리해서 최초로 발견한 사람은 뉴턴입니다. 가시광선은 눈에 보이는 영역을 의미하며 이것은 여러가지 혼합색으로 이루어져 있습니다."
+    }
+];
+//선택자
+const quizwrap = document.querySelector(".quiz__wrap");
+//정답 확인
+    function answerQuiz(){
+        const quizSelects = document.querySelectorAll(".quiz__selects");    //보기
+        const quizView = document.querySelectorAll(".quiz__view");          //강아지
+        //사용자가 체크한 라디오 박스  == 문제 정답
+        quizInfo.forEach((question, number) => {
+            const quizSelectsWrap = quizSelects[number];                    //전체 보기 박스
+            const userSelector = `input[name=select${number}]:checked`;         //사용자가 클린한 라디오 박스
+            const userAnswer = (quizSelectsWrap.querySelector(userSelector) || {}).value
+            const quizView = document.querySelectorAll(".quiz__view");
+            console.log(quizSelects)
+            if(userAnswer == question.answerResult){
+                console.log("정답")
+                quizView[number].classList.add("like");
+            } else {
+                console.log("오답")
+                quizView[number].classList.add("dislike");
+                const div = document.createElement("div");
+                quizSelectsWrap.appendChild(div).innerHTML = `&lt;p class="result"&gt;${question.answerEx}</p>`;
+            }
+        });
+    }
+document.querySelector(".quiz__confirm .check").addEventListener("click", answerQuiz);
+</code></pre>
+            </div>
+            <p class="t_desc">
+            
+            </p>
+            <h3 class="t_tit2">HTML</h3>
+            <p class="t_desc">html을 스크립트로 작성하여 만들 수 있습니다.</p>
+            <div class="t_code">
+<pre><code>
+function updateQuiz(){
+    const exam = [];
+
+    quizInfo.forEach((question, number) => {
+        exam.push(`
+            &lt;div class="quiz"&gt;
+                &lt;span class="quiz__type"&gt;${question.answerType}&lt;/span&gt;
+                &lt;h2 class="quiz__question"&gt;
+                    &lt;span class="number"&gt;${question.answerNum}. &lt;/span&gt;
+                    &lt;div class="ask"&gt;${question.answerAsk}&lt;/div&gt;
+                &lt;/h2&gt;
+                &lt;div class="quiz__view"&gt;
+                    &lt;div class="true"&gt;정답입니다!&lt;/div&gt;
+                    &lt;div class="false"&gt;틀렸습니다!&lt;/div&gt;
+                    &lt;div class="dog"&gt;
+                        &lt;div class="head"&gt;
+                            &lt;div class="ears"&gt;&lt;/div&gt;
+                            &lt;div class="face"&gt;&lt;/div&gt;
+                            &lt;div class="eyes"&gt;
+                                &lt;div class="teardrop">&lt;/div>
+                            &lt;/div>
+                            &lt;div class="nose"&gt;&lt;/div&gt;
+                            &lt;div class="mouth"&gt;
+                                &lt;div class="tongue"&gt;&lt;/div&gt;
+                            &lt;/div&gt;
+                            &lt;div class="chin"&gt;&lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;div class="body"&gt;
+                            &lt;div class="tail"&gt;&lt;/div&gt;
+                            &lt;div class="legs"&gt;&lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class="quiz__answer"&gt;
+                    &lt;div class="quiz__selects"&gt;
+                        &lt;label for="select1${number}"&gt;
+                            &lt;input type="radio" id="select1${number}" class="select" name="select${number}" value="1"&gt;
+                            &lt;span class="choice"&gt;${question.answerChoice[1]}&lt;/span&gt;
+                        &lt;/label&gt;
+                        &lt;label for="select2${number}"&gt;
+                            &lt;input type="radio" id="select2${number}" class="select" name="select${number}" value="2"&gt;
+                            &lt;span class="choice"&gt;${question.answerChoice[2]}&lt;/span&gt;
+                        &lt;/label&gt;
+                        &lt;label for="select3${number}"&gt;
+                            &lt;input type="radio" id="select3${number}" class="select" name="select${number}" value="3"&gt;
+                            &lt;span class="choice"&gt;${question.answerChoice[3]}&lt;/span&gt;
+                        &lt;/label&gt;
+                        &lt;label for="select4${number}"&gt;
+                            &lt;input type="radio" id="select4${number}" class="select" name="select${number}" value="4"&gt;
+                        &lt;span class="choice"&gt;${question.answerChoice[4]}&lt;/span&gt;
+                        &lt;/label&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        `);
+    });
+
+    exam.push(`
+        &lt;div class="quiz__confirm"&gt;
+            &lt;button class="check"&gt;정답 확인하기&lt;/button&gt;
+            &lt;div class="ex"&gt;&lt;/div&gt;   
+        &lt;/div&gt;
+    `);
+    quizwrap.innerHTML = exam.join('');
+}
+updateQuiz();       //먼저 생성된 다음에 답안 작업을 해야함
+</code></pre>
+            </div>
+        
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:jwor124@naver.com">jwor124@naver.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+   
+</body>
+</html>

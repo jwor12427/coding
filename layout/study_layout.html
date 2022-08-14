@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>레이아웃</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        #wrap {
+            width: 1200px;
+            margin: 0 auto;
+        }
+        .header {
+            height: 100px;
+            background-color: #9492FF;
+            font-size: 40px;
+            color: #fff;
+            line-height: 100px;
+            text-align: center;
+        }
+        .container {
+            display: flex;
+            font-size: 40px;
+            color: #fff;
+            text-align: center;
+            line-height: 756px;
+        }
+        .lnb {
+            width: 300px;
+            height: 756px;
+            background-color: #7D76D1;
+        }
+        .content {
+            width: 900px;
+            height: 756px;
+            background-color: #5B45DE;
+        }
+        .aside {
+            width: 300px;
+            height: 756px;
+            background-color: #7288D7;
+        }
+        .footer {
+            height: 100px;
+            background-color: #3B3990;
+            font-size: 40px;
+            color: #fff;
+            text-align: center;
+            line-height: 100px;
+        }
+        /* media */
+        @media(max-width:786px) {
+            #wrap {
+                width: 100%;
+            }
+            .container {
+                display: flex;
+                flex-wrap: wrap;
+            }
+            .lnb {
+                width: 30%;
+                height: 656px;
+            }
+            .content {
+                width: 70%;
+                height: 656px;
+            }
+            .aside {
+                width: 100%;
+                height: 100px;
+                line-height: 100px;
+            }
+        }
+        @media(max-width:480px) {
+            #wrap {
+                width: 100%;
+            }
+            .lnb {
+                width: 100%;
+                height: 218.3333px;
+                line-height: 218.3333px;
+            }
+            .content {
+                width: 100%;
+                height: 218.3333px;
+                line-height: 218.3333px;
+            }
+            .aside {
+                width: 100%;
+                height: 218.3333px;
+                line-height: 218.3333px;
+            }
+            .footer {
+                width: 100%;
+                height: 150px;
+                line-height: 150px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div class="header">header</div>
+        <div class="container">
+            <div class="lnb">lnb</div>
+            <div class="content">content</div>
+            <div class="aside">aside</div>
+        </div>
+        <div class="footer">footer</div>
+    </div>
+</body>
+</html>

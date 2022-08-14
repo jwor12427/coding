@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : 연산자</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+
+</head>
+<body>
+    <header id="header">
+        <h1><a href="../index.html">Javascript</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="../javascript01.html">데이터 저장하기</a></li>
+                <li><a href="../javascript02.html">데이터 불러오기</a></li>
+                <li><a href="../javascript03.html">데이터 실행하기</a></li>
+                <li><a href="../javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="../javascript05.html">문자열 객체</a></li>
+                <li><a href="../javascript06.html">배열 객체</a></li>
+                <li><a href="../javascript07.html">수학 객체</a></li>
+                <li><a href="../javascript08.html">숫자 객체</a></li>
+                <li><a href="../javascript09.html">브라우저 객체</a></li>
+                <li><a href="../javascript10.html">요소 객체</a></li>
+                <li><a href="../javascript11.html">이벤트 객체</a></li>
+            </ul>
+            <ul class="study">
+                <li><a href="basic.html">기본 규칙</a></li>
+                <li><a href="operator.html">연산자</a></li>
+                <li><a href="../study/for.html">반복문</a></li>
+                <li><a href="../study/if.html">조건문</a></li>
+                <li><a href="../study/type.html">데이터 타입</a></li>
+                <li><a href="../study/function.html">함수</a></li>
+                <li><a href="../study/var.html">지역변수/전역변수</a></li>
+                <li><a href="../study/element.html">요소 선택</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">미디어쿼리(media query)</h2>
+            <p class="t_desc2">
+                디바이스들이 점점 다양해 지면서 웹에서 화면의 해상도에 따라 유연하게 컨텐츠를 배치하는 기술은 중요해지고 있습니다.
+                미디어쿼리는 반응형 웹디자인의 기본이 되는 기술 입니다.
+            </p>
+
+            <hr>
+
+            <h3 class="t_tit2">&lt;link ~ media=" "&gt;</h3>
+            <div class="t_code">
+<pre><code class="language-js">//link ~ media=" "
+&lt;link rel = "stylesheet" type="text/css" media ="all and (min-width: 1000px)" href="style_pc.css"&gt;
+</code></pre>
+            </div>
+            <p class="t_desc">
+                최소 가로폭이 1000px, 즉 1000px 보다 넓은 해상도일 때에 style_pc.csss를 연결한다는 뜻입니다.
+            </p>
+            <table class="t_table">
+                <thead>
+                    <tr>
+                        <th>모바일 기기</th>
+                        <th>가로</th>
+                        <th>세로</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="ce">iPhone X</td>
+                        <td class="ce">375</td>
+                        <td class="ce">812</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">iPhone 6,7,8</td>
+                        <td class="ce">375</td>
+                        <td class="ce">667</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">iPhone 6,7,8 plus</td>
+                        <td class="ce">414</td>
+                        <td class="ce">736</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">iPhone 5</td>
+                        <td class="ce">320</td>
+                        <td class="ce">568</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">Galaxy S5, S8</td>
+                        <td class="ce">360</td>
+                        <td class="ce">640</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">Galaxy Note 8</td>
+                        <td class="ce">360</td>
+                        <td class="ce">640</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">iPad Pro</td>
+                        <td class="ce">1024</td>
+                        <td class="ce">1366</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">⁝</td>
+                        <td class="ce">⁝</td>
+                        <td class="ce">⁝</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h3 class="t_tit2">@media</h3>
+            <p class="t_desc">
+                처음 로딩할 때 성능이 저하되지 않도록 CSS 파일을 하나로 만들어서 CSS내부에서 조건에 따라 분기시키는 것이 일반적인 형태의 반응형웹 CSS입니다.
+            </p>
+            <div class="t_code">
+<pre><code>//@media
+@media all and (min-width: 1000px) {
+    모든 기기에서 해상도가 최소 1000px 인 경우 적용할 속성들...
+}
+</code></pre>
+            </div>
+            <p class="t_desc">
+                all은 Media Type을 나타냅니다.
+            </p>
+            <table class="t_table">
+                <thead>
+                    <tr>
+                        <th>Media Type</th>
+                        <th>설명</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>all</td>
+                        <td>모든 미디어 장치에 사용(기본값)</td>
+                    </tr>
+                    <tr>
+                        <td>print</td>
+                        <td>프린터에 사용</td>
+                    </tr>
+                    <tr>
+                        <td>screen</td>
+                        <td>PC, 태블릿, 스마트폰에 사용</td>
+                    </tr>
+                    <tr>
+                        <td>speech</td>
+                        <td>스크린리더기가 페이지를 읽는데 사용</td>
+                    </tr>
+                </tbody>
+            </table>
+            <br>
+            <div class="t_code">
+<pre><code>body {color: red;}
+@media only screen and (max-width: 768px) {
+    body {color: bule;}
+}
+</code></pre>
+            </div>
+            <p class="t_desc">
+                화면이 768px보다 작아졌을 때 body의 글 색상을 파란색으로 지정한다는 뜻 입니다.
+            </p>
+            <div class="t_code">
+<pre><code>body {color: blue;}
+@media only screen and (min-width: 768px) {
+    body {color: red;}
+}
+</code></pre>
+            </div>
+            <p class="t_desc">
+                화면이 768px보다 작아졌을 때 body의 글 색상을 빨간색으로 지정한다는 뜻 입니다.
+            </p>
+            <div class="t_code">
+<pre><code>@media only screen and (orientation: portrait) {
+    body {background: skyblue;}
+}
+</code></pre>
+            </div>
+            <p class="t_desc">
+                모바일 기기를 세워 세로가 가로보다 긴 세로방향이 되면 배경색을 하늘색으로 지정한다는 뜻 입니다.
+            </p>
+            <div class="t_code">
+<pre><code>@media only screen and (orientation: landscape) {
+    body {backguound: lightgreen;}
+}
+</code></pre>
+            </div>
+            <p class="t_desc">
+                모바일 기기를 눕혀 가로가 세로보다 긴 가로방향이 되면 배경색을 연두색으로 지정한다는 뜻 입니다.
+            </p>
+            <div class="t_code">
+<pre><code>@media screen and (max-width: 900px) and (min-width: 600px), (min-width: 1100px) {
+    body {color: red;}   
+}
+</code></pre>
+            </div>
+            <p class="t_desc">
+                가로가 600px 에서 900px 사이일 때, 그리고 1100px 이상일 때에만 글자색을 빨간색으로 한다는 뜻 입니다.
+            </p>
+            <h3 class="t_tit2">레이아웃</h3>
+
+
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:jwor124@naver.com">jwor124@naver.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+   
+</body>
+</html>
