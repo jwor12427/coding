@@ -199,9 +199,29 @@
             <p class="t_desc">
                 가로가 600px 에서 900px 사이일 때, 그리고 1100px 이상일 때에만 글자색을 빨간색으로 한다는 뜻 입니다.
             </p>
+            <h3 class="t_tit2">media query를 흉내내는 script</h3>
+            <div class="t_code">
+<pre><code>function initLayout {
+    var widthWin = $(window).width();
+    if (widthWin &lt; 1000) $('body').addClass('mob').removeClass('pc');
+    else $('body').removeClass('mob').addClass('pc');
+}
+</code></pre>
+            </div>
+            <p class="t_desc">
+                창의 가로 크기가 재고 1000px보다 좁으면 body에 mob클래스를 붙이고 pc
+                클래스는 제거하고, 1000px이상이면 body에 pc클래스를 붙이고, mob는 제고한다는 뜻입니다.
+            </p>
+
             <h3 class="t_tit2">레이아웃</h3>
 
-
+            <h3 class="t_tit2">결과</h3>
+            <div class="t_iframe" style="min-height: 1000px; padding-top: 0;">
+                <iframe src="https://jwor12427.github.io/coding/layout/study_layout.html"></iframe>
+            </div>
+            <div class="t_link">
+                <a href="https://jwor12427.github.io/coding/layout/study_layout.html" target="_blank">원본 보기</a>
+            </div>
         </div>
     </main>
     <!-- //main -->

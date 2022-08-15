@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">  
+    <title>구조 요소</title>
+    <style>
+        @import url('https://webfontworld.github.io/score/SCoreDream.css');
+
+        .score {
+            font-family: SCoreDream;
+            font-weight: 500;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            width: 1320px;
+            margin: 0 auto;
+        }
+        header {
+            height: 150px;
+            background-color: #43BAD4;
+            margin-bottom: 20px;
+            display: flex;
+        }
+        h1 {
+            width: 183px;
+            height: 110px;
+            margin-left: 20px;
+            margin-top: 20px;
+            font-size: 16px;
+            background-color: #CCF6FF;
+            width: 183px;
+            text-align: center;
+            line-height: 110px;
+            font-weight: normal;
+        }
+        nav {
+            margin-top: 80px;
+            font-weight: normal;
+        }
+        ul {
+            background-color: #ccf6ff;
+            display: flex;
+            width: 985px;
+            margin-left: 20px;
+            height: 50px;
+            justify-content: center
+        }
+        header nav ul li {
+            display: block;
+            font-style: normal;
+            text-align: center;
+        }
+        header nav ul li>a {
+            text-decoration-line: none;
+            margin-left: 20px;
+            line-height: 50px;
+            margin-right: 48px;
+        }
+        #container {
+            height: 740px;
+            background-color: #43BAD4;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-around;
+            text-align: center;
+        }
+        #container  h2 {
+            background-color: #ccf6ff;
+            width: 425px;
+            margin-top: 20px;
+            height: 700px;
+            font-weight: normal;
+            line-height: 700px;
+            font-size: 16px;
+        }
+        #container .article {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            line-height: 340px;
+            font-weight: normal;
+        }
+        #container .aside {
+            background-color: #ccf6ff;
+            width: 390px;
+            height: 340px;
+            margin-bottom: 20px;
+        }
+        #container .ad {
+            background-color: #ccf6ff;
+            width: 390px;
+            height: 340px;
+        }
+        .score .footer {
+            height: 150px;
+            background-color: #43BAD4;
+            position: relative;
+            text-align: center;
+            font-weight: normal;
+        }
+        .score .footer .adress {
+            background-color: #ccf6ff;
+            margin-top: 20px;
+            width: 500px;
+            height: 50px;
+            position: absolute;
+            left: 130px;
+            margin-bottom: 10px;
+            line-height: 50px;
+        }
+        .footer p {
+            background-color: #ccf6ff;
+            margin-top: 20px;
+            width: 500px;
+            height: 50px;
+            position: absolute;
+            left: 130px;
+            bottom: 20px;
+            line-height: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="score">
+        <header>
+            <h1>반응형웹</h1>
+            <nav>
+                <ul>
+                    <li><a href="/">MENU01</a></li>
+                    <li><a href="/">MENU02</a></li>
+                    <li><a href="/">MENU03</a></li>
+                    <li><a href="/">MENU04</a></li>
+                    <li><a href="/">MENU05</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div id="container">
+            <section>
+                <h2>콘텐츠 그룹01</h2>
+            </section>
+            <section>
+                <h2>콘텐츠 그룹02</h2>
+            </section>
+            <div class="article">
+                <div class="aside">주요기사</div>
+                <div class="ad">광고</div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="adress">경기도 성남시 수정구  고등동 032)111-2233 study@naver.com</div>
+            <p>COPYRIGHT © All rights reserved</p>
+        </div>
+    </div>
+</body>
+</html>
