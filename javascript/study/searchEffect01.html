@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>퀴즈 이펙트</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+
+</head>
+<body>
+    <header id="header">
+        <h1><a href="../index.html">서치 이펙트</a></h1>
+        <nav class="header_nav">
+
+        </nav>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">스크립트를 이용한 서치효과 만들기 01</h2>
+            <p class="t_desc2">
+                스크립트를 이용하여 HTML 태그를 검색하는 효과를 만들 수 있습니다.
+            </p>
+
+            
+
+            
+            <div class="t_iframe" style="min-height: 1000px; padding-top: 0;">
+                <iframe src="https://jwor12427.github.io/coding/javascript/effect/searchEffect01.html"></iframe>
+            </div>
+
+            <div class="t_link">
+                <a href="https://github.com/jwor12427/coding/blob/main/javascript/effect/searchEffect01.html" target="_blank">원본 소스 보기</a>
+            </div>
+
+            <h3 class="t_tit2">Script</h3>
+            <div class="t_code">
+<pre><code>//선택자
+const searchBox = document.querySelector(".search__box input");             //검색 영역
+const searchList = document.querySelectorAll(".search__list ul li")   //목록 리스트
+
+searchBox.addEventListener("keyup", () => {
+    const searchWord = searchBox.value;         //사용자가 입력한 키워드
+        
+    searchList.forEach(el => {
+        const cssName = el.dataset.name;
+
+        if(cssName.indexOf(searchWord)) {
+            el.classList.add("hide");
+        } else {
+            el.classList.remove("hide");       //indexOf()값이 0(false)되는 값만 hide를 지워줍니다.
+        }
+    });
+});
+</code></pre>
+            </div>
+
+            <p class="t_box">
+                "문자열".indexOf(검색값) <br>
+                "문자열".indexOf(검색값, 위치값)
+            </p>
+            <p class="t_desc">
+               indexOf()를 이용하여 시용자가 입력한 데이터와 search__list의 데이터가 일치시킵니다. 
+               이때, indexOf()의 값이 '0'(false)일때 hide를 지워서 검색 결과만 나오게 만들어 줍니다.
+            </p>
+            <h3 class="t_tit2">HTML</h3>
+            <div class="t_code">
+<pre><code>&lt;div class="search_wrap"&gt;
+    &lt;span&gt;indexOf()를 이용하여 검색하기&lt;/span&gt;
+     &lt;h1&gt;HMTL 태그 검색하기&lt;/h1&gt;
+     &lt;div class="search__box"&gt;
+        &lt;label for="search"&gt;검색하기&lt;/label&gt;
+        &lt;input type="text" id="search" placeholder="HTML 태그를 입력해주세요!"&gt;
+     &lt;/div&gt;
+     &lt;div class="search__list"&gt;
+        &lt;div class="html"&gt;
+            &lt;ul&gt;
+                &lt;li data-name="a"&gt;&lt;strong&gt;a&lt;/strong&gt; : a 태그는 다른 페이지 이동을 설정합니다.&lt;/li&gt;
+                &lt;li data-name="abbr"&gt;&lt;strong&gt;abbr&lt;/strong&gt; : abbr 태그는 줄임말이나 머리글자를 표현하는데 사용합니다.&lt;/li&gt;
+                &lt;li data-name="acronym"&gt;&lt;strong&gt;acronym&lt;/strong&gt; : acronym 태그는 줄임말이나 머리글자를 표현하는데 사용합니다. 지금은 사용하지 않습니다.&lt;/li&gt;
+                &lt;li data-name="address"&gt;&lt;strong&gt;address&lt;/strong&gt; : address 태그는 웹페이지의 연락처 정보를 나타냅니다.&lt;/li&gt;
+                &lt;li data-name="applet"&gt;&lt;strong&gt;applet&lt;/strong&gt; : applet 태그는 줄임말이나 머리글자를 표현하는데 사용합니다. 지금은 사용하지 않습니다.&lt;/li&gt;
+                &lt;li data-name="area"&gt;&lt;strong&gt;area&lt;/strong&gt; : area 태그는 이미지의 핫스팟 영역을 정의하고, 하이퍼링크를 추가합니다.&lt;/li&gt;
+                &lt;li data-name="article"&gt;&lt;strong&gt;article&lt;/strong&gt; : article 태그는 문서, 페이지, 애플리케이션, 또는 사이트 안에서 독립적으로 구분해 배포하거나 재사용할 수 있는 구획을 나타냅니다.&lt;/li&gt;
+                &lt;li data-name="aside"&gt;&lt;strong&gt;aside&lt;/strong&gt; : aside 태그는 문서의 주요 내용과 간접적으로만 연관된 부분을 나타냅니다.&lt;/li&gt;
+                &lt;li data-name="audio"&gt;&lt;strong&gt;audio&lt;/strong&gt; : audio 태그는 문서에 소리 콘텐츠를 포함할 때 사용합니다.&lt;/li&gt;
+                &lt;li data-name="b"&gt;&lt;strong&gt;b&lt;/strong&gt; : b 태그는 독자의 주의를 요소의 콘텐츠로 끌기 위한 용도로 사용합니다.&lt;/li&gt;
+                &lt;li data-name="base"&gt;&lt;strong&gt;base&lt;/strong&gt; : base 태그는 문서 안의 모든 상대 URL이 사용할 기준 URL을 지정합니다.&lt;/li&gt;
+                &lt;li data-name="bdi"&gt;&lt;strong&gt;bdi&lt;/strong&gt; : bdi 태그는 주위의 텍스트들과는 다른 방향으로 써지는 텍스트 영역을 정의할 때 사용합니다.&lt;/li&gt;
+                &lt;li data-name="bdo"&gt;&lt;strong&gt;bdo&lt;/strong&gt; : bdo 태그는 현재 텍스트의 쓰기 방향을 덮어쓰고 다른 방향으로 렌더링 할 때 사용합니다.&lt;/li&gt;
+                &lt;li data-name="bgsound"&gt;&lt;strong&gt;bgsound&lt;/strong&gt; : bgsound 태그는 홈페이지 배경음악 삽입할때 사용합니다. 지금은 사용하지 않습니다.&lt;/li&gt;
+                &lt;li data-name="big"&gt;&lt;strong&gt;big&lt;/strong&gt; : big 태그는 글자 크기가 큰 텍스트를 정의 할 때 사용합니다. 지금은 사용하지 않습니다.&lt;/li&gt;
+                &lt;li data-name="blink"&gt;&lt;strong&gt;blink&lt;/strong&gt; : blink 태그는 텍스트를 깜빡이는게 설정합니다. 지금은 사용하지 않습니다. &lt;/li&gt;
+                &lt;li data-name="blockquotea"&gt;&lt;strong&gt;blockquote&lt;/strong&gt; : blockquote 태그는 긴 문장의 인용문을 설정합니다.&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/div&gt;
+     &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+            </div>
+            <h3 class="t_tit2">CSS</h3>
+            <div class="result">
+                <details>
+                    <summary>css보기</summary>
+                        <div class="t_code">
+<pre><code>/* header */
+#header nav {
+    margin: 10px;
+}
+#header nav li {
+    display:inline;
+    position: relative;
+}
+#header nav li a {
+    width: 30px;
+    height: 30px;
+    border: 1px solid var(--htmlColor);
+    border-radius: 50%;
+    display: inline-block;
+    text-align: center;
+    line-height: 30px;
+    font-family: 'Hallym';
+}
+#header nav li.active a {
+    background-color: var(--htmlColor);
+    color: #fff;
+}
+#header nav li .sub {
+    position: absolute;
+    left: 0;
+    top: 35px;
+    width: 400px;
+}
+#header nav li .sub li a {
+    width: auto;
+    background-color: transparent;
+    color: var(--htmlColor);
+    border: 0;
+    text-align: left;
+    line-height: 1.2;
+}
+#header nav li .sub li.active a {
+    text-decoration: underline;
+}
+/* main */
+#main {
+    margin: 50px 10px;
+}
+.search_wrap {
+    max-width: 1400px;
+    margin: 0 auto;
+    border: 3px solid var(--htmlColor);
+    border-radius: 20px;
+    background-color: #f1f3f6;
+    padding: 30px;
+    text-align: center;
+}
+.search_wrap > h1 {
+    font-family: 'Tmon';
+    color: var(--htmlColor);
+    font-size: 6vw;
+    margin-bottom: 10px;
+}
+.search_wrap > span {
+    font-size: 20px;
+    margin-bottom: 20px;
+    display: inline-block;
+}
+.search__box {
+    margin-bottom: 20px;
+}
+.search__box label {
+    position:absolute;
+    clip:rect(0 0 0 0);
+    width:1px;
+    height:1px;
+    margin:-1px;
+    overflow:hidden
+}
+.search__box input {
+    border: 2px solid var(--htmlColor);
+    padding: 15px 40px;
+    width: 70%;
+    border-radius: 50px;
+    font-size: 20px;
+}
+.search__list li {
+    text-align: left;
+    line-height: 1.7;
+}
+.search__list li.hide {
+    display: none;
+}
+/* media */
+@media(max-width: 600px) {
+    .search_wrap {
+        padding: 20px;
+    }
+    .search_wrap > span {
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+    .search_wrap > h1 {
+        font-size: 44px;
+    }
+    .search__box input {
+        font-size: 16px;
+        padding: 12px 30px;
+    }
+}
+</code></pre>
+                    </div>
+                </details>
+            </div>
+
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:jwor124@naver.com">jwor124@naver.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+   
+</body>
+</html>
