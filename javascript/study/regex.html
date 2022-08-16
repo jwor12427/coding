@@ -43,11 +43,13 @@
     <!-- //header -->
     <main id="main">
         <div class="document">
-            <h2 class="t_tit">정규식 표현</h2>
+            <h2 class="t_tit">정규표현식</h2>
             <p class="t_desc2">
                 정규식 표현으로 문자열에서 특정 문자의 조합을 찾을 수 있습니다.
             </p>
 
+
+            <h3 class="t_tit">정규표현식 객체 주요 패턴</h3>
             <table class="t_table">
                 <thead>
                     <tr>
@@ -57,50 +59,188 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td>abc</td>
+                        <td class="ce">abc</td>
                         <td>abc 문자열을 검색합니다.<br>
                             /abc/는 'abc'
                         </td>
                     </tr>
                     <tr>
-                        <td>[abc]</td>
+                        <td class="ce">[abc]</td>
                         <td>a, b, c 중 문자 하나를 검색합닌다.<br>
                             /[abc]d/는 'ad', 'bd', 'cd'
                         </td>
                     </tr>
                     <tr>
-                        <td>[^abc]</td>
+                        <td class="ce">[^abc]</td>
                         <td>a, b, c를  제외한 문자 하나를 검색합니다.<br>
-                            
+                            /^[abc]d/는 'ed', 'fd', 'gd'
                         </td>
                     </tr>
                     <tr>
-                        <td></td>
-                        <td></td>
+                        <td class="ce">[A-Z]</td>
+                        <td>알파벳 대문자 문자를 검색합니다.</td>
                     </tr>
                     <tr>
-                        <td></td>
-                        <td></td>
+                        <td class="ce">[a-z]</td>
+                        <td>알파벳 소문자 문자를 검색합니다.</td>
                     </tr>
                     <tr>
-                        <td></td>
-                        <td></td>
+                        <td class="ce">[0-9]</td>
+                        <td>0-9까지의 숫자를 검색합니다.</td>
                     </tr>
                     <tr>
-                        <td></td>
-                        <td></td>
+                        <td class="ce">.</td>
+                        <td>하나의 문자를 검색합니다. 만약 '마침표' 문자 그대로의 의미를 사용할 경우 '￦.'으로 표현해야 합니다.</td>
                     </tr>
                     <tr>
-                        <td></td>
-                        <td></td>
+                        <td class="ce">\w</td>
+                        <td>알파벳, 숫자, _를 검색합니다.</td>
                     </tr>
                     <tr>
-                        <td></td>
-                        <td></td>
+                        <td class="ce">\W</td>
+                        <td>알파벳, 숫자, _를 제외하고 검색합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">\d</td>
+                        <td>숫자를 검색합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">\D</td>
+                        <td>숫자를 제외하고 검색합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">\s</td>
+                        <td>하나의 공백을 검색합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">\S</td>
+                        <td>공백을 제외하고 검색합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">^</td>
+                        <td>행의 첫 문자가 일치해야 함을 의미합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">$</td>
+                        <td>행의 끝 문자가 일치해야 함을 의미합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">*</td>
+                        <td>*앞의 문자가 0번 인상 반복을 의미합니다.<br>
+                            /a*b/는 'b', 'aab', 'aaab', 'aaa...b'
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="ce">+</td>
+                        <td>+ 앞의 문자가 1번 이상 반복을 의미합니다.<br>
+                            /a+b/는 'ab', 'aab', 'aaab', 'aaa...b'
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="ce">?</td>
+                        <td>? 앞의 문자가 0번 또는 1번 이상 반복을 의미합니다.<br>
+                            /a?b/는 'b', 'ab'
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="ce">{}</td>
+                        <td>/￦d{3}/은 숫자 3개를 의마합니다.<br>
+                            /￦d{3,5}/은 숫자 3~5개를 의미합니다.<br>
+                            /￦d{3,}/은 숫자 3개 이상을 의미합니다.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="ce">a|b</td>
+                        <td>a or b를 의미합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">(abc)</td>
+                        <td>그룹화를 의미합니다.</td>
                     </tr>
                 </tbody>
             </table>
             <!--  //-->
+            <br>
+            <h3 class="t_tit">정규표현식 객체 주요 메서드</h3>
+            <table class="t_table">
+                <thead>
+                    <tr>
+                        <th>속성 값</th>
+                        <th>속성 설명</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td rowspan="2" class="ce">test()</td>
+                        <td>정규표현식과 일치하는 문자열이 있으면  true, 없으면 false를 반환합니다.</td>
+                    </tr>
+                    <tr>
+                        <td>var reg = /Javascript/;<br>
+                            console.log(reg.test('Javascript')); //true <br>
+                            console.log(reg.test('script')); //false 
+                        </td>
+                    </tr>
+                    <tr>
+                        <td rowspan="2" class="ce">match()</td>
+                        <td>정규표현식과 일치하는 문자열을 배열로 만듭니다. 일치하는 문자열이 없으면 null을 반환합니다.</td>
+                    </tr>
+                    <tr>
+                        <td>var reg = /Javascript/; <br>
+                            str = 'Java script'; <br>
+                            console.log(str.match(reg)); //null
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <br>
+            <h3 class="t_tit">정규표현식 객체 플래그</h3>
+            <table class="t_table">
+                <thead>
+                    <tr>
+                        <th>플래그</th>
+                        <th>설명</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td rowspan="2" class="ce">i</td>
+                        <td>대소문자 구분 없이 정규표현식과 문자열을 비교합니다.</td>
+                    </tr>
+                    <tr>
+                        <td>var reg1 = /javascript/; <br>
+                            var reg2 = /javascript/i; <br>
+                            car str = 'Javascript'; <br>
+                            console.log(reg1.test(str)); //false <br>
+                            console.log(reg2.test(str)); //true 
+                        </td>
+                    </tr>
+                    <tr>
+                        <td rowspan="2" class="ce">g</td>
+                        <td>문자열 전체를 정규표현식과 비교합니다.</td>
+                    </tr>
+                    <tr>
+                        <td>var reg1 = /a/; <br>
+                            var reg2 = /a/g; <br>
+                            car str = 'javascript'; <br>
+                            console.log(str.match(reg1)); //[a] <br>
+                            console.log(str.match(reg2)); //['a','a']
+                        </td>
+                    </tr>
+                    <tr>
+                        <td rowspan="2" class="ce">m</td>
+                        <td>여러 행의 문자열을 정규표현식과 비교합니다.</td>
+                    </tr>
+                    <tr>
+                        <td>var reg1 = /^s/; <br>
+                            var reg2 = /^s/m; <br>
+                            var str = 'javascript￦nscript'; <br>
+                            console.log(str.match(reg1)); //null <br>
+                            console.log(str.match(reg2)); //['s']<br>
+                            '^s'는 행의 첫 번째 문자가 s로 시작하는 것을 의미하고, '￦n'은 행 바꿈을 의미합니다.
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </main>
     <!-- //main -->
