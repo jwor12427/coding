@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>검색 이펙트</title>
+
+    <link rel="stylesheet" href="../assets/css/search.css">
+    <link href="https://webfontworld.github.io/tmon/Tmon.css" rel="stylesheet">
+    <link href="https://webfontworld.github.io/hallym/Hallym.css" rel="stylesheet">
+
+</head>
+<body>
+    <header id="header">
+        <nav>
+            <ul>
+                <li class="active"><a href="searchEffect01.html">1</a>
+                    <ul class="sub">
+                        <li><a href="searchEffect01.html">HTML</a></li>
+                        <li class="active"><a href="searchEffect01_css.html">CSS</a></li>
+                        <li><a href="searchEffect01_javascript.html">JAVASCRIPT</a></li>
+                    </ul>
+                </li>
+                <li><a href="searchEffect02.html">2</a></li>
+                <li><a href="searchEffect03.html">3</a></li>
+                <li><a href="searchEffect04.html">4</a></li>
+                <li><a href="searchEffect05.html">5</a></li>
+                <li><a href="searchEffect06.html">6</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <div class="search_wrap">
+            <span>indexOf()를 이용하여 검색하기</span>
+             <h1>CSS 속성 검색하기</h1>
+             <div class="search__box">
+                <label for="search">검색하기</label>
+                <input type="text" id="search" placeholder="HTML 태그를 입력해주세요!">
+             </div>
+             
+             <div class="search__list">
+                <div class="css">
+                    <ul>
+                        <li data-name="accent-color"><strong>accent-color</strong> : 다른 페이지 이동을 설정합니다.</li>
+                        <li data-name="align-content"><strong>align-content</strong> : 콘텐츠 아이템의 상하관계 정렬 상태를 설정합니다.</li>
+                        <li data-name="align-items"><strong>align-items</strong> : 콘텐츠 아이템의 내부상하관계 정렬 상태를 설정합니다.</li>
+                        <li data-name="align-self"><strong>align-self</strong> : 콘텐츠 아이템의 상하관계 정렬 상태를 설정합니다.</li>
+                        <li data-name="all"><strong>all</strong> : 요소의 속성을 초기화 또는 상속을 설정합니다.</li>
+                        <li data-name="animation"><strong>animation</strong> : 애니메이션과 관련된 속성을 일괄적으로 설정합니다.</li>
+                        <li data-name="animation-delay"><strong>animation-delay</strong> : 애니메이션 지연 시간을 설정합니다.</li>
+                        <li data-name="animation-direction"><strong>animation-direction</strong> : 애니메이션 움직임 방향을 설정합니다.</li>
+                        <li data-name="animation-duration"><strong>animation-duration</strong> : 애니메이션 움직임 시간을 설정합니다.</li>
+                        <li data-name="animation-fill-mode"><strong>animation-fill-mode</strong> : 애니메이션이 끝난 후의 상태를 설정합니다.</li>
+                    </ul>
+                </div>
+             </div>
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:jwor124@naver.com">jwor124@naver.com</a>
+    </footer>
+    <!-- //footer -->
+
+    <script>
+        //선택자
+        const searchBox = document.querySelector(".search__box input");             //검색 영역
+        const searchList = document.querySelectorAll(".search__list ul li")   //목록 리스트
+
+        searchBox.addEventListener("keyup", () => {
+            const searchWord = searchBox.value;         //사용자가 입력한 키워드
+            
+            searchList.forEach(el => {
+                const cssName = el.dataset.name;
+
+                if(cssName.indexOf(searchWord)) {
+                    el.classList.add("hide");
+                } else {
+                    el.classList.remove("hide");       //indexOf()값이 0(false)되는 값만 hide를 지워줍니다.
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>검색 이펙트</title>
+
+    <link rel="stylesheet" href="../assets/css/search.css">
+    <link href="https://webfontworld.github.io/tmon/Tmon.css" rel="stylesheet">
+    <link href="https://webfontworld.github.io/hallym/Hallym.css" rel="stylesheet">
+
+</head>
+<body>
+    <header id="header">
+        <nav>
+            <ul>
+                <li class="active"><a href="searchEffect01.html">1</a>
+                    <ul class="sub">
+                        <li><a href="searchEffect01.html">HTML</a></li>
+                        <li><a href="searchEffect01_css.html">CSS</a></li>
+                        <li class="active"><a href="searchEffect01_javascript.html">JAVASCRIPT</a></li>
+                    </ul>
+                </li>
+                <li><a href="searchEffect02.html">2</a></li>
+                <li><a href="searchEffect03.html">3</a></li>
+                <li><a href="searchEffect04.html">4</a></li>
+                <li><a href="searchEffect05.html">5</a></li>
+                <li><a href="searchEffect06.html">6</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <div class="search_wrap">
+            <span>indexOf()를 이용하여 검색하기</span>
+             <h1>JAVASCRIPT 메서드 검색하기</h1>
+             <div class="search__box">
+                <label for="search">검색하기</label>
+                <input type="text" id="search" placeholder="HTML 태그를 입력해주세요!">
+             </div>
+             
+             <div class="search__list">
+                <div class="javascript">
+                    <ul>
+                        <li data-name="indexOf()"><strong>indexOf()</strong> : 문자열에서 특정 문자의 위치를 찾습니다.</li>
+                        <li data-name="slice()"><strong>slice()</strong> : 문자열에서 원하는 값을 추출 합니다.</li>
+                        <li data-name="substring()"><strong>substring()</strong> : 문자열에서 원하는 값을 추출 합니다.</li>
+                        <li data-name="substr()"><strong>substr()</strong> : 문자열에서 원하는 값을 추출 하고, 배열로 반환합니다.</li>
+                        <li data-name="trim()"><strong>trim()</strong> : 문자열의 앞뒤 공백을 제거합니다.</li>
+                    </ul>
+                </div>
+             </div>
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:jwor124@naver.com">jwor124@naver.com</a>
+    </footer>
+    <!-- //footer -->
+
+    <script>
+        //선택자
+        const searchBox = document.querySelector(".search__box input");             //검색 영역
+        const searchList = document.querySelectorAll(".search__list ul li")   //목록 리스트
+
+        searchBox.addEventListener("keyup", () => {
+            const searchWord = searchBox.value;         //사용자가 입력한 키워드
+            
+            searchList.forEach(el => {
+                const cssName = el.dataset.name;
+
+                if(cssName.indexOf(searchWord)) {
+                    el.classList.add("hide");
+                } else {
+                    el.classList.remove("hide");       //indexOf()값이 0(false)되는 값만 hide를 지워줍니다.
+                }
+            });
+        });
+    </script>
+</body>
+</html>
