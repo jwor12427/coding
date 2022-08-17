@@ -116,6 +116,19 @@ li {
 .search__list li.hide {
     display: none;
 }
+.search__list li.show {
+    display: block;
+}
+.search__info {
+    text-align: right;
+    margin-bottom: 30px;
+    padding: 10px;
+    border-bottom: 2px dashed var(--htmlColor);
+}
+.search__info .type {
+    text-align: center;
+    margin-bottom: 10px;
+}
 /* media */
 @media(max-width: 600px) {
     .search_wrap {

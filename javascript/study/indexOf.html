@@ -43,9 +43,9 @@
     <!-- //header -->
     <main id="main">
         <div class="document">
-            <h2 class="t_tit">indexOf()</h2>
+            <h2 class="t_tit">indexOf() / lastIndexOf()</h2>
             <p class="t_desc2">
-                자바스크립트에서 특정 문자의 위치를 찾기위해서 indexOf()를 사용할 수 있습니다.
+                자바스크립트에서 특정 문자의 위치를 찾기위해서 indexOf() / lastIndexOf()를 사용할 수 있습니다.
             </p>
 
             <hr>
@@ -97,6 +97,37 @@ const currentStr13 = str1.indexOf("reference", 12);
             <div class="t_desc">
                 데이터가 없을 경우에는 <i>-1</i>이 출력 됩니다.
             </div>
+            <h3 class="t_tit2">lastIndexOf()</h3>
+            <p class="t_desc">
+                lastIndexOf()는 뒤에서 부터 특정 문자를 찾습니다.
+            </p>
+            <p class="t_box">
+                "문자열".lastIndexOf(검색값)<br>
+                "문자열".lastIndexOf(검색값, 위치값)
+            </p>
+            <div class="t_code">
+<pre><code>const currentStr14 = str1.lastIndexOf("javascript");     
+const currentStr15 = str1.lastIndexOf("reference");      
+const currentStr16 = str1.lastIndexOf("j");              
+const currentStr17 = str1.lastIndexOf("a");              
+const currentStr18 = str1.lastIndexOf("v");              
+const currentStr19 = str1.lastIndexOf("jquery");         
+const currentStr20 = str1.lastIndexOf("b");              
+const currentStr21 = str1.lastIndexOf("javascript", 0);  
+const currentStr22 = str1.lastIndexOf("javascript", 1);  
+const currentStr23 = str1.lastIndexOf("reference", 0);   
+const currentStr24 = str1.lastIndexOf("reference", 1);   
+const currentStr25 = str1.lastIndexOf("reference", 11);  
+const currentStr26 = str1.lastIndexOf("reference", 12);  
+</code></pre>
+            </div>
+            <div class="result">
+                <details>
+                    <summary>결과보기</summary>
+                    <div class="sample02_result">
+                    </div>
+                </details>
+            </div>
             <!-- // -->
         </div>
     </main>
@@ -141,6 +172,34 @@ const currentStr13 = str1.indexOf("reference", 12);
             document.querySelector(".sample01_result").innerHTML += currentStr12 + "<br>";
             document.querySelector(".sample01_result").innerHTML += currentStr13 + "<br>";
 
+
+            const currentStr14 = str1.lastIndexOf("javascript");     //0
+            const currentStr15 = str1.lastIndexOf("reference");      //11
+            const currentStr16 = str1.lastIndexOf("j");              //0
+            const currentStr17 = str1.lastIndexOf("a");              //3, 뒤에서 기준
+            const currentStr18 = str1.lastIndexOf("v");              //2
+            const currentStr19 = str1.lastIndexOf("jquery");         //-1
+            const currentStr20 = str1.lastIndexOf("b");              //-1
+            const currentStr21 = str1.lastIndexOf("javascript", 0);  //0
+            const currentStr22 = str1.lastIndexOf("javascript", 1);  //0
+            const currentStr23 = str1.lastIndexOf("reference", 0);   //-1
+            const currentStr24 = str1.lastIndexOf("reference", 1);   //-1
+            const currentStr25 = str1.lastIndexOf("reference", 11);  //11
+            const currentStr26 = str1.lastIndexOf("reference", 12);  //11
+
+            document.querySelector(".sample02_result").innerHTML += currentStr14 + "<br>";
+            document.querySelector(".sample02_result").innerHTML += currentStr15 + "<br>";
+            document.querySelector(".sample02_result").innerHTML += currentStr16 + "<br>";
+            document.querySelector(".sample02_result").innerHTML += currentStr17 + "<br>";
+            document.querySelector(".sample02_result").innerHTML += currentStr18 + "<br>";
+            document.querySelector(".sample02_result").innerHTML += currentStr19 + "<br>";
+            document.querySelector(".sample02_result").innerHTML += currentStr20 + "<br>";
+            document.querySelector(".sample02_result").innerHTML += currentStr21 + "<br>";
+            document.querySelector(".sample02_result").innerHTML += currentStr22 + "<br>";
+            document.querySelector(".sample02_result").innerHTML += currentStr23 + "<br>";
+            document.querySelector(".sample02_result").innerHTML += currentStr24 + "<br>";
+            document.querySelector(".sample02_result").innerHTML += currentStr25 + "<br>";
+            document.querySelector(".sample02_result").innerHTML += currentStr26 + "<br>";
         }
     </script>
 </body>

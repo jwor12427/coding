@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : 기본 규칙</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+
+</head>
+<body>
+    <header id="header">
+        <h1><a href="../index.html">Javascript</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="../javascript01.html">데이터 저장하기</a></li>
+                <li><a href="../javascript02.html">데이터 불러오기</a></li>
+                <li><a href="../javascript03.html">데이터 실행하기</a></li>
+                <li><a href="../javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="../javascript05.html">문자열 객체</a></li>
+                <li><a href="../javascript06.html">배열 객체</a></li>
+                <li><a href="../javascript07.html">수학 객체</a></li>
+                <li><a href="../javascript08.html">숫자 객체</a></li>
+                <li><a href="../javascript09.html">브라우저 객체</a></li>
+                <li><a href="../javascript10.html">요소 객체</a></li>
+                <li><a href="../javascript11.html">이벤트 객체</a></li>
+            </ul>
+            <ul class="study">
+                <li><a href="../study/basic.html">기본 규칙</a></li>
+                <li><a href="../study/operator.html">연산자</a></li>
+                <li><a href="../study/for.html">반복문</a></li>
+                <li><a href="../study/if.html">조건문</a></li>
+                <li><a href="../study/type.html">데이터 타입</a></li>
+                <li><a href="../study/function.html">함수</a></li>
+                <li><a href="../study/var.html">지역변수/전역변수</a></li>
+                <li><a href="../study/element.html">요소 선택</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">toUpperCase() / toLowerCase() / trim()</h2>
+            <p class="t_desc2">
+                toUpperCase() : 문자열을 대문자로 변경하고, toLowerCase() : 문자열을 소문자로 변경하는 메서드 입니다.<br>
+                trim() : 문자열의 앞뒤 공백을 제거 하는 메서드 입니다.
+            </p>
+
+            <hr>
+
+            <h3 class="t_tit2">toUpperCase()</h3>
+            
+            <p class="t_desc">
+                문자열을 대문자로 변경합니다.
+            </p>
+            <div class="table">
+                <table>
+                    <colgroup>
+                        <col style="width: 4%">
+                        <col style="width: 32%">
+                        <col style="width: 22%">
+                        <col style="width: 42%">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>번호</th>
+                            <th>기본값</th>
+                            <th>메서드</th>
+                            <th>리턴값</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="sample02_N1"></td>
+                            <td class="sample02_Q1"></td>
+                            <td class="sample02_M1"></td>
+                            <td class="sample02_P1"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <br>
+            <div class="t_code">
+<pre><code>const str1 = "javascript";
+const currentStr1 = str1.toUpperCase();
+    
+document.querySelector(".sample02_N1").innerHTML = "1";
+document.querySelector(".sample02_Q1").innerHTML = "javascript";
+document.querySelector(".sample02_M1").innerHTML = "toUpperCase";
+document.querySelector(".sample02_P1").innerHTML = currentStr1; 
+</code></pre>
+            </div>
+            <h3 class="t_tit2">toLowerCase()</h3>
+            
+            <p class="t_desc">
+                문자열을 소문자로 변경합니다.
+            </p>
+            <div class="table">
+                <table>
+                    <colgroup>
+                        <col style="width: 4%">
+                        <col style="width: 32%">
+                        <col style="width: 22%">
+                        <col style="width: 42%">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>번호</th>
+                            <th>기본값</th>
+                            <th>메서드</th>
+                            <th>리턴값</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="sample02_N2"></td>
+                            <td class="sample02_Q2"></td>
+                            <td class="sample02_M2"></td>
+                            <td class="sample02_P2"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <br>
+            <div class="t_code">
+<pre><code>const str2 = "JAVASCRIPT";
+const currentStr2 = str2.toLowerCase();
+    
+document.querySelector(".sample02_N2").innerHTML = "2";
+document.querySelector(".sample02_Q2").innerHTML = "JAVASCRIPT";
+document.querySelector(".sample02_M2").innerHTML = "toLowerCase";
+document.querySelector(".sample02_P2").innerHTML = currentStr2;
+</code></pre>
+            </div>
+            <h3 class="t_tit2">trim() / trimStrart() / trimEnd()</h3>
+            <div class="table">
+                <table>
+                     <colgroup>
+                        <col style="width: 4%">
+                        <col style="width: 32%">
+                        <col style="width: 22%">
+                        <col style="width: 42%">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>번호</th>
+                            <th>기본값</th>
+                            <th>메서드</th>
+                            <th>리턴값</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                            <tr>
+                            <td class="sample03_N1"></td>
+                            <td class="sample03_Q1"></td>
+                            <td class="sample03_M1"></td>
+                            <td class="sample03_P1"></td>
+                        </tr>
+                        <tr>
+                            <td class="sample03_N2"></td>
+                            <td class="sample03_Q2"></td>
+                            <td class="sample03_M2"></td>
+                            <td class="sample03_P2"></td>
+                        </tr>
+                        <tr>
+                            <td class="sample03_N3"></td>
+                            <td class="sample03_Q3"></td>
+                            <td class="sample03_M3"></td>
+                            <td class="sample03_P3"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <br>
+            <div class="t_code">
+<pre><code>const str1 = "       javascript    ";
+const currenStr1 = str1.trim();
+    
+document.querySelector(".sample03_N1").innerHTML = "1";
+document.querySelector(".sample03_Q1").innerHTML = "str1";
+document.querySelector(".sample03_M1").innerHTML = "trim";
+document.querySelector(".sample03_P1").innerHTML = currenStr1;
+    
+    
+const str2 = "       javascript    ";
+const currenStr2 = str2.trimStart();
+    
+document.querySelector(".sample03_N2").innerHTML = "2";
+document.querySelector(".sample03_Q2").innerHTML = "str2";
+document.querySelector(".sample03_M2").innerHTML = "trimStart";
+document.querySelector(".sample03_P2").innerHTML = currenStr2;
+    
+const str3 = "       javascript    ";
+const currenStr3 = str3.trimEnd();
+    
+document.querySelector(".sample03_N3").innerHTML = "3";
+document.querySelector(".sample03_Q3").innerHTML = "str3";
+document.querySelector(".sample03_M3").innerHTML = "trimEnd";
+document.querySelector(".sample03_P3").innerHTML = currenStr3;
+</code></pre>
+            </div>
+            <!-- // -->
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:jwor124@naver.com">jwor124@naver.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+    <script>
+        {
+            const str1 = "javascript";
+            const currentStr1 = str1.toUpperCase();
+
+            document.querySelector(".sample02_N1").innerHTML = "1";
+            document.querySelector(".sample02_Q1").innerHTML = "javascript";
+            document.querySelector(".sample02_M1").innerHTML = "toUpperCase";
+            document.querySelector(".sample02_P1").innerHTML = currentStr1;
+        }
+        {
+            const str2 = "JAVASCRIPT";
+            const currentStr2 = str2.toLowerCase();
+
+            document.querySelector(".sample02_N2").innerHTML = "2";
+            document.querySelector(".sample02_Q2").innerHTML = "JAVASCRIPT";
+            document.querySelector(".sample02_M2").innerHTML = "toLowerCase";
+            document.querySelector(".sample02_P2").innerHTML = currentStr2;
+        }
+        {
+            const str1 = "       javascript    ";
+            const currenStr1 = str1.trim();
+
+            document.querySelector(".sample03_N1").innerHTML = "1";
+            document.querySelector(".sample03_Q1").innerHTML = "str1";
+            document.querySelector(".sample03_M1").innerHTML = "trim";
+            document.querySelector(".sample03_P1").innerHTML = currenStr1;
+
+
+            const str2 = "       javascript    ";
+            const currenStr2 = str2.trimStart();
+
+            document.querySelector(".sample03_N2").innerHTML = "2";
+            document.querySelector(".sample03_Q2").innerHTML = "str2";
+            document.querySelector(".sample03_M2").innerHTML = "trimStart";
+            document.querySelector(".sample03_P2").innerHTML = currenStr2;
+
+            const str3 = "       javascript    ";
+            const currenStr3 = str3.trimEnd();
+
+            document.querySelector(".sample03_N3").innerHTML = "3";
+            document.querySelector(".sample03_Q3").innerHTML = "str3";
+            document.querySelector(".sample03_M3").innerHTML = "trimEnd";
+            document.querySelector(".sample03_P3").innerHTML = currenStr3;
+        }
+    </script>
+</body>
+</html>

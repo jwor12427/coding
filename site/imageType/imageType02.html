@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이미지 유형02</title>
+    <style>
+        @import url('https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css');
+
+        .nexon {
+            font-family: 'NexonLv1Gothic';
+            font-weight: 400;
+        }
+
+        /* reset */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-weight: normal;
+        }
+
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        /* common */
+        .container {
+            width: 1160px;
+            padding: 0 20px;
+            margin: 0 auto;
+        }
+
+        .section {
+            padding: 120px 0;
+            min-width: 1160px;
+        }
+
+        .section>h2 {
+            /* + 는 형제, > 는 자식 */
+            font-size: 50px;
+            line-height: 1;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .section>p {
+            font-size: 22px;
+            font-weight: 300;
+            color: #666;
+            text-align: center;
+            margin-bottom: 70px;
+        }
+
+        /* cardType */
+        .card__inner {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .card {
+            width: 32%;
+            background-color: #f5f5f5;
+        }
+
+        .card__body {
+            padding: 24px;
+            margin-bottom: 10px;
+        }
+
+        .card__body .tit {
+            font-size: 24px;
+            margin-bottom: 10px;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+
+        .card__body .desc {
+            font-size: 18px;
+            line-height: 1.4;
+            color: #666;
+            margin-bottom: 20px;
+            font-weight: 300;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 4; 
+            -webkit-box-orient: vertical;
+        }
+        /* imageType */
+        .image__inner {
+            display: flex;
+            justify-content: space-between;
+        }
+        .image {
+            width: 32%;
+            height: 520px;
+        }
+        .image.img1 {
+            background: url(img/imageType02_01.jpg);
+        }
+        .image.img2 {
+            background: url(img/imageType02_02.jpg);
+        }
+        .image.img3 {
+            background: url(img/imageType02_03.jpg);
+        }
+        .image__desc1 {
+            height: 100px;
+            background-color: #12658C;
+            margin-top: 420px;
+            -webkit-backdrop-filter: blur(6px);
+            backdrop-filter: blur(6px);
+            background-color: rgba(18, 101, 140, 0.5);
+        }
+        .image__desc2 {
+            height: 100px;
+            background-color: #055E55;
+            margin-top: 420px;
+            -webkit-backdrop-filter: blur(6px);
+            backdrop-filter: blur(6px);
+            background-color: rgba(5, 94, 85, 0.5);
+        }
+        .image__desc3 {
+            height: 100px;
+            background-color: #486E86;
+            margin-top: 420px;
+            -webkit-backdrop-filter: blur(6px);
+            backdrop-filter: blur(6px);
+            background-color: rgba(72, 110, 134, 0.5);
+        }
+        .image__title {
+            font-size: 24px;
+            text-align: center;
+            padding: 20px 0 10px 0;
+            color: #fff;
+        }
+        .image__btn {
+            font-size: 16px;
+            text-align: center;
+            display: block;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <section id="imageType01" class="image__wrap nexon section">
+        <h2>새의 이야기</h2>
+        <p>다양한 새들의 이야기를 알아보는 좋은시간 됩시다.</p>
+        <div class="image__inner container">
+            <article class="image img1">
+                <div class="image__desc1">
+                    <h3 class="image__title">첫번째 - 앵무새</h3>
+                    <a class="image__btn" href="/" title="자세히보기">자세히 보기</a>
+                </div>
+            </article>
+            <article class="image img2">
+                <div class="image__desc2">
+                    <h3 class="image__title">첫번째 - 앵무새</h3>
+                    <a class="image__btn" href="/" title="자세히보기">자세히 보기</a>
+                </div>
+            </article>
+            <article class="image img3">
+                <div class="image__desc3">
+                    <h3 class="image__title">첫번째 - 앵무새</h3>
+                    <a class="image__btn" href="/" title="자세히보기">자세히 보기</a>
+                </div>
+            </article>
+        </div>   
+    </section>
+</body>
+
+</html>

@@ -15,13 +15,7 @@
     <header id="header">
         <nav>
             <ul>
-                <li class="active"><a href="searchEffect01.html">1</a>
-                    <ul class="sub">
-                        <li class="active"><a href="searchEffect01.html">HTML</a></li>
-                        <li><a href="searchEffect01_css.html">CSS</a></li>
-                        <li><a href="searchEffect01_javascript.html">JAVASCRIPT</a></li>
-                    </ul>
-                </li>
+                <li class="active"><a href="searchEffect01.html">1</a></li>
                 <li><a href="searchEffect02.html">2</a></li>
                 <li><a href="searchEffect03.html">3</a></li>
                 <li><a href="searchEffect04.html">4</a></li>
@@ -34,31 +28,57 @@
     <main id="main">
         <div class="search_wrap">
             <span>indexOf()를 이용하여 검색하기</span>
-             <h1>HMTL 태그 검색하기</h1>
+             <h1>CSS 속성 검색하기</h1>
              <div class="search__box">
                 <label for="search">검색하기</label>
-                <input type="text" id="search" placeholder="HTML 태그를 입력해주세요!">
+                <input type="text" id="search" placeholder="CSS 속성을 입력해주세요!">
+             </div>
+             <div class="search__info">
+                <div>전체 속성 갯수 : <span class="num"></span></div>
              </div>
              <div class="search__list">
                 <div class="html">
                     <ul>
-                        <li data-name="a"><strong>a</strong> : a 태그는 다른 페이지 이동을 설정합니다.</li>
-                        <li data-name="abbr"><strong>abbr</strong> : abbr 태그는 줄임말이나 머리글자를 표현하는데 사용합니다.</li>
-                        <li data-name="acronym"><strong>acronym</strong> : acronym 태그는 줄임말이나 머리글자를 표현하는데 사용합니다. 지금은 사용하지 않습니다.</li>
-                        <li data-name="address"><strong>address</strong> : address 태그는 웹페이지의 연락처 정보를 나타냅니다.</li>
-                        <li data-name="applet"><strong>applet</strong> : applet 태그는 줄임말이나 머리글자를 표현하는데 사용합니다. 지금은 사용하지 않습니다.</li>
-                        <li data-name="area"><strong>area</strong> : area 태그는 이미지의 핫스팟 영역을 정의하고, 하이퍼링크를 추가합니다.</li>
-                        <li data-name="article"><strong>article</strong> : article 태그는 문서, 페이지, 애플리케이션, 또는 사이트 안에서 독립적으로 구분해 배포하거나 재사용할 수 있는 구획을 나타냅니다.</li>
-                        <li data-name="aside"><strong>aside</strong> : aside 태그는 문서의 주요 내용과 간접적으로만 연관된 부분을 나타냅니다.</li>
-                        <li data-name="audio"><strong>audio</strong> : audio 태그는 문서에 소리 콘텐츠를 포함할 때 사용합니다.</li>
-                        <li data-name="b"><strong>b</strong> : b 태그는 독자의 주의를 요소의 콘텐츠로 끌기 위한 용도로 사용합니다.</li>
-                        <li data-name="base"><strong>base</strong> : base 태그는 문서 안의 모든 상대 URL이 사용할 기준 URL을 지정합니다.</li>
-                        <li data-name="bdi"><strong>bdi</strong> : bdi 태그는 주위의 텍스트들과는 다른 방향으로 써지는 텍스트 영역을 정의할 때 사용합니다.</li>
-                        <li data-name="bdo"><strong>bdo</strong> : bdo 태그는 현재 텍스트의 쓰기 방향을 덮어쓰고 다른 방향으로 렌더링 할 때 사용합니다.</li>
-                        <li data-name="bgsound"><strong>bgsound</strong> : bgsound 태그는 홈페이지 배경음악 삽입할때 사용합니다. 지금은 사용하지 않습니다.</li>
-                        <li data-name="big"><strong>big</strong> : big 태그는 글자 크기가 큰 텍스트를 정의 할 때 사용합니다. 지금은 사용하지 않습니다.</li>
-                        <li data-name="blink"><strong>blink</strong> : blink 태그는 텍스트를 깜빡이는게 설정합니다. 지금은 사용하지 않습니다. </li>
-                        <li data-name="blockquotea"><strong>blockquote</strong> : blockquote 태그는 긴 문장의 인용문을 설정합니다.</li>
+                        <li data-name="accent-color"><strong>accent-color</strong> : 사용자 인터페이스 컨트롤의 강조색을 지정합니다.</li>
+                        <li data-name="align-content"><strong>align-content</strong> : 콘텐츠 아이템의 상하관계 정렬 상태를 설정합니다.</li>
+                        <li data-name="align-items"><strong>align-items</strong> : 콘텐츠 아이템의 내부상하관계 정렬 상태를 설정합니다.</li>
+                        <li data-name="align-self"><strong>align-self</strong> : 콘텐츠 아이템의 상하관계 정렬 상태를 설정합니다.</li>
+                        <li data-name="all"><strong>all</strong> : 요소의 속성을 초기화 또는 상속을 설정합니다.</li>
+                        <li data-name="animation"><strong>animation</strong> : 애니메이션과 관련된 속성을 일괄적으로 설정합니다.</li>
+                        <li data-name="animation-delay"><strong>animation-delay</strong> : 애니메이션 지연 시간을 설정합니다.</li>
+                        <li data-name="animation-direction"><strong>animation-direction</strong> : 애니메이션 움직임 방향을 설정합니다.</li>
+                        <li data-name="animation-duration"><strong>animation-duration</strong> : 애니메이션 움직임 시간을 설정합니다.</li>
+                        <li data-name="animation-fill-mode"><strong>animation-fill-mode</strong> : 애니메이션이 끝난 후의 상태를 설정합니다.</li>
+                        <li data-name="animation-iteration-count"><strong>animation-iteration-count</strong> : 애니메이션의 반복 횟수를 설정합니다.</li>
+                        <li data-name="animation-name"><strong>animation-name</strong> : 애니메이션 keyframe 이름을 설정합니다.</li>
+                        <li data-name="animation-play-state"><strong>animation-play-state</strong> : 애니메이션 진행형태를 설정합니다.</li>
+                        <li data-name="animation-timeline"><strong>animation-timeline</strong> : 애니메이션의 타임라인을 설정합니다.</li>
+                        <li data-name="animation-timing-function"><strong>animation-timing-function</strong> : 애니메이션 움직임의 속도를 설정합니다.</li>
+                        <li data-name="appearance"><strong>appearance</strong> : 기본으로 지원하는 테마들의 모양을 해제하거나 추가를 설정합니다.</li>
+                        <li data-name="aspect-ratio"><strong>aspect-ratio</strong> : 요소의 비율 크기를 설정합니다.</li>
+                        <li data-name="backdrop-filter"><strong>backdrop-filter</strong> : 뒤 영역의 흐림이나 색상 시프트 등 그래픽 효과를 설정합니다.</li>
+                        <li data-name="backface-visibility"><strong>backface-visibility</strong> : 입체적인 모습의 뒷면 가시성을 설정합니다.</li>
+                        <li data-name="background"><strong>background</strong> : 백그라운드 속성을 일괄적으로 설정합니다.</li>
+                        <li data-name="background-attachment"><strong>background-attachment</strong> : 배경 이미지의 고정 여부를 설정합니다.</li>
+                        <li data-name="background-blend-mode"><strong>background-blend-mode</strong> : 배경을 혼합했을 때 그래픽 효과를 설정합니다.</li>
+                        <li data-name="background-clip"><strong>background-clip</strong> : 	백그라운드 이미지의 위치 기준점을 설정합니다.</li>
+                        <li data-name="background-color"><strong>background-color</strong> : 백그라운드 색을 설정합니다.</li>
+                        <li data-name="background-image"><strong>background-image</strong> : 백그라운드 이미지 속성을 설정합니다.</li>
+                        <li data-name="background-origin"><strong>background-origin</strong> : 백그라운드 이미지의 위치 기준점을 설정하기 위한 속성입니다.</li>
+                        <li data-name="background-position"><strong>background-position</strong> : 백그라운드 이미지 속성을 설정합니다.</li>
+                        <li data-name="background-position-x"><strong>background-position-x</strong> : 백그라운드 이미지의 x축 위치 영역을 설정합니다.</li>
+                        <li data-name="background-position-y"><strong>background-position-y</strong> : 백그라운드 이미지의 y축 위치 영역을 설정합니다.</li>
+                        <li data-name="background-repeat"><strong>	background-repeat</strong> : 백그라운드 이미지 반복 여부를 설정합니다.</li>
+                        <li data-name="background-size"><strong>background-size</strong> : 백그라운드 이미지 사이즈를 설정합니다.</li>
+                        <li data-name="block-size"><strong>block-size</strong> : </li>
+                        <li data-name="border"><strong>border</strong> : 테두리 속성을 일괄적으로 설정합니다.</li>
+                        <li data-name="border-block"><strong>border-block</strong> : </li>
+                        <li data-name="border-block-color"><strong>border-block-color</strong> : </li>
+                        <li data-name="border-block-end"><strong>border-block-end</strong> : </li>
+                        <li data-name="border-block-end-color"><strong>border-block-end-color</strong> : </li>
+                        <li data-name="border-block-end-style"><strong>border-block-end-style</strong> : </li>
+                        <li data-name="border-block-end-width"><strong>border-block-end-width</strong> : </li>
+                        <li data-name="border-block-start"><strong>border-block-start</strong> : </li>
                     </ul>
                 </div>
              </div>
@@ -74,7 +94,12 @@
         //선택자
         const searchBox = document.querySelector(".search__box input");             //검색 영역
         const searchList = document.querySelectorAll(".search__list ul li")   //목록 리스트
+        const searchInfo = document.querySelector(".search__info .num");        //전체 갯수
 
+        //전체 갯수 구하기
+        searchInfo.textContent = searchList.length;
+
+        //검색 영역
         searchBox.addEventListener("keyup", () => {
             const searchWord = searchBox.value;         //사용자가 입력한 키워드
             
