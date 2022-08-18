@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : 기본 규칙</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+
+</head>
+<body>
+    <header id="header">
+        <h1><a href="../index.html">Javascript</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="../javascript01.html">데이터 저장하기</a></li>
+                <li><a href="../javascript02.html">데이터 불러오기</a></li>
+                <li><a href="../javascript03.html">데이터 실행하기</a></li>
+                <li><a href="../javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="../javascript05.html">문자열 객체</a></li>
+                <li><a href="../javascript06.html">배열 객체</a></li>
+                <li><a href="../javascript07.html">수학 객체</a></li>
+                <li><a href="../javascript08.html">숫자 객체</a></li>
+                <li><a href="../javascript09.html">브라우저 객체</a></li>
+                <li><a href="../javascript10.html">요소 객체</a></li>
+                <li><a href="../javascript11.html">이벤트 객체</a></li>
+            </ul>
+            <ul class="study">
+                <li><a href="../study/basic.html">기본 규칙</a></li>
+                <li><a href="../study/operator.html">연산자</a></li>
+                <li><a href="../study/for.html">반복문</a></li>
+                <li><a href="../study/if.html">조건문</a></li>
+                <li><a href="../study/type.html">데이터 타입</a></li>
+                <li><a href="../study/function.html">함수</a></li>
+                <li><a href="../study/var.html">지역변수/전역변수</a></li>
+                <li><a href="../study/element.html">요소 선택</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">padStart() / padEnd()</h2>
+            <p class="t_desc2">
+                padStart/padEnd() 메서드는 주어진 길이에 맞게 앞/뒤 문자열을 채우고, 새로운 문자열을 반환합니다.
+            </p>
+
+            <hr>
+
+            <h3 class="t_tit2">padStart() / padEnd()</h3>
+            
+            <p class="t_box">
+                "문자열".padStart(길이) <br>
+                "문자열".padStart(길이, 문자열)
+            </p>
+            <p class="t_desc">
+                padEnd()의 사용법은 padStart()와 동일 합니다.
+            </p>
+            <br>
+            <div class="t_code">
+<pre><code>const str1 = "456";
+const currnetStr1 = str1.padStart(1, "0");          //456
+const currnetStr2 = str1.padStart(2, "0");          //456
+const currnetStr3 = str1.padStart(3, "0");          //456
+const currnetStr4 = str1.padStart(4, "0");          //0456
+const currnetStr5 = str1.padStart(5, "0");          //00456
+const currnetStr6 = str1.padStart(6, "0");          //000456
+const currnetStr7 = str1.padStart(6, "1");          //111456
+const currnetStr8 = str1.padStart(6, "12");         //121456
+const currnetStr9 = str1.padStart(6, "123");        //123456
+const currnetStr10 = str1.padStart(6, "1234");      //123456, 자리가 없어서 4는 짤림
+const currnetStr11 = str1.padStart(6);              //   456, 앞에는 공백 처리
+        
+        
+const currnetStr12 = str1.padEnd(1, "0");           //456
+const currnetStr13 = str1.padEnd(2, "0");           //456
+const currnetStr14 = str1.padEnd(3, "0");           //456
+const currnetStr15 = str1.padEnd(4, "0");           //4560
+const currnetStr16 = str1.padEnd(5, "0");           //45600
+const currnetStr17 = str1.padEnd(6, "0");           //456000
+const currnetStr18 = str1.padEnd(6, "1");           //456111
+const currnetStr19 = str1.padEnd(6, "12");          //456121
+const currnetStr20 = str1.padEnd(6, "123");         //456123
+const currnetStr21 = str1.padEnd(6, "1234");        //456123
+const currnetStr22 = str1.padEnd(6);                //456___, 뒤에 공백 처리
+</code></pre>
+            </div>
+           
+            <!-- // -->
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:jwor124@naver.com">jwor124@naver.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+    <script>
+       
+    </script>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : 기본 규칙</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+
+</head>
+<body>
+    <header id="header">
+        <h1><a href="../index.html">Javascript</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="../javascript01.html">데이터 저장하기</a></li>
+                <li><a href="../javascript02.html">데이터 불러오기</a></li>
+                <li><a href="../javascript03.html">데이터 실행하기</a></li>
+                <li><a href="../javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="../javascript05.html">문자열 객체</a></li>
+                <li><a href="../javascript06.html">배열 객체</a></li>
+                <li><a href="../javascript07.html">수학 객체</a></li>
+                <li><a href="../javascript08.html">숫자 객체</a></li>
+                <li><a href="../javascript09.html">브라우저 객체</a></li>
+                <li><a href="../javascript10.html">요소 객체</a></li>
+                <li><a href="../javascript11.html">이벤트 객체</a></li>
+            </ul>
+            <ul class="study">
+                <li><a href="../study/basic.html">기본 규칙</a></li>
+                <li><a href="../study/operator.html">연산자</a></li>
+                <li><a href="../study/for.html">반복문</a></li>
+                <li><a href="../study/if.html">조건문</a></li>
+                <li><a href="../study/type.html">데이터 타입</a></li>
+                <li><a href="../study/function.html">함수</a></li>
+                <li><a href="../study/var.html">지역변수/전역변수</a></li>
+                <li><a href="../study/element.html">요소 선택</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">split()</h2>
+            <p class="t_desc2">
+                문자열에서 원하는 값을 추출해 배열로 반환해 줍니다.
+            </p>
+
+            <hr>
+
+            <h3 class="t_tit2">split()</h3>
+            <p class="t_desc">
+                문자 객체를 지정한 구분자를 이용하여 여러개의 문자열로 나눕니다.
+            </p>
+            
+            <p class="t_box">
+                "문자열".split(구분자); <br>
+                "문자열".split(정규식 표현); <br>
+                "문자열".split(구분자, 갯수); <br>
+            </p>
+            
+            <br>
+            <div class="t_code">
+<pre><code>const str1 = "javascript reference";
+const currentStr1 = str1.split('');     //['j', 'a', 'v', 'a', 's', 'c', 'r', 'i', 'p', 't', ' ', 'r', 'e', 'f', 'e', 'r', 'e', 'n', 'c', 'e']
+const currentStr2 = str1.split(' ');    //['javascript', 'reference'], 한칸 띄웠음
+const currentStr3 = str1.split('', 1);  //['j']
+const currentStr4 = str1.split('', 2);  //['j', 'a']
+const currentStr5 = str1.split(' ', 1);  //['javascript']
+const currentStr6 = str1.split(' ', 2);  //['javascript', 'reference']
+const currentStr7 = str1.split('j');     //['', 'avascript reference']
+const currentStr8 = str1.split('a');     //['j', 'v', 'script reference']
+const currentStr9 = str1.split('e');     //['javascript r', 'f', 'r', 'nc', '']
+    
+const str2 = "java/script/refer/ence";
+const currentStr10 = str2.split('/');   //['java', 'script', 'refer', 'ence']
+    
+const str3 = "java&script&refer!ence";
+const currentStr11 = str3.split('!');  //['java&script&refer', 'ence']
+const currentStr12 = str3.split('&');  //['java', 'script', 'refer!ence']
+const currentStr13 = str3.split(/&|\!/);  //['java', 'script', 'refer', 'ence']
+    
+const str4 = "javascript reference";
+const currentStr14 = str4.split('').join();  //j,a,v,a,s,c,r,i,p,t, ,r,e,f,e,r,e,n,c,e (문자열)
+const currentStr15 = str4.split('').join('*');  //j*a*v*a*s*c*r*i*p*t* *r*e*f*e*r*e*n*c*e
+const currentStr16 = str4.split('').reverse().join();   //e,c,n,e,r,e,f,e,r, ,t,p,i,r,c,s,a,v,a,j (반대로)
+const currentStr17 = str4.split('').reverse().join('/');  //e/c/n/e/r/e/f/e/r/ /t/p/i/r/c/s/a/v/a/j
+</code></pre>
+            </div>
+           
+            <!-- // -->
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:jwor124@naver.com">jwor124@naver.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+    <script>
+       
+    </script>
+</body>
+</html>
