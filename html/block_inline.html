@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML 레퍼런스 북</title>
+
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- 구글 아이콘 -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+<body>
+    <header id="header">
+        <h1><a href="#">라인 중학교 1학년 코딩반</a></h1>
+        <span>이름 : 정은비</span>
+    </header>
+    <!-- //header -->
+
+    <main id="main">
+        <header class="main_header">
+            <h2>HTML <em>레퍼런스 북</em></h2>
+        </header>
+        <nav class="main_menu">
+            <ul>
+                <li><a href="alphabet.html">알파벳</a></li>
+                <li><a href="basic.html">기초 문법</a></li>
+                <li><a href="block.html">블록 구조/인라인 구조</a></li>
+                <li class="active"><a href="web.html">웹표준/웹접근성/웹호환성</a></li>
+                <li><a href="sementic.html">시멘틱 태그</a></li>
+                <li><a href="seo.html">검색엔진시스템(SEO)</a></li>
+            </ul>
+            <ul>
+                <li><a href="layout01.html">레이아웃01</a></li>
+                <li><a href="layout02.html">레이아웃02</a></li>
+                <li><a href="layout03.html">레이아웃03</a></li>
+                <li><a href="layout04.html">레이아웃04</a></li>
+                <li><a href="layout05.html">레이아웃05</a></li>
+            </ul>
+        </nav>
+        <hr>
+        <div class="document">
+            <h2 class="t_tit">블록 구조와 인라인 구조</h2>
+            <p class="t_desc2">
+               HTML의 구조는 블록 구조와 인라인 구조로 분류 되어 있습니다.
+            </p>
+            <h3 class="t_tit2">블록 구조</h3>
+            <p class="t_desc">
+               블록 구조는 줄 바꿈이 일어나는 형태로 영역의 넓이가 상위 영역의 전체만큼 만들어 지는 
+               형태 입니다. 블록요소는 몇몇을 제외한 블록 요소를 포함하고, 인라인 요소까지 포함합니다.
+            </p>
+            <p class="t_box">
+                p { <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;display: block; <br>
+                } <br>
+            </p>
+            <p class="t_desc">
+                &lt;div&gt;, &lt;p&gt;, &lt;h1~h6&gt;, &lt;li&gt;, &lt;ul&gt;, 
+                &lt;ol&gt;, &lt;section&gt;, &lt;footer&gt; 태그 등이 주된 블록 구조 입니다.
+            </p>
+
+            <h3 class="t_tit2">인라인 구조</h3>
+            <p class="t_desc">
+                인라인 구조는 글자와 같이 옆으로 나열되는 형태로 줄 바꿈이 일어나지 않는 요소입니다.
+                인라인 구조는 안에 있는 글자와 같은 내용 길이에 맞게 크기를 차지 하는 성질이 있습니다.
+            </p>
+            <p class="t_box">
+                span { <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;display: inline; <br>
+                }
+            </p>
+            <p class="t_desc">
+                &lt;span&gt;, &lt;a&gt;, &lt;em&gt;, &lt;strong&gt; 등이 대표적인 인라인 구조를 가지는 태그입니다.
+                인라인 태그는 같은 인라인 요소를 포함 할 수 있지만, 블록 요소는 포함이 불가능 합니다.
+                인라인 구조는 width, height, margin 등이 적용이 되지 않습니다.(단, margin은 좌,우 가능, padding은 적용가능)
+            </p>
+            <br>
+
+            <table class="t_table">
+                <thead>
+                    <tr>
+                        <th class="center">요소 유형</th>
+                        <th class="center">특징</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td rowspan="3" class="center">블록 레벨 요소</td>
+                        <td>1. 블록 레벨 요소는 줄 바꿈이 일어납니다.</td>
+                    </tr>
+                    <tr>
+                        <td>2. 블록 레벨 요소는 텍스트(문자)와 인라인 요소를 자식 요소로 포함할 수 있습니다.</td>
+                    </tr>
+                    <tr>
+                        <td>3. 블록 레벨 요소 중에는 블록 레벨 요소를 자식 요소로 포함 할 수 있는 요소와
+                            포함할 수 없는 요소가 있습니다.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td rowspan="3" class="center">인라인 요소</td>
+                        <td>1. 인라인 요소는 줄 바꿈이 일어나지 않습니다.</td>
+                    </tr>
+                    <tr>
+                        <td>2.인라인 요소는 텍스트(문자)와 인라인 요소를 자식 요소로 포함할 수 있습니다.</td>
+                    </tr>
+                    <tr>
+                        <td>3. 인라인 요소는 블록 레벨 요소를 자식 요소로 포함할 수 없습니다.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <br>
+            <table class="t_table">
+                <thead>
+                    <tr>
+                        <th class="center">콘텐츠 종류</th>
+                        <th class="center">내용</th>
+                        <th class="center">해당 요소</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="center">메타데이터 콘텐츠<br> Metadata Content</td>
+                        <td>&lt;head&gt; 태그 안에 포함되는 요소들로 콘텐츠의 표현, 동작 설정, 문서간
+                            관계를 설정, 정보전달을 포함하는 요소를 의미합니다.
+                        </td>
+                        <td>&lt;base&gt;, &lt;link&gt;, &lt;meta&gt;, &lt;noscript&gt;, &lt;script&gt;, 
+                            &lt;style&gt;, &lt;title&gt;, ...
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="center">플로우 콘텐츠<br> Flow Content</td>
+                        <td>&lt;body&gt; 태그 안에 포함되는 대부분의 요소들로 내용 흐름에 관한 요소를 의미합니다.</td>
+                        <td>&lt;h1&gt;, &lt;h2&gt; &lt;h3&gt; &lt;h4&gt;, &lt;h5&gt;, &lt;h6&gt;, &lt;address&gt;, 
+                            &lt;p&gt;, &lt;a&gt;, &lt;img&gt;, &lt;ul&gt;, &lt;ol&gt;, &lt;dl&gt;, &lt;table&gt;, 
+                            &lt;form&gt;, ...
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="center">섹션 콘텐츠<br> Sectioning Content</td>
+                        <td>heading과 footer의 범위를 정의하는 요소를 의미합니다.</td>
+                        <td>&lt;drticle&gt;, &lt;aside&gt;, &lt;nav&gt;, &lt;section&gt;</td>
+                    </tr>
+                    <tr>
+                        <td class="center">헤딩 콘텐츠<br> Heading Content</td>
+                        <td>섹션의 헤더를 정의하는 요소를 의미합니다.</td>
+                        <td>&lt;h1&gt;, &lt;h2&gt;, &lt;h3&gt;, &lt;h4&gt;, &lt;h5&gt;, &lt;h6&gt;
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="center">프레이징 콘텐츠<br> Phrasing Content</td>
+                        <td>텍스트를 마크업하는 요소를 의미합니다.</td>
+                        <td>&lt;a&gt;, &lt;em&gt;, &lt;strong&gt;, &lt;sub&gt;, &lt;sup&gt;, 
+                            &lt;label&gt;, ...
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="center">임베디드 콘텐츠<br> Embedded Content</td>
+                        <td>HTML 문서에 다른 리소스를 삽입하는 요소를 의미합니다.</td>
+                        <td>&lt;img&gt;, &lt;audio&gt;, &lt;video&gt;, &lt;iframe&gt;, ...</td>
+                    </tr>
+                    <tr>
+                        <td class="center">인터랙티브 콘텐츠<br> Interactive Content</td>
+                        <td>사용자의 상호작용 위한 요소를 의미합니다.</td>
+                        <td>&lt;a&gt;, &lt;button&gt;, &lt;audio&gt;, &lt;video&gt;, &lt;select&gt;, ...</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:jwor124@naver.com">jwor124@naver.com</a>
+    </footer>
+</body>
+</html>

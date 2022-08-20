@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이미지 유형03</title>
+    <style>
+        @import url('https://webfontworld.github.io/yangheeryu/GowunBatang.css');
+
+
+        .gowun {
+            font-family: 'GowunBatang';
+            font-weight: 400;
+        }
+
+        /* reset */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-weight: normal;
+        }
+
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+
+        img {
+            width: 100%;
+            vertical-align: top;    /* 인라인구조라서 여백을 없애준다. */
+        }
+        .ir {
+            display: block;
+            overflow: hidden;
+            font-size: 0;
+            line-height: 0;
+            text-indent: -9999px;
+        }
+
+        /* common */
+        .container {
+            width: 1160px;
+            padding: 0 20px;
+            margin: 0 auto;
+        }
+        .container-fluid {
+            widows: 100%;
+            padding: 0 100px;
+            box-sizing: border-box;
+        }
+        .section {
+            padding: 120px 0;
+            
+        }
+        .section>h2 {
+            /* + 는 형제, > 는 자식 */
+            font-size: 50px;
+            line-height: 1;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .section>p {
+            font-size: 22px;
+            font-weight: 300;
+            color: #666;
+            text-align: center;
+            margin-bottom: 70px;
+        }
+        
+        /* imageType */
+        .image__inner {
+            display: grid;
+            grid-template-areas: 
+                "box1 box1 box2 box3"
+                "box1 box1 box4 box5";
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            grid-gap: 20px;
+            
+        }
+        .image {
+            overflow: hidden;
+            position: relative;
+            transition: all 0.5s ease-in-out;
+        }
+        .image__inner .image:nth-child(1){
+            grid-area: box1;
+            background: url(img/imageType03_01.jpg);
+            background-size: cover;
+        }
+        .image__inner .image:hover {
+            transform: scale(1.03);
+        }
+        .image__inner .image:nth-child(2){
+            grid-area: box2;
+        }
+        .image__inner .image:nth-child(3){
+            grid-area: box3;
+        }
+        .image__inner .image:nth-child(4){
+            grid-area: box4;
+        }
+        .image__inner .image:nth-child(5){
+            grid-area: box5;
+        }
+
+        .image_desc {
+            position: absolute;
+            left: 0;
+            bottom: -100%;
+            width: 100%;
+            backdrop-filter: blur(10px);
+            background: rgba(34, 33, 33, 0.3);
+            padding: 16px;
+            box-sizing: border-box;
+            transition: all 0.3s ease;
+        }
+        .image:hover .image_desc {
+            bottom: 0;
+        }
+        .image_desc h3 {
+            font-size: 20px;
+            color: #fff;
+        }
+        .image_desc p {
+            font-size: 16px;
+            color: #fff;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        .image__sns {
+            position: absolute;
+            right: -100px;
+            top: 10px;
+        }
+        .image__sns a {
+            width: 36px;
+            height: 36px;
+            background: #fff;
+            border-radius: 50%;
+            display: block;
+            margin-bottom: 5px;
+            background: url(img/image_bg03_icon.svg) no-repeat;
+        }
+        .image__sns a:nth-child(2) {
+            background-position: -50px 0; 
+        }
+        .image__sns a:nth-child(3) {
+            background-position: -100px 0; 
+        }
+        .image__sns a:nth-child(4) {
+            background-position: -150px 0; 
+        }
+        .image__sns a:nth-child(5) {
+            background-position: -200px 0; 
+        }
+        .image:hover .image__sns {
+            right: 10px;
+            transition: all 0.4s ease;
+        }
+    </style>
+</head>
+
+<body>
+    <section id="imageType03" class="image__wrap gowun section">
+        <h2>바다 생물의 여행</h2>
+        <p>바다 생물들은 어떻게 지내고 있을까요? 살펴보도록 해요</p>
+        <div class="image__inner container-fluid">
+            <article class="image">
+                <!-- <figure class="image__box">
+                    <img src="img/imageType03_01.jpg" alt="">
+                </figure> -->
+                <div class="image_desc">
+                    <h3>Shark</h3>
+                    <p>기나긴 여행자</p>
+                </div>
+                <div class="image__sns">
+                    <a href="#" class="link"><span class="ir">페이스북</span></a>
+                    <a href="#" class="link"><span class="ir">페이지이동</span></a>
+                    <a href="#" class="link"><span class="ir">페이지이동</span></a>
+                    <a href="#" class="link"><span class="ir">페이지이동</span></a>
+                    <a href="#" class="link"><span class="ir">페이지이동</span></a>
+                </div>
+            </article class="image">
+            <article class="image">
+                <figure class="image__box">
+                    <img src="img/imageType03_02.jpg" alt="">
+                </figure>
+                <div class="image_desc">
+                    <h3>Turtle</h3>
+                    <p>귀여운 여행자</p>
+                </div>
+                <div class="image__sns">
+                    <a href="#" class="link"><span class="ir"></span></a>
+                    <a href="#" class="link"><span class="ir"></span></a>
+                </div>
+            </article>
+            <article class="image">
+                <figure class="image__box">
+                    <img src="img/imageType03_04.jpg" alt="">
+                </figure>
+                <div class="image_desc">
+                    <h3>Fish</h3>
+                    <p>무리짓는 여행자</p>
+                </div>
+                <div class="image__sns">
+                    <a href="#" class="link"><span class="ir"></span></a>
+                    <a href="#" class="link"><span class="ir"></span></a>
+                </div>
+            </article>
+            <article class="image">
+                <figure class="image__box">
+                    <img src="img/imageType03_03.jpg" alt="">
+                </figure>
+                <div class="image_desc">
+                    <h3>Jellyfish</h3>
+                    <p>떠다니는 여행자</p>
+                </div>
+                <div class="image__sns">
+                    <a href="#" class="link"><span class="ir"></span></a>
+                    <a href="#" class="link"><span class="ir"></span></a>
+                </div>
+            </article>
+            <article class="image">
+                <figure class="image__box">
+                    <img src="img/imageType03_05.jpg" alt="">
+                </figure>
+                <div class="image_desc">
+                    <h3>Octopus</h3>
+                    <p>발이 많은 여행자</p>
+                </div>
+                <div class="image__sns">
+                    <a href="#" class="link"><span class="ir"></span></a>
+                    <a href="#" class="link"><span class="ir"></span></a>
+                </div>
+            </article>
+        </div>   
+    </section>
+</body>
+
+</html>

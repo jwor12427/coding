@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>사이트 만들기</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+
+</head>
+<body>
+    <header id="header">
+        <h1><a href="../index.html">사이트 만들기</a></h1>
+        <nav class="header_nav">
+
+        </nav>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">사이트 만들기(이미지 유형 - 02)</h2>
+            <p class="t_desc2">
+                이미지가 삽입된 형식의 사이트를 만들 수 있습니다.
+            </p>
+            <hr>
+            <div class="t_iframe">
+                <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2F2dVMs09Xd6Iw5jh2gVK4y4%2F%25EC%2582%25AC%25EC%259D%25B4%25ED%258A%25B8-%25EB%25A7%258C%25EB%2593%25A4%25EA%25B8%25B0%3Fnode-id%3D481%253A41" allowfullscreen></iframe>
+            </div>
+            <hr>
+
+            <h3 class="t_tit2">CSS</h3>
+            <div class="t_code">
+<pre><code>/* imageType */
+.image__inner {
+    display: flex;
+    justify-content: space-between;
+}
+.image {
+    width: 32%;
+    background-color: #f5f5f5;
+    position: relative;
+    overflow: hidden;
+}
+.image__box img {
+    vertical-align: top;
+    transition: all 0.5s ease-in-out;
+}
+.image__desc {
+    position: absolute;
+    left: 0;
+    bottom: -100px;
+    width: 100%;
+    height: 100px;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    padding: 23px 20px;
+    box-sizing: border-box;
+    background: rgba(266, 56, 59, 0.1);
+    color: #fff;
+    transition: all 0.3s ease-in-out;
+}
+.image:hover .image__desc {
+    bottom: 0;
+}
+.image:hover .image__box img {
+    transform: scale(1.03);
+}
+.image1 .image__desc { background-color: rgba(18, 101, 140, 0.5);}
+.image2 .image__desc {background-color: rgba(5, 94, 85, 0.5);}
+.image3 .image__desc { background-color: rgba(72, 110, 134, 0.5);}
+    
+
+.image__desc h3 {
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+.image__desc .more {
+    font-size: 16px;
+    color: #fff;
+}
+.image__desc .more:hover {
+    text-decoration: underline;
+}
+</code></pre>
+            </div>
+            <p class="t_box">
+                backdrop-filter: blur(10px);
+            </p>
+            <p class="t_desc">
+               배경의 블러 효과를 줄 수 있습니다.
+            </p>
+            <p class="t_box">
+                overflow: hidden;
+            </p>
+            <p class="t_desc">
+                overflow: hidden을 이용해 밖으로 나온 박스를 숨겨 줍니다.
+            </p>
+            <h3 class="t_tit2">HTML</h3>
+            <div class="t_code">
+<pre><code>&lt;section id="imageType01" class="image__wrap nexon section"&gt;
+    &lt;h2&gt;새의 이야기&lt;/h2&gt;
+    &lt;p&gt;다양한 새들의 이야기를 알아보는 좋은시간 됩시다.&lt;/p&gt;
+    &lt;div class="image__inner container"&gt;
+        &lt;article class="image image1"&gt;
+            &lt;figure class="image__box"&gt;
+                &lt;img src="img/imageType02_01.jpg" alt="앵무새"&gt;
+            &lt;/figure&gt;
+            &lt;div class="image__desc"&gt;
+                &lt;h3&gt;첫번째 - 앵무새&lt;/h3&gt;
+                &lt;a href="/" class="more" title="자세히 보기"&gt;자세히 보기&lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/article&gt;
+        &lt;article class="image image2"&gt;
+            &lt;figure class="image__box"&gt;
+                &lt;img src="img/imageType02_02.jpg" alt="앵무새"&gt;
+            &lt;/figure&gt;
+            &lt;div class="image__desc"&gt;
+                &lt;h3&gt;두번째 - 울새&lt;/h3&gt;
+                &lt;a href="/" class="more" title="자세히 보기"&gt;자세히 보기&lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/article&gt;
+        &lt;article class="image image3"&gt;
+            &lt;figure class="image__box"&gt;
+                &lt;img src="img/imageType02_03.jpg" alt="앵무새"&gt;
+            &lt;/figure&gt;
+            &lt;div class="image__desc"&gt;
+                &lt;h3&gt;세번째 - 홍학&lt;/h3&gt;
+                &lt;a href="/" class="more" title="자세히 보기"&gt;자세히 보기&lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/article&gt;
+    &lt;/div&gt;   
+&lt;/section&gt;
+</code></pre>
+            </div>
+            <h3 class="t_tit2">결과</h3>
+
+            <div class="t_iframe" style="min-height: 1000px; padding-top: 0;">
+                <iframe src="https://jwor12427.github.io/coding/site/imageType/imageType02.22.08.17.html"></iframe>
+            </div>
+            <hr>
+            <div class="t_link">
+                <a href="https://github.com/jwor12427/coding/blob/main/site/imageType/imageType02.22.08.17.html" target="_blank">원본 소스 보기</a>
+                <a href="https://jwor12427.github.io/coding/site/imageType/imageType02.22.08.17.html" target="_blank">페이지 보기</a>
+            </div>
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:jwor124@naver.com">jwor124@naver.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+   
+</body>
+</html>

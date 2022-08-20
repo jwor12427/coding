@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : 기본 규칙</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+
+</head>
+<body>
+    <header id="header">
+        <h1><a href="../index.html">Javascript</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="../javascript01.html">데이터 저장하기</a></li>
+                <li><a href="../javascript02.html">데이터 불러오기</a></li>
+                <li><a href="../javascript03.html">데이터 실행하기</a></li>
+                <li><a href="../javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="../javascript05.html">문자열 객체</a></li>
+                <li><a href="../javascript06.html">배열 객체</a></li>
+                <li><a href="../javascript07.html">수학 객체</a></li>
+                <li><a href="../javascript08.html">숫자 객체</a></li>
+                <li><a href="../javascript09.html">브라우저 객체</a></li>
+                <li><a href="../javascript10.html">요소 객체</a></li>
+                <li><a href="../javascript11.html">이벤트 객체</a></li>
+            </ul>
+            <ul class="study">
+                <li><a href="../study/basic.html">기본 규칙</a></li>
+                <li><a href="../study/operator.html">연산자</a></li>
+                <li><a href="../study/for.html">반복문</a></li>
+                <li><a href="../study/if.html">조건문</a></li>
+                <li><a href="../study/type.html">데이터 타입</a></li>
+                <li><a href="../study/function.html">함수</a></li>
+                <li><a href="../study/var.html">지역변수/전역변수</a></li>
+                <li><a href="../study/element.html">요소 선택</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">이미지 스프라이트 / IR효과 / 백그라운드 표현</h2>
+            <p class="t_desc">
+                이번 시간에는 CSS에서 사용되는 이미지 스프라이트와 IR효과 ,백그라운드 표현에 대해 알아봅시다.
+            </p>
+
+            <hr>
+
+
+            <h3 class="t_tit2">이미지 스프라이트란?</h3>
+            
+            <p class="t_desc2">
+               이미지 스프라이트(image sprite)는 여러 개의 이미지를 하나의 이미지로 합쳐서
+               관리하는 이미지를 말합니다.
+            </p>   
+            
+            <p class="t_desc">
+               웹 페이지에 이미지가 사용될 경우 해당 이미지를 다운받기 위해서 웹 브라우저에는 서버에
+               이미지를 요청하게 되는데 이때, 이미지가 많을 경우에는 웹 브라우저는 서버에 해당 이미지
+               많큼 요청하게 되므로 페이지에 로딩 시간이 오래 걸리게 됩니다. 이때 이미지 스프라이트를 사용하면
+               이미지를 다운받기 위한 서버 요청을 최소한으로 줄이 수 있습니다.
+            </p>
+            <div class="t_code">
+<pre><code>.image__sns a {
+    width: 20px;
+    height: 20px;
+    background-color: #fff;
+    display: block;
+    background: url(img/2.svg) no-repeat;
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
+.image__sns a:nth-child(2) {
+    background-position: -50px 0;
+}
+.image__sns a:nth-child(3) {
+    background-position: -100px 0;
+}
+.image__sns a:nth-child(4) {
+    background-position: -150px 0;
+}
+</code></pre>
+            </div>
+            <p class="t_desc">
+                각각의 a태그의 자식에게 포지션으로 방향을 잡아주면 쉽게 이미지를 바꿔 넣을 수 있습니다.
+                이때, 4개의 이미지가 아닌 하나의 이미지만으로 4개의 아이콘을 만들 수 있습니다.
+            </p>
+
+            <h3 class="t_tit2">IR효과</h3>
+            <p class="t_desc2">
+                IR효과는 웹접근성에 따른 기법으로 이미지 대체 텍스트를 제공하기 위한 CSS기법입니다.
+            </p>
+            <p class="t_desc">
+                IR(Image Replacement)로 의미가 포함되어 있는 이미지를 배경으로 표현 하고, 그에 상응하는
+                내용을 텍스트로 전경에 기입하는 방법입니다. 주로 사용하는 방법은 Phark Method, WA IR이 있습니다.
+            </p>
+            <p class="t_box">
+                .ir-pm { <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;display: block; <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;overflow: hidden; <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;font-size: 0; <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;line-height: 0; <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;text-indent: -9999px; <br>
+                }
+            </p>
+            <p class="t_box">
+                .ir-wa { <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;dispaly: block; <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;overflow: hidden; <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;position: relative; <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;z-index: -1; <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;width: 100%; <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;height: 100%; <br>
+                }
+            </p>
+            <h3 class="t_tit2">백그라운드 표현</h3>
+            <p class="t_desc2">
+               사이트에 이미지를 넣는 방법에는 &lt;img&gt;태그를 이용해 이미지를
+               직접삽입하는 것과 CSS로 background: url();로 이미지를 삽입하는 방법이 있습니다.
+            </p>
+            <p class="t_desc">
+                특정위치에 배경이미지를 가로, 세로로만 표현하거나, 특정위치에 한번만 배경이미지를 
+                표현하고 싶을 경우에는 CSS로 표현이 가능합니다.
+            </p> 
+            <p class="t_box">
+                background: url(); <br>
+                background-image: url();
+            </p>
+            <p class="t_desc">
+                백그라운드를 통하여 이미지를 삽입할 수 있습니다. svg를 백그라운드 이미지로 삽입할 경우
+                이미지 파일 없이도 아이콘을 넣을 수 있습니다.
+            </p>
+            <p class="t_box">
+                background-position: ; 
+            </p>
+            <p class="t_desc">
+                배경 이미지의 위치를 정하는 속성입니다.
+            </p>
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:jwor124@naver.com">jwor124@naver.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+   
+</body>
+</html>
