@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>사이트 만들기</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+
+</head>
+<body>
+    <header id="header">
+        <h1><a href="../index.html">사이트 만들기</a></h1>
+        <nav class="header_nav">
+
+        </nav>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">사이트 만들기(이미지 유형 - 03)</h2>
+            <p class="t_desc2">
+                큰이지 하나와 작은 이미지 여러개가 함께있는 사이트 유형을 만들 수 있습니다.
+            </p>
+            <hr>
+            <div class="t_iframe">
+                <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FxvxkY6Zwec6xL3NM6lclkd%2F%25EC%2582%25AC%25EC%259D%25B4%25ED%258A%25B8-%25EB%25A7%258C%25EB%2593%25A4%25EA%25B8%25B02%3Fnode-id%3D12%253A342" allowfullscreen></iframe>
+            </div>
+            <hr>
+
+            <h3 class="t_tit2">CSS</h3>
+            <div class="t_code">
+<pre><code>/* imageType */
+.image__inner {
+    display: grid;
+    grid-template-areas: 
+        "box1 box1 box2 box3"
+        "box1 box1 box4 box5";
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-gap: 20px;
+}
+.image {
+    overflow: hidden;
+    position: relative;
+    transition: all 0.5s ease-in-out;
+}
+.image__inner .image:nth-child(1){
+    grid-area: box1;
+    background: url(img/imageType03_01.jpg);
+    background-size: cover;
+}
+.image__inner .image:hover {
+    transform: scale(1.03);
+}
+.image__inner .image:nth-child(2){
+    grid-area: box2;
+}
+.image__inner .image:nth-child(3){
+    grid-area: box3;
+}
+.image__inner .image:nth-child(4){
+    grid-area: box4;
+}
+.image__inner .image:nth-child(5){
+    grid-area: box5;
+}
+.image_desc {
+    position: absolute;
+    left: 0;
+    bottom: -100%;
+    width: 100%;
+    backdrop-filter: blur(10px);
+    background: rgba(34, 33, 33, 0.3);
+    padding: 16px;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+.image:hover .image_desc {
+    bottom: 0;
+}
+.image_desc h3 {
+    font-size: 20px;
+    color: #fff;
+}
+.image_desc p {
+    font-size: 16px;
+    color: #fff;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.image__sns {
+    position: absolute;
+    right: -100px;
+    top: 10px;
+}
+.image__sns a {
+    width: 36px;
+    height: 36px;
+    background: #fff;
+    border-radius: 50%;
+    display: block;
+    margin-bottom: 5px;
+    background: url(img/image_bg03_icon.svg) no-repeat;
+}
+.image__sns a:nth-child(2) {
+    background-position: -50px 0; 
+}
+.image__sns a:nth-child(3) {
+    background-position: -100px 0; 
+}
+.image__sns a:nth-child(4) {
+    background-position: -150px 0; 
+}
+.image__sns a:nth-child(5) {
+    background-position: -200px 0; 
+}
+.image:hover .image__sns {
+    right: 10px;
+    transition: all 0.4s ease;
+}
+</code></pre>
+            </div>
+            <p class="t_desc">
+                .image__inner { <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;display: grid; <br>
+                } 
+            </p>
+            <p class="t_dsec">
+                이미지 유형03에서는 grid를 이용해 레이아웃을 정렬 하였습니다.
+            </p>
+            <h3 class="t_tit2">HTML</h3>
+            <div class="t_code">
+<pre><code>&lt;section id="imageType03" class="image__wrap gowun section"&gt;
+    &lt;h2&gt;바다 생물의 여행&lt;/h2&gt;
+    &lt;p&gt;바다 생물들은 어떻게 지내고 있을까요? 살펴보도록 해요&lt;/p&gt;
+    &lt;div class="image__inner container-fluid"&gt;
+        &lt;article class="image"&gt;
+            &lt;!-- &lt;figure class="image__box"&gt;
+                &lt;img src="img/imageType03_01.jpg" alt=""&gt;
+            &lt;/figure&gt; --&gt;
+            &lt;div class="image_desc"&gt;
+                &lt;h3&gt;Shark&lt;/h3&gt;
+                &lt;p&gt;기나긴 여행자&lt;/p&gt;
+            &lt;/div&gt;
+            &lt;div class="image__sns"&gt;
+                &lt;a href="#" class="link"&gt;&lt;span class="ir"&gt;링크&lt;/span&gt;&lt;/a&gt;
+                &lt;a href="#" class="link"&gt;&lt;span class="ir"&gt;트위터&lt;/span&gt;&lt;/a&gt;
+                &lt;a href="#" class="link"&gt;&lt;span class="ir"&gt;인슽타그램&lt;/span&gt;&lt;/a&gt;
+                &lt;a href="#" class="link"&gt;&lt;span class="ir"&gt;유튜브&lt;/span&gt;&lt;/a&gt;
+                &lt;a href="#" class="link"&gt;&lt;span class="ir"&gt;페이스북&lt;/span&gt;&lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/article&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+</code></pre>
+            </div>
+            <h3 class="t_tit2">결과</h3>
+
+            <div class="t_iframe" style="min-height: 1000px; padding-top: 0;">
+                <iframe src="https://jwor12427.github.io/coding/site/imageType/imageType03.html"></iframe>
+            </div>
+            <hr>
+            <div class="t_link">
+                <a href="https://github.com/jwor12427/coding/blob/main/site/imageType/imageType03.html" target="_blank">원본 소스 보기</a>
+                <a href="https://jwor12427.github.io/coding/site/imageType/imageType03.html" target="_blank">페이지 보기</a>
+            </div>
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:jwor124@naver.com">jwor124@naver.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+   
+</body>
+</html>
