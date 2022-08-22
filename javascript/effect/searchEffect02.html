@@ -470,7 +470,7 @@
             const searchWord = searchBox.value;     //사용자가 입력한 키워드
 
             searchList.forEach(el => {
-                const cssName = el.dataset.name;    //CSS 속성 모든 값
+                const cssName = el.dataset.name + el.dataset.type;    //CSS 속성 모든 값
                 //console.log(cssName);
 
                 //"all".includes("all")   //true
@@ -482,21 +482,21 @@
             });
         })
 
-        searchBox.addEventListener("keyup", () => {
-            const searchWord = searchBox.value;     //사용자가 입력한 키워드
+        // searchBox.addEventListener("keyup", () => {
+        //     const searchWord = searchBox.value;     //사용자가 입력한 키워드
 
-            searchList.forEach(el => {
-                const cssName = el.dataset.type;    //CSS 속성 모든 값
-                //console.log(cssName);
+        //     searchList.forEach(el => {
+        //         const cssName = el.dataset.type;    //CSS 속성 모든 값
+        //         //console.log(cssName);
 
-                //"all".includes("all")   //true
-                if(cssName.includes(searchWord)) {
-                    el.classList.remove("hide");
-                } else {
-                    el.classList.add("hide");
-                }
-            });
-        })
+        //         //"all".includes("all")   //true
+        //         if(cssName.includes(searchWord)) {
+        //             el.classList.remove("hide");
+        //         } else {
+        //             el.classList.add("hide");
+        //         }
+        //     });
+        // })
     </script>
 </body>
 </html>
