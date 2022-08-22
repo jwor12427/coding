@@ -37,16 +37,6 @@
                 <li><a href="effect/parallaxEffect01.html">패랠랙스 효과</a></li>
                 <li><a href="effect/gameEffect01.html">게임 효과</a></li>
             </ul>
-            <ul class="study">
-                <li><a href="study/basic.html">기본 규칙</a></li>
-                <li><a href="study/operator.html">연산자</a></li>
-                <li><a href="study/for.html">반복문</a></li>
-                <li><a href="study/if.html">조건문</a></li>
-                <li><a href="study/type.html">데이터 타입</a></li>
-                <li><a href="study/function.html">함수</a></li>
-                <li><a href="study/var.html">지역변수/전역변수</a></li>
-                <li><a href="study/element.html">요소 선택</a></li>
-            </ul>
         </nav>
     </header>
     <!-- //header -->
@@ -76,17 +66,22 @@
                 <li><a href="#sample09">09. 문자열 메서드 : 변경 : padStart() : 문자열 추가 : 반환(문자열)</a></li>
                 <li><a href="#sample09">09. 문자열 메서드 : 변경 : padEnd() : 문자열 추가 : 반환(문자열)</a></li>
 
-                <li><a href="#sample07">10. 문자열 메서드 : 검색 : indexOf() : 문자열에서 특정 문자의 위치를 찾음 : 반환(숫자) ✨</a></li>
-                <li><a href="#sample08">10. 문자열 메서드 : 검색 : lastIndexOf() : 문자열에서 특정 문자의 위치를 찾음 : 반환(숫자)</a></li>
-                <li><a href="#sample09">09. 문자열 메서드 : 검색 : search() : 문자열을 검색(정규식) : 반환(숫자) ✨</a></li>
-                <li><a href="#sample10">10. 문자열 메서드 : 검색 : match() : 문자열을 검색(정규식) : 반환(배열)</a></li>
+                <li><a href="#sample10">10. 문자열 메서드 : 검색 : indexOf() : 문자열에서 특정 문자의 위치를 찾음 : 반환(숫자) ✨</a></li>
+                <li><a href="#sample10">10. 문자열 메서드 : 검색 : lastIndexOf() : 문자열에서 특정 문자의 위치를 찾음 : 반환(숫자)</a></li>
+                
                 <li><a href="#sample11">11. 문자열 메서드 : 검색 : includes() : 문자열 포함 여부 검색 : 반환(불린) ✨</a></li>
-                <li><a href="#sample11">11. 문자열 메서드 : 검색 : charAt() : 지정한 인덱스의 문자를 추출 : 반환(문자열)</a></li>
-                <li><a href="#sample11">11. 문자열 메서드 : 검색 : charCodeAt() : 지정한 인덱스의 문자를 추출 : 반환(숫자)</a></li>
+                
+                <li><a href="#sample12">12. 문자열 메서드 : 검색 : search() : 문자열을 검색(정규식) : 반환(숫자) ✨</a></li>
+                <li><a href="#sample13">13. 문자열 메서드 : 검색 : match() : 문자열을 검색(정규식) : 반환(배열)</a></li>
+                
+                
+                
+                <li><a href="#sample14">14. 문자열 메서드 : 검색 : charAt() : 지정한 인덱스의 문자를 추출 : 반환(문자열)</a></li>
+                <li><a href="#sample15">15. 문자열 메서드 : 검색 : charCodeAt() : 지정한 인덱스의 문자를 추출 : 반환(숫자)</a></li>
 
 
-                <li><a href="#sample12">12. 문자열 메서드 : 검색 : startsWith() : 문자열 포함 여부 검색 : 반환(불린)</a></li>
-                <li><a href="#sample13">13. 문자열 메서드 : 검색 : endsWith() : 문자열 포함 여부 검색 : 반환(불린)</a></li>
+                <li><a href="#sample15">15. 문자열 메서드 : 검색 : startsWith() : 문자열 포함 여부 검색 : 반환(불린)</a></li>
+                <li><a href="#sample15">15. 문자열 메서드 : 검색 : endsWith() : 문자열 포함 여부 검색 : 반환(불린)</a></li>
             </ul>
         </div>
     </main>
@@ -582,7 +577,70 @@ const currentStr7 = str1.includes("reference", 12);     //false
                 </div>
             </div>
             <!-- sample11 -->
-
+            <div id="sample12" class="sample">
+                <h3>12. 문자열 메서드 : 검색 : search() : 문자열을 검색(정규식) : 반환(숫자)</h3>
+                <p>
+                    search() 메서드는 문자열(정규식)을 검색하고 위치값(숫자)를 반환합니다.
+                </p>
+                <div class="box">
+                    "문자열".search("검색값"); <br>
+                    "문자열".search(정규식표현);
+                </div>
+                <div class="script">
+<pre><code class="language-js">const str1 = "javascript reference";
+const currentStr1 = str1.search("javascript");         //0
+const currentStr2 = str1.search("reference");          //11
+const currentStr3 = str1.search("j");                  //0
+const currentStr4 = str1.search("a");                  //1 
+const currentStr5 = str1.search("v");                  //2
+const currentStr6 = str1.search("jquery");             //-1 
+const currentStr7 = str1.search("b");                  //-1
+const currentStr8 = str1.search(/[a-z]/g);             //0
+</code></pre>
+                </div>
+            </div>
+            <!-- //sample12 -->
+            <div id="sample13" class="sample">
+                <h3>13. 문자열 메서드 : 검색 : match() : 문자열을 검색(정규식) : 반환(배열)</h3>
+                <p>
+                    match() 메서드는 문자열(정규식)을 검색하고 위치값(배열)를 반환합니다.
+                </p>
+                <div class="box">
+                    "문자열".match("검색값"); <br>
+                    "문자열".match(정규식표현);
+                </div>
+                <div class="script">
+<pre><code class="language-js">const str1 = "javascript reference";
+const currentStr1 = str1.match("javascript");      //javascript 
+const currentStr2 = str1.match("reference");       //reference 
+const currentStr3 = str1.match("r");               //r
+const currentStr4 = str1.match(/reference/);       //reference
+const currentStr5 = str1.match(/Reference/);       //null
+const currentStr6 = str1.match(/Reference/i);      //reference
+const currentStr7 = str1.match(/r/g);              //['r', 'r', 'r']
+const currentStr8 = str1.match(/e/g);              //['e', 'e', 'e', 'e']
+</code></pre>
+                </div>
+            </div>
+            <!-- //sample13 -->
+            <div id="sample14" class="sample">
+                <h3>14. 문자열 메서드 : 검색 : charAt() : 지정한 인덱스의 문자를 추출 : 반환(문자열)</h3>
+                <p>
+                    charAt() 메서드는 위치값을 검색하고 문자로 반환합니다.
+                </p>
+                <div class="box">
+                    "문자열".charAt(숫자);
+                </div>
+                <div class="script">
+<pre><code class="language-js">const str1 = "javascript reference";
+const currentStr1 = str1.charAt();      //j
+const currentStr2 = str1.charAt("0");   //j
+const currentStr3 = str1.charAt("1");   //a
+const currentStr4 = str1.charAt("2");   //v
+</code></pre>
+                </div>
+            </div>
+            <!-- //sample14 -->
     </div>
     <!-- //main sample -->
     <footer id="footer">
@@ -881,6 +939,47 @@ const currentStr7 = str1.includes("reference", 12);     //false
             const currentStr5 = str1.includes("reference", 1);      //true
             const currentStr6 = str1.includes("reference", 11);     //true
             const currentStr7 = str1.includes("reference", 12);     //false
+
+        }
+        //12 search : 반환(숫자)
+        {
+            // "문자열".search("검색값");
+            // "문자열".search(정규식표현);
+            const str1 = "javascript reference";
+
+            const currentStr1 = str1.search("javascript");         //0
+            const currentStr2 = str1.search("reference");          //11
+            const currentStr3 = str1.search("j");                  //0
+            const currentStr4 = str1.search("a");                  //1 
+            const currentStr5 = str1.search("v");                  //2
+            const currentStr6 = str1.search("jquery");             //-1 
+            const currentStr7 = str1.search("b");                  //-1
+            const currentStr8 = str1.search(/[a-z]/g);             //0
+
+        }
+        //13 match : 반환(배열)
+        {
+            const str1 = "javascript reference";
+
+            const currentStr1 = str1.match("javascript");      //javascript 
+            const currentStr2 = str1.match("reference");       //reference 
+            const currentStr3 = str1.match("r");               //r
+            const currentStr4 = str1.match(/reference/);       //reference
+            const currentStr5 = str1.match(/Reference/);       //null
+            const currentStr6 = str1.match(/Reference/i);      //reference
+            const currentStr7 = str1.match(/r/g);              //['r', 'r', 'r']
+            const currentStr8 = str1.match(/e/g);              //['e', 'e', 'e', 'e']
+
+            
+        }
+        //14 charAt()
+        {
+            //"문자열".charAt(숫자);
+            const str1 = "javascript reference";
+            const currentStr1 = str1.charAt();      //j
+            const currentStr2 = str1.charAt("0");   //j
+            const currentStr3 = str1.charAt("1");   //a
+            const currentStr4 = str1.charAt("2");   //v
 
         }
     </script>

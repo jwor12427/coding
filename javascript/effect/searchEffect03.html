@@ -15,9 +15,9 @@
     <header id="header">
         <nav>
             <ul>
-                <li class="active"><a href="searchEffect01.html">1</a></li>
+                <li><a href="searchEffect01.html">1</a></li>
                 <li><a href="searchEffect02.html">2</a></li>
-                <li><a href="searchEffect03.html">3</a></li>
+                <li class="active"><a href="searchEffect03.html">3</a></li>
                 <li><a href="searchEffect04.html">4</a></li>
                 <li><a href="searchEffect05.html">5</a></li>
                 <li><a href="searchEffect06.html">6</a></li>
@@ -27,16 +27,42 @@
     <!-- //header -->
     <main id="main">
         <div class="search_wrap">
-            <span>indexOf() / search() 를 이용하여 검색하기</span>
-             <h1>CSS 속성 검색하기</h1>
-             <div class="search__box">
-                <label for="search">검색하기</label>
-                <input type="text" id="search" placeholder="CSS 속성을 입력해주세요!">
-             </div>
-             <div class="search__info">
+            <span>charAt()를 이용하여 검색하기</span>
+            <h1>CSS 속성 첫 글자 검색하기</h1>
+           
+            <div class="search__info">
+                <div class="keyword">
+                    <span>a</span>
+                    <span>b</span>
+                    <span>c</span>
+                    <span>d</span>
+                    <span>e</span>
+                    <span>f</span>
+                    <span>g</span>
+                    <span>h</span>
+                    <span>i</span>
+                    <span>j</span>
+                    <span>k</span>
+                    <span>l</span>
+                    <span>m</span>
+                    <span>n</span>
+                    <span>o</span>
+                    <span>p</span>
+                    <span>q</span>
+                    <span>r</span>
+                    <span>s</span>
+                    <span>t</span>
+                    <span>u</span>
+                    <span>v</span>
+                    <span>w</span>
+                    <span>x</span>
+                    <span>y</span>
+                    <span>z</span>
+                </div>
                 <div>전체 속성 갯수 : <span class="num"></span></div>
-             </div>
-             <div class="search__list">
+                <div>검색 속성 갯수 : <span class="num2"></span></div>
+            </div>
+            <div class="search__list">
                 <div class="html">
                     <ul>
                         <li data-name="accent-color" data-type="기타"><strong>accent-color</strong> : 사용자 인터페이스 컨트롤의 강조색을 지정합니다.</li>
@@ -444,7 +470,7 @@
                         <li data-name="z-index" data-type="효과"><strong>z-index</strong> : 위치 지정요소와 하위 플렉스 아이템의 z축 순서를 설정합니다.</li>
                     </ul>
                 </div>
-             </div>
+            </div>
         </div>
     </main>
     <!-- //main -->
@@ -455,27 +481,34 @@
 
     <script>
         //선택자
-        const searchBox = document.querySelector(".search__box input");             //검색 영역
-        const searchList = document.querySelectorAll(".search__list ul li")   //목록 리스트
-        const searchInfo = document.querySelector(".search__info .num");        //전체 갯수
+        const searchKeyword = document.querySelectorAll(".search__info .keyword span");   //알파벳
+        const searchList = document.querySelectorAll(".search__list ul li")            //목록 리스트
+        const searchInfo = document.querySelector(".search__info .num")
+        const searchNum = document.querySelector(".search__info .num2")
 
-        //전체 갯수 구하기
+        //속성 갯수 설정하기
         searchInfo.textContent = searchList.length;
 
-        //검색 영역
-        searchBox.addEventListener("keyup", () => {
-            const searchWord = searchBox.value;         //사용자가 입력한 키워드
-            
-            searchList.forEach(el => {
-                const cssName = el.dataset.name;
+        searchKeyword.forEach(el => {
+            el.addEventListener("click", () => {
+                const searchWord = el.innerText;        //사용자가 클릭한 알파벳
 
-                if(cssName.indexOf(searchWord)) {
-                    el.classList.add("hide");
-                } else {
-                    el.classList.remove("hide");       //indexOf()값이 0(false)되는 값만 hide를 지워줍니다.
-                }
-            });
+                // console.log(searchWord);
+
+                searchList.forEach(el => {
+                    const cssName = el.querySelector("strong").innerText;      //속성 텍스트
+                    // console.log(cssName)
+
+                    //알파벳 첫글자 == CSS 속성의 첫글자
+                    if(searchWord.charAt(0) === cssName.charAt(0)) {
+                        el.classList.remove("hide");
+                    } else {
+                        el.classList.add("hide");
+                    }
+                })
+            })
         });
+
     </script>
 </body>
 </html>
