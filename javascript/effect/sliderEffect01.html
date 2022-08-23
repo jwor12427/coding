@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>슬라이드 이펙트01</title>
+
+    <link rel="stylesheet" href="../assets/css/slider.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+</head>
+<body class="img02">
+    <header id="header">
+        <h1>Javascript Slider Effect01</h1>
+        <p>슬라이드 이펙트 - 트랜지션 효과</p>
+        <ul>
+            <li class="active"><a href="sliderEffect01.html">1</a></li>
+            <li><a href="sliderEffect02.html">2</a></li>
+            <li><a href="sliderEffect03.html">3</a></li>
+            <li><a href="sliderEffect04.html">4</a></li>
+            <li><a href="sliderEffect05.html">5</a></li>
+            <li><a href="sliderEffect06.html">6</a></li>
+            <li><a href="sliderEffect07.html">7</a></li>
+        </ul>
+    </header>
+    <!-- //header -->
+    
+    <main id="main">
+
+    </main>
+    <!-- //main -->
+    
+    <footer id="footer">
+        <div class="modal__wrap">
+            <div class="modal__btn">
+                <label for="btn">소스 보기</label> 
+                <input class="btn" type="checkbox" id="btn" name="btn"/>
+            </div>
+      	    <div class="modal__cont">		
+	      	    <div class="modal__box">
+                    <div class="title">
+                        <span class="dot" aria-label="true"></span>
+                        <div class="tabs">
+                            <div class="active">
+                                <span class="favicon" aria-label="true">
+                                    <svg width="16" height="16" viewBox="0 0 18 18" fill="none" aria-hidden="true" focusable="false">
+                                        <circle cx="9" cy="9" r="9" fill="#B1D7B4"></circle>
+                                        <path d="M18 9C18 13.9706 15.4688 3.09375 9 10.125C2.53125 17.1562 0 13.9706 0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9Z" fill="#A2B38B"></path>
+                                        <path d="M18 9C18 13.9706 14.9062 0.84375 8.29688 6.1875C1.6875 11.5312 0 13.9706 0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9Z" fill="#FFB3B3"></path>
+                                    </svg>
+                                </span>
+                                <em>Javascript</em>
+                                <span class="close">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false">
+                                        <path d="M12.5 3.5L3.5 12.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                        <path d="M12.5 12.5L3.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    </svg>
+                                </span>
+                            </div>
+                            <div>
+                                <span class="favicon" aria-label="true">
+                                    <svg width="16" height="16" viewBox="0 0 18 18" fill="none" aria-hidden="true" focusable="false">
+                                        <circle cx="9" cy="9" r="9" fill="#7A4495"></circle>
+                                        <path d="M18 9C18 13.9706 15.4688 3.09375 9 10.125C2.53125 17.1562 0 13.9706 0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9Z" fill="#B270A2"></path>
+                                        <path d="M18 9C18 13.9706 14.9062 0.84375 8.29688 6.1875C1.6875 11.5312 0 13.9706 0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9Z" fill="#FCE2DB"></path>
+                                    </svg>
+                                </span>
+                                <em>HTML</em>
+                                <span class="close">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false">
+                                        <path d="M12.5 3.5L3.5 12.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                        <path d="M12.5 12.5L3.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    </svg>
+                                </span>
+                            </div>
+                            <div>
+                                <span class="favicon" aria-label="true">
+                                    <svg width="16" height="16" viewBox="0 0 18 18" fill="none" aria-hidden="true" focusable="false">
+                                        <circle cx="9" cy="9" r="9" fill="#A66CFF"></circle>
+                                        <path d="M18 9C18 13.9706 15.4688 3.09375 9 10.125C2.53125 17.1562 0 13.9706 0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9Z" fill="#B1E1FF"></path>
+                                        <path d="M18 9C18 13.9706 14.9062 0.84375 8.29688 6.1875C1.6875 11.5312 0 13.9706 0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9Z" fill="#9C9EFE"></path>
+                                    </svg>
+                                </span>
+                                <em>CSS</em>
+                                <span class="close">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false">
+                                        <path d="M12.5 3.5L3.5 12.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                        <path d="M12.5 12.5L3.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    </svg>
+                                </span>
+                            </div>
+                        </div>
+                        <span class="plus" aria-label="true">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false">
+                                <path d="M2.5 8H13.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                <path d="M8 2.5V13.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg>
+                        </span>
+                    </div>
+                    <div class="cont">
+                        <div class="active">
+<pre><code>const str1 = "javascript reference";
+const currentStr1 = str1.charAt();      //j
+const currentStr2 = str1.charAt("0");   //j
+const currentStr3 = str1.charAt("1");   //a
+const currentStr4 = str1.charAt("2");   //v
+const currentStr4 = str1.charAt("2");   //v
+</code></pre>
+                        </div>
+                        <div>
+<pre><code>
+    &lt;div class="modal__box"&gt;
+    &lt;div class="title"&gt;
+        &lt;span class="dot" aria-label="true"&gt;&lt;/span&gt;
+        &lt;div class="tabs active"&gt;
+            &lt;div&gt;
+                &lt;span class="favicon" aria-label="true"&gt;
+                    &lt;svg width="16" height="16" viewBox="0 0 18 18" fill="none" aria-hidden="true" focusable="false"&gt;
+                        &lt;circle cx="9" cy="9" r="9" fill="#B1D7B4"&gt;&lt;/circle&gt;
+                        &lt;path d="M18 9C18 13.9706 15.4688 3.09375 9 10.125C2.53125 17.1562 0 13.9706 0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9Z" fill="#A2B38B"&gt;&lt;/path&gt;
+                        &lt;path d="M18 9C18 13.9706 14.9062 0.84375 8.29688 6.1875C1.6875 11.5312 0 13.9706 0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9Z" fill="#FFB3B3"&gt;&lt;/path&gt;
+                    &lt;/svg&gt;
+                &lt;/span&gt;
+                &lt;em&gt;Javascript&lt;/em&gt;
+                &lt;span class="close"&gt;
+                    &lt;svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false"&gt;
+                        &lt;path d="M12.5 3.5L3.5 12.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"&gt;&lt;/path&gt;
+                        &lt;path d="M12.5 12.5L3.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"&gt;&lt;/path&gt;
+                    &lt;/svg&gt;
+                &lt;/span&gt;
+            &lt;/div&gt;
+            &lt;div&gt;
+                &lt;span class="favicon" aria-label="true"&gt;
+                    &lt;svg width="16" height="16" viewBox="0 0 18 18" fill="none" aria-hidden="true" focusable="false"&gt;
+                        &lt;circle cx="9" cy="9" r="9" fill="#7A4495"&gt;&lt;/circle&gt;
+                        &lt;path d="M18 9C18 13.9706 15.4688 3.09375 9 10.125C2.53125 17.1562 0 13.9706 0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9Z" fill="#B270A2"&gt;&lt;/path&gt;
+                        &lt;path d="M18 9C18 13.9706 14.9062 0.84375 8.29688 6.1875C1.6875 11.5312 0 13.9706 0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9Z" fill="#FCE2DB"&gt;&lt;/path&gt;
+                    &lt;/svg&gt;
+                &lt;/span&gt;
+                &lt;em&gt;HTML&lt;/em&gt;
+                &lt;span class="close"&gt;
+                    &lt;svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false"&gt;
+                        &lt;path d="M12.5 3.5L3.5 12.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"&gt;&lt;/path&gt;
+                        &lt;path d="M12.5 12.5L3.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"&gt;&lt;/path&gt;
+                    &lt;/svg&gt;
+                &lt;/span&gt;
+            &lt;/div&gt;
+</code></pre>
+                        </div>
+                        <div>
+<pre><code>
+    .modal__box .title .plus {
+        padding: 0.5rem 0.5rem 0.3rem 0.5rem;
+        background: hsl(22deg 3% 24%);
+        border-radius: 0.5rem;
+    }
+    .modal__box .title .tabs {
+        display: flex;
+        margin-left: 50px;
+    }
+    .modal__box .title .tabs > div {
+        color: hsl(194deg 26% 60%);
+        background-color: hsl(22deg 3% 24%);
+        padding: 0.35rem 0.8rem 0.25rem 0.8rem;
+        margin-right: 0.8rem;
+        display: flex;
+        align-items: center;
+        border-radius: 0.3rem;
+        text-transform: uppercase;
+        cursor: pointer;
+    }
+    .modal__box .title .tabs > div.active {
+        background-color: rgb(116, 111, 105);
+    }
+    .modal__box .title .tabs > div em {
+        font-style: normal;
+    }
+    .modal__box .title .tabs > div .favicon {
+        margin-right: 0.4rem;
+        margin-top: 0.2rem;
+    }
+    .modal__box .title .tabs > div .close {
+        margin-left: 3rem;
+    }
+    .modal__box .cont {
+        background-color: #282936;
+        height: 550px;
+        border-bottom-left-radius: 0.5rem;
+        border-bottom-right-radius: 0.5rem;
+    }
+    .modal__box .cont > div {
+        display: none;
+    }
+    .modal__box .cont > div.active {
+        display: block;
+    }
+</code></pre>
+                        </div>
+                    </div>
+                </div>	          		
+      	    </div>
+        </div>
+    </footer>
+    <!-- //footer -->
+
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+    <script>
+        //탭 메뉴
+        const tabBtn = document.querySelectorAll(".modal__box .tabs >  div");
+        const tabCont = document.querySelectorAll(".modal__box .cont > div");
+
+
+        tabBtn.forEach((element,index) => {
+            
+            element.addEventListener("click", (event) => {
+                event.preventDefault();        
+
+                
+                tabBtn.forEach(li => {
+                    li.classList.remove("active"); 
+                })
+                
+                element.classList.add("active");
+
+                
+                tabCont.forEach(div => {
+                    div.style.display = "none";
+                });
+
+                
+                tabCont[index].style.display = "block";
+            });
+        });
+    </script>
+</body>
+</html>
