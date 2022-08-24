@@ -67,35 +67,57 @@ const quizInfo = [
         answerEx: "프리즘을 이용해 빛을 스펙트럼으로 분리해서 최초로 발견한 사람은 뉴턴입니다. 가시광선은 눈에 보이는 영역을 의미하며 이것은 여러가지 혼합색으로 이루어져 있습니다."
     }
 ];
-//선택자
-const quizwrap = document.querySelector(".quiz__wrap");
+let Ex = document.querySelector(".quiz__confirm .ex");
+const quizCofirm = document.querySelector(".quiz__confirm .check");
+
+Ex.style.display = "none";
+        
 //정답 확인
-    function answerQuiz(){
-        const quizSelects = document.querySelectorAll(".quiz__selects");    //보기
-        const quizView = document.querySelectorAll(".quiz__view");          //강아지
-        //사용자가 체크한 라디오 박스  == 문제 정답
-        quizInfo.forEach((question, number) => {
-            const quizSelectsWrap = quizSelects[number];                    //전체 보기 박스
-            const userSelector = `input[name=select${number}]:checked`;         //사용자가 클린한 라디오 박스
-            const userAnswer = (quizSelectsWrap.querySelector(userSelector) || {}).value
-            const quizView = document.querySelectorAll(".quiz__view");
-            console.log(quizSelects)
-            if(userAnswer == question.answerResult){
-                console.log("정답")
-                quizView[number].classList.add("like");
-            } else {
-                console.log("오답")
-                quizView[number].classList.add("dislike");
-                const div = document.createElement("div");
-                quizSelectsWrap.appendChild(div).innerHTML = `&lt;p class="result"&gt;${question.answerEx}</p>`;
-            }
-        });
+const answerQuiz = () => {
+    const quizSelects = document.querySelectorAll(".quiz__selects");     //객관식 보기
+            
+    //사용자가 체크한 보기 == 문제 정답
+    quizInfo.forEach((question, number) => {
+        const userSelector = `input[name=select${number}]:checked`;     //사용자가 체크한 것
+        const quizSelectsWrap = quizSelects[number];
+        const userAnswer = (quizSelectsWrap.querySelector(userSelector) || {}).value;     
+        const quizView = document.querySelectorAll(".quiz__view");
+
+        if(userAnswer == question.answerResult) {
+            uizView[number].classList.add("like");
+            quizScore++;
+        } else {
+            quizView[number].classList.add("dislike");
+            const divBox = document.createElement("div");
+            quizSelectsWrap.appendChild(divBox).innerHTML = `&lt;p class=result&gt;${question.answerEx}</p>`;   //appendChild - 자식으로 넣어줌
+                     
+        }
+    });
+
+            
+    //전체 문제수
+    //내가 맞힌 수
+            
+    Ex.style.display = "block";
+    quizCofirm.style.display = "none";
+    Ex.innerHTML += quizInfo.length + "문제 중 에서" + " " + quizScore + " 문제를 맞추셨습니다.";
+
+    if (quizScore >= 40) {
+        Ex.innerHTML += "축하합니다. 합격입니다❤️";
+    } else {
+        Ex.innerHTML += "안타깝네요. 열심히 노력하세요✏️";
     }
+ }
+
+//정답 클릭
 document.querySelector(".quiz__confirm .check").addEventListener("click", answerQuiz);
 </code></pre>
             </div>
+            <p class="t_box">
+                (quizSelectsWrap.querySelector(userSelector) || {}).value
+            </p>
             <p class="t_desc">
-            
+                빈문자열로 같이 확인을 하기위해서 ||(또는)을 넣어줍니다.
             </p>
             <h3 class="t_tit2">HTML</h3>
             <p class="t_desc">html을 스크립트로 작성하여 만들 수 있습니다.</p>
@@ -169,7 +191,21 @@ function updateQuiz(){
 updateQuiz();       //먼저 생성된 다음에 답안 작업을 해야함
 </code></pre>
             </div>
-        
+            <p class="t_box">
+                exam.push(` <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="quiz"&gt; <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;.....<br>
+                `)<br>
+            </p>
+            <p class="t_desc">
+                push() 메서드를 이용하여 배열을 추가 합니다.
+            </p>
+            <p class="t_box">
+                quizwrap.innerHTML = exam.join('');
+            </p>
+            <p class="t_desc">
+                join() 메서드를 이용하여, join()으로 반환한 배열을 문자열로 변환시켜 줍니다.
+            </p>
         </div>
     </main>
     <!-- //main -->

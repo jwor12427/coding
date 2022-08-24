@@ -296,10 +296,22 @@ body {
     margin: 40px 0;
     transition: background 0.3s;
 }
+.quiz__confirm .ex {
+    font-size: 22px;
+    line-height: 1.3;
+    padding: 13px 60px;
+    border: 6px ridge #cacaca;
+    box-sizing: border-box;
+    text-align: center;
+    font-family: "WandoCleanSea";
+    transition: background 0.3s;
+}
 .quiz__confirm .check:hover {
     background-color: rgba(138, 74, 198, 0.326);
 }
-
+.quiz__confirm .ex:hover {
+    background-color: rgba(138, 74, 198, 0.326);
+}
 @keyframes wobble {
     0% {
         transform: translateX(0) rotate(0deg);

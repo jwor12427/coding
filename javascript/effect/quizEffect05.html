@@ -15,7 +15,7 @@
 
 <body>
     <header id="header">
-        <h1><a href="../javascript01.html">Quiz</a> <em>객관식(여러문제) 유형</em></h1>
+        <h1><a href="../javascript01.html">Quiz</a> <em>객관식(한문제) 유형</em></h1>
         <nav>
             <ul>
                 <li><a href="quizEffect01.html">1</a></li>
@@ -24,12 +24,65 @@
                 <li><a href="quizEffect04.html">4</a></li>
                 <li class="active"><a href="quizEffect05.html">5</a></li>
                 <li><a href="quizEffect06.html">6</a></li>
+                <li><a href="quizEffect07.html">7</a></li>
+                <li><a href="quizEffect08.html">8</a></li>
             </ul>
         </nav>
     </header>
     <!-- //header -->
     <main id="main">
         <div class="quiz__wrap">
+            <!-- <div class="quiz">
+                <span class="quiz__type"></span>
+                <h2 class="quiz__question">
+                    <span class="number"></span>
+                    <div class="ask"></div>
+                </h2>
+                <div class="quiz__view">
+                    <div class="true">정답입니다!</div>
+                    <div class="false">틀렸습니다!</div>
+                    <div class="dog">
+                        <div class="head">
+                            <div class="ears"></div>
+                            <div class="face"></div>
+                            <div class="eyes">
+                                <div class="teardrop"></div>
+                            </div>
+                            <div class="nose"></div>
+                            <div class="mouth">
+                                <div class="tongue"></div>
+                            </div>
+                            <div class="chin"></div>
+                        </div>
+                        <div class="body">
+                            <div class="tail"></div>
+                            <div class="legs"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="quiz__answer">
+                    <div class="quiz__selects">
+                        <label for="select1">
+                            <input type="radio" id="select1" class="select" name="select" value="1">
+                            <span class="choice"></span>
+                        </label>
+                        <label for="select2">
+                            <input type="radio" id="select2" class="select" name="select" value="2">
+                            <span class="choice"></span>
+                        </label>
+                        <label for="select3">
+                            <input type="radio" id="select3" class="select" name="select" value="3">
+                            <span class="choice"></span>
+                        </label>
+                        <label for="select4">
+                            <input type="radio" id="select4" class="select" name="select" value="4">
+                            <span class="choice"></span>
+                        </label>
+                    </div>
+                    <button class="confirm">정답 확인하기</button>
+                    <div class="result"></div>
+                </div>
+            </div> -->
         </div>
     </main>
     <!-- //main -->
@@ -37,16 +90,9 @@
         <a href="mailto:jwor124@naver.com">jwor124@naver.com</a>
     </footer>
     <!-- //footer -->
-    <!--  -->
+
     <script>
-        // const num = [100, 200, 300, 400, 500];
-
-        // num.forEach((el) => {
-        //     // console.log(num[el]);
-        //     document.querySelector(".quiz__wrap").textContent += el;    //변수에 데이터 추가 해줘야 함
-        // });
-
-        //문제 정보
+        //문제정보
         const quizInfo = [
             {
                 answerType: "웹디자인기능사 2010년 05회",
@@ -567,7 +613,7 @@
                     4: "&lt;BLINK&gt;"
                 },
                 answerResult: "1",
-                answerEx: "<BLINK>태그는 텍스트를 깜빡이게 설정하는 태그 입니다."
+                answerEx: "&lt;BLINK&gt;태그는 텍스트를 깜빡이게 설정하는 태그 입니다."
             },
             {
                 answerType: "웹디자인기능사 2010년 05회",
@@ -831,18 +877,20 @@
             }
         ];
 
-        //선택자
-        const quizwrap = document.querySelector(".quiz__wrap");
+        const quizWrap = document.querySelector(".quiz__wrap");
+        let quizScore = 0;     //맞힌 갯수 구하기
 
-        function updateQuiz(){
+
+        //문제 출력
+        const updateQuiz = () => {
             const exam = [];
 
             quizInfo.forEach((question, number) => {
                 exam.push(`
-                    <div class="quiz">
+                        <div class="quiz">
                         <span class="quiz__type">${question.answerType}</span>
                         <h2 class="quiz__question">
-                            <span class="number">${question.answerNum}. </span>
+                            <span class="number">${question.answerNum}.</span>
                             <div class="ask">${question.answerAsk}</div>
                         </h2>
                         <div class="quiz__view">
@@ -890,41 +938,65 @@
                     </div>
                 `);
             });
-
             exam.push(`
                 <div class="quiz__confirm">
                     <button class="check">정답 확인하기</button>
-                    <div class="ex"></div>    
-                </div>
+                    <div class="ex"></div>
+                </div>    
             `);
             
-            quizwrap.innerHTML = exam.join('');
-        }
-        updateQuiz();       //먼저 생성된 다음에 답안 작업을 해야함
+            quizWrap.innerHTML = exam.join('');
 
+        }
+        updateQuiz();
+        let Ex = document.querySelector(".quiz__confirm .ex");
+        const quizCofirm = document.querySelector(".quiz__confirm .check");
+        Ex.style.display = "none";
         //정답 확인
-        function answerQuiz(){
-            const quizSelects = document.querySelectorAll(".quiz__selects");    //보기
-            const quizView = document.querySelectorAll(".quiz__view");          //강아지
-            //사용자가 체크한 라디오 박스  == 문제 정답
+        const answerQuiz = () => {
+            const quizSelects = document.querySelectorAll(".quiz__selects");     //객관식 보기
+            
+            //사용자가 체크한 보기 == 문제 정답
             quizInfo.forEach((question, number) => {
-                const quizSelectsWrap = quizSelects[number];                    //전체 보기 박스
-                const userSelector = `input[name=select${number}]:checked`;         //사용자가 클린한 라디오 박스
-                const userAnswer = (quizSelectsWrap.querySelector(userSelector) || {}).value
+                const userSelector = `input[name=select${number}]:checked`;     //사용자가 체크한 것
+                const quizSelectsWrap = quizSelects[number];
+                const userAnswer = (quizSelectsWrap.querySelector(userSelector) || {}).value;     //빈문자열도 확인하기 위해서 ||도 써줌
                 const quizView = document.querySelectorAll(".quiz__view");
-                console.log(quizSelects)
-                if(userAnswer == question.answerResult){
-                    console.log("정답")
+
+                if(userAnswer == question.answerResult) {
+                    // console.log("정답");
                     quizView[number].classList.add("like");
+                    quizScore++;
                 } else {
-                    console.log("오답")
+                    // console.log("오답");
                     quizView[number].classList.add("dislike");
-                    const div = document.createElement("div");
-                    quizSelectsWrap.appendChild(div).innerHTML = `<p class="result">${question.answerEx}</p>`;
+                    const divBox = document.createElement("div");
+                    quizSelectsWrap.appendChild(divBox).innerHTML = `<p class=result>${question.answerEx}</p>`;   //appendChild - 자식으로 넣어줌
+                     
                 }
             });
+
+            
+            //전체 문제수
+            //내가 맞힌 수
+            console.log(quizInfo.length); 
+            console.log(quizScore);
+            
+            Ex.style.display = "block";
+            quizCofirm.style.display = "none";
+            Ex.innerHTML += quizInfo.length + "문제 중 에서" + " " + quizScore + " 문제를 맞추셨습니다.";
+
+            if (quizScore >= 40) {
+                Ex.innerHTML += "축하합니다. 합격입니다❤️";
+            } else {
+                Ex.innerHTML += "안타깝네요. 열심히 노력하세요✏️";
+            }
         }
+
+        //정답 클릭
         document.querySelector(".quiz__confirm .check").addEventListener("click", answerQuiz);
+        
     </script>
 </body>
+
 </html>
