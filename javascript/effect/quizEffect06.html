@@ -223,7 +223,6 @@
             if(userAnswer == currentAnswer){
                 quizView.classList.add("like");
                 quizScore++;
-                console.log(quizScore);
             } else {
                 quizView.classList.add("dislike");
                 quizResult.style.display = "block";
@@ -233,19 +232,20 @@
 
         //정답 확인 버튼
         const answerQuiz = () => {
-            quizCount++;
-            updateQuiz(quizCount);
-            quizView.classList.remove("like", "dislike");
+            
 
             //마지막 문제
             if(quizInfo.length -1 == quizCount){
-                quizConfirm.textContent = "총" + quizInfo.length + "문제 중에" + quizScore + "문제를 맞추었습니다."
+                quizConfirm.textContent = "총" + `${quizCount+1}` + "문제 중에" + quizScore + "문제를 맞추었습니다."
                 if(quizScore >= 3){
-                    quizConfirm.textContent += "합격입니다.";
+                    quizConfirm.textContent += "합격입니다🎊";
                 } else {
-                    quizConfirm.textContent += "노력하세요.";
+                    quizConfirm.textContent += "노력하세요🧸";
                 }
             }
+            quizCount++;
+            updateQuiz(quizCount);
+            quizView.classList.remove("like", "dislike");
         }
 
         

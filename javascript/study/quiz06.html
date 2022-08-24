@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>퀴즈 이펙트</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+
+</head>
+<body>
+    <header id="header">
+        <h1><a href="../index.html">퀴즈 이펙트</a></h1>
+        <nav class="header_nav">
+
+        </nav>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">스크립트를 이용한 퀴즈 만들기 06(객관식 - 여러문제) : 슬라이드 형식</h2>
+            <p class="t_desc2">
+                스크립트를 통해서 슬라이드 형식의 문제를 만들 수 있습니다.
+            </p>
+
+            <div class="t_iframe" style="min-height: 1000px; padding-top: 0;">
+               <iframe src="https://jwor12427.github.io/coding/javascript/effect/quizEffect06.html"></iframe>
+            </div>
+
+            <div class="t_link">
+                <a href="https://github.com/jwor12427/coding/blob/main/javascript/effect/quizEffect06.html" target="_blank">원본 소스 보기</a>
+            </div>
+            <div class="t_link">
+                <a href="https://jwor12427.github.io/coding/javascript/effect/quizEffect06.html">사이트보기</a>
+            </div>
+            <hr>
+
+            <h3 class="t_tit2">선택자</h3>
+            <p class="t_desc">
+                각요소의 선택자를 먼저 선언해 줍니다✏️
+            </p>
+            <details>
+                <summary>결과보기</summary>
+                <div class="t_code">
+<pre><code>const quizQuestion = document.querySelector(".quiz__question");     //문제 번호, 질문
+const quizSelects = document.querySelector(".quiz__selects");       //객관식 보기
+const quizType = document.querySelector(".quiz__type");             //퀴즈 타입
+const quizResult = document.querySelector(".quiz__answer .result");  //해설
+const quizConfirm = document.querySelector(".quiz__answer .confirm"); //정답 확인버튼
+const quizView = document.querySelector(".quiz__view")              //강아지
+let quizCount = 0;
+let quizScore = 0; 
+</code></pre>
+                </div>
+            </details>
+
+            <h3 class="t_tit2">문제 출력</h3>
+            <p class="t_desc">
+                함수를 활용하여 문제를 출력해 줍니다. 이때 필요한 부분만 배열로 만들어 주면
+                보다 용이 하게 활용 할수 있습니다🐣
+            </p>
+            <details>
+                <summary>결과보기</summary>
+                <div class="t_code">
+<pre><code>//문제 출력
+const updateQuiz = (index) =&gt; {
+    const questionTag = `
+        &lt;span class="number"&gt;${quizInfo[index].answerNum}. &lt;/span&gt;
+        &lt;div class="ask"&gt;${quizInfo[index].answerAsk}&lt;/div&gt; 
+    `;
+    const choiceTag = `
+    &lt;slabel for="select1"&gt;
+        &lt;input type="radio" id="select1" class="select" name="select" value="1"&gt;
+        &lt;span class="choice"&gt;${quizInfo[index].answerChoice[0]}&lt;/span&gt;
+        &lt;/label&gt;
+        &lt;label for="select2"&gt;
+            &lt;input type="radio" id="select2" class="select" name="select" value="2"&gt;
+            &lt;span class="choice"&gt;${quizInfo[index].answerChoice[1]}&lt;/span&gt;
+        &lt;/label&gt;
+        &lt;label for="select3"&gt;
+            &lt;input type="radio" id="select3" class="select" name="select" value="3"&gt;
+            &lt;span class="choice"&gt;${quizInfo[index].answerChoice[2]}&lt;/span&gt;
+        &lt;/label&gt;
+        &lt;label for="select4"&gt;
+            &lt;input type="radio" id="select4" class="select" name="select" value="4"&gt;
+            &lt;span class="choice"&gt;${quizInfo[index].answerChoice[3]}&lt;/span&gt;
+        &lt;/label&gt;
+    `;
+
+    //문제 출력
+    quizType.innerHTML = quizInfo[index].answerType;  //퀴즈 유형
+    quizQuestion.innerHTML = questionTag;             //번호, 질문
+    quizSelects.innerHTML = choiceTag;                //객관식 보기
+    quizResult.innerHTML = quizInfo[index].answerEx;  //해설
+       
+
+    const quizChoice = quizSelects.querySelectorAll(".choice");
+
+    for(let i =0; i &lt; quizChoice.length; i++) {
+         quizChoice[i].setAttribute("onclick", "choiceSelected(this)")
+    }
+
+    //문제, 해설 숨기기
+    quizResult.style.display = "none";
+    quizConfirm.style.display = "none";
+}
+updateQuiz(quizCount);
+</code></pre>
+                </div>
+            </details>
+            <h3 class="t_tit2">사용자 정답</h3>
+            <p class="t_desc">
+                사용자가 선택한 정답과 문제의 정답을 확인 해 줍니다.
+            </p>
+            <details>
+                <summary>결과보기</summary>
+                <div class="t_code">
+<pre><code>const choiceSelected = (answer) => {
+    let userAnswer = answer.textContent;                    //사용자가 체크한 정답
+    let currentAnswer = quizInfo[quizCount].answerResult;   //문제 정답
+
+
+    if(userAnswer == currentAnswer){
+        quizView.classList.add("like");
+        quizScore++;
+    } else {
+        quizView.classList.add("dislike");
+        quizResult.style.display = "block";
+    }
+    quizConfirm.style.display = "block";
+} 
+</code></pre>
+                </div>
+            </details>
+            <h3 class="t_tit2">정답 확인 버튼</h3>
+            <p class="t_desc">
+                문제의 정답을 확인하는 버튼을 선택할 수 있게 합니다🧸
+                덧붙여 마지막 문제에 사용자가 정답을 얼마나 맞혔는지도 알 수 있겠 해 줍니다.
+            </p>
+            <details>
+                <summary>결과보기</summary>
+                <div class="t_code">
+<pre><code>//정답 확인 버튼
+const answerQuiz = () => {
+        
+
+    //마지막 문제
+    if(quizInfo.length -1 == quizCount){
+        quizConfirm.textContent = "총" + `${quizCount+1}` + "문제 중에" + quizScore + "문제를 맞추었습니다."
+        if(quizScore >= 3){
+            quizConfirm.textContent += "합격입니다🎊";
+        } else {
+            quizConfirm.textContent += "노력하세요🧸";
+        }
+    }
+    quizCount++;
+    updateQuiz(quizCount);
+    quizView.classList.remove("like", "dislike");
+}
+quizConfirm.addEventListener("click", answerQuiz);
+</code></pre>
+                </div>
+            </details>
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:jwor124@naver.com">jwor124@naver.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+   
+</body>
+</html>
