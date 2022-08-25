@@ -343,6 +343,6 @@ a {
     1. display: none;       (애니메이션X, 영역X)
     2. opacity: 0;          (애니메이션O, 영역O)
     3. visibility: hidden;  (애니메이션X, 영역X)
-    4. width: 0; hright: 0; (애니메이션X, 영역X) : blind
-    5. transform: scaleX(0); (애니메이션O, 영역X)
+    4. width: 0; height: 0; (애니메이션X, 영역X) : blind
+    5. transform: scale(0); (애니메이션O, 영역X)
 */
