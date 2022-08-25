@@ -8,6 +8,45 @@
 
     <link rel="stylesheet" href="../assets/css/slider.css">
     <link rel="stylesheet" href="../assets/css/dracula.css">
+    <style>
+        /* slider */
+        .slider__wrap {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .slider__img {
+            position: relative;
+            width: 800px;
+            height: 480px;
+        }
+        .slider {
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        .slider::before {
+            position: absolute;
+            left: 5px;
+            top: 5px;
+            background-color: rgba(0,0,0,0.4);
+            color: #fff;
+            padding: 5px 10px;
+        }
+        .slider:nth-child(1)::before {content: '이미지1';}
+        .slider:nth-child(2)::before {content: '이미지2';}
+        .slider:nth-child(3)::before {content: '이미지3';}
+        .slider:nth-child(4)::before {content: '이미지4';}
+        .slider:nth-child(5)::before {content: '이미지5';}
+        .slider:nth-child(1) {z-index: 5;}
+        .slider:nth-child(2) {z-index: 4;}
+        .slider:nth-child(3) {z-index: 3;}
+        .slider:nth-child(4) {z-index: 2;}
+        .slider:nth-child(5) {z-index: 1;}
+    </style>
+  
 </head>
 <body class="img02">
     <header id="header">
@@ -26,16 +65,23 @@
     <!-- //header -->
     
     <main id="main">
-
+        <section id="sliderType01">
+            <div class="slider__wrap">
+                <div class="slider__img">
+                    <div class="slider"><img src="../assets/img/effect_bg11.jpg" alt="이미지1"></div>
+                    <div class="slider"><img src="../assets/img/effect_bg12.jpg" alt="이미지2"></div>
+                    <div class="slider"><img src="../assets/img/effect_bg13.jpg" alt="이미지3"></div>
+                    <div class="slider"><img src="../assets/img/effect_bg14.jpg" alt="이미지4"></div>
+                    <div class="slider"><img src="../assets/img/effect_bg15.jpg" alt="이미지5"></div>
+                </div>
+            </div>
+        </section>
     </main>
     <!-- //main -->
     
     <footer id="footer">
         <div class="modal__wrap">
-            <div class="modal__btn">
-                <label for="btn">소스 보기</label> 
-                <input class="btn" type="checkbox" id="btn" name="btn"/>
-            </div>
+            <div class="modal__btn">소스 보기</div>
       	    <div class="modal__cont">		
 	      	    <div class="modal__box">
                     <div class="title">
@@ -197,43 +243,48 @@ const currentStr4 = str1.charAt("2");   //v
 </code></pre>
                         </div>
                     </div>
-                </div>	          		
+                </div>	 
+                <div class="modal__close">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false">
+                        <path d="M12.5 3.5L3.5 12.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path d="M12.5 12.5L3.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>
+                </div>         		
       	    </div>
         </div>
     </footer>
     <!-- //footer -->
 
     <script src="../assets/js/highlight.min.js"></script>
+    <script src="../assets/js/common.js"></script>
     <script>
-        hljs.highlightAll();
-    </script>
-    <script>
-        //탭 메뉴
-        const tabBtn = document.querySelectorAll(".modal__box .tabs >  div");
-        const tabCont = document.querySelectorAll(".modal__box .cont > div");
+        const sliderWrap = document.querySelector(".slider__wrap");
+        const sliderImg = sliderWrap.querySelector(".slider__img");
+        const slider = sliderWrap.querySelectorAll(".slider");
 
+        let currentIndex = 0;               //현재 보이는 이미지
+        let sliderCount = slider.length     //이미지 갯수
 
-        tabBtn.forEach((element,index) => {
+        setInterval(() => {
+            let nextIndex = (currentIndex + 1) % 5;  //다음 이미지
+
+            slider[currentIndex].style.opacity = "0";    //첫번째 이미지를 안보이게
+            slider[nextIndex].style.opacity = "1";      //두번째 이미지를 보이게
             
-            element.addEventListener("click", (event) => {
-                event.preventDefault();        
+            currentIndex = nextIndex;
 
-                
-                tabBtn.forEach(li => {
-                    li.classList.remove("active"); 
-                })
-                
-                element.classList.add("active");
+        },3000);
+        // slider[1].style.opacity = "0";    //두째 이미지를 안보이게
+        // slider[2].style.opacity = "1";    //세번째 이미지를 보이게
 
-                
-                tabCont.forEach(div => {
-                    div.style.display = "none";
-                });
-
-                
-                tabCont[index].style.display = "block";
-            });
-        });
+        // slider[2].style.opacity = "0";    //세번째 이미지를 안보이게
+        // slider[3].style.opacity = "1";    //네번째 이미지를 보이게
+            
+        // slider[3].style.opacity = "0";    //네번째 이미지를 안보이게
+        // slider[4].style.opacity = "1";    //다섯번째 이미지를 보이게
+            
+        // slider[4].style.opacity = "0";    //다섯번째 이미지를 안보이게
+        // slider[0].style.opacity = "1";    //첫번째 이미지를 보이게
     </script>
 </body>
 </html>

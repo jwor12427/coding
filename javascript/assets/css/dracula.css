@@ -1,11 +1,14 @@
+pre {
+    height: 100%;
+}
 pre code.hljs {
     display: block;
     overflow-x: auto;
     padding: 20px;
     font-family: 'NexonLv1Gothic';
     line-height: 1.6;
-    margin-bottom: 20px;
     border-radius: 5px;
+    height: 100%;
     }
     code.hljs {
     padding: 3px 5px
