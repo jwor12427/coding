@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>데이터 효과</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <style>
+        body {
+            padding: 0;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+            background: radial-gradient(circle farthest-corner at center, #816797, #1B2430);
+        }
+    </style>
+</head>
+<body>
+    <canvas id="webgl-canvas"></canvas>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://unpkg.com/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+    <script id="js-vertex-shader" type="x-shader/x-vertex">
+        uniform float time;
+        varying vec3 vPosition;
+        varying vec3 vNormal;
+        varying float vNoise;
+        varying vec2 vUv;
+        float PI = 3.141592653589793238;
+        float hash1(float p) {
+            vec2 p2 = fract(p * vec2(5.3983, 5.4427));
+            p2 += dot(p2.yx, p2.xy + vec2(21.5351, 14.3137));
+            return fract(p2.x * p2.y * 95.4337);
+        }
+        vec4 noised( in vec3 x ) {
+            vec3 p = floor(x);
+            vec3 w = fract(x);
+            vec3 u = w * w * w * (w * (w * 6.0 - 15.0) + 10.0);
+            vec3 du = 30.0 * w * w * (w * (w - 2.0) + 1.0);
+            float n = p.x + 317.0 * p.y + 157.0 * p.z;
+            float a = hash1(n + 0.0);
+            float b = hash1(n + 1.0);
+            float c = hash1(n + 317.0);
+            float d = hash1(n + 318.0);
+            float e = hash1(n + 157.0);
+            float f = hash1(n + 158.0);
+            float g = hash1(n + 474.0);
+            float h = hash1(n + 475.0);
+            float k0 = a;
+            float k1 = b - a;
+            float k2 = c - a;
+            float k3 = e - a;
+            float k4 = a - b - c + d;
+            float k5 = a - c - e + g;
+            float k6 = a - b - e + f;
+            float k7 = - a + b + c - d + e - f - g + h;
+            return vec4( - 1.0 + 2.0 * (k0 + k1 * u.x + k2 * u.y + k3 * u.z + k4 * u.x * u.y + k5 * u.y * u.z + k6 * u.z * u.x + k7 * u.x * u.y * u.z), 2.0 * du * vec3(k1 + k4 * u.y + k6 * u.z + k7 * u.y * u.z, k2 + k5 * u.z + k4 * u.x + k7 * u.z * u.x, k3 + k6 * u.x + k5 * u.y + k7 * u.x * u.y ));
+        }
+        void main() {
+            vUv = uv;
+            vNormal = normal;
+            vec3 p = position;
+            float noise = noised(10.0 * vec3(p.x, p.y + 0.2 * cos(2.0 * PI * time), p.z + 0.2 * sin(2.0 * PI * time))).x;
+            noise = noise * (2.0 - noise);
+            vNoise = noise;
+            vec3 newposition = position + 0.2 * noise * normalize(position);
+            vec4 mvPosition = modelViewMatrix * vec4(newposition, 1.0);
+            vPosition = mvPosition.xyz;
+            gl_PointSize = 15.0 * (1.0 / - mvPosition.z);
+            gl_Position = projectionMatrix * mvPosition;
+        }
+    </script>
+    <!-- fragmentShader -->
+    <script id="js-fragment-shader" type="x-shader/x-fragment">
+        precision highp float;
+        varying vec3 vPosition;
+        varying vec3 vNormal;
+        void main() {
+            vec3 X = dFdx(vPosition);
+            vec3 Y = dFdy(vPosition);
+            vec3 n = normalize(cross(X, Y));
+            float diff = dot(n, normalize(vec3(1.0)));
+            diff *= diff * diff;
+            gl_FragColor = vec4(n * diff, 1.0);
+            gl_FragColor = vec4(n, 1.0);
+        }
+    </script>
+    <script id="js-fragment-line" type="x-shader/x-fragment">
+        precision highp float;
+        void main() {
+            float dist = length(gl_PointCoord - vec2(0.5));
+            float disc = smoothstep(2.5, 0.45, dist);
+            if(disc == 0.0) discard;
+            gl_FragColor = vec4(2.0, 2.0, 2.0, disc);
+        }
+    </script>
+    <script>
+        class Stage {
+            constructor() {
+                this.renderParam = {
+                    clearColor: 0xffffff,
+                    width: window.innerWidth,
+                    height: window.innerHeight
+                }
+                this.cameraParam = {
+                    fov: 50,
+                    near: 0.01,
+                    far: 1000,
+                    lookAt: new THREE.Vector3(0, 0, 0),
+                    x: 0,
+                    y: 0,
+                    z: 7
+                }
+                this.scene = null;
+                this.camera = null;
+                this.renderer = null;
+                this.isInitialized = false;
+            }
+            init() {
+                this._setScene();
+                this._setRender();
+                this._setCamera();
+                this.isInitialized = true;
+            }
+            _setScene() {
+                this.scene = new THREE.Scene();
+            }
+            _setRender() {
+                this.renderer = new THREE.WebGLRenderer({
+                    canvas: document.getElementById("webgl-canvas"),
+                    antialias: true,
+                    alpha: true
+                });
+                this.renderer.setPixelRatio(window.devicePixelRatio);
+                this.renderer.setSize(this.renderParam.width, this.renderParam.height);
+            }
+            _setCamera() {
+                const windowWidth = window.innerWidth;
+                const windowHeight = window.innerHeight;
+                if (!this.isInitialized) {
+                    this.camera = new THREE.PerspectiveCamera(
+                        this.cameraParam.fov,
+                        this.renderParam.width / this.renderParam.height,
+                        this.cameraParam.near,
+                        this.cameraParam.far
+                    );
+                    this.camera.position.set(
+                        this.cameraParam.x,
+                        this.cameraParam.y,
+                        this.cameraParam.z
+                    );
+                    this.camera.lookAt(this.cameraParam.lookAt);
+                    this.orbitcontrols = new THREE.OrbitControls(
+                        this.camera,
+                        this.renderer.domElement
+                    );
+                    this.orbitcontrols.enableDamping = true;
+                }
+                this.camera.aspect = windowWidth / windowHeight;
+                this.camera.updateProjectionMatrix();
+                this.renderer.setPixelRatio(window.devicePixelRatio);
+                this.renderer.setSize(windowWidth, windowHeight);
+            }
+            _render() {
+                this.renderer.render(this.scene, this.camera);
+                this.orbitcontrols.update();
+            }
+            onResize() {
+                this._setCamera();
+            }
+            onRaf() {
+                this._render();
+            }
+        }
+        class Mesh {
+            constructor(stage) {
+                this.geometryParam = {
+                    width: 1,
+                    height: 7
+                }
+                this.uniforms = {
+                    time: {
+                        type: "f",
+                        value: 0.0
+                    }
+                }
+                this.stage = stage;
+            }
+            init() {
+                this._setMesh();
+            }
+            _setMesh() {
+                const geometry = new THREE.IcosahedronBufferGeometry(
+                    this.geometryParam.width,
+                    this.geometryParam.height
+                );
+                const material = new THREE.ShaderMaterial({
+                    vertexShader: document.getElementById("js-vertex-shader").textContent,
+                    fragmentShader: document.getElementById("js-fragment-shader").textContent,
+                    uniforms: this.uniforms,
+                    side: THREE.DoubleSide
+                });
+                const material1 = new THREE.ShaderMaterial({
+                    vertexShader: document.getElementById("js-vertex-shader").textContent,
+                    fragmentShader: document.getElementById("js-fragment-line").textContent,
+                    uniforms: this.uniforms,
+                    side: THREE.DoubleSide
+                });
+                this.mesh = new THREE.Mesh(geometry, material);
+                this.meshPoints = new THREE.Points(geometry, material1);
+                this.stage.scene.add(this.mesh);
+                this.stage.scene.add(this.meshPoints);
+                this.stage.scene.add(this.meshSphere);
+                this.meshPoints.scale.set(1.5 + 0.1, 1.5 + 0.1, 1.5 + 0.1);
+            }
+            _render() {
+                this.uniforms.time.value += 0.001;
+                this.stage.scene.rotation.x += 0.1 * Math.sin(0.001 * 4 * Math.PI);
+                this.stage.scene.rotation.y += 0.2 * Math.sin(0.001 * 2 * Math.PI);
+                this.stage.scene.rotation.z += 0.3 * Math.sin(0.001 * 2 * Math.PI);
+            }
+            onRaf() {
+                this._render();
+            }
+        }
+        (() => {
+            const stage = new Stage();
+            const mesh = new Mesh(stage);
+            stage.init();
+            mesh.init();
+            window.addEventListener("resize", () => {
+                stage.onResize();
+            });
+            const _raf = () => {
+                window.requestAnimationFrame(() => {
+                    stage.onRaf();
+                    mesh.onRaf();
+                    _raf();
+                });
+            }
+            _raf();
+        })();
+    </script>
+</body>
+</html>

@@ -33,6 +33,7 @@ h1, h2, h3, h4, h5, h6 {
 #header {
     border-bottom: 1px dashed #dcdcdc;
     padding-bottom: 40px;
+    text-align: center;
 }
 #main {
     padding: 40px 0;
@@ -46,28 +47,37 @@ h1, h2, h3, h4, h5, h6 {
     text-decoration: underline;
 }
 
+/* container */
+.container {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
 /* 헤더 영역 */
 #header h1 {
     font-size: 60px;
 }
 #header h1 a {
-    font-size: 60px;
+    font-size: 80px;
+    color: #5f87f5;
+    font-weight: 600;
 }
 .header_nav ul li {
     display: inline;
 }
 .header_nav ul .active a {
-    background-color: #000;
+    background-color: #5f87f5;
     color: #fff;
 }
 .header_nav ul li a {
-    border: 1px solid #222;
+    border: 1px solid #5f87f5;
     padding: 8px 25px;
     display: inline-block;
     margin-bottom: 7px;
+    color: #5f87f5;
 }
 .header_nav ul li a:hover {
-    background-color: #000;
+    background-color: #5f87f5;
     color: #fff;
 }
 .header_nav .study {
@@ -76,7 +86,7 @@ h1, h2, h3, h4, h5, h6 {
 .header_nav .study li a {
     border-radius: 50px;
     padding: 6px 30px;
-    background-color: #000;
+    background-color: #0243f1;
     color: #fff;
 }
 .header_nav .effect {
@@ -103,8 +113,45 @@ h1, h2, h3, h4, h5, h6 {
 
 .main_sample .result {
     margin-bottom: 80px;
+    margin-top: 10px;
+    background-color: #afc3fa59;
+    padding: 10px;
+    border-radius: 5px;
 }
-
+/* intro_menu */
+.intro_menu {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    backdrop-filter: blur(5px);
+    background-color: rgba(230, 226, 226, 0.244);
+    padding: 3vw;
+    border-radius: 1vw;
+    font-size: 1vw;
+    text-align: center;
+    color: #7A4495;
+}
+.intro_menu li {
+    font-size: 20px;
+}
+.intro_menu li a{
+    color: #7F5283;
+}
+.intro_menu li a:hover{
+    text-decoration: underline;
+}
+@media(max-width: 600px){
+    .intro_menu {
+        width: 90%;
+    }
+    .intro_menu li {
+        font-size: 16px;
+    }
+    .intro_menu li a {
+        font-size: 16px;
+    }
+}
 /* sample */
 .sample {
     margin-bottom: 80px;
