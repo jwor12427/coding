@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : 기본 규칙</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+
+</head>
+<body>
+    <header id="header">
+        <h1><a href="../index.html">Javascript</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="../javascript01.html">데이터 저장하기</a></li>
+                <li><a href="../javascript02.html">데이터 불러오기</a></li>
+                <li><a href="../javascript03.html">데이터 실행하기</a></li>
+                <li><a href="../javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="../javascript05.html">문자열 객체</a></li>
+                <li><a href="../javascript06.html">배열 객체</a></li>
+                <li><a href="../javascript07.html">수학 객체</a></li>
+                <li><a href="../javascript08.html">숫자 객체</a></li>
+                <li><a href="../javascript09.html">브라우저 객체</a></li>
+                <li><a href="../javascript10.html">요소 객체</a></li>
+                <li><a href="../javascript11.html">이벤트 객체</a></li>
+            </ul>
+            <ul class="study">
+                <li><a href="../study/basic.html">기본 규칙</a></li>
+                <li><a href="../study/operator.html">연산자</a></li>
+                <li><a href="../study/for.html">반복문</a></li>
+                <li><a href="../study/if.html">조건문</a></li>
+                <li><a href="../study/type.html">데이터 타입</a></li>
+                <li><a href="../study/function.html">함수</a></li>
+                <li><a href="../study/var.html">지역변수/전역변수</a></li>
+                <li><a href="../study/element.html">요소 선택</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">jQuery</h2>
+            <p class="t_desc2">
+                제이쿼리는 자바스크립트 언어를 간편하게 사용 할 수 있도록 단순화시킨 오픈 소스 기반의
+                자바스크립트 라이브러리 입니다. 애니메이션과 이벤트 처리를 쉽게 할 수 있으며, 다양한 플러그인이 존재하며 다른 라이브러리와 충돌을 일으키지 않습니다.
+            </p>
+            <div class="t_iframe" style="min-height: 600px; padding-top: 0;">
+                <iframe height="500" style="width: 100%;" scrolling="no" title="Simple jQuery Accordian" src="https://codepen.io/css-tricks/embed/nNwjNW?default-tab=result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                    See the Pen <a href="https://codepen.io/css-tricks/pen/nNwjNW">
+                    Simple jQuery Accordian</a> by CSS-Tricks Team (<a href="https://codepen.io/css-tricks">@css-tricks</a>)
+                    on <a href="https://codepen.io">CodePen</a>.
+                </iframe>
+            </div>
+            <hr>
+
+            <h3 class="t_tit2">link(CDN)</h3>
+            <div class="t_code">
+<pre><code>&lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"&gt;&lt;/script&gt;
+</code></pre>
+            </div>
+            <br>
+            <p class="t_desc">
+                제이쿼리를 사용하는 방법은 2가지가 있습니다. <br>
+                첫번째는 <i>CDN 호스트</i>를 사용하는 방법입니다.<br>
+                두번째는 <i>직접 제이쿼리를 다운</i> 받아 사용하는 방법입니다. <br>
+                CDN 호스트를 사용할 경우에는 링크를 적어 주시면 되고, 다운받아서 사용하실 경우에는 경로를 설정하여 적용 시켜 줍니다.
+            </p>
+            <div class="t_link">
+                <a href="https://jquery.com/" target="_blank">홈페이지 가기</a>
+            </div>
+                <!-- // -->
+                <h3 class="t_tit2">javascript</h3>
+                <p class="t_desc">
+                    먼저 자바스크립트로 애니메이션을 설정 하는 방법입니다.
+                </p>
+            <div class="t_code">
+<pre><code >sliderInner.style.transform = "translateX("+ -800 * currentIndex +"px)";
+</code></pre>
+            </div>
+            <p class="t_box">
+                <i>sliderInner</i>.style.효과 = "translateX( )";
+            </p>
+            <h3 class="t_tit2">jQuery</h3>
+            <p class="t_desc">
+                다음은 jQuery를 이용해서 애니메이션을 적용 하는 방법 입니다.
+            </p>
+            <div class="t_code">
+<pre><code>$(".slider__inner").css("position", "relative");
+$(".slider__inner").animate({ left : -800 * currentIndex }, 600);
+</code></pre>
+            </div>
+            <p class="t_box">
+                $(선택자).동작함수( );
+            </p>
+            <p class="t_box">
+                <i>$(".slider__inner")</i>.animate({ left : -800 * currentIndex }, 600);
+            </p>
+            <p class="t_desc">
+                1. $ 기호는 제이쿼리를 의미를 하며, 제이쿼리에 접근을 하게 해주는 식별자 이기도 합니다. <br>
+                2. 제이쿼리는 인자값으로 CSS selector를 줄 수 있습니다.<br>
+            </p>
+            <!-- // -->
+           
+
+
+            <!-- // -->
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:jwor124@naver.com">jwor124@naver.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+</body>
+</html>

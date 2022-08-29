@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>사이트 만들기</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+
+</head>
+<body>
+    <header id="header">
+        <h1><a href="../index.html">애니메이션</a></h1>
+        <nav class="header_nav">
+
+        </nav>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">빙글빙글 돌아가는 원</h2>
+            <p class="t_desc2">
+                빙글빙글 돌아가는 두개의 원 애니메이션을 만들어 보아요🪄
+            </p>
+            <hr>
+
+            <h3 class="t_tit2">HTML</h3>
+            <div class="t_code">
+<pre><code>&lt;div class="loading"&gt;
+    &lt;span class="circle1"&gt;&lt;/span&gt;
+    &lt;span class="circle2"&gt;&lt;/span&gt;
+&lt;/div&gt;
+</code></pre>
+            </div>
+            <p class="t_desc">
+                두개의 원을 만들고, 그위에 부모 박스를 만듭니다.
+            </p>
+            <h3 class="t_tit2">CSS</h3>
+            <div class="t_code">
+<pre><code>body {
+    height: 100vh;
+    background-image: linear-gradient(-60deg, #FF85B3 0% , #9900F0 100%)
+}
+.loading {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 20px;
+    height: 150px;
+    animation: loading 0.9s ease 1000;
+}
+.loading .circle1 {
+    display: block;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #00FFC6;
+}
+  .loading .circle2 {
+    display: block;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #00FFC6;
+    margin-top: 110px;
+}
+  
+@keyframes loading {
+    0% {transform: translate(-50%, -50%) rotate(0deg)}
+    100% {transform: translate(-50%, -50%) rotate(360deg)}
+}
+</code></pre>
+            </div>
+            <h3 class="t_tit2">결과</h3>
+
+            <div class="t_iframe" style="min-height: 600px; padding-top: 0;">
+                <iframe height="300" style="width: 100%;" scrolling="no" title="Circle" src="https://codepen.io/jwor12427/embed/xxWoQej?default-tab=result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                    See the Pen <a href="https://codepen.io/jwor12427/pen/xxWoQej">
+                    Circle</a> by jwor12427 (<a href="https://codepen.io/jwor12427">@jwor12427</a>)
+                    on <a href="https://codepen.io">CodePen</a>.
+                </iframe>
+            </div>
+            <hr>
+            <div class="t_link">
+                <a href="https://codepen.io/jwor12427/pen/xxWoQej" target="_blank">코드팬 보기</a>
+            </div>
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:jwor124@naver.com">jwor124@naver.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+   
+</body>
+</html>

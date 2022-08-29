@@ -28,36 +28,123 @@
 
             
             <div class="t_iframe" style="min-height: 1000px; padding-top: 0;">
-                <iframe src="https://jwor12427.github.io/coding/javascript/effect/searchEffect01.html"></iframe>
+                <iframe src="https://jwor12427.github.io/coding/javascript/effect/sliderEffect01.html"></iframe>
             </div>
 
             <div class="t_link">
-                <a href="https://github.com/jwor12427/coding/blob/main/javascript/effect/searchEffect01.html" target="_blank">원본 소스 보기</a>
+                <a href="https://github.com/jwor12427/coding/blob/main/javascript/effect/sliderEffect01.html" target="_blank">원본 소스 보기</a>
             </div>
 
             <h3 class="t_tit2">Script</h3>
             <div class="t_code">
-<pre><code>
+<pre><code>const sliderWrap = document.querySelector(".slider__wrap");
+const sliderImg = sliderWrap.querySelector(".slider__img");
+const slider = sliderWrap.querySelectorAll(".slider");
 
+let currentIndex = 0;               //현재 보이는 이미지
+let sliderCount = slider.length     //이미지 갯수
+
+setInterval(() => {
+    let nextIndex = (currentIndex + 1) % sliderCount;  //다음 이미지
+    // 1 % 5 = 1, 2, 3, 4, 5, 6, 7, ..........
+    // 1, 2, 3, 4, 0, 1, 2, 3, 4, 0, ......
+
+    slider[currentIndex].style.opacity = "0";    //첫번째 이미지를 안보이게
+    slider[nextIndex].style.opacity = "1";      //두번째 이미지를 보이게
+        
+    currentIndex = nextIndex;
+
+},3000);
+// slider[1].style.opacity = "0";    //두째 이미지를 안보이게
+// slider[2].style.opacity = "1";    //세번째 이미지를 보이게
+
+// slider[2].style.opacity = "0";    //세번째 이미지를 안보이게
+// slider[3].style.opacity = "1";    //네번째 이미지를 보이게
+        
+// slider[3].style.opacity = "0";    //네번째 이미지를 안보이게
+// slider[4].style.opacity = "1";    //다섯번째 이미지를 보이게
+        
+// slider[4].style.opacity = "0";    //다섯번째 이미지를 안보이게
+// slider[0].style.opacity = "1";    //첫번째 이미지를 보이게
 </code></pre>
             </div>
-
+            <br>
+            <p class="t_desc">
+                스크립트를 이용하여 이미지를 반복 시켜 줍니다. 이때, 이미지는  0 ➡️ 1 ➡️ 2 ➡️ 3 ➡️ 4 ➡️ 0 순으로
+                반복해서 돌아야 합니다.
+            </p>
             <h3 class="t_tit2">HTML</h3>
             <div class="t_code">
-<pre><code>
-
+<pre><code>&lt;div class="slider__wrap"&gt;
+    &lt;div class="slider__img"&gt;
+        &lt;div class="slider"&gt;&lt;img src="../assets/img/effect_bg11.jpg" alt="이미지1"&gt;&lt;/div&gt;
+        &lt;div class="slider"&gt;&lt;img src="../assets/img/effect_bg12.jpg" alt="이미지2"&gt;&lt;/div&gt;
+        &lt;div class="slider"&gt;&lt;img src="../assets/img/effect_bg13.jpg" alt="이미지3"&gt;&lt;/div&gt;
+        &lt;div class="slider"&gt;&lt;img src="../assets/img/effect_bg14.jpg" alt="이미지4"&gt;&lt;/div&gt;
+        &lt;div class="slider"&gt;&lt;img src="../assets/img/effect_bg15.jpg" alt="이미지5"&gt;&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
 </code></pre>
             </div>
             <h3 class="t_tit2">CSS</h3>
+            <p class="t_desc">
+                🪄css를 이용하여 이미지를 한곳에 모아 줍니다. 이때, position 속성을 부여 해 줍니다.<br>
+                🪄이미지를 겹칠 때, 이미지의 순서가 반대로 바뀌는데 z-index의 속성을 이용해서 이미지의 순서를
+                바꿔 주도록 합니다✏️<br>
+                그후에는 가상요소를 이용하여 이미지의 제목을 붙여 줍니다.  
+            </p>
             <div class="result">
                 <details>
                     <summary>css보기</summary>
                         <div class="t_code">
-<pre><code>
-
+<pre><code>/* slider */
+.slider__wrap {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.slider__img {
+    position: relative;
+    width: 800px;
+    height: 480px;
+}
+.slider {
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.slider::before {
+    position: absolute;
+    left: 5px;
+    top: 5px;
+    background-color: rgba(0,0,0,0.4);
+    color: #fff;
+    padding: 5px 10px;
+}
+.slider:nth-child(1)::before {content: '이미지1';}
+.slider:nth-child(2)::before {content: '이미지2';}
+.slider:nth-child(3)::before {content: '이미지3';}
+.slider:nth-child(4)::before {content: '이미지4';}
+.slider:nth-child(5)::before {content: '이미지5';}
+.slider:nth-child(1) {z-index: 5;}
+.slider:nth-child(2) {z-index: 4;}
+.slider:nth-child(3) {z-index: 3;}
+.slider:nth-child(4) {z-index: 2;}
+.slider:nth-child(5) {z-index: 1;}
+    
+@media(max-width: 800px) {
+    .slider__img {
+        position: relative;
+        width: 400px;
+        height: 240px;
+    }
+}
 </code></pre>
                     </div>
                 </details>
+
             </div>
 
         </div>

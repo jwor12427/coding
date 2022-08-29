@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>사이트 만들기</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+
+</head>
+<body>
+    <header id="header">
+        <h1><a href="../index.html">사이트 만들기</a></h1>
+        <nav class="header_nav">
+
+        </nav>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">통통튀는 네모박스</h2>
+            <p class="t_desc2">
+                통통튀는 애니메이션 효과가 들어간 박스를 만들어 보아요✏️
+            </p>
+            <hr>
+
+            <h3 class="t_tit2">HTML</h3>
+            <div class="t_code">
+<pre><code>&lt;div class="box"&gt;&lt;/div&gt;
+</code></pre>
+            </div>
+            <p class="t_desc">
+                박스 한개를 만듭니다
+            </p>
+            <h3 class="t_tit2">CSS</h3>
+            <div class="t_code">
+<pre><code>body {
+    height: 100vh;
+    background-image: linear-gradient(to top, #B2A4FF,   #FFB4B4);
+    }
+.box {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+}
+.box::before {
+    content: '';
+    width: 50px;
+    height: 5px;
+    background: #000;
+    position: absolute;
+    top: 58px;
+    left: 0;
+    border-radius: 50%;
+    opacity: 0.2;
+    animation: shadow 0.6s linear infinite;
+}
+      
+@keyframes shadow {
+    0% {transform: scale(1, 1);}
+    50% {transform: scale(1.2, 1);}
+    100% {transform: scale(1, 1);}
+}
+      
+.box::after {
+    content: '';
+    background: #21E1E1;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    border-radius: 3px;
+    animation: load 0.6s linear infinite;
+}
+      
+@keyframes load {
+    17% {border-bottom-right-radius: 3px;}
+    25% {transform: translatey(9px) rotate(22.5deg);}
+    50% {transform: translatey(18px) scale(1, 0.9) rotate(45deg); border-bottom-right-radius: 40px;}
+    75% {transform: translatey(9px) rotate(67.5deg);}
+    100% {transform: translatey(0px) rotate(90deg);}
+}
+</code></pre>
+            </div>
+            <p class="t_box">
+                linear-gradient: (to 방향, #시작색상,   #끝 색상);
+            </p>
+            <p class="t_desc">
+                css에서 gradient속성은 색상이 아닌 크기가 없는 이미지 입니다. 따라서 gradient를 사용하려면
+                background-image 속성을 사용해야 합니다. linear-gradient는 선을 따라 그라데이션 색상을 넣는 방식 입니다.<br>
+                시작 색상과 끝 색상은 필수 적으로 선택해야 하며 중간에 색상을 더 추가 할 수 있습니다. 
+            </p>
+            
+
+
+            <h3 class="t_tit2">결과</h3>
+
+            <div class="t_iframe" style="min-height: 600px; padding-top: 0;">
+                <iframe height="400" style="width: 100%;" scrolling="no" title="Square" src="https://codepen.io/jwor12427/embed/yLKdQZg?default-tab=result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                    See the Pen <a href="https://codepen.io/jwor12427/pen/yLKdQZg">
+                    Square</a> by jwor12427 (<a href="https://codepen.io/jwor12427">@jwor12427</a>)
+                    on <a href="https://codepen.io">CodePen</a>.
+                  </iframe>
+            </div>
+            <hr>
+            <div class="t_link">
+                <a href="https://codepen.io/jwor12427/pen/yLKdQZg" target="_blank">코드팬 보기</a>
+            </div>
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:jwor124@naver.com">jwor124@naver.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+   
+</body>
+</html>

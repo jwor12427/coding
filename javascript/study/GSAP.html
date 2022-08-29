@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : 기본 규칙</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+
+</head>
+<body>
+    <header id="header">
+        <h1><a href="../index.html">Javascript</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="../javascript01.html">데이터 저장하기</a></li>
+                <li><a href="../javascript02.html">데이터 불러오기</a></li>
+                <li><a href="../javascript03.html">데이터 실행하기</a></li>
+                <li><a href="../javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="../javascript05.html">문자열 객체</a></li>
+                <li><a href="../javascript06.html">배열 객체</a></li>
+                <li><a href="../javascript07.html">수학 객체</a></li>
+                <li><a href="../javascript08.html">숫자 객체</a></li>
+                <li><a href="../javascript09.html">브라우저 객체</a></li>
+                <li><a href="../javascript10.html">요소 객체</a></li>
+                <li><a href="../javascript11.html">이벤트 객체</a></li>
+            </ul>
+            <ul class="study">
+                <li><a href="../study/basic.html">기본 규칙</a></li>
+                <li><a href="../study/operator.html">연산자</a></li>
+                <li><a href="../study/for.html">반복문</a></li>
+                <li><a href="../study/if.html">조건문</a></li>
+                <li><a href="../study/type.html">데이터 타입</a></li>
+                <li><a href="../study/function.html">함수</a></li>
+                <li><a href="../study/var.html">지역변수/전역변수</a></li>
+                <li><a href="../study/element.html">요소 선택</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">GSAP</h2>
+            <p class="t_desc2">
+                GSAP는 자바스크립트의 애니메이션 라이브러리 입니다. 보다 쉽고, 부드러운 애니메이션 효과를 가지고 있으며 자바스크립트를
+                쉽게 사용할 수 있습니다. 일반적으로 애니메이션을 구현하려면 CSS를 이용하거나 제이쿼리를 사용하는데, GSAP를 이용하면 복잡한 
+                애니메이션의 표현도 쉽게 할 수 있습니다.
+            </p>
+            <div class="t_iframe" style="min-height: 600px; padding-top: 0;">
+                <iframe height="500" style="width: 100%;" scrolling="no" title="Infinite scrolling, dragging, and snapping cards with GSAP and ScrollTrigger (smooth)" src="https://codepen.io/GreenSock/embed/vYRQzoM?default-tab=result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                    See the Pen <a href="https://codepen.io/GreenSock/pen/vYRQzoM">
+                    Infinite scrolling, dragging, and snapping cards with GSAP and ScrollTrigger (smooth)</a> by GreenSock (<a href="https://codepen.io/GreenSock">@GreenSock</a>)
+                    on <a href="https://codepen.io">CodePen</a>.
+                </iframe>
+            </div>
+            <hr>
+
+            <h3 class="t_tit2">link</h3>
+            <div class="t_code">
+<pre><code>&lt;script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/gsap.min.js"&gt;&lt;/script&gt;
+</code></pre>
+            </div>
+            <br>
+            <p class="t_desc">
+                CDN(데이터를 분산된 서버에서 받아오는 것)을 통해 GSAP를 사용할 수 있습니다.
+            </p>
+            <div class="t_link">
+                <a href="https://greensock.com/gsap/" target="_blank">홈페이지 가기</a>
+            </div>
+                <!-- // -->
+                <h3 class="t_tit2">javascript</h3>
+                <p class="t_desc">
+                    먼저 자바스크립트로 애니메이션을 설정 하는 방법입니다.
+                </p>
+            <div class="t_code">
+<pre><code >sliderInner.style.transform = "translateX("+ -800 * currentIndex +"px)";
+</code></pre>
+            </div>
+            <p class="t_box">
+                <i>sliderInner</i>.style.효과 = "translateX( )";
+            </p>
+            <h3 class="t_tit2">GSAP</h3>
+            <p class="t_desc">
+                다음은 GSAP를 이용해서 애니메이션을 적용 하는 방법 입니다.
+            </p>
+            <div class="t_code">
+<pre><code>gsap.to(".slider__inner", {
+    duration : 0.6,  기본값이 존재
+    x : - 800 * currentIndex
+});
+</code></pre>
+            </div>
+            <p class="t_box">
+                gsap.to("<i>.slider__inner</i>", {효과});
+            </p>
+            <p class="t_desc">
+                gsap는 to를 사용한 뒤, 선택할 요소를 받는데 자바스크립트의 querySelector와 같이 클래스를 
+                표시하게 됩니다.
+            </p>
+            <!-- // -->
+           
+
+
+            <!-- // -->
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:jwor124@naver.com">jwor124@naver.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+</body>
+</html>

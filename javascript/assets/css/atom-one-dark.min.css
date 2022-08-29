@@ -10,7 +10,7 @@ pre code.hljs {
     padding: 20px;
     line-height: 1.6;
     border-radius: 5px;
-    height: 100%;
+    height: 100vh;
 }
 
 code.hljs {
