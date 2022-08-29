@@ -111,6 +111,19 @@ a {
     color: #282936;
 }
 
+/* layout */
+#header {
+    z-index: 2000;
+}
+#main {
+    position: relative;
+    z-index: 1000;
+}
+#footer {
+    position: relative;
+    z-index: 3000;
+}
+
 /* footer */
 #footer .source {
     position: absolute;
@@ -237,7 +250,7 @@ a {
     margin-left: 3rem;
 }
 .modal__box .cont {
-    background-color: #282936;
+    background-color: #282c34;
     height: 100%;
     border-bottom-left-radius: 0.5rem;
     border-bottom-right-radius: 0.5rem;
@@ -327,7 +340,7 @@ a {
         display: none;
     }
 }
-@media(max-width: 600px) {
+@media(max-width: 800px) {
     #header {
         width: 100%;
         text-align: center;
