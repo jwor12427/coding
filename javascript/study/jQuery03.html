@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : 연산자</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+
+</head>
+<body>
+    <header id="header">
+        <h1><a href="../index.html">Javascript</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="../javascript01.html">데이터 저장하기</a></li>
+                <li><a href="../javascript02.html">데이터 불러오기</a></li>
+                <li><a href="../javascript03.html">데이터 실행하기</a></li>
+                <li><a href="../javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="../javascript05.html">문자열 객체</a></li>
+                <li><a href="../javascript06.html">배열 객체</a></li>
+                <li><a href="../javascript07.html">수학 객체</a></li>
+                <li><a href="../javascript08.html">숫자 객체</a></li>
+                <li><a href="../javascript09.html">브라우저 객체</a></li>
+                <li><a href="../javascript10.html">요소 객체</a></li>
+                <li><a href="../javascript11.html">이벤트 객체</a></li>
+            </ul>
+            <ul class="study">
+                <li><a href="basic.html">기본 규칙</a></li>
+                <li><a href="operator.html">연산자</a></li>
+                <li><a href="../study/for.html">반복문</a></li>
+                <li><a href="../study/if.html">조건문</a></li>
+                <li><a href="../study/type.html">데이터 타입</a></li>
+                <li><a href="../study/function.html">함수</a></li>
+                <li><a href="../study/var.html">지역변수/전역변수</a></li>
+                <li><a href="../study/element.html">요소 선택</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">jQuery 필터 선택자</h2>
+            <p class="t_desc2">
+                선택자에 ':'이 붙은 선택자를 필터 선택자 라고 합니다.
+            </p>
+
+            <hr>
+
+            <h3 class="t_tit2">필터 선택자의 종류</h3>
+            <table class="t_table">
+                <thead>
+                    <tr>
+                        <th>선택자 종류</th>
+                        <th colspan="2">설명</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="ce">:even</td>
+                        <td class="ce">$("tr:even")</td>
+                        <td>tr 요소 중 짝수 행만 선택합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">:odd</td>
+                        <td class="ce">$("tr:odd")</td>
+                        <td>tr 요소 중 홀수 행만 선택합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">:first</td>
+                        <td class="ce">$("td:first")</td>
+                        <td>첫 번째 td 요소를 선택합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">:last</td>
+                        <td class="ce">$("td:last")</td>
+                        <td>마지막 td 요소를 선택합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">:header</td>
+                        <td class="ce">$(":header")</td>
+                        <td>헤딩(h1~h6) 요소를 선택합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">:eq()</td>
+                        <td class="ce">$("li:eq(0)")</td>
+                        <td>index가 0인 li 요소를 선택합니다. index는 0번이 첫 번째 요소입니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">:gt()</td>
+                        <td class="ce">$("li:gt(0)")</td>
+                        <td>index가 0보다 큰 li요소들을 선택합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">:lt()</td>
+                        <td class="ce">$("li:lt(2)")</td>
+                        <td>index가 2보다 작은 li 요소들을 선택합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">:not()</td>
+                        <td class="ce">$("li:not(.bg)")</td>
+                        <td>li 요소 중에서 class명 bg가 아닌 li 요소를 선택합니다. </td>
+                    </tr>
+                    <tr>
+                        <td class="ce">:root</td>
+                        <td class="ce">$(":root")</td>
+                        <td>html을 의미합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">:animated</td>
+                        <td class="ce">$(":animated")</td>
+                        <td>움직이는 요소를 선택합니다.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h3 class="t_tit2">예제</h3>
+            <h3 class="t_tit3">jQuery</h3>
+            <div class="t_code">
+<pre><code>&lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"&gt;&lt;/script&gt;
+&lt;script&gt;
+    $(document).ready(function(){
+        $("tr:even").css("background", "red");
+        $("tr:odd").css("background", "orange");
+        $("td:first").css("background", "yellow");
+        $("td:last").css("background", "green");
+        $(":header").css("background", "blue");
+        $("li:eq(0)").css("background", "navy");
+        $("li:gt(0)").css("background", "purple");
+        $("li:lt(3)").css("border", "4px solid gray");
+        $(":root").css("background", "lightgray");
+        (function upDown() {
+            $("h2").slideToggle(2000, upDown);
+        })();
+        $(":animated").css("border", "4px solid darkred");
+    });
+&lt;/script&gt;
+</code></pre>
+            </div>
+            <h3 class="t_tit2">결과</h3>
+            <div class="t_iframe" style="min-height: 600px; padding-top: 0;">
+                <iframe height="500" style="width: 100%;" scrolling="no" title="jQuery03" src="https://codepen.io/jwor12427/embed/bGvXrMB?default-tab=result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                    See the Pen <a href="https://codepen.io/jwor12427/pen/bGvXrMB">
+                    jQuery03</a> by jwor12427 (<a href="https://codepen.io/jwor12427">@jwor12427</a>)
+                    on <a href="https://codepen.io">CodePen</a>.
+                </iframe>
+            </div>
+            <h3 class="t_tit2">자식 필터 선택자</h3>
+            <p class="t_desc">
+                자식 필터 선택자 중 'child'가 붙은 선택자는 요소가 순차적으로 나열되어 있을 때 사용하고, 'of-type'이 붙은 선택자는
+                요소가 순차적으로 나열되어 있지 않아도 동일 요소이면 선택이 가능합니다.
+            </p>
+            <table class="t_table">
+                <thead>
+                    <tr>
+                        <th>선택자 종류</th>
+                        <th colspan="2">설명</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="ce">:first-child</td>
+                        <td class="ce">$("span:first-child")</td>
+                        <td>첫 번째 span 요소를 선택합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">:last-child</td>
+                        <td class="ce">$("span:last-child")</td>
+                        <td>마지막 span 요소를 선택합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">:first-of-type</td>
+                        <td class="ce">$("span:first-of-type")</td>
+                        <td>span 요소 중에서 첫 번째 span 요소를 선택합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">:last-of-type</td>
+                        <td class="ce">$("span:last-of-type")</td>
+                        <td>span 요소 중에서 마지막 span 요소를 선택합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">:nth-child()</td>
+                        <td class="ce">$("span:nth-child(2)")</td>
+                        <td>두 번째 span 요소를 선택합니다.<br>
+                            nth-child(2n)은 2, 4, 6, ...번째 요소를 선택하고, nth-child(2n+1)은 1, 3, 5, ...번째 요소를 선택합니다.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="ce">:nth-last-child()</td>
+                        <td class="ce">$("span:nth-last-child(2)")</td>
+                        <td>마지막에서 두 번째 span 요소를 선택합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">:nth-of-type()</td>
+                        <td class="ce">$("span:nth-of-type(2)")</td>
+                        <td>span 요소 중에서 두 번째 요소를 선택합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">:nth-last-of-type()</td>
+                        <td class="ce">$("span:nth-last-of-type(2)")</td>
+                        <td>span 요소 중 마지막에서 두 번째 span 요소를 선택합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">:only-child</td>
+                        <td class="ce">$("div > span:only-child")</td>
+                        <td>div의 자식 요소에서 오직 span 요소가 하나만 있는 span 요소를 선택합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">:only-of-type</td>
+                        <td class="ce">$("div > span:only-of-type")</td>
+                        <td>div의 자식 요소에서 span 요소가 하나만 있는 span 요소를 선택합니다.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h3 class="t_tit2">예제 - jQuery</h3>
+            <div class="t_code">
+<pre><code>&lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"&gt;&lt;/script&gt;
+&lt;script&gt;
+    $(document).ready(function(){
+        $("#m1 > span:first-child").css("border", "2px solid red");
+        $("#m1 > span:last-child").css("border", "2px solid red");
+        $("#m2 > span:first-of-type").css("border", "2px solid orange");
+        $("#m2 > span:last-of-type").css("border", "2px solid orange");
+        $("#m3 > span:nth-child(1)").css("border", "2px solid yellow");
+        $("#m3 > span:nth-last-child(1)").css("border", "2px solid yellow");
+        $("#m4 > span:nth-of-type(1)").css("border", "2px solid green");
+        $("#m4 > span:nth-last-of-type(1)").css("border", "2px solid green");
+        $("#m5 > span:only-child").css("border", "2px solid blue");
+        $("#m6 > span:only-of-type").css("border", "2px solid navy");
+    })
+&lt;/script&gt;
+</code></pre>
+            </div>
+            <h3 class="t_tit2">결과</h3>
+            <div class="t_iframe" style="min-height: 600px; padding-top: 0;">
+                <iframe height="500" style="width: 100%;" scrolling="no" title="jQuery04" src="https://codepen.io/jwor12427/embed/ExEqwVJ?default-tab=result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                    See the Pen <a href="https://codepen.io/jwor12427/pen/ExEqwVJ">
+                    jQuery04</a> by jwor12427 (<a href="https://codepen.io/jwor12427">@jwor12427</a>)
+                    on <a href="https://codepen.io">CodePen</a>.
+                </iframe>
+            </div>
+            <h3 class="t_tit2">콘텐츠 필터 선택자</h3>
+            <table class="t_table">
+                <thead>
+                    <tr>
+                        <th>선택자 종류</th>
+                        <th colspan="2">설명</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="ce">:contains()</td>
+                        <td class="ce">$("p:contains('html')")</td>
+                        <td>p 요소 중에서 'html' 텍스트를 포함하고 있는 p요소를 선택합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">:empty</td>
+                        <td class="ce">$("div:empty")</td>
+                        <td>div 요소 중에서 자식 요소가 없는 div 요소를 선택합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">:parent</td>
+                        <td class="ce">$("span:parent")</td>
+                        <td>span 요소 중에서 자식 요소가 있는 span요소를 선택합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">:has()</td>
+                        <td class="ce">$("section:has(article)")</td>
+                        <td>section 요소 중에서 article을 하위 요소로 가지고 있는 section 요소를 선택합니다.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h3 class="t_tit2">예제 - jQuery</h3>
+            <div class="t_code">
+<pre><code>&lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"&gt;&lt;/script&gt;
+&lt;script&gt;
+  
+&lt;/script&gt;
+</code></pre>
+            </div>
+            <h3 class="t_tit2">결과</h3>
+            <div class="t_iframe" style="min-height: 600px; padding-top: 0;">
+                
+            </div>
+
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:jwor124@naver.com">jwor124@naver.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+   
+</body>
+</html>
