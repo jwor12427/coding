@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : 연산자</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+
+</head>
+<body>
+    <header id="header">
+        <h1><a href="../index.html">Javascript</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="../javascript01.html">데이터 저장하기</a></li>
+                <li><a href="../javascript02.html">데이터 불러오기</a></li>
+                <li><a href="../javascript03.html">데이터 실행하기</a></li>
+                <li><a href="../javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="../javascript05.html">문자열 객체</a></li>
+                <li><a href="../javascript06.html">배열 객체</a></li>
+                <li><a href="../javascript07.html">수학 객체</a></li>
+                <li><a href="../javascript08.html">숫자 객체</a></li>
+                <li><a href="../javascript09.html">브라우저 객체</a></li>
+                <li><a href="../javascript10.html">요소 객체</a></li>
+                <li><a href="../javascript11.html">이벤트 객체</a></li>
+            </ul>
+            <ul class="study">
+                <li><a href="basic.html">기본 규칙</a></li>
+                <li><a href="operator.html">연산자</a></li>
+                <li><a href="../study/for.html">반복문</a></li>
+                <li><a href="../study/if.html">조건문</a></li>
+                <li><a href="../study/type.html">데이터 타입</a></li>
+                <li><a href="../study/function.html">함수</a></li>
+                <li><a href="../study/var.html">지역변수/전역변수</a></li>
+                <li><a href="../study/element.html">요소 선택</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">jQuery 선택자</h2>
+            <p class="t_desc2">
+                제이쿼리는 html 요소와 관련된 기능구현이 많아 그만큼 CSS와 매우 밀접한 관계가 있습니다.
+            </p>
+            <h3 class="t_tit2">jQuery 선택자 형식</h3>
+            <table class="t_table">
+                <thead>
+                    <tr>
+                        <th>$("선택자")</th>
+                        <th>$("#gnb")</th>
+                    </tr>
+                </thead>
+            </table>
+            <hr>
+
+            <h3 class="t_tit2">기본 선택자</h3>
+            <table class="t_table">
+                <thead>
+                    <tr>
+                        <th>선택자 종류</th>
+                        <th colspan="2">설명</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="ce">태그 선택자</td>
+                        <td class="ce">$("p")</td>
+                        <td>p 요소를 선택합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">id 선택자</td>
+                        <td class="ce">$("#gnb")</td>
+                        <td>#gnb 요소를 선택합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">class 선택자</td>
+                        <td class="ce">$(".logo")</td>
+                        <td>.logo인 요소를 선택합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">자식 선택자</td>
+                        <td class="ce">$("#gnb > ul > li")</td>
+                        <td>#gnb의 자식 요소의 자식 요소 li를 선택합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">하위 선택자</td>
+                        <td class="ce">$("#gnb ul") </td>
+                        <td>#gnb의 하위에 있는 모든 ul 요소를 선택합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">인접 선택자</td>
+                        <td class="ce">$("#visual + #content")</td>
+                        <td>#visual 다음에 오는 #content 요소를 선택합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">형제 선택자</td>
+                        <td class="ce">$("#visual ~ #footer")</td>
+                        <td>#visual의 형제 요소 #footer를 선택합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">종속 선택자</td>
+                        <td class="ce">$("div.util")</td>
+                        <td>div 요소 중 class가 util인 요소를 선택합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">그룹 선택자</td>
+                        <td class="ce">$(".left, .right, #banner")</td>
+                        <td>.left, .right, #banner 요소들을 선택합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">전체 선택자</td>
+                        <td class="ce">$("*")</td>
+                        <td>모든 요소를 선택합니다.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h3 class="t_tit2">예제</h3>
+            <h3 class="t_tit3">jQuery</h3>
+            <div class="t_code">
+<pre><code>&lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"&gt;&lt;/script&gt;
+&lt;script&gt;
+    $(document).ready(function(){
+        $("p").css("border", "4px solid red");
+        $("#gnb").css("border", "4px solid orange");
+        $(".logo").css("border", "4px solid yellow");
+        $("#gnb > ul > li").css("border", "4px solid green");
+        $("#gnb ul").css("border", "4px solid blue");
+        $("#visual + #content").css("border", "4px solid navy");
+        $("#visual ~ #footer").css("border", "4px solid purple");
+        $("div.util").css("border", "4px solid pink");
+        $(".left, .right, #banner").css("border", "4px solid gray");
+    })
+&lt;/script&gt;
+</code></pre>
+            </div>
+            <h3 class="t_tit3">HTML</h3>
+            <div class="t_code">
+<pre><code>&lt;header id="header"&gt;
+    &lt;div class="logo"&gt;로고&lt;/div&gt;
+    &lt;div class="util"&gt;회원가입&lt;/div&gt;
+    &lt;nav id="gnb"&gt;
+        &lt;ul&gt;
+            &lt;li&gt;메뉴1
+                &lt;ul&gt;
+                    &lt;li&gt;메뉴1_1&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/nav&gt;
+    &lt;div id="visual"&gt;
+        &lt;p&gt;비주얼&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div id="content"&gt;
+        &lt;div class="left"&gt;왼쪽&lt;/div&gt;
+        &lt;div class="right"&gt;
+            &lt;div class="util"&gt;오른쪽&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div id="banner"&gt;배너&lt;/div&gt;
+    &lt;footer id="footer"&gt;푸터&lt;/footer&gt;
+&lt;/header&gt;
+</code></pre>
+            </div>
+            <h3 class="t_tit2">결과</h3>
+            <div class="t_iframe" style="min-height: 600px; padding-top: 0;">
+                <iframe height="500" style="width: 100%;" scrolling="no" title="jQuery01" src="https://codepen.io/jwor12427/embed/PoRMmre?default-tab=result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                    See the Pen <a href="https://codepen.io/jwor12427/pen/PoRMmre">
+                    jQuery01</a> by jwor12427 (<a href="https://codepen.io/jwor12427">@jwor12427</a>)
+                    on <a href="https://codepen.io">CodePen</a>.
+                </iframe>
+            </div>
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:jwor124@naver.com">jwor124@naver.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+   
+</body>
+</html>

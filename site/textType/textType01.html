@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>텍스트 타입01</title>
+
+    <style>
+        @import url('https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css');
+        .nexon {
+            font-family: 'NexonLv1Gothic';
+            font-weight: 400;
+        }
+
+        /* reset */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-weight: normal;
+        }
+
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+        /* common */
+        .container {
+            width: 1160px;
+            padding: 0 20px;
+            margin: 0 auto;
+        }
+
+        .section {
+            padding: 120px 0;
+            min-width: 1160px;
+        }
+
+        .section>h2 {
+            /* + 는 형제, > 는 자식 */
+            font-size: 50px;
+            line-height: 1;
+            text-align: center;
+            margin-bottom: 70px;
+        }
+
+        .section>p {
+            font-size: 16px;
+            text-align: center;
+            margin-bottom: 10px;
+            font-weight: 400;
+            text-decoration: underline;
+        }
+        /* textType01 */
+        .text__inner {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .text {
+            padding: 20px;
+            width: 29%;
+            height: 260px;
+            margin-bottom: 20px;
+            transition: all 0.5s ease;
+        }
+        .text:hover {
+            background-color: #f5f5f5;
+        }
+        .text .icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+            text-align: center;
+            line-height: 70px;
+        }
+        .text .icon.icon01 {
+            background-color: #ffeeb0c0;
+        }
+        .text .icon.icon02 {
+            background-color: #ffafafb2;
+        }
+        .text .icon.icon03 {
+            background-color: #ffc69ec0;
+        }
+        .text .icon.icon04 {
+            background-color: #c4ffedc3;
+        }
+        .text .icon.icon05 {
+            background-color: #c0e4ffb3;
+        }
+        .text .icon.icon06 {
+            background-color: #d2ceffb2;
+        }
+        .text__body .tit {
+            font-size: 24px;
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+        .text__body .desc {
+            font-size: 18px;
+            margin-bottom: 20px;
+            color: #666;
+            line-height: 1.4;
+        }
+        .text__body .btn {
+            font-size: 16px;
+            text-decoration: underline;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <section id="textType01" class="text__wrap nexon section">
+        <p>텍스트 유형01</p>
+        <h2>텍스트 유형 첫번째</h2>
+        <div class="text__inner container">
+            <article class="text">
+                <div class="icon icon01">
+                    <img src="img/icon01.svg" alt="텍스트 아이콘">
+                </div>
+                <div class="text__body">
+                    <h3 class="tit">텍스트로 보기</h3>
+                    <p class="desc">검색 이펙트를 보여줍니다.검색 이펙트를 보여줍니다.검색 이펙트를 보여줍니다.검색 이펙트를 보여줍니다.검색 이펙트를 보여..</p>
+                    <a class="btn" href="/">더보기</a>
+                </div>
+            </article>
+            <article class="text">
+                <div class="icon icon02">
+                    <img src="img/icon02.svg" alt="이미지 아이콘">
+                </div>
+                <div class="text__body">
+                    <h3 class="tit">이미지로 보기</h3>
+                    <p class="desc">검색 이펙트를 보여줍니다.검색 이펙트를 보여줍니다.검색 이펙트를 보여줍니다.검색 이펙트를 보여줍니다.검색 이펙트를 보여..</p>
+                    <a class="btn" href="/">더보기</a>
+                </div>
+            </article>
+            <article class="text">
+                <div class="icon icon03">
+                    <img src="img/icon03.svg" alt="카드 아이콘">
+                </div>
+                <div class="text__body">
+                    <h3 class="tit">카드로 보기</h3>
+                    <p class="desc">검색 이펙트를 보여줍니다.검색 이펙트를 보여줍니다.검색 이펙트를 보여줍니다.검색 이펙트를 보여줍니다.검색 이펙트를 보여..</p>
+                    <a class="btn" href="/">더보기</a>
+                </div>
+            </article>
+            <article class="text">
+                <div class="icon icon04">
+                    <img src="img/icon04.svg" alt="슬라이드 아이콘">
+                </div>
+                <div class="text__body">
+                    <h3 class="tit">슬라이드로 보기</h3>
+                    <p class="desc">검색 이펙트를 보여줍니다.검색 이펙트를 보여줍니다.검색 이펙트를 보여줍니다.검색 이펙트를 보여줍니다.검색 이펙트를 보여..</p>
+                    <a class="btn" href="/">더보기</a>
+                </div>
+            </article>
+            <article class="text">
+                <div class="icon icon05">
+                    <img src="img/icon05.svg" alt="동영상 아이콘">
+                </div>
+                <div class="text__body">
+                    <h3 class="tit">동영상으로 보기</h3>
+                    <p class="desc">검색 이펙트를 보여줍니다.검색 이펙트를 보여줍니다.검색 이펙트를 보여줍니다.검색 이펙트를 보여줍니다.검색 이펙트를 보여..</p>
+                    <a class="btn" href="/">더보기</a>
+                </div>
+            </article>
+            <article class="text">
+                <div class="icon icon06">
+                    <img src="img/icon06.svg" alt="섞는 아이콘">
+                </div>
+                <div class="text__body">
+                    <h3 class="tit">섞어 보기</h3>
+                    <p class="desc">검색 이펙트를 보여줍니다.검색 이펙트를 보여줍니다.검색 이펙트를 보여줍니다.검색 이펙트를 보여줍니다.검색 이펙트를 보여..</p>
+                    <a class="btn" href="/">더보기</a>
+                </div>
+            </article>
+        </div>
+    </section>
+</body>
+</html>

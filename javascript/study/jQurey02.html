@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : 연산자</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+
+</head>
+<body>
+    <header id="header">
+        <h1><a href="../index.html">Javascript</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="../javascript01.html">데이터 저장하기</a></li>
+                <li><a href="../javascript02.html">데이터 불러오기</a></li>
+                <li><a href="../javascript03.html">데이터 실행하기</a></li>
+                <li><a href="../javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="../javascript05.html">문자열 객체</a></li>
+                <li><a href="../javascript06.html">배열 객체</a></li>
+                <li><a href="../javascript07.html">수학 객체</a></li>
+                <li><a href="../javascript08.html">숫자 객체</a></li>
+                <li><a href="../javascript09.html">브라우저 객체</a></li>
+                <li><a href="../javascript10.html">요소 객체</a></li>
+                <li><a href="../javascript11.html">이벤트 객체</a></li>
+            </ul>
+            <ul class="study">
+                <li><a href="basic.html">기본 규칙</a></li>
+                <li><a href="operator.html">연산자</a></li>
+                <li><a href="../study/for.html">반복문</a></li>
+                <li><a href="../study/if.html">조건문</a></li>
+                <li><a href="../study/type.html">데이터 타입</a></li>
+                <li><a href="../study/function.html">함수</a></li>
+                <li><a href="../study/var.html">지역변수/전역변수</a></li>
+                <li><a href="../study/element.html">요소 선택</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">jQuery 속성 선택자</h2>
+            <p class="t_desc2">
+                제이쿼리는 html 요소와 관련된 기능구현이 많아 그만큼 CSS와 매우 밀접한 관계가 있습니다.
+            </p>
+
+            <hr>
+
+            <h3 class="t_tit2">속성 선택자</h3>
+            <table class="t_table">
+                <thead>
+                    <tr>
+                        <th>선택자 종류</th>
+                        <th colspan="2">설명</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="ce">요소[속성]</td>
+                        <td class="ce">$("span[class]")</td>
+                        <td>span 요소 중 class 속성을 가지고 있는 요소를 선택합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">요소[속성='값']</td>
+                        <td class="ce">$("span[class='abc']")</td>
+                        <td>span 요소 중 class가 'abc'인 요소를 선택합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">요소[속성!='값']</td>
+                        <td class="ce">$("span[class!='abc']")</td>
+                        <td>span 요소 중 class가 'abc'가 아닌 요소를 선택합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">요소[속성~='값']</td>
+                        <td class="ce">$("span[class~='abc']")</td>
+                        <td>span 요소 중 class가 'abc'를 포함하는 요소를 선택합니다. 'abc'앞뒤로 연결된 문자가 없어야 합나디.
+                            'bg abc'는 선택되나 'bg_abc'는 선택되지 않습니다.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="ce">요소[속성*='값']</td>
+                        <td class="ce">$("span[class*='abc']")</td>
+                        <td>span 요소 중 class가 'abc'를 포함하는 요소를 모두 선택합니다. 'bg abc', 'bg_abc' 모두를 선택합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">요소[속성|='값']</td>
+                        <td class="ce">$("span[class|='abc']")</td>
+                        <td>span 요소 중 class가 'abc'나 'abc-'로 시작하는 요소를 선택합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">요소[속성^='값']</td>
+                        <td class="ce">$("span[class^='abc']")</td>
+                        <td>span 요소 중 class가 'abc'로 시작하는 요소를 선택합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">요소[속성$='값']</td>
+                        <td class="ce">$("span[class$='abc']")</td>
+                        <td>span 요소 중 class가 'abc'로 끝나는 요소를 선택합니다.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h3 class="t_tit2">예제</h3>
+            <h3 class="t_tit3">jQuery</h3>
+            <div class="t_code">
+<pre><code>&lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"&gt;&lt;/script&gt;
+&lt;script&gt;
+    $(document).ready(function(){
+        $(".list1 > li[class='list_1']").css("border", "2px solid red");
+        $(".list1 > li[class!='list_1']").css("border", "2px solid orange");
+        $(".list2 > li[class~='list']").css("background", "yellow");
+        $(".list2 > li[class*='list']").css("border", "2px solid green");
+        $(".list3 > li[class|='list']").css("border", "2px solid blue");
+        $(".list4 > li[class^='list']").css("border", "2px solid navy");
+        $(".list4 > li[class$='bg']").css("background", "purple");
+    })
+&lt;/script&gt;
+</code></pre>
+            </div>
+            <h3 class="t_tit3">HTML</h3>
+            <div class="t_code">
+<pre><code>&lt;ul class="list1"&gt;
+    &lt;li class="list_1"&gt;내용1_1&lt;/li&gt;
+    &lt;li class="list_2"&gt;내용1_2&lt;/li&gt;
+    &lt;li class="list_3"&gt;내용1_3&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ul class="list2"&gt;
+    &lt;li class="list bg"&gt;내용2_1&lt;/li&gt;
+    &lt;li class="list_1"&gt;내용2_2&lt;/li&gt;
+    &lt;li class="list_2"&gt;내용2_3&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ul class="list3"&gt;
+    &lt;li class="list"&gt;내용3_1&lt;/li&gt;
+    &lt;li class="list-1"&gt;내용3_2&lt;/li&gt;
+    &lt;li class="list-bg"&gt;내용3_3&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ul class="list4"&gt;
+    &lt;li class="list"&gt;내용4_1&lt;/li&gt;
+    &lt;li class="list-1"&gt;내용4_2&lt;/li&gt;
+    &lt;li class="list-bg"&gt;내용4_3&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+            </div>
+            <h3 class="t_tit2">결과</h3>
+            <div class="t_iframe" style="min-height: 600px; padding-top: 0;">
+                <iframe height="500" style="width: 100%;" scrolling="no" title="jQuery02" src="https://codepen.io/jwor12427/embed/GRxVEoG?default-tab=result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                    See the Pen <a href="https://codepen.io/jwor12427/pen/GRxVEoG">
+                    jQuery02</a> by jwor12427 (<a href="https://codepen.io/jwor12427">@jwor12427</a>)
+                    on <a href="https://codepen.io">CodePen</a>.
+                </iframe>
+            </div>
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:jwor124@naver.com">jwor124@naver.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+   
+</body>
+</html>
