@@ -1,16 +1,11 @@
-pre {
-    height: 100%;
-}
-code {
-    height: 100%;
-}
+
 pre code.hljs {
     display: block;
     overflow-x: auto;
     padding: 20px;
     line-height: 1.6;
     border-radius: 5px;
-    height: 100vh;
+    height: 100%;
 }
 
 code.hljs {

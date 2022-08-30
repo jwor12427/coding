@@ -169,11 +169,11 @@ a {
 .modal__box {
     width: 70%;
     height: 70vh;
-    overflow-y: auto;
+    /* overflow-y: auto; */
     border-radius: 0.6rem;
     box-shadow: 0 10px 20px -5px hsl(180deg 2% 10%);
     transform: scale(0);
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 .modal__box .title {
     padding-inline: 1rem;
