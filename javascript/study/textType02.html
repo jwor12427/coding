@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>텍스트 타입01</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+
+</head>
+<body>
+    <header id="header">
+        <h1><a href="../index.html">사이트 만들기</a></h1>
+        <nav class="header_nav">
+
+        </nav>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">사이트 만들기(텍스트 유형 - 01)</h2>
+            <p class="t_desc2">
+                텍스트 형식의 사이트를 만들어 봅시다✏️
+            </p>
+            <div class="t_iframe">
+                <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FxvxkY6Zwec6xL3NM6lclkd%2F%25EC%2582%25AC%25EC%259D%25B4%25ED%258A%25B8-%25EB%25A7%258C%25EB%2593%25A4%25EA%25B8%25B02%3Fnode-id%3D75%253A343" allowfullscreen></iframe>
+            </div>
+            <hr>
+
+            <h3 class="t_tit2">CSS</h3>
+            <div class="t_code">
+<pre><code>/* textType01 */
+.text__inner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.text {
+    padding: 20px;
+    width: 29%;
+    height: 260px;
+    margin-bottom: 20px;
+    transition: all 0.5s ease;
+}
+.text:hover {
+    background-color: #f5f5f5;
+}
+.text .icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    text-align: center;
+    line-height: 70px;
+}
+.text .icon.icon01 {
+    background-color: #ffeeb0c0;
+}
+.text .icon.icon02 {
+    background-color: #ffafafb2;
+}
+.text .icon.icon03 {
+    background-color: #ffc69ec0;
+}
+.text .icon.icon04 {
+    background-color: #c4ffedc3;
+}
+.text .icon.icon05 {
+    background-color: #c0e4ffb3;
+}
+.text .icon.icon06 {
+    background-color: #d2ceffb2;
+}
+.text__body .tit {
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+.text__body .desc {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: #666;
+    line-height: 1.4;
+}
+.text__body .btn {
+    font-size: 16px;
+    text-decoration: underline;
+    color: #666;
+}
+</code></pre>
+            </div>
+            <p class="t_desc">
+            
+            </p>
+            <h3 class="t_tit2">HTML</h3>
+            <div class="t_code">
+<pre><code>&lt;section id="textType01" class="text__wrap nexon section"&gt;
+    &lt;p&gt;텍스트 유형01&lt;/p&gt;
+    &lt;h2&gt;텍스트 유형 첫번째&lt;/h2&gt;
+    &lt;div class="text__inner container"&gt;
+        &lt;article class="text"&gt;
+            &lt;div class="icon icon01"&gt;
+                &lt;img src="img/icon01.svg" alt="텍스트 아이콘"&gt;
+            &lt;/div&gt;
+            &lt;div class="text__body"&gt;
+                &lt;h3 class="tit"&gt;텍스트로 보기&lt;/h3&gt;
+                &lt;p class="desc"&gt;검색 이펙트를 보여줍니다.검색 이펙트를 보여줍니다.검색 이펙트를 보여줍니다.검색 이펙트를 보여줍니다.검색 이펙트를 보여..&lt;/p&gt;
+                &lt;a class="btn" href="/"&gt;더보기&lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/article&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+</code></pre>
+            </div>
+            
+            <hr>
+            <h3 class="t_tit2">결과</h3>
+
+            <div class="t_iframe" style="min-height: 1000px; padding-top: 0;">
+                <iframe src="https://jwor12427.github.io/coding/site/textType/textType01.html"></iframe>
+            </div>
+            <hr>
+            <div class="t_link">
+                <a href="https://github.com/jwor12427/coding/blob/main/site/textType/textType01.html" target="_blank">원본 소스 보기</a>
+                <a href="https://jwor12427.github.io/coding/site/textType/textType01.html" target="_blank">페이지 보기</a>
+            </div>
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:jwor124@naver.com">jwor124@naver.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+   
+</body>
+</html>

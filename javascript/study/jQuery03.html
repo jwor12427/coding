@@ -276,14 +276,166 @@
             <div class="t_code">
 <pre><code>&lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"&gt;&lt;/script&gt;
 &lt;script&gt;
-  
+    $(document).ready(function(){
+        $("#m1 > p:contains('html')").css("border", "4px solid red");
+        $("#m1 > p:empty").css("border", "4px solid orange");
+        $("#m2 > span:parent").css("border", "4px solid yellow");
+        $("#m3 > section:has(article)").css("border", "4px solid green");
+    })
 &lt;/script&gt;
 </code></pre>
             </div>
             <h3 class="t_tit2">결과</h3>
             <div class="t_iframe" style="min-height: 600px; padding-top: 0;">
-                
+                <iframe height="500" style="width: 100%;" scrolling="no" title="jQuery05" src="https://codepen.io/jwor12427/embed/OJvKvgr?default-tab=result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                    See the Pen <a href="https://codepen.io/jwor12427/pen/OJvKvgr">
+                    jQuery05</a> by jwor12427 (<a href="https://codepen.io/jwor12427">@jwor12427</a>)
+                    on <a href="https://codepen.io">CodePen</a>.
+                </iframe>
             </div>
+            <h3 class="t_tit2">폼 필터 선택자</h3>
+            <table class="t_table">
+                <thead>
+                    <tr>
+                        <th>선택자 종류</th>
+                        <th colspan="2">설명</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="ce">:text</td>
+                        <td class="ce">$("input:text")</td>
+                        <td>&lt;input type="text"&gt; 요소를 선택합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">:password</td>
+                        <td class="ce">$("input:password")</td>
+                        <td>&lt;input type="password"&gt; 요소를 선택합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">:image</td>
+                        <td class="ce">$("span:parent")</td>
+                        <td>&lt;input type="image"&gt; 요소를 선택합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">:file</td>
+                        <td class="ce">$("input:file")</td>
+                        <td>&lt;input type="file"&gt; 요소를 선택합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">:button</td>
+                        <td class="ce">$(":button")</td>
+                        <td>&lt;input type="button"&gt;, &lt;button&gt; 요소를 선택합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">:checkbox</td>
+                        <td class="ce">$("input:checkbox")</td>
+                        <td>&lt;input type="checkbox"&gt; 요소를 선택합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">:radio</td>
+                        <td class="ce">$("input:radio")</td>
+                        <td>&lt;input type="radio"&gt; 요소를 선택합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">:submit</td>
+                        <td class="ce">$("input:submit")</td>
+                        <td>&lt;input type="submit"&gt; 요소를 선택합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">:reset</td>
+                        <td class="ce">$("input:reset")</td>
+                        <td>&lt;input type="reset"&gt; 요소를 선택합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">:input</td>
+                        <td class="ce">$(":input")</td>
+                        <td>모든 &lt;input&gt; 요소를 선택합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">:checked</td>
+                        <td class="ce">$("input:checked")</td>
+                        <td>&lt;input&gt; 요소에 checked 속성이 있는 요소를 선택합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">:selected</td>
+                        <td class="ce">$("option:selected")</td>
+                        <td>&lt;option&gt; 요소에 selected 속성이 있는 요소를 선택합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">:focus</td>
+                        <td class="ce">$("input:focus")</td>
+                        <td>현재 &lt;input&gt;에 포커스가 있는 요소를 선택합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">:disabled</td>
+                        <td class="ce">$("input:disabled")</td>
+                        <td>&lt;input&gt; 요소에 disabled 속성이 있는 요소를 선택합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">:enabled</td>
+                        <td class="ce">$("input:enabled")</td>
+                        <td>&lt;input&gt; 요소 중 disabled가 아닌 요소를 선택합니다.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h3 class="t_tit2">예제 - jQuery</h3>
+            <div class="t_code">
+<pre><code>&lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"&gt;&lt;/script&gt;
+&lt;script&gt;
+    $(document).ready(function(){
+        $("input:text").css("background", "red");
+        $("input:password").css("background", "orange");
+        $(":button").css("background", "yellow");
+        $("input:checked + label").css("background", "green");
+        $("option:selected").css("color", "blue");
+        $("textarea:disabled").css("background", "pink");
+    });
+&lt;/script&gt;
+</code></pre>
+            </div>
+            <h3 class="t_tit2">결과</h3>
+            <div class="t_iframe" style="min-height: 600px; padding-top: 0;">
+                <iframe height="500" style="width: 100%;" scrolling="no" title="Untitled" src="https://codepen.io/jwor12427/embed/rNdXdXw?default-tab=result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                    See the Pen <a href="https://codepen.io/jwor12427/pen/rNdXdXw">
+                    Untitled</a> by jwor12427 (<a href="https://codepen.io/jwor12427">@jwor12427</a>)
+                    on <a href="https://codepen.io">CodePen</a>.
+                </iframe>
+            </div>
+            <h3 class="t_tit2">가시성 필터 선택자</h3>
+            <table class="t_table">
+                <thead>
+                    <tr>
+                        <th>선택자 종류</th>
+                        <th colspan="2">설명</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="ce">:hidden</td>
+                        <td class="ce">div:hidden</td>
+                        <td>div 요소 중 hidden인 요소를 선택합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">:visible</td>
+                        <td class="ce">div:visible</td>
+                        <td>div 요소 중 visible인 요소를 선택합니다.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h3 class="t_tit2">예제 - jQuery</h3>
+            <div class="t_code">
+<pre><code>&lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"&gt;&lt;/script&gt;
+&lt;script&gt;
+    $(document).ready(function(){
+        console.log($("div:hidden").text());
+        $("div:visible").css("background", "orange");
+    });
+&lt;/script&gt;
+</code></pre>
+            </div>
+            <h3 class="t_tit2">결과</h3>
+
 
         </div>
     </main>

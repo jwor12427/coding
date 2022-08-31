@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>텍스트 타입02</title>
+
+    <style>
+        @import url('https://webfontworld.github.io/gmarket/GmarketSans.css');
+        .gmarket {
+            font-family: 'GmarketSans';
+            font-weight: 400;
+        }
+
+        /* reset */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-weight: normal;
+        }
+
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+        /* common */
+        .container {
+            width: 1160px;
+            padding: 0 20px;
+            margin: 0 auto;
+        }
+
+        .section {
+            padding: 120px 0;
+            min-width: 1160px;
+        }
+        .text__logo {
+            font-size: 16px;
+            margin-bottom: 20px;
+            width: 135px;
+            height: 25px;
+            background-color: #3F80FF;
+            color: #fff;
+            border-radius: 10px;
+            text-align: center;
+            line-height: 25px;
+        }
+        .section h2 {
+            font-size: 50px;
+            line-height: 1;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .section p {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        /* textType02 */
+        .text__inner {
+            display: flex;
+            
+        }
+        .text__header {
+            width: 29%;
+            padding-right: 40px;
+        }
+        .text__main {
+            width: 68%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .text__main .text__box {
+            width: 49%;
+            margin-bottom: 50px;
+        }
+        .text__main .icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 75px;
+            margin-bottom: 10px;
+        }
+        .text__main .icon.icon1 {
+            background-color: #72C4FF;
+        }
+        .text__main .icon.icon2 {
+            background-color: #9E95FC;
+        }
+        .text__main .icon.icon3 {
+            background-color: #A0DECC;
+        }
+        .text__main .icon.icon4 {
+            background-color: #DAA6DE;
+        }
+        .text__main .tit {
+            font-size: 24px;
+            font-weight: 500;
+            margin-bottom: 20px;
+        }
+        .text__main .desc {
+            font-size: 18px;
+            line-height: 1.5;
+            font-weight: 300;
+        }
+    </style>
+</head>
+<body>
+    <section id="textType02" class="text__wrap gmarket section">
+        <div class="text__inner container">
+            <article class="text__header">
+                <div class="text__logo">ANIMAL</div>
+                <h2 class="text__tit">바다 동물들 이야기</h2>
+                <p class="text__sub">바다 동물들의 이야기를 소개하는 페이지 입니다. <br>재미있게 즐기시길 바랍니다.</p>
+            </article>
+            <div class="text__main">
+                <article class="text__box">
+                    <div class="icon icon1">
+                        <img src="../textType/img/text02_01.svg" alt="아이콘">
+                    </div>
+                    <h3 class="tit">상어와 고래</h3>
+                    <p class="desc">고래는 수중생활을 하는 포유류 입니다. 폐호흡을 하는 것이 포유류의 가장큰 특징입니다. 상어는 고래와 다르게 아가미로 호흡하는 어...</p>
+                </article>
+                <article class="text__box">
+                    <div class="icon icon2">
+                        <img src="../textType/img/text02_02.svg" alt="아이콘">
+                    </div>
+                    <h3 class="tit">문어와 오징어</h3>
+                    <p class="desc">고래는 수중생활을 하는 포유류 입니다. 폐호흡을 하는 것이 포유류의 가장큰 특징입니다. 상어는 고래와 다르게 아가미로 호흡하는 어...</p>
+                </article>
+                <article class="text__box">
+                    <div class="icon icon3">
+                        <img src="../textType/img/text02_03.svg" alt="아이콘">
+                    </div>
+                    <h3 class="tit">거북이는 느릴까?</h3>
+                    <p class="desc">고래는 수중생활을 하는 포유류 입니다. 폐호흡을 하는 것이 포유류의 가장큰 특징입니다. 상어는 고래와 다르게 아가미로 호흡하는 어...</p>
+                </article>
+                <article class="text__box">
+                    <div class="icon icon4">
+                        <img src="../textType/img/text02_04.svg" alt="아이콘">
+                    </div>
+                    <h3 class="tit">해파리의 종류</h3>
+                    <p class="desc">고래는 수중생활을 하는 포유류 입니다. 폐호흡을 하는 것이 포유류의 가장큰 특징입니다. 상어는 고래와 다르게 아가미로 호흡하는 어...</p>
+                </article>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
