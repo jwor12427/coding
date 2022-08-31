@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>텍스트 타입01</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+
+</head>
+<body>
+    <header id="header">
+        <h1><a href="../index.html">사이트 만들기</a></h1>
+        <nav class="header_nav">
+
+        </nav>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">사이트 만들기(텍스트 유형 - 03)</h2>
+            <p class="t_desc2">
+                텍스트 형식의 사이트를 만들어 봅시다✏️
+            </p>
+            <div class="t_iframe">
+                <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FxvxkY6Zwec6xL3NM6lclkd%2F%25EC%2582%25AC%25EC%259D%25B4%25ED%258A%25B8-%25EB%25A7%258C%25EB%2593%25A4%25EA%25B8%25B02%3Fnode-id%3D136%253A10094" allowfullscreen></iframe>
+            </div>
+            <hr>
+
+            <h3 class="t_tit2">CSS</h3>
+            <div class="t_code">
+<pre><code>body {
+    background-color: #EFFAFF;
+}
+/* textType03 */
+.text__inner {
+    display: flex;
+    justify-content: space-between;
+}
+.text {
+    width: 29%;
+    height: 400px;
+    padding: 20px;
+    background-color: #fff;
+}
+.text .text__desc {
+    line-height: 1.5;
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+.text__main {
+    border-top: 1px dashed #ccc;
+    border-bottom: 1px dashed #ccc;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+.text .icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 70px;
+    margin-right: 20px;
+}
+.text:nth-child(1) .icon {
+    background-color: #8A80FF;
+}
+.text:nth-child(2) .icon {
+    background-color: #F6B568;
+}
+.text:nth-child(3) .icon {
+    background-color: #FF8080;
+}
+.info {
+    display: flex;
+    flex-direction: column;
+}
+.user {
+    margin-bottom: 10px;
+    font-size: 24px;
+}
+.user em {
+    font-style: normal;
+    font-size: 16px;
+    font-weight: 200;
+    margin-left: 5px;
+}
+.text__btn {
+    display: block;
+    text-align: center;
+    width: 115px;
+    height: 30px;
+    background-color: #5C6BF3;
+    border-radius: 20px;
+    line-height: 30px;
+    color: #fff;
+    margin: 0 auto;
+    font-size: 16px;
+}
+</code></pre>
+            </div>
+            <p class="t_desc">
+            
+            </p>
+            <h3 class="t_tit2">HTML</h3>
+            <div class="t_code">
+<pre><code>&lt;section id="textType03" class="text__wrap nexon section"&gt;
+    &lt;h2&gt;이야기 후기&lt;/h2&gt;
+    &lt;p&gt;바다 생물들의 다양한 이야기를 소개합니다.&lt;/p&gt;
+    &lt;div class="text__inner container"&gt;
+        &lt;article class="text"&gt;
+            &lt;p class="text__desc"&gt;
+                다양한 바다 동물들의 이야기를 알게 되어서 너무 재미있게 보았어요. 
+                몰랐던것을 자세하게 알게되어서 좋았고, 알았던 것은 더 자세하게 알 수 있는 좋은 시간이었습니다. 주위의 지인들에게도 꼭 추천하고 싶어요^^! 
+                다음에도 재미있는 이야기 많이 들고 와주시길 바랄게요~~
+            &lt;/p&gt;
+            &lt;div class="text__main"&gt;
+                &lt;figure class="icon"&gt;
+                    &lt;img src="../textType/img/text03_01.svg" alt="아이콘"&gt;
+                &lt;/figure&gt;
+                &lt;div class="info"&gt;
+                    &lt;h3 class="user"&gt;동물쪼아&lt;em&gt;추천 애디터&lt;/em&gt;&lt;/h3&gt;
+                    &lt;figure class="good"&gt;
+                        &lt;img src="../textType/img/text03_02.png" alt="좋아요"&gt;
+                        &lt;img src="../textType/img/text03_02.png" alt="좋아요"&gt;
+                        &lt;img src="../textType/img/text03_02.png" alt="좋아요"&gt;
+                        &lt;img src="../textType/img/text03_02.png" alt="좋아요"&gt;
+                        &lt;img src="../textType/img/text03_02.png" alt="좋아요"&gt;
+                    &lt;/figure&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;span class="text__btn"&gt;&lt;a href="#"&gt;&lt;/a&gt;자세히 보기&lt;/span&gt;
+        &lt;/article&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+</code></pre>
+            </div>
+            
+            <hr>
+            <h3 class="t_tit2">결과</h3>
+
+            <div class="t_iframe" style="min-height: 1000px; padding-top: 0;">
+                <iframe src="https://jwor12427.github.io/coding/site/textType/textType03.html"></iframe>
+            </div>
+            <hr>
+            <div class="t_link">
+                <a href="https://github.com/jwor12427/coding/blob/main/site/textType/textType03.html" target="_blank">원본 소스 보기</a>
+                <a href="https://jwor12427.github.io/coding/site/textType/textType03.html" target="_blank">페이지 보기</a>
+            </div>
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:jwor124@naver.com">jwor124@naver.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+   
+</body>
+</html>

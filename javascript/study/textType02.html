@@ -19,74 +19,64 @@
     <!-- //header -->
     <main id="main">
         <div class="document">
-            <h2 class="t_tit">사이트 만들기(텍스트 유형 - 01)</h2>
+            <h2 class="t_tit">사이트 만들기(텍스트 유형 - 02)</h2>
             <p class="t_desc2">
                 텍스트 형식의 사이트를 만들어 봅시다✏️
             </p>
             <div class="t_iframe">
-                <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FxvxkY6Zwec6xL3NM6lclkd%2F%25EC%2582%25AC%25EC%259D%25B4%25ED%258A%25B8-%25EB%25A7%258C%25EB%2593%25A4%25EA%25B8%25B02%3Fnode-id%3D75%253A343" allowfullscreen></iframe>
+                <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FxvxkY6Zwec6xL3NM6lclkd%2F%25EC%2582%25AC%25EC%259D%25B4%25ED%258A%25B8-%25EB%25A7%258C%25EB%2593%25A4%25EA%25B8%25B02%3Fnode-id%3D75%253A12290" allowfullscreen></iframe>
             </div>
             <hr>
 
             <h3 class="t_tit2">CSS</h3>
             <div class="t_code">
-<pre><code>/* textType01 */
+<pre><code>/* textType02 */
 .text__inner {
+    display: flex;
+}
+.text__header {
+    width: 28%;
+    padding-right: 40px;
+}
+.text__main {
+    width: 68%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
 }
-.text {
-    padding: 20px;
-    width: 29%;
-    height: 260px;
-    margin-bottom: 20px;
-    transition: all 0.5s ease;
+.text__main .text__box {
+    width: 47%;
+    margin-bottom: 50px;
 }
-.text:hover {
-    background-color: #f5f5f5;
-}
-.text .icon {
+.text__main .icon {
     width: 60px;
     height: 60px;
     border-radius: 50%;
-    margin-bottom: 10px;
     text-align: center;
-    line-height: 70px;
+    line-height: 75px;
+    margin-bottom: 10px;
 }
-.text .icon.icon01 {
-    background-color: #ffeeb0c0;
+.text__main .icon.icon1 {
+    background-color: #72C4FF;
 }
-.text .icon.icon02 {
-    background-color: #ffafafb2;
+.text__main .icon.icon2 {
+    background-color: #9E95FC;
 }
-.text .icon.icon03 {
-    background-color: #ffc69ec0;
+.text__main .icon.icon3 {
+    background-color: #A0DECC;
 }
-.text .icon.icon04 {
-    background-color: #c4ffedc3;
+.text__main .icon.icon4 {
+    background-color: #DAA6DE;
 }
-.text .icon.icon05 {
-    background-color: #c0e4ffb3;
-}
-.text .icon.icon06 {
-    background-color: #d2ceffb2;
-}
-.text__body .tit {
+.text__main .tit {
     font-size: 24px;
     font-weight: 500;
-    margin-bottom: 10px;
-}
-.text__body .desc {
-    font-size: 18px;
     margin-bottom: 20px;
-    color: #666;
-    line-height: 1.4;
 }
-.text__body .btn {
-    font-size: 16px;
-    text-decoration: underline;
-    color: #666;
+.text__main .desc {
+    font-size: 18px;
+    line-height: 1.5;
+    font-weight: 300;
 }
 </code></pre>
             </div>
@@ -95,20 +85,22 @@
             </p>
             <h3 class="t_tit2">HTML</h3>
             <div class="t_code">
-<pre><code>&lt;section id="textType01" class="text__wrap nexon section"&gt;
-    &lt;p&gt;텍스트 유형01&lt;/p&gt;
-    &lt;h2&gt;텍스트 유형 첫번째&lt;/h2&gt;
+<pre><code>&lt;section id="textType02" class="text__wrap gmarket section"&gt;
     &lt;div class="text__inner container"&gt;
-        &lt;article class="text"&gt;
-            &lt;div class="icon icon01"&gt;
-                &lt;img src="img/icon01.svg" alt="텍스트 아이콘"&gt;
-            &lt;/div&gt;
-            &lt;div class="text__body"&gt;
-                &lt;h3 class="tit"&gt;텍스트로 보기&lt;/h3&gt;
-                &lt;p class="desc"&gt;검색 이펙트를 보여줍니다.검색 이펙트를 보여줍니다.검색 이펙트를 보여줍니다.검색 이펙트를 보여줍니다.검색 이펙트를 보여..&lt;/p&gt;
-                &lt;a class="btn" href="/"&gt;더보기&lt;/a&gt;
-            &lt;/div&gt;
+        &lt;article class="text__header"&gt;
+            &lt;div class="text__logo"&gt;ANIMAL&lt;/div&gt;
+            &lt;h2 class="text__tit"&gt;바다 동물들 이야기&lt;/h2&gt;
+            &lt;p class="text__sub"&gt;바다 동물들의 이야기를 소개하는 페이지 입니다. &lt;br&gt;재미있게 즐기시길 바랍니다.&lt;/p&gt;
         &lt;/article&gt;
+        &lt;div class="text__main"&gt;
+            &lt;article class="text__box"&gt;
+                &lt;div class="icon icon1"&gt;
+                    &lt;img src="../textType/img/text02_01.svg" alt="아이콘"&gt;
+                &lt;/div&gt;
+                &lt;h3 class="tit"&gt;상어와 고래&lt;/h3&gt;
+                &lt;p class="desc"&gt;고래는 수중생활을 하는 포유류 입니다. 폐호흡을 하는 것이 포유류의 가장큰 특징입니다. 상어는 고래와 다르게 아가미로 호흡하는 어...&lt;/p&gt;
+            &lt;/article&gt;
+        &lt;/div&gt;
     &lt;/div&gt;
 &lt;/section&gt;
 </code></pre>
@@ -118,12 +110,12 @@
             <h3 class="t_tit2">결과</h3>
 
             <div class="t_iframe" style="min-height: 1000px; padding-top: 0;">
-                <iframe src="https://jwor12427.github.io/coding/site/textType/textType01.html"></iframe>
+                <iframe src="https://jwor12427.github.io/coding/site/textType/textType02.html"></iframe>
             </div>
             <hr>
             <div class="t_link">
-                <a href="https://github.com/jwor12427/coding/blob/main/site/textType/textType01.html" target="_blank">원본 소스 보기</a>
-                <a href="https://jwor12427.github.io/coding/site/textType/textType01.html" target="_blank">페이지 보기</a>
+                <a href="https://github.com/jwor12427/coding/blob/main/site/textType/textType02.html" target="_blank">원본 소스 보기</a>
+                <a href="https://jwor12427.github.io/coding/site/textType/textType02.html" target="_blank">페이지 보기</a>
             </div>
         </div>
     </main>
