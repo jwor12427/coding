@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : 데이터 제어하기</title>
+ 
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <header id="header">
+        <h1><a href="index.html">Javascript</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="javascript01.html">데이터 저장하기</a></li>
+                <li><a href="javascript02.html">데이터 불러오기</a></li>
+                <li><a href="javascript03.html">데이터 실행하기</a></li>
+                <li><a href="javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="javascript05.html">문자열 객체</a></li>
+                <li><a href="javascript06.html">배열 객체</a></li>
+                <li><a href="javascript07.html">수학 객체</a></li>
+                <li><a href="javascript08.html">숫자 객체</a></li>
+                <li><a href="javascript09.html">브라우저 객체</a></li>
+                <li><a href="javascript10.html">요소 객체</a></li>
+                <li><a href="javascript11.html">이벤트 객체</a></li>
+                <li class="active"><a href="javascript12.html">제이쿼리</a></li>
+            </ul>
+            <ul class="effect">
+                <li><a href="effect/searchEffect.html">검색 효과</a></li>
+                <li><a href="effect/quizEffect.html">퀴즈 효과</a></li>
+                <li><a href="effect/dataEffect.html">데이터 효과</a></li>
+                <li><a href="effect/mouseEffect.html">마우스 효과</a></li>
+                <li><a href="effect/sliderEffect.html">슬라이드 효과</a></li>
+                <li><a href="effect/parallaxEffect.html">패랠랙스 효과</a></li>
+                <li><a href="effect/gameEffect.html">게임 효과</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+
+    <main id="main">
+        <div class="container">
+            <div class="main_menu">
+                <ul>
+                    <li><a href="#">01. 제이쿼리</a></li>
+                </ul>
+            </div>
+            <!-- ㅡmain_menu -->
+            <div class="main_sample">
+                <div id="sample01" class="sample">
+                    <h3>01. 제이쿼리</h3>
+                    <p>
+                        
+                    </p>
+                    <div class="table left">
+                        <table>
+                            <colgroup>
+                                <col>
+                                <col>
+                                <col>
+                                <col>
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th>종류</th>
+                                    <th>제이쿼리</th>
+                                    <th>자바스크립트</th>
+                                    <th>설명</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td rowspan="5" class="ce">기본 선택자</td>
+                                    <td>$("*")</td>
+                                    <td>document.querySelector("*")</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>$(".class")</td>
+                                    <td>document.querySelector(".class")</td>
+                                </tr>
+                                <tr>
+                                    <td>$("div")</td>
+                                    <td>document.querySelector("div")</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>$("#id")</td>
+                                    <td>document.querySelector("#id")</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>$("#id, .class")</td>
+                                    <td>document.querySelector("#id, .class")</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="4" class="ce">계층 선택자</td>
+                                    <td>$("div  p")</td>
+                                    <td>document.querySelector("div  p")</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>$("div > p")</td>
+                                    <td>document.querySelector("div > p")</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>$("div + p")</td>
+                                    <td>document.querySelector("div + p")</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>$("div ~ p")</td>
+                                    <td>document.querySelector("div ~ p")</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="9" class="ce">속성 선택자</td>
+                                    <td>$("div[class]")</td>
+                                    <td>-</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>$("div[class='name'][id='name']")</td>
+                                    <td>-</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>$("div[class='name']")</td>
+                                    <td>-</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>$("div[class!='name']")</td>
+                                    <td>-</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>$("div[class~='name']")</td>
+                                    <td>-</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>$("div[class*='name']")</td>
+                                    <td>-</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>$("div[class|='name']")</td>
+                                    <td>-</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>$("div[class^='name']")</td>
+                                    <td>-</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>$("div[class$='name']")</td>
+                                    <td>-</td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="table left">
+                        <table>
+                            <colgroup>
+                                <col>
+                                <col>
+                                <col>
+                                <col>
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <td rowspan="10" class="ce">Dimensions</td>
+                                    <td>width()</td>
+                                    <td>-</td>
+                                    <td>요소의 가로(패딩/보더/마진 미포함)</td>
+                                </tr>
+                                <tr>
+                                    <td>height()</td>
+                                    <td>-</td>
+                                    <td>요소의 세로(패딩/보더/마진 미포함)</td>
+                                </tr>
+                                <tr>
+                                    <td>innerWidth()</td>
+                                    <td>clientWidth</td>
+                                    <td>요소의 가로(패딩 포함, 보더/마진 미포함)</td>
+                                </tr>
+                                    <td>innerHeight()</td>
+                                    <td>clientHeight</td>
+                                    <td>요소의 세로(패딩 포함, 보더/마진 미포함)</td>
+                                </tr>
+                                </tr>
+                                    <td>outerWidth()</td>
+                                    <td>offsetWidth</td>
+                                    <td>요소의 가로(패딩/보더 포함, 마진 미포함)</td>
+                                </tr>
+                                </tr>
+                                    <td>outerHeight()</td>
+                                    <td>offsetHeight</td>
+                                    <td>요소의 세로(패딩/보더 포함, 마진 미포함)</td>
+                                </tr>
+                                </tr>
+                                    <td>outerWidth(true)</td>
+                                    <td>-</td>
+                                    <td>요소의 가로(패딩/보더/마진 포함)</td>
+                                </tr>
+                                </tr>
+                                    <td>outerHeight(true)</td>
+                                    <td>-</td>
+                                    <td>요소의 세로(패딩/보더/마진 포함)</td>
+                                </tr>
+                                <tr>
+                                    <td>$(window).width()</td>
+                                    <td>innerWidth / outerWidth</td>
+                                    <td>브라우저의 가로 값(스크롤바 미포함 / 포함)</td>
+                                </tr>
+                                <tr>
+                                    <td>$(window).height()</td>
+                                    <td>innerHeight / outerHeight</td>
+                                    <td>브라우저의 세로 값(스크롤바 미포함 / 포함)</td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="5" class="ce">offset</td>
+                                    <td>offset().top / offset().left</td>
+                                    <td>offsetTop / offsetLeft</td>
+                                    <td>요소의 좌표값(문서 기준)</td>
+                                </tr>
+                                <tr>
+                                    <td>offsetParent()</td>
+                                    <td>offsetParent</td>
+                                    <td>요소의 좌표값(부모 기준)</td>
+                                </tr>
+                                <tr>
+                                    <td>position()</td>
+                                    <td>-</td>
+                                    <td>요소의 좌표값(기준점 기준)</td>
+                                </tr>
+                                <tr>
+                                    <td>scrollLeft()</td>
+                                    <td>pageXOffset / window.scrollX</td>
+                                    <td>요소의 가로 스크롤 값</td>
+                                </tr>
+                                <tr>
+                                    <td>scrollTop()</td>
+                                    <td>pageYOffset / window.scrollY</td>
+                                    <td>요소의 세로 스크롤 값</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="table left">
+                        <table>
+                            <colgroup>
+                                <col>
+                                <col>
+                                <col>
+                                <col>
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <td rowspan="5" class="ce">CSS</td>
+                                    <td>css()</td>
+                                    <td>.style</td>
+                                    <td>CSS 설정</td>
+                                </tr>
+                                <tr>
+                                    <td>.addClass()</td>
+                                    <td>classList.add()</td>
+                                    <td>클래스 추가</td>
+                                </tr>
+                                <tr>
+                                    <td>.removeClass()</td>
+                                    <td>classList.remove()</td>
+                                    <td>클래스 삭제</td>
+                                </tr>
+                                <tr>
+                                    <td>.toggleClass()</td>
+                                    <td>classList.toggle()</td>
+                                    <td>클래스 추가/삭제</td>
+                                </tr>
+                                <tr>
+                                    <td>.hasClass()</td>
+                                    <td>classList.contains()</td>
+                                    <td>클래스 검색</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+        </div>
+
+    </main>
+    <!-- //main -->
+
+    <footer id="footer">
+        <a href="mailto:jwor124@naver.com">jwor124@naver.com</a>
+    </footer>
+    <!-- //footer -->
+</body>
+</html>

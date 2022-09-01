@@ -165,6 +165,12 @@ h1, h2, h3, h4, h5, h6 {
     border: 1px solid #e6e6e6;
     padding: 6px;
 }
+.sample .table.left tr td {
+    text-align: left;
+}
+.sample .table.left .ce {
+    text-align: center;
+}
 .sample .table table tr td[class*="_P"] {
     color: #fff;
 }
@@ -174,13 +180,75 @@ h1, h2, h3, h4, h5, h6 {
 }
 .sample .box {
     background-color: #f5f5f5;
-    padding: 10px;
+    padding: 20px;
     border-radius: 5px;
     margin-bottom: 10px;
     color: #666;
 }
-
-
+.sample .view {
+    border: 1px solid #e6e6e6;
+    padding: 30px 20px 20px 20px;
+}
+.sample .blue {
+    background-color: #89CFFD;
+    padding: 10px 20px;
+    border-radius: 5px 5px 0 0;
+    margin-bottom: 0;
+    color: #fff;
+}
+.sample .sbox {
+    width: 400px;
+    height: 200px;
+    background-color: #7FBCD2;
+    border: 1px solid #277BC0;
+    padding: 20px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px auto;
+    text-align: center;
+    color: #fff;
+}
+.sample .sbox::after {
+    content: '';
+    width: 480px;
+    height: 280px;
+    border: 1px dashed #0F3460;
+    position: absolute;
+    left: -21px;
+    top: -21px;
+}
+.sample .sbox::before {
+    content: '';
+    width: 398px;
+    height: 198px;
+    border: 1px dashed #0F3460;
+    position: absolute;
+    left: 20px;
+    top: 20px;
+}
+.sResult {
+    text-align: center;
+    padding-top: 10px;
+}
+.sample .button {
+    border: 1px solid #e6e6e6;
+    padding: 30px 20px 20px 20px;
+    border-radius: 0 0 5px 5px;
+}
+.sample .button a {
+    border: 1px solid #277BC0;
+    color: #0078AA;
+    border-radius: 40px;
+    padding: 10px 20px;
+    display: inline-block;
+    margin: 5px;
+}
+.sample .button a:hover {
+    background-color: #277BC0;
+    color: #fff;
+}
 @media(max-width:800px) {
     .sample .table {
         overflow-x: scroll;
