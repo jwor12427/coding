@@ -103,15 +103,66 @@
             </table>
             <h3 class="t_tit2">크기 확인 버튼</h3>
             <div class="t_iframe" style="min-height: 600px; padding-top: 0;">
-                <iframe height="300" style="width: 100%;" scrolling="no" title="요소 속성 및 크기" src="https://codepen.io/jwor12427/embed/wvjwjpa?default-tab=html%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                <iframe height="500" style="width: 100%;" scrolling="no" title="요소 속성 및 크기" src="https://codepen.io/jwor12427/embed/wvjwjpa?default-tab=result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
                     See the Pen <a href="https://codepen.io/jwor12427/pen/wvjwjpa">
                     요소 속성 및 크기</a> by jwor12427 (<a href="https://codepen.io/jwor12427">@jwor12427</a>)
                     on <a href="https://codepen.io">CodePen</a>.
                 </iframe>
             </div>
+            <h3 class="t_tit2">script</h3>
             <div class="t_code">
 <pre><code>
+const box1 = document.querySelector("#sample01 .sbox");
 
+document.querySelector("#sample01 .btn1").addEventListener("click", (e) => {
+    e.preventDefault();
+    document.querySelector("#sample01 .sResult").innerHTML = "이 박스의 가로값은 " + box1.clientWidth + "px(마진/보더 미포함) 입니다.";
+})
+document.querySelector("#sample01 .btn2").addEventListener("click", (e) => {
+    e.preventDefault();
+    document.querySelector("#sample01 .sResult").innerHTML = "이 박스의 가로값은 " + box1.clientHeight + "px(마진/보더 미포함) 입니다.";
+})
+document.querySelector("#sample01 .btn3").addEventListener("click", (e) => {
+    e.preventDefault();
+    document.querySelector("#sample01 .sResult").innerHTML = "이 박스의 Y축값은 " + box1.clientTop + "px(부모 기준) 입니다.";
+})
+document.querySelector("#sample01 .btn4").addEventListener("click", (e) => {
+    e.preventDefault();
+    document.querySelector("#sample01 .sResult").innerHTML = "이 박스의 X축값은 " + box1.clientLeft + "px(부모 기준) 입니다.";
+})
+document.querySelector("#sample01 .btn5").addEventListener("click", (e) => {
+    e.preventDefault();
+    document.querySelector("#sample01 .sResult").innerHTML = "이 박스의 가로값은 " + box1.offsetWidth + "px(보더/패딩 포함) 입니다.";
+})
+document.querySelector("#sample01 .btn6").addEventListener("click", (e) => {
+    e.preventDefault();
+    document.querySelector("#sample01 .sResult").innerHTML = "이 박스의 세로값은 " + box1.offsetHeight + "px(보더/패딩 포함) 입니다.";
+})
+document.querySelector("#sample01 .btn7").addEventListener("click", (e) => {
+    e.preventDefault();
+    document.querySelector("#sample01 .sResult").innerHTML = "이 박스의 Y축값은 " + box1.offsetTop + "px(문서 기준) 입니다.";
+})
+document.querySelector("#sample01 .btn8").addEventListener("click", (e) => {
+    e.preventDefault();
+    document.querySelector("#sample01 .sResult").innerHTML = "이 박스의 X축값은 " + box1.offsetLeft + "px(문서 기준) 입니다.";
+})
+document.querySelector("#sample01 .btn9").addEventListener("click", (e) => {
+    e.preventDefault();
+    const box = document.querySelector("#sample01 .sbox");
+    const result = document.querySelector("#sample01 .sResult");
+    const rect = box.getBoundingClientRect();
+
+    result.innerHTML = "";
+
+    //객체안의 데이터를 불러오는 법
+    for(let key in rect){
+        if(typeof rect[key] !== "function"){
+            let span = document.createElement("span");
+            span.textContent = `${key}: ${rect[key]} `;
+            result.appendChild(span);
+        }
+    }
+})
 </code></pre>
             </div>
 
