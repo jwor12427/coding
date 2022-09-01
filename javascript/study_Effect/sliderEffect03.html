@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>슬라이드 이펙트</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+
+</head>
+<body>
+    <header id="header">
+        <h1><a href="../index.html">슬라이드 이펙트</a></h1>
+        <nav class="header_nav">
+
+        </nav>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">스크립트를 이용한 슬라이드 효과 만들기 03</h2>
+            <p class="t_desc2">
+                이미지 슬라이드가 자연스럽게 이어지는 효과를 만들 수 있습니다.
+            </p>
+
+            
+            <div class="t_iframe" style="min-height: 1000px; padding-top: 0;">
+                <iframe src="https://jwor12427.github.io/coding/javascript/effect/sliderEffect03.html"></iframe>
+            </div>
+
+            <div class="t_link">
+                <a href="https://github.com/jwor12427/coding/blob/main/javascript/effect/sliderEffect03.html" target="_blank">원본 소스 보기</a>
+            </div>
+
+            <h3 class="t_tit2">JavaScript</h3>
+            <p class="t_desc"></p>
+            <div class="t_code">
+<pre><code>const sliderWrap = document.querySelector(".slider__wrap");
+const sliderImg = document.querySelector(".slider__img");       //보여지는 영역
+const sliderInner = document.querySelector(".slider__inner");   //움직이는 영역
+const slider = document.querySelectorAll(".slider");            //각각 이미지
+
+let currentIndex = 0;                                               //현재 보이는 이미지
+let sliderCount = slider.length;                                    //이미지 갯수
+let sliderWidth = sliderImg.offsetWidth;                            //이미지 가로 값
+let sliderClone = sliderInner.firstElementChild.cloneNode(true);    //첫번째 이미지 복사
+sliderInner.appendChild(sliderClone);                               //첫번째 이미지를 마지막에 넣어줌
+
+function sliderEffect(){
+    currentIndex++;
+    sliderInner.style.transition = "all 0.6s";
+    sliderInner.style.transform = "translateX(-"+sliderWidth * currentIndex +"px)";
+
+    // sliderInner.style.transform = "translateX(-800px)";          800*1
+    // // sliderInner.style.transform = "translsteX(-1600px)";      800*2
+    // // // sliderInner.style.transform = "translsteX(-2400px)";   800*3    
+    // // // sliderInner.style.transform = "translsteX(-3200px)";   800*4
+    // // // sliderInner.style.transform = "translsteX(-4000px)";   800*5
+    // // // sliderInner.style.transform = "translsteX(-4800px)";   800*6
+
+    //마지막 사진에 위치 했을 때
+    if(currentIndex == sliderCount){
+        setTimeout(() => {
+            sliderInner.style.transition = "0s";
+            sliderInner.style.transform = "translateX(0px)";
+        }, 700);
+        currentIndex = 0; 
+    }
+}
+setInterval(sliderEffect, 2000);
+</code></pre>
+            </div>
+            <p class="t_box">
+                setTimeout(() => {}, 700)
+            </p>
+            <br>
+            <p class="t_desc">
+                setTimeout() 메서드는 코드를 바로 실행하지 않고 일정시간 기다린 후 실행해야 할때 사용합니다. 
+                첫번째 인자로 실행코드가 담겨있는 함수를 받고, 두번째는 지연시간을 받습니다. 이때 시간은 밀리초(ms)로 받습니다.
+            </p>
+            
+
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:jwor124@naver.com">jwor124@naver.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+   
+</body>
+</html>
