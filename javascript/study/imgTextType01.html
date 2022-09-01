@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>사이트 만들기</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+
+</head>
+<body>
+    <header id="header">
+        <h1><a href="../index.html">사이트 만들기</a></h1>
+        <nav class="header_nav">
+
+        </nav>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">사이트 만들기(이미지/텍스트 유형 - 01)</h2>
+            <p class="t_desc2">
+                이미지와 텍스트가 함께있는 사이트 유형을 만들어 봅시다🧸
+            </p>
+            <hr>
+            <div class="t_iframe">
+                <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FxvxkY6Zwec6xL3NM6lclkd%2F%25EC%2582%25AC%25EC%259D%25B4%25ED%258A%25B8-%25EB%25A7%258C%25EB%2593%25A4%25EA%25B8%25B02%3Fnode-id%3D231%253A10235" allowfullscreen></iframe>
+            </div>
+            <hr>
+
+            <h3 class="t_tit2">CSS</h3>
+            <div class="t_code">
+<pre><code>.gray {
+    background-color: #f5f5f5;
+}
+/* imgTextType */
+.imgText__inner {
+    display: flex;
+    justify-content: space-between;
+}
+.imgText__inner > div {
+    width: 32%;
+    height: 500px;
+}
+.imgText__txt span {
+    font-size: 16px;
+    color: #666;
+    text-decoration: underline;
+    text-underline-position: under;
+    margin-bottom: 20px;
+    display: block;
+}
+.imgText__txt h3 {
+    font-size: 50px;
+    font-weight: 300;
+    word-break: keep-all;
+    line-height: 1.4;
+    margin-bottom: 20px;
+}
+.imgText__txt p {
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 1.5;
+    color: #666;
+    margin-bottom: 10px;
+}
+.imgText__txt ul {
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 1.6;
+} 
+.imgText__txt ul li {
+    position: relative;
+    padding-left: 20px;
+} 
+.imgText__txt ul li a {
+    color: #666;
+}
+.imgText__txt ul li::before {
+    content: '';
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    position: absolute;
+    left: 5px;
+    top: 9px;
+    background: #666;
+}
+.imgText__img {
+    border-radius: 10px;
+    position: relative;
+}
+.imgText__img a {
+    position: absolute;
+    left: 30px;
+    bottom: 30px;
+    background-color: #7c2b39;
+    color: #fff;
+    padding: 10px 30px;
+    border-radius: 30px;
+    display: inline-block;
+}
+.imgText__img a.blue {
+    background-color: #2B387C;
+}
+.imgText__img.img1 {
+    background: url(img/imgText_bg01.jpg) no-repeat  center / cover;
+}
+.imgText__img.img2 {
+    background: url(img/imgText_bg02.jpg) no-repeat  center / cover;
+}
+</code></pre>
+            </div>
+
+            <h3 class="t_tit2">HTML</h3>
+            <div class="t_code">
+<pre><code>&lt;section id="imgTextType" class="image__wrap nexon section gray"&gt;
+    &lt;h2 class="blind"&gt;유용한 사이트 살펴보기&lt;/h2&gt;
+    &lt;div class="imgText__inner container"&gt;
+        &lt;div class="imgText__txt"&gt;
+            &lt;span&gt;이미지 텍스트 유형01&lt;/span&gt;
+            &lt;h3&gt;유용한 사이트 살펴보기&lt;/h3&gt;
+            &lt;p&gt;웹디자이너, 웹 퍼블리셔, 프론트앤드 개발자를 위한 유용한 사이트입니다.&lt;/p&gt;
+            &lt;ul&gt;
+                &lt;li&gt;&lt;a href="/"&gt;튜토리얼 사이트&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="/"&gt;레퍼런스 사이트&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="/"&gt;웹폰트 사이트&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="/"&gt;CSS 사이트&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="/"&gt;WebGL 사이트&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="/"&gt;Youtube 사이트&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/div&gt;
+        &lt;div class="imgText__img img1"&gt;
+            &lt;a href="/"&gt;레퍼런스 사이트&lt;/a&gt;
+        &lt;/div&gt;
+        &lt;div class="imgText__img img2"&gt;
+            &lt;a class="blue" href="/"&gt;튜토리얼 사이트&lt;/a&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;   
+&lt;/section&gt;
+</code></pre>
+            </div>
+            <h3 class="t_tit2">결과</h3>
+
+            <div class="t_iframe" style="min-height: 1000px; padding-top: 0;">
+                <iframe src="https://jwor12427.github.io/coding/site/imgTextType/imgTextType01.html"></iframe>
+            </div>
+            <hr>
+            <div class="t_link">
+                <a href="https://github.com/jwor12427/coding/blob/main/site/imgTextType/imgTextType01.html" target="_blank">원본 소스 보기</a>
+                <a href="https://jwor12427.github.io/coding/site/imgTextType/imgTextType01.html" target="_blank">페이지 보기</a>
+            </div>
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:jwor124@naver.com">jwor124@naver.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+   
+</body>
+</html>
