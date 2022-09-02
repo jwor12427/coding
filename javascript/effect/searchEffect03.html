@@ -60,7 +60,6 @@
                     <span>z</span>
                 </div>
                 <div>전체 속성 갯수 : <span class="num"></span></div>
-                <div>검색 속성 갯수 : <span class="num2"></span></div>
             </div>
             <div class="search__list">
                 <div class="html">
@@ -482,10 +481,8 @@
     <script>
         //선택자
         const searchKeyword = document.querySelectorAll(".search__info .keyword span");   //알파벳
-        const searchList = document.querySelectorAll(".search__list ul li")            //목록 리스트
-        const searchInfo = document.querySelector(".search__info .num")
-        const searchNum = document.querySelector(".search__info .num2")
-        let count = 0;
+        const searchList = document.querySelectorAll(".search__list ul li");            //목록 리스트
+        const searchInfo = document.querySelector(".search__info .num");
 
         //속성 갯수 설정하기
         searchInfo.textContent = searchList.length;
@@ -499,16 +496,19 @@
                 searchList.forEach(el => {
                     const cssName = el.querySelector("strong").innerText;      //속성 텍스트
                     // console.log(cssName)
-                    searchNum.textContent = cssName.length;
+                    // searchNum.textContent = cssName.length;
                     //알파벳 첫글자 == CSS 속성의 첫글자
                     if(searchWord.charAt(0) === cssName.charAt(0)) {
                         el.classList.remove("hide");
-                        conut++;
+  
                     } else {
                         el.classList.add("hide");
+
                     }
-                })
-            })
+                });
+                const searchCount = document.querySelectorAll(".search__list ul .hide");
+                searchInfo.textContent = searchList.length -= searchCount.length;
+            });
         });
 
     </script>

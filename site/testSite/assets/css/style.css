@@ -1,0 +1,198 @@
+.nexon {
+    font-family: 'NexonLv1Gothic';
+    font-weight: 400;
+}
+.container {
+    width: 960px;
+    margin: 0 auto;
+    padding: 0 120px;
+}
+.section {
+    width: 960px;
+    padding: 0 120px;
+    margin: 0 auto;
+}
+img {
+    width: 100%;
+}
+
+/* header */
+.header__inner {
+    width: 100%;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: #fff;
+
+
+}
+
+
+.header__logo {
+    width: 10%;
+}
+.header__logo img {
+    width: 100px;
+    height: 70px;
+    display: block;
+    box-sizing: border-box;
+}
+.header__logo a {
+    width: 100px;
+    display: block;
+}
+.header__menu {
+    width: 80%;
+    text-align: center;
+}
+
+.header__menu li {
+    display: inline;
+}
+
+.header__menu li a {
+    padding: 13px;
+    margin: 0 18px;
+    transition: background-color 0.3s;
+}
+
+.header__menu li a:hover {
+    background-color: #f1f1f1;
+    border-radius: 5px;
+}
+
+.slider__wrap {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.slider__img {
+    /* 이미지 보이는 영역 */
+    position: relative;
+    width: 960px;
+    height: 358.5px;
+    overflow: hidden;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+}
+.slider__inner {
+    /* 이미지를 감싸고 있는 부모 : 움직이는 부분 */
+    display: flex;
+    flex-wrap: wrap;
+    width: 1920px;
+    height: 358.5px;
+}
+.slider {
+    /* 개별적인 이미지 */
+    position: relative;
+    width: 960px;
+    height: 358.5px;
+}
+.slider:nth-child(1) {z-index: 2;}
+.slider:nth-child(2) {z-index: 1;}
+
+.banner {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+.card {
+    width: 48%;
+    height: 205px;
+    border: 1px solid #000;
+    position: relative;
+
+}
+.banner__sub {
+    width: 48%;
+}
+.card_sub {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+}
+.card h2 {
+    font-size: 20px;
+    font-weight: 700;
+    padding: 20px;
+}
+.card em {
+    font-size: 18px;
+    font-weight: normal;
+    color: #666;
+    margin-right: 20px;
+}
+.card a {
+    display: flex;
+    display: block;
+    font-size: 14px;
+    color: #666;
+    margin-right: 20px;
+}
+.card img {
+    width: 14px;
+    margin-left: 5px;
+}
+.card_link {
+    line-height: 1.6;
+    color: #666;
+    box-sizing: border-box;
+    font-size: 16px;
+    margin-left: 20px;
+
+}
+.card_link em {
+    display: inline-block;
+    text-align: right;
+    font-size: 14px;
+    position: absolute;
+    right: 5px;
+}
+.img__inner {
+    border-bottom: 1px dashed #666;
+}
+.img__inner h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+.img__card {
+    display: flex;
+    justify-content: space-between;
+}
+.img__card img {
+    width: 23%;
+    margin-bottom: 20px;
+}
+.img__desc {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 70px;
+}
+.img__desc p {
+    width: 23%;
+    font-size: 16px;
+}
+#footer {
+    margin-top: 30px;
+    color: #ccc;
+    margin-bottom: 30px;
+}
+#footer h2 {
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+#footer p {
+    font-size: 12px;
+    margin-bottom: 30px;
+}
+#footer span {
+    font-size: 12px;
+}

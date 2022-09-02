@@ -173,7 +173,7 @@
             width: 45px;
             height: 40px;
             position: absolute;
-            background: #FFD8A9;
+            background: #FFE6E6;
             border-radius: 15px;
             bottom: 0px;
             overflow: hidden;
@@ -215,7 +215,7 @@
 
         .dog .body .head .inner .spot {
             position: absolute;
-            background: #F1A661;
+            background: #D36B00;
             width: 100px;
             height: 110px;
             border-radius: 100%;
@@ -228,8 +228,8 @@
             position: absolute;
             width: 65px;
             height: 100px;
-            background: #E38B29;
-            box-shadow: inset -5px 0 0 15px #F1A661;
+            background: #FFC4C4;
+            box-shadow: inset -5px 0 0 15px #D36B00;
             top: -50px;
             z-index: -5;
             left: -10px;
@@ -244,7 +244,7 @@
             position: absolute;
             width: 50px;
             height: 55px;
-            background: #F1A661;
+            background: #D36B00;
             z-index: -1;
             transform: translateZ(-3px) rotate(-20deg);
             border-radius: 0 0 100% 100%;
@@ -256,7 +256,7 @@
             left: auto;
             right: -10px;
             border-radius: 300px 100px 150px 50px/600px 100px 350px 50px;
-            background: #FFD8A9;
+            background: #FFC4C4;
             box-shadow: inset 5px 0 0 15px #fff;
             transform-origin: 0% 100%;
         }
@@ -465,10 +465,47 @@
                 display: none;
             }
         }
+        .link {
+            position: absolute;
+            right: 30px;
+            top: 30px;
+           z-index: 100000;
+        }
+        .link li {
+            list-style: none;
+            display: inline;
+        }
+        .link li a {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 30px;
+            border: 1px solid #5f87f5;
+            text-decoration: none;
+            color: #fff;
+            background-color: #5f87f5;
+            text-transform: uppercase;
+            font-family: 'GmarketSans';
+            font-size: 14px;
+            transition: all 0.3s;
+        }
+        .link li a:hover {
+            background: #fff;
+            color: #5f87f5;
+        }
     </style>
 </head>
 
 <body>
+    <div class="link">
+        <ul>
+            <li><a href="https://damlong.tistory.com/" target="_blank">t</a></li>
+            <li><a href="https://github.com/jwor12427/coding" target="_blank">g</a></li>
+            <li><a href="https://github1s.com/jwor12427/coding" target="_blank">v</a></li>
+        </ul>
+    </div>
     <main>
         <div class="dog">
             <div class="wrap">

@@ -475,6 +475,8 @@
                     el.classList.remove("hide");       //indexOf()값이 0(false)되는 값만 hide를 지워줍니다.
                 }
             });
+            const searchCount = document.querySelectorAll(".search__list ul .hide");
+            searchInfo.textContent = searchList.length -= searchCount.length;
         });
     </script>
 </body>

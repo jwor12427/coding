@@ -68,12 +68,12 @@
                          결정되는 조건문 입니다. 조건식에 따라 ture나 false값을 산출 합니다.
                     </p>
                     <div class="script">
-    <pre><code class="language-js">if(1){
-        document.write("실행되었습니다(true).");
-    } else {
-        document.write("실행되었습니다(false).");
-    }
-    </code></pre>
+<pre><code class="language-js">if(1){
+    document.write("실행되었습니다(true).");
+} else {
+    document.write("실행되었습니다(false).");
+}
+</code></pre>
                     </div>
                     <div class="result">
                         <details>
@@ -99,11 +99,11 @@
                         if(조건식)는 {}(중괄호)를 생략해서 사용 할 수 있습니다.
                     </p>
                     <div class="script">
-    <pre><code class="language-js">const num = 100;
+ <pre><code class="language-js">const num = 100;
     
-    if(num) document.write("실행되었습니다(true).")
-    else document.write("실행되었습니다(false).");
-    </code></pre>
+if(num) document.write("실행되었습니다(true).")
+else document.write("실행되었습니다(false).");
+</code></pre>
                     </div>
                     <div class="result">
                         <details>
@@ -129,20 +129,20 @@
                         않았을 때 실행 됩니다.
                     </p>
                     <div class="script">
-    <pre><code class="language-js">const num = 100;
+<pre><code class="language-js">const num = 100;
     
-    if(num == 90){
-        document.write("실행되었습니다(num==90)");
-    } else if(num == 100){
-        document.write("실행되었습니다(num==100)");
-    } else if(num == 110){
-        document.write("실행되었습니다(num==110)");
-    } else if(num == 120){
-        document.write("실행되었습니다(num==120)");
-    } else {
-        document.write("실행되었습니다(num==값이없음)");
-    }
-    </code></pre>
+if(num == 90){
+    document.write("실행되었습니다(num==90)");
+} else if(num == 100){
+    document.write("실행되었습니다(num==100)");
+} else if(num == 110){
+    document.write("실행되었습니다(num==110)");
+} else if(num == 120){
+    document.write("실행되었습니다(num==120)");
+} else {
+    document.write("실행되었습니다(num==값이없음)");
+}
+</code></pre>
                     </div>
                     <div class="result">
                         <details>
@@ -176,20 +176,20 @@
                         if문은 if문 안에 또 다른 if문을 중첩하여 사용할 수 있습니다.
                     </p>
                     <div class="script">
-    <pre><code class="language-js">const num = 100;
+<pre><code class="language-js">const num = 100;
     
+if(num == 100) {
+    document.write("실행되었습니다.(1)");
     if(num == 100) {
-        document.write("실행되었습니다.(1)");
+        document.write("실행되었습니다.(2)");
         if(num == 100) {
-            document.write("실행되었습니다.(2)");
-            if(num == 100) {
-                document.write("실행되었습니다.(3)");
-            }
+            document.write("실행되었습니다.(3)");
         }
-    } else {
-        document.write("실행되었습니다.(4)");
     }
-    </code></pre>
+} else {
+    document.write("실행되었습니다.(4)");
+}
+</code></pre>
                     </div>
                     <div class="result">
                         <details>
@@ -224,17 +224,17 @@
                         선택적으로 실행됩니다.
                     </p>
                     <div class="script">
-    <pre><code class="language-js">const num = 100;
-    //num값이 100이면 true출력하고 아니면 false 출력하세요
+<pre><code class="language-js">const num = 100;
+//num값이 100이면 true출력하고 아니면 false 출력하세요
     
-    // if(num == 100) {
-    //     document.write("true");
-    // } else {
-    //     document.write("false");
-    // }
+// if(num == 100) {
+//     document.write("true");
+// } else {
+//     document.write("false");
+// }
     
-    (num == 100) ? document.write("true") : document.write("false");
-    </code></pre>
+(num == 100) ? document.write("true") : document.write("false");
+</code></pre>
                     </div>
                     <div class="result">
                         <details>
@@ -258,25 +258,25 @@
                         못하므로 break라는 명령어를 주어 실행시키도록 합니다.
                     </p>
                     <div class="script">
-    <pre><code class="language-js">const num = 100;
+<pre><code class="language-js">const num = 100;
     
-    switch(num) {
-        case 100 :
-            document.write("실행되었습니다.(num==100)");
-            break;
-        case 110 :
-            document.write("실행되었습니다.(num==110)");
-            break;
-        case 120 :
-            document.write("실행되었습니다.(num==120)");
-            break;
-        case 130 :
-            document.write("실행되었습니다.(num==130)");
-            break;
-        default :
-            document.write("실행되었습니다.(num==값이 없음)");
-    }
-    </code></pre>
+switch(num) {
+    case 100 :
+        document.write("실행되었습니다.(num==100)");
+        break;
+    case 110 :
+        document.write("실행되었습니다.(num==110)");
+        break;
+    case 120 :
+        document.write("실행되었습니다.(num==120)");
+        break;
+    case 130 :
+        document.write("실행되었습니다.(num==130)");
+        break;
+    default :
+        document.write("실행되었습니다.(num==값이 없음)");
+}
+</code></pre>
                     </div>
                     <div class="result">
                         <details>
@@ -315,19 +315,18 @@
     
                     </p>
                     <div class="script">
-    <pre><code class="language-js">let num = 1;
+<pre><code class="language-js">let num = 1;
     
-    while(num &lt;= 5) {
-            document.write("실행되었습니다.");
-            num++;
-    }
-    
-    //for
-    
-    for( let i = 1; i &lt;= 5; i++) {
+while(num &lt;= 5) {
         document.write("실행되었습니다.");
-    }  
-    </code></pre>
+        num++;
+}
+    
+//for
+for( let i = 1; i &lt;= 5; i++) {
+    document.write("실행되었습니다.");
+}  
+</code></pre>
                     </div>
                     <div class="result">
                         <details>
@@ -361,13 +360,13 @@
                         없이 실행합니다.
                     </p>
                     <div class="script">
-    <pre><code class="language-js">let num = 1;
+<pre><code class="language-js">let num = 1;
     
-    do {
-        document.write("실행되었습니다2.");     //무조건 한번은 실행
-        num++;
-    } while (num &lt;= 5);
-    </code></pre>
+do {
+    document.write("실행되었습니다2.");     //무조건 한번은 실행
+    num++;
+} while (num &lt;= 5);
+</code></pre>
                     </div>
                     <div class="result">
                         <details>
@@ -394,15 +393,15 @@
     
                     </p>
                     <div class="script">
-    <pre><code class="language-js">for(let i = 1; i &lt; 100; i++) {
-        document.write(i+". 실행되었습니다.");
-    }
+<pre><code class="language-js">for(let i = 1; i &lt; 100; i++) {
+    document.write(i+". 실행되었습니다.");
+}
     
-    let num = [1, 2, 3, 4, 5, 6];
-    for (let i = 0; i &lt; num.length; i++) {
-        document.write(num[i] + ". 실행되었습니다.");
-    }
-    </code></pre>
+let num = [1, 2, 3, 4, 5, 6];
+for (let i = 0; i &lt; num.length; i++) {
+    document.write(num[i] + ". 실행되었습니다.");
+}
+</code></pre>
                     </div>
                     <div class="result">
                         <details>
@@ -432,13 +431,13 @@
                         있습니다.
                     </p>
                     <div class="script">
-    <pre><code class="language-js">for(let i = 1; i&lt;=2; i++) {
-        document.write(i + "실행");
-        for(let j = 1; j &lt;= 5; j++) {
-             document.write(j + "실행");
-        }
+<pre><code class="language-js">for(let i = 1; i&lt;=2; i++) {
+    document.write(i + "실행");
+    for(let j = 1; j &lt;= 5; j++) {
+        document.write(j + "실행");
     }
-    </code></pre>
+}
+</code></pre>
                     </div>
                     <div class="result">
                         <details>
@@ -463,13 +462,13 @@
                     <h3>11. break문</h3>
                     <p></p>
                     <div class="script">
-    <pre><code class="language-js">for (let i = 1; i &lt;= 20; i++) {
-        document.write(i);
-        if( i == 10) {      // == 일때, 왼쪽값이 오른쪽 값과 같다라는 의미
-            break;         // 1~10까지만 출력한다는 의미
-        }                // === 일때, 함수인지 특수값인지 문자인지 모두 판별함
-    }
-    </code></pre>
+<pre><code class="language-js">for (let i = 1; i &lt;= 20; i++) {
+    document.write(i);
+    if( i == 10) {      // == 일때, 왼쪽값이 오른쪽 값과 같다라는 의미
+        break;         // 1~10까지만 출력한다는 의미
+    }                // === 일때, 함수인지 특수값인지 문자인지 모두 판별함
+}
+</code></pre>
                     </div>
                     <div class="result">
                         <details>
@@ -489,14 +488,14 @@
                     
                     </p>
                     <div class="script">
-    <pre><code class="language-js">//for문을 이용해서 1~20까지 출력
-    for (let i = 1; i &lt;= 20; i++) {
-        if (i == 10) {
-            continue;       //10은 출력이 되지 않고 나머지는 출력
-        }
-        document.write(i);
+<pre><code class="language-js">//for문을 이용해서 1~20까지 출력
+for (let i = 1; i &lt;= 20; i++) {
+    if (i == 10) {
+        continue;       //10은 출력이 되지 않고 나머지는 출력
     }
-    </code></pre>
+    document.write(i);
+}
+</code></pre>
                     </div>
                     <div class="result">
                         <details>

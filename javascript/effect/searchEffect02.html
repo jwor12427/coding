@@ -465,7 +465,7 @@
 
 
 
-        //
+        //검색
         searchBox.addEventListener("keyup", () => {
             const searchWord = searchBox.value;     //사용자가 입력한 키워드
 
@@ -481,6 +481,8 @@
                     el.classList.add("hide");
                 }
             });
+            const searchCount = document.querySelectorAll(".search__list ul .hide");
+            searchInfo.textContent = searchList.length -= searchCount.length;
         })
     </script>
 </body>
