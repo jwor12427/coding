@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>사이트 만들기</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+
+</head>
+<body>
+    <header id="header">
+        <h1><a href="../index.html">애니메이션</a></h1>
+        <nav class="header_nav">
+
+        </nav>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">요리조리 움직이는 원</h2>
+            <p class="t_desc2">
+                정신없이 돌아가는 원을 만들어 봅시다👻
+            </p>
+            <hr>
+
+            <h3 class="t_tit2">CSS</h3>
+            <div class="t_code">
+<pre><code>* {
+    box-sizing: border-box;
+}
+body {
+    background: linear-gradient(to top, #CBA0AE 0%, #80558C 100%);
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    margin: 0;
+    padding: 0;
+}
+.wrapper {
+    position: absolute;
+    animation: x 1s ease-in-out alternate infinite 0s both;
+}
+.wrapper:nth-of-type(2) {animation-delay: 0.1s;}
+.wrapper:nth-of-type(3) {animation-delay: 0.2s;}
+.wrapper:nth-of-type(4) {animation-delay: 0.3s;}
+.wrapper:nth-of-type(5) {animation-delay: 0.4s;}
+    
+.wrapper > div {
+    width: 50px;
+    height: 50px;
+    background-color: #fff;
+    border-radius: 100%;
+    margin: 40px;
+    animation: y 1s linear infinite 0s both;
+}
+.wrapper:nth-of-type(2) > div {
+    animation-delay: 0.1s;
+    height: 40px;
+    width: 40px;
+    opacity: 0.8;
+}
+.wrapper:nth-of-type(3) > div {
+    animation-delay: 0.2s;
+    height: 30px;
+    width: 30px;
+    opacity: 0.6;
+}
+.wrapper:nth-of-type(4) > div {
+    animation-delay: 0.3s;
+    height: 20px;
+    width: 20px;
+    opacity: 0.4;
+}
+.wrapper:nth-of-type(5) > div {
+    animation-delay: 0.4s;
+    height: 15px;
+    width: 15px;
+    opacity: 0.2;
+}
+    
+@keyframes x {
+    0% {transform: translatex(-100px);}
+    100% {transform: translatex(100px);}
+}
+    @keyframes y {
+    25% {transform:translatey(-50px);}
+    0%,50%,100% {transform:translatey(0);}
+    75% {transform:translatey(50px);}
+}
+</code></pre>
+            </div>
+            <h3 class="t_tit2">결과</h3>
+
+            <div class="t_iframe" style="min-height: 600px; padding-top: 0;">
+                <iframe height="500" style="width: 100%;" scrolling="no" title="공이 통통" src="https://codepen.io/jwor12427/embed/QWrWNPr?default-tab=result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                    See the Pen <a href="https://codepen.io/jwor12427/pen/QWrWNPr">
+                    공이 통통</a> by jwor12427 (<a href="https://codepen.io/jwor12427">@jwor12427</a>)
+                    on <a href="https://codepen.io">CodePen</a>.
+                </iframe>
+            </div>
+            <hr>
+            <div class="t_link">
+                <a href="https://codepen.io/jwor12427/pen/QWrWNPr" target="_blank">코드팬 보기</a>
+            </div>
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:jwor124@naver.com">jwor124@naver.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+   
+</body>
+</html>
