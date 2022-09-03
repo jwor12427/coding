@@ -39,3 +39,4 @@ tabBtn.forEach((element, index) => {
         tabCont[index].style.display = "block";
     });
 });
+

@@ -1,3 +1,5 @@
+@import url('https://webfontworld.github.io/DungGeunMo/DungGeunMo.css');
+
 * {
     margin: 0;
     padding: 0;
@@ -750,4 +752,344 @@ body {
     100% {
         visibility: visible;
     }
+}
+
+
+
+.window__wrap {
+    text-align: left;
+}
+/* window btn */
+.window__btn {
+    display: inline-block;
+    padding: 10px 13px 14px 12px;
+    position: absolute;
+    font-weight: 700;
+    bottom: 80px;
+    right: 50px;
+    font-family: 'DungGeunMo';
+    text-align: center;
+    color: #fff;
+    background: #92CD41;
+    box-shadow: inset -4px -4px 0px 0px #4AA52E;
+}
+.window__btn:hover, .window__btn:focus {
+    background: #76c442;
+    box-shadow: inset -6px -6px 0px 0px #4AA52E;
+}
+.window__btn:active {
+    box-shadow: inset 4px 4px 0px 0px #4AA52E;
+}
+.window__btn::before, .window__btn::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    box-sizing: content-box;
+}
+.window__btn::before {
+    top: -4px;
+    left: 0;
+    border-top: 4px black solid;
+    border-bottom: 4px black solid;
+}
+.window__btn::after {
+    left: -4px;
+    top: 0;
+    border-left: 4px black solid;
+    border-right: 4px black solid;
+}
+
+/* window */
+.window__cont {
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.539);
+    position: fixed;
+    left: 0;
+    top: 0;
+    overflow-x: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: scale(0);
+}
+.window__box {
+    width: 55%;
+    height: 65vh;
+    background-color: #c7c7c7;
+    padding: 4px;
+    border-left: 2px solid #FCFCFC;
+    border-top: 2px solid #FCFCFC;
+    border-right: 2px solid #2A2A2A;
+    border-bottom: 2px solid #2A2A2A;
+    transform: scale(0);
+}
+.title_bar {
+    background-color: #000080;
+    padding: 4px;
+    height: 30px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.title_bar > .minimize, .title_bar > .maximize, .title_bar > .close {
+    width: 26px;
+    height: 22px;
+    background-color: #c7c7c7;
+    margin-left: 4px;
+    border-left: 2px solid #FCFCFC;
+    border-top: 2px solid #FCFCFC;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.title_bar > .minimize:hover, .title_bar > .maximize:hover, .title_bar > .close:hover {
+    background-color: #bababa;
+    border-left: 2px solid #2A2A2A;
+    border-top: 2px solid #2A2A2A;
+    border-right: 2px solid #FCFCFC;
+    border-bottom: 2px solid #FCFCFC;
+}
+.title_bar > .minimize {
+    align-items: flex-end;
+}
+.title_bar > .minimize > .symbol {
+    width: 60%;
+    height: 3px;
+    background-color: #000000;
+    margin-bottom: 2px;
+}
+.title_bar > .maximize > .symbol {
+    width: 70%;
+    height: 80%;
+    border: 2px solid #000000;
+    border-top-width: 4px;
+}
+.title_bar > .close > .symbol {
+    width: 70%;
+    height: 3px;
+    background-color: #000000;
+    transform: rotate(45deg);
+}
+.title_bar > .close > .symbol::after {
+    content: '';
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background-color: #000000;
+    transform: rotate(90deg);
+}
+.menu__bar > span {
+    padding: 7px;
+    display: inline-block;
+    cursor: pointer;
+    margin-right: 5px;
+    font-family: "DungGeunMo";
+}
+.menu__bar > span::first-letter {
+    text-decoration: underline;
+}
+.menu__bar > span:hover {
+    background-color: #bababa;
+}
+.window__container {
+    height: calc(100% - 90px);
+    border-left: 2px solid #2A2A2A;
+    border-top: 2px solid #2A2A2A;
+    border-right: 2px solid #FCFCFC;
+    border-bottom: 2px solid #FCFCFC;
+}
+.window__container .content {
+    display: flex;
+    height: 100%
+}
+.window__container > .content > .main, .window__container > .content > .scroll {
+   width: 26px;
+}
+.window__container > .content > .main {
+    width: calc(100% - 26px);
+    height: 100%;
+}
+.window__container > .content > .scroll {
+    width: 26px;
+}
+.scroll {
+    background-color: #D7D7D7;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+}
+.scroll > .progress {
+    width: 24px;
+    height: 70%;
+    cursor: pointer;
+    border-left: 2px solid #FCFCFC;
+    border-top: 2px solid #FCFCFC;
+    border-right: 2px solid #2A2A2A;
+    border-bottom: 2px solid #2A2A2A;
+    background-color: #c7c7c7;
+}
+.scroll > .progress:hover {
+    background-color: #bababa;
+}
+.scroll > .start, .scroll > .end {
+    width: 24px;
+    height: 22px;
+    position: relative;
+    border-left: 2px solid #FCFCFC;
+    border-top: 2px solid #FCFCFC;
+    border-right: 2px solid #2A2A2A;
+    border-bottom: 2px solid #2A2A2A;
+    background-color: #c7c7c7;
+}
+.scroll > .start:hover, .scroll > .end:hover {
+    background-color: #bababa;
+    border-left: 2px solid #2A2A2A;
+    border-top: 2px solid #2A2A2A;
+    border-right: 2px solid #FCFCFC;
+    border-bottom: 2px solid #FCFCFC;
+}
+.scroll > .start::after, .scroll > .end::after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 0;
+    height: 0;
+    top: 6px;
+    left: 4px;
+    border-top: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-bottom: 6px solid #000000;
+}
+.scroll > .end::after {
+    transform: rotate(180deg);
+}
+.scroll__row {
+    background-color: #D7D7D7;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    flex-direction: row;
+}
+.scroll__row > .progress {
+    width: 24px;
+    height: 70%;
+    cursor: pointer;
+    border-left: 2px solid #FCFCFC;
+    border-top: 2px solid #FCFCFC;
+    border-right: 2px solid #2A2A2A;
+    border-bottom: 2px solid #2A2A2A;
+    background-color: #c7c7c7;
+}
+.scroll__row > .progress:hover {
+    background-color: #bababa;
+}
+.scroll__row > .start, .scroll__row > .end {
+    width: 24px;
+    height: 22px;
+    position: relative;
+    border-left: 2px solid #FCFCFC;
+    border-top: 2px solid #FCFCFC;
+    border-right: 2px solid #2A2A2A;
+    border-bottom: 2px solid #2A2A2A;
+    background-color: #c7c7c7;
+}
+.scroll__row > .start:hover, .scroll__row > .end:hover {
+    background-color: #bababa;
+    border-left: 2px solid #2A2A2A;
+    border-top: 2px solid #2A2A2A;
+    border-right: 2px solid #FCFCFC;
+    border-bottom: 2px solid #FCFCFC;
+}
+.scroll__row > .start::after, .scroll__row > .end::after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 0;
+    height: 0;
+    top: 6px;
+    left: 4px;
+    border-top: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-bottom: 6px solid #000000;
+}
+.scroll__row > .progress {
+    width: 30%;
+    height: 24px;
+}
+.scroll__row > .start::after {
+    transform: rotate(-90deg);
+}
+.scroll__row > .end::after {
+    transform: rotate(90deg);
+}
+.window__box .cont {
+    height: 100%;
+    overflow-y: auto;
+}
+.window__box .cont > div {
+    display: none;
+}
+.window__box .cont > div.active {
+    display: block;
+    height: 100%;
+}
+.window__box .menu__bar >  span.active {
+    background-color: rgb(132, 131, 131);
+}
+
+/* 윈도우 애니메이션 */
+.window__cont.show {     /* 전체 배경 */
+    animation: foldOut 0.5s ease forwards;
+}
+.window__cont.show.hide {        /* 스크립트 박스 */
+    animation: foldIn 0.3s 0.5s ease backwards;
+}
+.window__cont.show .close {     /* 닫기 버튼 */
+    animation: opacityOut 0.5s 1s ease forwards;
+    opacity: 0;
+}
+.window__cont.show .window__box {
+    animation: zoomOut 0.5s 1s ease forwards;   /* 뒤에 있는 초는 딜레이를 뜻함 */
+}
+.window__cont.show.hide .window__box {
+    animation: zoomIn 0.5s ease forwards;
+}
+.window__cont.show.hide .close {
+    animation: opacityIn 0.5s ease forwards;
+}
+@keyframes foldOut {
+    0% {transform: scaleX(0) scaleY(0.001);}
+    50% {transform: scaleX(1) scaleY(0.001);}
+    100% {transform: scaleX(1) scaleY(1);}
+}
+@keyframes foldIn {
+    0% {transform: scaleX(1) scaleY(1);}
+    50% {transform: scaleX(1) scaleY(0.001);}
+    100% {transform: scaleX(0) scaleY(0.001);}
+}
+@keyframes zoomOut {
+    0% {transform: scale(0);}
+    100% {transform: scale(1);}
+}
+@keyframes zoomIn {
+    0% {transform: scale(1);}
+    100% {transform: scale(0);}
+}
+@keyframes opacityOut {
+    0%   {opacity:0;}
+    100% {opacity:1;}
+}
+@keyframes opacityIn {
+    0%   {opacity:1;}
+    100% {opacity:0;}
 }

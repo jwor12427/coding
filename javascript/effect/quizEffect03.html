@@ -8,6 +8,7 @@
     <title>퀴즈 이펙트</title>
 
     <link rel="stylesheet" href="../assets/css/quiz.css">
+    <link rel="stylesheet" href="../assets/css/atom-one-light.min.css">
 
     <link href="https://webfontworld.github.io/DungGeunMo/DungGeunMo.css" rel="stylesheet">
     <link href="https://webfontworld.github.io/wando/WandoCleanSea.css" rel="stylesheet">
@@ -172,10 +173,336 @@
     </main>
     <!-- //main -->
     <footer id="footer">
+        <div class="window__wrap">
+            <div class="window__btn">소스 보기</div>
+            <div class="window__cont">
+                <div class="window__box">
+                    <div class="title_bar">
+                        <div class="minimize">
+                            <div class="symbol"></div>
+                        </div>
+                        <div class="maximize">
+                            <div class="symbol"></div>
+                        </div>
+                        <div class="close">
+                            <div class="symbol"></div>
+                        </div>
+                    </div>
+                    <div class="menu__bar"><span class="active">Javascript</span><span>HTML</span><span>CSS</span></div>
+                    <div class="window__container">
+                        <div class="content">
+                            <div class="main">
+                                <div class="cont">
+                                    <div class="active">
+<pre><code>
+//선택자, 다중선택이므로 querySelectorAll로 바꿔야 함!
+const quizType =  document.querySelectorAll(".quiz__type");                //퀴즈 종류 , 4개가 있으므로 All로 변경
+const quizNumber = document.querySelectorAll(".quiz__question .number");   //퀴즈 번호
+const quizAsk = document.querySelectorAll(".quiz__question .ask");         //퀴즈 질문
+const quizConfirm = document.querySelectorAll(".quiz__answer .confirm");   //정답 확인 버튼
+const quizResult = document.querySelectorAll(".quiz__answer .result");     //정답 결과
+const quizInput = document.querySelectorAll(".quiz__answer .input");      //사용자 정답
+const quizView = document.querySelectorAll(".quiz__view");                //정답 알람
+
+//문제정보
+const quizInfo = [
+    {
+        answerType :  "웹디자인기능사 2016년 3회",
+        answerNum : "1",
+        answerAsk : "검은 종이 위에 노랑과 파랑을 나열하고 일정한 거리에서 보면 노랑이 파랑보다 더 가깝게 보인다. 이때의 노랑색을 무엇이라고 하나요?",
+        answerResult : "진출색"
+    },
+    ⁝
+]
+//문제 출력
+quizInfo.forEach((el, i) => {
+    quizType[i].textContent = quizInfo[i].answerType;
+    quizNumber[i].textContent = quizInfo[i].answerNum + ". ";
+    quizAsk[i].textContent = quizInfo[i].answerAsk;
+    quizResult[i].textContent = quizInfo[i].answerResult;
+});
+//정답 숨기기
+quizResult.forEach((el, i) => {
+    quizResult[i].style.display = "none";
+});
+//정답 확인
+quizConfirm.forEach((btn, num) => {                         //몇번째 인덱스를 가져오는지, num으로 표현
+    btn.addEventListener("click", () => {                   //버튼이 4개가 있다!
+        
+        //사용자 정답
+        const userWord = quizInput[num].value.toLowerCase().trim();
+
+
+        //사용자 정답 == 문제 정답
+        if(userWord == quizInfo[num].answerResult){
+            //정답
+            // alert("정답");
+            quizView[num].classList.add("like");
+            quizConfirm[num].style.display = "none";
+        } else {
+            //오답
+            // alert("오답");
+            quizView[num].classList.add("dislike");
+            quizConfirm[num].style.display = "none";
+            quizResult[num].style.display = "block";
+            quizInput[num].style.display = "none";
+        }
+    })
+});        //btn = quizConfirm을 의미하며 버튼을 말함
+</code></pre>
+                                    </div>
+                                    <div>
+<pre><code>//4번 반복
+&lt;div class="quiz__wrap"&gt;
+    &lt;div class="quiz"&gt;
+        &lt;span class="quiz__type"&gt;&lt;/span&gt;
+        &lt;h2 class="quiz__question"&gt;
+            &lt;span class="number"&gt;&lt;/span&gt;
+            &lt;div class="ask"&gt;&lt;/div&gt;
+        &lt;/h2&gt;
+        &lt;div class="quiz__view"&gt;
+            &lt;div class="true"&gt;정답입니다!&lt;/div&gt;
+            &lt;div class="false"&gt;틀렸습니다!&lt;/div&gt;
+            &lt;div class="dog"&gt;
+                &lt;div class="head"&gt;
+                    &lt;div class="ears"&gt;&lt;/div&gt;
+                    &lt;div class="face"&gt;&lt;/div&gt;
+                    &lt;div class="eyes"&gt;
+                        &lt;div class="teardrop"&gt;&lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class="nose"&gt;&lt;/div&gt;
+                    &lt;div class="mouth"&gt;
+                        &lt;div class="tongue"&gt;&lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class="chin"&gt;&lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class="body"&gt;
+                    &lt;div class="tail"&gt;&lt;/div&gt;
+                    &lt;div class="legs"&gt;&lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="quiz__answer"&gt;
+            &lt;input type="text" class="input" placeholder="정답을 적어주세요!"&gt;
+            &lt;button class="confirm"&gt;정답 확인하기&lt;/button&gt;
+            &lt;div class="result"&gt;&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+                                    </div>
+                                    <div>
+<pre><code>/* quiz__wrap */
+.quiz__wrap {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    margin-top: 50px;
+    margin-bottom: 150px;
+    flex-wrap: wrap;
+}
+
+.quiz {
+    max-width: 500px;
+    width: 100%;
+    background-color: #fff;
+    border: 8px ridge #cacaca;
+    margin: 10px;
+}
+
+.quiz__type {
+    background-color: #cacaca;
+    text-align: center;
+    display: block;
+    font-size: 16px;
+    border: 3px ridge #cacaca;
+    color: #3b3b3b;
+    font-family: "DungGeunMo";
+    padding: 4px;
+}
+
+.quiz__question {
+    border-top: 6px ridge #cacaca;
+    border-bottom: 6px ridge #cacaca;
+    padding: 20px 20px;
+    font-family: "WandoCleanSea";
+    line-height: 1.3;
+}
+
+.quiz__question .number {
+    color: rgb(135, 8, 254);
+}
+
+.quiz__question .ask {
+    display: inline;
+}
+
+.quiz__answer {
+    border-top: 6px ridge #cacaca;
+    padding: 10px;
+    background-color: #f5f5f5;
+}
+
+.quiz__answer .confirm {
+    border: 6px ridge #cacaca;
+    width: 100%;
+    font-size: 22px;
+    padding: 13px 20px;
+    background-color: #d6d6d6;
+    font-family: "WandoCleanSea";
+    cursor: pointer;
+}
+
+.quiz__answer .result {
+    width: 100%;
+    font-size: 22px;
+    line-height: 1.4;
+    padding: 13px 20px;
+    border: 6px ridge #cacaca;
+    box-sizing: border-box;
+    text-align: center;
+    font-family: "WandoCleanSea";
+}
+
+.quiz__answer .input {
+    width: 100%;
+    border: 6px ridge #cacaca;
+    font-size: 22px;
+    padding: 13px 22px;
+    background-color: #fff;
+    font-family: "WandoCleanSea";
+    margin-bottom: 10px;
+}
+
+.quiz__view {
+    background-color: #f5f5f5;
+    font-family: "WandoCleanSea";
+    position: relative;
+    overflow: hidden;
+}
+
+.quiz__view .true {
+    width: 120px;
+    height: 120px;
+    line-height: 120px;
+    background-color: rgb(135, 8, 254);
+    color: #fff;
+    border-radius: 50%;
+    text-align: center;
+    position: absolute;
+    left: 70%;
+    top: 100px;
+    opacity: 0;
+}
+
+.quiz__view .false {
+    width: 120px;
+    height: 120px;
+    line-height: 120px;
+    background-color: #fff;
+    border-radius: 50%;
+    text-align: center;
+    position: absolute;
+    right: 70%;
+    top: 100px;
+    opacity: 0;
+}
+
+.quiz__view.like .true {
+    opacity: 1;
+    animation: wobble 0.6s;
+}
+
+.quiz__view.dislike .false {
+    opacity: 1;
+    animation: wobble 0.6s;
+}
+.quiz__confirm {
+    width: 100%;
+    text-align: center;
+}
+.quiz__confirm .check {
+    font-size: 22px;
+    line-height: 1.3;
+    padding: 13px 60px;
+    border: 6px ridge #cacaca;
+    box-sizing: border-box;
+    text-align: center;
+    font-family: "WandoCleanSea";
+    cursor: pointer;
+    margin: 40px 0;
+    transition: background 0.3s;
+}
+.quiz__confirm .ex {
+    font-size: 22px;
+    line-height: 1.3;
+    padding: 13px 60px;
+    border: 6px ridge #cacaca;
+    box-sizing: border-box;
+    text-align: center;
+    font-family: "WandoCleanSea";
+    transition: background 0.3s;
+}
+.quiz__confirm .check:hover {
+    background-color: rgba(138, 74, 198, 0.326);
+}
+.quiz__confirm .ex:hover {
+    background-color: rgba(138, 74, 198, 0.326);
+}
+@keyframes wobble {
+    0% {
+        transform: translateX(0) rotate(0deg);
+    }
+
+    15% {
+        transform: translateX(-25%) rotate(-5deg);
+    }
+
+    30% {
+        transform: translateX(20%) rotate(3deg);
+    }
+
+    45% {
+        transform: translateX(-15%) rotate(-3deg);
+    }
+
+    60% {
+        transform: translateX(10%) rotate(2deg);
+    }
+
+    75% {
+        transform: translateX(-5%) rotate(-1deg);
+    }
+
+    100% {
+        transform: translateX(0) rotate(0deg);
+    }
+}    
+</code></pre>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="scroll">
+                                <div class="start"></div>
+                                <div class="progress"></div>
+                                <div class="end"></div>
+                            </div>
+                        </div>
+                        <div class="scroll__row">
+                            <div class="start"></div>
+                            <div class="progress"></div>
+                            <div class="end"></div>
+                        </div>
+                    </div>
+                    <div class="window__footer"></div>
+                </div>
+            </div>
+        </div>
         <a href="mailto:jwor124@naver.com">jwor124@naver.com</a>
     </footer>
     <!-- //footer -->
-
+    <script src="../assets/js/highlight.min.js"></script>
+    <script src="../assets/js/quizEffect.js"></script>
     <script>
         //선택자, 다중선택이므로 querySelectorAll로 바꿔야 함!
         const quizType =  document.querySelectorAll(".quiz__type");                //퀴즈 종류 , 4개가 있으므로 All로 변경
