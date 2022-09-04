@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : 연산자</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+
+</head>
+<body>
+    <header id="header">
+        <h1><a href="../index.html">Javascript</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="../javascript01.html">데이터 저장하기</a></li>
+                <li><a href="../javascript02.html">데이터 불러오기</a></li>
+                <li><a href="../javascript03.html">데이터 실행하기</a></li>
+                <li><a href="../javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="../javascript05.html">문자열 객체</a></li>
+                <li><a href="../javascript06.html">배열 객체</a></li>
+                <li><a href="../javascript07.html">수학 객체</a></li>
+                <li><a href="../javascript08.html">숫자 객체</a></li>
+                <li><a href="../javascript09.html">브라우저 객체</a></li>
+                <li><a href="../javascript10.html">요소 객체</a></li>
+                <li><a href="../javascript11.html">이벤트 객체</a></li>
+            </ul>
+            <ul class="study">
+                <li><a href="basic.html">기본 규칙</a></li>
+                <li><a href="operator.html">연산자</a></li>
+                <li><a href="../study/for.html">반복문</a></li>
+                <li><a href="../study/if.html">조건문</a></li>
+                <li><a href="../study/type.html">데이터 타입</a></li>
+                <li><a href="../study/function.html">함수</a></li>
+                <li><a href="../study/var.html">지역변수/전역변수</a></li>
+                <li><a href="../study/element.html">요소 선택</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">jQuery 속성 관련 메서드</h2>
+
+            <hr>
+
+            <h3 class="t_tit2">attr() 메서드</h3>
+            <p class="t_desc">선택한 요소의 attribute (속성) 를 선택, 생성, 변경할 수 있습니다.</p>
+            <table class="t_table">
+                <thead>
+                    <tr>
+                        <th>실행 분류</th>
+                        <th>형식</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="ce">취득</td>
+                        <td>$("a").attr("href");</td>
+                    </tr>
+                    <tr>
+                        <td class="ce" rowspan="2">생성, 변경</td>
+                        <td>$("a").attr("href", "http://icoxpublish.com").attr("target", "_blank");</td>
+                    </tr>
+                    <tr>
+                        <td>$("a").attr({href: "http://icoxpublish.com", target: "_blank"});</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">콜백함수</td>
+                        <td> 
+                            $("a").attr("herf", function(index, h) { <br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;//index는 각 a 요소의 index 0, 1, 2 <br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;//h는 각 a 요소 href 속성 <br>
+                                return attribute(속성) // 각 a 요소의 속성을 생성 및 변경합니다. <br>
+                            }); <br>
+                            .... <br>
+                            &lt;a href="http://www.daum.net" targe="_blank" title="새창"&gt;다음&lt;/a&gt; <br>
+                            &lt;a href="http://www.naver.com" targe="_blank" title="새창"&gt;네이버&lt;/a&gt; <br>
+                            &lt;a href="http://www.nate.net" targe="_blank" title="새창"&gt;네이트&lt;/a&gt; <br>                          </td>
+                    </tr>
+                </tbody>
+            </table>
+            <h3 class="t_tit2">예제</h3>
+            <h3 class="t_tit3">jQuery</h3>
+            <div class="t_code">
+<pre><code>&lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"&gt;&lt;/script&gt;
+&lt;script&gt;
+    $(document).ready(function(){
+        console.log($("#site > a:eq(0)").attr("href"));
+        $("#site > a:eq(1)").attr("href", "http://m.naver.com").text("네이버 모바일");
+        $("#site a").attr("title", function(){
+            return "새창";
+        });
+    });
+&lt;/script&gt;
+</code></pre>
+            </div>
+            <h3 class="t_tit2">결과</h3>
+
+            <h3 class="t_tit2">prop() 메서드</h3>
+            <p class="t_desc">attr()가 html attribute(속성)에 관련된 메서드라면 prop()는 자바스크립트 property(프로퍼티)에
+                관련된 메서드 입니다. prop() 메서드는 요소의 속성을 true, fasle로 제어할 수 있습니다.
+            </p>
+            <h3 class="t_tit2">예제 - jQuery</h3>
+            <div class="t_code">
+<pre><code>&lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"&gt;&lt;/script&gt;
+&lt;script&gt;
+    $(document).ready(function(){
+        console.log($("input:checkbox").eq(0).attr("checked"));
+        console.log($("input:checkbox").eq(1).prop("checked"));
+        $("input:checkbox").eq(0).attr("checked", "checked");
+        $("input:checkbox").eq(1).prop("checked", true);
+        console.log($("input:checkbox").eq(0).attr("checked"));
+        console.log($("input:checkbox").eq(1).prop("checked"));
+    });
+&lt;/script&gt;
+</code></pre>
+            </div>
+            <h3 class="t_tit2">결과</h3>
+
+            <p class="t_desc">attr()메서드는 checked 속성이 요소에 추가되는 반면 prop()메서드의 true는 자바스크립트의 프로퍼티로 처리됩니다.</p>
+            
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:jwor124@naver.com">jwor124@naver.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+   
+</body>
+</html>

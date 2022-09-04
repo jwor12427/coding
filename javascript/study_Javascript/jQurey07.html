@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : 연산자</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+
+</head>
+<body>
+    <header id="header">
+        <h1><a href="../index.html">Javascript</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="../javascript01.html">데이터 저장하기</a></li>
+                <li><a href="../javascript02.html">데이터 불러오기</a></li>
+                <li><a href="../javascript03.html">데이터 실행하기</a></li>
+                <li><a href="../javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="../javascript05.html">문자열 객체</a></li>
+                <li><a href="../javascript06.html">배열 객체</a></li>
+                <li><a href="../javascript07.html">수학 객체</a></li>
+                <li><a href="../javascript08.html">숫자 객체</a></li>
+                <li><a href="../javascript09.html">브라우저 객체</a></li>
+                <li><a href="../javascript10.html">요소 객체</a></li>
+                <li><a href="../javascript11.html">이벤트 객체</a></li>
+            </ul>
+            <ul class="study">
+                <li><a href="basic.html">기본 규칙</a></li>
+                <li><a href="operator.html">연산자</a></li>
+                <li><a href="../study/for.html">반복문</a></li>
+                <li><a href="../study/if.html">조건문</a></li>
+                <li><a href="../study/type.html">데이터 타입</a></li>
+                <li><a href="../study/function.html">함수</a></li>
+                <li><a href="../study/var.html">지역변수/전역변수</a></li>
+                <li><a href="../study/element.html">요소 선택</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">jQuery 스타일 관련 메서드</h2>
+
+            <hr>
+
+            <h3 class="t_tit2">css() 메서드</h3>
+            <table class="t_table">
+                <thead>
+                    <tr>
+                        <th>실행 분류</th>
+                        <th>형식</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="ce">취득</td>
+                        <td>$("div").css("width");</td>
+                    </tr>
+                    <tr>
+                        <td class="ce" rowspan="2">생성, 변경</td>
+                        <td>$("div").css("background-color", "red").css("padding", "10px");</td>
+                    </tr>
+                    <tr>
+                        <td>$("div").css({background-color, "red", padding, "10px"});</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">콜백 함수</td>
+                        <td>$("div").css("width", function(index, w) { <br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;// index는 각 div 요소의 index 0, 1, 2 <br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;// w는 각 div 요소의 width 값 <br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;retun css 속성 // 각 div 요소의 css 속성을 변경합니다. <br>
+                            }); <br>
+                            .... <br>
+                            &lt;div&gt;내용&lt;/div&gt; <br>
+                            &lt;div&gt;내용&lt;/div&gt; <br>
+                            &lt;div&gt;내용&lt;/div&gt;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <h3 class="t_tit2">예제</h3>
+            <h3 class="t_tit3">jQuery</h3>
+            <div class="t_code">
+<pre><code>&lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"&gt;&lt;/script&gt;
+&lt;script&gt;
+    $(document).ready(function(){
+        $("div").eq(0).css({padding: 10, "text-align": "center"});
+        $("div").css("width", function(index){
+            return index * 100 + 100; // 100, 200, 300
+        });
+    });
+&lt;/script&gt;
+</code></pre>
+            </div>
+            <h3 class="t_tit2">결과</h3>
+
+            <h3 class="t_tit2">width, height 관련 메서드</h3>
+            <table class="t_table">
+                <thead>
+                    <tr>
+                        <th>메서드 종류</th>
+                        <th>설명</th>
+                    </tr>
+                </thead>
+                <tbody>
+                   <tr>
+                        <td class="ce">width()</td>
+                        <td>요소의 가로 길이을 취득, 변경할 수 있습니다.</td>
+                   </tr>
+                   <tr>
+                        <td class="ce">innerWidth()</td>
+                        <td>padding이 적용된 요소의 가로 길이를 취득, 변경할 수 있습니다.</td>
+                   </tr>
+                    <tr>
+                        <td class="ce">outerWidth()</td>
+                        <td>
+                            border와 margin이 적용된 요소의 가로 길이를 취득, 변경할 수 있습니다. <br>
+                            outerWidth()는 요소의 width값 + 좌 · 우 border값 <br>
+                            outerWidth(true)는 요소의 width값 + 좌 · 우 border값 + 좌 · 우 margin값
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="ce">height()</td>
+                        <td>요소의 높이를 취득, 변경할 수 있습니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">innerHeight()</td>
+                        <td>padding이 적용된 요소의 높이를 취득, 변경할 수 있습니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">outerHeight()</td>
+                        <td>
+                            border와 margin이 적용된 요소의 높이를 취득, 변경할 수 있습니다. <br>
+                            outerHeight()는 요소의 height값 + 상 · 하 border값 <br>
+                            outerHeight(true)는 요소의 height값 + 상 · 하 border값 + 상 · 하 margin값
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <h3 class="t_tit2">예제 - jQuery</h3>
+            <div class="t_code">
+<pre><code>&lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"&gt;&lt;/script&gt;
+&lt;script&gt;
+    $(document).ready(function(){
+        $("div").width(150).height(150);
+        console.log("width" + $("div").width());
+        console.log("height" + $("div").height());
+        console.log("innerWidth" + $("div").innerWidth());
+        console.log("innerHeight" + $("div").innerHeight());
+        console.log("outerWidth" + $("div").outerWidth(true));
+        console.log("outerHeight" + $("div").outerHeight(true));
+    });
+&lt;/script&gt;
+</code></pre>
+            </div>
+            <h3 class="t_tit2">결과</h3>
+            <h3 class="t_tit2">위치 관련 메서드</h3>
+            <table class="t_table">
+                <thead>
+                    <tr>
+                        <th>메서드 종류</th>
+                        <th>설명</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="ce">offset()</td>
+                        <td>$("div").offset().left<br>
+                            $("div").offset().top<br>
+                            $("div").offset({left: 10, top: 10}) <br>
+                            html 기준으로 left, top 값을 취득, 변경할 수 있습니다.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="ce">position()</td>
+                        <td>
+                            $("div").position().left <br>
+                            $("div").position().top <br>
+                            부모 요소 기준으로 left, top 값을 취득할 수 있습니다.
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <h3 class="t_tit2">예제 - jQuery</h3>
+            <div class="t_code">
+<pre><code>&lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"&gt;&lt;/script&gt;
+&lt;script&gt;
+    $(document).ready(function(){
+        console.log($("#inner").offset().left);
+        console.log($("#inner").offset().top);
+        console.log($("#inner").position().left);
+        console.log($("#inner").position().top);
+    });
+&lt;/script&gt;
+</code></pre>
+            </div>
+            <h3 class="t_tit2">결과</h3>
+            
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:jwor124@naver.com">jwor124@naver.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+   
+</body>
+</html>
