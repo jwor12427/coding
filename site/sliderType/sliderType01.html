@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>슬라이드 유형01</title>
+    <style>
+        @import url('https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css');
+
+        .nexon {
+            font-family: 'NexonLv1Gothic';
+            font-weight: 400;
+        }
+
+        /* reset */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-weight: normal;
+        }
+
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+        li {
+            list-style: none;
+        }
+        img {
+            width: 100%;
+        }
+        .blind{
+            position: absolute;
+            clip: rect(0 0 0 0);
+            width: 1px;
+            height: 1px;
+            margin: -1px;
+            overflow: hidden;
+        }
+
+        /* common */
+        .container {
+            width: 1160px;
+            padding: 0 20px;
+            margin: 0 auto;
+        }
+
+        .section {
+            padding: 120px 0;
+            min-width: 1160px;
+        }
+
+        .section>h2 {
+            /* + 는 형제, > 는 자식 */
+            font-size: 50px;
+            line-height: 1;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .section>p {
+            font-size: 22px;
+            font-weight: 300;
+            color: #666;
+            text-align: center;
+            margin-bottom: 70px;
+        }
+        .ir {
+            display: block;
+            overflow: hidden;
+            font-size: 0;
+            line-height: 0;
+            text-indent: -9999px;
+        }
+        .slider__inner {
+            margin-top: 70px;
+        }
+        .slider {
+            position: relative;
+        }
+        .slider__img {
+            background: url(../site1/assets/img/SLIDER-TYPE01.jpg) no-repeat center /cover;
+        }
+        .slider__img .desc {
+            width: 1160px;
+            margin: 0 auto;
+            padding: 100px 20px;
+        }
+        .slider__img .desc span {
+            font-size: 16px;
+            background-color: #fff;
+            padding: 1px 14px 0 14px;
+            border-radius: 30px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            display: inline-block;
+        }
+        .slider__img .desc h3 {
+            font-size: 110px;
+            font-weight: 300;
+            line-height: 1;
+            color: #fff;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+            margin-left: -8px;
+        }
+        .slider__img .desc p {
+            font-size: 20px;
+            font-weight: 300;
+            color: #fff;
+            line-height: 1.35;
+            margin-bottom: 130px;
+        }
+        .slider__img .desc .btn a {
+            font-size: 16px;
+            background-color: #fff;
+            padding: 11px 50px;
+            display: inline-block;
+        }
+        .slider__img .desc .btn a.black {
+            background: rgb(88, 88, 88);
+            color: #fff;
+        }
+        .slider__arrow a {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 30px;
+            height: 56px;
+            background-image: url(../site1/assets/img/slider_icon.svg);
+        }
+        .slider__arrow a.left {
+            left: 20px;
+        }
+        .slider__arrow a.right {
+            right: 20px;
+            background-position: -50px 0;
+        }
+        .slider__dot {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 25px;
+        }
+        .slider__dot a {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            background-image: url(../site1/assets/img/slider_icon.svg);
+            background-position: -20px -70px;
+        }
+        .slider__dot a.active {
+            background-position: 0px -70px;
+        }
+        .slider__dot a.play {
+            background-position: -40px -70px;
+        }
+        .slider__dot a.stop {
+            background-position: -60px -70px;
+        }
+    </style>
+</head>
+<body>
+    <section id="sliderType" class="slider__wrap">
+        <h2 class="blind">슬라이드 영역</h2>
+        <div class="slider__inner">
+            <div class="slider">
+                <div class="slider__img">
+                    <div class="desc">
+                        <span>animal</span>
+                        <h3>animal story</h3>
+                        <p>
+                            새로추가 된 동물들의 소식을 들어보세요! <br>
+                            다양한 동물친구들의 이야기를 볼 수 있답니다.
+                        </p>
+                        <div class="btn">
+                            <a href="#">자세히 보기</a>
+                            <a href="#" class="black">사이트 보기</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="slider__arrow">
+                    <a href="#" class="left"><span class="ir">이전 이미지</span></a>
+                    <a href="#" class="right"><span class="ir">다음 이미지</span></a>
+                </div>
+                <div class="slider__dot">
+                    <a href="#" class="dot active"><span class="ir">1</span></a>
+                    <a href="#" class="dot"><span class="ir">2</span></a>
+                    <a href="#" class="dot"><span class="ir">3</span></a>
+                    <a href="#" class="play"><span class="ir">플레이</span></a>
+                    <a href="#" class="stop"><span class="ir">정지</span></a>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
