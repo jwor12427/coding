@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : 연산자</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+
+</head>
+<body>
+    <header id="header">
+        <h1><a href="../index.html">Javascript</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="../javascript01.html">데이터 저장하기</a></li>
+                <li><a href="../javascript02.html">데이터 불러오기</a></li>
+                <li><a href="../javascript03.html">데이터 실행하기</a></li>
+                <li><a href="../javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="../javascript05.html">문자열 객체</a></li>
+                <li><a href="../javascript06.html">배열 객체</a></li>
+                <li><a href="../javascript07.html">수학 객체</a></li>
+                <li><a href="../javascript08.html">숫자 객체</a></li>
+                <li><a href="../javascript09.html">브라우저 객체</a></li>
+                <li><a href="../javascript10.html">요소 객체</a></li>
+                <li><a href="../javascript11.html">이벤트 객체</a></li>
+            </ul>
+            <ul class="study">
+                <li><a href="basic.html">기본 규칙</a></li>
+                <li><a href="operator.html">연산자</a></li>
+                <li><a href="../study/for.html">반복문</a></li>
+                <li><a href="../study/if.html">조건문</a></li>
+                <li><a href="../study/type.html">데이터 타입</a></li>
+                <li><a href="../study/function.html">함수</a></li>
+                <li><a href="../study/var.html">지역변수/전역변수</a></li>
+                <li><a href="../study/element.html">요소 선택</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">mouseover / mouseenter</h2>
+            <p class="t_desc2">
+                자바스크립트의 이벤트 중 마우스와 관련된 요소 입니다. 이 두가지의 요소들은 비슷하지만 서로 다른 차이점이 존재합니다.
+                이번에는 그 차이점에 대해 알아 보도록 합시다👀
+            </p>
+
+            <hr>
+
+            <h3 class="t_tit2">mouseover</h3>
+            <p class="t_desc">
+                mouseover는 지정된 요소에 자기 <i>자신을 포함</i>하면서 밑에 자식요소가 있다면 해당 <i>자식영역까지</i> 포함됩니다.
+            </p>
+ 
+            <h3 class="t_tit2">mouseenter</h3>
+            <p class="t_desc">
+                mouseenter는 <i>지정된 요소(자기 자신)</i>만 해당되며, 그 밑에 자식요소가 존재한다면 자식영역은 <i>제외</i>가 됩니다.
+            </p>
+            <h3 class="t_tit2">차이 비교하기</h3>
+            <h3 class="t_tit2">결과</h3>
+            <div class="t_iframe" style="min-height: 600px; padding-top: 0;">
+                <iframe height="500" style="width: 100%;" scrolling="no" title="Untitled" src="https://codepen.io/brathi/embed/GoBEqm?default-tab=result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                    See the Pen <a href="https://codepen.io/brathi/pen/GoBEqm">
+                    Untitled</a> by Baljeet Rathi (<a href="https://codepen.io/brathi">@brathi</a>)
+                    on <a href="https://codepen.io">CodePen</a>.
+                </iframe>
+            </div>
+            <br>
+            <p class="t_desc">
+                결과에서도와 같이 mouseover의 위치값과 mouseenter의 위치값이 서로 다른것을 알 수 있습니다. 마우스 효과를 자식 영역까지 확대해서 사용하고 싶다면 mouseover/out를
+                자기 자신에 해당하는 요소만 사용하고 싶으면 mouseenter/mouseleave를 사용하시면 된답니다.
+            </p>
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:jwor124@naver.com">jwor124@naver.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+   
+</body>
+</html>
