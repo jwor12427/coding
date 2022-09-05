@@ -1,6 +1,9 @@
 # coding
 
 ### 메인 페이지
+https://codingnyamnyam.netlify.app   
+
+### 메인 페이지2
 https://jwor12427.github.io/coding/index.html   
 
 ### 자기소개 페이지
