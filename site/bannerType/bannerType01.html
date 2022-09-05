@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배너 유형01</title>
+    <style>
+        @import url('https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css');
+
+        .nexon {
+            font-family: 'NexonLv1Gothic';
+            font-weight: 400;
+        }
+
+        /* reset */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-weight: normal;
+        }
+
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+
+        img {
+            width: 100%;
+        }
+        .blind{
+            position: absolute;
+            clip: rect(0 0 0 0);
+            width: 1px;
+            height: 1px;
+            margin: -1px;
+            overflow: hidden;
+        }
+
+        /* common */
+        .container {
+            width: 1160px;
+            padding: 0 20px;
+            margin: 0 auto;
+        }
+
+        .section {
+            padding: 120px 0;
+            min-width: 1160px;
+        }
+
+        .section>h2 {
+            /* + 는 형제, > 는 자식 */
+            font-size: 50px;
+            line-height: 1;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .section>p {
+            font-size: 22px;
+            font-weight: 300;
+            color: #666;
+            text-align: center;
+            margin-bottom: 70px;
+        }
+        .banner__inner {
+            background-image: url(../site1/assets/img/banner_bg01.jpg);
+            background-repeat: no-repeat;
+            background-position: center;
+            text-align: center;
+            padding: 120px 0;
+            color: #fff;
+        }
+        .banner__inner .title {
+            font-size: 50px;
+            line-height: 1;
+            font-weight: 300;
+            margin-bottom: 40px;
+        }
+        .banner__inner .desc{
+            font-size: 24px;
+            line-height: 1.5;
+            font-weight: 300;
+            margin-bottom: 70px;
+        }
+        .banner__inner .desc a {
+            display: block;
+            color: #fff;
+        }
+        .banner__inner .desc a:hover {
+            text-decoration: underline;
+        }
+        .banner__inner .small{
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <section id="bannerType" class="banner__wrap">
+        <h2 class="blind">배너 영역</h2>
+        <div class="banner__inner">
+            <h3 class="title">동물들의 이야기</h3>
+            <p class="desc">더 다양한 동물들의 이야기를 보고 싶으면 사이트를 방문해주세요.
+            <a href="#" title="페이지 이동">사이트 방문하기</a></p>
+            <span class="small">배너 유형01</span>
+        </div>
+    </section>
+</body>
+</html>
