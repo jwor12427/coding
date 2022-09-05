@@ -1,12 +1,494 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>마우스 이펙트01</title>
+
+        <link rel="stylesheet" href="../assets/css/mouse.css" />
+        <link rel="stylesheet" href="../assets/css/atom-one-dark.min.css" />
+        <style>
+            /* mouseType */
+            .mouse__cursor {
+            }
+            .mouse__wrap {
+                width: 100%;
+                height: 100vh;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                color: #fff;
+                overflow: hidden;
+                cursor: none;
+            }
+            .mouse__wrap p {
+                font-size: 2vw;
+                line-height: 2;
+                font-weight: 300;
+            }
+            .mouse__wrap p:last-child {
+                font-size: 3vw;
+                font-weight: 400;
+            }
+            .mouse__wrap p span {
+                border-bottom: 0.15vw dashed #16213E;
+                color: #16213E;
+            }
+            @media (max-width: 800px) {
+                .mouse__wrap p {
+                    padding: 0 20px;
+                    font-size: 30px;
+                    line-height: 1.5;
+                    text-align: center;
+                    margin-bottom: 10px;
+                }
+                .mouse__wrap p:last-child {
+                    font-size: 40px;
+                    line-height: 1.5;
+                    text-align: center;
+                    word-break: keep-all;
+                }
+            }
+            .mouse__cursor {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                border: 3px solid #fff;
+                background-color: rgba(255, 255, 255, 0.1);
+                user-select: none;
+                pointer-events: none;
+                transition: 
+                    background-color 0.3s,
+                    border-color 0.3s,
+                    transform 0.3s,
+                    border-radius 0.3s
+                    ;
+
+            }
+            .mouse__cursor.style1 {
+                background-color: #80558c67;
+                border-color: #80558c;
+            }
+            .mouse__cursor.style2 {
+                background-color: #f637ed55;
+                border-color: #f637ed;
+                transform:  scale(2) rotateY(720deg);
+            }
+            .mouse__cursor.style3 {
+                background-color: #ff64645a;
+                border-color: #FF6464;
+                transform: scale(1.5) rotateX(360deg);
+            }
+            .mouse__cursor.style4 {
+                background-color: #f9d92372;
+                border-color: #F9D923;
+                transform: scale(4);
+            }
+            .mouse__cursor.style5 {
+                background-color: #cd113a70;
+                border-color: #CD113B;
+                transform: scale(0.5);
+            }
+            .mouse__cursor.style6 {
+                background-color: #184d476f;
+                border-color: #184D47;
+                transform: scale(5);
+                border-radius: 5px;
+            }
+            .mouse__info {
+                position: absolute;
+                left: 20px;
+                bottom: 10px;
+                font-size: 14px;
+                line-height: 1.6;
+                color: #fff;
+            }
+        </style>
+    </head>
+    <body class="img03">
+        <header id="header">
+            <h1>Javascript Mouse Effect01</h1>
+            <p>마우스 이펙트 - 마우스 따라다니기</p>
+            <ul>
+                <li class="active"><a href="mouseEffect01.html">1</a></li>
+                <li><a href="mouseEffect02.html">2</a></li>
+                <li><a href="mouseEffect03.html">3</a></li>
+                <li><a href="mouseEffect04.html">4</a></li>
+                <li><a href="mouseEffect05.html">5</a></li>
+                <li><a href="mouseEffect06.html">6</a></li>
+                <li><a href="mouseEffect07.html">7</a></li>
+            </ul>
+        </header>
+        <!-- //header -->
+
+        <main id="main">
+            <section id="mouseType">
+                <div class="mouse__cursor"></div>
+                <div class="mouse__wrap">
+                    <p>
+                        All our <span class="style1">dreams</span> can <span class="style2">true</span> if we
+                        have the <span class="style3">courage</span> to pursue them
+                    </p>
+                    <p>
+                        우리의 모든 <span class="style4">꿈은</span> 이루어질 것이다. 그들을
+                        <span class="style5">믿고</span> 나아갈 <span class="style6">용기만</span> 있다면
+                    </p>
+                </div>
+            </section>
+            <div class="mouse__info">
+                <ul>
+                    <li>clientX : <span class="clientX">0</span>px</li>
+                    <li>clientY : <span class="clientY">0</span>px</li>
+                    <li>offsetX : <span class="offsetX">0</span>px</li>
+                    <li>offsetY : <span class="offsetY">0</span>px</li>
+                    <li>pageX : <span class="pageX">0</span>px</li>
+                    <li>pageY : <span class="pageY">0</span>px</li>
+                    <li>screenX : <span class="screenX">0</span>px</li>
+                    <li>screenY : <span class="screenY">0</span>px</li>
+                </ul>
+            </div>
+        </main>
+        <!-- //main -->
+
+        <footer id="footer">
+            <div class="modal__wrap">
+                <div class="modal__btn">소스 보기</div>
+                <div class="modal__cont">
+                    <div class="modal__box">
+                        <div class="title">
+                            <span class="dot" aria-label="true"></span>
+                            <div class="tabs">
+                                <div class="active">
+                                    <span class="favicon" aria-label="true">
+                                        <svg
+                                            width="16"
+                                            height="16"
+                                            viewBox="0 0 18 18"
+                                            fill="none"
+                                            aria-hidden="true"
+                                            focusable="false"
+                                        >
+                                            <circle
+                                                cx="9"
+                                                cy="9"
+                                                r="9"
+                                                fill="#B1D7B4"
+                                            ></circle>
+                                            <path
+                                                d="M18 9C18 13.9706 15.4688 3.09375 9 10.125C2.53125 17.1562 0 13.9706 0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9Z"
+                                                fill="#A2B38B"
+                                            ></path>
+                                            <path
+                                                d="M18 9C18 13.9706 14.9062 0.84375 8.29688 6.1875C1.6875 11.5312 0 13.9706 0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9Z"
+                                                fill="#FFB3B3"
+                                            ></path>
+                                        </svg>
+                                    </span>
+                                    <em>Javascript</em>
+                                    <span class="close">
+                                        <svg
+                                            width="16"
+                                            height="16"
+                                            viewBox="0 0 16 16"
+                                            fill="none"
+                                            aria-hidden="true"
+                                            focusable="false"
+                                        >
+                                            <path
+                                                d="M12.5 3.5L3.5 12.5"
+                                                stroke="currentColor"
+                                                stroke-width="1.5"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                            ></path>
+                                            <path
+                                                d="M12.5 12.5L3.5 3.5"
+                                                stroke="currentColor"
+                                                stroke-width="1.5"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                            ></path>
+                                        </svg>
+                                    </span>
+                                </div>
+                                <div>
+                                    <span class="favicon" aria-label="true">
+                                        <svg
+                                            width="16"
+                                            height="16"
+                                            viewBox="0 0 18 18"
+                                            fill="none"
+                                            aria-hidden="true"
+                                            focusable="false"
+                                        >
+                                            <circle
+                                                cx="9"
+                                                cy="9"
+                                                r="9"
+                                                fill="#7A4495"
+                                            ></circle>
+                                            <path
+                                                d="M18 9C18 13.9706 15.4688 3.09375 9 10.125C2.53125 17.1562 0 13.9706 0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9Z"
+                                                fill="#B270A2"
+                                            ></path>
+                                            <path
+                                                d="M18 9C18 13.9706 14.9062 0.84375 8.29688 6.1875C1.6875 11.5312 0 13.9706 0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9Z"
+                                                fill="#FCE2DB"
+                                            ></path>
+                                        </svg>
+                                    </span>
+                                    <em>HTML</em>
+                                    <span class="close">
+                                        <svg
+                                            width="16"
+                                            height="16"
+                                            viewBox="0 0 16 16"
+                                            fill="none"
+                                            aria-hidden="true"
+                                            focusable="false"
+                                        >
+                                            <path
+                                                d="M12.5 3.5L3.5 12.5"
+                                                stroke="currentColor"
+                                                stroke-width="1.5"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                            ></path>
+                                            <path
+                                                d="M12.5 12.5L3.5 3.5"
+                                                stroke="currentColor"
+                                                stroke-width="1.5"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                            ></path>
+                                        </svg>
+                                    </span>
+                                </div>
+                                <div>
+                                    <span class="favicon" aria-label="true">
+                                        <svg
+                                            width="16"
+                                            height="16"
+                                            viewBox="0 0 18 18"
+                                            fill="none"
+                                            aria-hidden="true"
+                                            focusable="false"
+                                        >
+                                            <circle
+                                                cx="9"
+                                                cy="9"
+                                                r="9"
+                                                fill="#A66CFF"
+                                            ></circle>
+                                            <path
+                                                d="M18 9C18 13.9706 15.4688 3.09375 9 10.125C2.53125 17.1562 0 13.9706 0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9Z"
+                                                fill="#B1E1FF"
+                                            ></path>
+                                            <path
+                                                d="M18 9C18 13.9706 14.9062 0.84375 8.29688 6.1875C1.6875 11.5312 0 13.9706 0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9Z"
+                                                fill="#9C9EFE"
+                                            ></path>
+                                        </svg>
+                                    </span>
+                                    <em>CSS</em>
+                                    <span class="close">
+                                        <svg
+                                            width="16"
+                                            height="16"
+                                            viewBox="0 0 16 16"
+                                            fill="none"
+                                            aria-hidden="true"
+                                            focusable="false"
+                                        >
+                                            <path
+                                                d="M12.5 3.5L3.5 12.5"
+                                                stroke="currentColor"
+                                                stroke-width="1.5"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                            ></path>
+                                            <path
+                                                d="M12.5 12.5L3.5 3.5"
+                                                stroke="currentColor"
+                                                stroke-width="1.5"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                            ></path>
+                                        </svg>
+                                    </span>
+                                </div>
+                            </div>
+                            <span class="plus" aria-label="true">
+                                <svg
+                                    width="16"
+                                    height="16"
+                                    viewBox="0 0 16 16"
+                                    fill="none"
+                                    aria-hidden="true"
+                                    focusable="false"
+                                >
+                                    <path
+                                        d="M2.5 8H13.5"
+                                        stroke="currentColor"
+                                        stroke-width="1.5"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                    ></path>
+                                    <path
+                                        d="M8 2.5V13.5"
+                                        stroke="currentColor"
+                                        stroke-width="1.5"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                    ></path>
+                                </svg>
+                            </span>
+                        </div>
+                        <div class="cont">
+                            <div class="active">
+<pre><code>
+</code></pre>
+                            </div>
+                            <div>
+<pre><code>
+
+</code></pre>
+                            </div>
+                            <div>
+<pre><code>
+
+</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal__close">
+                        <svg
+                            width="16"
+                            height="16"
+                            viewBox="0 0 16 16"
+                            fill="none"
+                            aria-hidden="true"
+                            focusable="false"
+                        >
+                            <path
+                                d="M12.5 3.5L3.5 12.5"
+                                stroke="currentColor"
+                                stroke-width="1.5"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            ></path>
+                            <path
+                                d="M12.5 12.5L3.5 3.5"
+                                stroke="currentColor"
+                                stroke-width="1.5"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            ></path>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- //footer -->
+
+        <script src="../assets/js/highlight.min.js"></script>
+        <script src="../assets/js/common.js"></script>
+        <script>
+            window.addEventListener("mousemove", (event) => {
+                document.querySelector(".clientX").textContent = event.clientX;
+                document.querySelector(".clientY").textContent = event.clientY;
+                document.querySelector(".offsetX").textContent = event.offsetX;
+                document.querySelector(".offsetY").textContent = event.offsetY;
+                document.querySelector(".pageX").textContent = event.pageX;
+                document.querySelector(".pageY").textContent = event.pageY;
+                document.querySelector(".screenX").textContent = event.screenX;
+                document.querySelector(".screenY").textContent = event.screenY;
+            });
+
+            const cursor = document.querySelector(".mouse__cursor");
+
+            window.addEventListener("mousemove", (e) => {
+
+                //자바스크립트는 단위를 붙여 줘야 함
+                cursor.style.left = e.clientX  - 25 + "px";
+                cursor.style.top = e.clientY - 25 + "px";
+            });
+
+            // document.querySelector(".style1").addEventListener("mouseover", () => {
+            //     cursor.classList.add("style1");
+            // });
+            // document.querySelector(".style1").addEventListener("mouseout", () => {
+            //     cursor.classList.remove("style1");
+            // });
+            // document.querySelector(".style2").addEventListener("mouseover", () => {
+            //     cursor.classList.add("style2");
+            // });
+            // document.querySelector(".style2").addEventListener("mouseout", () => {
+            //     cursor.classList.remove("style2");
+            // });
+            // document.querySelector(".style3").addEventListener("mouseover", () => {
+            //     cursor.classList.add("style3");
+            // });
+            // document.querySelector(".style3").addEventListener("mouseout", () => {
+            //     cursor.classList.remove("style3");
+            // });
+            // document.querySelector(".style4").addEventListener("mouseover", () => {
+            //     cursor.classList.add("style4");
+            // });
+            // document.querySelector(".style4").addEventListener("mouseout", () => {
+            //     cursor.classList.remove("style4");
+            // });
+            // document.querySelector(".style5").addEventListener("mouseover", () => {
+            //     cursor.classList.add("style5");
+            // });
+            // document.querySelector(".style5").addEventListener("mouseout", () => {
+            //     cursor.classList.remove("style5");
+            // });
+            // document.querySelector(".style6").addEventListener("mouseover", () => {
+            //     cursor.classList.add("style6");
+            // });
+            // document.querySelector(".style6").addEventListener("mouseout", () => {
+            //     cursor.classList.remove("style6");
+            // });
+
+            //for문
+                // for(let i = 1; i <= 6; i++) {
+                //     document.querySelector(".style" + i).addEventListener("mouseover", () => {
+                //         cursor.classList.add("style" + i)
+                //     });
+                // };
+                // for(let i = 1; i <= 6; i++) {
+                //     document.querySelector(".style" + i).addEventListener("mouseout", () => {
+                //         cursor.classList.remove("style" + i)
+                //     });
+                // };
+            //forEach문
+            // document.querySelectorAll(".mouse__wrap span").forEach((span, i) => {
+            //     span.addEventListener("mouseover", () => {
+            //         cursor.classList.add("style" + [i+1]);
+            //     });
+            //     span.addEventListener("mouseout", () => {
+            //         cursor.classList.remove("style" + [i+1]);
+            //     });
+            // });
+            
+            //getAttribute(속성값)
+            document.querySelectorAll(".mouse__wrap span").forEach(span => {
+                let attr = span.getAttribute("class");
+
+                span.addEventListener("mouseover", () => {
+                    cursor.classList.add(attr);
+                });
+                span.addEventListener("mouseout", () => {
+                    cursor.classList.remove(attr);
+                });
+            });
+            //글씨 값: innerText / textContent
+        </script>
+    </body>
 </html>
