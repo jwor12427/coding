@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>패럴랙스 이펙트</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+
+</head>
+<body>
+    <header id="header">
+        <h1><a href="../index.html">패럴랙스 이펙트</a></h1>
+        <nav class="header_nav">
+
+        </nav>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">스크립트를 이용한 패럴랙스효과 만들기 01</h2>
+            <p class="t_desc2">
+                패럴랙스는 시차라는 뜻을 가지고 있으며, 스크롤링을 했을 때 발생하는 시간차에 따라 변화함으로써 보다 입체감이 있는 구현을 할 수 있습니다.<br>
+                offsetTop()을 이용해서 Y의 값을 구해보도록 합시다✏️
+            </p>
+
+            
+
+            
+            <div class="t_iframe" style="min-height: 1000px; padding-top: 0;">
+                <iframe src="https://jwor12427.github.io/coding/javascript/effect/parallaxEffect01.html"></iframe>
+            </div>
+
+            <div class="t_link">
+                <a href="https://github.com/jwor12427/coding/blob/main/javascript/effect/parallaxEffect01.html" target="_blank">원본 소스 보기</a>
+            </div>
+
+            <h3 class="t_tit2">Script</h3>
+            <div class="t_code">
+<pre><code>//scrollTop
+// let scrollTop = window.pageYOffset;
+// let scrollTop = window.scrollY;
+// let scrollTop = document.documentElement.scrollTop;
+let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop;
+</code></pre>
+            </div>
+
+            <p class="t_desc">
+               스크롤 값을 구하기 위하여 스크립트를 작성해 줍니다. pageYOffset, scrollY, scrollTop 각각 선택해서 사용할 수 있지만,
+               브라우저마다 각각의 지원여부가 다르니 ||(or)를 이용해서 모두 작성해줍니다.
+            </p>
+
+            <div class="t_code">
+<pre><code>//for문 영역의 값
+for(let i = 1 ; i &lt; 10 ; i++) {
+    document.querySelector(".offset"+i).innerText = document.getElementById("section"+ i).offsetTop;
+};
+</code></pre>
+            </div>
+            <p class="t_desc">
+                for()하여 각각의 영역의 값을 구할 수 있습니다.
+            </p>
+            <div class="t_code">
+<pre><code>//fotEach문
+document.querySelectorAll(".content__item").forEach ((element, index) => {
+    if(scrollTop >= element.offsetTop - 2) {
+        document.querySelectorAll("#parallax__nav li").forEach(li => {
+            li.classList.remove("active")
+        });
+        document.querySelector("#parallax__nav li:nth-child(" + (index+1) + ")").classList.add("active")
+    };
+    
+})
+document.querySelector(".scroll span").innerText = Math.round(scrollTop);
+</code></pre>
+            </div>
+            <p class="t_desc">
+                forEach()와 if문을 이용하여 scrollTop값이 브라우저의 각 content__item의 값보다 크거나 같다면 li에 활성화된 .active를 지워주고,
+                각 영역에 해당하는 li애는 .active를 활성화 시켜 줍니다🪄
+            </p>
+            <p class="t_box">
+                Math.round();
+            </p>
+            <p class="t_desc">
+                정수를 반올림 시켜주는 메서드 입니다✏️
+            </p>
+            <div class="result">
+                <details>
+                    <summary>for문</summary>
+                        <div class="t_code">
+<pre><code>//for문
+for(let i = 1; i &lt; 10; i++) {
+    if(scrollTop >= document.getElementById("section"+i).offsetTop){
+        document.querySelectorAll("#parallax__nav li").forEach(li => {
+            li.classList.remove("active");
+        })
+        document.querySelector("#parallax__nav li:nth-child("+ i + ")").classList.add("active");
+    }
+    
+}
+</code></pre>
+                    </div>
+                </details>
+            </div>
+            <h3 class="t_tit2">스크롤이동</h3>
+            <div class="t_code">
+<pre><code>//스크롤 이동
+document.querySelectorAll("#parallax__nav li a").forEach(li => {
+    li.addEventListener("click", (e) => {
+        e.preventDefault();
+        document.querySelector(li.getAttribute("href")).scrollIntoView({
+            behavior: "smooth"
+        });
+    });
+});
+</code></pre>
+            </div>
+            <p class="t_desc">
+                스크롤 이동이 부드럽게 이어지도록  'smooth'를 추가 해줍니다.
+            </p>
+            <h3 class="t_tit2">HTML</h3>
+            <div class="t_code">
+<pre><code>&lt;nav id="parallax__nav"&gt;
+    &lt;ul&gt;
+        &lt;li class="active"&gt;&lt;a href="#section1"&gt;메뉴1&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#section2"&gt;메뉴2&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#section3"&gt;메뉴3&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#section4"&gt;메뉴4&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#section5"&gt;메뉴5&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#section6"&gt;메뉴6&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#section7"&gt;메뉴7&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#section8"&gt;메뉴8&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#section9"&gt;메뉴9&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/nav&gt;
+
+&lt;section id="section1" class="content__item"&gt;
+    &lt;span class="content__item__num"&gt;01&lt;/span&gt;
+    &lt;h2 class="content__item__title"&gt;section1&lt;/h2&gt;
+    &lt;figure class="content__item__imgWrap"&gt;
+        &lt;div class="content__item__img"&gt;&lt;/div&gt;
+    &lt;/figure&gt;
+    &lt;p class="content__item__desc"&gt;인간은 죽음을 두려워한다. 그것은 생을 사랑하기 때문이다.&lt;/p&gt;
+&lt;/section&gt;
+
+
+&lt;aside id="parallax__info"&gt;
+    &lt;div class="scroll"&gt;scrollTop : &lt;span&gt;0&lt;/span&gt;px&lt;/div&gt;
+    &lt;div class="scroll"&gt;
+        &lt;ul&gt;
+            &lt;li&gt;section1 offset() : &lt;span class="offset1"&gt;0&lt;/span&gt;px&lt;/li&gt;
+            &lt;li&gt;section2 offset() : &lt;span class="offset2"&gt;0&lt;/span&gt;px&lt;/li&gt;
+            &lt;li&gt;section3 offset() : &lt;span class="offset3"&gt;0&lt;/span&gt;px&lt;/li&gt;
+            &lt;li&gt;section4 offset() : &lt;span class="offset4"&gt;0&lt;/span&gt;px&lt;/li&gt;
+            &lt;li&gt;section5 offset() : &lt;span class="offset5"&gt;0&lt;/span&gt;px&lt;/li&gt;
+            &lt;li&gt;section6 offset() : &lt;span class="offset6"&gt;0&lt;/span&gt;px&lt;/li&gt;
+            &lt;li&gt;section7 offset() : &lt;span class="offset7"&gt;0&lt;/span&gt;px&lt;/li&gt;
+            &lt;li&gt;section8 offset() : &lt;span class="offset8"&gt;0&lt;/span&gt;px&lt;/li&gt;
+            &lt;li&gt;section9 offset() : &lt;span class="offset9"&gt;0&lt;/span&gt;px&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/div&gt;
+&lt;/aside&gt;
+</code></pre>
+            </div>
+            <h3 class="t_tit2">CSS</h3>
+            <div class="result">
+                <details>
+                    <summary>css보기</summary>
+                        <div class="t_code">
+<pre><code>/* parallax__nav */
+#parallax__nav {
+    position: fixed;
+    right: 20px;
+    top: 20px;
+    z-index: 2000;
+    background-color: rgba(0,0,0,0.4);
+    padding: 20px 30px;
+    border-radius: 50px;
+}
+#parallax__nav li {
+    display: inline;
+    margin: 0 5px;
+}
+#parallax__nav li a {
+    display: inline-block;
+    height: 30px;
+    padding: 5px 20px;
+    text-align: center;
+    line-height: 30px;
+}
+#parallax__nav li.active a {
+    background-color: #fff;
+    color: #222;
+    border-radius: 20px;
+    box-sizing: content-box;
+}
+
+/* parallax__cont */
+#parallax__cont {
+    max-width: 1600px;
+    width: 98%;
+    margin: 0 auto;
+    /* background-color: rgba(255,255,255,0.1); */
+}
+
+.content__item {
+    width: 1000px;
+    max-width: 70vw;
+    margin: 30vw auto;
+    /* background-color: rgba(255,255,255,0.3); */
+    text-align: left;
+    margin-right: 0;
+    position: relative;
+    padding-top: 9vw;
+}
+.content__item:nth-child(even) {      /* 2n: n은 변수, even: 짝수만 선택 */
+    margin-left: 0;
+    text-align: right;
+}
+.content__item:nth-child(even) .content__item__num {
+    left: auto;  /*left 값 초기화 */
+    right: -5vw;
+}
+.content__item__num {
+    font-size: 35vw;
+    font-family: 'Lato';
+    font-weight: 100;
+    position: absolute;
+    left: -5vw;
+    top: -13vw;
+    opacity: 0.07;
+    z-index: -2;
+}
+.content__item__title {
+    font-weight: 400;
+    text-transform: capitalize;     /* 첫글자만 대문자 */
+}
+.content__item__imgWrap {
+    width: 100%;
+    padding-bottom: 56.25%;
+    background-color: #000;
+    position: relative;
+    overflow: hidden;
+    z-index: -1;
+}
+.content__item__img {
+    position: absolute;
+    background-image: url(../assets/img/effect_bg19.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 110%;
+    background-size: cover;
+    height: 110%;
+    left: -5%;
+    top: -5%;
+    filter: saturate(0%);
+    transition: all 1s;
+}
+.content__item:nth-child(1) .content__item__img{
+    background-image: url(../assets/img/effect_bg13.jpg);
+}
+.content__item:nth-child(2) .content__item__img{
+    background-image: url(../assets/img/effect_bg19.jpg);
+}
+.content__item:nth-child(3) .content__item__img{
+    background-image: url(../assets/img/effect_bg08.jpg);
+}
+.content__item:nth-child(4) .content__item__img{
+    background-image: url(../assets/img/effect_bg09.jpg);
+}
+.content__item:nth-child(5) .content__item__img{
+    background-image: url(../assets/img/effect_bg18.jpg);
+}
+.content__item:nth-child(6) .content__item__img{
+    background-image: url(../assets/img/effect_bg17.jpg);
+}
+.content__item:nth-child(7) .content__item__img{
+    background-image: url(../assets/img/effect_bg06.jpg);
+}
+.content__item:nth-child(8) .content__item__img{
+    background-image: url(../assets/img/effect_bg01.jpg);
+}
+.content__item:nth-child(9) .content__item__img{
+    background-image: url(../assets/img/effect_bg15.jpg);
+}
+.content__item__desc {
+    font-size: 4vw;
+    line-height: 1.4;
+    margin-top: -5vw;
+    margin-left: -4vw;
+    word-break: keep-all;
+}
+.content__item:nth-child(even) .content__item__desc {
+    margin-left: auto;
+    margin-right: -4vw;
+}
+#parallax__info {
+    position: fixed;
+    left: 20px;
+    bottom: 20px;
+    z-index: 2000;
+    background-color: rgba(0,0,0,0.6);
+    color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+}
+#parallax__info li, .scrollTop  {
+    line-height: 1.4;
+}
+@media(max-width: 800px) {
+    #parallax__cont {
+        margin-top: 70vw;
+    }
+    #parallax__nav {
+        padding: 10px;
+        right: auto;
+        left: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        border-radius: 5px;
+        background-color: rgba(0,0,0,0.8);
+    }
+    #parallax__nav li {
+        display: block;
+        margin: 5px;
+    }
+    #parallax__nav li a {
+        font-size: 14px;
+        padding: 5px;
+        border-radius: 5px;
+        height: auto;
+        line-height: 1;
+    }
+    #parallax__nav li.active a {
+        border-radius: 5px;
+    }
+    #parallax__info {
+        left: 10px;
+        bottom: 10px;
+    }
+}
+</code></pre>
+                    </div>
+                </details>
+            </div>
+
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:jwor124@naver.com">jwor124@naver.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+   
+</body>
+</html>
