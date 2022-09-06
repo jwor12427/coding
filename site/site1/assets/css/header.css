@@ -38,7 +38,7 @@
 }
 
 .header__menu li a {
-    padding: 13px 30px;
+    padding: 13px 20px;
     margin: 0 5px;
     transition: background-color 0.3s;
 }
@@ -47,7 +47,10 @@
     background-color: #f1f1f1;
     border-radius: 5px;
 }
-
+.header__menu li.active a {
+    background-color: #d4d4d4;
+    border-radius: 5px;
+}
 .header__member {
     width: 20%;
     text-align: right;

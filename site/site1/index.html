@@ -46,11 +46,11 @@
             </div>
             <div class="header__menu">
                 <ul>
-                    <li><a href="#">헤더 영역</a></li>
-                    <li><a href="#">슬라이드 영역</a></li>
-                    <li><a href="#">배너 영역</a></li>
-                    <li><a href="#">컨텐츠 영역</a></li>
-                    <li><a href="#">푸터 영역</a></li>
+                    <li class="active"><a href="#imageType" >이미지 영역</a></li>
+                    <li><a href="#imgTextType">이미지/텍스트 영역</a></li>
+                    <li><a href="#cardType">카드 영역</a></li>
+                    <li><a href="#bannerType">배너 영역</a></li>
+                    <li><a href="#textType">텍스트 영역</a></li>
                 </ul>
             </div>
             <div class="header__member">
@@ -61,7 +61,7 @@
     <!-- //headerType -->
     
     <main id="mainType">
-        <section id="sliderType" class="slider__wrap">
+        <section id="sliderType" class="slider__wrap nexon">
             <h2 class="blind">슬라이드 영역</h2>
             <div class="slider__inner">
                 <div class="slider">
@@ -95,7 +95,7 @@
         </section>
         <!-- //sliderType -->
         
-        <section id="imageType" class="image__wrap nexon section">
+        <section id="imageType" class="image__wrap nexon section content__item">
             <h2>고양이 알아보기</h2>
             <p>고양이에 대해서 알아보는 시간을 가집시다.</p>
             <div class="image__inner container">
@@ -113,7 +113,7 @@
         </section>
         <!-- //imageType -->
         
-        <section id="imgTextType" class="image__wrap nexon section gray">
+        <section id="imgTextType" class="image__wrap nexon section gray content__item">
             <h2 class="blind">유용한 사이트 살펴보기</h2>
             <div class="imgText__inner container">
                 <div class="imgText__txt">
@@ -139,7 +139,7 @@
         </section>
         <!-- //imgTextType -->
         
-        <section id="cardType" class="card__wrap nexon section">
+        <section id="cardType" class="card__wrap nexon section content__item">
             <h2>당신에게 친숙한 고래 이야기</h2>
             <p>많은 사람들에게 친숙한 고래들의 이야기 입니다. 즐겁게 이야기를 들어주세요🐳</p>
             <div class="card__inner container">
@@ -207,7 +207,7 @@
         </section>
         <!-- //cardType-->
         
-        <section id="bannerType" class="banner__wrap">
+        <section id="bannerType" class="banner__wrap nexon content__item">
             <h2 class="blind">배너 영역</h2>
             <div class="banner__inner">
                 <h3 class="title">동물들의 이야기</h3>
@@ -218,7 +218,7 @@
         </section>
         <!-- //bannerType -->
         
-        <section id="textType" class="text__wrap nexon section">
+        <section id="textType" class="text__wrap nexon section content__item">
             <span>텍스트 유형01</span>
             <h2 class="mb70">텍스트 유형 첫번째✏️</h2>
             <div class="text__inner container">
@@ -319,5 +319,31 @@
         </div>
     </footer>
     <!-- //footerType -->
+
+    <script>
+        window.addEventListener("scroll", () => {
+            let scrollTop = window.pageYOffset || window.offsetTop || document.documentElement.scrollTop;
+
+            document.querySelectorAll("#mainType > section").forEach((element, index) => {
+                if(scrollTop >= element.offsetTop + 200) {
+                    document.querySelectorAll(".header__menu li").forEach(li => {
+                        li.classList.remove("active")
+                    });
+                    document.querySelector(".header__menu li:nth-child(" + (index+1) + ")").classList.add("active")
+                };
+                    
+            })
+        })
+
+        //스크롤 이동
+        document.querySelectorAll(".header__menu li a").forEach(li => {
+            li.addEventListener("click", (e) => {
+                e.preventDefault();
+                document.querySelector(li.getAttribute("href")).scrollIntoView({
+                    behavior: "smooth"
+                });
+            });
+        });
+    </script>
 </body>
 </html>
