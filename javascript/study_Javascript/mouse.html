@@ -50,15 +50,30 @@
             </p>
 
             <hr>
-
-            <h3 class="t_tit2">mouseover</h3>
+            <p class="t_box">
+                mouseOver / mouseOut <br>
+                mouseEnter  / mouseLeave
+            </p>
             <p class="t_desc">
-                mouseover는 지정된 요소에 자기 <i>자신을 포함</i>하면서 밑에 자식요소가 있다면 해당 <i>자식영역까지</i> 포함됩니다.
+                두 이벤트 모두 다 마우스가 요소안으로 들어오는 순간을 감지하는 이벤트이며, 반대는 마우스가 요소 밖으로 나가는 순간을 감지하는 이벤트 입니다.<br>
+                두 이벤트가 유사 하지만, 이벤트 전파와 취소가능성에 큰 차이가 있습니다.
+            </p>
+            <h3 class="t_tit2">mouseOver</h3>
+            <p class="t_box">
+                <i>mouseOver / mouseOut</i> 는 이벤트가 발생할 때 버블링이 일어나며 상위요소로 전파됩니다. <br>
+                preventDefault를 이용하여 취소 할 수 있습니다.
+            </p>
+            <p class="t_desc">
+                ➡️mouseOver는 지정된 요소에 자기 <i>자신을 포함</i>하면서 밑에 자식요소가 있다면 해당 <i>자식영역까지</i> 포함됩니다.
             </p>
  
-            <h3 class="t_tit2">mouseenter</h3>
+            <h3 class="t_tit2">mouseEnter </h3>
+            <p class="t_box">
+                <i>mouseEnter / mouseLeave</i> 는 이벤트가 발생할 때 버블링이 일어나지 않아 자기자신만 이벤트를 받게 됩니다.<br>
+                그렇기 때문에 target과 currentTarget이 일치하게 됩니다. preventDefault를 이용하여 이벤트를 취소 할 수 없습니다.
+            </p>
             <p class="t_desc">
-                mouseenter는 <i>지정된 요소(자기 자신)</i>만 해당되며, 그 밑에 자식요소가 존재한다면 자식영역은 <i>제외</i>가 됩니다.
+                ➡️mouseEnter는 <i>지정된 요소(자기 자신)</i>만 해당되며, 그 밑에 자식요소가 존재한다면 자식영역은 <i>제외</i>가 됩니다.
             </p>
             <h3 class="t_tit2">차이 비교하기</h3>
             <h3 class="t_tit2">결과</h3>
