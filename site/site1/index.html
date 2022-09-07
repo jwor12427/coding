@@ -324,8 +324,8 @@
         window.addEventListener("scroll", () => {
             let scrollTop = window.pageYOffset || window.offsetTop || document.documentElement.scrollTop;
 
-            document.querySelectorAll("#mainType > section").forEach((element, index) => {
-                if(scrollTop >= element.offsetTop + 200) {
+            document.querySelectorAll(".content__item").forEach((element, index) => {
+                if(scrollTop >= element.offsetTop - 200) {
                     document.querySelectorAll(".header__menu li").forEach(li => {
                         li.classList.remove("active")
                     });
