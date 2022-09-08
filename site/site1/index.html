@@ -46,7 +46,7 @@
             </div>
             <div class="header__menu">
                 <ul>
-                    <li class="active"><a href="#imageType" >이미지 영역</a></li>
+                    <li><a href="#imageType" >이미지 영역</a></li>
                     <li><a href="#imgTextType">이미지/텍스트 영역</a></li>
                     <li><a href="#cardType">카드 영역</a></li>
                     <li><a href="#bannerType">배너 영역</a></li>
@@ -114,26 +114,26 @@
         <!-- //imageType -->
         
         <section id="imgTextType" class="image__wrap nexon section gray content__item">
-            <h2 class="blind">유용한 사이트 살펴보기</h2>
+            <h2 class="blind">사자와 기린</h2>
             <div class="imgText__inner container">
                 <div class="imgText__txt">
-                    <span>이미지 텍스트 유형01</span>
-                    <h3>유용한 사이트 살펴보기</h3>
-                    <p>웹디자이너, 웹 퍼블리셔, 프론트앤드 개발자를 위한 유용한 사이트입니다.</p>
+                    <span>아프리카에 사는 사자와 기린 이야기</span>
+                    <h3>사자와 기린에 대하여</h3>
+                    <p>아프리카 초원을 누비는 두 동물의 이야기를 감상하세요</p>
                     <ul>
-                        <li><a href="/">튜토리얼 사이트</a></li>
-                        <li><a href="/">레퍼런스 사이트</a></li>
-                        <li><a href="/">웹폰트 사이트</a></li>
-                        <li><a href="/">CSS 사이트</a></li>
-                        <li><a href="/">WebGL 사이트</a></li>
-                        <li><a href="/">Youtube 사이트</a></li>
+                        <li><a href="/">기린의 이야기</a></li>
+                        <li><a href="/">사자에 대하여</a></li>
+                        <li><a href="/">더 많은 동물 이야기</a></li>
+                        <li><a href="/">초원에 사는 동물들</a></li>
+                        <li><a href="/">기린은 얼마나 무서운가</a></li>
+                        <li><a href="/">기린과 사자, 누가 이기는가</a></li>
                     </ul>
                 </div>
                 <div class="imgText__img img1">
-                    <a href="/">레퍼런스 사이트</a>
+                    <a href="/">알고보면 무서운 기린</a>
                 </div>
                 <div class="imgText__img img2">
-                    <a class="blue" href="/">튜토리얼 사이트</a>
+                    <a class="blue" href="/">사자와 함께 춤을</a>
                 </div>
             </div>   
         </section>
@@ -213,17 +213,17 @@
                 <h3 class="title">동물들의 이야기</h3>
                 <p class="desc">더 다양한 동물들의 이야기를 보고 싶으면 사이트를 방문해주세요.
                 <a href="#" title="페이지 이동">사이트 방문하기</a></p>
-                <span class="small">배너 유형01</span>
+                <span class="small">업데이트 된 여우 이야기</span>
             </div>
         </section>
         <!-- //bannerType -->
         
         <section id="textType" class="text__wrap nexon section content__item">
-            <span>텍스트 유형01</span>
-            <h2 class="mb70">텍스트 유형 첫번째✏️</h2>
+            <span>새롭게 업데이트 된 새들의 이야기</span>
+            <h2 class="mb70">멋진 새들의 이야기를 소개합니다🦜</h2>
             <div class="text__inner container">
                 <div class="text t1">
-                    <h3 class="text__title">텍스트로 보기</h3>
+                    <h3 class="text__title">까마귀의 지능</h3>
                     <p class="text__desc">검색 이펙트를 보여줍니다.검색 이펙트를 보여줍니다.검색 이펙트를 보여줍니다.검색 이펙트를 보여줍니다.검색 이펙트를 보여..</p>
                     <a class="text_btn" href="/">더보기</a>
                 </div>
@@ -325,7 +325,7 @@
             let scrollTop = window.pageYOffset || window.offsetTop || document.documentElement.scrollTop;
 
             document.querySelectorAll(".content__item").forEach((element, index) => {
-                if(scrollTop >= element.offsetTop - 200) {
+                if(scrollTop >= element.offsetTop - 600) {
                     document.querySelectorAll(".header__menu li").forEach(li => {
                         li.classList.remove("active")
                     });

@@ -1,0 +1,364 @@
+@import url('https://webfontworld.github.io/woori/Wooridaum.css');
+.woori {
+    font-family: 'Wooridaum';
+}
+/* reset */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+img {
+    width: 100%;
+}
+li {
+    list-style: none;
+}
+
+/* common */
+.container {
+    width: 1160px;
+    margin: 0 auto;
+}
+.section {
+    padding: 120px 0;
+    min-width: 1160px;
+}
+
+.section>h2 {
+    /* + 는 형제, > 는 자식 */
+    font-size: 50px;
+    line-height: 1;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.section>p {
+    font-size: 22px;
+    font-weight: 300;
+    color: #666;
+    text-align: center;
+    margin-bottom: 70px;
+}
+.gray {
+    background-color: #f5f5f5;
+}
+.blind{
+    position: absolute;
+    clip: rect(0 0 0 0);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+}
+.header__inner {
+    width: 100%;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    margin-bottom: 10px;
+}
+.header__logo {
+    width: 10%;
+}
+.header__logo img {
+    width: 100px;
+}
+.header__menu {
+    width: 70%;
+    text-align: center;
+}
+.header__menu ul {
+    text-align: right;
+}
+.header__menu li {
+    display: inline;
+}
+.header__menu li a {
+    padding: 13px 30px;
+    margin: 0 5px;
+    transition: background-color 0.3s;
+    font-weight: 700;
+    font-size: 18px;
+}
+.header__menu li a:hover {
+    background-color: #f1f1f1;
+    border-radius: 5px;
+}
+.slider__wrap {
+    display: flex;
+    margin-bottom: 30px;
+}
+.slider__img {
+    /* 이미지 보이는 영역 */
+    position: relative;
+    width: 1160px;
+    height: 446px;
+    overflow: hidden;
+}
+.slider__inner {
+    /* 이미지를 감싸고 있는 부모 : 움직이는 부분 */
+    display: flex;
+    flex-wrap: wrap;
+    width: 4640px;          /* 총 이미지 */
+    height: 446px;
+}
+.slider__img img {
+    /* 개별적인 이미지 */
+    position: relative;
+    width: 1160px;
+    height: 446px;
+}
+.banner__wrap {
+    display: flex;
+    justify-content: space-between;
+    height: 150px;
+    margin-bottom: 30px;
+}
+.left {
+    width: 48%;
+    background-color: #f5f5f5;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.right {
+    width: 48%;
+    background-color: #f5f5f5;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.info_1 .tit {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+.info_1 .desc {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 20px;
+}
+.info_1 img {
+    width: 100px;
+    align-items: center;
+}
+.info_2 {
+    display: flex;
+    
+}
+.info_2 img {
+    width: 20px;
+    margin-right: 5px;
+}
+.info_2 span{
+    font-size: 14px;
+    font-weight: 700;
+}
+.box2 img {
+    width: 100px;
+}
+.info_2 em {
+    font-style: normal;
+    font-size: 10px;
+    color: #666;
+    margin-left: 5px;
+}
+.img__icon img{
+    display: block;
+}
+.card__inner {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+.card {
+    width: 31%;
+}
+.title {
+    font-size: 26px;
+    font-weight: 700;
+    box-sizing: border-box;
+    display: inline-block;
+    margin-bottom: 20px;
+} 
+.card__wrap span {
+    font-size: 26px;
+    font-style: normal;
+    color: #666;
+    margin-left: 10px;
+    padding-left: 10px;
+    border-left: 2px solid #666;
+}
+.card__header {
+    position: relative;
+    margin-bottom: 10px;
+}
+.card__header figcaption {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    padding: 12px;
+    background-color: #000;
+    text-align: left;
+    font-size: 14px;
+    color: #fff;
+    line-height: 1.4;
+    font-weight: 400;
+}
+.card__header figcaption em {
+    font-style: normal;
+    display: block;
+}
+.card__body {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+.card__body .tit {
+    font-size: 14px;
+    font-weight: 700;
+}
+.card__body .tit em {
+    display: block;
+    font-style: normal;
+    font-size: 14px;
+    margin-top: 10px;
+}
+.card__body .tit em p {
+    display: inline-block;
+    font-weight: 400;
+    color: #666;
+}
+.card__body .btn {
+    width: 50px;
+}
+.footer__inner {
+    display: flex;
+    justify-content: space-around;
+    padding: 40px;
+    background-color: #000;
+}
+.footer_left {
+    width: 15%;
+}
+.footer__right {
+    width: 50%;
+}
+.footer__menu a {
+    display: inline-block;
+    margin-bottom: 30px;
+    margin-left: 20px;
+    padding-right: 20px;
+    border-right: 1px solid #666;
+    color: #fff;
+}
+.footer__desc {
+    line-height: 1.8;
+    margin-left: 20px;
+    font-size: 14px;
+    color: #666;
+}
+.footer__desc em {
+    font-style: normal;
+
+}
+.pop_cont {
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.539);
+    position: fixed;
+    left: 0;
+    top: 0;
+    overflow-x: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: scale(0);
+}
+.pop__box {
+    width: 70%;
+    height: 70vh;
+    /* overflow-y: auto; */
+    border-radius: 0.6rem;
+    box-shadow: 0 10px 20px -5px hsl(180deg 2% 10%);
+    transform: scale(0);
+    /* overflow: hidden; */
+}
+.pop_box_cont {
+    background-color: #71c690;
+    height: 100%;
+    border-radius: 0.5rem;
+    overflow-y: auto;
+}
+.pop__close {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    background-color: hsl(22deg 3% 24%);
+    padding: 1rem 1rem 0.8rem 1rem;
+    border-radius: 5px;
+    box-shadow: 0 5px 7px -5px rgba(25, 26, 26, 0.947);
+    transition: all 0.3s;
+    color: #f5f5f5;
+}
+.pop__close:hover {
+    background-color: rgb(37, 37, 36);
+}
+.pop_cont.show {     /* 전체 배경 */
+    animation: foldOut 0.5s ease forwards;
+}
+.pop_cont.show.hide {        /* 스크립트 박스 */
+    animation: foldIn 0.3s 0.5s ease backwards;
+}
+.pop_cont.show .pop__close {     /* 닫기 버튼 */
+    animation: opacityOut 0.5s 1s ease forwards;
+    opacity: 0;
+}
+.pop_cont.show .pop__box {
+    animation: zoomOut 0.5s 1s ease forwards;   /* 뒤에 있는 초는 딜레이를 뜻함 */
+}
+.pop_cont.show.hide .pop__box {
+    animation: zoomIn 0.5s ease forwards;
+}
+.pop_cont.show.hide .pop__close {
+    animation: opacityIn 0.5s ease forwards;
+}
+@keyframes foldOut {
+    0% {transform: scaleX(0.001) scaleY(0);}
+    50% {transform: scaleX(0.001) scaleY(1);}
+    100% {transform: scaleX(1) scaleY(1);}
+}
+@keyframes foldIn {
+    0% {transform: scaleX(1) scaleY(1);}
+    50% {transform: scaleX(0.001) scaleY(1);}
+    100% {transform: scaleX(0.001) scaleY(0);}
+}
+@keyframes zoomOut {
+    0% {transform: scale(0);}
+    100% {transform: scale(1);}
+}
+@keyframes zoomIn {
+    0% {transform: scale(1);}
+    100% {transform: scale(0);}
+}
+@keyframes opacityOut {
+    0%   {opacity:0;}
+    100% {opacity:1;}
+}
+@keyframes opacityIn {
+    0%   {opacity:1;}
+    100% {opacity:0;}
+}

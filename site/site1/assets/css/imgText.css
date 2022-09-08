@@ -34,6 +34,7 @@
     line-height: 1.5;
     color: #666;
     margin-bottom: 10px;
+    word-break: keep-all;
 }
 
 .imgText__txt ul {

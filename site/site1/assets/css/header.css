@@ -68,3 +68,25 @@
     background-color: #000;
     color: #fff;
 }
+
+@media(max-width: 800px) {
+    .header__inner {
+        height: 100px;
+
+    }
+    .header__logo {
+        display: none;
+    }
+    .header__menu {
+        width: 80%;
+    }
+    .header__menu li a {
+        padding: 10px;
+        font-size: 14px;
+        word-break: keep-all;
+    }
+    .header__member a {
+        font-size: 14px;
+        padding: 5px 20px;
+    }
+}
