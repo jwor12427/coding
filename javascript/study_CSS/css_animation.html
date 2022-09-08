@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : 기본 규칙</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+
+</head>
+<body>
+    <header id="header">
+        <h1><a href="../index.html">Javascript</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="../javascript01.html">데이터 저장하기</a></li>
+                <li><a href="../javascript02.html">데이터 불러오기</a></li>
+                <li><a href="../javascript03.html">데이터 실행하기</a></li>
+                <li><a href="../javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="../javascript05.html">문자열 객체</a></li>
+                <li><a href="../javascript06.html">배열 객체</a></li>
+                <li><a href="../javascript07.html">수학 객체</a></li>
+                <li><a href="../javascript08.html">숫자 객체</a></li>
+                <li><a href="../javascript09.html">브라우저 객체</a></li>
+                <li><a href="../javascript10.html">요소 객체</a></li>
+                <li><a href="../javascript11.html">이벤트 객체</a></li>
+            </ul>
+            <ul class="study">
+                <li><a href="../study/basic.html">기본 규칙</a></li>
+                <li><a href="../study/operator.html">연산자</a></li>
+                <li><a href="../study/for.html">반복문</a></li>
+                <li><a href="../study/if.html">조건문</a></li>
+                <li><a href="../study/type.html">데이터 타입</a></li>
+                <li><a href="../study/function.html">함수</a></li>
+                <li><a href="../study/var.html">지역변수/전역변수</a></li>
+                <li><a href="../study/element.html">요소 선택</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <div class="document"> 
+            <h2 class="t_tit">CSS 애니메이션 효과</h2>
+            <hr>
+            <h3 class="t_tit2">animation</h3>
+            <p class="t_desc2">  
+                animation : name | duration | timing-function | delay | iteration | direction | fill-mode | play-state
+            </p>
+            <table class="t_table">
+                <thead>
+                    <tr>
+                        <th>종류</th>
+                        <th>예시</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>animation-name</td>
+                        <td>@keyframe에 지정된 이름을 설정합니다.</td>
+                    </tr>
+                    <tr>
+                        <td>animation-duration</td>
+                        <td>애니메이션이 실행되는 시간을 설정합니다.</td>
+                    </tr>
+                    <tr>
+                        <td>animation-timing-function</td>
+                        <td>애니메이션 키프레임 움직임을 설정합니다.</td>
+                    </tr>
+                    <tr>
+                        <td>animation-delay</td>
+                        <td>애니메이션이 시작되기 전까지 시간을 설정합니다.</td>
+                    </tr>
+                    <tr>
+                        <td>animation-iteration</td>
+                        <td>애니메이션 반복 횟수를 설정합니다.</td>
+                    </tr>
+                    <tr>
+                        <td>animation-derection</td>
+                        <td>애니메이션 방향을 설정합니다.</td>
+                    </tr>
+                    <tr>
+                        <td>animation-fill-mode</td>
+                        <td>애니메이션 끝나고 난 뒤 어떤 값을 적용할지 설정합니다.</td>
+                    </tr>
+                    <tr>
+                        <td>animation-play-state</td>
+                        <td>애니메이션 실행 상태를 설정합니다.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h3 class="t_tit2">transtion</h3>
+            <p class="t_desc2">  
+                transtion : property | durtion | timing-function | delay
+            </p>
+            <table class="t_table">
+                <thead>
+                    <tr>
+                        <th>종류</th>
+                        <th>예시</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>transition-property</td>
+                        <td>트렌지션을 적용할 CSS 속성 대상을 설정합니다.</td>
+                    </tr>
+                    <tr>
+                        <td>transition-druation</td>
+                        <td>트렌지션 작동시간을 설정합니다.</td>
+                    </tr>
+                    <tr>
+                        <td>transition-timing-function</td>
+                        <td>트렌지션 움직임 효과를 설정합니다.</td>
+                    </tr>
+                    <tr>
+                        <td>transition-delay</td>
+                        <td>트렌지션이 시작되기 전까지 시간을 설정합니다.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h3 class="t_tit2">timing-function</h3>
+
+            <table class="t_table">
+                <colgroup>
+                    <col style="width: 30%">
+                    <col style="width: 70%">
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>종류</th>
+                        <th>예시</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>linear</td>
+                        <td>일정한 간격으로 설정합니다.</td>
+                    </tr>
+                    <tr>
+                        <td>ease</td>
+                        <td>처음에는 서서히 가속하고 마지막 부분에서 급격히 감속합니다.</td>
+                    </tr>
+                    <tr>
+                        <td>ease-in</td>
+                        <td>처음에는 천천히 시작하고 마지막에 가속합니다.</td>
+                    </tr>
+                    <tr>
+                        <td>ease-out</td>
+                        <td>처음에는 최대 속도로 시작하고 마지막에 감속합니다.</td>
+                    </tr>
+                    <tr>
+                        <td>ease-in-out</td>
+                        <td>처음에는 제로 속도로 시작하고, 중간 지점에서 최고 속도로 움직이고, 마지막 부분에서 서서히 감속합니다.</td>
+                    </tr>
+                    <tr>
+                        <td>step-start</td>
+                        <td>애니메이션을 시작점에서 설정합니다.</td>
+                    </tr>
+                    <tr>
+                        <td>step-end</td>
+                        <td>애니메이션을 끝점에서 설정합니다.</td>
+                    </tr>
+                    <tr>
+                        <td>steps(int, start/end)</td>
+                        <td>애니메이션을 단계별을 설정합니다.</td>
+                    </tr>
+                    <tr>
+                        <td>cubic-bezier(n,n,n,n)</td>
+                        <td>버지니아 곡선 값을 만들어서 설정합니다.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h3 class="t_tit2">애니메이션 예시1</h3>
+            <div class="t_iframe">
+                <iframe height="400" style="width: 100%;" scrolling="no" title="CSS - 1" src="https://codepen.io/jwor12427/embed/dyeYdjg?default-tab=result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                    See the Pen <a href="https://codepen.io/jwor12427/pen/dyeYdjg">
+                    CSS - 1</a> by jwor12427 (<a href="https://codepen.io/jwor12427">@jwor12427</a>)
+                    on <a href="https://codepen.io">CodePen</a>.
+                </iframe>
+            </div>
+            <br>
+            <div class="t_code">
+<pre><code>.timing1.show {animation: move 2s 1 linear;}
+.timing2.show {animation: move 2s 1 ease;}
+.timing3.show {animation: move 2s 1 ease-in;}
+.timing4.show {animation: move 2s 1 ease-out;}
+.timing5.show {animation: move 2s 1 ease-in-out;}
+
+@keyframes move {
+    0% {left: 0%;}
+    50% {left: 100%;}
+    100% {left: 0%;}
+}
+</code></pre>
+            </div>
+            <h3 class="t_tit2">애니메이션 예시2</h3>
+            <div class="t_iframe">
+                <iframe height="400" style="width: 100%;" scrolling="no" title="CSS - 2" src="https://codepen.io/jwor12427/embed/PoePQLY?default-tab=result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                    See the Pen <a href="https://codepen.io/jwor12427/pen/PoePQLY">
+                    CSS - 2</a> by jwor12427 (<a href="https://codepen.io/jwor12427">@jwor12427</a>)
+                    on <a href="https://codepen.io">CodePen</a>.
+                </iframe>
+            </div>
+            <br>
+            <div class="t_code">
+<pre><code>.timing6.show {animation: move 4s 1 step-start;}
+.timing7.show {animation: move 4s 1 step-end;}
+.timing8.show {animation: move 4s 1 steps(4, start);}
+.timing9.show {animation: move 4s 1 steps(4, end);}
+.timing10.show {animation: move 4s 1 steps(10, start);}
+.timing11.show {animation: move 4s 1 steps(10, end);}
+</code></pre>
+            </div>
+            <h3 class="t_tit2">애니메이션 예시3</h3>
+            <div class="t_iframe">
+                <iframe height="500" style="width: 100%;" scrolling="no" title="CSS - 3" src="https://codepen.io/jwor12427/embed/OJZyQKV?default-tab=result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                    See the Pen <a href="https://codepen.io/jwor12427/pen/OJZyQKV">
+                    CSS - 3</a> by jwor12427 (<a href="https://codepen.io/jwor12427">@jwor12427</a>)
+                    on <a href="https://codepen.io">CodePen</a>.
+                </iframe>
+            </div>
+            <h3 class="t_tit2">애니메이션 예시4</h3>
+            <div class="t_iframe">
+                <iframe height="400" style="width: 100%;" scrolling="no" title="CSS - 4" src="https://codepen.io/jwor12427/embed/PoePRow?default-tab=result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                    See the Pen <a href="https://codepen.io/jwor12427/pen/PoePRow">
+                    CSS - 4</a> by jwor12427 (<a href="https://codepen.io/jwor12427">@jwor12427</a>)
+                    on <a href="https://codepen.io">CodePen</a>.
+                </iframe>
+            </div>
+            <br>
+            <div class="t_code">
+<pre><code>.timing.bg3 > div {background-image: linear-gradient(-60deg, #ff5858 0%, #f09819 100%);}
+.timing12.show {animation: move 3s 2 cubic-bezier(0,.71,0,1);}
+.timing13.show {animation: move 3s 2 cubic-bezier(0,.71,1,-0.28);}
+.timing14.show {animation: move 3s 2 cubic-bezier(1,-0.52,1,-0.28);}
+.timing15.show {animation: move 3s 2 cubic-bezier(1,.02,0,1.01);}
+.timing16.show {animation: move 3s 2 cubic-bezier(.33,2.04,1,2.05);}
+</code></pre>
+            </div>
+            <h3 class="t_tit2">애니메이션 예시5</h3>
+            <div class="t_iframe">
+                <iframe height="400" style="width: 100%;" scrolling="no" title="CSS - 5" src="https://codepen.io/jwor12427/embed/NWMGYGR?default-tab=result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                    See the Pen <a href="https://codepen.io/jwor12427/pen/NWMGYGR">
+                    CSS - 5</a> by jwor12427 (<a href="https://codepen.io/jwor12427">@jwor12427</a>)
+                    on <a href="https://codepen.io">CodePen</a>.
+                </iframe>
+            </div>
+            <br>
+            <div class="t_code">
+<pre><code>.timing17.show {animation: move 3s 0.1s 2 ease;}
+.timing18.show {animation: move 3s 0.2s 2 ease;}
+.timing19.show {animation: move 3s 0.3s 2 ease;}
+.timing20.show {animation: move 3s 0.4s 2 ease;}
+</code></pre>
+            </div>
+            <h3 class="t_tit2">애니메이션 예시6</h3>
+            <div class="t_iframe">
+                <iframe height="400" style="width: 100%;" scrolling="no" title="CSS - 6" src="https://codepen.io/jwor12427/embed/JjvYLKw?default-tab=result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                    See the Pen <a href="https://codepen.io/jwor12427/pen/JjvYLKw">
+                    CSS - 6</a> by jwor12427 (<a href="https://codepen.io/jwor12427">@jwor12427</a>)
+                    on <a href="https://codepen.io">CodePen</a>.
+                </iframe>
+            </div>
+            <br>
+            <div class="t_code">
+<pre><code>.timing21.show {animation: move 1s 1 ease;}
+.timing22.show {animation: move 1s 2 ease;}
+.timing23.show {animation: move 1s 3 ease;}
+.timing24.show {animation: move 1s infinite ease;}
+</code></pre>
+            </div>
+            <h3 class="t_tit2">애니메이션 예시7</h3>
+            <div class="t_iframe">
+                <iframe height="400" style="width: 100%;" scrolling="no" title="CSS - 7" src="https://codepen.io/jwor12427/embed/abGvYmR?default-tab=result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                    See the Pen <a href="https://codepen.io/jwor12427/pen/abGvYmR">
+                    CSS - 7</a> by jwor12427 (<a href="https://codepen.io/jwor12427">@jwor12427</a>)
+                    on <a href="https://codepen.io">CodePen</a>.
+                </iframe>
+            </div>
+            <br>
+            <div class="t_code">
+<pre><code>.timing25.normal {animation: move2 4s 5 ease normal;}
+.timing26.reverse {animation: move2 4s 5 ease reverse;}
+.timing27.alternate {animation: move2 4s 5 ease alternate;}
+.timing28.alternate-reverse {animation: move2 4s 5 ease alternate-reverse;}
+</code></pre>
+            </div>
+            <h3 class="t_tit2">애니메이션 예시8</h3>
+            <div class="t_iframe">
+                <iframe height="400" style="width: 100%;" scrolling="no" title="CSS - 8" src="https://codepen.io/jwor12427/embed/RwyWMKw?default-tab=result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                    See the Pen <a href="https://codepen.io/jwor12427/pen/RwyWMKw">
+                    CSS - 8</a> by jwor12427 (<a href="https://codepen.io/jwor12427">@jwor12427</a>)
+                    on <a href="https://codepen.io">CodePen</a>.
+                </iframe>
+            </div>
+            <br>
+            <div class="t_code">
+<pre><code>.timing26.show {animation: move3 3s 1 ease; animation-fill-mode: none;}
+.timing27.show {animation: move3 3s 1 ease; animation-fill-mode: forwards;}
+.timing28.show {animation: move3 3s 1 ease; animation-fill-mode: backwards;}
+.timing29.show {animation: move3 3s 1 ease; animation-fill-mode: both;}
+@keyframes move3 {
+    0% {left: 0%;}
+    100% {left: calc(100% - 120px);}
+}
+</code></pre>
+            </div>
+            <h3 class="t_tit2">애니메이션 예시9</h3>
+            <div class="t_iframe">
+                <iframe height="400" style="width: 100%;" scrolling="no" title="CSS - 9" src="https://codepen.io/jwor12427/embed/OJZyvgX?default-tab=result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                    See the Pen <a href="https://codepen.io/jwor12427/pen/OJZyvgX">
+                    CSS - 9</a> by jwor12427 (<a href="https://codepen.io/jwor12427">@jwor12427</a>)
+                    on <a href="https://codepen.io">CodePen</a>.
+                </iframe>
+            </div>
+            <br>
+            <div class="t_code">
+<pre><code>.timing30.running {animation: move2 4s 100 ease; animation-play-state: running;}
+.timing30.paused {animation: move2 4s 100 ease; animation-play-state: paused;}
+</code></pre>
+            </div>
+
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:jwor124@naver.com">jwor124@naver.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+   
+</body>
+</html>
