@@ -15,11 +15,15 @@
             #parallax__nav {
                 position: fixed;
                 right: 20px;
-                top: 20px;
+                top: -200px;
                 z-index: 2000;
                 background-color: rgba(0,0,0,0.4);
                 padding: 20px 30px;
                 border-radius: 50px;
+                transition: top .4s ease;
+            }
+            #parallax__nav.show {
+                top: 20px;
             }
             #parallax__nav li {
                 display: inline;
@@ -183,6 +187,29 @@
                     bottom: 10px;
                 }
             }
+            #parallax__Top {
+                position: fixed;
+                left: 50%;
+                bottom: -220px;
+                transform: translateX(-50%);
+                z-index: 100000;
+                width: 40px;
+                height: 40px;
+                background: rgba(0,0,0,0.4);
+                line-height: 40px;
+                color: #fff;
+                border-radius: 50%;
+                padding-left: 10px;
+                cursor: pointer;
+                transition: all 0.3s;
+            }
+            #parallax__Top.show {
+                bottom: 20px;
+            }
+            #parallax__Top:hover {
+                background: #fff;
+                color: #000;
+            }
         </style>
     </head>
     <body class="img08">
@@ -215,6 +242,11 @@
         </nav>
         <!-- //parallax__nav -->
         
+        <nav id="parallax__Top">
+            Top
+        </nav>
+        <!-- //parallax__Top-->
+
         <main id="parallax__cont">
             <div class="contents">
                 <section id="section1" class="content__item">
@@ -559,7 +591,63 @@
         <script src="../assets/js/highlight.min.js"></script>
         <script src="../assets/js/common.js"></script>
         <script>
+            // window.addEventListener("scroll", () => {
+            //     let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop;
 
+            //     // if(scrollTop > 0) {
+            //     //     document.querySelector("#parallax__nav").classList.add("show");
+            //     // } else {
+            //     //     document.querySelector("#parallax__nav").classList.remove("show");
+            //     // };
+            //     // 02
+                // if(scrollTop > (문서 전체 높이 - 현재 브라우저 높이)) {
+                //     document.querySelector("#parallax__Top").classList.add("show");
+                // } else {
+                //     document.querySelector("#parallax__Top").classList.remove("show");
+                // }
+
+
+            //     document.querySelector("#parallax__info span").innerText = Math.ceil(scrollTop);       //내림 메서드
+            // });
+
+            //top버튼
+            document.querySelector("#parallax__Top").addEventListener("click", () => {
+                window.scrollTo({left: 0, top: 0, behavior: "smooth"});
+            });
+            // 03
+            let nowScroll = true;   //--> 실행
+            // let nowScroll = fasle;  //--> 작동x
+            let lastSCroll = 0;
+
+            function scrollProgress(){
+                nowScroll = true;
+
+                setInterval(() => {
+                    if(nowScroll){
+                        nowScroll = false;
+                        hasScroll();
+                    }
+                },300)
+            }
+
+            function hasScroll(){
+                let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop;
+
+                if(scrollTop < lastSCroll){
+                    document.querySelector("#parallax__nav").classList.add("show");
+                }else {
+                    document.querySelector("#parallax__nav").classList.remove("show");
+                }
+                lastSCroll = scrollTop;
+
+                
+                if(scrollTop >= (document.body.scrollHeight - window.outerHeight)) {
+                    document.querySelector("#parallax__Top").classList.add("show");
+                } else {
+                    document.querySelector("#parallax__Top").classList.remove("show");
+                }
+            }
+            window.addEventListener("scroll", scrollProgress);
         </script>
     </body>
 </html>

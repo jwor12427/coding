@@ -23,58 +23,147 @@
             <p class="t_desc2">
                 이번에는 메뉴바가 사이드에 있는 형식의 이펙트를 만들어 봅시다✏️ 메뉴의 모양은 닷 모양이랍니다~
             </p>
-
-            
-
             
             <div class="t_iframe" style="min-height: 1000px; padding-top: 0;">
-                <iframe src="https://jwor12427.github.io/coding/javascript/effect/parallaxEffect01.html"></iframe>
+                <iframe src="https://jwor12427.github.io/coding/javascript/effect/parallaxEffect02.html"></iframe>
             </div>
 
             <div class="t_link">
-                <a href="https://github.com/jwor12427/coding/blob/main/javascript/effect/parallaxEffect01.html" target="_blank">원본 소스 보기</a>
+                <a href="https://github.com/jwor12427/coding/blob/main/javascript/effect/parallaxEffect02.html" target="_blank">원본 소스 보기</a>
             </div>
 
-            <h3 class="t_tit2">Script</h3>
+            <h3 class="t_tit2">사이드 메뉴 닷으로 만들기</h3>
             <div class="t_code">
-<pre><code>
-
+<pre><code>&lt;nav id="parallax__dot"&gt;
+    &lt;ul&gt;
+        &lt;li&gt;&lt;a href="#section1"&gt;&lt;span&gt;메뉴1&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#section2"&gt;&lt;span&gt;메뉴2&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#section3"&gt;&lt;span&gt;메뉴3&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#section4"&gt;&lt;span&gt;메뉴4&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#section5"&gt;&lt;span&gt;메뉴5&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#section6"&gt;&lt;span&gt;메뉴6&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#section7"&gt;&lt;span&gt;메뉴7&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#section8"&gt;&lt;span&gt;메뉴8&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#section9"&gt;&lt;span&gt;메뉴9&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/nav&gt;
 </code></pre>
             </div>
-
+            <h3 class="t_tit2">닷 메뉴 CSS</h3>
             <div class="t_code">
-<pre><code>
-
+<pre><code>#parallax__dot {
+    position: fixed;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 100000;
+    background-color: rgba(0,0,0,0.4);
+    padding: 20px 10px;
+    border-radius: 30px;
+}
+#parallax__dot li {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin: 12px 8px;
+    box-shadow: 0 0 0 2px rgba(255,255,255,0);
+    position: relative;
+    transition: box-shadow 0.2s ease;
+}
+#parallax__dot li.active {
+    box-shadow: 0 0 0 2px rgba(255,255,255,1);
+}
+#parallax__dot li a {
+    background: #fff;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+    transition: transform 0.2s ease;
+}
+#parallax__dot li.active a {
+    transform: scale(0.4);
+}
+#parallax__dot li span {
+    display: none;
+}
 </code></pre>
             </div>
-
-
-
-            <h3 class="t_tit2">스크롤이동</h3>
+            <h3 class="t_tit2">스크롤이동 - script</h3>
             <div class="t_code">
-<pre><code>
+<pre><code>document.querySelectorAll("#parallax__dot a").forEach(el => {
+    el.addEventListener("click", e => {
+        e.preventDefault();
 
+        document.querySelector(el.getAttribute("href")).scrollIntoView({behavior:"smooth"});
+    });
+});
 </code></pre>
             </div>
-
+            <p class="t_box">
+                scrollIntoView({behavior:"smooth"})
+            </p>
+            <p class="t_desc">
+                스크롤을 이동할때 천천히 부드럽게 움직이게 할 수 있습니다.
+            </p>
             <h3 class="t_tit2">HTML</h3>
             <div class="t_code">
-<pre><code>
+<pre><code>window.addEventListener("scroll", () => {
+    let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop;
 
+    document.querySelector("#parallax__info span").innerText = Math.floor(scrollTop);       
+
+    document.querySelectorAll(".content__item").forEach((e, i) => {
+        if(scrollTop >= e.offsetTop - 10){
+            document.querySelectorAll("#parallax__dot li").forEach(li => {
+                li.classList.remove("active");
+            });
+            document.querySelector("#parallax__dot li:nth-child("+(i+1)+")").classList.add("active");
+        }
+    });
+});
 </code></pre>
             </div>
-            <h3 class="t_tit2">CSS</h3>
-            <div class="result">
-                <details>
-                    <summary>css보기</summary>
-                        <div class="t_code">
-<pre><code>
+            <p class="t_box">
+                Math.floor()
+            </p>
+            <p class="t_dsec">
+                숫자를 올림해주는 수학 메서드 입니다.
+            </p>
+            <h3 class="t_tit2">scroll이동 메서드</h3>
+            <div class="t_code">
+<pre><code>window.scroll(0, 1000);
+window.scroll({left: 0, top: 2000});
+window.scroll({left: 0, top: 2000, behavior: "smooth"});
 
+window.scrollTo(0, 1000);
+window.scrollTo({left: 0, top: 2000});
+window.scrollTo({left: 0, top: 2000, behavior: "smooth"});
+
+window.scrollBy(0, 1000);
+window.scrollBy({left: 0, top: 2000});
+window.scrollBy({left: 0, top: 2000, behavior: "smooth"});
 </code></pre>
-                    </div>
-                </details>
             </div>
-
+            <br>
+            <p class="t_box">
+                window.scrollBy();
+            </p>
+            <p class="t_desc2">
+                상대적 위치 <br>
+                현재 위치를 기준으로 파라미터 값으로 넘겨준 만큼 이동 <br>
+                창을 상대적인 좌표로 스크롤
+            </p>
+            <p class="t_box">
+                window.scrollTo();
+            </p>
+            <p class="t_desc2">
+                절대적 위치 <br>
+                왼쪽 상단 모서리를 시작으로 전체 스크롤 값을 기준으로 파라미터로 넘겨준 값으로 이동(현재위치X, 상단모서리 기준)<br>
+                창을 절대적인 좌표로 이동
+            </p>
         </div>
     </main>
     <!-- //main -->
