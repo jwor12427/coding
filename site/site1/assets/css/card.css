@@ -42,10 +42,10 @@
     .card__inner {
         display: block;
         margin: 0 auto;
-        margin-left: 20px;
+        /* margin-left: 12px; */
     }
     .card {
-        width: 96%;
+        width: 100%;
         margin-bottom: 20px;
     }
     .card__body .tit {

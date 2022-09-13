@@ -94,7 +94,7 @@
 }
 @media(max-width:1220px){
     #imgTextType{
-        width: 96%;
+        width: 100%;
         margin: 0 auto;
     }
 }
@@ -111,6 +111,6 @@
 
     .imgText__inner .imgText__img{
         margin-bottom: 30px;
-        margin-left: 10px;
+        width: 100%;
     }
 }
