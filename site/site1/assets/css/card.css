@@ -41,6 +41,7 @@
     }
     .card__inner {
         display: block;
+        margin: 0 auto;
     }
     .card {
         width: 90%;

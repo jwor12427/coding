@@ -19,7 +19,7 @@
 /* 컨테이너 */
 .container {
     width: 1160px;
-    /* padding: 0 20px; */
+    padding: 0 20px;
     margin: 0 auto;
 }
 
@@ -88,6 +88,8 @@
     }
     .container {
         width: 96%;
+        padding: 0;
+    
     }
 }
 @media (max-width:800px) {

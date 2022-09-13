@@ -102,6 +102,7 @@
 @media(max-width: 768px) {
     .imgText__inner{
         display: block;
+        align-items: center;
     }
 
     .imgText__inner>div {

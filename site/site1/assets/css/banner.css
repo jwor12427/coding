@@ -28,6 +28,12 @@
 .banner__inner .small{
     text-decoration: underline;
 }
+@media(max-width:1190px){
+    .banner__inner{
+        padding: 120px 20px;
+        box-sizing: border-box;
+    }
+}
 @media(max-width: 800px){
     .banner__inner .title {
         font-size: 30px;
