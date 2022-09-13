@@ -34,7 +34,7 @@
     -webkit-line-clamp: 4; 
     -webkit-box-orient: vertical;
 }
-@media(max-width: 800px){
+@media(max-width: 1190px){
     #cardType {
         box-sizing: border-box;
         padding: 120px 20px;
@@ -44,7 +44,7 @@
         margin: 0 auto;
     }
     .card {
-        width: 90%;
+        width: 96%;
         margin-bottom: 20px;
     }
     .card__body .tit {
