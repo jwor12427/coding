@@ -48,7 +48,7 @@
     border-radius: 5px;
 }
 .header__menu li.active a {
-    background-color: #d4d4d4;
+    background-color: #bababa;
     border-radius: 5px;
 }
 .header__member {
@@ -63,30 +63,88 @@
     border-radius: 50px;
     transition: all 0.3s;
 }
-
+.header__icon {
+    display: none;
+    cursor: pointer;
+}
 .header__member a:hover {
     background-color: #000;
     color: #fff;
 }
-
-@media(max-width: 800px) {
+@media(max-width : 1180px) {
     .header__inner {
-        height: 100px;
-
+        justify-content: flex-start;
+        align-items: center;
     }
     .header__logo {
-        display: none;
+        width: 100%;
+    }
+    .header__icon {
+        display: block;
+        position: fixed;
+        top: 20px;
+        right: 10px;
     }
     .header__menu {
-        width: 80%;
+        display: none;
+        width: 0;
+        height: 0;
     }
-    .header__menu li a {
-        padding: 10px;
-        font-size: 14px;
-        word-break: keep-all;
+    .header__menu.show {
+        display: block;
+    }
+    .header__menu ul {
+        padding: 20px;
+        display: flex;
+        position: fixed;
+        right: 0;
+        top: 60px;
+        flex-direction: column;
+        background-color: rgba(255, 255, 255, 0.5);
+        margin-bottom: 15px;
+    }
+    .header__menu ul li {
+        margin-bottom: 30px;
+    }
+    .header__logo {
+        position: relative;
     }
     .header__member a {
-        font-size: 14px;
-        padding: 5px 20px;
+        margin-left: 15px;
     }
+    .header__member {
+        width: 100%;
+        margin-right: 30px;
+    }
+}
+
+@media(max-width : 768px) {
+    .header__logo {
+        font-size: 20px;
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+    .header__logo em {
+        display: none;
+    }
+    .header__member {
+        padding: 5px 10px;
+    }
+    .header__member a {
+        margin-left: 5px;
+    }
+    .header__icon {
+        display: block;
+        position: fixed;
+        top: 20px;
+        right: 5px;
+    }
+    .header__inner {
+        padding-left: 20px;
+    }
+    .header__icon {
+        top: 20px;
+        right: 20px;
+    }
+
 }

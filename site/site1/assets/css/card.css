@@ -34,3 +34,22 @@
     -webkit-line-clamp: 4; 
     -webkit-box-orient: vertical;
 }
+@media(max-width: 800px){
+    #cardType {
+        box-sizing: border-box;
+        padding: 120px 20px;
+    }
+    .card__inner {
+        display: block;
+    }
+    .card {
+        width: 90%;
+        margin-bottom: 20px;
+    }
+    .card__body .tit {
+        font-size: 20px;
+    }
+    .card__body .desc {
+        font-size: 16px;
+    }
+}

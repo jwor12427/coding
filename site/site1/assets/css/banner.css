@@ -28,3 +28,11 @@
 .banner__inner .small{
     text-decoration: underline;
 }
+@media(max-width: 800px){
+    .banner__inner .title {
+        font-size: 30px;
+    }
+    .banner__inner .desc {
+        font-size: 18px;
+    }
+}

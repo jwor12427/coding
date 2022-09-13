@@ -51,7 +51,9 @@
 .imgText__txt ul li a {
     color: #666;
 }
-
+.imgText__txt ul li a:hover {
+    text-decoration: underline;
+}
 .imgText__txt ul li::before {
     content: '';
     width: 5px;
@@ -89,4 +91,24 @@
 
 .imgText__img.img2 {
     background: url(../img/imgText_bg02.jpg) no-repeat center / cover;
+}
+@media(max-width:1220px){
+    #imgTextType{
+        width: 96%;
+        margin: 0 auto;
+    }
+}
+
+@media(max-width: 768px) {
+    .imgText__inner{
+        display: block;
+    }
+
+    .imgText__inner>div {
+        width: 96%;
+    }
+
+    .imgText__inner .imgText__img{
+        margin-bottom: 30px;
+    }
 }

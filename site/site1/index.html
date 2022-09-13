@@ -42,7 +42,10 @@
     <header id="headerType" class="header__wrap nexon">
         <div class="header__inner">
             <div class="header__logo">
-                <a href="#">Birds <em>Site</em></a>
+                <a href="#">Birds <em>Story</em></a>
+            </div>
+            <div class="header__icon">
+                <img src="assets/img/kiwi_bird.png" alt="아이콘">
             </div>
             <div class="header__menu">
                 <ul>
@@ -344,6 +347,16 @@
                 });
             });
         });
+        //메뉴 버튼
+        const Icon = document.querySelector(".header__icon");
+        const Menu = document.querySelector(".header__menu");
+
+        Icon.addEventListener("mouseover", (e) => {
+            Menu.classList.add("show");
+        })
+        Menu.addEventListener("mouseleave", (e) => {
+            Menu.classList.remove("show");
+        })
     </script>
 </body>
 </html>

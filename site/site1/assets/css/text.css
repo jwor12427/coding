@@ -83,3 +83,17 @@
     text-underline-position: under;
     color: #666;
 }
+@media(max-width: 800px){
+    .text__inner {
+        display: block;
+    }
+    .text {
+        width: 100%;
+    }
+    .text__title {
+        font-size: 20px;
+    }
+    .text__desc {
+        font-size: 16px;
+    }
+}

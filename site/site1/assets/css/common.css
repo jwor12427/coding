@@ -19,14 +19,13 @@
 /* 컨테이너 */
 .container {
     width: 1160px;
-    padding: 0 20px;
+    /* padding: 0 20px; */
     margin: 0 auto;
 }
 
 /* 섹션 공통요소 */
 .section {
     padding: 120px 0;
-    min-width: 1160px;
 }
 
 .section>h2 {
@@ -82,3 +81,20 @@
 .mt50 {margin-top: 50px !important;}
 .mt60 {margin-top: 60px !important;}
 .mt70 {margin-top: 70px !important;}
+
+@media (max-width:1180px) {
+    .section {
+        width: 100%;
+    }
+    .container {
+        width: 96%;
+    }
+}
+@media (max-width:800px) {
+    .section>h2 {
+        font-size: 30px;
+    }
+    .section>p {
+        font-size: 18px;
+    }
+}
