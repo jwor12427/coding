@@ -89,6 +89,7 @@
     }
     .text {
         width: 96%;
+        margin-left: 10px;
     }
     .text__title {
         font-size: 20px;

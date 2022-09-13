@@ -42,6 +42,7 @@
     .card__inner {
         display: block;
         margin: 0 auto;
+        margin-left: 20px;
     }
     .card {
         width: 96%;
