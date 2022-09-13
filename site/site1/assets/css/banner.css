@@ -31,6 +31,7 @@
 @media(max-width:1190px){
     .banner__inner{
         box-sizing: border-box;
+        width: 100%;
     }
 }
 @media(max-width: 800px){
