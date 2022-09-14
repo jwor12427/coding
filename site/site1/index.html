@@ -26,15 +26,13 @@
     <link rel="stylesheet" href="assets/css/banner.css">
     <link rel="stylesheet" href="assets/css/footer.css">
     <link rel="stylesheet" href="assets/css/slider.css">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/swiper.css">
+
 
     <style>
         #headerType{
-            display: none;
-        }
-        #sliderType {
-            display: none;
-        }
-        #footerType{
             display: none;
         }
     </style>
@@ -77,8 +75,8 @@
     
     <main id="mainType">
         <section id="sliderType" class="slider__wrap nexon">
-            <h2 class="blind">슬라이드 영역</h2>
-            <div class="slider__inner">
+            <h2 class="blind">새로운 소식</h2>
+            <!-- <div class="slider__inner">
                 <div class="slider">
                     <div class="slider__img">
                         <div class="desc">
@@ -106,6 +104,55 @@
                         <a href="#" class="stop"><span class="ir">정지</span></a>
                     </div>
                 </div>
+            </div> -->
+
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="desc">
+                            <span>birds</span>
+                            <h3>For the Birds</h3>
+                            <p>
+                                지금부터 당신에게 들려드릴 조금은 특별한 <br>
+                                새들에 대한 이야기 입니다.
+                            </p>
+                            <div class="btn">
+                                <a href="#">자세히 보기</a>
+                                <a href="#" class="black">사이트 보기</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="desc">
+                            <span>birds</span>
+                            <h3>For the Birds</h3>
+                            <p>
+                                지금부터 당신에게 들려드릴 조금은 특별한 <br>
+                                새들에 대한 이야기 입니다.
+                            </p>
+                            <div class="btn">
+                                <a href="#">자세히 보기</a>
+                                <a href="#" class="black">사이트 보기</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="desc">
+                            <span>birds</span>
+                            <h3>For the Birds</h3>
+                            <p>
+                                지금부터 당신에게 들려드릴 조금은 특별한 <br>
+                                새들에 대한 이야기 입니다.
+                            </p>
+                            <div class="btn">
+                                <a href="#">자세히 보기</a>
+                                <a href="#" class="black">사이트 보기</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
             </div>
         </section>
         <!-- //sliderType -->
@@ -335,6 +382,15 @@
     </footer>
     <!-- //footerType -->
 
+    <script src="assets/js/swiper.min.js"></script>
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+            },
+        });
+    </script>
     <script>
         window.addEventListener("scroll", () => {
             let scrollTop = window.pageYOffset || window.offsetTop || document.documentElement.scrollTop;

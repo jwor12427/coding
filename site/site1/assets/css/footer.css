@@ -23,3 +23,16 @@
     color: #666;
     line-height: 1.5;
 }
+
+@media(max-width:960px){
+    .footer__menu {
+        display: none;
+    }
+    .footer__right {
+        padding: 0;
+        border-top: 0;
+    }
+    .footer__wrap {
+        padding: 40px 0;
+    }
+}
