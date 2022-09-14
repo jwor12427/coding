@@ -34,7 +34,34 @@
     -webkit-line-clamp: 4; 
     -webkit-box-orient: vertical;
 }
-@media(max-width: 1190px){
+@media(max-width:960px) {
+    .card__inner {
+        flex-wrap: wrap;
+    }
+    .card {
+        width: 49%;
+    }
+    .card:last-child {
+        display: none;
+    }
+}
+@media(max-width:600px) {
+    .card {
+        width: 100%;
+    }
+    .card:first-child {
+        margin-bottom: 20px;
+    }
+    .card__body {
+        padding: 20px;
+    }
+    .card__body .desc {
+        font-size: 16px;
+    }
+}
+
+
+/* @media(max-width: 1190px){
     #cardType {
         box-sizing: border-box;
         padding: 120px 20px;
@@ -42,7 +69,6 @@
     .card__inner {
         display: block;
         margin: 0 auto;
-        /* margin-left: 12px; */
     }
     .card {
         width: 100%;
@@ -54,4 +80,4 @@
     .card__body .desc {
         font-size: 16px;
     }
-}
+} */
