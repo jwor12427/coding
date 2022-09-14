@@ -17,7 +17,7 @@
     font-style: normal;
 }
 :root {
-    --swiper-theme-color: #007aff;
+    --swiper-theme-color: #fff;
 }
 .swiper {
     margin-left: auto;
@@ -274,7 +274,7 @@
 .swiper-pagination-bullets.swiper-pagination-horizontal,
 .swiper-pagination-custom,
 .swiper-pagination-fraction {
-    bottom: 10px;
+    bottom: 20px;
     left: 0;
     width: 100%;
 }
