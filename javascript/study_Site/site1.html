@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : 기본 규칙</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+
+</head>
+<body>
+    <header id="header">
+        <h1><a href="../index.html">Javascript</a></h1>
+        
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">사이트 반응형 만들기</h2>
+            <p class="t_desc2">
+                다양한 타입의 유형들을 하나로 모아 만든 사이트를 반응형 까지 완성하는 시간을 가져 봅시다👻<br>
+                시작하기전에 모든 영역을 display: none; 속성을 통하여 보여지지 않게 만들고, 하나씩 추가하면서 작업을 하도록 합니다~
+            </p>
+            <div class="t_code">
+<pre><code>#headerType{display: none;}
+#sliderType{display: none;}
+#imageType{display: none;}
+#imgTextType{display: none;}
+#cardType{display: none;}
+#bannerType{display: none;}
+#textType{display: none;}
+#footerType{display: none;}
+</code></pre>
+            </div>
+            <hr>
+            <h3 class="t_tit2">HTML코드</h3>
+            <p class="t_box">
+                HTML코드는 기존의 유형과 달라지는건 없지만 슬라이드 유형에서는 swiper라는 소스를 사용하여 쉽게 만들어 보았습니다.<br>
+                코드가 길어지니 바뀐 슬라이드영역의 코드만 적어놓겠습니다. 나머지는 블로그를 참고해주세요🥰
+            </p>
+            <details>
+                <summary>코드 보기</summary>
+                <div class="t_code">
+<pre><code> &lt;div class="swiper mySwiper"&gt;
+    &lt;div class="swiper-wrapper"&gt;
+        &lt;div class="swiper-slide"&gt;
+            &lt;div class="desc"&gt;
+                &lt;span&gt;birds&lt;/span&gt;
+                &lt;h3&gt;For the Birds&lt;/h3&gt;
+                &lt;p&gt;
+                    지금부터 당신에게 들려드릴 조금은 특별한 &lt;br&gt;
+                    새들에 대한 이야기 입니다.
+                &lt;/p&gt;
+                &lt;div class="btn"&gt;
+                    &lt;a href="#"&gt;자세히 보기&lt;/a&gt;
+                    &lt;a href="#" class="black"&gt;사이트 보기&lt;/a&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="swiper-slide"&gt;
+            &lt;div class="desc"&gt;
+                &lt;span&gt;birds&lt;/span&gt;
+                &lt;h3&gt;For the Birds&lt;/h3&gt;
+                &lt;p&gt;
+                    지금부터 당신에게 들려드릴 조금은 특별한 &lt;br&gt;
+                    새들에 대한 이야기 입니다.
+                &lt;/p&gt;
+                &lt;div class="btn"&gt;
+                    &lt;a href="#"&gt;자세히 보기&lt;/a&gt;
+                    &lt;a href="#" class="black"&gt;사이트 보기&lt;/a&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="swiper-slide"&gt;
+            &lt;div class="desc"&gt;
+                &lt;span&gt;birds&lt;/span&gt;
+                &lt;h3&gt;For the Birds&lt;/h3&gt;
+                &lt;p&gt;
+                    지금부터 당신에게 들려드릴 조금은 특별한 &lt;br&gt;
+                    새들에 대한 이야기 입니다.
+                &lt;/p&gt;
+                &lt;div class="btn"&gt;
+                    &lt;a href="#"&gt;자세히 보기&lt;/a&gt;
+                    &lt;a href="#" class="black"&gt;사이트 보기&lt;/a&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="swiper-pagination"&gt;&lt;/div&gt;
+    &lt;div class="swiper-button-next"&gt;&lt;/div&gt;
+    &lt;div class="swiper-button-prev"&gt;&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+                </div>
+            </details>
+            <p class="t_box">
+                🔊여기서 잠깐! <i>swiper</i>에 대해서<br>
+                swiper는 슬라이드, 스와이프 기능을 사용할 때 편하고 손쉽게 UI를 구현할 수 있는 라이브러리 입니다.
+                구현할 수 있는 화면기능에는 pagination, 좌우 넘길 수 있는 버튼, 슬라이드 스크롤바가 있습니다.<br>
+                CSS는 링크방식으로 적용할 수도 있지만, 따로 파일로 저장하여 사용할 수 있습니다.
+            </p>
+            <h3 class="t_tit2">공통요소</h3>
+            <p class="t_box">
+                가장 먼저 공통요소의 화면크기의 패딩과 폰트사이즈를 조절해 줍니다.<br>
+                max-width값은 960px과600px로 설정해 줍니다.
+            </p>
+            <details>
+                <summary>공통요소 CSS</summary>
+                <div class="t_code">
+<pre><code>@media(max-width: 960px){
+    .section {
+        padding: 100px 0;
+    }
+    .section>h2 {
+        font-size: 40px;
+    }
+    .section>p {
+        font-size: 18px;
+        margin-bottom: 60px;
+    }
+}
+@media(max-width: 600px){
+    .section {
+        padding: 80px 0;
+    }
+    .section>h2 {
+        font-size: 30px;
+    }
+    .section>p {
+        font-size: 16px;
+        margin-bottom: 50px;
+    }
+}
+</code></pre>
+                </div>
+            </details>
+            <h3 class="t_tit2">슬라이드 영역</h3>
+            <p class="t_box">
+                swiper의 마크업에 맞게 CSS를 설정해 줍니다. 이때, 기존의 swiper의 CSS보다 우선 순위가 높아야 적용이 되는 경우가 있으니
+                필요에 따라 <i>!important;</i>를 붙여주록 합니다. <br>
+                🎤반응형은 패딩의 값과 텍스트의 크기, 마진값을 조절해 주었습니다.
+            </p>
+            <details>
+                <summary>슬라이드 영역 CSS</summary>
+                <div class="t_code">
+<pre><code>.swiper-slide .desc {
+    width: 1160px;
+    margin: 0 auto;
+    padding: 100px 20px;
+    box-sizing: border-box;
+}
+.swiper-slide .desc span {
+    font-size: 16px;
+    background-color: #fff;
+    padding: 1px 14px 0 14px;
+    border-radius: 30px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+.swiper-slide .desc h3 {
+    font-size: 110px;
+    font-weight: 300;
+    line-height: 1;
+    color: #fff;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    margin-left: -8px;
+}
+.swiper-slide .desc p {
+    font-size: 20px;
+    font-weight: 300;
+    color: #fff;
+    line-height: 1.35;
+    margin-bottom: 130px;
+}
+.swiper-slide .desc .btn a {
+    font-size: 16px;
+    background-color: #fff;
+    padding: 11px 50px;
+    display: inline-block;
+}
+.swiper-slide .desc .btn a.black {
+    background: rgb(105, 105, 105);
+    color: #fff;
+}
+.swiper-button-next, .swiper-button-prev {
+    width: 30px !important;
+    height: 56px !important;
+    color: #000;
+    background-image: url(../img/slider_icon.svg);
+}
+.swiper-button-next {
+    background-position: -50px 0;
+}
+.swiper-button-next::after, .swiper-button-prev::after {
+    opacity: 0;
+}
+.swiper-pagination-bullet {
+    width: 16px !important;
+    height: 16px !important;
+    background-image: url(../img/slider_icon.svg) !important;
+    background-position: -20px -70px !important;
+    background-color: transparent !important;
+    opacity: 1 !important;
+}
+.swiper-pagination-bullet-active {
+    background-position: 0px -70px !important;
+}
+@media(max-width: 960px){
+    .swiper-slide .desc {
+        width: 100%;
+        text-align: center;
+    }
+    .swiper-slide .desc h3 {
+        font-size: 70px;
+    }
+}
+@media(max-width: 600px){
+    .swiper-slide .desc {
+        padding: 80px 0;
+    }
+    .swiper-slide .desc h3 {
+        font-size: 40px;
+    }
+    .swiper-slide .desc p {
+        font-size: 16px;
+        margin-bottom: 50px;
+    }
+    .swiper-slide .desc .btn a {
+        padding:  10px 25px;
+    }
+}
+</code></pre>
+                </div>
+            </details>
+            <h3 class="t_tit2">이미지 영역</h3>
+            <p class="t_box">
+                이미지영역은 600px이 되었을때만 반응형이 일어나도록 작업 해주었습니다.<br>
+                💫max-width: 600px이 되었을때, 이미지가 세로로 정렬되도록 만들어 주었습니다. 이때 <i>flex-direction: column;</i>
+                속성을 사용하여 정렬을 시켜줍니다. width값을 100%로 설정하여 하나씩 나오도록 합니다.
+            </p>
+            <details>
+                <summary>이미지 영역 CSS</summary>
+                <div class="t_code">
+<pre><code>@media(max-width: 600px){
+    .image__inner {
+        flex-direction: column;
+    }
+    .image {
+        width: 100%;
+        padding: 210px 20px 20px 20px;
+    }
+    .image:first-child {
+        margin-bottom: 20px;
+    }
+    .image__title {
+        font-size: 24px;
+    }
+}
+</code></pre>
+                </div>
+            </details>
+            <h3 class="t_tit2">이미지/텍스트 영역</h3>
+            <p class="t_box">
+                🪄이미지/텍스트 영역에서는 960px일때는 ul부분을 <i>display:none</i> 속성을 주어 사라지게 만들었고, 이미지 영역은 밑으로내려
+                보기 깔끔하게 만들었습니다.<br>
+                600px일때는 이미지를 세로로 만들고, height값을 조절 하여 좀 더 어울리게 만들어 보았습니다.
+            </p>
+            <details>
+                <summary>이미지/텍스트 영역 CSS</summary>
+                <div class="t_code">
+<pre><code>@media(max-width: 960px){
+    .imgText__inner {
+        flex-wrap: wrap;
+    }
+    .imgText__txt h3 {
+        font-size: 40px;
+    }
+    .imgText__txt p {
+        margin-bottom: 60px;
+    }
+    .imgText__inner > div.imgText__txt {
+        width: 100%;
+        height: auto;
+        text-align: center;
+    }
+    .imgText__inner > div.imgText__txt ul {
+        display: none;
+    }
+    .imgText__inner > div.imgText__img{
+        width: 49%;
+    }
+}
+@media(max-width: 600px){
+    .imgText__img span {
+        font-size: 14px;
+        margin-bottom: 20px;
+    }
+    .imgText__txt h3 {
+        font-size: 30px;
+    }
+    .imgText__txt p {
+        margin-bottom: 50px;
+        font-size: 16px;
+    }
+    .imgText__inner > div.imgText__img{
+        width: 100%;
+        height: 200px;
+    }
+    .imgText__inner > div.imgText__img.img1 {
+        margin-bottom: 20px;
+    }
+    .imgText__img a {
+        left: 20px;
+        bottom: 20px;
+    }
+}
+</code></pre>
+                </div>
+            </details>
+            <h3 class="t_tit2">카드 영역</h3>
+            <p class="t_box">
+                🔊카드 영역에서는 기존에 3개의 카드영역이 960px가 될때는 마지막 부분을 <i>display:none</i>을 통해서 지워준다음 2개의
+                카드만 보이도록 만들어 주었습니다.<br>
+                600px는 이미지 영역과 마찬가지로 세로로 정렬 해주었습니다. 
+            </p>
+            <details>
+                <summary>카드 영역 CSS</summary>
+                <div class="t_code">
+<pre><code>@media(max-width:960px) {
+    .card__inner {
+        flex-wrap: wrap;
+    }
+    .card {
+        width: 49%;
+    }
+    .card:last-child {
+        display: none;
+    }
+}
+@media(max-width:600px) {
+    .card {
+        width: 100%;
+    }
+    .card:first-child {
+        margin-bottom: 20px;
+    }
+    .card__body {
+        padding: 20px;
+    }
+    .card__body .desc {
+        font-size: 16px;
+    }
+}
+</code></pre>
+                </div>
+            </details>
+            <h3 class="t_tit2">배너 영역</h3>
+            <p class="t_box">
+                배너는 패딩값과 폰트크기만 조절해 주었습니다.
+            </p>
+            <details>
+                <summary>배너 영역 CSS</summary>
+                <div class="t_code">
+<pre><code>@media(max-width: 960px) {
+    .banner__inner {
+        padding: 100px 0;
+    }
+}
+@media(max-width: 600px) {
+    .banner__inner {
+        padding: 80px 0;
+    }
+    .banner__inner .title {
+        font-size: 30px;
+        margin-bottom: 20px;
+    }
+    .banner__inner .desc {
+        font-size: 16px;
+        margin-bottom: 40px;
+    }
+}
+</code></pre>
+                </div>
+            </details>
+            <h3 class="t_tit2">텍스트 영역</h3>
+            <p class="t_box">
+                텍스트 영역에서는 960px, 600px일때는 두 개로 정렬되겠금 만들었습니다. <br>
+                📢텍스트 영역은 작은 화면을 고려하여 480px일 때를 추가하여 세로로 정렬되겠금 만들어 주었습니다.
+            </p>
+            <details>
+                <summary>텍스트 영역 CSS</summary>
+                <div class="t_code">
+<pre><code>@media(max-width: 960px){
+    .text {
+        width: 49%;
+        background: #f5f5f5;
+    }
+}
+@media(max-width: 600px){
+    .text__title {
+        font-size: 20px;
+    }
+    .text__desc {
+        font-size: 16px;
+    }
+}
+@media(max-width: 480px){
+    .text {
+        width: 100%;
+    }
+}
+</code></pre>
+                </div>
+            </details>
+            <h3 class="t_tit2">푸터 영역</h3>
+            <p class="t_box">
+                푸터 영역은 footer__menu를 없애주어 깔끔하게 보이게 하였습니다.
+            </p>
+            <details>
+                <summary>푸터 영역 CSS</summary>
+                <div class="t_code">
+<pre><code>@media(max-width:960px){
+    .footer__menu {
+        display: none;
+    }
+    .footer__right {
+        padding: 0;
+        border-top: 0;
+    }
+    .footer__wrap {
+        padding: 40px 0;
+    }
+}
+</code></pre>
+                </div>
+            </details>
+            <br>
+            <h3 class="t_tit">완성🎊</h3>
+            <div class="t_iframe" style="min-height: 1000px; padding-top: 0;">
+                <iframe src="https://jwor12427.github.io/coding/site/site1/index.html"></iframe>
+            </div>
+            <br>
+            <p class="t_dsec">
+                헤더영역은 다음시간에 만나용😏
+            </p>
+            <!-- // -->
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:jwor124@naver.com">jwor124@naver.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+</body>
+</html>

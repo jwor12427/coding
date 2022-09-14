@@ -46,7 +46,7 @@
             <hr>
             <h3 class="t_tit2">MYSQL 설치</h3>
             <p class="t_desc2">
-                MAMP란 웹사이트를 개발할 때 쓰이는 기술 스택인 macOS, Apache, MySQL, PHP 의 약어이자 솔루션 스택이다.<br>
+                MAMP란 웹사이트를 개발할 때 쓰이는 기술 스택인 macOS, Apache, MySQL, PHP 의 약어이자 솔루션 스택입니다.<br>
                 <a href="https://www.mamp.info/en/downloads/" target="_blank">https://www.mamp.info/en/downloads/</a>
             </p>
             <h3 class="t_tit2">MySQL 실행</h3>
@@ -202,7 +202,9 @@ Query OK, 0 rows affected (0.02 sec)
                 INSERT INTO 테이블이름(필드명) VALUE(데이터);
             </p>
             <div class="t_code">
-<pre><code class="language-js">INSERT INTO member(youEmail, youName, youPass, youBirth, regTime) VALUES('aabbcc@naver.com', '김철수', '1234', '19990303', '1234567');
+<pre><code class="language-js">INSERT INTO member(youEmail, youName, youPass, youBirth, regTime) VALUES('jw****@naver.com', '정**', '1234', '19990303', '1234567');
+INSERT INTO member(youEmail, youName, youPass, youBirth, regTime) VALUES('thd****@naver.com', '송**', '1234', '19970415', '1234567');
+INSERT INTO member(youEmail, youName, youPass, youBirth, regTime) VALUES('mo0****@naver.com', '김**', '1234', '19970530', '1234567');
 </code></pre>
             </div>
             <h4 class="t_tit3">데이터 불러오기</h4>
@@ -215,34 +217,61 @@ Query OK, 0 rows affected (0.02 sec)
 +------------+--------------------------+---------+---------+----------+---------+
 | myMemberID | youEmail                 | youName | youPass | youBirth | regTime |
 +------------+--------------------------+---------+---------+----------+---------+
-|          1 | aabbcc@naver.com         | 정땡떙  | 1234    | 19990303 | 1234567 |
-|          2 | aabbcc@naver.com         | 송땡떙  | 1234    | 19970415 | 1234567 |
-|          3 | aabbcc@naver.com         | 김땡떙  | 1234    | 19970530 | 1234567 |
-|          4 | aabbcc@naver.com         | 김땡떙  | 1234    | 19941009 | 1234567 |
-|          5 | aabbcc@naver.com         | 이땡떙  | 1234    | 19970205 | 1234567 |
-|          6 | aabbcc@naver.com         | 박땡떙  | 1234    | 19990303 | 1234567 |
-|          7 | aabbcc@naver.com         | 김땡떙  | 1234    | 19970809 |       4 |
-|          8 | aabbcc@naver.com         | 권땡떙  | 1234    | 19990303 | 1234567 |
-|          9 | aabbcc@gmail.com         | 황땡떙  | 1234    | 19990303 | 1234567 |
-|         10 | aabbcc@naver.com         | 김땡떙  | 1234    | 19960530 | 1234567 |
-|         11 | aabbcc@gmail.com         | 전땡떙  | 1234    | 19971007 | 1234567 |
-|         12 | aabbcc@gmail.com         | 권땡떙  | 1234    | 19960331 | 1234567 |
-|         13 | aabbcc@gmail.com         | 강땡떙  | 1234    | 19990303 | 1234567 |
-|         14 | aabbcc@gmail.com         | 박땡떙  | 1234    | 19981010 | 1234567 |
-|         15 | aabbcc@gmail.com         | 김땡떙  | 1234    | 19700101 | 1234567 |
-|         16 | aabbcc@gmail.com         | 이땡떙  | 1234    | 19990303 | 1234567 |
-|         17 | aabbcc@naver.com         | 최땡떙  | 3950    | 20010415 | 1234567 |
-|         18 | aabbcc@naver.com         | 황땡떙  | 1234    | 19990303 | 1234567 |
-|         19 | aabbcc@naver.com         | 김땡떙  | 1234    | 19960617 | 1234567 |
-|         20 | aabbcc@gmail.com         | 김땡떙  | 1234    | 20011009 | 1234567 |
+|          1 | jw****@naver.com         | 정**    | 1234    | 19990303 | 1234567 |
+|          2 | thd****@naver.com        | 송**    | 1234    | 19970415 | 1234567 |
+|          3 | mo0****@naver.com        | 김**    | 1234    | 19970530 | 1234567 |
+|          4 | tjr****@naver.com        | 김**    | 1234    | 19941009 | 1234567 |
+|          5 | lee****@@naver.com       | 이**    | 1234    | 19970205 | 1234567 |
+|          6 | ssh****@naver.com        | 박**    | 1234    | 19990303 | 1234567 |
+|          7 | to_****@naver.com        | 김**    | 1234    | 19970809 |       4 |
+|          8 | kkb****@naver.com        | 권**    | 1234    | 19990303 | 1234567 |
+|          9 | ghk****@gmail.com        | 황**    | 1234    | 19990303 | 1234567 |
+|         10 | eod****@naver.com        | 김**    | 1234    | 19960530 | 1234567 |
+|         11 | wjsq****@gmail.com       | 전**    | 1234    | 19971007 | 1234567 |
+|         12 | noe****@gmail.com        | 권**    | 1234    | 19960331 | 1234567 |
+|         13 | hjk****@gmail.com        | 강**    | 1234    | 19990303 | 1234567 |
+|         14 | sun****@gmail.com        | 박**    | 1234    | 19981010 | 1234567 |
+|         15 | kde****@gmail.com        | 김**    | 1234    | 19700101 | 1234567 |
+|         16 | pra****@gmail.com        | 이**    | 1234    | 19990303 | 1234567 |
+|         17 | ora****@naver.com        | 최**    | 3950    | 20010415 | 1234567 |
+|         18 | webs****@naver.com       | 황**    | 1234    | 19990303 | 1234567 |
+|         19 | kkk****@naver.com        | 김**    | 1234    | 19960617 | 1234567 |
+|         20 | kim****@gmail.com        | 김**    | 1234    | 20011009 | 1234567 |
 +------------+--------------------------+---------+---------+----------+---------+
 20 rows in set (0.00 sec)
 </code></pre>
             </div>
-            <h5 class="t_tit3">전체 데이터 불러오기</h5>
+            <h5 class="t_tit3">myMemberID가 6번인 경우</h5>
             <div class="t_code">
-<pre><code class="language-js">
-
+<pre><code class="language-js">mysql> SELECT * FROM member WHERE myMemberID = 6;
++------------+---------------------+---------+---------+----------+---------+
+| myMemberID | youEmail            | youName | youPass | youBirth | regTime |
++------------+---------------------+---------+---------+----------+---------+
+|          6 | ssh****@naver.com   | 박**    | 1234    | 19990303 | 1234567 |
++------------+---------------------+---------+---------+----------+---------+
+1 row in set (0.00 sec)
+</code></pre>
+            </div>
+            <h5 class="t_tit3">email 중에 naver 텍스트를 포함하고 있는 경우</h5>
+            <div class="t_code">
+<pre><code class="language-js">mysql> SELECT * FROM member WHERE youEmail LIKE '%naver%';
++------------+------------------------+---------+---------+----------+---------+
+| myMemberID | youEmail               | youName | youPass | youBirth | regTime |
++------------+------------------------+---------+---------+----------+---------+
+|          1 | jw****@naver.com       | 정**    | 1234    | 19990303 | 1234567 |
+|          2 | thd****@naver.com      | 송**    | 1234    | 19970415 | 1234567 |
+|          3 | mo0****@naver.com      | 김**    | 1234    | 19970530 | 1234567 |
+|          4 | tjr****@naver.com      | 김**    | 1234    | 19941009 | 1234567 |
+|          5 | lee****@naver.com      | 이**    | 1234    | 19970205 | 1234567 |
+|          6 | ssh****@naver.com      | 박**    | 1234    | 19990303 | 1234567 |
+|          7 | to_****@naver.com      | 김**    | 1234    | 19970809 |       4 |
+|          8 | kkb****@naver.com      | 권**    | 1234    | 19990303 | 1234567 |
+|         10 | eod****@naver.com      | 김**    | 1234    | 19960530 | 1234567 |
+|         17 | ora****@naver.com      | 최**    | 3950    | 20010415 | 1234567 |
+|         18 | webs****@naver.com     | 황**    | 1234    | 19990303 | 1234567 |
+|         19 | kkk****@naver.com      | 김**    | 1234    | 19960617 | 1234567 |
++------------+------------------------+---------+---------+----------+---------+
+12 rows in set (0.01 sec)
 </code></pre>
             </div>
             <!-- // -->
