@@ -15,7 +15,6 @@
     background-color: #fff;
 }
 
-
 .header__logo {
     width: 20%;
     font-size: 30px;
@@ -48,9 +47,12 @@
     border-radius: 5px;
 }
 .header__menu li.active a {
-    background-color: #bababa;
+    background-color: rgb(54, 54, 54);
     border-radius: 5px;
+    color: #fff;
 }
+
+
 .header__member {
     width: 20%;
     text-align: right;
@@ -71,7 +73,89 @@
     background-color: #000;
     color: #fff;
 }
-@media(max-width : 1180px) {
+.header__ham {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    z-index: 1000;
+    width: 50px;
+    height: 50px;
+    display: none;
+    cursor: pointer;
+}
+.header__ham span {
+    display: block;
+    background: #000;
+    width: 30px;
+    height: 2px;
+    border-radius: 3px;
+    margin-left: 10px;
+    margin-top: 5px;
+    transition: 0.25s margin 0.25s, 0.25s transform ;
+}
+.header__ham span:nth-child(1) {
+    margin-top: 17px;
+}
+.header__ham.active span {
+    transition: 0.25s margin, 0.25s transform 0.25s;
+}
+.header__ham.active span:nth-child(1) {
+    margin-top: 25px;
+    margin-bottom: -7px;
+    transform: rotate(45deg);
+}
+.header__ham.active span:nth-child(2) {
+    transform: rotate(45deg);
+    
+}
+.header__ham.active span:nth-child(3) {
+    margin-top: -2px;
+    transform: rotate(135deg);
+}
+/* media */
+@media(max-width: 1300px){
+    .header__menu {
+        position: fixed;
+        right: -100%;
+        top: 69px;
+        background: #fff;
+        width: 60%;
+        height: 100vh;
+        padding: 20px;
+        text-align: right;
+        transition: right 0.4s ease-in;
+    }
+    .header__menu ul li {
+        display: block;
+        margin: 25px;
+    }
+    .header__menu ul li a {
+        padding: 10px;
+        white-space: nowrap;
+    }
+    .header__menu.overlay {
+        right: 0;
+    }
+    .header__member {
+        margin-right: 50px;
+    }
+    .header__ham {
+        display: block;
+    }
+    .header__logo {
+        width: 50%;
+    }
+    .header__member {
+        width: 50%;
+    }
+}
+@media(max-width: 600px){
+
+}
+
+
+
+/* @media(max-width : 1180px) {
     .header__inner {
         width: 100%;
         justify-content: flex-start;
@@ -148,4 +232,4 @@
         right: 20px;
     }
 
-}
+} */

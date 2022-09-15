@@ -15,7 +15,11 @@
 #skip a:focus {
     left: 5px;
 }
-
+/* fixed */
+.fixed {
+    height: 100vh;
+    overflow: hidden;
+}
 /* 컨테이너 */
 .container {
     width: 100%;

@@ -30,12 +30,6 @@
     <!-- CSS -->
     <link rel="stylesheet" href="assets/css/swiper.css">
 
-
-    <style>
-        #headerType{
-            display: none;
-        }
-    </style>
 </head>
 <body>
     <div id="skip">
@@ -54,20 +48,22 @@
             <div class="header__logo">
                 <a href="#">Birds <em>Story</em></a>
             </div>
-            <div class="header__icon">
-                <img src="assets/img/kiwi_bird.png" alt="아이콘">
-            </div>
             <div class="header__menu">
                 <ul>
-                    <li><a href="#imageType" >이미지 영역</a></li>
-                    <li><a href="#imgTextType">이미지/텍스트 영역</a></li>
-                    <li><a href="#cardType">카드 영역</a></li>
-                    <li><a href="#bannerType">배너 영역</a></li>
-                    <li><a href="#textType">텍스트 영역</a></li>
+                    <li><a href="#imageType" >남극 소식</a></li>
+                    <li><a href="#imgTextType">맹금류 이야기</a></li>
+                    <li><a href="#cardType">친숙한 새들</a></li>
+                    <li><a href="#bannerType">새로나온 책</a></li>
+                    <li><a href="#textType">앵무새는 어떤가요</a></li>
                 </ul>
             </div>
             <div class="header__member">
                 <a href="#">로그인</a>
+            </div>
+            <div class="header__ham">
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
         </div>
     </header>
@@ -152,6 +148,10 @@
                     </div>
                 </div>
                 <div class="swiper-pagination"></div>
+                <div class="swiper-button">
+                    <div class="swiper-button-play"><span class="ir">play</span></div>
+                    <div class="swiper-button-stop"><span class="ir">stop</span></div>
+                </div>
                 <div class="swiper-button-next"></div>
                 <div class="swiper-button-prev"></div>
             </div>
@@ -396,10 +396,44 @@
             pagination: {
                 el: '.swiper-pagination',
                 type: 'bullets',
+                clickable: true,
             },
+        });
+
+        const btnStop = document.querySelector(".swiper-button-stop");
+        const btnStart = document.querySelector(".swiper-button-play");
+        const btnHam = document.querySelector(".header__ham");
+        const btnMenu = document.querySelector(".header__menu");
+
+        btnStart.style.display = "none";
+
+        btnStop.addEventListener("click", () => {
+            swiper.autoplay.stop();
+            btnStart.style.display = "block";
+            btnStop.style.display = "none";
+        });
+        btnStart.addEventListener("click", () => {
+            swiper.autoplay.start();
+            btnStop.style.display = "block";
+            btnStart.style.display = "none";
+        });
+        btnHam.addEventListener("click", () => {
+            btnHam.classList.toggle("active");
+            btnMenu.classList.toggle("overlay");
+            document.body.classList.toggle("fixed");
+        });
+
+        window.addEventListener("resize", () => {
+            let width = window.innerWidth;
+            if(width > 1300){
+                document.body.classList.remove("fixed");
+                btnMenu.classList.remove("active");
+                btnHam.classList.remove("active");
+            }
         });
     </script>
     <script>
+        //메뉴페이지 이동시 활성화
         window.addEventListener("scroll", () => {
             let scrollTop = window.pageYOffset || window.offsetTop || document.documentElement.scrollTop;
 
@@ -423,16 +457,7 @@
                 });
             });
         });
-        //메뉴 버튼
-        const Icon = document.querySelector(".header__icon");
-        const Menu = document.querySelector(".header__menu");
 
-        Icon.addEventListener("mouseover", (e) => {
-            Menu.classList.add("show");
-        })
-        Menu.addEventListener("mouseleave", (e) => {
-            Menu.classList.remove("show");
-        })
     </script>
 </body>
 </html>

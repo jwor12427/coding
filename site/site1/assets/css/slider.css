@@ -159,6 +159,28 @@
 .swiper-pagination-bullet-active {
     background-position: 0px -70px !important;
 }
+.swiper-button {
+    position: absolute;
+    left: 50%;
+    margin-left: 40px;
+    bottom: 24px;
+    z-index: 1000;
+    display: flex;
+    cursor: pointer;
+}
+.swiper-button-stop {
+    background-image: url(../img/slider_icon.svg);
+    background-position: -60px -70px;
+    width: 16px;
+    height: 16px;
+
+}
+.swiper-button-play {
+    background-image: url(../img/slider_icon.svg);
+    background-position: -40px -70px;
+    width: 16px;
+    height: 16px;
+}
 @media(max-width: 960px){
     .swiper-slide .desc {
         width: 100%;
