@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : 기본 규칙</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+
+</head>
+<body>
+    <header id="header">
+        <h1><a href="../index.html">Javascript</a></h1>
+        
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">사이트 헤더 만들기 + 스크립트 적용하기</h2>
+            <p class="t_desc2">
+                사이트의 헤더 메뉴를 햄버거 메뉴로 만들어서 반응형에서도 메뉴가 작동할 수 있게 만들어 줍니다.<br>
+                📣추가적으로 스크립트를 작성하여 슬라이드가 움직일 수 있도록 만들어 주며 메뉴를 클릭했을때 해당 영역으로 부드럽게 이동할 수 있도록 만들어 줍니다.
+            </p>
+
+            <hr>
+            <h3 class="t_tit2">헤더 영역</h3>
+            <p class="t_box">
+                헤더 영역은 화면이 줄어 들면 많은 부분이 깨지기 때문에 줄어 들었을때에 햄버거 메뉴를 추가 하여 주었습니다👻
+            </p>
+            <div class="t_code">
+<pre><code>&lt;div class="header__ham"&gt;
+    &lt;span&gt;&lt;/span&gt;
+    &lt;span&gt;&lt;/span&gt;
+    &lt;span&gt;&lt;/span&gt;
+&lt;/div&gt;
+</code></pre>
+            </div>
+            <p class="t_desc">
+                우선 span태그를 사용하여 햄버거 메뉴를 만들어 줍니다.
+            </p>
+            <details>
+                <summary>햄버거 메뉴 CSS</summary>
+                <div class="t_code">
+<pre><code>.header__ham {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    z-index: 1000;
+    width: 50px;
+    height: 50px;
+    display: none;
+    cursor: pointer;
+}
+.header__ham span {
+    display: block;
+    background: #000;
+    width: 30px;
+    height: 2px;
+    border-radius: 3px;
+    margin-left: 10px;
+    margin-top: 5px;
+    transition: 0.25s margin 0.25s, 0.25s transform ;
+}
+.header__ham span:nth-child(1) {
+    margin-top: 17px;
+}
+.header__ham.active span {
+    transition: 0.25s margin, 0.25s transform 0.25s;
+}
+.header__ham.active span:nth-child(1) {
+    margin-top: 25px;
+    margin-bottom: -7px;
+    transform: rotate(45deg);
+}
+.header__ham.active span:nth-child(2) {
+    transform: rotate(45deg);
+    
+}
+.header__ham.active span:nth-child(3) {
+    margin-top: -2px;
+    transform: rotate(135deg);
+}
+</code></pre>
+                </div>
+            </details>
+            <p class="t_box">
+                🎵햄버거 메뉴<br>
+                햄버거 메뉴(drawer menu)란 주로 앱 상단에 네비게이션으로 사용되는 메뉴로, 
+                여러가지 다양한 기능들을 하나의 네비게이션 안에 담을 수 있어서 널리 사용되고 있습니다.
+            </p>
+            <p class="t_box">
+                🌞헤더 영역의 반응형은 1300px가 되었을때 부터 반응 할 수 있도록 만들어 주었습니다.<br>
+                1300px가 되었을때, 햄버거 메뉴를 display: block을 적용하여 나타나도록 하였습니다.
+            </p>
+            <details>
+                <summary>헤더 영역 CSS</summary>
+                <div class="t_code">
+<pre><code>/* media */
+@media(max-width: 1300px){
+    .header__menu {
+        position: fixed;
+        right: -100%;
+        top: 69px;
+        background: #fff;
+        width: 60%;
+        height: 100vh;
+        padding: 20px;
+        text-align: right;
+        transition: right 0.4s ease-in;
+    }
+    .header__menu ul li {
+        display: block;
+        margin: 25px;
+    }
+    .header__menu ul li a {
+        padding: 10px;
+        white-space: nowrap;
+    }
+    .header__menu.overlay {
+        right: 0;
+    }
+    .header__member {
+        margin-right: 50px;
+    }
+    .header__ham {
+        display: block;
+    }
+    .header__logo {
+        width: 50%;
+    }
+    .header__member {
+        width: 50%;
+    }
+}
+</code></pre>
+                </div>
+            </details>
+            <br>
+            <div class="t_code">
+<pre><code>.fixed {
+    height: 100vh;
+    overflow: hidden;
+}
+</code></pre>
+            </div>
+            <p class="t_box">
+                햄버거 메뉴바가 나타났을때 body가 움직이지 않도록 고정을 시켜주기 위해 css를 추가 시켜 주었습니다.
+            </p>
+            <h3 class="t_tit2">스크립트</h3>
+            
+            <br>
+            <h3 class="t_tit">완성🎊</h3>
+            <div class="t_iframe" style="min-height: 1000px; padding-top: 0;">
+                <iframe src="https://jwor12427.github.io/coding/site/site1/index.html"></iframe>
+            </div>
+            <br>
+
+            <!-- // -->
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:jwor124@naver.com">jwor124@naver.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+</body>
+</html>

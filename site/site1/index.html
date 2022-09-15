@@ -391,7 +391,8 @@
             prevEl: ".swiper-button-prev",
             },
             autoplay: {
-                delay: 3000,
+                delay: 4000,
+                disableOnInteraction: false,        //슬라이드 버튼을 눌러도 슬라이드가 이후에 계속 움직임
             },
             pagination: {
                 el: '.swiper-pagination',
@@ -404,6 +405,7 @@
         const btnStart = document.querySelector(".swiper-button-play");
         const btnHam = document.querySelector(".header__ham");
         const btnMenu = document.querySelector(".header__menu");
+        const btnMenuList = btnMenu.querySelectorAll("ul li a");
 
         btnStart.style.display = "none";
 
@@ -421,6 +423,14 @@
             btnHam.classList.toggle("active");
             btnMenu.classList.toggle("overlay");
             document.body.classList.toggle("fixed");
+        });
+
+        btnMenuList.forEach((list) => {
+            list.addEventListener("click", () => {
+                btnHam.classList.remove("active");
+                btnMenu.classList.remove("overlay");
+                document.body.classList.remove("fixed");
+            });
         });
 
         window.addEventListener("resize", () => {
@@ -457,6 +467,9 @@
                 });
             });
         });
+
+        
+
 
     </script>
 </body>

@@ -20,6 +20,9 @@
     height: 100vh;
     overflow: hidden;
 }
+body {
+    overflow: overlay;
+}
 /* 컨테이너 */
 .container {
     width: 100%;
