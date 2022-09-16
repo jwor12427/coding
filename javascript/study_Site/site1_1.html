@@ -148,14 +148,133 @@
                 햄버거 메뉴바가 나타났을때 body가 움직이지 않도록 고정을 시켜주기 위해 css를 추가 시켜 주었습니다.
             </p>
             <h3 class="t_tit2">스크립트</h3>
-            
+            <h4 class="t_tit3">슬라이드</h4>
+            <p class="t_box">
+                슬라이드는 swiper를 이용하였습니다.<br>
+                🖌️disableOnInteraction는 기본적으로 true로 셋팅이 되어있는데, 마우스로 슬라이드를 수동으로 전환하는 것이기 때문에 
+                마우스를 사용한 후에도 계속 해서 슬라이드가 넘어가기를 원한다면 <i>false</i>로 설정해주어야 합니다.<br>
+                🪄추가적으로 평소에는 정지버튼이 나오도록 설정하고, 정지 버튼을 누르면 정지 버튼 대신 플레이버튼이 나오도록 만들어 주었습니다.
+            </p>
+            <details>
+                <summary>Javascript</summary>
+                <div class="t_code">
+<pre><code>var swiper = new Swiper(".mySwiper", {
+    navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+    },
+    autoplay: {
+        delay: 4000,
+        disableOnInteraction: false,        
+    },
+    pagination: {
+        el: '.swiper-pagination',
+        type: 'bullets',
+        clickable: true,
+    },
+});
+const btnStop = document.querySelector(".swiper-button-stop");
+const btnStart = document.querySelector(".swiper-button-play");
+
+btnStart.style.display = "none";
+
+btnStop.addEventListener("click", () => {
+    swiper.autoplay.stop();
+    btnStart.style.display = "block";
+    btnStop.style.display = "none";
+});
+btnStart.addEventListener("click", () => {
+    swiper.autoplay.start();
+    btnStop.style.display = "block";
+    btnStart.style.display = "none";
+});
+</code></pre>
+                </div>
+            </details>
             <br>
-            <h3 class="t_tit">완성🎊</h3>
+            <h4 class="t_tit3">햄버거 메뉴</h4>
+            <p class="t_box">
+                버튼과 메뉴를 변수로 만들어서 작업을 합니다.<br>
+                🔊toggle은 선택한 요소가 보이면 보이지 않게, 보이지 않으면 보이게 만들어 줍니다.<br>
+                메뉴를 누르면 화면이 고정되게 만들고 해당 메뉴를 클릭하면, 해당 영역으로 이동하면서 동시에 메뉴가 사라지게 만들어 주었습니다.
+            </p>
+            <details>
+                <summary>Javascript</summary>
+                <div class="t_code">
+<pre><code>const btnHam = document.querySelector(".header__ham");
+const btnMenu = document.querySelector(".header__menu");
+const btnMenuList = btnMenu.querySelectorAll("ul li a");
+
+
+btnHam.addEventListener("click", () => {
+    btnHam.classList.toggle("active");
+    btnMenu.classList.toggle("overlay");
+    document.body.classList.toggle("fixed");
+});
+
+btnMenuList.forEach((list) => {
+    list.addEventListener("click", () => {
+        btnHam.classList.remove("active");
+        btnMenu.classList.remove("overlay");
+        document.body.classList.remove("fixed");
+    });
+});
+
+window.addEventListener("resize", () => {
+    let width = window.innerWidth;
+    if(width > 1300){
+        document.body.classList.remove("fixed");
+        btnMenu.classList.remove("active");
+        btnHam.classList.remove("active");
+    }
+});
+</code></pre>
+                </div>
+            </details>
+            <br>
+            <h4 class="t_tit3">패럴랙스 효과</h4>
+            <p class="t_box">
+                스크립트로 메뉴에 패럴랙스 효과를 추가 해줍니다. 클릭했을 때 smooth효과를 통해서 부드럽게 넘어가게 해주고,
+                각 영역으로 넘어 갈때 마다 메뉴에 active 클래스를 추가해서 활성화가 될 수 있도록 만들어 줍니다. 
+            </p>
+            <details>
+                <summary>Javascript</summary>
+                <div class="t_code">
+<pre><code>
+document.querySelectorAll(".header__menu li a").forEach(li => {
+    li.addEventListener("click", (e) => {
+        e.preventDefault();
+        document.querySelector(li.getAttribute("href")).scrollIntoView({
+            behavior: "smooth"
+        });
+    });
+});
+
+window.addEventListener("scroll", () => {
+    let scrollTop = window.pageYOffset || window.offsetTop || document.documentElement.scrollTop;
+
+    document.querySelectorAll(".content__item").forEach((element, index) => {
+        if(scrollTop >= element.offsetTop - 600) {
+            document.querySelectorAll(".header__menu li").forEach(li => {
+                li.classList.remove("active")
+            });
+            document.querySelector(".header__menu li:nth-child(" + (index+1) + ")").classList.add("active")
+        };
+            
+    })
+})
+</code></pre>
+                </div>
+            </details>
+            <br>
+            <h3 class="t_tit">완성🥳</h3>
             <div class="t_iframe" style="min-height: 1000px; padding-top: 0;">
                 <iframe src="https://jwor12427.github.io/coding/site/site1/index.html"></iframe>
             </div>
             <br>
-
+            <p class="t_desc">
+                이거 근데 최종의 최종 최최최종 이런식으로 막 바뀌는거 아니겠죠....? 끝이 겠죠;;;?
+            </p>
             <!-- // -->
         </div>
     </main>
