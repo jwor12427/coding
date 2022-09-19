@@ -4,7 +4,7 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>마우스 이펙트01</title>
+        <title>마우스 이펙트02</title>
 
         <link rel="stylesheet" href="../assets/css/mouse.css" />
         <link rel="stylesheet" href="../assets/css/atom-one-dark.min.css" />
@@ -88,7 +88,7 @@
     </head>
     <body class="img01">
         <header id="header">
-            <h1>Javascript Mouse Effect01</h1>
+            <h1>Javascript Mouse Effect02</h1>
             <p>마우스 이펙트 - 마우스 따라다니기(GSAP)</p>
             <ul>
                 <li><a href="mouseEffect01.html">1</a></li>
@@ -369,6 +369,7 @@
             const cursor2 = document.querySelector(".mouse__cursor2");
             const span = document.querySelectorAll(".mouse__wrap span");
             const btn = document.querySelector("#footer .modal__btn");
+            const header = document.querySelector("#header");
 
             window.addEventListener("mousemove", e => {
                 //커서 좌표값 할당
@@ -399,6 +400,14 @@
                     cursor2.classList.add("active");
                 });
                 btn.addEventListener("mouseleave", () => {
+                    cursor.classList.remove("active");
+                    cursor2.classList.remove("active");
+                });
+                header.addEventListener("mouseenter", () => {
+                    cursor.classList.add("active");
+                    cursor2.classList.add("active");
+                });
+                header.addEventListener("mouseleave", () => {
                     cursor.classList.remove("active");
                     cursor2.classList.remove("active");
                 });

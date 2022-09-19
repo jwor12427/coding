@@ -241,12 +241,8 @@
         //왼쪽 버튼 클릭
         sliderBtnPrev.addEventListener("click", () => {
 
-            //let prevIdnex = (currentIndex = (sliderCount -1)) % sliderCount
-            let nextIndex = (currentIndex - 1) % sliderCount;
-            if(currentIndex == 0){
-                nextIndex = 4
-            }
-            gotoSlider(nextIndex);
+            let prevIndex = (currentIndex + (sliderCount - 1)) % sliderCount;
+            gotoSlider(prevIndex);
             //4 3 2 1 0 -> 4
         });
         

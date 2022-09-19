@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>패럴랙스 이펙트</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+
+</head>
+<body>
+    <header id="header">
+        <h1><a href="../index.html">마우스 이펙트</a></h1>
+        <nav class="header_nav">
+
+        </nav>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">스크립트를 이용한 마우스효과 만들기 01</h2>
+            <p class="t_desc2">
+               자바스크립트를 이용하여 마우스 효과를 나타내어 봅시다🖌️
+            </p>
+
+            
+
+            
+            <div class="t_iframe" style="min-height: 1000px; padding-top: 0;">
+                <iframe src="https://jwor12427.github.io/coding/javascript/effect/mouseEffect01.html"></iframe>
+            </div>
+
+            <div class="t_link">
+                <a href="https://github.com/jwor12427/coding/blob/main/javascript/effect/mouseEffect01.html" target="_blank">원본 소스 보기</a>
+            </div>
+
+            <h3 class="t_tit2">Script</h3>
+            <p class="t_desc">
+                먼저 선택자를 만들어 줍니다.
+            </p>
+            <div class="t_code">
+<pre><code>window.addEventListener("mousemove", (event) => {
+    document.querySelector(".clientX").textContent = event.clientX;
+    document.querySelector(".clientY").textContent = event.clientY;
+    document.querySelector(".offsetX").textContent = event.offsetX;
+    document.querySelector(".offsetY").textContent = event.offsetY;
+    document.querySelector(".pageX").textContent = event.pageX;
+    document.querySelector(".pageY").textContent = event.pageY;
+    document.querySelector(".screenX").textContent = event.screenX;
+    document.querySelector(".screenY").textContent = event.screenY;
+});
+
+const cursor = document.querySelector(".mouse__cursor");
+
+window.addEventListener("mousemove", (e) => {
+
+    //자바스크립트는 단위를 붙여 줘야 함
+    cursor.style.left = e.clientX  - 25 + "px";
+    cursor.style.top = e.clientY - 25 + "px";
+});
+</code></pre>
+            </div>
+            <h3 class="t_tit2">반복문을 작성하지 않고 효과주기</h3>
+            <div class="t_code">
+<pre><code>document.querySelector(".style1").addEventListener("mouseover", () => {
+    cursor.classList.add("style1");
+});
+document.querySelector(".style1").addEventListener("mouseout", () => {
+    cursor.classList.remove("style1");
+});
+document.querySelector(".style2").addEventListener("mouseover", () => {
+    cursor.classList.add("style2");
+});
+document.querySelector(".style2").addEventListener("mouseout", () => {
+    cursor.classList.remove("style2");
+});
+document.querySelector(".style3").addEventListener("mouseover", () => {
+    cursor.classList.add("style3");
+});
+document.querySelector(".style3").addEventListener("mouseout", () => {
+    cursor.classList.remove("style3");
+});
+document.querySelector(".style4").addEventListener("mouseover", () => {
+    cursor.classList.add("style4");
+});
+document.querySelector(".style4").addEventListener("mouseout", () => {
+    cursor.classList.remove("style4");
+});
+document.querySelector(".style5").addEventListener("mouseover", () => {
+    cursor.classList.add("style5");
+});
+document.querySelector(".style5").addEventListener("mouseout", () => {
+    cursor.classList.remove("style5");
+});
+document.querySelector(".style6").addEventListener("mouseover", () => {
+    cursor.classList.add("style6");
+});
+document.querySelector(".style6").addEventListener("mouseout", () => {
+    cursor.classList.remove("style6");
+});
+</code></pre>
+            </div>
+            <h3 class="t_tit2">for문과 forEach문을 이용하여 작성</h3>
+            <div class="t_code">
+<pre><code>//for문
+for(let i = 1; i &lt;= 6; i++) {
+    document.querySelector(".style" + i).addEventListener("mouseover", () => {
+        cursor.classList.add("style" + i)
+    });
+};
+for(let i = 1; i &lt;= 6; i++) {
+    document.querySelector(".style" + i).addEventListener("mouseout", () => {
+        cursor.classList.remove("style" + i)
+    });
+};
+
+//forEach문
+document.querySelectorAll(".mouse__wrap span").forEach((span, i) => {
+    span.addEventListener("mouseover", () => {
+        cursor.classList.add("style" + [i+1]);
+    });
+    span.addEventListener("mouseout", () => {
+        cursor.classList.remove("style" + [i+1]);
+    });
+});
+</code></pre>
+            </div>
+            <h3 class="t_tit2">getAttribute이용 하기</h3>
+            <div class="t_code">
+<pre><code>document.querySelectorAll(".mouse__wrap span").forEach(span => {
+    let attr = span.getAttribute("class");
+
+    span.addEventListener("mouseover", () => {
+        cursor.classList.add(attr);
+    });
+    span.addEventListener("mouseout", () => {
+        cursor.classList.remove(attr);
+    });
+});
+</code></pre>
+            </div>
+            <br>
+            <p class="t_box">
+                getAttribute() <br>
+                getAttribute()를 이용하여 선택한 요소(element)의 특정 속성(attribute)의 값을 가져 올 수 있습니다.
+            </p>
+            <h3 class="t_tit2">HTML</h3>
+            <div class="t_code">
+<pre><code>&lt;section id="mouseType"&gt;
+    &lt;div class="mouse__cursor"&gt;&lt;/div&gt;
+    &lt;div class="mouse__wrap"&gt;
+        &lt;p&gt;
+            All our &lt;span class="style1"&gt;dreams&lt;/span&gt; can &lt;span class="style2"&gt;true&lt;/span&gt; if we
+            have the &lt;span class="style3"&gt;courage&lt;/span&gt; to pursue them
+        &lt;/p&gt;
+        &lt;p&gt;
+            우리의 모든 &lt;span class="style4"&gt;꿈은&lt;/span&gt; 이루어질 것이다. 그들을
+            &lt;span class="style5"&gt;믿고&lt;/span&gt; 나아갈 &lt;span class="style6"&gt;용기만&lt;/span&gt; 있다면
+        &lt;/p&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+&lt;div class="mouse__info"&gt;
+    &lt;ul&gt;
+        &lt;li&gt;clientX : &lt;span class="clientX"&gt;0&lt;/span&gt;px&lt;/li&gt;
+        &lt;li&gt;clientY : &lt;span class="clientY"&gt;0&lt;/span&gt;px&lt;/li&gt;
+        &lt;li&gt;offsetX : &lt;span class="offsetX"&gt;0&lt;/span&gt;px&lt;/li&gt;
+        &lt;li&gt;offsetY : &lt;span class="offsetY"&gt;0&lt;/span&gt;px&lt;/li&gt;
+        &lt;li&gt;pageX : &lt;span class="pageX"&gt;0&lt;/span&gt;px&lt;/li&gt;
+        &lt;li&gt;pageY : &lt;span class="pageY"&gt;0&lt;/span&gt;px&lt;/li&gt;
+        &lt;li&gt;screenX : &lt;span class="screenX"&gt;0&lt;/span&gt;px&lt;/li&gt;
+        &lt;li&gt;screenY : &lt;span class="screenY"&gt;0&lt;/span&gt;px&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;
+</code></pre>
+            </div>
+            <h3 class="t_tit2">CSS</h3>
+            <div class="result">
+                <details>
+                    <summary>css보기</summary>
+                        <div class="t_code">
+<pre><code>.mouse__wrap {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: #fff;
+    overflow: hidden;
+    cursor: none;
+}
+.mouse__wrap p {
+    font-size: 2vw;
+    line-height: 2;
+    font-weight: 300;
+}
+.mouse__wrap p:last-child {
+    font-size: 3vw;
+    font-weight: 400;
+}
+.mouse__wrap p span {
+    border-bottom: 0.15vw dashed #16213E;
+    color: #16213E;
+}
+@media (max-width: 800px) {
+    .mouse__wrap p {
+        padding: 0 20px;
+        font-size: 30px;
+        line-height: 1.5;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    .mouse__wrap p:last-child {
+        font-size: 40px;
+        line-height: 1.5;
+        text-align: center;
+        word-break: keep-all;
+    }
+}
+.mouse__cursor {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    background-color: rgba(255, 255, 255, 0.1);
+    user-select: none;
+    pointer-events: none;
+    transition: 
+        background-color 0.3s,
+        border-color 0.3s,
+        transform 0.3s,
+        border-radius 0.3s
+        ;
+}
+.mouse__cursor.style1 {
+    background-color: #80558c67;
+    border-color: #80558c;
+}
+.mouse__cursor.style2 {
+    background-color: #f637ed55;
+    border-color: #f637ed;
+    transform:  scale(2) rotateY(720deg);
+}
+.mouse__cursor.style3 {
+    background-color: #ff64645a;
+    border-color: #FF6464;
+    transform: scale(1.5) rotateX(360deg);
+}
+.mouse__cursor.style4 {
+    background-color: #f9d92372;
+    border-color: #F9D923;
+    transform: scale(4);
+}
+.mouse__cursor.style5 {
+    background-color: #cd113a70;
+    border-color: #CD113B;
+    transform: scale(0.5);
+}
+.mouse__cursor.style6 {
+    background-color: #184d476f;
+    border-color: #184D47;
+    transform: scale(5);
+    border-radius: 5px;
+}
+.mouse__info {
+    position: absolute;
+    left: 20px;
+    bottom: 10px;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #fff;
+}
+</code></pre>
+                    </div>
+                </details>
+            </div>
+
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:jwor124@naver.com">jwor124@naver.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+   
+</body>
+</html>

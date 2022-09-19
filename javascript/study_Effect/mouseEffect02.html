@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>패럴랙스 이펙트</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+
+</head>
+<body>
+    <header id="header">
+        <h1><a href="../index.html">마우스 이펙트</a></h1>
+        <nav class="header_nav">
+
+        </nav>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">스크립트를 이용한 마우스효과 만들기 02</h2>
+            <p class="t_desc2">
+               마우스 이펙트02에서는 GSAP를 이용하여 애니메이션 효과를 부드럽게 나타내는 것 까지 함께 해 보도록 합시다.
+            </p>
+
+            
+
+            
+            <div class="t_iframe" style="min-height: 1000px; padding-top: 0;">
+                <iframe src="https://jwor12427.github.io/coding/javascript/effect/mouseEffect02.html"></iframe>
+            </div>
+
+            <div class="t_link">
+                <a href="https://github.com/jwor12427/coding/blob/main/javascript/effect/mouseEffect02.html" target="_blank">원본 소스 보기</a>
+            </div>
+
+            <h3 class="t_tit2">선택자 만들기</h3>
+
+            <div class="t_code">
+<pre><code>const cursor = document.querySelector(".mouse__cursor");
+const cursor2 = document.querySelector(".mouse__cursor2");
+const span = document.querySelectorAll(".mouse__wrap span");
+const btn = document.querySelector("#footer .modal__btn");
+const header = document.querySelector("#header");
+</code></pre>
+            </div>
+            <h3 class="t_tit2">Javascript & GSAP</h3>
+
+            <div class="t_code">
+<pre><code>window.addEventListener("mousemove", e => {
+    //커서 좌표값 할당
+    // cursor.style.left = e.pageX -5 + "px";
+    // cursor.style.top = e.pageY -5 + "px";
+    // cursor2.style.left = e.pageX -15 + "px";
+    // cursor2.style.top = e.pageY -15 + "px";
+
+    //GSAP
+    gsap.to(cursor, {duration: 0.3, left: e.pageX -5, top: e.pageY -5});
+    gsap.to(cursor2, {duration: 0.8, left: e.pageX -15, top: e.pageY -15});
+
+    //mouseenter / mouseover => 이벤트 버블링 ,자식의 이벤트 효과 여부
+
+    //오버 효과 - 화살표 함수를 쓰기전에는 this를 썼음, 화살표함수에서는 this가 적용되지 않음
+    span.forEach(span => { 
+        span.addEventListener("mouseenter", () => {
+            cursor.classList.add("active");
+            cursor2.classList.add("active");
+        });
+        span.addEventListener("mouseleave", () => {
+            cursor.classList.remove("active");
+            cursor2.classList.remove("active");
+        });
+    });
+    btn.addEventListener("mouseenter", () => {
+        cursor.classList.add("active");
+        cursor2.classList.add("active");
+    });
+    btn.addEventListener("mouseleave", () => {
+        cursor.classList.remove("active");
+        cursor2.classList.remove("active");
+    });
+    header.addEventListener("mouseenter", () => {
+        cursor.classList.add("active");
+        cursor2.classList.add("active");
+    });
+    header.addEventListener("mouseleave", () => {
+        cursor.classList.remove("active");
+        cursor2.classList.remove("active");
+    });
+});
+</code></pre>
+            </div>
+            <br>
+            <p class="t_box">
+                &lt;script src="../assets/js/gsap.min.js"&gt;&lt;/script&gt; <br>
+                GSAP를 사용하기 전에 GSAP의 파일을 저장하고 연동시켜 줍니다.
+            </p>
+            <br>
+            <p class="t_desc">
+                추가적으로 푸터의 소스보기 버튼과 헤더영역에 마우스가 들어 갔을때 같은 효과를 추가 해 주었습니다.
+            </p>
+            <h3 class="t_tit2">HTML</h3>
+            <div class="t_code">
+<pre><code>&lt;main id="main"&gt;
+    &lt;section id="mouseType"&gt;
+        &lt;div class="mouse__cursor"&gt;&lt;/div&gt;
+        &lt;div class="mouse__cursor2"&gt;&lt;/div&gt;
+        &lt;div class="mouse__wrap"&gt;
+            &lt;p&gt;
+                &lt;span&gt;Success&lt;/span&gt; is walking from failure
+                to failure with no loss of &lt;span&gt;enthusiasm&lt;/span&gt;.
+            &lt;/p&gt;
+            &lt;p&gt;
+                성공이란 &lt;span&gt;열정을&lt;/span&gt; 
+                잃지 않고 실패에서 실패로 &lt;span&gt;걸어가는&lt;/span&gt; 것이다.
+            &lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+&lt;/main&gt;
+</code></pre>
+            </div>
+            <h3 class="t_tit2">CSS</h3>
+            <div class="result">
+                <details>
+                    <summary>css보기</summary>
+                        <div class="t_code">
+<pre><code>.mouse__wrap {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: #fff;
+    overflow: hidden;
+    cursor: none;
+}
+.mouse__wrap p {
+    font-size: 2vw;
+    line-height: 2;
+    font-weight: 300;
+}
+.mouse__wrap p:last-child {
+    font-size: 3vw;
+    font-weight: 400;
+}
+.mouse__wrap p span {
+    border-bottom: 0.15vw dashed #ee7213;
+    color: #ee7213;
+}
+@media (max-width: 800px) {
+    .mouse__wrap p {
+        padding: 0 20px;
+        font-size: 30px;
+        line-height: 1.5;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    .mouse__wrap p:last-child {
+        font-size: 40px;
+        line-height: 1.5;
+        text-align: center;
+        word-break: keep-all;
+    }
+}
+.mouse__cursor {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 10px;
+    height: 10px;
+    z-index: 9999;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.6);
+    user-select: none;
+    pointer-events: none;
+    transition: transform 0.3s, opactiy 0.2s;
+}
+.mouse__cursor2 {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 30px;
+    height: 30px;
+    z-index: 9999;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.3);
+    user-select: none;
+    pointer-events: none;
+    transition: transform 0.3s, opactiy 0.3s;
+}
+.mouse__cursor.active {
+    transform: scale(0);
+}
+.mouse__cursor2.active {
+    transform: scale(4);
+    background: rgba(255,166,0,0.6);
+}
+</code></pre>
+                    </div>
+                </details>
+            </div>
+
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:jwor124@naver.com">jwor124@naver.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+   
+</body>
+</html>
