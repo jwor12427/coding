@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>사이트 만들기2</title>
+
+    <!-- SEO -->
+    <meta name="author" content="JeongEunbi">
+    <meta name="description" content="사이트 만들기 튜토리얼입니다.">
+    <meta name="keyword" content="사이트, 만들기, 튜토리얼, 포토폴리오">
+    <meta name="robots" content="all">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/fonts.css">
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/common.css">
+
+    <!-- CSS(섹션별) -->
+    <link rel="stylesheet" href="assets/css/header.css">
+    <link rel="stylesheet" href="assets/css/slider.css">
+</head>
+<body>
+    <div id="skip">
+        <a href="#">헤더 영역 바로가기</a>
+        <a href="#">슬라이드 영역 바로가기</a>
+        <a href="#">이미지 영역 바로가기</a>
+        <a href="#">이미지/텍스트 영역 바로가기</a>
+        <a href="#">카드 영역 바로가기</a>
+        <a href="#">배너 영역 바로가기</a>
+        <a href="#">텍스트 영역 바로가기</a>
+        <a href="#">푸터 영역 바로가기</a>
+    </div>
+    <!-- //skip -->
+
+    <header id="headerType" class="header__wrap">
+        <div class="header__inner">
+            <div class="header__logo">
+                <a href="#">Pohoto <em>site</em></a>
+            </div>
+            <div class="header__menu">
+                <ul>
+                    <li><a href="#">헤더 영역</a></li>
+                    <li><a href="#">슬라이드 영역</a></li>
+                    <li><a href="#">이미지 영역</a></li>
+                    <li><a href="#">컨텐츠 영역</a></li>
+                    <li><a href="#">푸터 영역</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <!-- //headerType -->
+
+    <main id="mainType">
+        <section id="sliderType" class="slider__wrap">
+            <h2 class="blind">새로운 소식</h2>
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="desc">
+                            <h3>NEW<br> POHOTO</h3>
+                            <p>
+                                새로 올라온 사진들을 구경하고 <br>
+                                다양한 후기와 좋아요를 남겨 주세요!
+                            </p>
+                            <div class="btn">
+                                <a href="#">더 알아보기</a>
+                            </div>
+                            <div class="img_icon">
+                                <img src="../site2/assets/img/slider_icon01.svg" alt="">
+                                <img src="../site2/assets/img/slider_icon02.svg" alt="">
+                                <img src="../site2/assets/img/slider_icon03.svg" alt="">
+                                <img src="../site2/assets/img/slider_icon04.svg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button">
+                    <div class="swiper-button-play"><span class="ir">play</span></div>
+                    <div class="swiper-button-stop"><span class="ir">stop</span></div>
+                </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+        </section>
+        <!-- //sliderType -->
+    </main>
+    <!-- //main -->
+
+    <footer id="footerType"></footer>
+</body>
+</html>

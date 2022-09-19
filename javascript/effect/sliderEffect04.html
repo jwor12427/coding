@@ -189,15 +189,139 @@
                     </div>
                     <div class="cont">
                         <div class="active">
-<pre><code>
+<pre><code>const sliderWrap = document.querySelector(".slider__wrap");
+const sliderImg = document.querySelector(".slider__img");           //보여지는 영역
+const sliderInner = document.querySelector(".slider__inner");       //움직이는 영역
+const slider = document.querySelectorAll(".slider");                //각각 이미지
+
+const sliderBtn = document.querySelector(".slider__btn");         //버튼
+const sliderBtnPrev = document.querySelector(".prev");            //왼쪽버튼
+const sliderBtnNext = document.querySelector(".next");            //오른쪽버튼
+
+let currentIndex = 0;                       //현재 이미지
+let sliderCount = slider.length;            //이미지 갯수
+let sliderWidth = sliderImg.offsetWidth;    //이미지 가로값
+
+//이미지 움직이는 영역
+function gotoSlider(num){
+    sliderInner.style.transition = "all 400ms";
+    sliderInner.style.transform = "translateX("+ -sliderWidth * num +"px)";
+    currentIndex = num;
+};
+
+
+//왼쪽 버튼 클릭
+sliderBtnPrev.addEventListener("click", () => {
+
+    let prevIndex = (currentIndex + (sliderCount - 1)) % sliderCount;
+    gotoSlider(prevIndex);
+    //4 3 2 1 0 -> 4
+});
+
+//오른쪽 버튼 클릭
+sliderBtnNext.addEventListener("click", () => {
+    let nextIndex = (currentIndex + 1) % sliderCount
+    gotoSlider(nextIndex);
+    //0 1 2 3 4
+});
 </code></pre>
                         </div>
                         <div>
-<pre><code>
+<pre><code>&lt;main id="main"&gt;
+    &lt;section id="sliderType03"&gt;
+        &lt;div class="slider__wrap"&gt;
+            &lt;div class="slider__img"&gt;
+                &lt;div class="slider__inner"&gt;
+                    &lt;div class="slider"&gt;&lt;img src="../assets/img/effect_bg16.jpg" alt="이미지1"&gt;&lt;/div&gt;
+                    &lt;div class="slider"&gt;&lt;img src="../assets/img/effect_bg17.jpg" alt="이미지2"&gt;&lt;/div&gt;
+                    &lt;div class="slider"&gt;&lt;img src="../assets/img/effect_bg18.jpg" alt="이미지3"&gt;&lt;/div&gt;
+                    &lt;div class="slider"&gt;&lt;img src="../assets/img/effect_bg19.jpg" alt="이미지4"&gt;&lt;/div&gt;
+                    &lt;div class="slider"&gt;&lt;img src="../assets/img/effect_bg20.jpg" alt="이미지5"&gt;&lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="slider__btn"&gt;
+            &lt;a href="#" class="prev"&gt;prev&lt;/a&gt;
+            &lt;a href="#" class="next"&gt;next&lt;/a&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+&lt;/main&gt;
 </code></pre>
                         </div>
                         <div>
-<pre><code>
+<pre><code>/* slider */
+.slider__wrap {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.slider__img {
+    /* 이미지 보이는 영역 */
+    position: relative;
+    width: 800px;
+    height: 480px;
+    overflow: hidden;
+}
+.slider__inner {
+    /* 이미지를 감싸고 있는 부모 : 움직이는 부분 */
+    display: flex;
+    flex-wrap: wrap;
+    width: 4800px;          /* 총 이미지 */
+    height: 480px;
+}
+.slider {
+    /* 개별적인 이미지 */
+    position: relative;
+    width: 800px;
+    height: 480px;
+}
+.slider::before {
+    position: absolute;
+    left: 5px;
+    top: 5px;
+    background-color: rgba(0,0,0,0.4);
+    color: #fff;
+    padding: 5px 10px;
+}
+.slider:nth-child(1)::before {content: 'Image1';}
+.slider:nth-child(2)::before {content: 'Image2';}
+.slider:nth-child(3)::before {content: 'Image3';}
+.slider:nth-child(4)::before {content: 'Image4';}
+.slider:nth-child(5)::before {content: 'Image5';}
+.slider:nth-child(6)::before {content: 'Image1';}
+
+@media(max-width: 800px) {
+    .slider__img {
+        position: relative;
+        width: 400px;
+        height: 240px;
+    }
+}
+.slider__btn a {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    background: rgba(0,0,0,0.4);
+    text-align: center;
+    line-height: 50px;
+    transition: all 0.2s;
+    display: block;
+    color: #fff;
+    border-radius: 5px;
+}
+.slider__btn a:hover {
+    background: #FA9191;
+}
+.slider__btn a.prev {
+    left: 0;
+}
+.slider__btn a.next {
+    right: 0;
+}  
 </code></pre>
                         </div>
                     </div>

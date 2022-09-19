@@ -524,7 +524,57 @@
                         </div>
                         <div class="cont">
                             <div class="active">
-<pre><code>
+<pre><code>const scroll = document.querySelector("#parallax__info .scroll span");
+        
+window.addEventListener("scroll", () => {
+    // let scrollTop = window.pageYOffset;
+    // let scrollTop = window.scrollY;
+    // let scrollTop = document.documentElement.scrollTop;
+    let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop;
+
+    // if(scrollTop >= document.getElementById("section+i").offsetTop) {
+    //     document.querySelectorAll("#parallax__nav li").forEach(li => {
+    //         li.classList.remove("active");
+    //     });
+    
+    // //for문
+    //  for(let i = 1; i &lt; 10; i++) {
+    //      if(scrollTop >= document.getElementById("section"+i).offsetTop){
+    //          document.querySelectorAll("#parallax__nav li").forEach(li => {
+    //              li.classList.remove("active");
+    //          })
+    //         document.querySelector("#parallax__nav li:nth-child("+ i + ")").classList.add("active");
+    //      }
+            
+    //  }
+
+    //fotEach문
+    document.querySelectorAll(".content__item").forEach ((element, index) => {
+        if(scrollTop >= element.offsetTop - 2) {
+            document.querySelectorAll("#parallax__nav li").forEach(li => {
+                li.classList.remove("active")
+            });
+            document.querySelector("#parallax__nav li:nth-child(" + (index+1) + ")").classList.add("active")
+        };
+        
+    })
+    document.querySelector(".scroll span").innerText = Math.round(scrollTop);
+    
+    //for문 영역의 값
+    for(let i = 1 ; i &lt; 10 ; i++) {
+        document.querySelector(".offset"+i).innerText = document.getElementById("section"+ i).offsetTop;
+    };
+});
+
+//스크롤 이동
+document.querySelectorAll("#parallax__nav li a").forEach(li => {
+    li.addEventListener("click", (e) => {
+        e.preventDefault();
+        document.querySelector(li.getAttribute("href")).scrollIntoView({
+            behavior: "smooth"
+        });
+    });
+});
 </code></pre>
                             </div>
                             <div>
@@ -642,8 +692,178 @@
 </code></pre>
                             </div>
                             <div>
-<pre><code>
+<pre><code>/* parallax__nav */
+#parallax__nav {
+    position: fixed;
+    right: 20px;
+    top: 20px;
+    z-index: 2000;
+    background-color: rgba(0,0,0,0.4);
+    padding: 20px 30px;
+    border-radius: 50px;
+}
+#parallax__nav li {
+    display: inline;
+    margin: 0 5px;
+}
+#parallax__nav li a {
+    display: inline-block;
+    height: 30px;
+    padding: 5px 20px;
+    text-align: center;
+    line-height: 30px;
+}
+#parallax__nav li.active a {
+    background-color: #fff;
+    color: #222;
+    border-radius: 20px;
+    box-sizing: content-box;
+}
 
+/* parallax__cont */
+#parallax__cont {
+    max-width: 1600px;
+    width: 98%;
+    margin: 0 auto;
+    /* background-color: rgba(255,255,255,0.1); */
+}
+
+.content__item {
+    width: 1000px;
+    max-width: 70vw;
+    margin: 30vw auto;
+    /* background-color: rgba(255,255,255,0.3); */
+    text-align: left;
+    margin-right: 0;
+    position: relative;
+    padding-top: 9vw;
+}
+.content__item:nth-child(even) {      /* 2n: n은 변수, even: 짝수만 선택 */
+    margin-left: 0;
+    text-align: right;
+}
+.content__item:nth-child(even) .content__item__num {
+    left: auto;  /*left 값 초기화 */
+    right: -5vw;
+}
+.content__item__num {
+    font-size: 35vw;
+    font-family: 'Lato';
+    font-weight: 100;
+    position: absolute;
+    left: -5vw;
+    top: -13vw;
+    opacity: 0.07;
+    z-index: -2;
+}
+.content__item__title {
+    font-weight: 400;
+    text-transform: capitalize;     /* 첫글자만 대문자 */
+}
+.content__item__imgWrap {
+    width: 100%;
+    padding-bottom: 56.25%;
+    background-color: #000;
+    position: relative;
+    overflow: hidden;
+    z-index: -1;
+}
+.content__item__img {
+    position: absolute;
+    background-image: url(../assets/img/effect_bg19.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 110%;
+    background-size: cover;
+    height: 110%;
+    left: -5%;
+    top: -5%;
+    filter: saturate(0%);
+    transition: all 1s;
+}
+.content__item:nth-child(1) .content__item__img{
+    background-image: url(../assets/img/effect_bg13.jpg);
+}
+.content__item:nth-child(2) .content__item__img{
+    background-image: url(../assets/img/effect_bg19.jpg);
+}
+.content__item:nth-child(3) .content__item__img{
+    background-image: url(../assets/img/effect_bg08.jpg);
+}
+.content__item:nth-child(4) .content__item__img{
+    background-image: url(../assets/img/effect_bg09.jpg);
+}
+.content__item:nth-child(5) .content__item__img{
+    background-image: url(../assets/img/effect_bg18.jpg);
+}
+.content__item:nth-child(6) .content__item__img{
+    background-image: url(../assets/img/effect_bg17.jpg);
+}
+.content__item:nth-child(7) .content__item__img{
+    background-image: url(../assets/img/effect_bg06.jpg);
+}
+.content__item:nth-child(8) .content__item__img{
+    background-image: url(../assets/img/effect_bg01.jpg);
+}
+.content__item:nth-child(9) .content__item__img{
+    background-image: url(../assets/img/effect_bg15.jpg);
+}
+.content__item__desc {
+    font-size: 4vw;
+    line-height: 1.4;
+    margin-top: -5vw;
+    margin-left: -4vw;
+    word-break: keep-all;
+}
+.content__item:nth-child(even) .content__item__desc {
+    margin-left: auto;
+    margin-right: -4vw;
+}
+#parallax__info {
+    position: fixed;
+    left: 20px;
+    bottom: 20px;
+    z-index: 2000;
+    background-color: rgba(0,0,0,0.6);
+    color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+}
+#parallax__info li, .scrollTop  {
+    line-height: 1.4;
+}
+@media(max-width: 800px) {
+    #parallax__cont {
+        margin-top: 70vw;
+    }
+    #parallax__nav {
+        padding: 10px;
+        right: auto;
+        left: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        border-radius: 5px;
+        background-color: rgba(0,0,0,0.8);
+    }
+    #parallax__nav li {
+        display: block;
+        margin: 5px;
+    }
+    #parallax__nav li a {
+        font-size: 14px;
+        padding: 5px;
+        border-radius: 5px;
+        height: auto;
+        line-height: 1;
+    }
+    #parallax__nav li.active a {
+        border-radius: 5px;
+    }
+    #parallax__info {
+        left: 10px;
+        bottom: 10px;
+    }
+}
 </code></pre>
                             </div>
                         </div>
