@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>슬라이드 이펙트</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+
+</head>
+<body>
+    <header id="header">
+        <h1><a href="../index.html">슬라이드 이펙트</a></h1>
+        <nav class="header_nav">
+
+        </nav>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">스크립트를 이용한 슬라이드 효과 만들기 04</h2>
+            <p class="t_desc2">
+                버튼을 이용하여 이미지 슬라이드가 넘어가는 효과를 만들어 봅시다.
+            </p>
+
+            
+            <div class="t_iframe" style="min-height: 1000px; padding-top: 0;">
+                <iframe src="https://jwor12427.github.io/coding/javascript/effect/sliderEffect04.html"></iframe>
+            </div>
+
+            <div class="t_link">
+                <a href="https://github.com/jwor12427/coding/blob/main/javascript/effect/sliderEffect04.html" target="_blank">원본 소스 보기</a>
+            </div>
+
+            <h3 class="t_tit2">HTML</h3>
+            <p class="t_desc">
+                html에서 버튼을 추가 해주었습니다.
+            </p>
+            <div class="t_code">
+<pre><code>&lt;div class="slider__btn"&gt;
+    &lt;a href="#" class="prev"&gt;prev&lt;/a&gt;
+    &lt;a href="#" class="next"&gt;next&lt;/a&gt;
+&lt;/div&gt;
+</code></pre>
+            </div>
+            <h3 class="t_tit2">JavaScript</h3>
+            <div class="t_code">
+<pre><code>const sliderWrap = document.querySelector(".slider__wrap");
+const sliderImg = document.querySelector(".slider__img");           //보여지는 영역
+const sliderInner = document.querySelector(".slider__inner");       //움직이는 영역
+const slider = document.querySelectorAll(".slider");                //각각 이미지
+
+const sliderBtn = document.querySelector(".slider__btn");         //버튼
+const sliderBtnPrev = document.querySelector(".prev");            //왼쪽버튼
+const sliderBtnNext = document.querySelector(".next");            //오른쪽버튼
+
+let currentIndex = 0;                       //현재 이미지
+let sliderCount = slider.length;            //이미지 갯수
+let sliderWidth = sliderImg.offsetWidth;    //이미지 가로값
+
+//이미지 움직이는 영역
+function gotoSlider(num){
+    sliderInner.style.transition = "all 400ms";
+    sliderInner.style.transform = "translateX("+ -sliderWidth * num +"px)";
+    currentIndex = num;
+};
+</code></pre>
+            </div>
+            <br>
+            <p class="t_desc2">
+                매개변수인 num을 사용하여 이미지가 X축 방향으로 움직일 수 있게 설정 해 줍니다.
+            </p>
+            <h3 class="t_tit2">버튼 설정</h3>
+            <div class="t_code">
+<pre><code>//왼쪽 버튼 클릭
+sliderBtnPrev.addEventListener("click", () => {
+
+    let prevIndex = (currentIndex + (sliderCount - 1)) % sliderCount;
+    gotoSlider(prevIndex);
+    //4 3 2 1 0 -> 4
+});
+
+//오른쪽 버튼 클릭
+sliderBtnNext.addEventListener("click", () => {
+    let nextIndex = (currentIndex + 1) % sliderCount
+    gotoSlider(nextIndex);
+    //0 1 2 3 4
+});
+</code></pre>
+            </div>
+            <br>
+            <p class="t_desc2">
+                next버튼은  currentIndex값에서 + 1 해준다음 sliderCount의 값을 나누어 주었습니다. <br>
+                🔊prev버튼은 처음 사진에서 마지막 사진으로 갈 수 있게 설정 해주어야 하기 때문에 currentIndex에서 sliderCount -1 값을 더 해준다음 전체 값에서 sliderCount를 나누어 주었습니다.
+            </p>
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:jwor124@naver.com">jwor124@naver.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+   
+</body>
+</html>
