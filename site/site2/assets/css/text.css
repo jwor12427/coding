@@ -1,0 +1,86 @@
+ /* common */
+ .container {
+    width: 1160px;
+    padding: 0 20px;
+    margin: 0 auto;
+}
+
+.section {
+    padding: 120px 0;
+    min-width: 1160px;
+}
+.text__logo {
+    font-size: 16px;
+    margin-bottom: 20px;
+    width: 135px;
+    height: 25px;
+    background-color: #3F80FF;
+    color: #fff;
+    border-radius: 10px;
+    text-align: center;
+    line-height: 25px;
+}
+.section h2 {
+    font-size: 50px;
+    line-height: 1;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.section p {
+    font-size: 18px;
+    margin-bottom: 10px;
+    word-break: keep-all;
+}
+.text__inner {
+    display: flex;
+    
+}
+.text__header {
+    width: 28%;
+    padding-right: 40px;
+}
+.text__main {
+    width: 68%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.text__main .text__box {
+    width: 47%;
+    margin-bottom: 50px;
+}
+.text__main .icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 70px;
+    margin-bottom: 10px;
+}
+.text__main .icon img {
+    width: auto;
+    vertical-align: inherit;
+}
+.text__main .icon.icon1 {
+    background-color: #72C4FF;
+}
+.text__main .icon.icon2 {
+    background-color: #9E95FC;
+}
+.text__main .icon.icon3 {
+    background-color: #A0DECC;
+}
+.text__main .icon.icon4 {
+    background-color: #DAA6DE;
+}
+.text__main .tit {
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+.text__main .desc {
+    font-size: 18px;
+    line-height: 1.5;
+    font-weight: 300;
+}
