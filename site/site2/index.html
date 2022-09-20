@@ -21,6 +21,8 @@
     <link rel="stylesheet" href="assets/css/header.css">
     <link rel="stylesheet" href="assets/css/slider.css">
     <link rel="stylesheet" href="assets/css/text.css">
+
+    <link rel="stylesheet" href="../site1/assets/css/swiper.css">
 </head>
 <body>
     <div id="skip">
@@ -70,18 +72,39 @@
                             </div>
                         </div>
                     </div>
-                <div class="swiper-pagination"></div>
-                <div class="swiper-button">
-                    <div class="swiper-button-play"><span class="ir">play</span></div>
-                    <div class="swiper-button-stop"><span class="ir">stop</span></div>
+                    <div class="swiper-slide">
+                        <div class="desc">
+                            <h3>NEW<br> POHOTO</h3>
+                            <p>
+                                새로 올라온 사진들을 구경하고 <br>
+                                다양한 후기와 좋아요를 남겨 주세요!
+                            </p>
+                            <div class="btn">
+                                <a href="#">더 알아보기</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="desc">
+                            <h3>NEW<br> POHOTO</h3>
+                            <p>
+                                새로 올라온 사진들을 구경하고 <br>
+                                다양한 후기와 좋아요를 남겨 주세요!
+                            </p>
+                            <div class="btn">
+                                <a href="#">더 알아보기</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+                <div class="swiper-pagination"></div>
                 <div class="swiper-button-next"></div>
                 <div class="swiper-button-prev"></div>
             </div>
         </section>
         <!-- //sliderType -->
 
-        <section id="textType" class="text__wrap gmarket section">
+        <section id="textType" class="text__wrap section">
             <div class="text__inner container">
                 <article class="text__header">
                     <div class="text__logo">ANIMAL</div>
@@ -124,5 +147,24 @@
     <!-- //main -->
 
     <footer id="footerType"></footer>
+
+    <script src="../site1/assets/js/swiper.min.js"></script>
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+            },
+            autoplay: {
+                delay: 4000,
+                disableOnInteraction: false,        
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                type: 'bullets',
+                clickable: true,
+            },
+        });
+    </script>
 </body>
 </html>

@@ -43,7 +43,7 @@
         </nav>
     </header>
     <!-- //header -->
-
+    <div class="cssicon up"><span></span></div>
     <main id="main">
         <div class="container">
             <div class="main_menu">
@@ -67,7 +67,17 @@
                     <li><a href="#sample17">17. 함수 유형 : 객체 생성자 함수</a></li>
                     <li><a href="#sample18">18. 함수 유형 : 프로트타입 함수</a></li>
                     <li><a href="#sample19">19. 함수 유형 : 객체 리터럴 함수</a></li>
-                    <li><a href="#sample19">20. 함수 유형 : 즉시 실행 함수</a></li>
+                    <li><a href="#sample20">20. 즉시 실행 함수</a></li>
+                    <li><a href="#sample21">21. 파라미터 함수</a></li>
+                    <li><a href="#sample22">22. 아규먼트 함수</a></li>
+                    <li><a href="#sample23">23. 재귀함수</a></li>
+                    <li><a href="#sample24">24. 콜백함수 : 다른 함수에 인수로 넘겨지는 함수</a></li>
+                    <li><a href="#sample25">25. 콜백함수 : 반복문</a></li>
+                    <li><a href="#sample26">26. 콜백함수 : 동기/비동기</a></li>
+                    <li><a href="#sample27">27. promise함수</a></li>
+                    <li><a href="#sample28">28. 내부 함수 : 스코프 , 클로져</a></li>
+                    <li><a href="#sample29">29. 클래스</a></li>
+                    <li><a href="#sample30">30. 클래스 상속</a></li>
                 </ul>
             </div>
             <div class="main_sample">
@@ -692,8 +702,8 @@ func();
                     </div>
                 </div>
                 <!-- //sample21 -->
-                <div id="sample21" class="sample">
-                    <h3>22. 함수 유형 : 아규먼트 함수</h3>
+                <div id="sample22" class="sample">
+                    <h3>22. 아규먼트 함수</h3>
                     <p></p>
                     <div class="script">
 <pre><code class="language-js">function func(a, b){
@@ -713,6 +723,319 @@ func("함수가 실행되었습니다.", "함수가 실행되었습니다.");
                     </div>
                 </div>
                 <!-- //sample22 -->
+
+                <div id="sample23" class="sample">
+                    <h3>23. 재귀 함수 : 자기 자신을 호출</h3>
+                    <p></p>
+                    <div class="script">
+<pre><code class="language-js">function func(){
+    document.write("함수가 실행되었습니다.");
+    
+    //func() -> 잘못하면 무한에 빠짐
+}
+func();
+
+//반복적으로
+function func(num){
+    if( num &lt;= 1 ){
+        document.write("함수가 실행되었습니다." + num);
+    } else {
+        document.write("함수가 실행되었습니다." + num);
+        func(num - 1);
+    }
+}
+func(10);
+
+//애니메이션 사용
+function func(){
+    document.write("함수가 실행되었습니다.");
+    
+    requestAnimationFrame(animation);
+}
+animation();
+</code></pre>
+                    </div>
+                    <div class="result">
+                        <details>
+                            <summary>결과보기</summary>
+                            <div class="sample22_result">
+                                함수가 실행되었습니다.10함수가 실행되었습니다.9함수가 실행되었습니다.8함수가 실행되었습니다.7함수가 실행되었습니다.6
+                                함수가 실행되었습니다.5함수가 실행되었습니다.4함수가 실행되었습니다.3함수가 실행되었습니다.2함수가 실행되었습니다.1 <br>
+                                함수가 실행되었습니다.함수가 실행되었습니다.함수가 실행되었습니다......
+                            </div>
+                        </details>
+                    </div>
+                </div>
+                <!-- //sample23 -->
+
+                <div id="sample24" class="sample">
+                    <h3>24. 콜백 함수 : 다른 함수에 인수로 넘겨지는 함수</h3>
+                    <p></p>
+                    <div class="script">
+<pre><code class="language-js">function func(){
+    document.write("함수가 실행되었습니다.2");
+}
+function callback(str){
+    document.write("함수가 실행되었습니다.1");  //callback이 먼저 실행이 된 뒤에 나머지 실행
+    str();
+}
+callback(func);
+</code></pre>
+                    </div>
+                    <div class="result">
+                        <details>
+                            <summary>결과보기</summary>
+                            <div class="sample24_result">
+                                함수가 실행되었습니다.1함수가 실행되었습니다.2 <br>
+                                
+                            </div>
+                        </details>
+                    </div>
+                </div>
+                <!-- //sample24 -->
+
+                <div id="sample25" class="sample">
+                    <h3>25. 콜백함수 : 반복문</h3>
+                    <p></p>
+                    <div class="script">
+<pre><code class="language-js">//반복문
+function func(index){
+    document.write("함수가 실행되었습니다." + index);
+}
+function callback(num){
+    for(let i=1; i&lt;=10; i++){
+        num(i);
+    }
+}
+callback(func);
+</code></pre>
+                    </div>
+                    <div class="result">
+                        <details>
+                            <summary>결과보기</summary>
+                            <div class="sample25_result">
+                                함수가 실행되었습니다.1함수가 실행되었습니다.2함수가 실행되었습니다.3함수가 실행되었습니다.4함수가 실행되었습니다.5함수가 실행되었습니다.
+                                6함수가 실행되었습니다.7함수가 실행되었습니다.8함수가 실행되었습니다.9함수가 실행되었습니다.10
+                            </div>
+                        </details>
+                    </div>
+                </div>
+                <!-- //sample25 -->
+
+                <div id="sample26" class="sample">
+                    <h3>26. 콜백함수 : 동기/비동기</h3>
+                    <p></p>
+                    <div class="script">
+<pre><code class="language-js">//01. A -> B
+function funcA(){
+    document.write("funcA가 실행되었습니다.");
+}
+function funcB(){
+    document.write("funcB가 실행되었습니다.");
+}
+funcA();
+funcB();    //funcA 실행 후 -> funcB 실행
+
+//02. B -> A
+function funcA(){
+    setTimeout(() => {
+        console.log("funcA가 실행되었습니다.");
+    },1000)  //-> setTimeout때문에 b먼저 실행
+}
+function funcB(){
+    console.log("funcB가 실행되었습니다.");
+}
+funcA();
+funcB();    //funcB 실행 후 -> funcA 실행
+
+//03. A -> B
+function funcA(callback){
+    setTimeout(() => {
+        console.log("funcA가 실행되었습니다.");
+        callback();
+    },1000);
+}
+function funcB(){
+    console.log("funcB가 실행되었습니다.");
+}
+funcA(function(){
+    funcB();
+});   //funcA 실행 후 -> funcB 실행
+
+
+//04. A -> B -> C -> D
+function funcA(callback){
+    setTimeout(() => {
+        console.log("funcA가 실행되었습니다.");
+        callback();
+    },1000);
+}
+function funcB(callback){
+    setTimeout(() => {
+        console.log("funcA가 실행되었습니다.");
+        callback();
+    },1000);
+}
+function funcC(callback){
+    setTimeout(() => {
+        console.log("funcC가 실행되었습니다.");
+        callback();
+    },1000);
+}
+function funcD(){
+    setTimeout(() => {
+        console.log("funcD가 실행되었습니다.");
+    },1000);
+}
+funcA(function(){
+    funcB(function(){
+        funcC(function(){
+            funcD()
+        })
+    });
+});  // funcA -> funcB -> funcC -> funcD
+</code></pre>
+                    </div>
+                    <div class="result">
+                        <details>
+                            <summary>결과보기</summary>
+                            <div class="sample26_result">
+                                funcA가 실행되었습니다. funcB가 실행되었습니다. <br>
+                                funcB가 실행되었습니다. funcA가 실행되었습니다. <br>
+                                funcA가 실행되었습니다. funcB가 실행되었습니다. <br>
+                                funcA가 실행되었습니다. funcB가 실행되었습니다.funcC가 실행되었습니다. funcD가 실행되었습니다.
+                            </div>
+                        </details>
+                    </div>
+                </div>
+                <!-- //sample26 -->
+
+                <div id="sample27" class="sample">
+                    <h3>27. promise함수</h3>
+                    <p></p>
+                    <div class="script">
+<pre><code class="language-js">
+</code></pre>
+                    </div>
+                    <div class="result">
+                        <details>
+                            <summary>결과보기</summary>
+                            <div class="sample27_result">
+                                
+                            </div>
+                        </details>
+                    </div>
+                </div>
+                <!-- //sample27 -->
+
+                <div id="sample28" class="sample">
+                    <h3>28. 내부 함수 : 스코프 , 클로져</h3>
+                    <p></p>
+                    <div class="script">
+<pre><code class="language-js">function func(){
+    function funcA(){
+        document.write("함수가 실행되었습니다.A");
+    };
+    funcA();
+    function funcB(){
+        document.write("함수가 실행되었습니다.B");
+    };
+    funcB();
+}
+func();
+</code></pre>
+                    </div>
+                    <div class="result">
+                        <details>
+                            <summary>결과보기</summary>
+                            <div class="sample28_result">
+                                함수가 실행되었습니다.A함수가 실행되었습니다.B
+                            </div>
+                        </details>
+                    </div>
+                </div>
+                <!-- //sample28 -->
+
+                <div id="sample29" class="sample">
+                    <h3>29. 클래스</h3>
+                    <p></p>
+                    <div class="script">
+<pre><code class="language-js">class study {
+    constructor(num, name, job){
+        this.num = num;
+        this.name = name;
+        this.job = job;
+    }   //생성자 함수
+
+    result(){
+        document.write(this.num + ".내 이름은 " + this.name + "이며, 직업은 " + this.job + "입니다.");
+    } 
+}
+
+const info1 = new study("1", "웹쓰", "웹퍼블리셔");
+const info2 = new study("2", "눈누난나", "프론트앤드 개발자");
+
+info1.result(); //실행문
+info2.result(); // -> 객체 생성자 함수랑 유사함
+</code></pre>
+                    </div>
+                    <div class="result">
+                        <details>
+                            <summary>결과보기</summary>
+                            <div class="sample29_result">
+                                1.내 이름은 웹쓰이며, 직업은 웹퍼블리셔입니다. <br>
+                                2.내 이름은 눈누난나이며, 직업은 프론트앤드 개발자입니다.
+                            </div>
+                        </details>
+                    </div>
+                </div>
+                <!-- //sample29 -->
+
+                <div id="sample30" class="sample">
+                    <h3>30. 클래스 상속</h3>
+                    <p></p>
+                    <div class="script">
+<pre><code class="language-js">class study {
+    constructor(num, name, job){
+        this.num = num;
+        this.name = name;
+        this.job = job;
+    }   //생성자 함수
+
+    result(){
+        document.write(this.num + ".내 이름은 " + this.name + "이며, 직업은 " + this.job + "입니다.");
+    } 
+}
+class study2 extends study {
+    constructor(num, name, job, age){
+        super(num, name, job); //->위의 클래스에서 상속
+        this.age = age;
+    }
+    result2(){
+        document.write(this.num + ".내 이름은 " + this.name + "이며, 직업은 " + this.job + "이며 나이는" + this.age + "살 입니다.");
+    }
+}
+
+const info1 = new study("1", "웹쓰", "웹퍼블리셔");
+const info2 = new study2("2", "눈누난나", "프론트앤드 개발자", 24);
+
+info1.result(); 
+info2.result(); 
+info2.result2(); 
+</code></pre>
+                    </div>
+                    <div class="result">
+                        <details>
+                            <summary>결과보기</summary>
+                            <div class="sample30_result">
+                                1.내 이름은 웹쓰이며, 직업은 웹퍼블리셔입니다.<br>
+                                2.내 이름은 눈누난나이며, 직업은 프론트앤드 개발자입니다.<br>
+                                2.내 이름은 눈누난나이며, 직업은 프론트앤드 개발자이며 나이는24살 입니다.
+                            </div>
+                        </details>
+                    </div>
+                </div>
+                <!-- //sample30 -->
             </div>
         </div>
 
@@ -727,6 +1050,7 @@ func("함수가 실행되었습니다.", "함수가 실행되었습니다.");
     <script>
         hljs.highlightAll();
     </script>
+    <script src="../javascript/assets/js/topBtn.js"></script>
     <!-- script -->
 
     <script>
@@ -951,6 +1275,197 @@ func("함수가 실행되었습니다.", "함수가 실행되었습니다.");
             }
             func("함수가 실행되었습니다.", "함수가 실행되었습니다.");
         }
+        //23. 재귀함수
+        {
+            
+            // function func(){
+            //     document.write("함수가 실행되었습니다.");
+                
+            //     //func() -> 잘못하면 무한에 빠짐
+            // }
+            // func();
+
+            // //반복적으로
+            // function func(num){
+            //     if( num <= 1 ){
+            //         document.write("함수가 실행되었습니다." + num);
+            //     } else {
+            //         document.write("함수가 실행되었습니다." + num);
+            //         func(num - 1);
+            //     }
+            // }
+            // func(10);
+
+            // //애니메이션 사용
+            // function func(){
+            //     document.write("함수가 실행되었습니다.");
+                
+            //     requestAnimationFrame(animation);
+            // }
+            // animation();
+        }
+
+        //24, 25. 콜백함수
+        {
+            //재귀함수 : 동시에 여러개 실행
+            //콜백함수 : 첫번째 함수가 실행 -> 두번째 함수 실행
+            // function func(){
+            //     document.write("함수가 실행되었습니다.2");
+            // }
+            // function callback(str){
+            //     document.write("함수가 실행되었습니다.1");  //callback이 먼저 실행이 된 뒤에 나머지 실행
+            //     str();
+            // }
+            // callback(func);
+
+            // function func(index){
+            //     document.write("함수가 실행되었습니다." + index);
+            // }
+            // function callback(num){
+            //     for(let i=1; i<=10; i++){
+            //         num(i);
+            //     }
+            // }
+            // callback(func);
+        }
+        //26.
+        {
+            // function funcA(){
+            //     document.write("funcA가 실행되었습니다.<br>");
+            // }
+            // function funcB(){
+            //     document.write("funcB가 실행되었습니다.<br>");
+            // }
+            // funcA();
+            // funcB();
+            //A 실행 후
+            //B 실행
+
+
+            // function funcA(){
+            //     setTimeout(() => {
+            //         console.log("funcA가 실행되었습니다.<br>");
+            //     },1000)  //-> setTimeout때문에 b먼저 실행
+            // }
+            // function funcB(){
+            //     console.log("funcB가 실행되었습니다.<br>");
+            // }
+            // funcA();
+            // funcB();
+            //B 실행 후
+            //A 실행
+
+            // function funcA(callback){
+            //     setTimeout(() => {
+            //         console.log("funcA가 실행되었습니다.<br>");
+            //         callback();
+            //     },1000);
+            // }
+            // function funcB(){
+            //     console.log("funcB가 실행되었습니다.<br>");
+            // }
+            // funcA(function(){
+            //     funcB();
+            // });
+            //A 실행 후
+            //B 실행
+
+            // function funcA(callback){
+            //     setTimeout(() => {
+            //         console.log("funcA가 실행되었습니다.<br>");
+            //         callback();
+            //     },1000);
+            // }
+            // function funcB(callback){
+            //     setTimeout(() => {
+            //         console.log("funcB가 실행되었습니다.<br>");
+            //         callback();
+            //     },1000);
+            // }
+            // function funcC(callback){
+            //     setTimeout(() => {
+            //         console.log("funcC가 실행되었습니다.<br>");
+            //         callback();
+            //     },1000);
+            // }
+            // function funcD(){
+            //     setTimeout(() => {
+            //         console.log("funcD가 실행되었습니다.<br>");
+            //     },1000);
+            // }
+            // funcA(function(){
+            //     funcB(function(){
+            //         funcC(function(){
+            //             funcD()
+            //         })
+            //     });
+            // });  // A -> B -> C -> D
+        }
+        //28
+        {
+            // function func(){
+            //     function funcA(){
+            //         document.write("함수가 실행되었습니다.A");
+            //     };
+            //     funcA();
+            //     function funcB(){
+            //         document.write("함수가 실행되었습니다.B");
+            //     };
+            //     funcB();
+            // }
+            // func();
+        }
+        //29
+        {
+            // class study {
+            //     constructor(num, name, job){
+            //         this.num = num;
+            //         this.name = name;
+            //         this.job = job;
+            //     }   //생성자 함수
+
+            //     result(){
+            //         document.write(this.num + ".내 이름은 " + this.name + "이며, 직업은 " + this.job + "입니다.");
+            //     } 
+            // }
+
+            // const info1 = new study("1", "웹쓰", "웹퍼블리셔");
+            // const info2 = new study("2", "눈누난나", "프론트앤드 개발자");
+            
+            // info1.result(); //실행문
+            // info2.result(); // -> 객체 생성자 함수랑 유사함
+        }
+        //30
+        {
+            // class study {
+            //     constructor(num, name, job){
+            //         this.num = num;
+            //         this.name = name;
+            //         this.job = job;
+            //     }   //생성자 함수
+
+            //     result(){
+            //         document.write(this.num + ".내 이름은 " + this.name + "이며, 직업은 " + this.job + "입니다.");
+            //     } 
+            // }
+            // class study2 extends study {
+            //     constructor(num, name, job, age){
+            //         super(num, name, job); //->위의 클래스에서 상속
+            //         this.age = age;
+            //     }
+            //     result2(){
+            //         document.write(this.num + ".내 이름은 " + this.name + "이며, 직업은 " + this.job + "이며 나이는" + this.age + "살 입니다.");
+            //     }
+            // }
+
+            // const info1 = new study("1", "웹쓰", "웹퍼블리셔");
+            // const info2 = new study2("2", "눈누난나", "프론트앤드 개발자", 24);
+            
+            // info1.result(); 
+            // info2.result(); 
+            // info2.result2(); 
+        }
+
     </script>
 </body>
 
