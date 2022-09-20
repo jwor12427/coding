@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>패럴랙스 이펙트</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+
+</head>
+<body>
+    <header id="header">
+        <h1><a href="../index.html">패럴랙스 이펙트</a></h1>
+        <nav class="header_nav">
+
+        </nav>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">스크립트를 이용한 패럴랙스효과 만들기 03</h2>
+            <p class="t_desc2">
+                스크롤을 위로 올리면 메뉴바가 나오는 효과와 스크롤이 마지막에 위치 했을 때, 탑 버튼이 생겨나게 만들어 봅시다✏️
+            </p>
+            
+            <div class="t_iframe" style="min-height: 1000px; padding-top: 0;">
+                <iframe src="https://jwor12427.github.io/coding/javascript/effect/parallaxEffect03.html"></iframe>
+            </div>
+
+            <div class="t_link">
+                <a href="https://github.com/jwor12427/coding/blob/main/javascript/effect/parallaxEffect03.html" target="_blank">원본 소스 보기</a>
+            </div>
+
+            <h3 class="t_tit2">숨김 메뉴 / 탑 버튼</h3>
+            <p class="t_box">
+                가장먼저 탑 버튼을 만들어야 되겠죠😏 <br>
+                탑 버튼을 간단하게 만들어 줍시다~ 탑 버튼은 .show가 붙었을 때 나타나게끔 bottom은 -220px로 만들고, .show가 붙었을 때는 bottom: 20px으로 css로 만들어 줍니다.
+            </p>
+            <div class="t_code">
+<pre><code>&lt;nav id="parallax__Top"&gt;
+    Top
+&lt;/nav&gt;
+</code></pre>
+            </div>
+            <br>
+            <div class="t_code">
+<pre><code>#parallax__Top {
+    position: fixed;
+    left: 50%;
+    bottom: -220px;
+    transform: translateX(-50%);
+    z-index: 100000;
+    width: 40px;
+    height: 40px;
+    background: rgba(0,0,0,0.4);
+    line-height: 40px;
+    color: #fff;
+    border-radius: 50%;
+    padding-left: 10px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+#parallax__Top.show {
+    bottom: 20px;
+}
+#parallax__Top:hover {
+    background: #fff;
+    color: #000;
+}
+</code></pre>
+            </div>
+
+            <h3 class="t_tit2">탑 버튼 클릭시</h3>
+            <p class="t_box">
+                탑 버튼을 클릭 하면 화면이 최 상단으로 이동할 수 있게 스크립트를 적어 줍니다✏️
+            </p>
+            <div class="t_code">
+<pre><code>//top버튼
+document.querySelector("#parallax__Top").addEventListener("click", () => {
+    window.scrollTo({left: 0, top: 0, behavior: "smooth"});
+});
+</code></pre>
+            </div>
+
+            <h3 class="t_tit2">메뉴바 나타내기 / 탑 버튼 나타내기</h3>
+            <div class="t_code">
+<pre><code>let nowScroll = true;   //--> 실행
+// let nowScroll = fasle;  //--> 작동x
+let lastSCroll = 0;
+
+function scrollProgress(){
+    nowScroll = true;
+
+    setInterval(() => {         //setInterval()을 이용하여 시간차
+        if(nowScroll){
+            nowScroll = false;
+            hasScroll();
+        }
+    },300)
+}
+
+function hasScroll(){
+    let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop; //세로 값을 구하는 방법
+
+    if(scrollTop &lt; lastSCroll){
+        document.querySelector("#parallax__nav").classList.add("show");
+    }else {
+        document.querySelector("#parallax__nav").classList.remove("show");
+    }
+    lastSCroll = scrollTop;         //스크롤을 위로 올리면 메뉴바가 나타남
+
+    
+    if(scrollTop >= (document.body.scrollHeight - window.outerHeight)) {
+        document.querySelector("#parallax__Top").classList.add("show");
+    } else {
+        document.querySelector("#parallax__Top").classList.remove("show");
+    }
+}
+window.addEventListener("scroll", scrollProgress);
+</code></pre>
+            </div>
+
+            
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:jwor124@naver.com">jwor124@naver.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+   
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>패럴랙스 이펙트</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+
+</head>
+<body>
+    <header id="header">
+        <h1><a href="../index.html">패럴랙스 이펙트</a></h1>
+        <nav class="header_nav">
+
+        </nav>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">스크립트를 이용한 패럴랙스효과 만들기 04</h2>
+            <p class="t_desc2">
+                스크롤이 내려가면 콘텐츠 영역이 애니메이션과 함께 나타나는 효과를 만들어 봅시다.
+            </p>
+            
+            <div class="t_iframe" style="min-height: 1000px; padding-top: 0;">
+                <iframe src="https://jwor12427.github.io/coding/javascript/effect/parallaxEffect04.html"></iframe>
+            </div>
+
+            <div class="t_link">
+                <a href="https://github.com/jwor12427/coding/blob/main/javascript/effect/parallaxEffect04.html" target="_blank">원본 소스 보기</a>
+            </div>
+
+            <h3 class="t_tit2">애니메이션 주기</h3>
+            <p class="t_box">
+                개별적으로 애니메이션을 나타내기 위해서 CSS를 작성해 줍니다.
+            </p>
+            <div class="t_code">
+<pre><code>/* 개별적으로 나타나기 */
+#contents > section .content__item__num {
+    opacity: 0;
+    transform:  translateY(200px);
+    transition: all 1s  0.1s cubic-bezier(0, 0.27, 0.58, 1);
+}
+#contents > section .content__item__title {
+    opacity: 0;
+    transform:  translateX(-100px);
+    transition: all 1s 0.3s cubic-bezier(0, 0.27, 0.58, 1);
+}
+#contents > section .content__item__imgWrap {
+    opacity: 0;
+    transform:  translateY(200px) rotate(30deg) skew(20deg);
+    transition: all 1s 0.6s cubic-bezier(0, 0.27, 0.58, 1);
+}
+#contents > section .content__item__desc {
+    opacity: 0;
+    transform:  translateX(-200px);
+    transition: all 1s 0.9s cubic-bezier(0, 0.27, 0.58, 1);
+}
+#contents > section.show .content__item__num {
+    opacity: 0.07;
+    transform: translateY(0) rotate(0) skew(0);
+}
+#contents > section.show .content__item__title {
+    opacity: 1;
+    transform: translateX(0);
+}
+#contents > section.show .content__item__imgWrap {
+    opacity: 1;
+    transform: translateY(0);
+}
+#contents > section.show .content__item__desc {
+    opacity: 1;
+    transform: translateX(0);
+}
+#contents > section:nth-child(even) .content__item__title {
+    transform: translateX(100px);
+}
+#contents > section:nth-child(even).show .content__item__title {
+    transform: translateX(0);
+}
+#contents > section:nth-child(even) .content__item__desc {
+    transform: translateX(200px);
+}
+#contents > section:nth-child(even).show .content__item__desc {
+    transform: translateX(0);
+}
+</code></pre>
+            </div>
+            <h3 class="t_tit2">스크립트 작성</h3>
+            <p class="t_box">
+                requestAnimationFrame();를 이용하여 스크를을 하였을 때 발생하는 애니메이션을 최적화 시켜주었습니다.<br>
+                🧩이번에는 재귀함수를 이용하여 스크립트를 작성 하였습니다.
+            </p>
+            <p class="t_box">
+                🔎재귀함수는 함수안에 자신의 실행문이 존재하는 함수 입니다.
+            </p>
+            <div class="t_code">
+<pre><code>//재귀함수 - 자기 자신을 호출 시키는 것
+function scroll(){
+    let scrollTop = window.pageYOffset || document.documentElement.scrollTop || window.screenY;
+
+    document.querySelectorAll(".content__item").forEach(item => {
+        if(scrollTop > item.offsetTop - window.innerHeight/2){
+            item.classList.add("show");
+        }
+    });
+
+    requestAnimationFrame(scroll);      //브라우저에 최적화 되어 있음
+}
+scroll();
+</code></pre>
+            </div>
+            
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:jwor124@naver.com">jwor124@naver.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+   
+</body>
+</html>

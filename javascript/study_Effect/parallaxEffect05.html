@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>패럴랙스 이펙트</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+
+</head>
+<body>
+    <header id="header">
+        <h1><a href="../index.html">패럴랙스 이펙트</a></h1>
+        <nav class="header_nav">
+
+        </nav>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">스크립트를 이용한 패럴랙스효과 만들기 05</h2>
+            <p class="t_desc2">
+                GSAP를 이용하여 텍스트와 이미지, 타이틀에 이질감을 주는 효과를 만들어 봅시다✏️
+            </p>
+            
+            <div class="t_iframe" style="min-height: 1000px; padding-top: 0;">
+                <iframe src="https://jwor12427.github.io/coding/javascript/effect/parallaxEffect05.html"></iframe>
+            </div>
+
+            <div class="t_link">
+                <a href="https://github.com/jwor12427/coding/blob/main/javascript/effect/parallaxEffect05.html" target="_blank">원본 소스 보기</a>
+            </div>
+
+            <h3 class="t_tit2">scrollTop</h3>
+            <p class="t_box">
+                scrollTop값이 필요하니 변수에 값을 저장해 줍니다.<br>
+                🔊브라우저마다 호환성 문제가 있으니 여러개의 값을 적어주는 것이 좋겠네요.
+            </p>
+            <div class="t_code">
+<pre><code>let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+</code></pre>
+            </div>
+            <h3 class="t_tit2">스크롤 값</h3>
+            <p class="t_box">
+                스크롤을 할 때마다 현재 스크롤 값을 보여 줍니다.<br>
+                Math.ceil()를 이용하여 소수점 자리값을 올림 해줍니다.
+            </p>
+            <div class="t_code">
+<pre><code>document.querySelector("#parallax__info span").textContent = Math.ceil(scrollTop);
+</code></pre>
+            </div>
+            <h3 class="t_tit2">스크립트 작성</h3>
+            <div class="t_code">
+<pre><code>function scroll(){
+    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+    document.querySelector("#parallax__info span").textContent = Math.ceil(scrollTop);
+
+    document.querySelectorAll(".content__item").forEach(item => {
+        const target1 = item.querySelector(".content__item__img");
+        const target2 = item.querySelector(".content__item__desc");
+        const target3 = item.querySelector(".content__item__num");
+        
+        let offset = (scrollTop - item.offsetTop) * 0.1;
+        let offset2 = (scrollTop - item.offsetTop) * 0.15;
+        let offset3 = (scrollTop - item.offsetTop) * 0.2;
+
+        // target1.style.transform = `translateY(${offset}px)`;
+        // target2.style.transform = `translateX(${offset2}px)`;
+
+        //GSAP
+        gsap.to(target1, {duration: .3, y: offset, ease: "power4.out"});
+        gsap.to(target2, {duration: .3, y: offset3, ease: "circ.out"});
+        gsap.to(target3, {duration: .3, y: offset2});
+
+    });
+
+    requestAnimationFrame(scroll);
+}
+scroll();
+</code></pre>
+            </div>
+            <p class="t_box">
+                function scroll(){ <br>
+                    requestAnimationFrame(scroll); <br>
+                }<br>
+                scroll(); <br>
+                🎈이번에도 재귀함수를 이용하여 줍니다. requestAnimationFrame();으로 브라우저에 최적화를 시켜주는것도 잊지 말자구요.
+            </p>
+            <p class="t_box">
+                //GSAP <br>
+                gsap.to(target1, {duration: .3, y: offset, ease: "power4.out"}); <br>
+                gsap.to(target2, {duration: .3, y: offset3, ease: "circ.out"}); <br>
+                gsap.to(target3, {duration: .3, y: offset2}); <br>
+                🔧이번에는 GSAP를 이용하여 조금 더 부드럽게 애니메이션이 나올 수 있도록 해 봅시다.
+            </p>
+
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:jwor124@naver.com">jwor124@naver.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+   
+</body>
+</html>
