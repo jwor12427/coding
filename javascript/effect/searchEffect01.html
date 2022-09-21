@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../assets/css/search.css">
     <link href="https://webfontworld.github.io/tmon/Tmon.css" rel="stylesheet">
     <link href="https://webfontworld.github.io/hallym/Hallym.css" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/atom-one-light.min.css">
 
 </head>
 <body>
@@ -449,9 +450,74 @@
     </main>
     <!-- //main -->
     <footer id="footer">
+        <div class="menu__wrap">
+            <div class="menu__btn">소스 보기</div>
+      	    <div class="modal__cont">		
+                <div class="menu">
+                    <div class="menu__tabs">
+                        <div class="tab__btn"><span class="active">Javascript</span></div>
+                        <div class="tab__btn"><span>HTML</span></div>
+                        <div class="tab__btn"><span>CSS</span></div>
+                    </div>
+                    <div class="menu__wrapper">
+                        <div class="cont">
+                            <div id="item-1" class="menu__item active">
+<pre><code>
+    //선택자
+    const searchBox = document.querySelector(".search__box input");             //검색 영역
+    const searchList = document.querySelectorAll(".search__list ul li")   //목록 리스트
+    const searchInfo = document.querySelector(".search__info .num");        //전체 갯수
+
+    //전체 갯수 구하기
+    searchInfo.textContent = searchList.length;
+
+    //검색 영역
+    searchBox.addEventListener("keyup", () => {
+        const searchWord = searchBox.value;         //사용자가 입력한 키워드
+        
+        searchList.forEach(el => {
+            const cssName = el.dataset.name;
+
+            if(cssName.indexOf(searchWord)) {
+                el.classList.add("hide");
+            } else {
+                el.classList.remove("hide");       //indexOf()값이 0(false)되는 값만 hide를 지워줍니다.
+            }
+        });
+        const searchCount = document.querySelectorAll(".search__list ul .hide");
+        searchInfo.textContent = searchList.length -= searchCount.length;
+    });
+</code></pre>
+                            </div>
+                            
+                            <div id="item-2" class="menu__item">
+                                
+                            </div>
+            
+                            <div id="item-3" class="menu__item">
+                                
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="menu--shadow"></div>
+                </div>	 
+                <div class="modal__close">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false">
+                        <path d="M12.5 3.5L3.5 12.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path d="M12.5 12.5L3.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>
+                </div>         		
+      	    </div>
+        </div>
         <a href="mailto:jwor124@naver.com">jwor124@naver.com</a>
     </footer>
     <!-- //footer -->
+
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
 
     <script>
         //선택자

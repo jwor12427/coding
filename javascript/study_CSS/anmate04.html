@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>사이트 만들기</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+
+</head>
+<body>
+    <header id="header">
+        <h1><a href="../index.html">애니메이션</a></h1>
+        <nav class="header_nav">
+
+        </nav>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">마우스 hover Effect</h2>
+            <p class="t_desc2">
+                마우스 오버 했을때 위아래, 좌우로 변화하는 이펙트를 만들어 봅시다.
+            </p>
+            <hr>
+
+            <h3 class="t_tit2">CSS</h3>
+            <div class="t_code">
+<pre><code>@font-face {
+    font-family: 'LocusSangsang';
+    font-weight: normal;
+    font-style: normal;
+    src: url('https://cdn.jsdelivr.net/gh/webfontworld/locus/LocusSangsang.eot');
+    src: url('https://cdn.jsdelivr.net/gh/webfontworld/locus/LocusSangsang.eot?#iefix') format('embedded-opentype'),
+            url('https://cdn.jsdelivr.net/gh/webfontworld/locus/LocusSangsang.woff2') format('woff2'),
+            url('https://cdn.jsdelivr.net/gh/webfontworld/locus/LocusSangsang.woff') format('woff'),
+            url('https://cdn.jsdelivr.net/gh/webfontworld/locus/LocusSangsang.ttf') format("truetype");
+    font-display: swap;
+}
+* {
+    padding: 0;
+    margin: 0;
+}
+body {
+    font-family: 'LocusSangsang';
+    background-image: linear-gradient(135deg, #191970 0%, #483D8B 40%, #9370DB 100%);
+    height: 100vh;
+}
+
+.hover__wrap {
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    height:100vh;
+}
+
+.hover__wrap > div {
+    max-width: 400px;
+    margin: 3%;
+    position: relative;
+    perspective: 1000px;
+}
+.hover__wrap > div img {
+    width: 100%;
+    border: 10px solid #F0F8FF;
+    box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.2);
+    box-sizing: border-box;
+    vertical-align: top;
+}
+.hover__wrap > div .front {
+    transition: transform 1s;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+}
+.hover__wrap > div .back {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    transition: transform 1s;
+    transform-style: preserve-3d;
+}
+.hover__wrap > div  figcaption {
+    background: rgba(0,0,0,0.4);
+    color: #F8F8FF;
+    padding: 10px;
+    text-align: center;
+    line-height: 1.5;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) translateZ(100px);
+    width: 60%;
+    backface-visibility: hidden;
+}
+
+/* mouse hover effect */
+.hover__updown .front {
+    transform: rotateX(0deg);
+}
+.hover__updown:hover .front {
+    transform: rotateX(180deg);
+}
+.hover__updown .back {
+    transform: rotateX(-180deg);
+}
+.hover__updown:hover .back {
+    transform: rotateX(0deg);
+}
+
+.hover__leftright .front {
+    transform: rotateY(0deg);
+}
+.hover__leftright:hover .front {
+    transform: rotateY(180deg);
+}
+.hover__leftright .back {
+    transform: rotateY(-180deg);
+}
+.hover__leftright:hover .back {
+    transform: rotateY(0deg);
+}
+</code></pre>
+            </div>
+            <h3 class="t_tit2">결과</h3>
+
+            <div class="t_iframe" style="min-height: 600px; padding-top: 0;">
+                <iframe height="500" style="width: 100%;" scrolling="no" title="MouseHoverEffect" src="https://codepen.io/jwor12427/embed/bGMRwwK?default-tab=result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                    See the Pen <a href="https://codepen.io/jwor12427/pen/bGMRwwK">
+                    MouseHoverEffect</a> by jwor12427 (<a href="https://codepen.io/jwor12427">@jwor12427</a>)
+                    on <a href="https://codepen.io">CodePen</a>.
+                </iframe>
+            </div>
+            <hr>
+            <div class="t_link">
+                <a href="https://codepen.io/jwor12427/pen/QWrWNPr" target="_blank">코드팬 보기</a>
+            </div>
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:jwor124@naver.com">jwor124@naver.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+   
+</body>
+</html>
