@@ -19,9 +19,9 @@
     <!-- //header -->
     <main id="main">
         <div class="document">
-            <h2 class="t_tit">스크립트를 이용한 마우스효과 만들기 02</h2>
+            <h2 class="t_tit">스크립트를 이용한 마우스효과 만들기 03</h2>
             <p class="t_desc2">
-               
+               오늘은 마우스를 이용해 조명을 준듯한 효과를 만들어 보겠습니다🔎
             </p>
 
             
@@ -35,28 +35,62 @@
                 <a href="https://github.com/jwor12427/coding/blob/main/javascript/effect/mouseEffect03.html" target="_blank">원본 소스 보기</a>
             </div>
 
-            <h3 class="t_tit2">선택자 만들기</h3>
+            <h3 class="t_tit2">Javascript</h3>
 
             <div class="t_code">
-<pre><code>
-</code></pre>
-            </div>
-            <h3 class="t_tit2">Javascript & GSAP</h3>
+<pre><code>const cursor = document.querySelector(".mouse__cursor");
+// const circleW = document.offsetWidth;   //200
+// const circleH = document.offsetHeigth;   //200  
+// const circle2 = document.clientWidth;   //190 : 보더값 제외
 
-            <div class="t_code">
-<pre><code>
+const circle = cursor.getBoundingClientRect();
+// console.log(circle);
+// const DOMRect = {
+//     bottom : 200,
+//     height : 200,
+//     left : 0,
+//     right : 200,
+//     top : 0,
+//     width : 200,
+//     x : 0,
+//     y : 0
+// }
+
+window.addEventListener("mousemove", (e) => {
+    gsap.to(cursor, {
+        duration: 0.3, 
+        left: e.pageX - circle.width/2, 
+        top: e.pageY - circle.height/2
+    });
+});
 </code></pre>
             </div>
             <br>
             <p class="t_box">
-                &lt;script src="../assets/js/gsap.min.js"&gt;&lt;/script&gt; <br>
-                GSAP를 사용하기 전에 GSAP의 파일을 저장하고 연동시켜 줍니다.
+                getBoundingClientRect();
+            </p>
+            <p class="t_desc2">
+                getBoundingClientRect메서드를 이용하여 요소의 위치값을 알 수 있습니다.
             </p>
             <br>
 
             <h3 class="t_tit2">HTML</h3>
             <div class="t_code">
-<pre><code>
+<pre><code>&lt;main id="main"&gt;
+    &lt;section id="mouseType"&gt;
+        &lt;div class="mouse__cursor"&gt;&lt;/div&gt;
+        &lt;div class="mouse__wrap"&gt;
+            &lt;p&gt;
+                The &lt;span&gt;greatest&lt;/span&gt; glory in living lies not in never &lt;span&gt;falling&lt;/span&gt;, 
+                but in rising &lt;span&gt;every&lt;/span&gt; time we fall.
+            &lt;/p&gt;
+            &lt;p&gt;
+                인생에서 가장 큰 &lt;span&gt;영광&lt;/span&gt;은 넘어지지 않는 것에 있는 
+                것이 아니라 매번 &lt;span&gt;일어선다&lt;/span&gt;는 데 있다.
+            &lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+&lt;/main&gt;
 </code></pre>
             </div>
             <h3 class="t_tit2">CSS</h3>
@@ -64,12 +98,34 @@
                 <details>
                     <summary>css보기</summary>
                         <div class="t_code">
-<pre><code>
+<pre><code>.mouse__cursor {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 200px;
+    height: 200px;
+    z-index: -1;
+    border-radius: 50%;
+    background-image: url(../assets/img/effect_bg04@2x.jpg);
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;       /* 이미지 고정 */
+    border: 5px solid #fff;
+}
 </code></pre>
                     </div>
                 </details>
             </div>
-
+            <p class="t_desc2">
+                background-image를 body에 있는 이미지와 동일한 이미지를 넣습니다.<br>
+                🎈background-attachment속성을 이용하여 배경이미지를 고정 시킬 수 있습니다. <br>
+                이렇게 설정 해주고 스크립트를 작성해 주면 배경에 조명을 주는 듯한 효과를 만들 수 있습니다~
+            </p>
+            <p class="t_box">
+                background-attachment: fiexd ➡️ 배경이미지 고정 <br>
+                background-attachment: scroll ➡️ 내용을 스크롤 하면 배경이미지는 스크롤 되지 않음 <br>
+                background-attachment: local ➡️ 내용을 스크롤 하면 배경이미지도 스크롤
+            </p>
         </div>
     </main>
     <!-- //main -->

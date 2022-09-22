@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>패럴랙스 이펙트</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+
+</head>
+<body>
+    <header id="header">
+        <h1><a href="../index.html">마우스 이펙트</a></h1>
+        <nav class="header_nav">
+
+        </nav>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">스크립트를 이용한 마우스효과 만들기 04</h2>
+            <p class="t_desc2">
+               이번에는 마우스를 올렸을때 이미지가 움직이는 효과를 만들어 보도록 합시다~
+            </p>
+
+            
+
+            
+            <div class="t_iframe" style="min-height: 1000px; padding-top: 0;">
+                <iframe src="https://jwor12427.github.io/coding/javascript/effect/mouseEffect04.html"></iframe>
+            </div>
+
+            <div class="t_link">
+                <a href="https://github.com/jwor12427/coding/blob/main/javascript/effect/mouseEffect04.html" target="_blank">원본 소스 보기</a>
+            </div>
+
+            <h3 class="t_tit2">Javascript</h3>
+
+            <div class="t_code">
+<pre><code>const cursor = document.querySelector(".mouse__cursor");
+const cursorRect = cursor.getBoundingClientRect();
+
+document.querySelector(".mouse__wrap figure").addEventListener("mousemove", (e) => {
+    // 커서 
+    gsap.to(cursor, {
+        duration: .4,
+        left : e.pageX - cursorRect.width/2,
+        top : e.pageY - cursorRect.height/2
+    });
+
+    //마우스 좌표값
+    let mousePageX = e.pageX;
+    let mousePageY = e.pageY;
+
+    //전체 가로값
+    // window.innerWidth;      //1920 : 브라우저 크기
+    // window.outerWidth;      //1920 : 브라우저 크기(스크롤바 포함)
+    // window.screen.width;    //1920 : 화면 크기
+
+    //마우스 좌표 값 가운데로 초기화
+    //전체 길이/2 - 마우스 좌표값 == 0
+    let centerPageX = window.innerWidth/2 - mousePageX;
+    let centerPageY = window.innerHeight/2 - mousePageY;
+
+    //이미지 움직이기
+    const imgMove = document.querySelector(".mouse__wrap figure img");
+    // imgMove.style.transform = "translate("+ centerPageX/20 +"px,"+ centerPageY/20 +"px)";
+    gsap.to(imgMove, {
+        duration: 0.4,
+        x : centerPageX/20,
+        y : centerPageY/20 
+    })
+
+    //출력
+    document.querySelector(".mousePageX").textContent = mousePageX;
+    document.querySelector(".mousePageY").textContent = mousePageY;
+    document.querySelector(".centerPageX").textContent = centerPageX;
+    document.querySelector(".centerPageY").textContent = centerPageY;
+
+});
+</code></pre>
+            </div>
+            <br>
+            <div class="t_code">
+<pre><code>gsap.to(cursor, {
+    duration: .4,
+    left : e.pageX - cursorRect.width/2,
+    top : e.pageY - cursorRect.height/2
+});
+</code></pre>
+            </div>
+            <br>
+            <p class="t_desc2">
+                선택자를 만든 다음 gsap를 이용하여 마우스 커서가 부드럽게 움직이는 애니메이션을 만들어 주도록 합니다.
+            </p>
+            <br>
+            <div class="t_code">
+<pre><code>//마우스 좌표 값 가운데로 초기화
+//전체 길이/2 - 마우스 좌표값 == 0
+let centerPageX = window.innerWidth/2 - mousePageX;
+let centerPageY = window.innerHeight/2 - mousePageY;
+
+//이미지 움직이기
+const imgMove = document.querySelector(".mouse__wrap figure img");
+// imgMove.style.transform = "translate("+ centerPageX/20 +"px,"+ centerPageY/20 +"px)";
+gsap.to(imgMove, {
+    duration: 0.4,
+    x : centerPageX/20,
+    y : centerPageY/20 
+})
+</code></pre>
+            </div>
+            <br>
+            <p class="t_desc2">
+                마우스의 좌표갑을 가운데로 초기화를 시키기 위해 전체 길이/2 - 마우스 좌표값 == 0를 해줍니다. <br>
+                💦이제 이미지를 움직이게 하는데 이때, 마우스의 좌표값을 가운데로 초기화 시켜 주지 않으면 이미지가 움직이지 않기때문에 마우스의 
+                좌표값을 가운데로 초기화 시켜주도록 합니다.<br>
+                x : centerPageX/20, y : centerPageY/20 값을 나누기 20을 해주면 이미지가 많이 튀어나가지 않고, 스무스하게 움직이는걸 볼 수있습니다.
+            </p>
+            <h3 class="t_tit2">HTML</h3>
+            <div class="t_code">
+<pre><code>&lt;main id="main"&gt;
+    &lt;section id="mouseType"&gt;
+        &lt;div class="mouse__cursor"&gt;&lt;/div&gt;
+        &lt;div class="mouse__wrap"&gt;
+            &lt;figure&gt;
+                &lt;img src="../assets/img/effect_bg11.jpg" alt="이미지"&gt;
+                &lt;figcaption&gt;
+                    &lt;p&gt;Life is either a great adventure or nothing.&lt;/p&gt;
+                    &lt;p&gt;인생은 위대한 모험이거나 아니면 아무것도 아니다.&lt;/p&gt;
+                &lt;/figcaption&gt;
+            &lt;/figure&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;div class="mouse__info"&gt;
+        &lt;ul&gt;
+            &lt;li&gt;mousePageX : &lt;span class="mousePageX"&gt;0&lt;/span&gt;px&lt;/li&gt;
+            &lt;li&gt;mousePageY : &lt;span class="mousePageY"&gt;0&lt;/span&gt;px&lt;/li&gt;
+            &lt;li&gt;centerPageX : &lt;span class="centerPageX"&gt;0&lt;/span&gt;px&lt;/li&gt;
+            &lt;li&gt;centerPageY : &lt;span class="centerPageY"&gt;0&lt;/span&gt;px&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/div&gt;
+&lt;/main&gt;
+</code></pre>
+            </div>
+            <h3 class="t_tit2">CSS</h3>
+            <div class="result">
+                <details>
+                    <summary>css보기</summary>
+                        <div class="t_code">
+<pre><code>/* mouseType */
+.mouse__wrap {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: #fff;
+    overflow: hidden;
+}
+.mouse__wrap figure {
+    width: 50vw;
+    height: 50vh;
+    position: relative;
+    overflow: hidden;
+    transition: transform 500ms ease;
+    cursor: none;
+}
+.mouse__wrap figure:hover {
+    transform: scale(1.025);
+}
+.mouse__wrap figure img {
+    position: absolute;
+    left: -5%;
+    top: -5%;
+    width: 110%;
+    height: 110%;
+    object-fit: cover;      /* background cover와 같은 효과, 이미지에 줄수 있음  */
+}
+.mouse__wrap figure figcaption {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+.mouse__wrap figure p {
+    font-size: 20px;
+    white-space: nowrap;
+    line-height: 1.5;
+    font-weight: 400;
+}
+.mouse__cursor {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 20px;
+    height: 20px;
+    background: #fff;
+    border-radius: 50%;
+    z-index: 1000;
+    user-select: none;
+    pointer-events: none;
+}
+.mouse__info {
+    position: absolute;
+    left: 20px;
+    bottom: 10px;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #fff;
+}
+</code></pre>
+                    </div>
+                </details>
+            </div>
+            <p class="t_desc2">
+                object-fit 속성은 대체 요소의 콘텐츠의 크기를 조절할 수 있습니다. object-fit:cover는 background cover와 같은 효과를 줄 수 있습니다. <br>
+                이미지의 width값과 height값을 110%로 작성하여 이미지가 넘치게 해줍니다.
+            </p>
+
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:jwor124@naver.com">jwor124@naver.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+   
+</body>
+</html>
