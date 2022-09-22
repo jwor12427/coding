@@ -42,6 +42,9 @@ body.img09 {
 body.img10 {
   background: #000 url(../img/effect_bg10@2x.jpg) no-repeat center / cover;
 }
+body.img11 {
+  background: #000 url(../img/effect_bg11@2x.jpg) no-repeat center / cover;
+}
 
 body::after {
   content: "";
@@ -50,7 +53,7 @@ body::after {
   top: 0;
   width: 100%;
   height: 100vh;
-  background: rgba(53, 53, 53, 0.708);
+  background: rgba(24, 24, 24, 0.715);
   z-index: -1;
 }
 img {

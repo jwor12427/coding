@@ -241,7 +241,7 @@ li {
     display: flex;
     justify-content: center;
     align-items: center;
-    /* transform: scale(0); */
+    transform: scale(0);
 }
 
 .menu__tabs {
@@ -290,6 +290,7 @@ li {
     width: 55%;
     position: relative;
     height: 70vh;
+    
 }
 .menu__wrapper {
     height: 100%;
@@ -299,6 +300,7 @@ li {
     -webkit-border-radius: 0 4px 4px 4px;
     -moz-border-radius: 0 4px 4px 4px;
     border-radius: 0 4px 4px 4px;
+    
 
 }
 .menu--shadow {
