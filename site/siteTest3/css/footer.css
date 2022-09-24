@@ -1,0 +1,28 @@
+#footer {
+    width: 71%;
+}
+#footerType {
+    background-color: #e6f0f9;
+}
+.footer__inner {
+    display: flex;
+    justify-content: space-between;
+}
+.footer__logo {
+    width: 8%;
+    margin: 15px;
+}
+.footer__desc ul {
+    margin-top: 20px;
+}
+.footer__desc ul li {
+    line-height: 1.7;
+    width: 50%;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 500;
+}
+.footer__sns {
+    width: 20%;
+    margin: 30px;
+}

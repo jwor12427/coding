@@ -1,0 +1,29 @@
+#imgTextType {
+    
+}
+#imgTextType h2 {
+    padding-left: 250px;
+    margin-bottom: 40px;
+    font-weight: 700;
+}
+#imgTextType h2 em {
+    font-weight: 300;
+    color: #666;
+}
+.imgText__inner {
+    display: flex;
+}
+.imgText {
+    width: 12%;
+    margin-right: 50px;
+}
+.img__header img {
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+.desc{
+    text-align: center;
+    line-height: 1.6;
+    font-weight: 700;
+    font-size: 15px;
+}

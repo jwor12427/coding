@@ -1,14 +1,4 @@
- /* common */
- .container {
-    width: 1160px;
-    padding: 0 20px;
-    margin: 0 auto;
-}
 
-.section {
-    padding: 120px 0;
-    min-width: 1160px;
-}
 .text__logo {
     font-size: 16px;
     margin-bottom: 20px;
@@ -20,14 +10,14 @@
     text-align: center;
     line-height: 25px;
 }
-.section h2 {
+.text__wrap h2 {
     font-size: 50px;
     line-height: 1;
     margin-bottom: 20px;
     font-weight: 600;
 }
 
-.section p {
+.text__wrap p {
     font-size: 18px;
     margin-bottom: 10px;
     word-break: keep-all;

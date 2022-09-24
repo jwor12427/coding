@@ -1,0 +1,79 @@
+/* textType03 */
+#textType02 {
+    background-color: #EFFAFF;
+}
+.text__inner02 {
+    display: flex;
+    justify-content: space-between;
+}
+.text__inner02 .text {
+    width: 29%;
+    height: 400px;
+    padding: 20px;
+    background-color: #fff;
+}
+.text__inner02  .text .text__desc {
+    line-height: 1.5;
+    font-size: 18px;
+    margin-bottom: 30px;
+    font-weight: normal;
+}
+.text__inner02  .text__main2 {
+    border-top: 1px dashed #ccc;
+    border-bottom: 1px dashed #ccc;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+.text__inner02  .text .icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    text-align: center;
+    margin-right: 20px;
+    line-height: 70px;
+}
+.icon img {
+    width: auto;
+    vertical-align: inherit;
+}
+.text__inner02  .text:nth-child(1) .icon {
+    background-color: #8A80FF;
+}
+.text__inner02  .text:nth-child(2) .icon {
+    background-color: #F6B568;
+}
+.text__inner02  .text:nth-child(3) .icon {
+    background-color: #FF8080;
+}
+.text__inner02 .info {
+    display: flex;
+    flex-direction: column;
+}
+.text__inner02 .user {
+    margin-bottom: 10px;
+    font-size: 24px;
+}
+.text__inner02 .info .good img {
+    width: auto;
+}
+.text__inner02 .user em {
+    font-style: normal;
+    font-size: 16px;
+    font-weight: 200;
+    margin-left: 5px;
+}
+.text__inner02 .text__btn {
+    display: block;
+    text-align: center;
+    width: 115px;
+    height: 30px;
+    background-color: #5C6BF3;
+    border-radius: 20px;
+    line-height: 30px;
+    color: #fff;
+    margin: 0 auto;
+    font-size: 16px;
+}

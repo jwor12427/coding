@@ -22,14 +22,25 @@
 }
 body {
     overflow: overlay;
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 50px;
+    padding: 0 20px;
+    flex-wrap: wrap;
 }
 /* 컨테이너 */
 .container {
     width: 100%;
     max-width: 1160px;
-    padding: 0 20px;
     margin: 0 auto;
-    box-sizing: border-box;
+    /* box-sizing: border-box; */
+}
+#headerType {
+    width: 15%;
+    padding-left: 80px;
+}
+#main {
+    width: 65%;
 }
 @media(max-width:1200px){
 
@@ -90,6 +101,11 @@ body {
         margin-bottom: 50px;
     }
 } */
+/* 폰트 */
+.nexon {
+    font-family: 'NexonLv1Gothic';
+    font-weight: 400;
+}
 
 /* 배경 */
 .gray {

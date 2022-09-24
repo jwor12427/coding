@@ -1,0 +1,29 @@
+/* card Type */
+.card__inner {
+    display: flex;
+    justify-content: space-around;
+}
+.card {
+    width: 25%;
+    background-color: #f9f6f6;
+    margin-right: 20px;
+    margin-bottom: 50px;
+}
+
+.card__body .tit {
+    font-size: 28px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    position: relative;
+}
+.card__body .desc {
+    font-size: 18px;
+    line-height: 1.4;
+    color: #666;
+    font-weight: 300;
+
+}
+.card__body .btn {
+    position: absolute;
+    right: 0;
+}

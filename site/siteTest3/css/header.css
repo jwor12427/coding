@@ -1,0 +1,22 @@
+.header__wrap {
+    width: 100%;
+}
+.header__logo img {
+    width: 70%;
+    margin-bottom: 40px;
+}
+.header__menu {
+    
+}
+.header__menu ul {
+}
+.header__menu ul li {
+    border-bottom: 1px solid #ddd;
+
+}
+.header__menu ul li a {
+    display: inline-block;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: 500;
+}
