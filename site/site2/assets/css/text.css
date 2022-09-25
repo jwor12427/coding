@@ -86,6 +86,9 @@
 }
 
 @media(max-width : 775px) {
+    .text__main {
+        width: 100%;
+    }
     .text__inner {
         margin: 0 auto; 
         flex-direction: column; 
