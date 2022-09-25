@@ -29,7 +29,7 @@
 
     <link rel="stylesheet" href="assets/css/swiper.css">
     <style>
-        #headerType {display: none;}
+
 
     </style>
 </head>
@@ -53,12 +53,17 @@
             </div>
             <div class="header__menu">
                 <ul>
-                    <li><a href="#textType">텍스트 영역</a></li>
-                    <li><a href="#sliderType">슬라이드 영역</a></li>
+                    <li class="active"><a href="#sliderType">텍스트 영역</a></li>
                     <li><a href="#imageType">이미지 영역</a></li>
                     <li><a href="#cardType">카드 영역</a></li>
+                    <li><a href="#textType">배너 영역</a></li>
                     <li><a href="#textType02">텍스트02 영역</a></li>
                 </ul>
+            </div>
+            <div class="header__ham">
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
         </div>
     </header>
@@ -226,7 +231,7 @@
         </section>
         <!-- //sliderType -->
 
-        <section id="textType" class="text__wrap section">
+        <section id="textType" class="text__wrap section content__item">
             <div class="text__inner container">
                 <article class="text__header">
                     <div class="text__logo">ANIMAL</div>
@@ -267,7 +272,7 @@
         </section>
         <!-- //textType -->
 
-        <section id="imageType" class="image__wrap section">
+        <section id="imageType" class="image__wrap section content__item">
             <h2>새의 이야기</h2>
             <p>다양한 새들의 이야기를 알아보는 좋은시간 됩시다.</p>
             <div class="image__inner container">
@@ -302,7 +307,7 @@
         </section>
         <!-- //imageType -->
 
-        <section id="cardType" class="card__wrap GmarketSans section">
+        <section id="cardType" class="card__wrap GmarketSans section content__item">
             <h2>고래에대해 알아보자</h2>
             <p>
                 바다에 사는 다양한 고래들을 사진으로 보고 알아보는 시간을 가져 봅시다.<br>
@@ -467,7 +472,7 @@
         </section>
         <!-- //cardType -->
 
-        <section id="bannerType" class="banner__wrap">
+        <section id="bannerType" class="banner__wrap content__item content__item">
             <h2 class="blind">배너</h2>
             <div class="ball">
                 <span class="ball1"></span>
@@ -497,7 +502,7 @@
         </section>
         <!-- //bannerType -->
 
-        <section id="textType02" class="text__wrap02 nexon section">
+        <section id="textType02" class="text__wrap02 nexon section content__item">
             <h2>이야기 후기</h2>
             <p>바다 생물들의 다양한 이야기를 소개합니다.</p>
             <div class="text__inner02 container">
@@ -662,6 +667,73 @@
                 type: 'bullets',
                 clickable: true,
             },
+        });
+
+        //스크롤 이동
+        document.querySelectorAll(".header__menu li a").forEach(li => {
+        li.addEventListener("click", (e) => {
+            e.preventDefault();
+            document.querySelector(li.getAttribute("href")).scrollIntoView({
+                behavior: "smooth"
+                });
+            });
+        });
+
+        //메뉴페이지 이동시 활성화
+        window.addEventListener("scroll", () => {
+        let scrollTop = window.pageYOffset || window.offsetTop || document.documentElement.scrollTop;
+
+        document.querySelectorAll(".content__item").forEach((element, index) => {
+            if(scrollTop >= element.offsetTop - 700) {
+                document.querySelectorAll(".header__menu li").forEach(li => {
+                    li.classList.remove("active")
+                });
+                    document.querySelector(".header__menu li:nth-child(" + (index+1) + ")").classList.add("active")
+                };
+                    
+            })
+        })
+    </script>
+    <script>
+        const btnStop = document.querySelector(".swiper-button-stop");
+        const btnStart = document.querySelector(".swiper-button-play");
+        const btnHam = document.querySelector(".header__ham");
+        const btnMenu = document.querySelector(".header__menu");
+        const btnMenuList = btnMenu.querySelectorAll("ul li a");
+
+        btnStart.style.display = "none";
+
+        btnStop.addEventListener("click", () => {
+            swiper.autoplay.stop();
+            btnStart.style.display = "block";
+            btnStop.style.display = "none";
+        });
+        btnStart.addEventListener("click", () => {
+            swiper.autoplay.start();
+            btnStop.style.display = "block";
+            btnStart.style.display = "none";
+        });
+        btnHam.addEventListener("click", () => {
+            btnHam.classList.toggle("active");
+            btnMenu.classList.toggle("overlay");
+            document.body.classList.toggle("fixed");
+        });
+
+        btnMenuList.forEach((list) => {
+            list.addEventListener("click", () => {
+                btnHam.classList.remove("active");
+                btnMenu.classList.remove("overlay");
+                document.body.classList.remove("fixed");
+            });
+        });
+
+        window.addEventListener("resize", () => {
+            let width = window.innerWidth;
+            if(width > 1300){
+                document.body.classList.remove("fixed");
+                btnMenu.classList.remove("active");
+                btnHam.classList.remove("active");
+            }
         });
     </script>
 </body>
