@@ -415,42 +415,67 @@ code::-webkit-scrollbar-thumb {
 
 /* 모달 애니메이션 */
 .modal__cont.show {     /* 전체 배경 */
-    animation: foldOut 0.5s ease forwards;
+    transform: scaleY(0.01) scaleX(0);
+    animation: unfoldIn 1s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
 }
 .modal__cont.show.hide {        /* 스크립트 박스 */
-    animation: foldIn 0.3s 0.5s ease backwards;
+
+    transform: scale(1);
+    animation: unfoldOut 1s 0.3s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
 }
 .modal__cont.show .modal__close {     /* 닫기 버튼 */
     animation: opacityOut 0.5s 1s ease forwards;
     opacity: 0;
 }
 .modal__cont.show .modal__box {
-    animation: zoomOut 0.5s 1s ease forwards;   /* 뒤에 있는 초는 딜레이를 뜻함 */
+    animation: zoomOut 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
 }
 .modal__cont.show.hide .modal__box {
-    animation: zoomIn 0.5s ease forwards;
+    transform: scale(0);
+    animation: zoomIn 0.5s 0.8s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
 }
 .modal__cont.show.hide .modal__close {
     animation: opacityIn 0.5s ease forwards;
 }
-@keyframes foldOut {
-    0% {transform: scaleX(0.001) scaleY(0);}
-    50% {transform: scaleX(0.001) scaleY(1);}
-    100% {transform: scaleX(1) scaleY(1);}
-}
-@keyframes foldIn {
-    0% {transform: scaleX(1) scaleY(1);}
-    50% {transform: scaleX(0.001) scaleY(1);}
-    100% {transform: scaleX(0.001) scaleY(0);}
-}
-@keyframes zoomOut {
-    0% {transform: scale(0);}
-    100% {transform: scale(1);}
-}
-@keyframes zoomIn {
-    0% {transform: scale(1);}
-    100% {transform: scale(0);}
-}
+@keyframes unfoldIn {
+    0% {
+      transform: scaleY(0.005) scaleX(0);
+    }
+    50% {
+      transform: scaleY(0.005) scaleX(1);
+    }
+    100% {
+      transform: scaleY(1) scaleX(1);
+    }
+  }
+  @keyframes unfoldOut {
+    0% {
+      transform: scaleY(1) scaleX(1);
+    }
+    50% {
+      transform: scaleY(0.005) scaleX(1);
+    }
+    100% {
+      transform: scaleY(0.005) scaleX(0);
+    }
+  }
+  @keyframes zoomIn {
+    0% {
+      transform: scale(0);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  @keyframes zoomOut {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(0);
+    }
+  }
+
 @keyframes opacityOut {
     0%   {opacity:0;}
     100% {opacity:1;}
