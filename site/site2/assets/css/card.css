@@ -21,9 +21,39 @@
     line-height: 1.4;
     color: #666;
     font-weight: 300;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4; 
+    -webkit-box-orient: vertical;
 
 }
 .card__body .btn {
     position: absolute;
     right: 0;
+}
+@media(max-width: 970px) {
+    .card__body .tit {
+        font-size: 20px;
+    }
+    .card__body .desc {
+        font-size: 16px;
+    }
+}
+@media(max-width: 700px) {
+    .card__body .desc {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2; 
+        -webkit-box-orient: vertical;
+    }
+}
+@media(max-width: 480px) {
+    .card__inner {
+        flex-direction: column;
+    }
+    .card {
+        width: 100%;
+    }
 }

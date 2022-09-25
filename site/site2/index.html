@@ -23,20 +23,26 @@
     <link rel="stylesheet" href="assets/css/text.css">
     <link rel="stylesheet" href="assets/css/img.css">
     <link rel="stylesheet" href="assets/css/card.css">
+    <link rel="stylesheet" href="assets/css/banner.css">
     <link rel="stylesheet" href="assets/css/text02.css">
+    <link rel="stylesheet" href="assets/css/footer.css">
 
-    <link rel="stylesheet" href="../site1/assets/css/swiper.css">
+    <link rel="stylesheet" href="assets/css/swiper.css">
+    <style>
+        #headerType {display: none;}
+
+    </style>
 </head>
 <body>
     <div id="skip">
-        <a href="#">헤더 영역 바로가기</a>
-        <a href="#">슬라이드 영역 바로가기</a>
-        <a href="#">이미지 영역 바로가기</a>
-        <a href="#">이미지/텍스트 영역 바로가기</a>
-        <a href="#">카드 영역 바로가기</a>
-        <a href="#">배너 영역 바로가기</a>
-        <a href="#">텍스트 영역 바로가기</a>
-        <a href="#">푸터 영역 바로가기</a>
+        <a href="#headerType">헤더 영역 바로가기</a>
+        <a href="#sliderType">슬라이드 영역 바로가기</a>
+        <a href="#textType">텍스트 영역 바로가기</a>
+        <a href="#imageType">이미지 영역 바로가기</a>
+        <a href="#cardType">카드 영역 바로가기</a>
+        <a href="#bannerType">배너 영역 바로가기</a>
+        <a href="#textType02">텍스트02 영역 바로가기</a>
+        <a href="#footerType">푸터 영역 바로가기</a>
     </div>
     <!-- //skip -->
 
@@ -47,11 +53,11 @@
             </div>
             <div class="header__menu">
                 <ul>
-                    <li><a href="#">헤더 영역</a></li>
-                    <li><a href="#">슬라이드 영역</a></li>
-                    <li><a href="#">이미지 영역</a></li>
-                    <li><a href="#">컨텐츠 영역</a></li>
-                    <li><a href="#">푸터 영역</a></li>
+                    <li><a href="#textType">텍스트 영역</a></li>
+                    <li><a href="#sliderType">슬라이드 영역</a></li>
+                    <li><a href="#imageType">이미지 영역</a></li>
+                    <li><a href="#cardType">카드 영역</a></li>
+                    <li><a href="#textType02">텍스트02 영역</a></li>
                 </ul>
             </div>
         </div>
@@ -64,46 +70,159 @@
             <div class="swiper mySwiper">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
+                        <div class="slider_ball">
+                            <span class="sball1"></span>
+                            <span class="sball2"></span>
+                        </div>
                         <div class="desc">
-                            <h3>NEW<br> POHOTO</h3>
+                            <h3>NEW<br> 
+                                PORTFOLIO</h3>
                             <p>
                                 새로 올라온 사진들을 구경하고 <br>
                                 다양한 후기와 좋아요를 남겨 주세요!
                             </p>
+                            <figure>
+                                <img src="assets/img/slider_bg01.svg" alt="">
+                                <img src="assets/img/slider_icon01.svg" alt="">
+                                <img src="assets/img/slider_icon02.svg" alt="">
+                                <img src="assets/img/slider_icon03.svg" alt="">
+                            </figure>
                             <div class="btn">
                                 <a href="#">더 알아보기</a>
+                            </div>
+                            <div>
+                                <span class="sball3"></span>
+                                <span class="sball4"></span>
+                                <span class="sball5"></span>
+                                <span class="sball6"></span>
                             </div>
                         </div>
                     </div>
                     <div class="swiper-slide">
+                        <div class="slider_ball">
+                            <span class="sball1"></span>
+                            <span class="sball2"></span>
+                        </div>
                         <div class="desc">
-                            <h3>NEW<br> POHOTO</h3>
+                            <h3>NEW<br> 
+                                PORTFOLIO</h3>
                             <p>
                                 새로 올라온 사진들을 구경하고 <br>
                                 다양한 후기와 좋아요를 남겨 주세요!
                             </p>
+                            <figure>
+                                <img src="assets/img/slider_bg01.svg" alt="">
+                                <img src="assets/img/slider_icon01.svg" alt="">
+                                <img src="assets/img/slider_icon02.svg" alt="">
+                                <img src="assets/img/slider_icon03.svg" alt="">
+                            </figure>
                             <div class="btn">
                                 <a href="#">더 알아보기</a>
+                            </div>
+                            <div>
+                                <span class="sball3"></span>
+                                <span class="sball4"></span>
+                                <span class="sball5"></span>
+                                <span class="sball6"></span>
                             </div>
                         </div>
                     </div>
                     <div class="swiper-slide">
+                        <div class="slider_ball">
+                            <span class="sball1"></span>
+                            <span class="sball2"></span>
+                        </div>
                         <div class="desc">
-                            <h3>NEW<br> POHOTO</h3>
+                            <h3>NEW<br> 
+                                PORTFOLIO</h3>
                             <p>
                                 새로 올라온 사진들을 구경하고 <br>
                                 다양한 후기와 좋아요를 남겨 주세요!
                             </p>
+                            <figure>
+                                <img src="assets/img/slider_bg01.svg" alt="">
+                                <img src="assets/img/slider_icon01.svg" alt="">
+                                <img src="assets/img/slider_icon02.svg" alt="">
+                                <img src="assets/img/slider_icon03.svg" alt="">
+                            </figure>
                             <div class="btn">
                                 <a href="#">더 알아보기</a>
+                            </div>
+                            <div>
+                                <span class="sball3"></span>
+                                <span class="sball4"></span>
+                                <span class="sball5"></span>
+                                <span class="sball6"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="slider_ball">
+                            <span class="sball1"></span>
+                            <span class="sball2"></span>
+                        </div>
+                        <div class="desc">
+                            <h3>NEW<br> 
+                                PORTFOLIO</h3>
+                            <p>
+                                새로 올라온 사진들을 구경하고 <br>
+                                다양한 후기와 좋아요를 남겨 주세요!
+                            </p>
+                            <figure>
+                                <img src="assets/img/slider_bg01.svg" alt="">
+                                <img src="assets/img/slider_icon01.svg" alt="">
+                                <img src="assets/img/slider_icon02.svg" alt="">
+                                <img src="assets/img/slider_icon03.svg" alt="">
+                            </figure>
+                            <div class="btn">
+                                <a href="#">더 알아보기</a>
+                            </div>
+                            <div>
+                                <span class="sball3"></span>
+                                <span class="sball4"></span>
+                                <span class="sball5"></span>
+                                <span class="sball6"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="slider_ball">
+                            <span class="sball1"></span>
+                            <span class="sball2"></span>
+                        </div>
+                        <div class="desc">
+                            <h3>NEW<br> 
+                                PORTFOLIO</h3>
+                            <p>
+                                새로 올라온 사진들을 구경하고 <br>
+                                다양한 후기와 좋아요를 남겨 주세요!
+                            </p>
+                            <figure>
+                                <img src="assets/img/slider_bg01.svg" alt="">
+                                <img src="assets/img/slider_icon01.svg" alt="">
+                                <img src="assets/img/slider_icon02.svg" alt="">
+                                <img src="assets/img/slider_icon03.svg" alt="">
+                            </figure>
+                            <div class="btn">
+                                <a href="#">더 알아보기</a>
+                            </div>
+                            <div>
+                                <span class="sball3"></span>
+                                <span class="sball4"></span>
+                                <span class="sball5"></span>
+                                <span class="sball6"></span>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="swiper-pagination"></div>
+                <div class="swiper-button">
+                    <div class="swiper-button-play"><span class="ir">play</span></div>
+                    <div class="swiper-button-stop"><span class="ir">stop</span></div>
+                </div>
                 <div class="swiper-button-next"></div>
                 <div class="swiper-button-prev"></div>
-            </div>
+            </div> 
         </section>
         <!-- //sliderType -->
 
@@ -192,7 +311,7 @@
             <div class="card__inner container">
                 <article class="card">
                     <figure class="card__header">
-                        <img src="img/card_bg02_01.jpg" alt="혹등고래">
+                        <img src="assets/img/card_01.jpg" alt="포폴">
                     </figure>
                     <div class="card__body">
                         <h3 class="tit">
@@ -211,7 +330,7 @@
                 </article>
                 <article class="card">
                     <figure class="card__header">
-                        <img src="img/card_bg02_02.jpg" alt="혹등고래">
+                        <img src="assets/img/card_02.jpg" alt="포폴">
                     </figure>
                     <div class="card__body">
                         <h3 class="tit">
@@ -230,7 +349,7 @@
                 </article>
                 <article class="card">
                     <figure class="card__header">
-                        <img src="img/card_bg02_03.jpg" alt="혹등고래">
+                        <img src="assets/img/card_03.jpg" alt="포폴">
                     </figure>
                     <div class="card__body">
                         <h3 class="tit">
@@ -249,7 +368,7 @@
                 </article>
                 <article class="card">
                     <figure class="card__header">
-                        <img src="img/card_bg02_04.jpg" alt="혹등고래">
+                        <img src="assets/img/card_04.jpg" alt="포폴">
                     </figure>
                     <div class="card__body">
                         <h3 class="tit">
@@ -270,7 +389,7 @@
             <div class="card__inner container">
                 <article class="card">
                     <figure class="card__header">
-                        <img src="img/card_bg02_05.jpg" alt="혹등고래">
+                        <img src="assets/img/card_05.jpg" alt="포폴">
                     </figure>
                     <div class="card__body">
                         <h3 class="tit">
@@ -289,7 +408,7 @@
                 </article>
                 <article class="card">
                     <figure class="card__header">
-                        <img src="img/card_bg02_06.jpg" alt="혹등고래">
+                        <img src="assets/img/card_06.jpg" alt="포폴">
                     </figure>
                     <div class="card__body">
                         <h3 class="tit">
@@ -308,7 +427,7 @@
                 </article>
                 <article class="card">
                     <figure class="card__header">
-                        <img src="img/card_bg02_07.jpg" alt="혹등고래">
+                        <img src="assets/img/card_07.jpg" alt="포폴">
                     </figure>
                     <div class="card__body">
                         <h3 class="tit">
@@ -327,7 +446,7 @@
                 </article>
                 <article class="card">
                     <figure class="card__header">
-                        <img src="img/card_bg02_08.jpg" alt="혹등고래">
+                        <img src="assets/img/card_08.jpg" alt="포폴">
                     </figure>
                     <div class="card__body">
                         <h3 class="tit">
@@ -347,6 +466,36 @@
             </div>
         </section>
         <!-- //cardType -->
+
+        <section id="bannerType" class="banner__wrap">
+            <h2 class="blind">배너</h2>
+            <div class="ball">
+                <span class="ball1"></span>
+                <span class="ball2"></span>
+            </div>
+            <div class="banner__inner container">
+                <h3 class="title">유튜버 웹보이</h3>
+                <p class="desc">더 다양한 강의는 유튜브를 통해 제공하고 있습니다.<br>
+                    구독과 좋아요! 부탁드립니다.
+                </p>
+                <div class="banner_btn">
+                    <a href="#" title="페이지 이동">바로가기</a>
+                </div>
+                <div class="banner_img">
+                    <figure>
+                        <img src="assets/img/banner_bg01.svg" alt="배너 배경">
+                        <img src="assets/img/banner_icon01.svg" alt="유튜브아이콘">
+                    </figure>
+                </div>
+                <div class="ball_inner">
+                    <span class="ball3"></span>
+                    <span class="ball4"></span>
+                    <span class="ball5"></span>
+                    <span class="ball6"></span>
+                </div>
+            </div>
+        </section>
+        <!-- //bannerType -->
 
         <section id="textType02" class="text__wrap02 nexon section">
             <h2>이야기 후기</h2>
@@ -427,9 +576,77 @@
     </main>
     <!-- //main -->
 
-    <footer id="footerType"></footer>
+    <footer id="footerType" class="footer__wrap section">
+        <h2 class="blind">푸터 영역</h2>
+        <div class="footer__inner container">
+            <div class="footer__top">
+                <div class="footer__left">
+                    <h3>Webstoryboy</h3>
+                    <ul class="desc">
+                        <li>안녕하세요!</li>
+                        <li>더 다양한 정보 확인</li>
+                        <li>webstoryboy@naver.com</li>
+                    </ul>
+                    <ul class="icon">
+                        <li><a href="#"><span class="ir">icon</span></a></li>
+                        <li><a href="#"><span class="ir">icon</span></a></li>
+                        <li><a href="#"><span class="ir">icon</span></a></li>
+                        <li><a href="#"><span class="ir">icon</span></a></li>
+                        <li><a href="#"><span class="ir">icon</span></a></li>
+                    </ul>
+                </div>
+                <div class="footer__right">
+                    <article>
+                        <h3>사이트</h3>
+                        <ul>
+                            <li><a href="#">웹표준 사이트</a></li>
+                            <li><a href="#">반응형 사이트</a></li>
+                            <li><a href="#">패럴랙스 사이트</a></li>
+                            <li><a href="#">포트폴리오 사이트</a></li>
+                        </ul>
+                    </article>
+                    <article>
+                        <h3>유형</h3>
+                        <ul>
+                            <li><a href="#">이미지 유형</a></li>
+                            <li><a href="#">카드 유형</a></li>
+                            <li><a href="#">이미지/텍스트 유형</a></li>
+                            <li><a href="#">배너 유형</a></li>
+                            <li><a href="#">텍스트 유형</a></li>
+                            <li><a href="#">푸터 유형</a></li>
+                        </ul>
+                    </article>
+                    <article>
+                        <h3>스크립트</h3>
+                        <ul>
+                            <li><a href="#">검색 이펙트</a></li>
+                            <li><a href="#">퀴즈 이펙트</a></li>
+                            <li><a href="#">마우스 이펙트</a></li>
+                            <li><a href="#">슬라이드 이펙트</a></li>
+                            <li><a href="#">패랠랙스 이펙트</a></li>
+                            <li><a href="#">게임 이펙트</a></li>
+                        </ul>
+                    </article>
+                    <article>
+                        <h3>레퍼런스</h3>
+                        <ul>
+                            <li><a href="#">CSS</a></li>
+                            <li><a href="#">FONTS</a></li>
+                            <li><a href="#">BLOG</a></li>
+                            <li><a href="#">REFERENCE</a></li>
+                            <li><a href="#">TUTORIAL</a></li>
+                        </ul>
+                    </article>
+                </div>
+            </div>                
+            <div class="footer__bot">
+                <p>Copyright 2022. All Rights Reserved. - Designed by Webstoryboy</p>
+            </div>
+        </div>
+    </footer>
+    <!-- //footer -->
 
-    <script src="../site1/assets/js/swiper.min.js"></script>
+    <script src="assets/js/swiper.min.js"></script>
     <script>
         var swiper = new Swiper(".mySwiper", {
             navigation: {

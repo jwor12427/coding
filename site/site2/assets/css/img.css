@@ -49,3 +49,21 @@
 .image__desc .more:hover {
     text-decoration: underline;
 }
+
+@media(max-width : 768px) {
+    .image__inner {
+        flex-direction: column;
+    }
+    .image {
+        width: 100%;
+        height: 380px;
+        box-sizing: border-box;
+        border-radius: 10px;
+    }
+    .image:first-child {
+        margin-bottom: 40px;
+    }
+    .image:nth-child(2) {
+        margin-bottom: 40px;
+    }
+}

@@ -1,0 +1,170 @@
+#bannerType {
+    position: relative;
+}
+.banner__inner { 
+    text-align: center;
+    padding: 120px 0;
+    position: relative;
+}
+.banner__inner .title {
+    font-size: 50px;
+    line-height: 1;
+    font-weight: 500;
+    text-align: left;
+    margin-bottom: 40px;
+}
+.banner__inner .desc{
+    font-size: 24px;
+    line-height: 1.5;
+    font-weight: 300;
+    text-align: left;
+    margin-bottom: 70px;
+}
+.banner__inner .banner_btn {
+    width: 226px;
+    height: 48px;
+    background-color: #FF3344;
+}
+.banner__inner .banner_btn a {
+    font-size: 18px;
+    line-height: 48px;
+    display: block;
+    color: #fff;
+}
+.banner__inner .banner_btn a:hover {
+    text-decoration: underline;
+}
+.banner_img img {
+    width: auto;
+}
+.banner_img img:nth-child(1) {
+    position: absolute;
+    right: 5%;
+    top: 10px;
+}
+.banner_img img:nth-child(2) {
+    position: absolute;
+    right: 5%;
+    top: 15px;
+}
+
+.ball .ball1 {
+    position: absolute;
+    display: inline-block;
+    width: 49px;
+    height: 49px;
+    background-color: #4857EC;
+    border-radius: 50%;
+    bottom: 30%;
+    left: 10%;
+}
+.ball .ball2 {
+    position: absolute;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background-color: #4857EC;
+    border-radius: 50%;
+    bottom: 15%;
+    right: 200px;
+}
+.ball_inner .ball3 {
+    position: absolute;
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background-color: #F7E36D;
+    left: 0;
+    top: 10px;
+}
+.ball_inner .ball4 {
+    position: absolute;
+    display: inline-block;
+    width: 19px;
+    height: 19px;
+    border-radius: 50%;
+    background-color: #2FEFB1;
+    left: 50%;
+    top: 30px;
+}
+.ball_inner .ball5 {
+    position: absolute;
+    display: inline-block;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background-color: #2FEFB1;
+    left: 45%;
+    bottom: 35%;
+}
+.ball_inner .ball6 {
+    position: absolute;
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: #FF3344;
+    right: 30%;
+    bottom: 25%;
+}
+.banner__inner .small{
+    text-decoration: underline;
+}
+@media(max-width: 1400px) {
+    .ball {
+        display: none;
+    }
+    .banner__inner .title, .banner__inner .desc, .banner__inner .banner_btn {
+        margin-left: 30px;
+    }
+}
+@media(max-width: 950px) {
+    .ball_inner {
+        display: none;
+    }
+    .banner_img img:nth-child(1) {
+        position: absolute;
+        right: 5%;
+        top: 90px;
+        width: 263px;
+        height: 263px;
+    }
+    
+    .banner_img img:nth-child(2) {
+        position: absolute;
+        right: 0;
+        top: 90px;
+        width: 206px;
+        height: 123px;
+    }
+}
+@media(max-width: 700px) {
+    .banner__inner .desc {
+        z-index: 1000;
+    }
+}
+@media(max-width: 480px) {
+    .banner_img img {
+        display: none;
+    }
+    .banner__inner .title, .banner__inner .desc, .banner__inner .banner_btn {
+        text-align: center;
+        margin: 0 auto;
+    }
+    .banner__inner .desc {
+        word-break: keep-all;
+    }
+    .banner__inner .banner_btn {
+        display: inline-block;
+    }
+    .banner__inner .title {
+        margin-bottom: 20px;
+        font-size: 32px;
+    }
+    .banner__inner .desc {
+        font-size: 16px;
+        margin-bottom: 30px;
+    }
+}
+

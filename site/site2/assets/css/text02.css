@@ -77,3 +77,38 @@
     margin: 0 auto;
     font-size: 16px;
 }
+@media(max-width: 970px) {
+    .text__inner02 .text {
+        width: 27%;
+        height: auto;
+    }
+    .text__inner02 .text .text__desc {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 5; 
+        -webkit-box-orient: vertical;
+    }
+    .text__inner02 .user{
+        font-size: 20px;
+    }
+}
+@media(max-width: 750px) {
+    .text__inner02 .text:last-child {
+        display: none;
+    }
+    .text__inner02 .text {
+        width: 42%;
+    }
+}
+@media(max-width: 550px) {
+    .text__inner02 {
+        flex-direction: column;
+    }
+    .text__inner02 .text {
+        width: 90%;
+    }
+    .text__inner02 .text:first-child {
+        margin-bottom: 50px;
+    }
+}
