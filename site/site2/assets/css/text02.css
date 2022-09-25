@@ -4,19 +4,23 @@
 }
 .text__inner02 {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
+    box-sizing: border-box;
 }
 .text__inner02 .text {
     width: 29%;
     height: 400px;
     padding: 20px;
     background-color: #fff;
+    border-radius: 10px;
 }
 .text__inner02  .text .text__desc {
     line-height: 1.5;
     font-size: 18px;
     margin-bottom: 30px;
     font-weight: normal;
+    height: 50%;
 }
 .text__inner02  .text__main2 {
     border-top: 1px dashed #ccc;
@@ -33,25 +37,26 @@
     border-radius: 50%;
     text-align: center;
     margin-right: 20px;
-    line-height: 70px;
+    line-height: 80px;
 }
 .icon img {
     width: auto;
     vertical-align: inherit;
 }
 .text__inner02  .text:nth-child(1) .icon {
-    background-color: #8A80FF;
+    background-color: #4856ec28;
 }
 .text__inner02  .text:nth-child(2) .icon {
-    background-color: #F6B568;
+    background-color: #ffd6d670;
 }
 .text__inner02  .text:nth-child(3) .icon {
-    background-color: #FF8080;
+    background-color: #bdff876d;
 }
 .text__inner02 .info {
     display: flex;
     flex-direction: column;
 }
+
 .text__inner02 .user {
     margin-bottom: 10px;
     font-size: 24px;
@@ -68,14 +73,14 @@
 .text__inner02 .text__btn {
     display: block;
     text-align: center;
-    width: 115px;
-    height: 30px;
+    width: 108px;
+    height: 29px;
     background-color: #5C6BF3;
-    border-radius: 20px;
-    line-height: 30px;
+    border-radius: 40px;
+    line-height: 29px;
     color: #fff;
     margin: 0 auto;
-    font-size: 16px;
+    font-size: 14px;
 }
 @media(max-width: 970px) {
     .text__inner02 .text {

@@ -107,3 +107,12 @@
     .footer__top .footer__right {display: none;}
     .footer__bot p {margin: 50px 0 0 0; line-height: 1.6;}
 }
+@media(max-width : 480px) {
+    .footer__top .footer__left h3 {
+        margin: 0 auto;
+        margin-bottom: 20px;
+    }
+    .footer__top .footer__left .desc {
+        margin: 0 auto;
+    }
+}

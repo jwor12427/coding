@@ -92,6 +92,9 @@
     right: 12%;
     bottom: 10px;
 }
+.swiper-slide .desc img:last-child {
+    display: none;
+}
 .swiper-slide .desc h3 {
     font-size: 110px;
     font-weight: 700;
@@ -179,6 +182,12 @@
         width: 13%;
 
     }
+    .slider_ball {
+        display: none;
+    }
+    .sball6 {
+        display: none;
+    }
 }
 @media(max-width: 1100px) {
     .swiper-slide .desc img:first-child {
@@ -199,9 +208,7 @@
         width: 13%;
 
     }
-    .slider_ball {
-        display: none;
-    }
+
 
 
 }
@@ -209,6 +216,7 @@
     .swiper-slide .desc {
         width: 100%;
         text-align: center;
+        position: relative;
     }
     .swiper-slide .desc h3 {
         font-size: 70px;
@@ -219,6 +227,14 @@
     .sball3, .sball4, .sball5, .sball6 {
         display: none;
     }
+    .swiper-slide .desc img:last-child {
+        display: block;
+        width: 40%;
+        transform: translate(-25%, -60%);
+        z-index: -10;
+        opacity: 0.7;
+    }
+
 }
 @media(max-width: 600px){
     .swiper-slide .desc {
@@ -234,9 +250,17 @@
     .swiper-slide .desc .btn a {
         padding:  10px 25px;
     }
+    .swiper-slide figure {
+        width: 100px;
+        height: 200px;
+    }
 }
 @media(max-width: 480px) {
     .swiper-slide .desc p {
         font-size: 14px;
+    }
+    .swiper-slide .desc img:last-child {
+        width: 70%;
+        transform: translate(8%, -50%)
     }
 }

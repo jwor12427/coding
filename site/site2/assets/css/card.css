@@ -8,6 +8,10 @@
     background-color: #f9f6f6;
     margin-right: 20px;
     margin-bottom: 50px;
+    border-radius: 10px;
+}
+.card__header img {
+    border-radius: 10px;
 }
 
 .card__body .tit {
@@ -24,7 +28,7 @@
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
-    -webkit-line-clamp: 4; 
+    -webkit-line-clamp: 3; 
     -webkit-box-orient: vertical;
 
 }
@@ -47,6 +51,12 @@
         display: -webkit-box;
         -webkit-line-clamp: 2; 
         -webkit-box-orient: vertical;
+    }
+
+}
+@media(max-width: 600px) {
+    .card:last-child {
+        display: none;
     }
 }
 @media(max-width: 480px) {

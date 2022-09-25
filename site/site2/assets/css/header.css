@@ -49,41 +49,44 @@
 .header__ham {
     position: absolute;
     right: 10px;
-    top: 10px;
+    top: 20px;
     z-index: 1000;
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 32px;
     display: none;
     cursor: pointer;
 }
 .header__ham span {
     display: block;
-    background: #000;
-    width: 30px;
-    height: 2px;
+    width: 33px;
+    height: 4px;
+    margin-bottom: 5px;
+    position: relative;
+    background: #cdcdcd;
     border-radius: 3px;
-    margin-left: 10px;
-    margin-top: 5px;
-    transition: 0.25s margin 0.25s, 0.25s transform ;
+    z-index: 1;
+    transform-origin: 4px 0px;
+    transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+                background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+                opacity 0.55s ease;
 }
 .header__ham span:nth-child(1) {
-    margin-top: 17px;
+    transform-origin: 0% 0%;
+}
+.header__ham span:nth-child(2) {
+    transform-origin: 0% 100%;
 }
 .header__ham.active span {
-    transition: 0.25s margin, 0.25s transform 0.25s;
-}
-.header__ham.active span:nth-child(1) {
-    margin-top: 25px;
-    margin-bottom: -7px;
-    transform: rotate(45deg);
+    opacity: 1;
+    transform: rotate(45deg) translate(-2px, -1px);
+    background: #232323;
 }
 .header__ham.active span:nth-child(2) {
-    transform: rotate(45deg);
-    
+    transform: rotate(-45deg) translate(-8px, 7px);
 }
 .header__ham.active span:nth-child(3) {
-    margin-top: -2px;
-    transform: rotate(135deg);
+    opacity: 0;
+    transform: rotate(0deg) scale(0.2, 0.2);
 }
 /* media */
 @media(max-width: 1300px){
@@ -95,12 +98,15 @@
         right: -100%;
         top: 69px;
         background: #fff;
-        width: 60%;
-        height: 100vh;
-        padding: 20px;
+        margin: -100px 0 0 -50px;
+        padding: 50px;
+        padding-top: 125px;
+        list-style-type: none;
+        -webkit-font-smoothing: antialiased;
         text-align: right;
-        transition: right 0.4s ease-in;
+        transition: right 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
     }
+
     .header__menu ul li {
         display: block;
         margin: 25px;
