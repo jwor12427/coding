@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>사이트 만들기</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+
+</head>
+<body>
+    <header id="header">
+        <h1><a href="../index.html">애니메이션</a></h1>
+        <nav class="header_nav">
+
+        </nav>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">로딩화면</h2>
+            <p class="t_desc2">
+                로딩화면을 만들어 보아요😏
+            </p>
+            <hr>
+
+            <h3 class="t_tit2">CSS</h3>
+            <div class="t_code">
+<pre><code>body {
+    background-color: #FA9494;
+    }
+.loader {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100px;
+    height: 100px;
+    animation: spin .6s linear infinite reverse;
+}
+.ball {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 100%;
+    animation: spin 1s infinite ease-in-out;
+}
+.ball::after {
+    content: '';
+    position: absolute;
+    background-color: #fff;
+    width: 5px;
+    height: 5px;
+    border-radius: 100%;
+    top: 0;
+}
+.ball:nth-child(2) {
+    animation-delay: -0.1s;
+}
+.ball:nth-child(3) {
+    animation-delay: -0.2s;
+}
+.ball:nth-child(4) {
+    animation-delay: -0.3s;
+}
+.ball:nth-child(5) {
+    animation-delay: -0.4s;
+}
+.ball:nth-child(6) {
+    animation-delay: -0.5s;
+}
+.ball:nth-child(7) {
+    animation-delay: -0.6s;
+}
+.ball:nth-child(8) {
+    animation-delay: -0.7s;
+}
+.ball:nth-child(9) {
+    animation-delay: -0.8s;
+}
+.ball:nth-child(10) {
+    animation-delay: -0.9s;
+}
+@keyframes spin {
+    0% {transform: translate(-50%, -50%) rotate(0deg);}
+    100% {transform: translate(-50%, -50%) rotate(360deg);}
+}
+</code></pre>
+            </div>
+            <h3 class="t_tit2">결과</h3>
+
+            <div class="t_iframe" style="min-height: 600px; padding-top: 0;">
+                <iframe height="500" style="width: 100%;" scrolling="no" title="loading" src="https://codepen.io/jwor12427/embed/dyeVOLe?default-tab=result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                    See the Pen <a href="https://codepen.io/jwor12427/pen/dyeVOLe">
+                    loading</a> by jwor12427 (<a href="https://codepen.io/jwor12427">@jwor12427</a>)
+                    on <a href="https://codepen.io">CodePen</a>.
+                </iframe>
+            </div>
+            <hr>
+            <div class="t_link">
+                <a href="https://codepen.io/jwor12427/pen/QWrWNPr" target="_blank">코드팬 보기</a>
+            </div>
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:jwor124@naver.com">jwor124@naver.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+   
+</body>
+</html>
