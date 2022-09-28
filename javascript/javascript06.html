@@ -274,7 +274,7 @@ document.querySelector(".sample03_A2").innerHTML = arrNum2;    //100,200,300,400
                 <!--// sample 03  -->
 
                 <div id="sample04" class="sample">
-                    <h3>04. 배열 메서드 : unshift() / shift()</h3>
+                    <h3>04. unshift() / shift()</h3>
                     <p>
                         unshift() 메서드는 배열 처음 요소에 추가, shift() 메서드는 배열 처음 요소에 삭제
                     </p>
@@ -338,7 +338,7 @@ document.querySelector(".sample04_A2").innerHTML = arrNum2;
                 <!--// sample 04  -->
 
                 <div id="sample05" class="sample">
-                    <h3>05. 배열 메서드 : reverse() / sort()</h3>
+                    <h3>05. reverse() / sort()</h3>
                     <p>
                         reverse() 메서드는 순서를 반대로 정렬, sort() 메서드는 배열 요소를 정렬
                     </p>
@@ -452,7 +452,7 @@ document.querySelector(".sample05_P6").innerHTML = arrNumSort6;
                 <!-- //sample 05 -->
 
                 <div id="sample06" class="sample">
-                    <h3>06. 배열 메서드 : concat() : 펼침연산자 : 배열요소 결합</h3>
+                    <h3>06. concat()</h3>
                     <p>
                         배열 요소를 결합할 때 사용, 결과값을 반환합니다.
                     </p>
@@ -614,7 +614,7 @@ document.querySelector(".sample07_P5").innerHTML = arrReduce5;
                 <!--// sample 07  -->
 
                 <div id="sample08" class="sample">
-                    <h3>08. 배열 메서드 : slice()</h3>
+                    <h3>08. slice()</h3>
                     <p>
                         배열 요소를 다른 요소로 변경 : 반환(배열) - 원래값에 영향을 미치지 않음
                     </p>
@@ -723,7 +723,7 @@ document.querySelector(".sample08_P6").innerHTML = result6;
                 <!--// sample 08  -->
 
                 <div id="sample09" class="sample">
-                    <h3>09. 배열 메서드 : splice()</h3>
+                    <h3>09. splice()</h3>
                     <p>
                         배열 요소를 다른 요소로 변경(원본값이 바뀜)
                     </p>
@@ -851,7 +851,7 @@ document.querySelector(".sample09_A6").innerHTML = arrNum6;
                 <!--// sample 09  -->
 
                 <div id="sample10" class="sample">
-                    <h3>10. 배열 메서드 : indexOf() / lastIndexOf() / includes()</h3>
+                    <h3>10. indexOf() / lastIndexOf() / includes()</h3>
                     <p>
                         indexOf() 메서드는 배열 요소를 검색할 때 사용,lastIndexOf() 메서드는 배열 요소 끝에서 검색할 때 사용, includes() 메서드는 배열 요소가 있는지 없는지 검색
                     </p>
@@ -965,7 +965,7 @@ document.querySelector(".sample10_P6").innerHTML = arrIndex6;
                 <!--// sample 10  -->
 
                 <div id="sample11" class="sample">
-                    <h3>11. 배열 메서드 : find() / findIndex()</h3>
+                    <h3>11. find() / findIndex()</h3>
                     <p>
                         find() 메서드는 배열 요소 검색할 때 사용하며 반환은 숫자로 합니다 ,findIndex() 메서드는 배열 요소 검색할 때 사용하며 반환은 요소로 합니다.
                     </p>
@@ -1074,7 +1074,7 @@ document.querySelector(".sample11_P5").innerHTML = result5;
                 <!--// sample 11  -->
 
                 <div id="sample12" class="sample">
-                    <h3>12. 배열 메서드 : filter()</h3>
+                    <h3>12. filter()</h3>
                     <p>
                         조건을 걸 수 있음(find와 다른 점)
                     </p>
@@ -1146,9 +1146,9 @@ document.querySelector(".sample12_P3").innerHTML = result3;
                 <!--// sample 12  -->
 
                 <div id="sample13" class="sample">
-                    <h3>13. 배열 메서드 : map()</h3>
+                    <h3>13. map()</h3>
                     <p>
-                        map() 메서드는 배열 요소를 추출하여 새로운 배열로 만듦
+                        map() 메서드는 배열 요소를 추출하여 새로운 배열로 만듭니다.
                     </p>
                     <div class="table">
                         <table>
@@ -1232,7 +1232,7 @@ document.querySelector(".sample13_P4").innerHTML = result4;
                 <!--// sample 13  -->
 
                 <div id="sample14" class="sample">
-                    <h3>14. 배열 메서드 : Array.from()</h3>
+                    <h3>14. Array.from()</h3>
                     <p>
                         Array.from() 메서드는 문자열을 배열로 변환 시켜준다.
                     </p>
@@ -1796,7 +1796,7 @@ document.querySelector(".sample14_P3").innerHTML = result3;
             const text = "javascript";
             const result = Array.from(text);
 
-            console.log(result);    //['j', 'a', 'v', 'a', 's', 'c', 'r', 'i', 'p', 't']
+            // console.log(result);    //['j', 'a', 'v', 'a', 's', 'c', 'r', 'i', 'p', 't']
 
             document.querySelector(".sample14_N1").innerHTML = "1";
             document.querySelector(".sample14_Q1").innerHTML = "javascript";
@@ -1819,6 +1819,75 @@ document.querySelector(".sample14_P3").innerHTML = result3;
             document.querySelector(".sample14_Q3").innerHTML = "javascript";
             document.querySelector(".sample14_M3").innerHTML = "[...text3].map(el => el)";
             document.querySelector(".sample14_P3").innerHTML = result3; 
+        }
+
+        {
+            // const number = [100, 200, 300, 400, 500, 600, 700, 800, 900];
+
+            // //결과값 400
+            // const num1 = number.slice(3, 4);
+            // console.log(num1)
+
+            // const num2 = number.filter( el => el === 400);
+            // console.log(num2);
+
+            // const num3 = number.find(el => el === 400);
+            // console.log(num3);
+
+            // const num4 = number.splice(3, 1);
+            // console.log(num4);
+
+            //400과 500
+            const number = [100, 200, 300, 400, 500, 600, 700, 800, 900];
+            const result1 = number.slice(3, 5);
+            console.log(result1);
+
+            const number2 = [100, 200, 300, 400, 500, 600, 700, 800, 900];
+            const result2 = number2.filter( el => el === 400 || el === 500);
+            console.log(result2);
+
+            const number3 = [100, 200, 300, 400, 500, 600, 700, 800, 900];
+            const result3 = number3.splice(3,2);
+            console.log(result3);
+
+            const number4 = [100, 200, 300, 400, 500, 600, 700, 800, 900];
+            const result4 = number4.join('').slice(9, 15);
+            console.log(result4)
+
+            const number5 = [100, 200, 300, 400, 500, 600, 700, 800, 900];
+            for(i=0; i<number5.length; i++){
+                if(i == 3 || i == 4) {
+                    console.log(number5[i]);
+                }
+            }
+        }
+        {
+            const number1 = ["a","b","c","d","e","f","g","h","i","k"];
+
+            //b d f h k
+            for(i=0; i<number1.length; i++){
+                if(i % 2 == 1){
+                    console.log(number1[i]);
+                };
+            };
+
+            const result1 = number1.filter(el => el === "b" || el === "d" || el === "f" || el === "h" || el === "k");
+            console.log(result1);
+
+            const number2 = ["a","b","c","d","e","f","g","h","i","k"];
+            const result2 = number2.join('');
+            for(i=0; i<result2.length; i++){
+                if(i % 2 == 1){
+                    console.log(result2[i])
+                }
+            }
+
+            const number3 = ["a","b","c","d","e","f","g","h","i","k"];
+            map.number3(e, i => i)
+            
+
+
+
         }
     </script>
 </body>

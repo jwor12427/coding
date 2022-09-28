@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="../assets/css/search.css">
     <link href="https://webfontworld.github.io/tmon/Tmon.css" rel="stylesheet">
     <link href="https://webfontworld.github.io/hallym/Hallym.css" rel="stylesheet">
-
 </head>
 <body>
     <header id="header">
@@ -32,6 +31,7 @@
            
             <div class="search__info">
                 <div class="keyword">
+                    <span>All</span>
                     <span>a</span>
                     <span>b</span>
                     <span>c</span>
@@ -59,7 +59,7 @@
                     <span>y</span>
                     <span>z</span>
                 </div>
-                <div>전체 속성 갯수 : <span class="num"></span></div>
+                <div>속성 갯수 : <span class="num"></span></div>
             </div>
             <div class="search__list">
                 <div class="html">
@@ -481,9 +481,10 @@
     <script>
         //선택자
         const searchKeyword = document.querySelectorAll(".search__info .keyword span");   //알파벳
+        const allBtn = document.querySelector(".search__info .all");
         const searchList = document.querySelectorAll(".search__list ul li");            //목록 리스트
         const searchInfo = document.querySelector(".search__info .num");
-
+        const css = document.querySelector(".search__list .html");
         //속성 갯수 설정하기
         searchInfo.textContent = searchList.length;
 
@@ -498,18 +499,21 @@
                     // console.log(cssName)
                     // searchNum.textContent = cssName.length;
                     //알파벳 첫글자 == CSS 속성의 첫글자
-                    if(searchWord.charAt(0) === cssName.charAt(0)) {
+                    if(searchWord === "All"){   //All버튼을 클릭했을때 
+                        el.classList.remove("hide");
+                    } else if (searchWord.charAt(0) === cssName.charAt(0)){
                         el.classList.remove("hide");
   
                     } else {
                         el.classList.add("hide");
-
-                    }
+                    }  
                 });
                 const searchCount = document.querySelectorAll(".search__list ul .hide");
-                searchInfo.textContent = searchList.length -= searchCount.length;
+                searchInfo.textContent = searchWord + "의 갯수는" + (searchList.length -= searchCount.length) + "입니다^^!";
+
             });
         });
+
 
     </script>
 </body>

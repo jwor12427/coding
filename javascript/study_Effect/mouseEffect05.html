@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>패럴랙스 이펙트</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+
+</head>
+<body>
+    <header id="header">
+        <h1><a href="../index.html">마우스 이펙트</a></h1>
+        <nav class="header_nav">
+
+        </nav>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">스크립트를 이용한 마우스효과 만들기 05</h2>
+            <p class="t_desc2">
+                기울기 효과와 글씨 반전 효과되는 효과를 만들어 봅시다.
+            </p>
+
+            
+
+            
+            <div class="t_iframe" style="min-height: 1000px; padding-top: 0;">
+                <iframe src="https://jwor12427.github.io/coding/javascript/effect/mouseEffect05.html"></iframe>
+            </div>
+
+            <div class="t_link">
+                <a href="https://github.com/jwor12427/coding/blob/main/javascript/effect/mouseEffect05.html" target="_blank">원본 소스 보기</a>
+            </div>
+
+            <h3 class="t_tit2">Javascript</h3>
+
+            <div class="t_code">
+<pre><code>const mouseMove = (e) => {
+    //마우스 좌표값
+    let mousePageX = e.pageX;   //마우스 좌표값 설정
+    let mousePageY = e.pageY;   
+
+    //마우스 좌표 기준점을 가운데로 변경
+    let centerPageX = window.innerWidth / 2 - mousePageX;  //전체화면에서 반을 나누어 마우스의 좌표 값을 빼주면 마우스 좌표값이 가운데로 초기화
+    let centerPageY = window.innerHeight / 2 - mousePageY;
+
+    //최소값 = -150, 최대값 = 150
+    let maxPageX = Math.max(-150, Math.min(150, centerPageX));  //Math.max를 이용하여 최대크기를 설정, Math.min을 이용하여 최소 크기 설정 가능
+    let maxPageY = Math.max(-150, Math.min(150, centerPageY));  //이미지의 각도가 크게 움직이는 걸 예방할 수 있음
+
+    //각도 줄이는 설정
+    let anglePageX = maxPageX * 0.1;    //최대값 변수에 *0.1을 해주어 각도를 줄임
+    let anglePageY = maxPageY * 0.1;
+
+    //부드럽게 설정
+    let softPageX = 0, softPageY = 0;
+    softPageX += (anglePageX - softPageX) * 0.5;
+    softPageY += (anglePageY - softPageY) * 0.5;
+
+    //이미지 움직이기
+    const imgMove = document.querySelector(".mouse__img");
+    imgMove.style.transform = "perspective(600px) rotateX("+ softPageY +"deg) rotateY("+ -softPageX +"deg)";
+
+    //커서
+    gsap.to(".mouse__cursor", {duration: .3, left: mousePageX - 50, top: mousePageY - 50});     //커서를 부드럽게 움직이는 애니메이션
+
+
+    //출력
+    document.querySelector(".mousePageX").textContent = mousePageX;
+    document.querySelector(".mousePageY").textContent = mousePageY;
+    document.querySelector(".centerPageX").textContent = centerPageX;
+    document.querySelector(".centerPageY").textContent = centerPageY;
+    document.querySelector(".maxPageX").textContent = maxPageX;
+    document.querySelector(".maxPageY").textContent = maxPageY;
+    document.querySelector(".anglePageX").textContent = Math.round(anglePageX);
+    document.querySelector(".anglePageY").textContent = Math.round(anglePageY);
+};
+window.addEventListener("mousemove", mouseMove);
+</code></pre>
+            </div>
+            <br>
+
+            <h3 class="t_tit2">HTML</h3>
+            <div class="t_code">
+<pre><code>&lt;main id="main"&gt;
+    &lt;section id="mouseType"&gt;
+        &lt;div class="mouse__cursor"&gt;&lt;/div&gt;
+        &lt;div class="mouse__wrap"&gt;
+            &lt;div class="mouse__img"&gt;
+                &lt;figure&gt;
+                    &lt;img src="../assets/img/effect_bg06.jpg" alt="이미지"&gt;
+                &lt;/figure&gt;
+                &lt;figcaption&gt;
+                    &lt;p&gt;The road to success and the road to failure are almost exactly the same.&lt;/p&gt;
+                    &lt;p&gt;성공으로 가는 길과 실패로 가는 길을 거의 같다.&lt;/p&gt;
+                &lt;/figcaption&gt;
+            &lt;/div&gt;
+            
+        &lt;/div&gt;
+    &lt;/section&gt;
+    &lt;div class="mouse__info"&gt;
+        &lt;ul&gt;
+            &lt;li&gt;mousePageX : &lt;span class="mousePageX"&gt;0&lt;/span&gt;px&lt;/li&gt;
+            &lt;li&gt;mousePageY : &lt;span class="mousePageY"&gt;0&lt;/span&gt;px&lt;/li&gt;
+            &lt;li&gt;centerPageX : &lt;span class="centerPageX"&gt;0&lt;/span&gt;px&lt;/li&gt;
+            &lt;li&gt;centerPageY : &lt;span class="centerPageY"&gt;0&lt;/span&gt;px&lt;/li&gt;
+            &lt;li&gt;maxPageX : &lt;span class="maxPageX"&gt;0&lt;/span&gt;px&lt;/li&gt;
+            &lt;li&gt;maxPageY : &lt;span class="maxPageY"&gt;0&lt;/span&gt;px&lt;/li&gt;
+            &lt;li&gt;anglePageX : &lt;span class="anglePageX"&gt;0&lt;/span&gt;px&lt;/li&gt;
+            &lt;li&gt;anglePageY : &lt;span class="anglePageY"&gt;0&lt;/span&gt;px&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/div&gt;
+&lt;/main&gt;
+</code></pre>
+            </div>
+            <h3 class="t_tit2">CSS</h3>
+            <div class="t_code">
+<pre><code>/* mouseType */
+.mouse__wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    color: #fff;
+    overflow: hidden;
+    cursor: none;
+}
+.mouse__img {
+    transform: perspective(600px) rotateX(0deg) rotateY(0deg);
+    transform-style: preserve-3d;
+    will-change: transform;
+}
+.mouse__wrap figure {
+    width: 50vw;
+    position: relative;
+}
+.mouse__wrap figure::before {
+    content: '';
+    position: absolute;
+    left: 5%;
+    bottom: -60px;
+    width: 90%;
+    background: url(../assets/img/effect_bg06.jpg) center no-repeat;
+    height: 100px;
+    background-size: 100% 40px;
+    filter: blur(15px) grayscale(50%);
+    z-index: -1;
+
+}
+.mouse__img figcaption {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    font-size: 1vw;
+    line-height: 1.6;
+    transform: translate3d(-50%, -50%, 100px);
+    padding: 1vw;
+    white-space: nowrap;
+    text-align: center;
+    background-color: rgba(0,0,0,0.4);
+}
+.mouse__cursor {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: #fff;
+    z-index: 1000;
+    pointer-events: none;
+    user-select: none;
+    mix-blend-mode: difference;
+}
+.mouse__info {
+    position: absolute;
+    left: 20px;
+    bottom: 10px;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #fff;
+}
+</code></pre>
+            </div>
+
+
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:jwor124@naver.com">jwor124@naver.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+   
+</body>
+</html>
