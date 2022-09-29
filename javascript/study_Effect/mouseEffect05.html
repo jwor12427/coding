@@ -62,8 +62,8 @@
 
     //이미지 움직이기
     const imgMove = document.querySelector(".mouse__img");
-    imgMove.style.transform = "perspective(600px) rotateX("+ softPageY +"deg) rotateY("+ -softPageX +"deg)";
-
+    imgMove.style.transform = "perspective(600px) rotateX("+ softPageY +"deg) rotateY("+ -softPageX +"deg)";   
+    //커서가 움직이는 방향에 맞게 이미지가 움직여야 하므로 rotateX에는 softPageY값 , rotateY에는 -softPageX값을 넣어줌
     //커서
     gsap.to(".mouse__cursor", {duration: .3, left: mousePageX - 50, top: mousePageY - 50});     //커서를 부드럽게 움직이는 애니메이션
 

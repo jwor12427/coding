@@ -1838,28 +1838,28 @@ document.querySelector(".sample14_P3").innerHTML = result3;
             // console.log(num4);
 
             //400과 500
-            const number = [100, 200, 300, 400, 500, 600, 700, 800, 900];
-            const result1 = number.slice(3, 5);
-            console.log(result1);
+            // const number = [100, 200, 300, 400, 500, 600, 700, 800, 900];
+            // const result1 = number.slice(3, 5);
+            // console.log(result1);
 
-            const number2 = [100, 200, 300, 400, 500, 600, 700, 800, 900];
-            const result2 = number2.filter( el => el === 400 || el === 500);
-            console.log(result2);
+            // const number2 = [100, 200, 300, 400, 500, 600, 700, 800, 900];
+            // const result2 = number2.filter( el => el === 400 || el === 500);
+            // console.log(result2);
 
-            const number3 = [100, 200, 300, 400, 500, 600, 700, 800, 900];
-            const result3 = number3.splice(3,2);
-            console.log(result3);
+            // const number3 = [100, 200, 300, 400, 500, 600, 700, 800, 900];
+            // const result3 = number3.splice(3,2);
+            // console.log(result3);
 
-            const number4 = [100, 200, 300, 400, 500, 600, 700, 800, 900];
-            const result4 = number4.join('').slice(9, 15);
-            console.log(result4)
+            // const number4 = [100, 200, 300, 400, 500, 600, 700, 800, 900];
+            // const result4 = number4.join('').slice(9, 15);
+            // console.log(result4)
 
-            const number5 = [100, 200, 300, 400, 500, 600, 700, 800, 900];
-            for(i=0; i<number5.length; i++){
-                if(i == 3 || i == 4) {
-                    console.log(number5[i]);
-                }
-            }
+            // const number5 = [100, 200, 300, 400, 500, 600, 700, 800, 900];
+            // for(i=0; i<number5.length; i++){
+            //     if(i == 3 || i == 4) {
+            //         console.log(number5[i]);
+            //     }
+            // }
         }
         {
             const number1 = ["a","b","c","d","e","f","g","h","i","k"];
@@ -1883,10 +1883,20 @@ document.querySelector(".sample14_P3").innerHTML = result3;
             }
 
             const number3 = ["a","b","c","d","e","f","g","h","i","k"];
-            map.number3(e, i => i)
-            
+            let arr = [];
 
+            for(i = 1; i< number3.length; i++){
+                arr += number3.splice(i,1)
+            }
+            console.log(arr);
 
+            const number4 = ["a","b","c","d","e","f","g","h","i","k"];
+            number4.forEach((e,i) => {
+                if(i % 2 == 1){
+                    console.log(number4[i]);
+                }
+
+            })
 
         }
     </script>

@@ -35,9 +35,73 @@
 
             <h3 class="t_tit2">Script</h3>
             <div class="t_code">
-<pre><code>
+<pre><code>const cssProperty = [
+    { name: "accent-color", desc: "특정 요소에 색상을 지정할 때 사용됩니다." },
+    { name: "align-content", desc: "콘텐츠 아이템의 상하관계 정렬 상태를 설정합니다." },
+    { name: "align-items", desc: "콘텐츠 아이템의 내부 상하관계 정렬 상태를 설정합니다." },
+                ⁝
+];
+//선택자
+const searchList = document.querySelector(".search__list");     //속성 리스트
+const searchNum = document.querySelector(".search__info .num"); //속성 갯수
+const searchBox = document.querySelector(".search__box input"); //검색창
+const searchDesc = document.querySelector(".search__desc");     //속성 설명
+
+//출력하기
+cssProperty.map((element, index) => {
+    // searchList.innerHTML += "&lt;li>" + element.name +  ":" + element.desc + "&lt;/li>";
+    searchList.innerHTML += `&lt;span>${element.name}&lt;/span>`; //name의 키값을 불러올 수 있음
+    searchNum.innerText = index + 1;        //index값은 0부터 시작하기때문에 1을 더해줌
+});
+
+//입력하기
+searchBox.addEventListener("keyup", () => {
+    const searchWord = searchBox.value;     //사용자가 input박스에 넣은 값
+    findProperty(searchWord);
+});
+
+//클릭해서 속성 찾기
+searchList.addEventListener("click", (e) => {
+    findProperty(e.target.innerHTML);   //e 안에 있는 텍스트 속성을 타겟해서 매개변수로 잡음
+})
+
+//속성 찾기
+function findProperty(searchData){  //받은 매개변수값을 searchData값에 저장
+    const targetData = cssProperty.find((data) => data.name === searchData);
+    if(targetData == null || targetData == undefined){  //null과 undefined 둘 다 적어줌
+        searchDesc.textContent = "해당 속성은 존재하지 않습니다. 다시 검색해주세요!";
+        return;     // 종료의 의미도 있음, 결과값을 출력도 하지만...
+    } 
+    searchDesc.textContent = targetData.desc;
+    
+};
 </code></pre>
             </div>
+
+            <h3 class="t_tit2">HTML</h3>
+            <div class="t_code">
+<pre><code>&lt;main id="main">
+    &lt;div class="search_wrap">
+        &lt;span>find()를 이용하여 속성을 검색하면 설명 보여주기&lt;/span>
+        &lt;h1>CSS 속성 검색하기&lt;/h1>
+        &lt;div class="search__box">
+            &lt;label for="search">검색하기&lt;/label>
+            &lt;input type="text" id="search" placeholder="CSS 속성 및 유형을 입력해주세요!">
+        &lt;/div>
+        &lt;div class="search__desc">
+            속성을 검색하시면 설명이 표시됩니다~
+        &lt;/div>
+        &lt;div class="search__info">
+            &lt;div>전체 속성 갯수 : &lt;span class="num">&lt;/span>&lt;/div>
+        &lt;/div>
+        &lt;div class="search__list">
+
+        &lt;/div>
+    &lt;/div>
+&lt;/main>
+</code></pre>
+            </div>
+
 
 
 
