@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배너 유형01</title>
+    <style>
+        @import url('https://webfontworld.github.io/gmarket/GmarketSans.css');
+
+        .gmark {
+            font-family: 'GmarketSans';
+            font-weight: 500;
+        }
+
+        /* reset */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-weight: normal;
+        }
+
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+
+        img {
+            width: 100%;
+        }
+        .blind{
+            position: absolute;
+            clip: rect(0 0 0 0);
+            width: 1px;
+            height: 1px;
+            margin: -1px;
+            overflow: hidden;
+        }
+
+        /* common */
+        .container {
+            width: 1160px;
+            padding: 0 20px;
+            margin: 0 auto;
+        }
+
+        .section {
+            padding: 120px 0;
+            min-width: 1160px;
+        }
+
+        .section>h2 {
+            /* + 는 형제, > 는 자식 */
+            font-size: 50px;
+            line-height: 1;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .section>p {
+            font-size: 22px;
+            font-weight: 300;
+            color: #666;
+            text-align: center;
+            margin-bottom: 70px;
+        }
+        .skyBlue {
+            background-color: #F6f8fd;
+        }
+        /* bannerType */
+        .banner__wrap {
+            position: relative;
+        }
+        .banner__inner {
+            position: relative;
+        }
+        .banner__text h3 {
+            font-size: 50px;
+            margin-bottom: 40px;
+        }
+        .banner__text p {
+            font-size: 24px;
+            line-height: 1.5;
+            margin-bottom: 70px;
+            font-weight: 300;
+        }
+        .banner__text a {
+            background: #FF3344;
+            padding: 10px 75px;
+            display: inline-block;
+            color: #fff;
+            font-size: 18px;
+        }
+        .banner__imgs {
+            position: absolute;
+            right: 0;
+            top: -60px;
+            width: 400px;
+            height: 400px;
+        }
+        .banner__imgs .i1 {
+            width: 100%;
+            height: 100%;
+            background: url(banner_bg01.png);
+            background-size: contain;
+        }
+        .banner__imgs .i2 {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 70%;
+            height: 70%;
+            background: url(banner_icon02.png);
+            background-size: contain;
+        }
+        .banner__dots span {
+            position: absolute;
+            display: block;
+            border-radius: 50%;
+        }
+        .banner__dots .d1 {
+            width: 23px;
+            height: 23px;
+            background-color: #4857EC;
+            left: 10%;
+            top: 10%;
+        }
+        .banner__dots .d2 {
+            width: 46px;
+            height: 46px;
+            background-color: #2FEFB1;
+            left: 38%;
+            top: 20%;
+        }
+        .banner__dots .d3 {
+            width: 20px;
+            height: 20px;
+            background-color: #F7E36D;
+            left: 33%;
+            top: 73%;
+        }
+        .banner__dots .d4 {
+            width: 36px;
+            height: 36px;
+            background-color: #FF3344;
+            left: 90%;
+            top: 25%;
+        }
+        .banner__dots .d5 {
+            width: 32px;
+            height: 32px;
+            background-color: #a67df1;
+            left: 58%;
+            top: 88%;
+        }
+    </style>
+</head>
+<body>
+    <section id="bannerType" class="banner__wrap gmark section skyBlue">
+        <h2 class="blind">배너 영역</h2>
+        <div class="banner__inner container">
+            <div class="banner__text">
+                <h3>유튜버 웹보이</h3>
+                <p>더 다양한 강의는 유튜브를 통해 제공하고 있습니다.<br>
+                    구독과 좋아요! 부탁드립니다.
+                </p>
+                <a href="#" title="유튜브 채널 이동" target="_blank">바로가기</a>
+            </div>
+            <div class="banner__imgs">
+                <div class="i1"></div>
+                <div class="i2"></div>
+            </div>
+        </div>
+        <div class="banner__dots" aria-label="hidden">
+            <span class="d1"></span>
+            <span class="d2"></span>
+            <span class="d3"></span>
+            <span class="d4"></span>
+            <span class="d5"></span>
+        </div>
+    </section>
+</body>
+</html>

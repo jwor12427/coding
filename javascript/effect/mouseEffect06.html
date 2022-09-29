@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>마우스 이펙트06</title>
+
+    <link rel="stylesheet" href="../assets/css/mouse.css" />
+    <link rel="stylesheet" href="../assets/css/atom-one-dark.min.css" />
+    <style>
+        /* mouseType */
+        .mouse__wrap {
+            width: 100%;
+            height: 100vh;
+            color: #fff;
+            cursor: none;
+        }
+        .mouse__img {
+            position: absolute;
+            left: 50%;
+            top: 50%;   
+            transform: translate(-50%, -50%);
+            z-index: -1;     
+        }
+        .mouse__text {
+            position: absolute;
+            left: 50%;
+            top: 50%;   
+            transform: translate(-50%, -20%);
+            font-size: 3vw;
+            line-height: 1.5; 
+        }
+        .mouse__text .line {
+            width: 100%;
+            display: flex;
+        }
+        .mouse__text .line .left {
+            width: 50vw;
+            color: orange;
+            overflow: hidden;
+            transform: skew(0deg, -15deg);
+        }
+        .mouse__text .line .left .spanWrap {
+            width: 100vw;
+            text-align: center;
+        }
+        .mouse__text .line .right {
+            width: 50vw;
+            overflow: hidden;
+            transform: skew(0deg, 15deg);
+        }
+        .mouse__text .line .right .spanWrap {
+            width: 100vw;
+            text-align: center;
+            transform: translateX(-50vw);
+        }
+        .mouse__text span {
+            display: inline-block;
+        }
+        .mouse__cursor {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 20px;
+            height: 20px;
+            z-index: 9999;
+            border-radius: 50%;
+            background-color: rgba(255,255,255,0.9);
+            user-select: none;
+            pointer-events: none;
+            transition: transform 0.3s;
+        }
+        .mouse__cursor.active {
+            transform: scale(5);
+            mix-blend-mode: difference;
+        }
+    </style>
+</head>
+<body class="img12">
+    <header id="header">
+        <h1>Javascript Mouse Effect06</h1>
+        <p>마우스 이펙트 - 텍스트 효과</p>
+        <ul>
+            <li><a href="mouseEffect01.html">1</a></li>
+            <li><a href="mouseEffect02.html">2</a></li>
+            <li><a href="mouseEffect03.html">3</a></li>
+            <li><a href="mouseEffect04.html">4</a></li>
+            <li><a href="mouseEffect05.html">5</a></li>
+            <li class="active"><a href="mouseEffect06.html">6</a></li>
+            <li><a href="mouseEffect07.html">7</a></li>
+        </ul>
+    </header>
+    <!-- //header -->
+
+    <main id="main">
+        <section id="mouseType">
+            <div class="mouse__cursor"></div>
+            <div class="mouse__wrap">
+                <div class="mouse__img">
+                    <figure>
+                        <img src="../assets/img/effect_bg21.jpg" alt="">
+                    </figure>
+                </div>
+                <div class="mouse__text">
+                    <div class="line">
+                        <div class="left">
+                            <div class="spanWrap">
+                                <span class="spanSlow">Pain Past</span>
+                            </div>
+                        </div>
+                        <div class="right">
+                            <div class="spanWrap">
+                                <span class="spanSlow">Pain Past</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="line">
+                        <div class="left">
+                            <div class="spanWrap">
+                                <span class="spanFast">is pleasure.</span>
+                            </div>
+                        </div>
+                        <div class="right">
+                            <div class="spanWrap">
+                                <span class="spanFast">is pleasure.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="line">
+                        <div class="left">
+                            <div class="spanWrap">
+                                <span class="spanSlow">지나간 고통은</span>
+                            </div>
+                        </div>
+                        <div class="right">
+                            <div class="spanWrap">
+                                <span class="spanSlow">지나간 고통은</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="line">
+                        <div class="left">
+                            <div class="spanWrap">
+                                <span class="spanFast">쾌락이다.</span>
+                            </div>
+                        </div>
+                        <div class="right">
+                            <div class="spanWrap">
+                                <span class="spanFast">괘락이다.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+    <!-- //main -->
+
+    <footer id="footer">
+        <div class="modal__wrap">
+            <div class="modal__btn">소스 보기</div>
+            <div class="modal__cont">
+                <div class="modal__box">
+                    <div class="title">
+                        <span class="dot" aria-label="true"></span>
+                        <div class="tabs">
+                            <div class="active">
+                                <span class="favicon" aria-label="true">
+                                    <svg
+                                        width="16"
+                                        height="16"
+                                        viewBox="0 0 18 18"
+                                        fill="none"
+                                        aria-hidden="true"
+                                        focusable="false"
+                                    >
+                                        <circle
+                                            cx="9"
+                                            cy="9"
+                                            r="9"
+                                            fill="#B1D7B4"
+                                        ></circle>
+                                        <path
+                                            d="M18 9C18 13.9706 15.4688 3.09375 9 10.125C2.53125 17.1562 0 13.9706 0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9Z"
+                                            fill="#A2B38B"
+                                        ></path>
+                                        <path
+                                            d="M18 9C18 13.9706 14.9062 0.84375 8.29688 6.1875C1.6875 11.5312 0 13.9706 0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9Z"
+                                            fill="#FFB3B3"
+                                        ></path>
+                                    </svg>
+                                </span>
+                                <em>Javascript</em>
+                                <span class="close">
+                                    <svg
+                                        width="16"
+                                        height="16"
+                                        viewBox="0 0 16 16"
+                                        fill="none"
+                                        aria-hidden="true"
+                                        focusable="false"
+                                    >
+                                        <path
+                                            d="M12.5 3.5L3.5 12.5"
+                                            stroke="currentColor"
+                                            stroke-width="1.5"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                        ></path>
+                                        <path
+                                            d="M12.5 12.5L3.5 3.5"
+                                            stroke="currentColor"
+                                            stroke-width="1.5"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                        ></path>
+                                    </svg>
+                                </span>
+                            </div>
+                            <div>
+                                <span class="favicon" aria-label="true">
+                                    <svg
+                                        width="16"
+                                        height="16"
+                                        viewBox="0 0 18 18"
+                                        fill="none"
+                                        aria-hidden="true"
+                                        focusable="false"
+                                    >
+                                        <circle
+                                            cx="9"
+                                            cy="9"
+                                            r="9"
+                                            fill="#7A4495"
+                                        ></circle>
+                                        <path
+                                            d="M18 9C18 13.9706 15.4688 3.09375 9 10.125C2.53125 17.1562 0 13.9706 0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9Z"
+                                            fill="#B270A2"
+                                        ></path>
+                                        <path
+                                            d="M18 9C18 13.9706 14.9062 0.84375 8.29688 6.1875C1.6875 11.5312 0 13.9706 0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9Z"
+                                            fill="#FCE2DB"
+                                        ></path>
+                                    </svg>
+                                </span>
+                                <em>HTML</em>
+                                <span class="close">
+                                    <svg
+                                        width="16"
+                                        height="16"
+                                        viewBox="0 0 16 16"
+                                        fill="none"
+                                        aria-hidden="true"
+                                        focusable="false"
+                                    >
+                                        <path
+                                            d="M12.5 3.5L3.5 12.5"
+                                            stroke="currentColor"
+                                            stroke-width="1.5"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                        ></path>
+                                        <path
+                                            d="M12.5 12.5L3.5 3.5"
+                                            stroke="currentColor"
+                                            stroke-width="1.5"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                        ></path>
+                                    </svg>
+                                </span>
+                            </div>
+                            <div>
+                                <span class="favicon" aria-label="true">
+                                    <svg
+                                        width="16"
+                                        height="16"
+                                        viewBox="0 0 18 18"
+                                        fill="none"
+                                        aria-hidden="true"
+                                        focusable="false"
+                                    >
+                                        <circle
+                                            cx="9"
+                                            cy="9"
+                                            r="9"
+                                            fill="#A66CFF"
+                                        ></circle>
+                                        <path
+                                            d="M18 9C18 13.9706 15.4688 3.09375 9 10.125C2.53125 17.1562 0 13.9706 0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9Z"
+                                            fill="#B1E1FF"
+                                        ></path>
+                                        <path
+                                            d="M18 9C18 13.9706 14.9062 0.84375 8.29688 6.1875C1.6875 11.5312 0 13.9706 0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9Z"
+                                            fill="#9C9EFE"
+                                        ></path>
+                                    </svg>
+                                </span>
+                                <em>CSS</em>
+                                <span class="close">
+                                    <svg
+                                        width="16"
+                                        height="16"
+                                        viewBox="0 0 16 16"
+                                        fill="none"
+                                        aria-hidden="true"
+                                        focusable="false"
+                                    >
+                                        <path
+                                            d="M12.5 3.5L3.5 12.5"
+                                            stroke="currentColor"
+                                            stroke-width="1.5"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                        ></path>
+                                        <path
+                                            d="M12.5 12.5L3.5 3.5"
+                                            stroke="currentColor"
+                                            stroke-width="1.5"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                        ></path>
+                                    </svg>
+                                </span>
+                            </div>
+                        </div>
+                        <span class="plus" aria-label="true">
+                            <svg
+                                width="16"
+                                height="16"
+                                viewBox="0 0 16 16"
+                                fill="none"
+                                aria-hidden="true"
+                                focusable="false"
+                            >
+                                <path
+                                    d="M2.5 8H13.5"
+                                    stroke="currentColor"
+                                    stroke-width="1.5"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                ></path>
+                                <path
+                                    d="M8 2.5V13.5"
+                                    stroke="currentColor"
+                                    stroke-width="1.5"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                ></path>
+                            </svg>
+                        </span>
+                    </div>
+                    <div class="cont">
+                        <div class="active">
+<pre><code>
+</code></pre>
+                        </div>
+                        <div>
+<pre><code>
+</code></pre>
+                        </div>
+                        <div>
+<pre><code>
+</code></pre>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal__close">
+                    <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        fill="none"
+                        aria-hidden="true"
+                        focusable="false"
+                    >
+                        <path
+                            d="M12.5 3.5L3.5 12.5"
+                            stroke="currentColor"
+                            stroke-width="1.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        ></path>
+                        <path
+                            d="M12.5 12.5L3.5 3.5"
+                            stroke="currentColor"
+                            stroke-width="1.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        ></path>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- //footer -->
+
+    <script src="../assets/js/highlight.min.js"></script>
+    <script src="../assets/js/common.js"></script>
+    <script src="../assets/js/gsap.min.js"></script>
+    <script>
+        const mouseMove = (e) => {
+            let positionSlow = (e.pageX - (window.innerWidth / 2)) * 0.1;   // 이질감 효과를 위해 0.1 곱해줌
+            let positionFast = (e.pageX - (window.innerWidth / 2)) * 0.2;
+            gsap.to(".spanSlow", { duration: 0.4, x: positionSlow});
+            gsap.to(".spanFast", { duration: 0.4, x: -positionFast});
+            gsap.to(".mouse__cursor", { duration: 0.3, left: e.pageX -5, top: e.pageY -5});
+        }
+        window.addEventListener("mousemove", mouseMove);
+        
+        // 마우스 커서가 글씨 위에 올라가면 원의 크기는 5배 정도 크게 작업하고 글씨 반전효과 주기
+        const cursor = document.querySelector(".mouse__cursor");
+        document.querySelectorAll(".spanWrap span").forEach(span => { 
+            span.addEventListener("mouseenter", () => {
+                cursor.classList.add("active");
+            });
+            span.addEventListener("mouseleave", () => {
+                cursor.classList.remove("active");
+            });
+        });
+    </script>
+</body>
+</html>

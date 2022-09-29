@@ -1862,42 +1862,62 @@ document.querySelector(".sample14_P3").innerHTML = result3;
             // }
         }
         {
-            const number1 = ["a","b","c","d","e","f","g","h","i","k"];
+            // const number1 = ["a","b","c","d","e","f","g","h","i","k"];
 
-            //b d f h k
-            for(i=0; i<number1.length; i++){
-                if(i % 2 == 1){
-                    console.log(number1[i]);
-                };
-            };
+            // //b d f h k
+            // for(i=0; i<number1.length; i++){
+            //     if(i % 2 == 1){
+            //         console.log(number1[i]);
+            //     };
+            // };
 
-            const result1 = number1.filter(el => el === "b" || el === "d" || el === "f" || el === "h" || el === "k");
+            // const result1 = number1.filter(el => el === "b" || el === "d" || el === "f" || el === "h" || el === "k");
+            // console.log(result1);
+
+            // const number2 = ["a","b","c","d","e","f","g","h","i","k"];
+            // const result2 = number2.join('');
+            // for(i=0; i<result2.length; i++){
+            //     if(i % 2 == 1){
+            //         console.log(result2[i])
+            //     }
+            // }
+
+            // const number3 = ["a","b","c","d","e","f","g","h","i","k"];
+            // let arr = [];
+
+            // for(i = 1; i< number3.length; i++){
+            //     arr += number3.splice(i,1)
+            // }
+            // console.log(arr);
+
+            // const number4 = ["a","b","c","d","e","f","g","h","i","k"];
+            // number4.forEach((e,i) => {
+            //     if(i % 2 == 1){
+            //         console.log(number4[i]);
+            //     }
+
+            // })
+
+        }
+        {
+            //e와f만 출력(splice와 slice와 사용불가) - 3가지
+
+            const num1 = ["a","b","c","d","e","f","g","h","i","k"];
+            const result1 = num1.filter(el => el === "e" || el === "f");
             console.log(result1);
 
-            const number2 = ["a","b","c","d","e","f","g","h","i","k"];
-            const result2 = number2.join('');
-            for(i=0; i<result2.length; i++){
-                if(i % 2 == 1){
-                    console.log(result2[i])
-                }
+            const num2 = ["a","b","c","d","e","f","g","h","i","k"];
+            console.log(num2[4]);
+            console.log(num2[5]);
+
+            const num3 = ["a","b","c","d","e","f","g","h","i","k"];
+            arr = [];
+            for(i = 4; i <=5; i++){
+                
+                console.log(num3[i]);
             }
 
-            const number3 = ["a","b","c","d","e","f","g","h","i","k"];
-            let arr = [];
-
-            for(i = 1; i< number3.length; i++){
-                arr += number3.splice(i,1)
-            }
-            console.log(arr);
-
-            const number4 = ["a","b","c","d","e","f","g","h","i","k"];
-            number4.forEach((e,i) => {
-                if(i % 2 == 1){
-                    console.log(number4[i]);
-                }
-
-            })
-
+            
         }
     </script>
 </body>

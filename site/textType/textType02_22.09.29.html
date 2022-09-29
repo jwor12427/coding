@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>텍스트 유형</title>
+    <style>
+        @import url('https://webfontworld.github.io/gmarket/GmarketSans.css');
+        /* reset */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .gmark {
+            font-family: 'GmarketSans';
+            font-weight: 500;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-weight: normal;
+        }
+
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+
+        img {
+            width: 100%;
+        }
+        .blind{
+            position: absolute;
+            clip: rect(0 0 0 0);
+            width: 1px;
+            height: 1px;
+            margin: -1px;
+            overflow: hidden;
+        }
+
+        /* common */
+        .container {
+            width: 1160px;
+            padding: 0 20px;
+            margin: 0 auto;
+        }
+
+        .section {
+            padding: 120px 0;
+            min-width: 1160px;
+        }
+
+        .section>h2 {
+            /* + 는 형제, > 는 자식 */
+            font-size: 50px;
+            line-height: 1;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .section>p {
+            font-size: 22px;
+            font-weight: 300;
+            color: #666;
+            text-align: center;
+            margin-bottom: 70px;
+        }
+        .section > span {
+            display: block;
+            text-align: center;
+            font-size: 16px;
+            text-decoration: underline;
+            margin-bottom: 16px;
+        }
+        .mb70 {
+            margin-bottom: 70px !important;
+        }
+        .skyBlue {
+            background-color: #F6f8fd;
+        }
+
+        /* textType */
+        .text__inner {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .text__title {
+            width: 33%;
+        }
+        .text__title span {
+            background: #FF3344;
+            font-size: 14px;
+            padding: 2px 20px;
+            border-radius: 50px;
+            text-transform: uppercase;
+            font-weight: 300;
+            color: #fff;
+            margin-bottom: 5px;
+            display: inline-block;
+        }
+        .text__title h3 {
+            font-size: 50px;
+            font-weight: bold;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+        .text__title p {
+            font-size: 18px;
+            line-height: 1.5;
+            padding-right: 20%;
+            word-break: keep-all;
+        }
+        .text__desc {
+            width: 66%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .text__desc > div {
+            width: 48%;
+            margin-bottom: 4%;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 4; 
+            -webkit-box-orient: vertical;
+        }
+        .text__desc > div h4 {
+            font-size: 24px;
+            padding-top: 60px;
+            margin-bottom: 15px;
+            position: relative;
+            padding-top: 75px;
+        }
+        .text__desc > div h4::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: url(img/text_icon.svg);
+        }
+        .text__desc > div:nth-child(1) h4::before {
+            background-position: 0 0;
+        }
+        .text__desc > div:nth-child(2) h4::before {
+            background-position: -60px 0;
+        }
+        .text__desc > div:nth-child(3) h4::before {
+            background-position: -120px 0;
+        }
+        .text__desc > div:nth-child(4) h4::before {
+            background-position: -180px 0;
+        }
+        .text__desc > div p {
+            font-size: 18px;
+            line-height: 1.5;
+            font-weight: 300;
+        }
+    </style>
+</head>
+
+<body>
+    <section id="textType01" class="text__wrap gmark section skyBlue">
+        <h2 class="blind">텍스트 영역</h2>
+        <div class="text__inner container">
+            <div class="text__title">
+                <span>forntend</span>
+                <h3>프론트앤드 <br>전문과정</h3>
+                <p>프론트앤드 개발자로 취업하기 위한
+                    전문 과정입니다.
+                    여러분들도 도전해보세요!
+                </p>
+            </div>
+            <div class="text__desc">
+                <div>
+                    <h4>웹디자인</h4>
+                    <p>웹디자이너가 포함된 웹 및 멀티미디어 디자이너는 다른 직업과 비교하여 임금과 복리후생이 낮은 퍼블리싱은 웹 사이트를 제작할 </p>
+                </div>
+                <div>
+                    <h4>웹 퍼블리셔</h4>
+                    <p>퍼블리싱은 웹 사이트를 제작할 때, 웹 디자이너가 디자인한 것을 웹 표준성과 접근성에 부합하도록 재정하였다.</p>
+                </div>
+                <div>
+                    <h4>프론트앤드 개발자</h4>
+                    <p>사이트와 상호작용하는 모든 부분에 대한 개발, 관리, 유지 보수를 하는 것 솔루션의 프로세스를 개발합니다. </p>
+                </div>
+                <div>
+                    <h4>백앤드 개발자</h4>
+                    <p>용어 자체에서 알 수 있듯이, 백엔드는 웹사이트나 웹 애플리케이션 또는 모바일 솔루션의 프로세스와 관련된입니다.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>

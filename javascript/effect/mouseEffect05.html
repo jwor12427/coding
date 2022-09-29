@@ -321,15 +321,149 @@
                     </div>
                     <div class="cont">
                         <div class="active">
-<pre><code>
+<pre><code>const mouseMove = (e) => {
+    //마우스 좌표값
+    let mousePageX = e.pageX;
+    let mousePageY = e.pageY;
+
+    //마우스 좌표 기준점을 가운데로 변경
+    let centerPageX = window.innerWidth / 2 - mousePageX;
+    let centerPageY = window.innerHeight / 2 - mousePageY;
+
+    //최소값 = -100, 최대값 = 100
+    let maxPageX = Math.max(-150, Math.min(150, centerPageX));
+    let maxPageY = Math.max(-150, Math.min(150, centerPageY));
+
+    //각도 줄이는 설정
+    let anglePageX = maxPageX * 0.1;
+    let anglePageY = maxPageY * 0.1;
+
+    //부드럽게 설정
+    let softPageX = 0, softPageY = 0;
+    softPageX += (anglePageX - softPageX) * 0.5;
+    softPageY += (anglePageY - softPageY) * 0.5; 
+
+    //이미지 움직이기
+    const imgMove = document.querySelector(".mouse__img");
+    imgMove.style.transform = "perspective(600px) rotateX("+ softPageY +"deg) rotateY("+ -softPageX +"deg)";
+
+    //커서
+    gsap.to(".mouse__cursor", {duration: .3, left: mousePageX - 50, top: mousePageY - 50});
+
+
+    //출력
+    document.querySelector(".mousePageX").textContent = mousePageX;
+    document.querySelector(".mousePageY").textContent = mousePageY;
+    document.querySelector(".centerPageX").textContent = centerPageX;
+    document.querySelector(".centerPageY").textContent = centerPageY;
+    document.querySelector(".maxPageX").textContent = maxPageX;
+    document.querySelector(".maxPageY").textContent = maxPageY;
+    document.querySelector(".anglePageX").textContent = Math.round(anglePageX);
+    document.querySelector(".anglePageY").textContent = Math.round(anglePageY);
+};
+window.addEventListener("mousemove", mouseMove);
 </code></pre>
                         </div>
                         <div>
-<pre><code>
+<pre><code>&lt;main id="main">
+    &lt;section id="mouseType">
+        &lt;div class="mouse__cursor">&lt;/div>
+        &lt;div class="mouse__wrap">
+            &lt;div class="mouse__img">
+                &lt;figure>
+                    &lt;img src="../assets/img/effect_bg06.jpg" alt="이미지">
+                &lt;/figure>
+                &lt;figcaption>
+                    &lt;p>The road to success and the road to failure are almost exactly the same.&lt;/p>
+                    &lt;p>성공으로 가는 길과 실패로 가는 길을 거의 같다.&lt;/p>
+                &lt;/figcaption>
+            &lt;/div>
+            
+        &lt;/div>
+    &lt;/section>
+    &lt;div class="mouse__info">
+        &lt;ul>
+            &lt;li>mousePageX : &lt;span class="mousePageX">0&lt;/span>px&lt;/li>
+            &lt;li>mousePageY : &lt;span class="mousePageY">0&lt;/span>px&lt;/li>
+            &lt;li>centerPageX : &lt;span class="centerPageX">0&lt;/span>px&lt;/li>
+            &lt;li>centerPageY : &lt;span class="centerPageY">0&lt;/span>px&lt;/li>
+            &lt;li>maxPageX : &lt;span class="maxPageX">0&lt;/span>px&lt;/li>
+            &lt;li>maxPageY : &lt;span class="maxPageY">0&lt;/span>px&lt;/li>
+            &lt;li>anglePageX : &lt;span class="anglePageX">0&lt;/span>px&lt;/li>
+            &lt;li>anglePageY : &lt;span class="anglePageY">0&lt;/span>px&lt;/li>
+        &lt;/ul>
+    &lt;/div>
+&lt;/main>
 </code></pre>
                         </div>
                         <div>
-<pre><code>
+<pre><code>/* mouseType */
+.mouse__wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    color: #fff;
+    overflow: hidden;
+    cursor: none;
+}
+.mouse__img {
+    transform: perspective(600px) rotateX(0deg) rotateY(0deg);
+    transform-style: preserve-3d;
+    will-change: transform;
+}
+.mouse__wrap figure {
+    width: 50vw;
+    position: relative;
+}
+.mouse__wrap figure::before {
+    content: '';
+    position: absolute;
+    left: 5%;
+    bottom: -60px;
+    width: 90%;
+    background: url(../assets/img/effect_bg06.jpg) center no-repeat;
+    height: 100px;
+    background-size: 100% 40px;
+    filter: blur(15px) grayscale(50%);
+    z-index: -1;
+
+}
+.mouse__img figcaption {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    font-size: 1vw;
+    line-height: 1.6;
+    transform: translate3d(-50%, -50%, 100px);
+    padding: 1vw;
+    white-space: nowrap;
+    text-align: center;
+    background-color: rgba(0,0,0,0.4);
+}
+.mouse__cursor {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: #fff;
+    z-index: 1000;
+    pointer-events: none;
+    user-select: none;
+    mix-blend-mode: difference;
+}
+.mouse__info {
+    position: absolute;
+    left: 20px;
+    bottom: 10px;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #fff;
+}
 </code></pre>
                         </div>
                     </div>

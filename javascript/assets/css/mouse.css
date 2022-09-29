@@ -45,6 +45,9 @@ body.img10 {
 body.img11 {
   background: #000 url(../img/effect_bg11@2x.jpg) no-repeat center / cover;
 }
+body.img12 {
+  background: #000 url(../img/effect_bg21@2x.jpg) no-repeat center / cover;
+}
 
 body::after {
   content: "";

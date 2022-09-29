@@ -496,9 +496,17 @@
         });
 
         //클릭해서 속성 찾기
-        searchList.addEventListener("click", (e) => {
-            findProperty(e.target.innerHTML);   //e 안에 있는 텍스트 속성을 타겟해서 매개변수로 잡음
-        })
+        // searchList.addEventListener("click", (e) => {
+        //     findProperty(e.target.innerHTML);   //e 안에 있는 텍스트 속성을 타겟해서 매개변수로 잡음, 클릭한 값을 넘겨줌
+        // });
+        document.querySelectorAll(".search__list span").forEach(span => {
+            span.addEventListener("click", () => {
+                const clickWord = span.innerText;
+                findProperty(clickWord);           //매개변수 활용
+            });
+        });
+
+
         //속성 찾기
         function findProperty(searchData){  //받은 매개변수값을 searchData값에 저장
             const targetData = cssProperty.find((data) => data.name === searchData);

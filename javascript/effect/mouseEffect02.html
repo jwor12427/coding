@@ -10,8 +10,6 @@
         <link rel="stylesheet" href="../assets/css/atom-one-dark.min.css" />
         <style>
             /* mouseType */
-            .mouse__cursor {
-            }
             .mouse__wrap {
                 width: 100%;
                 height: 100vh;
@@ -80,9 +78,23 @@
             .mouse__cursor.active {
                 transform: scale(0);
             }
+            .mouse__cursor.active2 {
+                transform: scale(0);
+            }
+            .mouse__cursor.active3 {
+                transform: scale(0);
+            }
             .mouse__cursor2.active {
                 transform: scale(4);
                 background: rgba(255,166,0,0.6);
+            }
+            .mouse__cursor2.active2{
+                transform: scaleX(3);
+                background: rgba(98, 232, 200, 0.6);
+            }
+            .mouse__cursor2.active3{
+                transform: scaleY(2);
+                background: rgba(165, 117, 249, 0.6);
             }
         </style>
     </head>
@@ -526,20 +538,20 @@ window.addEventListener("mousemove", e => {
                     });
                 });
                 btn.addEventListener("mouseenter", () => {
-                    cursor.classList.add("active");
-                    cursor2.classList.add("active");
+                    cursor.classList.add("active2");
+                    cursor2.classList.add("active2");
                 });
                 btn.addEventListener("mouseleave", () => {
-                    cursor.classList.remove("active");
-                    cursor2.classList.remove("active");
+                    cursor.classList.remove("active2");
+                    cursor2.classList.remove("active2");
                 });
                 header.addEventListener("mouseenter", () => {
-                    cursor.classList.add("active");
-                    cursor2.classList.add("active");
+                    cursor.classList.add("active3");
+                    cursor2.classList.add("active3");
                 });
                 header.addEventListener("mouseleave", () => {
-                    cursor.classList.remove("active");
-                    cursor2.classList.remove("active");
+                    cursor.classList.remove("active3");
+                    cursor2.classList.remove("active3");
                 });
             });
         </script>
