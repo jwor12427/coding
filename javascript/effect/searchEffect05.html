@@ -522,7 +522,7 @@
         //클릭하기
         searchClick.forEach((star,index) => {
             star.addEventListener("click", (e) => {
-                console.log(index)
+                console.log(index)      //dataset안쓰고 하는 방법
                 const target = star.dataset.star;           //daraset을 이용해서 스타값을 가져 올 수 있음, index값을 가져 오는 방법이 있음
                 const target2 = star.textContent.slice(0,1);
                 const filterList = cssProperty.filter(data => data.star == index || data.star >= target2);     //find써도 괜찮음, 콜백

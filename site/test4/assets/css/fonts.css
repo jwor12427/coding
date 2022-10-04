@@ -1,0 +1,28 @@
+@font-face {
+    font-family: 'NanumGothic';
+    font-weight: 700; 
+    font-style: normal; 
+    src: url(https://cdn.jsdelivr.net/gh/webfontworld/naver/NanumGothicEB.woff2) format('woff2');
+    font-display: swap;
+}
+@font-face {
+    font-family: 'NanumGothic';
+    font-weight: 500; 
+    font-style: normal; 
+    src: url(https://cdn.jsdelivr.net/gh/webfontworld/naver/NanumGothicB.woff2) format('woff2');
+    font-display: swap;
+}
+@font-face {
+    font-family: 'NanumGothic';
+    font-weight: 400; 
+    font-style: normal; 
+    src: url(https://cdn.jsdelivr.net/gh/webfontworld/naver/NanumGothic.woff2) format('woff2');
+    font-display: swap;
+}
+@font-face {
+    font-family: 'NanumGothic';
+    font-weight: 300; 
+    font-style: normal; 
+    src: url(https://cdn.jsdelivr.net/gh/webfontworld/naver/NanumGothicL.woff2) format('woff2');
+    font-display: swap;
+}

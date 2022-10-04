@@ -1,0 +1,85 @@
+.banner__inner {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+.b_left {
+    width: 39%;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    padding: 40px;
+    box-sizing: border-box;
+    background-image: url(../img/banner.jpg);
+    box-sizing: border-box;
+    position: relative;
+    background-color: rbga(0,0,0,0.4);
+}
+
+.b_left h3 {
+    font-size: 22px;
+    font-weight: 500;
+    margin-bottom: 34px;
+    color: #fff;
+}
+
+.b_left p {
+    color: #fff;
+    font-weight: 500;
+    margin-bottom: 40px;
+    font-size: 16px;
+    line-height: 1.8;
+}
+.b_left .btn a {
+    color: #fff;
+    font-size: 18px;
+    font-weight: 600;
+    border: 3px solid #fff;
+    padding: 10px 40px;
+    text-align: center;
+    margin: 40px 0;
+}
+.b_right {
+    width: 58%;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    padding: 30px;
+    box-sizing: border-box;
+}
+.b_right h3 {
+    font-size: 22px;
+    font-weight: 500;
+    margin-bottom: 30px;
+}
+.b_right a {
+    border: 2px solid #000;
+    width: 30px;
+    height: 30px;
+    display: inline;
+    float: right;
+    text-align: center;
+}
+.b_desc {
+    display: flex;
+}
+.b_desc ul {
+    width: 50%;
+}
+.b_desc ul:nth-child(1) {
+    border-right: 1px solid #ccc;
+    margin-right: 20px;
+}
+.b_desc ul li {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1; 
+    -webkit-box-orient: vertical;
+    font-size: 17px;
+    margin-left: 5px;
+}
+.b_desc ul em {
+    display: block;
+    color: #666;
+    margin-bottom: 20px;
+    margin-left: 5px;
+}
