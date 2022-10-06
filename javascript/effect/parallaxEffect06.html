@@ -117,16 +117,16 @@
             background-image: url(../assets/img/effect_bg18.jpg);
         }
         .content__item:nth-child(6) .content__item__img{
-            background-image: url(../assets/img/effect_bg17.jpg);
+            background-image: url(../assets/img/effect_bg21.jpg);
         }
         .content__item:nth-child(7) .content__item__img{
-            background-image: url(../assets/img/effect_bg06.jpg);
+            background-image: url(../assets/img/effect_bg26.jpg);
         }
         .content__item:nth-child(8) .content__item__img{
-            background-image: url(../assets/img/effect_bg01.jpg);
+            background-image: url(../assets/img/effect_bg22.jpg);
         }
         .content__item:nth-child(9) .content__item__img{
-            background-image: url(../assets/img/effect_bg15.jpg);
+            background-image: url(../assets/img/effect_bg24.jpg);
         }
         .content__item__desc {
             font-size: 4vw;
@@ -189,7 +189,7 @@
             display: inline-block;
             min-width: 1vw;
         }
-        .split.show span {
+        .split span.show  {
             opacity: 1;
             transform: translateY(0);
         } */
@@ -237,7 +237,70 @@
         .split span:nth-child(42) {transition-delay: 2150ms;}
         .split span:nth-child(43) {transition-delay: 2220ms;} */
 
-        
+        /* 순차적으로 나타나기 */
+        .style1.split span {
+            opacity: 0;
+            transition: all 0.6s ecubic-bezier(0.02, 0.35, 0.55, 1.1);
+            display: inline-block;
+            min-width: 1vw;
+        }
+        .style1.split span.show {
+            opacity: 1;
+        }
+        .style2.split span {
+            opacity: 0;
+            transform: translateY(100px);
+            display: inline-block;
+            transition: all 0.6s ease-in-out;
+            min-width: 1vw;
+        }
+        .style2.split span.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .style3.split span {
+            opacity: 0;
+            transform: translateY(100px) rotate(360deg);
+            display: inline-block;
+            transition: all 0.6s ease-in;
+            min-width: 1vw;
+        }
+        .style3.split span.show {
+            opacity: 1;
+            transform: translateY(0) rotate(0deg);
+        }
+        .style4.split span {
+            opacity: 0;
+            display: inline-block;
+            min-width: 1vw;
+        }
+        .style4.split span.show {
+            animation: wobble 1s 1 ease-in forwards;    /* forwards 다시 돌아가지않고 그상태로 멈추라는 의미 */
+        }
+        @keyframes wobble {
+            0%   {transform: translate3d(0, 0, 0); opacity: 0;}
+            15%  {transform: translate3d(-25%, 0, 0) rotate3d(0, 0, 1, -5deg);}
+            30%  {transform: translate3d(20%, 0, 0) rotate3d(0, 0, 1, 3deg);}
+            45%  {transform: translate3d(-15%, 0, 0) rotate3d(0, 0, 1, -3deg);}
+            60%  {transform: translate3d(10%, 0, 0) rotate3d(0, 0, 1, 2deg);}
+            75%  {transform: translate3d(-5%, 0, 0) rotate3d(0, 0, 1, -1deg);}
+            100% {transform: translate3d(0, 0, 0); opacity: 1;}
+        }
+        .style5.split span {
+            opacity: 0;
+            display: inline-block;
+            min-width: 1vw;
+        }
+        .style5.split span.show {
+            animation: heartBeat 1s 1 ease-in forwards;
+        }
+        @keyframes heartBeat {
+            0% {transform: scale(1); opacity: 0;}
+            14% {transform: scale(1.3);}
+            28% {transform: scale(1);}
+            42% {transform: scale(1.3);}
+            100% {transform: scale(1); opacity: 1;}
+        }
     </style>
 </head>
 <body class="img08">
@@ -271,7 +334,6 @@
     <!-- //parallax__nav -->
 
     
-
     <main id="parallax__cont">
         <div id="contents">
             <section id="section1" class="content__item">
@@ -280,7 +342,7 @@
                 <figure class="content__item__imgWrap">
                     <div class="content__item__img"></div>
                 </figure>
-                <p class="content__item__desc split">인간은 죽음을 두려워한다. 그것은 생을 사랑하기 때문이다.</p>
+                <p class="content__item__desc split style1">인간은 죽음을 두려워한다. 그것은 생을 사랑하기 때문이다.</p>
             </section>
             <!-- //section1 -->
             
@@ -290,7 +352,7 @@
                 <figure class="content__item__imgWrap">
                     <div class="content__item__img"></div>
                 </figure>
-                <p class="content__item__desc split">말을 많이 하는 것과 말을 잘하는 것은 다르다.</p>
+                <p class="content__item__desc split style2">말을 많이 하는 것과 말을 잘하는 것은 다르다.</p>
             </section>
             <!-- //section2 -->
             
@@ -300,7 +362,7 @@
                 <figure class="content__item__imgWrap">
                     <div class="content__item__img"></div>
                 </figure>
-                <p class="content__item__desc split">오늘 할 수 있는 일에 전력을 다하라, 그러면 내일에는 한 걸음 더 진보한다.</p>
+                <p class="content__item__desc split style3">오늘 할 수 있는 일에 전력을 다하라, 그러면 내일에는 한 걸음 더 진보한다.</p>
             </section>
             <!-- //section3 -->
             
@@ -310,7 +372,7 @@
                 <figure class="content__item__imgWrap">
                     <div class="content__item__img"></div>
                 </figure>
-                <p class="content__item__desc split">최대 다수의 최대 행복을 얻는 행동이 최선이다.</p>
+                <p class="content__item__desc split style4">최대 다수의 최대 행복을 얻는 행동이 최선이다.</p>
             </section>
             <!-- //section4 -->
             
@@ -320,7 +382,7 @@
                 <figure class="content__item__imgWrap">
                     <div class="content__item__img"></div>
                 </figure>
-                <p class="content__item__desc split">나는 죽음을 겁내지 않는다. 다만 의무를 다하지 않고 사는 것을 겁낸다.</p>
+                <p class="content__item__desc split style5">나는 죽음을 겁내지 않는다. 다만 의무를 다하지 않고 사는 것을 겁낸다.</p>
             </section>
             <!-- //section5 -->
             

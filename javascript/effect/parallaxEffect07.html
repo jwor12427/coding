@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>패럴랙스 이펙트07</title>
+
+    <link rel="stylesheet" href="../assets/css/parallax.css" />
+    <link rel="stylesheet" href="../assets/css/atom-one-dark.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@900&display=swap" rel="stylesheet">
+    <style>
+        /* parallax__nav */
+        #parallax__nav {
+            position: fixed;
+            right: 20px;
+            top: 20px;
+            z-index: 2000;
+            background-color: rgba(0,0,0,0.4);
+            padding: 20px 30px;
+            border-radius: 50px;
+            transition: top .4s ease;
+        }
+        #parallax__nav li {
+            display: inline;
+            margin: 0 5px;
+        }
+        #parallax__nav li a {
+            display: inline-block;
+            height: 30px;
+            padding: 5px 20px;
+            text-align: center;
+            line-height: 30px;
+        }
+        #parallax__nav li.active a {
+            background-color: #fff;
+            color: #222;
+            border-radius: 20px;
+            box-sizing: content-box;
+        }
+
+        /* parallax__cont */
+        #parallax__cont {
+            max-width: 1600px;
+            width: 98%;
+            margin: 0 auto;
+            /* background-color: rgba(255,255,255,0.1); */
+        }
+
+        .content__item {
+            width: 1000px;
+            max-width: 70vw;
+            margin: 30vw auto;
+            /* background-color: rgba(255,255,255,0.3); */
+            text-align: left;
+            margin-right: 0;
+            position: relative;
+            padding-top: 9vw;
+        }
+        .content__item:nth-child(even) {      /* 2n: n은 변수, even: 짝수만 선택 */
+            margin-left: 0;
+            text-align: right;
+        }
+        .content__item:nth-child(even) .content__item__num {
+            left: auto;  /*left 값 초기화 */
+            right: -5vw;
+        }
+        .content__item__num {
+            font-size: 35vw;
+            font-family: 'Lato';
+            font-weight: 100;
+            position: absolute;
+            left: -5vw;
+            top: -13vw;
+            opacity: 0.07;
+            z-index: -2;
+        }
+        .content__item__title {
+            font-weight: 400;
+            text-transform: capitalize;     /* 첫글자만 대문자 */
+        }
+        .content__item__imgWrap {
+            width: 100%;
+            padding-bottom: 56.25%;
+            position: relative;
+            overflow: hidden;
+            z-index: -1;
+        }
+        .content__item__img {
+            position: absolute;
+            background-image: url(../assets/img/effect_bg19.jpg);
+            background-repeat: no-repeat;
+            background-position: center center;
+            width: 110%;
+            background-size: cover;
+            height: 110%;
+            left: -5%;
+            top: -5%;
+            filter: saturate(0%);
+            /* transition: all 1s; */
+        }
+        .content__item:nth-child(1) .content__item__img{
+            background-image: url(../assets/img/effect_bg13.jpg);
+        }
+        .content__item:nth-child(2) .content__item__img{
+            background-image: url(../assets/img/effect_bg19.jpg);
+        }
+        .content__item:nth-child(3) .content__item__img{
+            background-image: url(../assets/img/effect_bg08.jpg);
+        }
+        .content__item:nth-child(4) .content__item__img{
+            background-image: url(../assets/img/effect_bg09.jpg);
+        }
+        .content__item:nth-child(5) .content__item__img{
+            background-image: url(../assets/img/effect_bg18.jpg);
+        }
+        .content__item:nth-child(6) .content__item__img{
+            background-image: url(../assets/img/effect_bg21.jpg);
+        }
+        .content__item:nth-child(7) .content__item__img{
+            background-image: url(../assets/img/effect_bg26.jpg);
+        }
+        .content__item:nth-child(8) .content__item__img{
+            background-image: url(../assets/img/effect_bg22.jpg);
+        }
+        .content__item:nth-child(9) .content__item__img{
+            background-image: url(../assets/img/effect_bg24.jpg);
+        }
+        .content__item__desc {
+            font-size: 4vw;
+            line-height: 1.4;
+            margin-top: -5vw;
+            margin-left: -4vw;
+            word-break: keep-all;
+        }
+        .content__item:nth-child(even) .content__item__desc {
+            margin-left: auto;
+            margin-right: -4vw;
+        }
+        @media(max-width: 800px) {
+            #parallax__cont {
+                margin-top: 70vw;
+            }
+            #parallax__nav {
+                padding: 10px;
+                right: auto;
+                left: 10px;
+                top: 50%;
+                transform: translateY(-50%);
+                border-radius: 5px;
+                background-color: rgba(0,0,0,0.8);
+            }
+            #parallax__nav li {
+                display: block;
+                margin: 5px;
+            }
+            #parallax__nav li a {
+                font-size: 14px;
+                padding: 5px;
+                border-radius: 5px;
+                height: auto;
+                line-height: 1;
+            }
+            #parallax__nav li.active a {
+                border-radius: 5px;
+            }
+            #parallax__info {
+                left: 10px;
+                bottom: 10px;
+            }
+        }
+        #parallax__info {
+            position: fixed;
+            left: 20px;
+            bottom: 20px;
+            z-index: 2000;
+            background-color: rgba(0,0,0,0.6);
+            color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        /* option */
+        .reveal > div,
+        .reveal > span {
+            opacity: 0;
+        }
+        .reveal.show > div,
+        .reveal.show > span {
+            animation: opacity 1s linear forwards;
+        }
+        .reveal {
+            position: relative;
+        }
+        .reveal::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 0;
+            height: 100%;
+            background: #fff;
+            z-index: 1;
+        }
+        .reveal.reveal-TWO::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 0;
+            height: 100%;
+            z-index: 1;
+            background: #FF577F;
+        }
+        /* 1개 */
+        .reveal.show::before {
+            animation: reveal 1s;
+        }
+        .reveal.reveal-RTL.show::before {
+            animation: reveal-RTL 1s;
+        }
+        .reveal.reveal-TTB.show::before {
+            animation: reveal-TTB 1s;
+        }
+        .reveal.reveal-BTT.show::before {
+            animation: reveal-BTT 1s;
+        }
+        /* 2개 */
+        .reveal.show::after {
+            animation: reveal 1s 0.3s;
+        }
+        .reveal.reveal-RTL.show::after {
+            animation: reveal-RTL 1s 0.3s;
+        }
+        .reveal.reveal-TTB.show::after {
+            animation: reveal-TTB 1s 0.3s;
+        }
+        .reveal.reveal-BTT.show::after {
+            animation: reveal-BTT 1s 0.3s;
+        }
+        @keyframes opacity {
+            0%   {opacity: 0;}
+            60%  {opacity: 0;}
+            70%  {opacity: 1;}
+            100% {opacity: 1;}
+        }
+        @keyframes reveal {
+            0%   {width: 0; left: 0;}
+            50%  {width: 100%; left: 0;}
+            80%  {width: 100%; left: 0;}
+            100% {width: 0; left: 100%;}
+        }
+        @keyframes reveal-RTL {
+            0%   {width: 0; right: 0; left: auto;}
+            50%  {width: 100%; right: 0; left: auto;}
+            80%  {width: 100%; right: 0; left: auto;}
+            100% {width: 0; right: 100%; left: auto;}
+        }
+        @keyframes reveal-TTB {
+            0%   {width: 100%; height: 0;    top: 0;}
+            50%  {width: 100%; height: 100%; top: 0;}
+            80%  {width: 100%; height: 100%; top: 0;}
+            100% {width: 100%; height: 0; top: 100%;}
+        }
+        @keyframes reveal-BTT {
+            0%   {width: 100%; height: 0;    bottom: 0;     top: auto;}
+            50%  {width: 100%; height: 100%; bottom: 0;     top: auto;}
+            80%  {width: 100%; height: 100%; bottom: 0;     top: auto;}
+            100% {width: 100%; height: 0;    bottom: 100%;  top: auto;}
+        }
+    </style>
+</head>
+<body class="img08">
+    <header id="header">
+        <h1><a href="parallaxEffect.html">Javascript Parallax Effect07</a></h1>
+        <p>패럴랙스 이펙트 - 리빌 효과</p>
+        <ul>
+            <li><a href="parallaxEffect01.html">1</a></li>
+            <li><a href="parallaxEffect02.html">2</a></li>
+            <li><a href="parallaxEffect03.html">3</a></li>
+            <li><a href="parallaxEffect04.html">4</a></li>
+            <li><a href="parallaxEffect05.html">5</a></li>
+            <li><a href="parallaxEffect06.html">6</a></li>
+            <li class="active"><a href="parallaxEffect07.html">7</a></li>
+        </ul>
+    </header>
+    <!-- //header -->
+    <nav id="parallax__nav">
+        <ul>
+            <li class="active"><a href="#section1">메뉴1</a></li>
+            <li><a href="#section2">메뉴2</a></li>
+            <li><a href="#section3">메뉴3</a></li>
+            <li><a href="#section4">메뉴4</a></li>
+            <li><a href="#section5">메뉴5</a></li>
+            <li><a href="#section6">메뉴6</a></li>
+            <li><a href="#section7">메뉴7</a></li>
+            <li><a href="#section8">메뉴8</a></li>
+            <li><a href="#section9">메뉴9</a></li>
+        </ul>
+    </nav>
+    <!-- //parallax__nav -->
+
+    
+
+    <main id="parallax__cont">
+        <div id="contents">
+            <section id="section1" class="content__item">
+                <span class="content__item__num">01</span>
+                <h2 class="content__item__title">section1</h2>
+                <figure class="content__item__imgWrap reveal">
+                    <div class="content__item__img"></div>
+                </figure>
+                <p class="content__item__desc reveal" data-delay="500">인간은 죽음을 두려워한다. 그것은 생을 사랑하기 때문이다.</p>
+            </section>
+            <!-- //section1 -->
+            
+            <section id="section2" class="content__item">
+                <span class="content__item__num">02</span>
+                <h2 class="content__item__title">section2</h2>
+                <figure class="content__item__imgWrap reveal reveal-RTL">
+                    <div class="content__item__img"></div>
+                </figure>
+                <p class="content__item__desc reveal reveal-RTL" data-delay="500">말을 많이 하는 것과 말을 잘하는 것은 다르다.</p>
+            </section>
+            <!-- //section2 -->
+            
+            <section id="section3" class="content__item">
+                <span class="content__item__num">03</span>
+                <h2 class="content__item__title">section3</h2>
+                <figure class="content__item__imgWrap reveal reveal-TTB">
+                    <div class="content__item__img"></div>
+                </figure>
+                <p class="content__item__desc reveal reveal-TTB" data-delay="500">오늘 할 수 있는 일에 전력을 다하라, 그러면 내일에는 한 걸음 더 진보한다.</p>
+            </section>
+            <!-- //section3 -->
+            
+            <section id="section4" class="content__item">
+                <span class="content__item__num">04</span>
+                <h2 class="content__item__title">section4</h2>
+                <figure class="content__item__imgWrap reveal reveal-BTT" data-delay="1500">
+                    <div class="content__item__img"></div>
+                </figure>
+                <p class="content__item__desc reveal reveal-BTT">최대 다수의 최대 행복을 얻는 행동이 최선이다.</p>
+            </section>
+            <!-- //section4 -->
+            
+            <section id="section5" class="content__item">
+                <span class="content__item__num">05</span>
+                <h2 class="content__item__title">section5</h2>
+                <figure class="content__item__imgWrap reveal reveal-TWO">
+                    <div class="content__item__img"></div>
+                </figure>
+                <p class="content__item__desc reveal reveal-TWO" data-delay="500">나는 죽음을 겁내지 않는다. 다만 의무를 다하지 않고 사는 것을 겁낸다.</p>
+            </section>
+            <!-- //section5 -->
+            
+            <section id="section6" class="content__item">
+                <span class="content__item__num">06</span>
+                <h2 class="content__item__title">section6</h2>
+                <figure class="content__item__imgWrap reveal reveal-TWO reveal-RTL" data-delay="1500">
+                    <div class="content__item__img"></div>
+                </figure>
+                <p class="content__item__desc reveal reveal-TWO reveal-RTL">모든 날 중 가장 완전히 잃어버린 날은 웃지 않는 날이다.</p>
+            </section>
+            <!-- //section6 -->
+            
+            <section id="section7" class="content__item">
+                <span class="content__item__num">07</span>
+                <h2 class="content__item__title">section7</h2>
+                <figure class="content__item__imgWrap reveal reveal-TWO reveal-TTB">
+                    <div class="content__item__img"></div>
+                </figure>
+                <p class="content__item__desc reveal reveal-TWO reveal-TTB" data-delay="500">열의 없이 성취 된 위업이란 아직 하나도 없다.</p>
+            </section>
+            <!-- //section7 -->
+            
+            <section id="section8" class="content__item">
+                <span class="content__item__num">08</span>
+                <h2 class="content__item__title">section8</h2>
+                <figure class="content__item__imgWrap reveal reveal-TWO reveal-BTT" data-delay="1500">
+                    <div class="content__item__img"></div>
+                </figure>
+                <p class="content__item__desc reveal reveal-TWO reveal-BTT">독수리는 마지막 성공을 거둘 때까지 온 생명을 다한다.</p>
+            </section>
+            <!-- //section8 -->
+            
+            <section id="section9" class="content__item">
+                <span class="content__item__num">09</span>
+                <h2 class="content__item__title">section9</h2>
+                <figure class="content__item__imgWrap reveal reveal-TWO reveal-BTT" >
+                    <div class="content__item__img"></div>
+                </figure>
+                <p class="content__item__desc reveal reveal-TWO reveal-TTB" data-delay="500">행운은 자주 문을 두드리나 미련한 자는 그것을 받아들이지 않는다.</p>
+            </section>
+            <!-- //section9 -->
+        </div>
+    </main>
+    <!-- //main -->
+
+    <!-- <aside id="parallax__info">
+        <div class="scroll">scrollTop : <span>0</span>px</div>
+    </aside> -->
+
+    <footer id="footer">
+        <div class="modal__wrap">
+            <div class="modal__btn">소스 보기</div>
+            <div class="modal__cont">
+                <div class="modal__box">
+                    <div class="title">
+                        <span class="dot" aria-label="true"></span>
+                        <div class="tabs">
+                            <div class="active">
+                                <span class="favicon" aria-label="true">
+                                    <svg
+                                        width="16"
+                                        height="16"
+                                        viewBox="0 0 18 18"
+                                        fill="none"
+                                        aria-hidden="true"
+                                        focusable="false"
+                                    >
+                                        <circle
+                                            cx="9"
+                                            cy="9"
+                                            r="9"
+                                            fill="#B1D7B4"
+                                        ></circle>
+                                        <path
+                                            d="M18 9C18 13.9706 15.4688 3.09375 9 10.125C2.53125 17.1562 0 13.9706 0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9Z"
+                                            fill="#A2B38B"
+                                        ></path>
+                                        <path
+                                            d="M18 9C18 13.9706 14.9062 0.84375 8.29688 6.1875C1.6875 11.5312 0 13.9706 0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9Z"
+                                            fill="#FFB3B3"
+                                        ></path>
+                                    </svg>
+                                </span>
+                                <em>Javascript</em>
+                                <span class="close">
+                                    <svg
+                                        width="16"
+                                        height="16"
+                                        viewBox="0 0 16 16"
+                                        fill="none"
+                                        aria-hidden="true"
+                                        focusable="false"
+                                    >
+                                        <path
+                                            d="M12.5 3.5L3.5 12.5"
+                                            stroke="currentColor"
+                                            stroke-width="1.5"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                        ></path>
+                                        <path
+                                            d="M12.5 12.5L3.5 3.5"
+                                            stroke="currentColor"
+                                            stroke-width="1.5"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                        ></path>
+                                    </svg>
+                                </span>
+                            </div>
+                            <div>
+                                <span class="favicon" aria-label="true">
+                                    <svg
+                                        width="16"
+                                        height="16"
+                                        viewBox="0 0 18 18"
+                                        fill="none"
+                                        aria-hidden="true"
+                                        focusable="false"
+                                    >
+                                        <circle
+                                            cx="9"
+                                            cy="9"
+                                            r="9"
+                                            fill="#7A4495"
+                                        ></circle>
+                                        <path
+                                            d="M18 9C18 13.9706 15.4688 3.09375 9 10.125C2.53125 17.1562 0 13.9706 0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9Z"
+                                            fill="#B270A2"
+                                        ></path>
+                                        <path
+                                            d="M18 9C18 13.9706 14.9062 0.84375 8.29688 6.1875C1.6875 11.5312 0 13.9706 0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9Z"
+                                            fill="#FCE2DB"
+                                        ></path>
+                                    </svg>
+                                </span>
+                                <em>HTML</em>
+                                <span class="close">
+                                    <svg
+                                        width="16"
+                                        height="16"
+                                        viewBox="0 0 16 16"
+                                        fill="none"
+                                        aria-hidden="true"
+                                        focusable="false"
+                                    >
+                                        <path
+                                            d="M12.5 3.5L3.5 12.5"
+                                            stroke="currentColor"
+                                            stroke-width="1.5"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                        ></path>
+                                        <path
+                                            d="M12.5 12.5L3.5 3.5"
+                                            stroke="currentColor"
+                                            stroke-width="1.5"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                        ></path>
+                                    </svg>
+                                </span>
+                            </div>
+                            <div>
+                                <span class="favicon" aria-label="true">
+                                    <svg
+                                        width="16"
+                                        height="16"
+                                        viewBox="0 0 18 18"
+                                        fill="none"
+                                        aria-hidden="true"
+                                        focusable="false"
+                                    >
+                                        <circle
+                                            cx="9"
+                                            cy="9"
+                                            r="9"
+                                            fill="#A66CFF"
+                                        ></circle>
+                                        <path
+                                            d="M18 9C18 13.9706 15.4688 3.09375 9 10.125C2.53125 17.1562 0 13.9706 0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9Z"
+                                            fill="#B1E1FF"
+                                        ></path>
+                                        <path
+                                            d="M18 9C18 13.9706 14.9062 0.84375 8.29688 6.1875C1.6875 11.5312 0 13.9706 0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9Z"
+                                            fill="#9C9EFE"
+                                        ></path>
+                                    </svg>
+                                </span>
+                                <em>CSS</em>
+                                <span class="close">
+                                    <svg
+                                        width="16"
+                                        height="16"
+                                        viewBox="0 0 16 16"
+                                        fill="none"
+                                        aria-hidden="true"
+                                        focusable="false"
+                                    >
+                                        <path
+                                            d="M12.5 3.5L3.5 12.5"
+                                            stroke="currentColor"
+                                            stroke-width="1.5"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                        ></path>
+                                        <path
+                                            d="M12.5 12.5L3.5 3.5"
+                                            stroke="currentColor"
+                                            stroke-width="1.5"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                        ></path>
+                                    </svg>
+                                </span>
+                            </div>
+                        </div>
+                        <span class="plus" aria-label="true">
+                            <svg
+                                width="16"
+                                height="16"
+                                viewBox="0 0 16 16"
+                                fill="none"
+                                aria-hidden="true"
+                                focusable="false"
+                            >
+                                <path
+                                    d="M2.5 8H13.5"
+                                    stroke="currentColor"
+                                    stroke-width="1.5"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                ></path>
+                                <path
+                                    d="M8 2.5V13.5"
+                                    stroke="currentColor"
+                                    stroke-width="1.5"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                ></path>
+                            </svg>
+                        </span>
+                    </div>
+                    <div class="cont">
+                        <div class="active">
+<pre><code>
+</code></pre>
+                        </div>
+                        <div>
+<pre><code>
+</code></pre>
+                        </div>
+                        <div>
+<pre><code>
+</code></pre>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal__close">
+                    <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        fill="none"
+                        aria-hidden="true"
+                        focusable="false"
+                    >
+                        <path
+                            d="M12.5 3.5L3.5 12.5"
+                            stroke="currentColor"
+                            stroke-width="1.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        ></path>
+                        <path
+                            d="M12.5 12.5L3.5 3.5"
+                            stroke="currentColor"
+                            stroke-width="1.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        ></path>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- //footer -->
+
+    <script src="../assets/js/highlight.min.js"></script>
+    <script src="../assets/js/common.js"></script>
+    <script src="../assets/js/gsap.min.js"></script>
+    <script>
+
+        //reveal 클래스 자식에 글씨만 있다면, 가상으로 span태그를 만들어서 넣기!
+        document.querySelectorAll(".content__item__desc.reveal").forEach(text => {
+            spanText = text.innerText;
+            span = "<span>" + spanText + "</span>";
+            text.innerHTML = span;
+        });
+
+        function scroll(){
+            let scrollTop = window.scrollY;
+
+            const reveal = document.querySelectorAll(".reveal");
+            reveal.forEach(el => {
+                let revealOffset = el.offsetTop + el.parentElement.offsetTop;   //부모 박스의 값을 가져와야하고, reveal이 붙은 이미지박스와 부모 박스 간의 간격값도 가져와야함
+                let revealDelay = el.dataset.delay;
+
+
+                // if(scrollTop > revealOffset - window.innerHeight/2){           //reveal이 붙어 있는 곳의 offsetTop값을 구해야함
+                //     // console.log(revealOffset);    
+                //     el.classList.add("show");
+                // }       
+                
+                if(scrollTop >= revealOffset - window.innerHeight){
+                    if(revealDelay == undefined){
+                        el.classList.add("show");
+                    } else {
+                        setTimeout(() => {
+                            el.classList.add("show");
+                        },revealDelay);
+                    }
+                }
+            })
+            requestAnimationFrame(scroll);
+        }
+        scroll();
+    </script>
+</body>
+</html>
