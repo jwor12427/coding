@@ -1,19 +1,19 @@
 const allMusic = [
     {
         name : "1. Mokokong Island",
-        artist : "Lost Ark",
+        artist : "Smilegate RPG - Lost Ark",
         img : "music_bg01",
         audio : "music_ad01"
     },
     {
-        name : "2. 귀엽고 상큼한",
-        artist : "seoul MINA",
+        name : "2. Enchanted Museum",
+        artist : "Smilegate RPG - Lost Ark",
         img : "music_bg02",
         audio : "music_ad02"
     },
     {
-        name : "3. 잔잔하고 감성적인",
-        artist : "HaveMusick",
+        name : "3. Mucura Forest",
+        artist : "Smilegate RPG - Lost Ark",
         img : "music_bg03",
         audio : "music_ad03"
     },
@@ -30,8 +30,8 @@ const allMusic = [
         audio : "music_ad05"
     },
     {
-        name : "6. 기분좋은 잔잔한",
-        artist : "CircleS",
+        name : "6. Splendid Circus",
+        artist : "Smilegate RPG - Lost Ark",
         img : "music_bg06",
         audio : "music_ad06"
     },
@@ -43,19 +43,19 @@ const allMusic = [
     },
     {
         name : "8. 꿈꾸는 추억의 섬 - 기묘한 박물관",
-        artist : "Lost Ark",
+        artist : "Smilegate RPG - Lost Ark",
         img : "music_bg08",
         audio : "music_ad08"
     },
     {
         name : "9. Run Mokokos",
-        artist : "Lost Ark",
+        artist : "Smilegate RPG - Lost Ark",
         img : "music_bg09",
         audio : "music_ad09"
     },
     {
         name : "10. BabaYaba The Wicked",
-        artist : "Lost Ark",
+        artist : "Smilegate RPG - Lost Ark",
         img : "music_bg10",
         audio : "music_ad10"
     },
