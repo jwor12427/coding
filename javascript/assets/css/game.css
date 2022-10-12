@@ -1,0 +1,106 @@
+@import url('https://cdn.jsdelivr.net/npm/galmuri@latest/dist/galmuri.css');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Galmuri9';
+    cursor: none;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+
+}
+
+#header {
+    position: fixed;
+    width: 100%;
+    background: #182747;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px;
+}
+
+#header h1 {
+    font-size: 20px;
+    color: #fff;
+    padding: 5px 0;
+}
+#header .time {
+    color: #fff;
+}
+
+#footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    text-align: center;
+    width: 100%;
+    background: #182747;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 10px;
+    color: #fff;
+}
+
+.icon1 {
+    position: absolute;
+    left: 100px;
+    top: 100px;
+    width: 54px;
+}
+.icon2 {
+    position: absolute;
+    left: 100px;
+    top: 200px;
+    width: 54px;
+}
+.icon3 {
+    position: absolute;
+    left: 100px;
+    top: 300px;
+    width: 54px;
+}
+.icon4 {
+    position: absolute;
+    left: 100px;
+    top: 400px;
+    width: 54px;
+}
+.icon5 {
+    position: absolute;
+    left: 100px;
+    top: 500px;
+    width: 54px;
+}
+.icon6 {
+    position: absolute;
+    left: 100px;
+    top: 600px;
+    width: 54px;
+}
+.icon_box img {
+    width: 54px;
+}
+.icon_box span {
+    display: inline-block;
+    background: rgba(0,0,0,0.7);
+    font-size: 14px;
+    padding: 3px 5px;
+    white-space: nowrap;
+    color: #fff;
+}
+.mouse__cursor {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 20px;
+    height: 34px;
+    user-select: none;
+    pointer-events: none;
+    z-index: 9999;
+}
