@@ -23,7 +23,7 @@
         <div class="icon_box">
             <div class="icon1">
                 <img src="../assets/img/game_icon01.png" alt="뮤직듣기">
-                <span>뮤직듣기</span>
+                <span>음악재생</span>
             </div>
             <div class="icon2">
                 <img src="../assets/img/game_icon02.png" alt="뮤직듣기">
@@ -95,7 +95,7 @@
             </div>
             <div class="music__footer">
                 <div class="music__list">
-                    <h3><span class="list"></span>뮤직 리스트</h3>
+                    <h3><span class="list"></span>뮤직 리스트 <a href="#" class="close"></a></h3>
                     <ul>
                         <!-- <li>
                             <strong>제목</strong>
@@ -154,7 +154,7 @@
             if(Sec < 10) Sec = `0${Sec}`;
             let Min = now.getMinutes();
             if(Min < 10) Min = `0${Min}`;
-            let Hor = Math.floor(now.getHours() - 12);
+            let Hor = Math.floor(now.getHours() % 12);
             if(Hor < 10) Hor = `0${Hor}`
             let HorA = now.getHours();
             let Hor1 = HorA > 12 ? `오후 ` : `오전 `;
@@ -195,6 +195,20 @@
         window.addEventListener("mousemove", e => {
             gsap.to(cursor, {duration: 0.1, left: e.pageX -5, top: e.pageY -5});
         })
+
+        //뮤직 리스트 열고 닫기
+        const colse = document.querySelector(".music__list .close");
+        const listOpen = document.querySelector(".music__control #control-list");
+        const list = document.querySelector(".music__list");
+
+        listOpen.addEventListener("click", () => {
+            list.classList.add("open");
+        });
+        colse.addEventListener("click", () => {
+            list.classList.remove("open");
+        });
+
+
     </script>
 </body>
 </html>
