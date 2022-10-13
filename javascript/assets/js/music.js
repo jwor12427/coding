@@ -1,7 +1,7 @@
 const allMusic = [
     {
-        name : "1. Mokokong Island",
-        artist : "Smilegate RPG - Lost Ark",
+        name : "1. 귀여운 브이로그",
+        artist : "NATONI",
         img : "music_bg01",
         audio : "music_ad01"
     },
@@ -18,8 +18,8 @@ const allMusic = [
         audio : "music_ad03"
     },
     {
-        name : "4. 귀여운 브이로그",
-        artist : "NATONI",
+        name : "4. Mokokong Island",
+        artist : "Smilegate RPG - Lost Ark",
         img : "music_bg04",
         audio : "music_ad04"
     },
