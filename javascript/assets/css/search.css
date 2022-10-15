@@ -79,7 +79,7 @@ li {
     text-align: center;
 }
 
-.search_wrap > h1 {
+.search_wrap > h1 a {
     font-family: 'Tmon';
     color: var(--htmlColor);
     font-size: 6vw;

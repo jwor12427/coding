@@ -283,3 +283,11 @@ window.addEventListener("load", () => {
     loadMusic(musicIndex);       //음악 재생   
     playListMusic();            //리스트 초기화
 })
+
+
+//볼륨 조절
+const audioVolume = document.querySelector("#volume-control");
+audioVolume.value = 50;
+audioVolume.oninput = function(){
+    musicAudio.volume = audioVolume.value / 100;
+}

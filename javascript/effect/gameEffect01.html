@@ -22,7 +22,7 @@
         </div>
         <div class="icon_box">
             <div class="icon1">
-                <img src="../assets/img/game_icon01.png" alt="뮤직듣기">
+                <img src="../assets/img/game_icon01.png" alt="음악재생">
                 <span>음악재생</span>
             </div>
             <div class="icon2">
@@ -49,6 +49,41 @@
     </main> 
     <!-- //main -->
     <footer id="footer">
+        <div class="modal__wrap">
+            <div class="modal__btn">소스 보기</div>
+            <div class="modal__cont">
+                <div class="modal__box">
+                    <div class="cont">
+                        <iframe width="100%" height="100%" src="https://github1s.com/jwor12427/coding/blob/HEAD/javascript/effect/gameEffect01.html"></iframe>
+                    </div>
+                </div>
+                <div class="modal__close">
+                    <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        fill="none"
+                        aria-hidden="true"
+                        focusable="false"
+                    >
+                        <path
+                            d="M12.5 3.5L3.5 12.5"
+                            stroke="currentColor"
+                            stroke-width="1.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        ></path>
+                        <path
+                            d="M12.5 12.5L3.5 3.5"
+                            stroke="currentColor"
+                            stroke-width="1.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        ></path>
+                    </svg>
+                </div>
+            </div>
+        </div>
         <div class="agent"></div>
     </footer>
     <!-- //footer -->
@@ -69,6 +104,7 @@
                     <div class="title">
                         <h3>Losk Ark | OST - Mokokong Island</h3>
                         <p>Losk Ark</p>
+                        <input type="range" id="volume-control" min="0" max="100">
                     </div>
                 </div>
                 <div class="music__control">
@@ -207,6 +243,22 @@
         colse.addEventListener("click", () => {
             list.classList.remove("open");
         });
+
+        //모달
+        const modalBtn = document.querySelector(".modal__btn");
+        const modalCont = document.querySelector(".modal__cont");
+        const modalClose = document.querySelector(".modal__close");
+
+        modalBtn.addEventListener("click", () => {
+            modalCont.classList.add("show");
+            modalCont.classList.remove("hide");
+            musicWrap.style.display = "none";
+        });
+        modalClose.addEventListener("click", () => {
+            modalCont.classList.add("hide");
+            musicWrap.style.display = "block";
+        });
+
 
 
     </script>
