@@ -50,7 +50,10 @@
     <!-- //main -->
     <footer id="footer">
         <div class="modal__wrap">
-            <div class="modal__btn">소스 보기</div>
+            <div class="modal__btn">
+                <img src="../assets/img/code_btn.svg" alt="">
+                <span>소스 보기</span>
+            </div>
             <div class="modal__cont">
                 <div class="modal__box">
                     <div class="cont">
@@ -152,17 +155,17 @@
     <script>
         $(".icon1").draggable({
             drag: function() {
-                $(".mouse__cursor img").attr("src", "../assets/img/game_mouse02.svg")
+                $(".mouse__cursor img").attr("src", "../assets/img/game_mouse.svg")
             }
         }); 
         $(".icon2").draggable({
             drag: function() {
-                $(".mouse__cursor img").attr("src", "../assets/img/game_mouse03.svg")
+                $(".mouse__cursor img").attr("src", "../assets/img/game_mouse02.svg")
             }
         }); 
         $(".icon3").draggable({
             drag: function() {
-                $(".mouse__cursor img").attr("src", "../assets/img/game_mouse.svg")
+                $(".mouse__cursor img").attr("src", "../assets/img/game_mouse03.svg")
             }
         }); 
         $(".icon4").draggable({
@@ -181,7 +184,7 @@
             }
         }); 
         $(".music__wrap").draggable();
-
+        $(".modal__btn").draggable();
         //현재시간 표시
         function printTime(){
             const clock = document.querySelector(".time");

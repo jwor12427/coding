@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>슬라이드 이펙트</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+
+</head>
+<body>
+    <header id="header">
+        <h1><a href="../index.html">슬라이드 이펙트</a></h1>
+        <nav class="header_nav">
+
+        </nav>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">스크립트를 이용한 슬라이드 효과 만들기 05</h2>
+            <p class="t_desc2">
+                버튼과 닷메뉴를 이용한 슬라이드를 만들어 봅시다~
+            </p>
+
+            
+            <div class="t_iframe" style="min-height: 1000px; padding-top: 0;">
+                <iframe src="https://jwor12427.github.io/coding/javascript/effect/sliderEffect05.html"></iframe>
+            </div>
+
+            <div class="t_link">
+                <a href="https://github.com/jwor12427/coding/blob/main/javascript/effect/sliderEffect05.html" target="_blank">원본 소스 보기</a>
+            </div>
+
+            <h3 class="t_tit2">CSS</h3>
+            <p class="t_desc">
+                
+            </p>
+            <div class="t_code">
+<pre><code>.slider__dot {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 20px;
+}
+.slider__dot .dot {
+    width: 20px;
+    height: 20px;
+    background: rgba(0,0,0,0.4);
+    display: inline-block;
+    border-radius: 50%;
+    text-indent: -9999px;
+    transition: all 0.3s;
+    margin: 2px;
+}
+.slider__dot .dot.active {
+    background: rgba(255,255,255,0.9);
+}
+</code></pre>
+            </div>
+            <br>
+            <p class="t_desc">
+                CSS로 닷메뉴를 만들어 줍니다~
+            </p>
+            <h3 class="t_tit2">JavaScript</h3>
+            <div class="t_code">
+<pre><code>const sliderWrap = document.querySelector(".slider__wrap");
+const sliderImg = document.querySelector(".slider__img");           //보여지는 영역
+const sliderInner = document.querySelector(".slider__inner");       //움직이는 영역
+const slider = document.querySelectorAll(".slider");                //각각 이미지
+const sliderDot = document.querySelector(".slider__dot");          //슬라이드 닷메뉴
+
+
+let currentIndex = 0;                //현재 이미지
+let sliderCount = slider.length;    //이미지 갯수
+let sliderWidth = sliderImg.offsetWidth;    //이미지 가로값
+let dotIndex = "";
+
+//이미지 갯수 만큼 닷 메뉴 나오게
+function init(){
+    slider.forEach(() => dotIndex += "&lt;a href='#' class='dot'>이미지1&lt;/a>");
+    sliderDot.innerHTML = dotIndex;
+
+    //첫 번째 닷 버튼한테 활성화 표시(active)
+    sliderDot.firstChild.classList.add("active");
+}
+//슬라이드 번호에 맞게 이미지 이동
+function gotoSlider(num){
+    sliderInner.style.transition = "all 400ms";
+    sliderInner.style.transform = "translateX("+ -sliderWidth * num +"px)";
+    currentIndex = num;
+
+    //두번째 이미디 --> 두번쨰 닷 클래스 추가
+    //1. 닷 메뉴 클래스 모두 삭제
+    //2. 해당 이미지, 해당 닷 메뉴 클래스 추가
+    let dotActive = document.querySelectorAll(".slider__dot .dot");
+    dotActive.forEach(el => el.classList.remove("active"));
+    dotActive[num].classList.add("active");
+}
+init();
+
+//버튼 클릭했을 때
+document.querySelectorAll(".slider__btn a").forEach((btn, index) => {
+    btn.addEventListener("click", () => {
+        let prevIndex = (currentIndex + (sliderCount - 1)) % sliderCount;
+        let nextIndex = (currentIndex + 1) % sliderCount;
+
+        if(btn.classList.contains("prev")){
+            gotoSlider(prevIndex);
+        } else {
+            gotoSlider(nextIndex);
+        }
+    });
+})
+
+//닷 버튼 클릭 했을 때
+document.querySelectorAll(".slider__dot .dot").forEach((dot, index) => {
+    dot.addEventListener("click", () => {
+        gotoSlider(index);
+    });
+});
+</code></pre>
+            </div>
+            <br>
+
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:jwor124@naver.com">jwor124@naver.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+   
+</body>
+</html>

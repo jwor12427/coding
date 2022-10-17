@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>퀴즈 이펙트</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+
+</head>
+<body>
+    <header id="header">
+        <h1><a href="../index.html">서치 이펙트</a></h1>
+        <nav class="header_nav">
+
+        </nav>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">스크립트를 이용한 서치효과 만들기 06</h2>
+            <p class="t_desc2">
+                스크립트를 이용하여 CSS 태그를 검색하는 효과를 만들 수 있습니다.
+            </p>
+
+            
+            <div class="t_iframe" style="min-height: 1000px; padding-top: 0;">
+                <iframe src="https://jwor12427.github.io/coding/javascript/effect/searchEffect06.html"></iframe>
+            </div>
+
+            <div class="t_link">
+                <a href="https://github.com/jwor12427/coding/blob/main/javascript/effect/searchEffect06.html" target="_blank">원본 소스 보기</a>
+            </div>
+
+            <h3 class="t_tit2">Script</h3>
+            <div class="t_code">
+<pre><code>const cssList = document.querySelector(".search__list .line");
+let cssProp = [];
+//데이터 출력하기
+const updateList = () => {
+
+    let listCSS = "";
+
+    cssProperty.forEach((data, index) => {
+        listCSS += `&lt;li> ${data.num}. ${data.name} : ${data.desc} &lt;/li>`;
+        cssProp.push(`&lt;li>${data.num}. ${data.name} : ${data.desc}&lt;/li>`);
+    });
+    cssList.innerHTML = listCSS;
+
+}
+updateList();
+
+//반대로 정렬 클릭
+document.querySelector(".btn1").addEventListener("click", () => {
+    cssProperty.reverse();
+    updateList();
+});
+
+//오름차순 정렬 클릭
+document.querySelector(".btn2").addEventListener("click", () => {
+    cssProperty.sort((a,b) => {
+        return a.num - b.num;
+    });
+    updateList();
+});
+
+//내림차순 정렬 클릭
+document.querySelector(".btn3").addEventListener("click", () => {
+    cssProperty.sort((a,b) => {
+        return b.num - a.num;
+    });
+    updateList();
+});
+
+// 알파벳(a-z) 정렬
+function sortAlphabet() {
+    cssProperty.sort(function (a, b) {
+        if (a.name > b.name) return 1;
+        else if (a.name &lt; b.name) return -1;
+        else return 0;
+    });
+    updateList();
+}
+// 알파벳(z-a) 정렬
+function sortAlphabetZ() {
+    cssProperty.sort(function (a, b) {
+        if (a.name &lt; b.name) return 1;
+        else if (a.name > b.name) return -1;
+        else return 0;
+    });
+    updateList();
+}
+// 알파벳(a-z) 정렬
+document.querySelector(".btn4").addEventListener("click", () => {
+    sortAlphabet();
+});
+// 알파벳(z-a) 정렬
+document.querySelector(".btn5").addEventListener("click", () => {
+    sortAlphabetZ();
+});
+
+//피셔 에이츠 알고리즘
+
+document.querySelector(".btn6").addEventListener("click", (e) => {
+
+function shuffle(data){
+    for(let i=data.length-1; i>=0; i--){
+        const randomIndex = Math.floor(Math.random() * (i + 1));
+        // console.log(randomIndex)
+        [data[i], data[randomIndex]] = [data[randomIndex], data[i]];    //중복되는걸 방지 - 배열구조분해할당
+        cssList.innerHTML += data[i];
+    }
+}
+    e.preventDefault();
+    cssList.innerHTML = ""; //클릭하면 비워줌
+    shuffle(cssProp)       // 섞어서 데이터 전달
+})
+</code></pre>
+            </div>
+
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:jwor124@naver.com">jwor124@naver.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+   
+</body>
+</html>

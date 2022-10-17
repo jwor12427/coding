@@ -1,9 +1,9 @@
-@import url('https://cdn.jsdelivr.net/npm/galmuri@latest/dist/galmuri.css');
+@import url("https://cdn.jsdelivr.net/npm/galmuri@latest/dist/galmuri.css");
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Galmuri9';
+    font-family: "Galmuri9";
     cursor: none;
 }
 
@@ -11,7 +11,6 @@ body {
     width: 100%;
     height: 100vh;
     overflow: hidden;
-
 }
 
 #header {
@@ -88,7 +87,7 @@ body {
 }
 .icon_box span {
     display: inline-block;
-    background: rgba(0,0,0,0.7);
+    background: rgba(0, 0, 0, 0.7);
     font-size: 14px;
     padding: 3px 5px;
     white-space: nowrap;
@@ -107,22 +106,23 @@ body {
 
 /* 모달 */
 .modal__btn {
-    color: #fff;
-    border: 1px solid #fff;
-    border-radius: 50px;
-    display: inline-block;
-    padding: 10px 20px;
+    width: 130px;
+    height: 130px;
     position: absolute;
     right: 20px;
     bottom: 40px;
-    cursor: pointer;
-    transition: background-color 0.3s, color 0.3s;
-  }
-  .modal__btn:hover {
-    background-color: rgb(200, 203, 203);
-    color: rgb(64, 67, 69);
-  }
-  .modal__cont {
+}
+.modal__btn img {
+    width: 100%;
+}
+.modal__btn span {
+    white-space: nowrap;
+    font-size: 14px;
+    padding: 3px 5px;
+    display: inline-block;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+.modal__cont {
     width: 100%;
     height: 100vh;
     background-color: rgba(0, 0, 0, 0.539);
@@ -134,17 +134,17 @@ body {
     justify-content: center;
     align-items: center;
     transform: scale(0);
-  }
-  .modal__box {
-    width: 70%;
-    height: 70vh;
+}
+.modal__box {
+    width: 90%;
+    height: 80vh;
     /* overflow-y: auto; */
     border-radius: 0.6rem;
     box-shadow: 0 10px 20px -5px hsl(180deg 2% 10%);
     transform: scale(0);
     /* overflow: hidden; */
-  }
-  .modal__box .title {
+}
+.modal__box .title {
     padding-inline: 1rem;
     cursor: grab;
     background-color: hsl(180deg 4% 16%);
@@ -154,8 +154,8 @@ body {
     height: 50px;
     border-top-left-radius: 0.5rem;
     border-top-right-radius: 0.5rem;
-  }
-  .modal__box .title .dot {
+}
+.modal__box .title .dot {
     width: 15px;
     height: 15px;
     background-color: rgb(249, 225, 47);
@@ -163,8 +163,8 @@ body {
     border-radius: 50%;
     position: relative;
     margin-left: 30px;
-  }
-  .modal__box .title .dot::before {
+}
+.modal__box .title .dot::before {
     content: "";
     position: absolute;
     left: 25px;
@@ -173,8 +173,8 @@ body {
     height: 15px;
     background-color: rgb(81, 249, 47);
     border-radius: 50%;
-  }
-  .modal__box .title .dot::after {
+}
+.modal__box .title .dot::after {
     content: "";
     position: absolute;
     right: 25px;
@@ -183,17 +183,17 @@ body {
     height: 15px;
     background-color: rgb(237, 73, 36);
     border-radius: 50%;
-  }
-  .modal__box .title .plus {
+}
+.modal__box .title .plus {
     padding: 0.5rem 0.5rem 0.3rem 0.5rem;
     background: hsl(22deg 3% 24%);
     border-radius: 0.5rem;
-  }
-  .modal__box .title .tabs {
+}
+.modal__box .title .tabs {
     display: flex;
     margin-left: 50px;
-  }
-  .modal__box .title .tabs > div {
+}
+.modal__box .title .tabs > div {
     color: hsl(194deg 26% 60%);
     background-color: hsl(22deg 3% 24%);
     padding: 0.35rem 0.8rem 0.25rem 0.8rem;
@@ -203,35 +203,35 @@ body {
     border-radius: 0.3rem;
     text-transform: uppercase;
     cursor: pointer;
-  }
-  .modal__box .title .tabs > div.active {
+}
+.modal__box .title .tabs > div.active {
     background-color: rgb(90, 87, 84);
-  }
-  .modal__box .title .tabs > div em {
+}
+.modal__box .title .tabs > div em {
     font-style: normal;
-  }
-  .modal__box .title .tabs > div .favicon {
+}
+.modal__box .title .tabs > div .favicon {
     margin-right: 0.4rem;
     margin-top: 0.2rem;
-  }
-  .modal__box .title .tabs > div .close {
+}
+.modal__box .title .tabs > div .close {
     margin-left: 3rem;
-  }
-  .modal__box .cont {
+}
+.modal__box .cont {
     background-color: #282c34;
     height: 100%;
     border-bottom-left-radius: 0.5rem;
     border-bottom-right-radius: 0.5rem;
     overflow-y: auto;
-  }
-  .modal__box .cont > div {
+}
+.modal__box .cont > div {
     display: none;
-  }
-  .modal__box .cont > div.active {
+}
+.modal__box .cont > div.active {
     display: block;
     height: 100%;
-  }
-  .modal__close {
+}
+.modal__close {
     position: absolute;
     right: 20px;
     top: 20px;
@@ -240,87 +240,87 @@ body {
     border-radius: 5px;
     box-shadow: 0 5px 7px -5px rgba(25, 26, 26, 0.947);
     transition: all 0.3s;
-  }
-  .modal__close:hover {
+}
+.modal__close:hover {
     background-color: rgb(90, 87, 84);
-  }
-  .modal__close svg {
+}
+.modal__close svg {
     color: #fff;
-  }
-  /* 모달 애니메이션 */
-  .modal__cont.show {
+}
+/* 모달 애니메이션 */
+.modal__cont.show {
     /* 전체 배경 */
     animation: foldOut 0.5s ease forwards;
-  }
-  .modal__cont.show.hide {
+}
+.modal__cont.show.hide {
     /* 스크립트 박스 */
     animation: foldIn 0.3s 0.5s ease backwards;
-  }
-  .modal__cont.show .modal__close {
+}
+.modal__cont.show .modal__close {
     /* 닫기 버튼 */
     animation: opacityOut 0.5s 1s ease forwards;
     opacity: 0;
-  }
-  .modal__cont.show .modal__box {
+}
+.modal__cont.show .modal__box {
     animation: zoomOut 0.5s 1s ease forwards; /* 뒤에 있는 초는 딜레이를 뜻함 */
-  }
-  .modal__cont.show.hide .modal__box {
+}
+.modal__cont.show.hide .modal__box {
     animation: zoomIn 0.5s ease forwards;
-  }
-  .modal__cont.show.hide .modal__close {
+}
+.modal__cont.show.hide .modal__close {
     animation: opacityIn 0.5s ease forwards;
-  }
-  @keyframes foldOut {
+}
+@keyframes foldOut {
     0% {
-      transform: scaleX(0.001) scaleY(0);
+        transform: scaleX(0.001) scaleY(0);
     }
     50% {
-      transform: scaleX(0.001) scaleY(1);
+        transform: scaleX(0.001) scaleY(1);
     }
     100% {
-      transform: scaleX(1) scaleY(1);
+        transform: scaleX(1) scaleY(1);
     }
-  }
-  @keyframes foldIn {
+}
+@keyframes foldIn {
     0% {
-      transform: scaleX(1) scaleY(1);
+        transform: scaleX(1) scaleY(1);
     }
     50% {
-      transform: scaleX(0.001) scaleY(1);
+        transform: scaleX(0.001) scaleY(1);
     }
     100% {
-      transform: scaleX(0.001) scaleY(0);
+        transform: scaleX(0.001) scaleY(0);
     }
-  }
-  @keyframes zoomOut {
+}
+@keyframes zoomOut {
     0% {
-      transform: scale(0);
+        transform: scale(0);
     }
     100% {
-      transform: scale(1);
+        transform: scale(1);
     }
-  }
-  @keyframes zoomIn {
+}
+@keyframes zoomIn {
     0% {
-      transform: scale(1);
+        transform: scale(1);
     }
     100% {
-      transform: scale(0);
+        transform: scale(0);
     }
-  }
-  @keyframes opacityOut {
+}
+@keyframes opacityOut {
     0% {
-      opacity: 0;
+        opacity: 0;
     }
     100% {
-      opacity: 1;
+        opacity: 1;
     }
-  }
-  @keyframes opacityIn {
+}
+@keyframes opacityIn {
     0% {
-      opacity: 1;
+        opacity: 1;
     }
     100% {
-      opacity: 0;
+        opacity: 0;
     }
-  }
+}

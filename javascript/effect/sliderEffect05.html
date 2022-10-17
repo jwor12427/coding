@@ -228,7 +228,7 @@ let dotIndex = "";
 
 //이미지 갯수 만큼 닷 메뉴 나오게
 function init(){
-    slider.forEach(() => dotIndex += "<a href='#' class='dot'>이미지1</a>");
+    slider.forEach(() => dotIndex += "&lt;a href='#' class='dot'>이미지1&lt;/a>");
     sliderDot.innerHTML = dotIndex;
 
     //첫 번째 닷 버튼한테 활성화 표시(active)

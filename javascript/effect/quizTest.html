@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            margin: 0 auto;
+            padding: 120px; 
+            background: #000;
+        }
+
+        .music__inner {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            max-width: 371px;
+            padding: 0 5px;
+            margin-top: 40px;
+            border-radius: 20px;
+            color: #fff;
+            font-weight: 100;
+            box-shadow: 0px 0px 70px 0px #274684;
+            background: #071739;
+            overflow: hidden;
+        }
+        .music__contents {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            padding: 30px 0px 20px 0px;
+            border-radius: 20px;
+            color: #071739;
+            background-color: #fff;
+        }
+        .music__contents .img {
+            position: relative;
+            margin: 0 auto;
+            width: 270px;
+            height: 200px;
+            overflow: hidden;
+            border-radius: 20px;
+            box-shadow: 0px 10px 40px 0px rgb(39 70 132 / 70%);
+        }
+        .music__contents .img img {
+            width: 100%;
+        }
+        .music__contents .music__info {
+            width: 64%;
+        }
+        .music__view .title h3 {
+            margin-top: 30px;
+            font-size: 22px;
+        }
+        .music__view .title p {
+            color: #709fdc;
+        }
+        .music__control {
+            width: 100%;
+            height: 100px;
+            padding-top: 20px;
+        }
+        .music__info .music__control .progress {
+            position: relative;
+            margin: 0 auto;
+            width: 240px;
+            height: 5px;
+            background: #709fdc;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .music__info .music__control .progress .bar {
+            position: relative;
+            z-index: 2;
+            width: 0;
+            height: 5px;
+            border-radius: 5px;
+            background: #071739;
+        }
+        .music__control .progress .timer {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+            width: 240px;
+        }
+        .music__control .control {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px 0; 
+            margin-top: 30px;
+            box-sizing: border-box;
+        }
+        .music__info .control .play {
+            background: url(../assets/img/music__icon.svg) no-repeat;
+            width: 25px;
+            height: 25px;
+        }
+        .music__info .control .play:hover {
+
+        }
+        .music__info .control .repeat {
+            background: url(../assets/img/music__icon.svg) no-repeat;
+            width: 25px;
+            height: 25px;
+            background-position: -100px;
+        }
+        .music__info .control .prev {
+            background: url(../assets/img/music__icon.svg) no-repeat;
+            width: 25px;
+            height: 25px;
+            background-position: -75px;
+        }
+        .music__info .control .next {
+            background: url(../assets/img/music__icon.svg) no-repeat;
+            width: 25px;
+            height: 25px;
+            background-position: -50px;
+        }
+        .music__info .control .list {
+            background: url(../assets/img/music__icon.svg) no-repeat;
+            width: 25px;
+            height: 25px;
+            background-position: -175px;
+        }
+        .music__footer {
+            width: 96%;
+            padding: 10px;
+            max-height: 180px;
+            overflow-y: scroll;
+        }
+        
+        .music__list {
+            padding: 20px;
+        }
+        .music__list h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            position: relative;
+        }
+        .music__list h3 .list {
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            background-position: -142px;
+            margin-right: 5px;
+        }
+        .music__list h3 .close {
+            position: absolute;
+            right: 0;
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            background-position: -190px;
+            background-size: 216px;
+            margin-right: 5px;
+        }
+        .music__list li {
+            position: relative;
+            margin-bottom: 10px;
+            border-radius: calc( 20px - 10px);
+            border: 1px solid transparent;
+            transition: 0.3s;
+            cursor: pointer;
+            list-style: none;
+            padding: 5px;
+        }
+        .music__list li:hover {
+            background: #274684;
+            border-color: #274684;
+        }
+        .music__list li.playing {
+            background: #274684;
+            box-shadow: 0px 0px 15px 0px #274684;
+        }
+        .music__list li strong {
+            display: inline-block;
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        .music__list li em {
+            display: block;
+            font-style: normal;
+        }
+        .music__list li span {
+            font-size: 14px;
+            display: inline;
+            position: absolute;
+            right: 0;
+            top: 40px;
+        }
+        .music__footer::-webkit-scrollbar {
+            width: 5px;
+        }
+
+        .music__footer::-webkit-scrollbar-thumb {
+            background: #fff;
+            border-radius: 5px;
+        }
+
+        .music__footerl::-webkit-scrollbar-track {
+            background: #071739;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="music__wrap">
+        <div class="music__inner">
+            <div class="music__contents">
+                <div class="img">
+                    <img src="../assets/img/music_bg11.png" alt="">
+                </div>
+                <div class="music__info">
+                    <div class="music__view">
+                        <div class="title">
+                            <h3>Losk Ark | OST - Mokokong Island</h3>
+                            <p>Losk Ark</p>
+                        </div>
+                    </div>
+                    <div class="music__control">
+                        <div class="progress">
+                            <div class="bar">
+                                <audio id="main-audio" src="../assets/audio/music_ad01.mp3"></audio>
+                            </div>
+                            <div class="timer">
+                                <span class="current">0:00</span>
+                                <span class="duration">4:00</span>
+                            </div>
+                        </div>
+                        <div class="control">
+                            <i title="전체 반복" class="repeat" id="control-repeat"></i>
+                            <!-- <i title="한곡 반복" class="repeat_one"></i>
+                            <i title="랜덤 재생" class="shuffle"></i> -->
+                            <i title="이전곡 재생" class="prev" id="control-prev"></i>
+                            <i title="재생" class="play" id="control-play"></i>
+                            <!-- <i title="정지" class="stop"></i> -->
+                            <i title="다음곡 재생" class="next" id="control-next"></i>
+                            <i title="재생 목록" class="list" id="control-list"></i>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            <div class="music__footer">
+                <div class="music__list">
+                    <h3><span class="list"></span>뮤직 리스트 <a href="#" class="close"></a></h3>
+                    <ul>
+                        <li>
+                            <strong>제목</strong>
+                            <em>아티스트</em>
+                            <span>재생시간</span>
+                        </li>
+                        <li>
+                            <strong>제목</strong>
+                            <em>아티스트</em>
+                            <span>재생시간</span>
+                        </li>
+                        <li>
+                            <strong>제목</strong>
+                            <em>아티스트</em>
+                            <span>재생시간</span>
+                        </li>
+                        <li>
+                            <strong>제목</strong>
+                            <em>아티스트</em>
+                            <span>재생시간</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
