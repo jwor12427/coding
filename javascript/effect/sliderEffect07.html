@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>슬라이드 이펙트07</title>
+
+    <link rel="stylesheet" href="../assets/css/slider.css">
+    <link rel="stylesheet" href="../assets/css/atom-one-dark.min.css">
+    <style>
+        /* slider */
+        .slider__wrap {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .slider__img {
+            /* 이미지 보이는 영역 */
+            position: relative;
+            width: 800px;
+            height: 480px;
+            /* overflow: hidden; */
+        }
+        .slider__inner {
+            /* 이미지를 감싸고 있는 부모 : 움직이는 부분 */
+            display: flex;
+            flex-wrap: wrap;
+            width: 10000px;          /* 이미지 깨지지 않게 */
+            height: 480px;
+            position: relative;
+            left: -800px;
+        }
+        .slider__inner.transition {
+            transition: all 0.3s;       /* 움직일때만 움직임, 순간이동 할때는 x */
+        }
+        .slider {
+            /* 개별적인 이미지 */
+            position: relative;
+            width: 800px;
+            height: 480px;
+        }
+        .slider span {
+            position: absolute;
+            left: 5px;
+            top: 5px;
+            background-color: rgba(0,0,0,0.4);
+            color: #fff;
+            padding: 6px 10px;
+        }
+        /* .slider:nth-child(1)::before {content: 'Image5';}
+        .slider:nth-child(2)::before {content: 'Image1';}
+        .slider:nth-child(3)::before {content: 'Image2';}
+        .slider:nth-child(4)::before {content: 'Image3';}
+        .slider:nth-child(5)::before {content: 'Image4';}
+        .slider:nth-child(6)::before {content: 'Image5';}
+        .slider:nth-child(7)::before {content: 'Image1';} */
+
+        @media(max-width: 800px) {
+            .slider__img {
+                position: relative;
+                width: 400px;
+                height: 240px;
+            }
+        }
+        .slider__btn button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 50px;
+            height: 50px;
+            background: rgba(0,0,0,0.4);
+            text-align: center;
+            line-height: 50px;
+            transition: all 0.2s;
+            display: block;
+            color: #fff;
+            border-radius: 5px;
+            border: 0;
+            cursor: pointer;
+        }
+        .slider__btn.disable button {
+            pointer-events: auto;
+        }
+        .slider__btn button:hover {
+            background: #FA9191;
+        }
+        .slider__btn button.prev {
+            left: 0;
+        }
+        .slider__btn button.next {
+            right: 0;
+        }
+        .slider__dot {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 20px;
+        }
+        .slider__dot .dot {
+            width: 20px;
+            height: 20px;
+            background: rgba(0,0,0,0.4);
+            display: inline-block;
+            border-radius: 50%;
+            text-indent: -9999px;
+            transition: all 0.3s;
+            margin: 3px;
+        }
+        .slider__dot .dot.active {
+            background: rgba(255,255,255,0.9);
+        }
+        .slider__dot .play {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            margin-left: 7px;
+            border-left: 14px solid #fff;
+            border-top: 10px solid transparent;
+            border-bottom: 10px solid transparent;
+            vertical-align: 4px;
+        }
+        .slider__dot .play.show {
+            display: none;
+        }
+        .slider__dot .stop {
+            display: inline-block;
+            width: 16px;
+            height: 20px;
+            position: relative;
+            display: none;
+            margin-left: 7px;
+            vertical-align: 4px;
+        }
+        .slider__dot .stop.show {
+            display: inline-block;
+        }
+        .slider__dot .stop::before {
+            content: '';
+            width: 6px;
+            height: 20px;
+            background: #fff;
+            position: absolute;
+            left: 0;
+            top: 0;
+            border-radius: 2px;
+        }
+        .slider__dot .stop::after {
+            content: '';
+            width: 6px;
+            height: 20px;
+            background: #fff;
+            position: absolute;
+            right: 0;
+            top: 0;
+            border-radius: 2px;
+        }
+    </style>
+  
+</head>
+<body class="img02">
+    <header id="header">
+        <h1>Javascript Slider Effect07</h1>
+        <p>슬라이드 이펙트 - 이미지 슬라이드(버튼 ,닷 메뉴, 무한, 플레이 버튼, 정지 버튼, 자동 플레이)</p>
+        <ul>
+            <li><a href="sliderEffect01.html">1</a></li>
+            <li><a href="sliderEffect02.html">2</a></li>
+            <li><a href="sliderEffect03.html">3</a></li>
+            <li><a href="sliderEffect04.html">4</a></li>
+            <li><a href="sliderEffect05.html">5</a></li>
+            <li><a href="sliderEffect06.html">6</a></li>
+            <li class="active"><a href="sliderEffect07.html">7</a></li>
+        </ul>
+    </header>
+    <!-- //header -->
+    
+    <main id="main">
+        <section id="sliderType03">
+            <div class="slider__wrap">
+                <div class="slider__img">
+                    <div class="slider__inner">
+                        <div class="slider s1"><span>Image1</span><img src="../assets/img/effect_bg27.jpg" alt="이미지1"></div>
+                        <div class="slider s2"><span>Image2</span><img src="../assets/img/effect_bg28.jpg" alt="이미지2"></div>
+                        <div class="slider s3"><span>Image3</span><img src="../assets/img/effect_bg29.jpg" alt="이미지3"></div>
+                        <div class="slider s4"><span>Image4</span><img src="../assets/img/effect_bg30.jpg" alt="이미지4"></div>
+                        <div class="slider s5"><span>Image5</span><img src="../assets/img/effect_bg21.jpg" alt="이미지5"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="slider__btn">
+                <button href="#" class="prev">prev</button>
+                <button href="#" class="next">next</button>
+            </div>
+            <div class="slider__dot">
+                <!-- <a href="#" class="dot active">이미지1</a>
+                <a href="#" class="dot">이미지2</a>
+                <a href="#" class="dot">이미지3</a>
+                <a href="#" class="dot">이미지4</a>
+                <a href="#" class="dot">이미지5</a> -->
+            </div>
+        </section>
+    </main>
+    <!-- //main -->
+    
+    <footer id="footer">
+        <div class="modal__wrap">
+            <div class="modal__btn">소스 보기</div>
+      	    <div class="modal__cont">		
+	      	    <div class="modal__box">
+                    <div class="title">
+                        <span class="dot" aria-label="true"></span>
+                        <div class="tabs">
+                            <div class="active">
+                                <span class="favicon" aria-label="true">
+                                    <svg width="16" height="16" viewBox="0 0 18 18" fill="none" aria-hidden="true" focusable="false">
+                                        <circle cx="9" cy="9" r="9" fill="#B1D7B4"></circle>
+                                        <path d="M18 9C18 13.9706 15.4688 3.09375 9 10.125C2.53125 17.1562 0 13.9706 0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9Z" fill="#A2B38B"></path>
+                                        <path d="M18 9C18 13.9706 14.9062 0.84375 8.29688 6.1875C1.6875 11.5312 0 13.9706 0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9Z" fill="#FFB3B3"></path>
+                                    </svg>
+                                </span>
+                                <em>Javascript</em>
+                                <span class="close">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false">
+                                        <path d="M12.5 3.5L3.5 12.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                        <path d="M12.5 12.5L3.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    </svg>
+                                </span>
+                            </div>
+                            <div>
+                                <span class="favicon" aria-label="true">
+                                    <svg width="16" height="16" viewBox="0 0 18 18" fill="none" aria-hidden="true" focusable="false">
+                                        <circle cx="9" cy="9" r="9" fill="#7A4495"></circle>
+                                        <path d="M18 9C18 13.9706 15.4688 3.09375 9 10.125C2.53125 17.1562 0 13.9706 0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9Z" fill="#B270A2"></path>
+                                        <path d="M18 9C18 13.9706 14.9062 0.84375 8.29688 6.1875C1.6875 11.5312 0 13.9706 0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9Z" fill="#FCE2DB"></path>
+                                    </svg>
+                                </span>
+                                <em>HTML</em>
+                                <span class="close">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false">
+                                        <path d="M12.5 3.5L3.5 12.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                        <path d="M12.5 12.5L3.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    </svg>
+                                </span>
+                            </div>
+                            <div>
+                                <span class="favicon" aria-label="true">
+                                    <svg width="16" height="16" viewBox="0 0 18 18" fill="none" aria-hidden="true" focusable="false">
+                                        <circle cx="9" cy="9" r="9" fill="#A66CFF"></circle>
+                                        <path d="M18 9C18 13.9706 15.4688 3.09375 9 10.125C2.53125 17.1562 0 13.9706 0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9Z" fill="#B1E1FF"></path>
+                                        <path d="M18 9C18 13.9706 14.9062 0.84375 8.29688 6.1875C1.6875 11.5312 0 13.9706 0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9Z" fill="#9C9EFE"></path>
+                                    </svg>
+                                </span>
+                                <em>CSS</em>
+                                <span class="close">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false">
+                                        <path d="M12.5 3.5L3.5 12.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                        <path d="M12.5 12.5L3.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    </svg>
+                                </span>
+                            </div>
+                        </div>
+                        <span class="plus" aria-label="true">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false">
+                                <path d="M2.5 8H13.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                <path d="M8 2.5V13.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg>
+                        </span>
+                    </div>
+                    <div class="cont">
+                        <div class="active">
+<pre><code>
+</code></pre>
+                        </div>
+                        <div>
+<pre><code>
+</code></pre>
+                        </div>
+                        <div>
+<pre><code>
+</code></pre>
+                        </div>
+                    </div>
+                </div>	 
+                <div class="modal__close">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false">
+                        <path d="M12.5 3.5L3.5 12.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path d="M12.5 12.5L3.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>
+                </div>         		
+      	    </div>
+        </div>
+    </footer>
+    <!-- //footer -->
+
+    <script src="../assets/js/highlight.min.js"></script>
+    <script src="../assets/js/common.js"></script>
+    <!-- javascript -->
+    <script>
+        const sliderWrap = document.querySelector(".slider__wrap");
+        const sliderImg = document.querySelector(".slider__img");           //보여지는 영역
+        const sliderInner = document.querySelector(".slider__inner");       //움직이는 영역
+        const slider = document.querySelectorAll(".slider");                //각각 이미지
+        const sliderDot = document.querySelector(".slider__dot");             //슬라이드 닷메뉴
+        const sliderBtn =document.querySelector(".slider__btn");
+        const sliderBtnPrev = document.querySelector(".slider__btn .prev");  //왼쪽 버튼            
+        const sliderBtnNext = document.querySelector(".slider__btn .next");   //오른쪽 버튼           
+        
+
+
+        let currentIndex = 0,                //현재 이미지
+            sliderLength = slider.length,    //슬라이더 갯수
+            sliderWidth = slider[0].offsetWidth, //슬라이더의 넓이 값
+            sliderFirst = slider[0],            //첫번째 이미지
+            sliderLast = slider[sliderLength - 1],  //마지막 이미지
+            cloneFirst = sliderFirst.cloneNode(true),   //첫번째 이미지 복사
+            cloneLast = sliderLast.cloneNode(true),      //마지막 이미지 복사
+            dotIndex = "",                          //닷 메뉴
+            interval = 3000,                        //3초에 한번 씩
+            sliderTimer = "";                       //변수 생성
+
+        function init(){
+            imgClone();     //이미지 복사
+            createDot();    //닷 버튼 생성
+            autoPlay();     //자동 플레이
+        }
+        init();
+
+        //자동 플레이
+        function autoPlay(){
+            sliderTimer = setInterval(() => {
+                let intervalNum = currentIndex + 1;
+                gotoSlider(intervalNum);
+            }, interval)
+        }
+
+        //마우스 올리면 슬라이더 정지
+        function stopPlay(){
+            clearInterval(sliderTimer);
+        }
+
+        //이미지 복사
+        function imgClone(){
+            sliderInner.appendChild(cloneFirst);        
+            sliderInner.insertBefore(cloneLast, sliderFirst);
+        }
+
+        //닷 버튼
+        function createDot(){
+            for(let i=0; i<sliderLength; i++){
+                dotIndex += "<a href ='#' class='dot'></a>";
+            }
+            dotIndex += "<a href ='#' class='play'></a>";
+            dotIndex += "<a href ='#' class='stop'></a>";
+
+            sliderDot.innerHTML = dotIndex;
+            sliderDot.firstElementChild.classList.add("active");
+        }
+
+        //슬라이더 움직임
+        function gotoSlider(index){
+            sliderInner.classList.add("transition");
+            let posInitial = sliderInner.offsetWidth;       //-800
+
+            sliderInner.style.left = -sliderWidth * (index + 1) + "px"; 
+
+            //index값이 증가 할때마다 currentIndex도 증가하게 해야함
+            currentIndex = index;
+        }
+
+        //마지막 순간이동
+        function checkIndex(){
+            sliderInner.classList.remove("transition");
+
+            //마지막 이미지일 때
+            if(currentIndex == sliderLength){
+                sliderInner.style.left = -(1 * sliderWidth) + "px";
+                currentIndex = 0;
+            }
+            //처음 이미지일 때
+            if(currentIndex == -1){
+                sliderInner.style.left = -(sliderLength * sliderWidth) + "px";
+                currentIndex = sliderLength - 1;
+            }
+        }
+
+        //버튼 클릭
+        sliderBtnPrev.addEventListener("click", () => {
+            let prevIndex = currentIndex - 1;;
+            gotoSlider(prevIndex);
+        });
+        sliderBtnNext.addEventListener("click", () => {
+            let nextIndex = currentIndex + 1;;
+            gotoSlider(nextIndex);
+        });
+
+        const sliderBtnPlay = sliderDot.querySelector(".play");
+        const sliderBtnStop = sliderDot.querySelector(".stop");
+        sliderBtnPlay.addEventListener("click", () => {
+            sliderBtnPlay.classList.add("show");
+            sliderBtnStop.classList.add("show");
+            stopPlay();
+        })
+        sliderBtnStop.addEventListener("click", () => {
+            sliderBtnPlay.classList.remove("show");
+            sliderBtnStop.classList.remove("show");
+            autoPlay(currentIndex);
+        })
+        
+
+        sliderInner.addEventListener("mouseenter", stopPlay);       //마우스 올리면 정지
+        sliderInner.addEventListener("mouseleave", autoPlay);       //마우스 나가면 다시 움직임    
+        sliderInner.addEventListener("transitionend", checkIndex);
+
+    </script>
+</body>
+</html>
