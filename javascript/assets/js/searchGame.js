@@ -389,7 +389,7 @@ const searchList = document.querySelector(".search__list");
 const searchAnwers = document.querySelector(".search__answers");
 const searchMissAnwers = document.querySelector(".search__missAnswers");
 const searchStart = document.querySelector(".search__box .start");
-const searchInput = document.querySelector("#search2");
+const searchInput = document.querySelector("#search");
 const searchAudio = document.querySelector("#search-audio");
 const audioPlay = document.querySelector(".search__play");
 const audioStop = document.querySelector(".search__stop");
@@ -399,7 +399,7 @@ const scoreResult= document.querySelector(".search__result .result");
 const scoreResultWrap= document.querySelector(".search__result");
 const scoreRestart= document.querySelector(".search__result .restart");
 
-let timeReamining = 120,    //남은 시간
+let timeReamining = 10,    //남은 시간
     timeInterval = "",      //시간 간격
     score = 0,              //점수
     answers = {};           //새로운 정답
@@ -480,6 +480,10 @@ function missAnswers(){
 function reduceTime(){
     timeReamining--;
 
+    if(timeReamining < 20){
+        searchTimeLine.classList.add("sec");
+    }
+
     //시간 끝
     if(timeReamining == 0) endQuiz();
 
@@ -493,13 +497,13 @@ function displayTime(){
     } else {
         let minutes = Math.floor(timeReamining / 60);
         let seconds = timeReamining % 60;
-        
+    
         //초 단위가 한자리수 일 때 0을 추가
-        if(seconds < 10) seconds = "0" + seconds,
-        searchTimeLine.classList.add("sec");
+        if(seconds < 10) seconds = "0" + seconds
         return minutes + ":" + seconds;
     }
 }
+
 
 //게임 끝났을 때
 function endQuiz(){
@@ -538,7 +542,10 @@ function restart(){
     //다시 시작
     startQuiz();
 
-    searchTimeLine.classList.remove("sec");
+    searchTimeLine.classList.remove("sec"); //타이머 보드 리셋
+
+    searchAnwers.style.display = "none";
+    searchMissAnwers.style.display = "none";
 }
 
 //버튼 이벤트

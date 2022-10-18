@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="../assets/css/bg.css">
     <link rel="stylesheet" href="../assets/css/music.css">
     <link rel="stylesheet" href="../assets/css/searchGame.css">
+    <link rel="stylesheet" href="../assets/css/search_ani.css">
+
 </head>
 <body>
     <header id="header">
@@ -152,6 +154,7 @@
     <div id="search__game">
         <div class="search__header">
             <span class="dot" aria-label="true"></span>
+            <span class="search__close"></span>
         </div>
         <div class="search_wrap">
             <div class="search__audio">
@@ -195,9 +198,9 @@
             </div>
             <div class="search__list">
             </div>
-            <!-- <div class="search__result">
+            <div class="search__result">
                 <div class="svg__wrap">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="448px" height="386px" viewBox="0 0 448 386">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="250px" height="210px" viewBox="0 0 448 386">
                         <g filter="none" transform="translate(218.184,198.765) translate(-217.528,-187.235)" style="animation: 3.9s linear infinite both bee-a0_ft;">
                           <g id="bee-Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(217.528,187.235) translate(-218.184,-198.765)">
                             <g id="bee-Artboard" transform="translate(218.184,198.765) translate(-1258.18,-1122.76)">
@@ -354,7 +357,7 @@
                     <div class="result"></div>    
                     <button class="restart">다시 도전하기</button>             
                 </div>
-            </div> -->
+            </div>
         </div>
     </div>
     <!-- //서치 게임 -->
@@ -474,10 +477,15 @@
             musicWrap.style.display = "block";
         });
 
-        //서치 게임 시작
+        //서치 게임 시작 & 창 닫기
         const searchBox = document.querySelector("#search__game");
+        const searchBoxClose = document.querySelector(".search__header .search__close");
         document.querySelector(".icon2").addEventListener("click", () => {
             searchBox.classList.add("open");
+        });
+        searchBoxClose.addEventListener("click", () => {
+            searchBox.classList.remove("open");
+            searchAudio.pause();
         })
 
 
