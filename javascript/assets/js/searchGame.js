@@ -399,7 +399,7 @@ const scoreResult= document.querySelector(".search__result .result");
 const scoreResultWrap= document.querySelector(".search__result");
 const scoreRestart= document.querySelector(".search__result .restart");
 
-let timeReamining = 10,    //남은 시간
+let timeReamining = 120,    //남은 시간
     timeInterval = "",      //시간 간격
     score = 0,              //점수
     answers = {};           //새로운 정답
@@ -555,12 +555,12 @@ scoreRestart.addEventListener("click", restart);        //다시 시작
 
 //음악 재생 & 정지
 audioStop.addEventListener("click", () => {
-    audioStop.style.display = "none";
     audioPlay.style.display = "block";
+    audioStop.style.display = "none";
     searchAudio.pause();
 })
 audioPlay.addEventListener("click", () => {
-    audioStop.style.display = "block";
     audioPlay.style.display = "none";
+    audioStop.style.display = "block";
     searchAudio.play();
 })

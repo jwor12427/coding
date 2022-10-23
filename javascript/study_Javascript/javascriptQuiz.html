@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript</title>
+    <link rel="stylesheet" href="https://tistory4.daumcdn.net/tistory/2933724/skin/images/font.css">
+    <link rel="stylesheet" href="https://tistory4.daumcdn.net/tistory/2933724/skin/images/font-awesome.css">
+
+    <style>
+        /* PrismJS 1.26.0
+https://prismjs.com/download.html#themes=prism&languages=markup+css+clike+javascript */
+code[class*=language-],pre[class*=language-]{color:#000;background:0 0;text-shadow:0 1px #fff;font-family:Consolas,Monaco,'Andale Mono','Ubuntu Mono',monospace;font-size:1em;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}code[class*=language-] ::-moz-selection,code[class*=language-]::-moz-selection,pre[class*=language-] ::-moz-selection,pre[class*=language-]::-moz-selection{text-shadow:none;background:#b3d4fc}code[class*=language-] ::selection,code[class*=language-]::selection,pre[class*=language-] ::selection,pre[class*=language-]::selection{text-shadow:none;background:#b3d4fc}@media print{code[class*=language-],pre[class*=language-]{text-shadow:none}}pre[class*=language-]{padding:1em;margin:.5em 0;overflow:auto}:not(pre)>code[class*=language-],pre[class*=language-]{background:#f5f2f0}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal}.token.cdata,.token.comment,.token.doctype,.token.prolog{color:#708090}.token.punctuation{color:#999}.token.namespace{opacity:.7}.token.boolean,.token.constant,.token.deleted,.token.number,.token.property,.token.symbol,.token.tag{color:#905}.token.attr-name,.token.builtin,.token.char,.token.inserted,.token.selector,.token.string{color:#690}.language-css .token.string,.style .token.string,.token.entity,.token.operator,.token.url{color:#9a6e3a;background:hsla(0,0%,100%,.5)}.token.atrule,.token.attr-value,.token.keyword{color:#07a}.token.class-name,.token.function{color:#dd4a68}.token.important,.token.regex,.token.variable{color:#e90}.token.bold,.token.important{font-weight:700}.token.italic{font-style:italic}.token.entity{cursor:help}
+        @font-face {
+            font-family: 'NEXON Lv1 Gothic OTF';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv1 Gothic OTF.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'NEXON Lv1 Gothic OTF';
+            line-height: 1.6;
+        }
+
+        body {
+            padding: 5%;
+            margin-bottom: 400px;
+        }
+
+        h1 {
+            padding-bottom: 40px;
+        }
+
+        hr {
+            margin: 5% 0;
+            border-style: dashed;
+            border-color: #e6e6e6;
+            border-width: 1px;
+        }
+
+        img {
+            vertical-align: top;
+            border-radius: 5px;
+            margin: 5px;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        .sample {
+            border: 1px solid #e6e6e6;
+            border-radius: 5px;
+        }
+
+        .sample h2 {
+            position: relative;
+            font-size: 16px;
+            background-color: #f2f2f2;
+            padding: 15px 15px 12px 15px;
+            border-bottom: 1px solid #e6e6e6;
+            border-radius: 5px 5px 0 0;
+        }
+
+        .sample h2 .dot {
+            width: 10px;
+            height: 10px;
+            background: #989898;
+            display: block;
+            border-radius: 50%;
+            position: absolute;
+            right: 30px;
+            top: 20px;
+        }
+
+        .sample h2 .dot::before {
+            content: '';
+            width: 10px;
+            height: 10px;
+            background: #989898;
+            border-radius: 50%;
+            position: absolute;
+            left: -15px;
+            top: 0;
+        }
+
+        .sample h2 .dot::after {
+            content: '';
+            width: 10px;
+            height: 10px;
+            background: #989898;
+            position: absolute;
+            border-radius: 50%;
+            right: -15px;
+            top: 0;
+        }
+
+        .sample .ex {
+            padding: 20px;
+        }
+
+        .sample .ex .text {
+            margin: 10px 0;
+        }
+
+        .sample .re {
+            padding: 20px;
+            border-top: 1px solid #e6e6e6;
+        }
+
+        .sample .re a {
+            color: #333;
+            text-decoration: none;
+            border: 1px solid #333;
+            border-radius: 30px;
+            padding: 10px 30px;
+            margin: 5px;
+            display: inline-block;
+        }
+
+        .sample .re a:hover {
+            background-color: #000;
+            color: #fff;
+        }
+
+        .sample .problem {
+            padding: 25px;
+            border-bottom: 1px solid #e6e6e6;
+            line-height: 1.6;
+        }
+
+        .sample pre {
+            margin: 0 !important;
+            border-radius: 0;
+            ;
+        }
+
+        .sample .desc {
+            padding: 25px;
+            border-bottom: 1px solid #e6e6e6;
+        }
+
+        .sample .desc dt {
+            padding: 3px 0;
+            margin-bottom: 6px;
+        }
+
+        .sample .desc dd {
+            padding: 3px 0 16px 0;
+            line-height: 1.6;
+        }
+
+        .sample .sam {
+            padding: 25px;
+            border-bottom: 1px solid #e6e6e6;
+        }
+
+        .sample .sam dt {
+            padding: 3px 0;
+            margin-bottom: 6px;
+        }
+
+        .sample .sam dd {
+            padding: 3px 0 16px 0;
+        }
+
+        ol {
+            list-style: none;
+            margin-bottom: 40px;
+        }
+
+        ol li {
+            display: inline;
+            text-align: center;
+            line-height: 40px;
+            margin-bottom: 5px;
+        }
+
+        ol li a {
+            display: inline-block;
+            border-radius: 30px;
+            padding: 2px 20px 0px 20px;
+            border: 1px solid #000;
+        }
+
+        ol li a:hover {
+            background: #000;
+            color: #fff;
+        }
+
+        ol li.active {
+            background: #000;
+        }
+
+        ol li.active a {
+            color: #fff;
+        }
+        .mt20 {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Javascript</h1>
+
+    <div id="sample1" class="sample">
+        <h2>01. 결과값을 작성하세요.<span class="dot"></span></h2>
+        <div class="code">
+<pre class="line-numbers"><code class="language-js">const arr = "pigonhada";
+
+function solution(s) {
+    return s.substr(Math.ceil(s.length / 2) - 1, s.length % 2 == 0 ? 2 : 1);
+}
+console.log(solution(arr));     //n
+</code></pre>
+        </div>
+    </div>
+
+    <hr>
+
+    <div id="sample2" class="sample">
+        <h2>02. 결과값을 작성하세요.<span class="dot"></span></h2>
+        <div class="code">
+<pre class="line-numbers"><code class="language-js">let num = 8;
+
+function candy(n){
+    let sweets = "사탕";
+    sweets = sweets.repeat(n-1).substring(0,n);
+
+    return sweets;
+}
+console.log(candy(num));    //사탕사탕사탕사탕
+</code></pre>
+        </div>
+    </div>
+
+    <hr>
+
+    <div id="sample3" class="sample">
+        <h2>03. 결과값을 작성하세요.<span class="dot"></span></h2>
+        <div class="code">
+<pre class="line-numbers"><code class="language-js">const arr = "WooWwwoOO";
+
+function amazing(a){
+    let str =  a.toLowerCase();
+    let num = 0;
+    for(let i = 0; i &lt; a.length; i++){
+        if(str[i] === "w") num++;
+        else if(str[i] === "O") num--;
+    }
+    return num === 0 ? a.toLowerCase() : a.toUpperCase()
+}
+console.log(amazing(arr));      //WOOWWWOOO
+</code></pre>
+        </div>
+    </div>
+
+    <hr>
+
+    <div id="sample4" class="sample">
+        <h2>04. 결과값을 작성하세요.<span class="dot"></span></h2>
+        <div class="code">
+<pre class="line-numbers"><code class="language-js">const arr = [1,1,1,8,8,7,7,5,7,7];
+        
+function good(g){
+    let num = [];
+    for(let i = 0; i &lt; g.length; i++){
+        if(g[i] == g[i+1]){
+        }else {
+            num.push(arr[i]);
+        }
+    }
+    return num;
+}
+console.log(good(arr));     //[1, 8, 7, 5, 7]
+</code></pre>
+        </div>
+    </div>
+
+    <hr>
+
+    <div id="sample5" class="sample">
+        <h2>05. 결과값을 작성하세요.<span class="dot"></span></h2>
+        <div class="code">
+<pre class="line-numbers"><code class="language-js">const arr = [3,5,7,3,12,9];
+
+function solution(s, divisor){
+    let good = s.filter((el) => el % divisor == 0).sort((a,b) => a-b);
+    if(good.length == 0) return [-1]
+    return good;
+}
+console.log(solution(arr, 6));      //12
+</code></pre>
+        </div>
+    </div>
+
+    <hr>
+
+    <div id="sample6" class="sample">
+        <h2>06. 결과값을 작성하세요.<span class="dot"></span></h2>
+        <div class="code">
+<pre class="line-numbers"><code class="language-js">const time = "have A gooD day";
+
+function day(a){
+    let good = a.split(' ');
+    let nice = [];
+
+    for(let i = 0; i &lt; good.length; i++){
+        let word = good[i].split('').map((word, i) => {
+            if(i % 2  === 0){
+                return word.toUpperCase();
+            } else {
+                return word.toLowerCase();
+            }
+        }).join('');
+        nice.push(word);
+    }
+    return nice.join(' ')
+}
+console.log(day(time));     //HaVe A GoOd DaY
+</code></pre>
+        </div>
+    </div>
+
+    <hr>
+
+    <div id="sample7" class="sample">
+        <h2>07. 결과값을 작성하세요.<span class="dot"></span></h2>
+        <div class="code">
+<pre class="line-numbers"><code class="language-js">const num = 30;
+
+function solution(s){
+    let answer = 0;
+    for(let i = 0; i &lt;= s; i++){
+        if(s % i == 0){
+            answer += i
+        }
+    }
+    return answer;
+}
+console.log(solution(num));     //72
+</code></pre>
+        </div>
+    </div>
+
+    <hr>
+
+    <div id="sample8" class="sample">
+        <h2>08. 결과값을 작성하세요.<span class="dot"></span></h2>
+        <div class="code">
+<pre class="line-numbers"><code class="language-js">const word = "bungeoppang";
+
+function food(w){
+    let eat = "";
+    if(w.length % 3 == 0){
+        eat += w[(w.length/2) - 1] + w[(w.length/2)]
+    } else if(w.length % 3 !== 0) {
+        eat += w[Math.round(w.length/2) - 1]
+    }
+    return eat;
+}
+console.log(food(word));        //o
+</code></pre>
+        </div>
+    </div>
+
+    <hr>
+
+    <div id="sample9" class="sample">
+        <h2>09. 결과값을 작성하세요.<span class="dot"></span></h2>
+        <div class="code">
+<pre class="line-numbers"><code class="language-js">const num = [4,3,1,6];
+
+function solution(s){
+    let answer = [];
+    for(let i = 0; i &lt; s.length; i++){
+        for(let j = i+1; j &lt; s.length; j++){
+            const result = s[i] + s[j];
+            if(answer.indexOf(result) &lt; 1){
+                answer.push(result);
+            }
+        }
+    }
+    answer.sort((a,b) => a - b);
+    return answer;
+}
+console.log(solution(num));     //[4, 5, 7, 7, 9, 10]
+</code></pre>
+        </div>
+    </div>
+
+    <hr>
+
+    <div id="sample10" class="sample">
+        <h2>10. 결과값을 작성하세요.<span class="dot"></span></h2>
+        <div class="code">
+<pre class="line-numbers"><code class="language-js">let num = 3;
+
+function solution(s){
+    let result = 0;
+
+    while(num > 1) {
+        if(num >= 100) return -1;
+        else if(num % 2 == 0){
+            num /= 2;
+        } else {
+            num = num *3 + 1;
+        }result++;
+    } 
+    return result;
+}
+console.log(solution(num));     //7
+</code></pre>
+        </div>
+    </div>
+
+    <hr>
+
+    
+
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.0/prism.min.js"></script>
+    <script>
+        {
+            let num = 3;
+
+            function solution(s){
+                let result = 0;
+
+                while(num > 1) {
+                    if(num >= 100) return -1;
+                    else if(num % 2 == 0){
+                        num /= 2;
+                    } else {
+                        num = num *3 + 1;
+                    }result++;
+                } 
+                return result;
+            }
+            console.log(solution(num));
+        }
+    </script>
+</body>
+
+</html>

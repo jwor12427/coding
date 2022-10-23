@@ -109,12 +109,12 @@
     position: absolute;
     left: 50%;
     top: 72%;
-    height: 900px;
+    min-height: 900px;
     transform: translate(-50%, -50%);
     display: inline-flex;
     flex-direction: column;
     align-items: center;
-    padding: 45px 30px 50px 30px;
+    padding: 45px 30px 40px 30px;
     border: 3px solid black;
     border-radius: 5px;
     background: white;
@@ -252,8 +252,9 @@
     color: #fff;
     background: #F96666;
 }
-.search__stop {
-  display: none;
+
+.search__play {
+    display: none;
 }
 
 #search__game::-webkit-scrollbar {

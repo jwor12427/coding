@@ -400,6 +400,7 @@
         }); 
         $(".music__wrap").draggable();
         $(".modal__btn").draggable();
+		$("#search__game").draggable();
         //현재시간 표시
         function printTime(){
             const clock = document.querySelector(".time");
@@ -486,6 +487,9 @@
         searchBoxClose.addEventListener("click", () => {
             searchBox.classList.remove("open");
             searchAudio.pause();
+			//시간 정지
+			clearInterval(timeInterval);
+			searchStart.style.display = "block";
         })
 
 

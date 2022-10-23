@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>퀴즈 이펙트</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+
+</head>
+<body>
+    <header id="header">
+        <h1><a href="../index.html">서치 이펙트</a></h1>
+        <nav class="header_nav">
+
+        </nav>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">스크립트를 이용한 서치효과 만들기 07</h2>
+            <p class="t_desc2">
+                검색 게임을 만들어 봅시다~!
+            </p>
+
+            
+            <div class="t_iframe" style="min-height: 1000px; padding-top: 0;">
+                <iframe src="https://jwor12427.github.io/coding/javascript/effect/searchEffect07.html"></iframe>
+            </div>
+
+            <div class="t_link">
+                <a href="https://github.com/jwor12427/coding/blob/main/javascript/effect/searchEffect07.html" target="_blank">원본 소스 보기</a>
+            </div>
+
+            <h3 class="t_tit2">Script</h3>
+            <div class="t_code">
+<pre><code>const searchTime = document.querySelector(".time span");
+const searchList = document.querySelector(".search__list");
+const searchAnwers = document.querySelector(".search__answers");
+const searchMissAnwers = document.querySelector(".search__missAnswers");
+const searchStart = document.querySelector(".search__box .start");
+const searchInput = document.querySelector("#search2");
+const searchAudio = document.querySelector("#audio");
+const audioPlay = document.querySelector(".play");
+const audioStop = document.querySelector(".stop");
+const searchInfo = document.querySelector(".search__info .num");
+const scoreInfo = document.querySelector(".search__info .num2");
+const scoreResult= document.querySelector(".search__result .result");
+const scoreResultWrap= document.querySelector(".search__result");
+const scoreRestart= document.querySelector(".search__result .restart");
+
+let timeReamining = 120,    //남은 시간
+    timeInterval = "",      //시간 간격
+    score = 0,              //점수
+    answers = {};           //새로운 정답
+
+function updateList(){
+    cssProperty.forEach(data => {
+        searchList.innerHTML += `&lt;span>${data.name}&lt;/span>`;
+    });
+
+}
+updateList();
+
+//게임 시작하기
+function startQuiz(){
+    //시작 버튼 없애기 & 속성 리스트 없애기
+    searchStart.style.display = "none";
+    searchList.style.display = "none";
+
+    //다시 시작할 때 기존 데이터 초기화
+    searchAnwers.innerHTML = "";
+    searchMissAnwers.innerHTML = "";
+    
+    //시간 설정
+    timeInterval = setInterval(reduceTime, 1000);
+
+    //뮤직 추가하기
+    searchAudio.play();
+
+    //점수 계산 - 전체 갯수
+    searchInfo.innerText = cssProperty.length;
+    
+    //정답 체크
+    checkAnswers();
+}
+
+//인풋박스 체크
+function checkInput(){
+    let input = event.currentTarget.value.trim().toLowerCase();
+
+    if(answers.hasOwnProperty(input) && !answers[input]){
+        answers[input] = true;
+
+        //정답 표시
+        searchAnwers.style.display = "block";
+        searchAnwers.innerHTML += `&lt;span>${input}&lt;/span>`;
+        
+        //점수 반영
+        score++;
+        scoreInfo.innerText = score;
+        //정답 초기화
+        searchInput.value = "";
+    }
+
+}
+
+//정답 체크하기 : 정답을 객체 파일로 만들기
+function checkAnswers(){
+    cssProperty.forEach(item => {
+        let answer = item.name.trim().toLocaleLowerCase();
+        answers[answer] = false;
+    });
+}
+
+//오답 보여주기
+function missAnswers(){
+    searchMissAnwers.style.display = "block";
+    
+    cssProperty.forEach(item => {
+        let answer = item.name.trim().toLocaleLowerCase();
+        if(!answers[answer]){
+            searchMissAnwers.innerHTML += `&lt;span>${answer}&lt;/span>`;
+        }
+    });
+}
+
+
+//시간 설정하기
+function reduceTime(){
+    timeReamining--;
+
+    //시간 끝
+    if(timeReamining == 0) endQuiz();
+
+    searchTime.innerText = displayTime();
+}
+
+//시간 표시하기
+function displayTime(){
+    if(timeReamining &lt;= 0){
+        return "0:00";
+    } else {
+        let minutes = Math.floor(timeReamining / 60);
+        let seconds = timeReamining % 60;
+        
+        //초 단위가 한자리수 일 때 0을 추가
+        if(seconds &lt; 10) seconds = "0" + seconds;
+        return minutes + ":" + seconds;
+    }
+}
+
+//게임 끝났을 때
+function endQuiz(){
+    // alert("게임이 끝났습니다!");
+
+    //시작 버튼 만들기
+    searchStart.style.display = "block";
+    searchStart.style.pointerEvents = "none";     //버튼 누르지 못하게 하기
+    
+    //오답 보여주기
+    missAnswers();
+
+    //음악 끄기
+    searchAudio.pause();
+
+    //시간 정지
+    clearInterval(timeInterval);
+
+    //메세지 출력
+    scoreResultWrap.classList.add("show");
+    let point = Math.round((score / cssProperty.length) * 100);
+    scoreResult.innerHTML = `게임이 끝났습니다.&lt;br> 당신은 ${cssProperty.length}개 중에 ${score}개 를 맞추었습니다. <br> 당신의 점수는 ${point}점 입니다.`;
+
+}
+
+//다시 시작하기
+function restart(){
+    scoreResultWrap.classList.remove("show");   //결과창 없애줌
+    timeReamining = 120;    //시간 셋팅
+    score = 0;              //점수 리셋
+    scoreInfo.innerText = "0";
+    
+    //뮤직 다시 재생
+    searchAudio.play();
+    
+    //다시 시작
+    startQuiz();
+}
+
+//버튼 이벤트
+searchStart.addEventListener("click",startQuiz);
+searchInput.addEventListener("input", checkInput);
+scoreRestart.addEventListener("click", restart);        //다시 시작
+
+//음악 재생 & 정지
+audioStop.addEventListener("click", () => {
+    audioStop.style.display = "none";
+    audioPlay.style.display = "block";
+    searchAudio.pause();
+})
+audioPlay.addEventListener("click", () => {
+    audioStop.style.display = "block";
+    audioPlay.style.display = "none";
+    searchAudio.play();
+})
+</code></pre>
+            </div>
+            
+
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:jwor124@naver.com">jwor124@naver.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+   
+</body>
+</html>

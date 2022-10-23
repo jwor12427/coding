@@ -324,6 +324,21 @@
                 currentIndex = sliderLength - 1;
             }
         }
+
+            //닷 엑티브
+            function dotActive(act) {
+                document.querySelectorAll(".dot").forEach((e, i) => {
+                    e.classList.remove("active");
+                });
+
+                if (act === -1) {
+                    num == 0 ? (num = 4) : (num = (num - 1) % sliderLength);
+                    sliderDot.children[num].classList.add("active");
+                } else if (act === 1) {
+                    num = (num + 1) % sliderLength;
+                    sliderDot.children[num].classList.add("active");
+                }
+            }
         
         //클릭 이벤트
         sliderBtnPrev.addEventListener("click", () => {gotoSlider(-1);});
