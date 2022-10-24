@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="../assets/css/search.css">
     <link href="https://webfontworld.github.io/tmon/Tmon.css" rel="stylesheet">
     <link href="https://webfontworld.github.io/hallym/Hallym.css" rel="stylesheet">
-    <link rel="stylesheet" href="../assets/css/atom-one-light.min.css">
+    <link rel="stylesheet" href="../assets/css/atom-one-light.min2.css">
 
 </head>
 <body>
@@ -491,11 +491,244 @@ searchBox.addEventListener("keyup", () => {
                             </div>
                             
                             <div id="item-2" class="menu__item">
+<pre><code>&lt;div class="search_wrap">
+    &lt;span>indexOf() / search() 를 이용하여 검색하기&lt;/span>
+     &lt;h1>&lt;a href="searchEffect.html">CSS 속성 검색하기&lt;/a>&lt;/h1>
+     &lt;div class="search__box">
+        &lt;label for="search">검색하기&lt;/label>
+        &lt;input type="text" id="search" placeholder="CSS 속성을 입력해주세요!">
+     &lt;/div>
+     &lt;div class="search__info">
+        &lt;div>전체 속성 갯수 : &lt;span class="num">&lt;/span>&lt;/div>
+     &lt;/div>
+     &lt;div class="search__list">
+        &lt;div class="html">
+            &lt;ul>
+                &lt;li data-name="accent-color" data-type="기타">&lt;strong>accent-color&lt;/strong> : 사용자 인터페이스 컨트롤의 강조색을 지정합니다.&lt;/li>
+                &lt;li data-name="align-content" data-type="플렉스">&lt;strong>align-content&lt;/strong> : 콘텐츠 아이템의 상하관계 정렬 상태를 설정합니다.&lt;/li>
+                &lt;li data-name="align-items" data-type="플렉스">&lt;strong>align-items&lt;/strong> : 콘텐츠 아이템의 내부상하관계 정렬 상태를 설정합니다.&lt;/li>
+                &lt;li data-name="align-self" data-type="플렉스">&lt;strong>align-self&lt;/strong> : 콘텐츠 아이템의 상하관계 정렬 상태를 설정합니다.&lt;/li>
+                &lt;li data-name="all" data-type="기타">&lt;strong>all&lt;/strong> : 요소의 속성을 초기화 또는 상속을 설정합니다.&lt;/li>
+                &lt;li data-name="animation" data-type="애니메이션">&lt;strong>animation&lt;/strong> : 애니메이션과 관련된 속성을 일괄적으로 설정합니다.&lt;/li>
+                &lt;li data-name="animation-delay" data-type="애니메이션">&lt;strong>animation-delay&lt;/strong> : 애니메이션 지연 시간을 설정합니다.&lt;/li>
+                &lt;li data-name="animation-direction" data-type="애니메이션">&lt;strong>animation-direction&lt;/strong> : 애니메이션 움직임 방향을 설정합니다.&lt;/li>
+            &lt;/ul>
+        &lt;/div>
+    &lt;/div>
+&lt;/div>
+</code></pre>
                                 
                             </div>
             
                             <div id="item-3" class="menu__item">
-                                
+<pre><code>.search_wrap .time {
+    width: 140px;
+    height: 140px;
+    line-height: 140px;
+    text-align: center;
+    border-radius: 50%;
+    margin: 0 auto;
+    background: var(--htmlColor);
+}
+.search_wrap .desc {
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+.search_wrap .time span {
+    color: #fff;
+    font-size: 34px;
+    font-weight: 100;
+}
+.search__box #search2 {
+    border: 2px solid var(--htmlColor);
+    padding: 15px 40px;
+    width: 30%;
+    border-radius: 50px;
+    font-size: 20px;
+    margin-top: 20px;
+}
+.search__box .start {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    background: #223547;
+    width: 30%;
+    border-radius: 50px;
+    font-size: 20px;
+    border: 2px solid var(--htmlColor);
+    padding: 15px 40px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.search__box {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.search__answers {
+    border-bottom: 2px dashed var(--htmlColor);
+    padding-bottom: 40px;
+    }
+    .search__answers span {
+    display: inline-block;
+    background: var(--htmlColor);
+    padding: 10px 20px;
+    color: #fff;
+    border-radius: 30px;
+    margin: 3px;
+    }
+    .search__missAnswers {
+    border-bottom: 2px dashed var(--htmlColor);
+    padding: 40px 0;
+    }
+    .search__missAnswers span {
+    display: inline-block;
+    border: 1px solid var(--htmlColor);
+    color: var(--htmlColor);
+    padding: 10px 20px;
+    border-radius: 30px;
+    margin: 3px;
+    }
+
+/* main */
+#main {
+    margin: 50px 10px;
+}
+.search_wrap {
+    max-width: 1400px;
+    margin: 0 auto;
+    border: 3px solid var(--htmlColor);
+    border-radius: 20px;
+    background-color: #f1f3f6;
+    padding: 30px;
+    text-align: center;
+}
+
+.search_wrap > h1 a {
+    font-family: "Tmon";
+    color: var(--htmlColor);
+    font-size: 6vw;
+    margin-bottom: 10px;
+}
+.search_wrap > span {
+    font-size: 20px;
+    margin-bottom: 20px;
+    display: inline-block;
+}
+.search__box {
+    margin-bottom: 20px;
+}
+.search__box label {
+    position: absolute;
+    clip: rect(0 0 0 0);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+}
+.search__box input {
+    border: 2px solid var(--htmlColor);
+    padding: 15px 40px;
+    width: 70%;
+    border-radius: 50px;
+    font-size: 20px;
+}
+
+.search__list li {
+    text-align: left;
+    line-height: 1.7;
+}
+.search__list li.hide {
+    display: none;
+}
+.search__list li.show {
+    display: block;
+}
+.search__list span {
+    display: inline-block;
+    padding: 10px 20px;
+    border: 1px solid var(--htmlColor);
+    border-radius: 50px;
+    margin: 5px;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+.search__list span:hover {
+    background-color: var(--htmlColor);
+    color: #fff;
+}
+.search__list em {
+    float: right;
+    font-style: normal;
+}
+.search__list .line {
+    margin: 50px 0;
+}
+.search__list .line li {
+    background: #e3eaf5;
+    padding: 10px 30px;
+    margin-bottom: 5px;
+    border-radius: 50px;
+}
+.search__list .line li:hover {
+    background: #c9d0db;
+    cursor: pointer;
+}
+.search__click {
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+.search__click li {
+    display: inline;
+}
+.search__click li a {
+    display: inline-block;
+    border: 1px solid var(--htmlColor);
+    border-radius: 50px;
+    padding: 10px 20px;
+    margin: 5px;
+}
+.search__click li a:hover {
+    background-color: var(--htmlColor);
+    color: #fff;
+}
+.search__info {
+    text-align: right;
+    margin-bottom: 30px;
+    padding: 10px;
+    border-bottom: 2px dashed var(--htmlColor);
+}
+.search__info.center {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding-bottom: 40px;
+}
+.search__info .type {
+    text-align: center;
+    margin-bottom: 10px;
+}
+.search__info .keyword {
+    text-align: center;
+    margin-bottom: 10px;
+}
+.search__info .keyword span {
+    border: 2px solid var(--htmlColor);
+    border-radius: 50px;
+    padding: 10px;
+    display: inline-block;
+    margin-bottom: 4px;
+}
+.search__info .keyword span:hover {
+    background-color: var(--htmlColor);
+    color: #fff;
+    cursor: pointer;
+} 
+</code></pre>
                             </div>
                         </div>
                         

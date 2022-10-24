@@ -460,7 +460,7 @@ li {
 .modal__cont {
     width: 100%;
     height: 100vh;
-    background-color: #315249b7;
+    background-color: #333b485e;
     position: fixed;
     left: 0;
     top: 0;
@@ -506,7 +506,7 @@ li {
 }
 .menu__tabs span.active {
     color: #1d58b8;
-    background: #dbdbdb;
+    background: #fff;
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
     box-shadow: none;

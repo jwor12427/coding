@@ -430,9 +430,44 @@
 	font-size: 14px;
 	line-height: 22px;
 	font-weight: 200px;
-
 	opacity: 1;
 	filter: alpha(opacity=100);
+}
+.image-wrap .hover-wrap .overlay-text-thumb-donut.bts {
+    background: #A92C76;
+    color: #fff;
+    width: auto;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%);
+    padding: 10px 20px;
+    margin-bottom: 5px;
+    border-radius: 50px;
+    line-height: 1;
+    height: auto;
+    white-space: nowrap;
+    font-weight: normal;
+    font-size: 20px;
+}
+.image-wrap .hover-wrap .overlay-text-thumb-donut.bts:hover {
+    background: #8B1C5E;
+}
+.image-wrap .hover-wrap .overlay-text-thumb1-donut.bts {
+    background: #A92C76;
+    background: #A92C76;
+    color: #fff;
+    width: auto;
+    left: 50%;
+    top: 54%;
+    transform: translateX(-50%);
+    padding: 10px 20px;
+    margin-bottom: 5px;
+    border-radius: 50px;
+    line-height: 1;
+    height: auto;
+}
+.image-wrap .hover-wrap .overlay-text-thumb1-donut.bts:hover {
+    background: #8B1C5E;
 }
 .image-wrap .hover-wrap .overlay-text-thumb2-donut {
 	position: absolute;
