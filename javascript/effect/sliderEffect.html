@@ -4,58 +4,73 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : 패럴랙스 효과</title>
     <link rel="stylesheet" href="../assets/css/style.css">
-    <title>슬라이드 이펙트</title>
-    <style>
-        body,
-        html,
-        #app {
-            padding: 0;
-            margin: 0;
-            width: 100%;
-            height: 100%;
-        }
-        .intro_menu {
-            z-index: 10000;
-            color: #fff;
-        }
-        .intro_menu ul a {
-            color: #fff;
-        }
-    </style>
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+
 </head>
 <body>
-    <main>
-        <div class="intro_menu">
+    <header id="header">
+        <h1><a href="../index.html">Javascript</a></h1>
+        <nav class="header_nav">
             <ul>
-                <li>01. 슬라이드 이펙트 - 트랜지션 효과<a href="sliderEffect01.html"> GO</a></li>
-                <li>02. 슬라이드 이펙트 - 좌우로 움직이기<a href="sliderEffect02.html"> GO</a></li>
-                <li>03. 슬라이드 이펙트 - 좌우로 움직이기(연속적으로)<a href="sliderEffect03.html"> GO</a></li>
-                <li>04. 슬라이드 이펙트 - 이미지 슬라이드 (버튼)<a href="sliderEffect04.html"> GO</a></li>
-                <li>05. 슬라이드 이펙트 - 이미지 슬라이드 (버튼 ,닷 메뉴)<a href="sliderEffect05.html"> GO</a></li>
-                <li>06. 슬라이드 이펙트 - 이미지 슬라이드 (버튼 ,닷 메뉴, 무한)<a href="sliderEffect06.html"> GO</a></li>
-                <li>07. 슬라이드 이펙트 - 이미지 슬라이드 (버튼 ,닷 메뉴, 무한, 플레이 버튼, 정지 버튼, 자동 플레이)<a href="sliderEffect07.html"> GO</a></li>
-        </div>
-    </main>
-    <div id="app"></div>
+                <li><a href="../javascript01.html">데이터 저장하기</a></li>
+                <li><a href="../javascript02.html">데이터 불러오기</a></li>
+                <li><a href="../javascript03.html">데이터 실행하기</a></li>
+                <li><a href="../javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="../javascript05.html">문자열 객체</a></li>
+                <li><a href="../javascript06.html">배열 객체</a></li>
+                <li><a href="../javascript07.html">수학 객체</a></li>
+                <li><a href="../javascript08.html">숫자 객체</a></li>
+                <li><a href="../javascript09.html">브라우저 객체</a></li>
+                <li><a href="../javascript10.html">요소 객체</a></li>
+                <li><a href="../javascript11.html">이벤트 객체</a></li>
+                <li><a href="../javascript12.html">제이쿼리</a></li>
+            </ul>
+            <ul class="effect">
+                <li><a href="searchEffect.html">검색 효과</a></li>
+                <li><a href="quizEffect.html">퀴즈 효과</a></li>
+                <li><a href="mouseEffect.html">마우스 효과</a></li>
+                <li class="active"><a href="sliderEffect.html">슬라이드 효과</a></li>
+                <li><a href="parallaxEffect.html">패럴랙스 효과</a></li>
+                <li><a href="gameEffect.html">게임 효과</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <div class="container">
+            <div class="main_menu">
+                <ul>
+                    <li>01. 슬라이드 이펙트 - 트랜지션 효과<a href="sliderEffect01.html"> GO</a></li>
+                    <li>02. 슬라이드 이펙트 - 좌우로 움직이기<a href="sliderEffect02.html"> GO</a></li>
+                    <li>03. 슬라이드 이펙트 - 좌우로 움직이기(연속적으로)<a href="sliderEffect03.html"> GO</a></li>
+                    <li>04. 슬라이드 이펙트 - 이미지 슬라이드 (버튼)<a href="sliderEffect04.html"> GO</a></li>
+                    <li>05. 슬라이드 이펙트 - 이미지 슬라이드 (버튼 ,닷 메뉴)<a href="sliderEffect05.html"> GO</a></li>
+                    <li>06. 슬라이드 이펙트 - 이미지 슬라이드 (버튼 ,닷 메뉴, 무한)<a href="sliderEffect06.html"> GO</a></li>
+                    <li>07. 슬라이드 이펙트 - 이미지 슬라이드 (버튼 ,닷 메뉴, 무한, 플레이 버튼, 정지 버튼, 자동 플레이)<a href="sliderEffect07.html"> GO</a></li>
+                </ul>
+            </div>
+            <div class="main_sample">
 
-    <script type="module">
-        import {
-            neonCursor
-        } from 'https://unpkg.com/threejs-toys@0.0.2/build/threejs-toys.module.cdn.min.js'
-        neonCursor({
-            el: document.getElementById('app'),
-            shaderPoints: 16,
-            curvePoints: 80,
-            curveLerp: 0.5,
-            radius1: 5,
-            radius2: 30,
-            velocityTreshold: 10,
-            sleepRadiusX: 100,
-            sleepRadiusY: 100,
-            sleepTimeCoefX: 0.0025,
-            sleepTimeCoefY: 0.0025
-        })
+
+            </div>
+        </div>
+
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:jwor124@naver.com">jwor124@naver.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+    <script>
+
     </script>
 </body>
 </html>

@@ -1,164 +1,76 @@
+</html>
 <!DOCTYPE html>
 <html lang="ko">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>퀴즈 이펙트</title>
-
+    <title>자바스크립트 : 패럴랙스 효과</title>
     <link rel="stylesheet" href="../assets/css/style.css">
-    <style>
-        body {
-            padding: 0 !important;
-            width: 100%;
-            height: 100vh;
-            overflow: hidden;
-            background: #FFB3B3;
-            background: linear-gradient(to bottom, #FFB4B4 0%, #B2A4FF 100%);
+    <link rel="stylesheet" href="../assets/css/dracula.css">
 
-        }
-        #canvas {
-            position: absolute;
-            left: 0;
-            top: 0;
-            z-index: -1;
-        }
-    </style>
 </head>
-
 <body>
-    <main>
-        <div class="intro_menu">
+    <header id="header">
+        <h1><a href="../index.html">Javascript</a></h1>
+        <nav class="header_nav">
             <ul>
-                <li>01. 퀴즈 이펙트 - 정답 확인하기<a href="quizEffect01.html">GO</a></li>
-                <li>02. 퀴즈 이펙트 - 주관식 확인하기<a href="quizEffect02.html">GO</a></li>
-                <li>03. 퀴즈 이펙트 - 주관식(여러문제) 확인하기<a href="quizEffect03.html">GO</a></li>
-                <li>04. 퀴즈 이펙트 - 객관식 확인하기<a href="quizEffect04.html">GO</a></li>
-                <li>05. 퀴즈 이펙트 - 객관식(여러문제) 확인하기 : 점수<a href="quizEffect05.html">GO</a></li>
-                <li>06. 퀴즈 이펙트 - 객관식(여러문제) 확인하기 : 슬라이드 형식<a href="quizEffect06.html">GO</a></li>
+                <li><a href="../javascript01.html">데이터 저장하기</a></li>
+                <li><a href="../javascript02.html">데이터 불러오기</a></li>
+                <li><a href="../javascript03.html">데이터 실행하기</a></li>
+                <li><a href="../javascript04.html">데이터 제어하기</a></li>
             </ul>
+            <ul>
+                <li><a href="../javascript05.html">문자열 객체</a></li>
+                <li><a href="../javascript06.html">배열 객체</a></li>
+                <li><a href="../javascript07.html">수학 객체</a></li>
+                <li><a href="../javascript08.html">숫자 객체</a></li>
+                <li><a href="../javascript09.html">브라우저 객체</a></li>
+                <li><a href="../javascript10.html">요소 객체</a></li>
+                <li><a href="../javascript11.html">이벤트 객체</a></li>
+                <li><a href="../javascript12.html">제이쿼리</a></li>
+            </ul>
+            <ul class="effect">
+                <li><a href="searchEffect.html">검색 효과</a></li>
+                <li class="active"><a href="quizEffect.html">퀴즈 효과</a></li>
+                <li><a href="mouseEffect.html">마우스 효과</a></li>
+                <li><a href="sliderEffect.html">슬라이드 효과</a></li>
+                <li><a href="parallaxEffect.html">패럴랙스 효과</a></li>
+                <li><a href="gameEffect.html">게임 효과</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <div class="container">
+            <div class="main_menu">
+                <ul>
+                    <li>01. 퀴즈 이펙트 - 정답 확인하기<a href="quizEffect01.html">GO</a></li>
+                    <li>02. 퀴즈 이펙트 - 주관식 확인하기<a href="quizEffect02.html">GO</a></li>
+                    <li>03. 퀴즈 이펙트 - 주관식(여러문제) 확인하기<a href="quizEffect03.html">GO</a></li>
+                    <li>04. 퀴즈 이펙트 - 객관식 확인하기<a href="quizEffect04.html">GO</a></li>
+                    <li>05. 퀴즈 이펙트 - 객관식(여러문제) 확인하기 : 점수<a href="quizEffect05.html">GO</a></li>
+                    <li>06. 퀴즈 이펙트 - 객관식(여러문제) 확인하기 : 슬라이드 형식<a href="quizEffect06.html">GO</a></li>
+                </ul>
+            </div>
+            <div class="main_sample">
+
+
+            </div>
         </div>
+
     </main>
-    <div id="canvas"></div>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r77/three.min.js"></script>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:jwor124@naver.com">jwor124@naver.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../assets/js/highlight.min.js"></script>
     <script>
-        let renderer, scene, camera, conposer, circle, skelet, particle;
+        hljs.highlightAll();
+    </script>
+    <script>
 
-        //문서가 로딩이 되면....
-        window.onload = function(){
-            init();
-            animate();
-        }
-
-        //기본 셋팅
-        function init(){
-            //렌더링
-            renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
-            renderer.setPixelRatio((window.devicePixelRatio) ? window.devicePixelRatio : 1);
-            renderer.setSize(window.innerWidth, window.innerHeight);
-            renderer.autoClear = false;
-            renderer.setClearColor(0x000000, 0.0);
-            document.getElementById('canvas').appendChild(renderer.domElement);
-
-            //화면
-            scene = new THREE.Scene();
-
-            //카메라
-            camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 1, 1000);
-            camera.position.z = 400;
-            scene.add(camera);
-
-            circle = new THREE.Object3D();
-            skelet = new THREE.Object3D();
-            particle = new THREE.Object3D();
-
-            scene.add(circle);
-            scene.add(skelet);
-            scene.add(particle);
-
-            //지오메트리
-            let geometry = new THREE.TetrahedronGeometry(2, 0);
-            let geom = new THREE.IcosahedronGeometry(7, 1);
-            let geom2 = new THREE.IcosahedronGeometry(15, 1);
-
-            let material = new THREE.MeshPhongMaterial({
-                color: 0xffffff,
-                shading: THREE.FlatShading
-            });
-
-            let mat = new THREE.MeshPhongMaterial({
-                color: 0xffffff,
-                shading: THREE.FlatShading
-            });
-            
-            let mat2 = new THREE.MeshPhongMaterial({
-                color: 0xffffff,
-                wireframe: true,
-                side: THREE.DoubleSide
-            });
-
-            let planet = new THREE.Mesh(geom, mat);
-            planet.scale.x = planet.scale.y = planet.scale.z = 16;
-            circle.add(planet);
-
-            let planet2 = new THREE.Mesh(geom2, mat2);
-            planet2.scale.x = planet2.scale.y = planet2.scale.z = 10;
-            skelet.add(planet2);
-
-            for(let i = 0; i<1300; i++){
-                let mesh = new THREE.Mesh(geometry, material);
-                mesh.position.set(Math.random() - 0.5, Math.random() - 0.5, Math.random() - 0.5).normalize();
-                mesh.position.multiplyScalar(90 + (Math.random() * 700));
-                mesh.rotation.set(Math.random() * 2, Math.random() * 2, Math.random() * 2);
-                particle.add(mesh);
-            }
-
-            //조명
-            let lights = [];
-            lights[0] = new THREE.DirectionalLight(0xB1E1FF, 1);
-            lights[0].position.set(1,0,0);
-            lights[1] = new THREE.DirectionalLight(0xAFB4FF, 1);
-            lights[1].position.set(0.75,1,0.5);
-            lights[2] = new THREE.DirectionalLight(0x8200c9, 1);
-            lights[2].position.set(-0.75,-1,0.5);
-
-            var ambientLight = new THREE.AmbientLight(0x4444444);
-            scene.add(ambientLight);
-
-            scene.add(lights[0]);
-            scene.add(lights[1]);
-            scene.add(lights[2]);
-
-            //브라우저 움직임 감지
-            window.addEventListener("resize", onWindowResize, false);
-        }
-
-        //화면 사이즈
-        function onWindowResize() {
-            camera.aspect = window.innerWidth / window.innerHeight;
-            camera.updateProjectionMatrix();
-            renderer.setSize(window.innerWidth, window.innerHeight);
-        }
-        
-        //애니메이션
-        function animate(){       
-            requestAnimationFrame(animate);            //requestAnimationFrame는 1초에 60번을 돌림   
-            
-            circle.rotation.x -= 0.005;
-            circle.rotation.y -= 0.005;
-
-            skelet.rotation.x += 0.01;
-            skelet.rotation.y += 0.01;
-
-            particle.rotation.x -= 0.001;
-            particle.rotation.y += 0.002;
-
-            renderer.render(scene, camera);
-                                                    
-        }
     </script>
 </body>
-
 </html>

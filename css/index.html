@@ -877,6 +877,18 @@
                 filter: url("#filterSquiggle4");
             }
         }
+        .main__title {
+            display: none;
+        }
+        .subContents > div {
+            display: none;
+        }
+        .subContents > div.active {
+            display: block;
+        }
+        .main__desc {
+            margin-top: 100px;
+        }
     </style>
     <!-- //tiger -->
 </head>
@@ -1008,11 +1020,10 @@
                     <ul>
                         <li class="active"><a href="#">Alphabet</a></li>
                         <li><a href="#">Selector</a></li>
-                        <li><a href="#">Flex</a></li>
                     </ul>
                 </div>
                 <div class="subContents">
-                    <div class="subCont1">
+                    <div class="subCont1 active">
                         <div class="table">
                             <table>
                                 <colgroup>
@@ -7004,47 +7015,6 @@
                         </div>
                     </div>
                     <!-- //subCont2 -->
-                    <div class="subCont3">
-                        <div class="table">
-                            <table>
-                                <colgroup>
-                                    <col style="width: 5%;">
-                                    <col style="width: 20%;">
-                                    <col >
-                                    <col style="width: 11%;">
-                                    <col style="width: 5%;">
-                                    <col style="width: 5%;">
-                                </colgroup>
-                                <thead>
-                                    <tr>
-                                        <th>번호</th>
-                                        <th>속성</th>
-                                        <th>설명</th>
-                                        <th>중요</th>
-                                        <th>보기</th>
-                                        <th>비고</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>01</td>
-                                        <td>accent-color</td>
-                                        <td>다른 페이지 이동을 설정합니다.</td>
-                                        <td>
-                                            <span class="material-symbols-outlined">star</span>
-                                            <span class="material-symbols-outlined">grade</span>
-                                            <span class="material-symbols-outlined">grade</span>
-                                            <span class="material-symbols-outlined">grade</span>
-                                            <span class="material-symbols-outlined">grade</span>
-                                        </td>
-                                        <td></td>
-                                        <td></td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                    <!-- //subCont3 -->
                 </div>
 
             </div>
